@@ -38,6 +38,13 @@
   .tldr .t-row .ic{flex:none;font-size:17px;line-height:1.4}
   .tldr .t-row b{font-weight:800}
 
+  .glossary{margin-top:18px;background:#f4f6ec;border:1px solid #dde39a;border-radius:14px;padding:16px 20px}
+  .glossary .g-h{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep);margin-bottom:12px}
+  .g-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 26px}
+  @media(max-width:720px){.g-grid{grid-template-columns:1fr}}
+  .g-grid div{font-size:13px;color:#46433c;line-height:1.5}
+  .g-grid b{color:var(--ink);font-weight:800}
+
   section{margin-top:46px}
   .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
   .sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--ink);min-width:26px;height:26px;border-radius:7px;
@@ -181,7 +188,10 @@
   .act td .p{font-weight:800;font-size:12px;padding:3px 9px;border-radius:999px;white-space:nowrap}
   .p-top{background:#1b1a17;color:#fff}.p-hi{background:var(--lime);color:#0e0d0b}.p-mid{background:#eceadf;color:#46433c}
   .act td .exp{color:var(--muted);font-size:13px;white-space:normal}
-  .act td.first{font-weight:700;white-space:normal;min-width:240px}
+  .act td.first{font-weight:700;white-space:normal;min-width:210px}
+  .act td.exp{white-space:normal;color:#46433c;font-size:13.5px;min-width:300px}
+  .act td:first-child{white-space:normal;vertical-align:top}
+  .act td{vertical-align:top}
   .act tr.new td.first .nb{font-size:10px;font-weight:800;color:#fff;background:var(--meta);padding:1px 6px;border-radius:5px;margin-left:7px;vertical-align:2px}
 
   footer{margin-top:54px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--muted)}
@@ -206,11 +216,28 @@
 
   <!-- TL;DR -->
   <div class="tldr">
-    <div class="t-h">⚡ 한눈 요약 — 2주차는 "공격적 스케일업"의 한 주였고, 그 결과 한 가지를 명확히 배웠다</div>
-    <div class="t-row"><span class="ic">📉</span><div><b>돈은 약 6배 썼는데 매출은 약 3배.</b> 광고비 $198 → <b>$1,158</b>, 통합매출 $354 → <b>$1,014</b>. 광고비 대비 매출(MER)이 <b>1.79배 → 0.88배</b>로 떨어져 <b>적자</b> 구간에 들어갔다. <span class="fx">(통합매출 = 아마존 주문 + 쇼피파이 · 전주엔 쇼피파이 $102 포함)</span></div></div>
-    <div class="t-row"><span class="ic">🎯</span><div><b>핵심 교훈: 병목은 "입찰"이 아니라 "전환율"이었다.</b> 입찰을 올려($0.90→$1.30) 트래픽을 샀지만, 리스팅 전환율(세럼 3.55% · 크림 1.11%)이 낮아 클릭이 구매로 안 이어졌다. 클릭당 비용 $1.03이 본전선($0.44~0.77)을 6일 연속 넘겼다. <b>→ 6/25 진단으로 확정, 입찰 롤백.</b></div></div>
-    <div class="t-row"><span class="ic">✅</span><div><b>그래서 후반부터 방향을 틀었다 (전환 공략).</b> PDP 제품영상 라이브(6/26) · 비포애프터 신소재 800+개 제작 · 무전환 캠페인·낭비 검색어 정리 · 전환율 baseline 고정(7/3 측정). 메타는 어트리뷰션이 드디어 <b>실구매 3건</b>을 잡기 시작했다(1주차 0건).</div></div>
-    <div class="t-row"><span class="ic">🟢</span><div><b>여전히 잘 되는 것:</b> 메시지는 <b>M3(레이저)</b>만 판다(매출의 약 97%) · 씬은 <b>스튜디오</b>만(UGC ROAS 0) · 메타 <b>손 비포애프터(Hands BA)</b>가 IC당 $1.05로 발군. 이 셋에 베팅을 모은다.</div></div>
+    <div class="t-h">⚡ 핵심 요약 — 2주차는 '공격적 확장'을 시도했고, 그 과정에서 중요한 사실 하나를 확인했습니다</div>
+    <div class="t-row"><span class="ic">📉</span><div><b>광고비는 약 6배 늘었으나, 매출은 약 3배 증가에 그쳤습니다.</b> 광고비 $198 → <b>$1,158</b>, 통합매출 $354 → <b>$1,014</b>. 광고비 대비 매출(MER)이 <b>1.79배 → 0.88배</b>로 하락하며 <b>적자</b> 구간에 진입했습니다. <span class="fx">(통합매출 = 아마존 주문 + 쇼피파이 · 전주엔 쇼피파이 $102 포함)</span></div></div>
+    <div class="t-row"><span class="ic">🎯</span><div><b>핵심 교훈: 병목은 '광고 입찰'이 아니라 '상세페이지 전환율'이었습니다.</b> 입찰가를 올려($0.90→$1.30) 유입을 늘렸으나, 상세페이지 전환율(세럼 3.55% · 크림 1.11%)이 낮아 클릭이 구매로 이어지지 못했습니다. 클릭당 비용 $1.03이 본전선($0.44~0.77)을 6일 연속 초과했습니다. <b>→ 6/25 진단으로 확정해 입찰가를 되돌렸습니다.</b></div></div>
+    <div class="t-row"><span class="ic">✅</span><div><b>이에 따라 주 후반부터 전환율 개선으로 방향을 전환했습니다.</b> 상세페이지 제품영상 게시(6/26) · 비포애프터 신소재 800여 개 제작 · 무전환 캠페인 및 낭비 검색어 정리 · 전환율 측정 기준선 확정(7/3 비교 예정). 메타는 광고 기여 구매가 처음으로 <b>3건</b> 측정되었습니다(1주차 0건).</div></div>
+    <div class="t-row"><span class="ic">🟢</span><div><b>성과가 확인된 영역:</b> 메시지는 <b>M3(레이저)</b>에서 매출의 약 97%가 발생 · 영상은 <b>스튜디오 촬영분</b>에서만 매출 발생(UGC는 ROAS 0) · 메타는 <b>손 비포애프터(Hands BA)</b>가 구매 의향 1건당 $1.05로 가장 효율적입니다. 이 세 영역에 자원을 집중합니다.</div></div>
+  </div>
+
+  <!-- 용어 안내 -->
+  <div class="glossary">
+    <div class="g-h">📖 읽기 전에 — 이 보고서의 핵심 용어</div>
+    <div class="g-grid">
+      <div><b>MER</b> · 광고비 대비 전체 매출 배수입니다. 1.0보다 작으면 광고비보다 매출이 적다는 뜻(적자)입니다.</div>
+      <div><b>ROAS</b> · 광고비 1달러가 만든 매출입니다. 광고를 거쳐 발생한 매출만 계산합니다.</div>
+      <div><b>CPC(클릭단가)</b> · 광고 클릭 한 번당 드는 비용입니다. 낮을수록 효율적입니다.</div>
+      <div><b>CVR(전환율)</b> · 상세페이지를 본 사람 중 실제로 구매한 비율입니다.</div>
+      <div><b>IC(Buy 클릭)</b> · 메타 광고에서 '구매하기'를 누른 횟수로, 구매 의향을 의미합니다.</div>
+      <div><b>어트리뷰션</b> · 메타 광고를 보고 아마존에서 구매한 것을 연결·추적하는 도구입니다.</div>
+      <div><b>정지형 / 모션</b> · 정지형은 움직임 없는 자막 영상(아마존 심사 거절이 잦음), 모션은 실제로 움직이는 영상입니다.</div>
+      <div><b>비포애프터(B&A)</b> · 사용 전과 후를 나란히 보여주는 광고 소재입니다.</div>
+      <div><b>본전선(손익분기·BEP)</b> · 손해도 이득도 아닌 기준점입니다. 이보다 높으면 흑자, 낮으면 적자입니다.</div>
+      <div><b>버너(Burner)</b> · 클릭만 발생하고 구매가 0이라 비용만 소진하는 캠페인입니다.</div>
+    </div>
   </div>
 
   <!-- 1. 흑자 기준선 -->
@@ -265,7 +292,7 @@
       <div class="m made"><div class="lbl">🔺 광고로 번 매출</div><div class="big">$1,014</div>
         <div class="sm">아마존 전 주문(orderMetrics) $1,014 + 쇼피파이 $0<br><span class="fx">전주 $354(아마존 $251+쇼피파이 $102) 대비 약 3배</span></div></div>
     </div>
-    <div class="clarify">⚖️ <b>핵심 진단:</b> 지출은 <b>6배</b> 늘었는데 매출은 <b>3배</b>만 늘었습니다. 입찰을 올리고 캠페인·소재를 대량 투입했지만, 늘어난 트래픽이 구매로 충분히 전환되지 않아 효율(MER)이 절반 이하로 떨어졌습니다. <b>"더 쓰면 더 번다"가 성립하지 않는 구간</b>이라는 게 이번 주의 가장 큰 데이터입니다.</div>
+    <div class="clarify">⚖️ <b>핵심 진단:</b> 광고비는 <b>약 6배</b> 늘었으나 매출은 <b>약 3배</b> 증가에 그쳤습니다. 입찰가를 올리고 캠페인·소재를 대량 투입했지만, 늘어난 유입이 구매로 충분히 전환되지 않아 효율(MER)이 절반 이하로 하락했습니다. <b>광고비를 늘린다고 매출이 비례해 늘지는 않는 구간</b>임을 확인한 것이 이번 주의 가장 중요한 데이터입니다.</div>
 
     <div class="tbl-scroll">
       <table class="tbl">
@@ -320,7 +347,7 @@
     <div class="sec-head"><span class="sec-num">4</span><h2>임팩트 소재 분석 — 무엇이 팔렸나</h2>
       <span class="note">메시지·씬·포맷별 누적 성과(런칭 이후, 14일 귀속)</span></div>
 
-    <div class="proof">🔑 <b>2주차에도 결론은 같습니다: 파는 건 M3(레이저) + 스튜디오 씬뿐.</b> 6개 메시지 중 <b>매출의 약 97%가 M3</b>에서, 씬은 <b>스튜디오만</b>(UGC는 누적 ROAS 0). 다만 1주차 M3 ROAS 2.36이 누적 <b>1.09</b>로 내려온 건, M3가 나빠진 게 아니라 <b>입찰을 올려 비싼 트래픽을 더 샀는데 전환이 안 따라왔기</b> 때문입니다(효율 희석).</div>
+    <div class="proof">🔑 <b>2주차에도 결론은 동일합니다: 매출은 M3(레이저) 메시지 + 스튜디오 촬영 소재에서만 발생합니다.</b> 6개 메시지 중 <b>매출의 약 97%가 M3</b>에서, 영상은 <b>스튜디오 촬영분</b>에서만 나왔습니다(UGC는 누적 ROAS 0). 다만 1주차 M3 ROAS 2.36이 누적 <b>1.09</b>로 하락한 것은 M3의 성과가 나빠졌기 때문이 아니라, <b>입찰가를 올려 비싼 유입을 늘렸으나 전환이 따라오지 못해</b> 효율이 희석된 결과입니다.</div>
 
     <div class="tbl-scroll" style="margin-bottom:6px">
       <table class="tbl">
@@ -386,12 +413,12 @@
     <div class="sec-head"><span class="sec-num">5</span><h2>인사이트 — 이번 주가 가르쳐준 것</h2>
       <span class="note">데이터가 확정한 핵심 6가지</span></div>
     <div class="ins">
-      <div class="ins-item"><span class="n">1</span><p><b>"더 쓰면 더 번다"가 깨졌다.</b> 지출 6배·매출 3배 → MER 1.79→0.88. 입찰·물량 확대가 매출로 직결되지 않는 구간임을 실측으로 확인. (→ 6번 입찰·집행)</p></div>
-      <div class="ins-item"><span class="n">2</span><p><b>진짜 병목은 입찰이 아니라 전환율이다.</b> CPC $1.03이 본전선($0.44)을 6일 연속 초과한 건 입찰이 높아서가 아니라 <b>리스팅 전환율(세럼 3.55%·크림 1.11%)이 낮아</b> 클릭이 구매로 안 가서다. P0 = 전환 레버(영상·리뷰·메시지정합). (→ 6번 전환)</p></div>
-      <div class="ins-item"><span class="n">3</span><p><b>파는 건 M3·스튜디오·"손/볼 클로즈업"뿐.</b> M3가 매출 약 97%, 스튜디오가 전 매출, UGC는 3주째 ROAS 0. 위너축이 선명해졌으니 신소재(800+)를 이 축에 집중. (→ 4번·6번 소재)</p></div>
-      <div class="ins-item"><span class="n">4</span><p><b>메타 측정이 드디어 작동한다(표본은 작다).</b> 1주차 "집계 시차로 0"이던 어트리뷰션이 실구매 3건($146)을 첫 포착(누적·구조적 과소집계라 하한지표). Hands BA가 IC당 $1.05로 메타 위너. "추적 불가"는 해소. (→ 6번 메타)</p></div>
-      <div class="ins-item"><span class="n">5</span><p><b>전환 검색어 = 경쟁사 컨퀘스팅.</b> 우리 매출은 paulas choice·anua·the ordinary·beauty of joseon 등 <b>경쟁사명 검색</b>에서 나온다(우리 세럼으로 흡수). 반대로 tirtir·niacinamide 등 무전환 검색에 $635 낭비 → 네거티브로 차단. (→ 6번 네거티브)</p></div>
-      <div class="ins-item"><span class="n">6</span><p><b>크림은 아직 팔 준비가 안 됐다.</b> 거절률 35% + 전환율 1.11% + 상위 출혈이 크림에 집중. 메시지(글래스스킨)와 소재(LASER=세럼 클레임)의 미스매치가 원인. 메시지 정합 전엔 축소가 맞다. (→ 6번 크림)</p></div>
+      <div class="ins-item"><span class="n">1</span><p><b>광고비를 늘린다고 매출이 비례하지는 않습니다.</b> 지출 6배·매출 3배 → MER 1.79→0.88. 입찰·물량 확대가 매출로 직결되지 않는 구간임을 실측으로 확인했습니다. (→ 6번 입찰·집행)</p></div>
+      <div class="ins-item"><span class="n">2</span><p><b>진짜 병목은 입찰이 아니라 전환율입니다.</b> CPC $1.03이 본전선($0.44)을 6일 연속 초과한 것은 입찰이 높아서가 아니라 <b>상세페이지 전환율(세럼 3.55%·크림 1.11%)이 낮아</b> 클릭이 구매로 이어지지 못했기 때문입니다. 최우선 과제는 전환율 개선(영상·리뷰·메시지 정합)입니다. (→ 6번 전환)</p></div>
+      <div class="ins-item"><span class="n">3</span><p><b>매출은 M3·스튜디오·손/볼 클로즈업에서만 발생합니다.</b> M3가 매출 약 97%, 스튜디오 촬영분이 전 매출을 차지하며, UGC는 3주째 ROAS 0입니다. 성과 패턴이 명확해진 만큼 신소재(800여 개)를 이 방향에 집중합니다. (→ 4번·6번 소재)</p></div>
+      <div class="ins-item"><span class="n">4</span><p><b>메타 광고 측정이 드디어 작동하기 시작했습니다(표본은 아직 작음).</b> 1주차 "집계 시차로 0"이던 어트리뷰션이 실구매 3건($146)을 처음 측정했습니다(누적·구조적 과소집계라 하한 지표). Hands BA가 구매 의향 1건당 $1.05로 메타 위너입니다. "추적 불가" 문제는 해소되었습니다. (→ 6번 메타)</p></div>
+      <div class="ins-item"><span class="n">5</span><p><b>매출을 일으키는 검색어는 경쟁사 브랜드 검색입니다.</b> 우리 매출은 paulas choice·anua·the ordinary·beauty of joseon 등 <b>경쟁사명 검색</b>에서 발생합니다(우리 세럼으로 유입). 반대로 tirtir·niacinamide 등 구매로 이어지지 않는 검색에 $635를 낭비해, 네거티브 키워드로 차단합니다. (→ 6번 네거티브)</p></div>
+      <div class="ins-item"><span class="n">6</span><p><b>크림은 아직 판매 준비가 부족합니다.</b> 심사 거절률 35% + 전환율 1.11% + 상위 비용 낭비가 크림에 집중돼 있습니다. 메시지(글래스 스킨)와 소재(레이저=세럼 클레임)의 불일치가 원인이며, 메시지를 정비하기 전까지는 축소가 적절합니다. (→ 6번 크림)</p></div>
     </div>
   </section>
 
@@ -404,7 +431,7 @@
     <!-- 효과 스코어카드 -->
     <div class="scorecard">
       <div class="score win">
-        <h3>✅ 효과가 있었던 것 (계속/확대)</h3>
+        <h3>✅ 효과가 확인된 것 (지속·확대)</h3>
         <ul>
           <li><b>입찰 롤백·출혈 정리</b> — 무전환 캠 96개·$402 출혈을 끄고 과입찰 되돌려 적자 확대 차단.</li>
           <li><b>네거티브 키워드 등록</b> — $635 낭비 검색어(tirtir·niacinamide 등) 차단, ROAS 측정도 정직해짐.</li>
@@ -415,7 +442,7 @@
         </ul>
       </div>
       <div class="score lose">
-        <h3>❌ 안 통했거나 역효과 (중단/보류)</h3>
+        <h3>❌ 효과가 없었거나 역효과 (중단·보류)</h3>
         <ul>
           <li><b>입찰 인상 ($0.90→$1.30)</b> — 노출·클릭만 사고 매출 안 따라옴. CPC 본전 6일 초과 → 롤백.</li>
           <li><b>125 모션 UGC 집행</b> — UGC는 3주째 ROAS 0. $0.70 "주차" 상태로 미서빙.</li>
@@ -577,7 +604,7 @@
   <section id="compare">
     <div class="sec-head"><span class="sec-num">7</span><h2>1주차 vs 2주차 — 무엇이 나아지고 무엇이 나빠졌나</h2>
       <span class="note">지표·액션 전면 비교 + 긍정/부정 인사이트</span></div>
-    <p class="lead">1주차(6/15–21)는 <b>"깔기"의 주</b>(런칭·셋업)였고, 2주차(6/22–28)는 <b>"키우고 → 되돌리기"의 주</b>(공격적 확장 후 코스코렉션)였습니다. 외형(매출·주문·메타)은 커졌지만 효율(MER·ROAS·CVR)은 떨어진 — <b>성장과 적자가 동시에 온</b> 한 주입니다.</p>
+    <p class="lead">1주차(6/15–21)는 <b>기반 구축 단계</b>(런칭·세팅)였고, 2주차(6/22–28)는 <b>공격적 확장 후 조정 단계</b>였습니다. 외형 지표(매출·주문·메타)는 성장했으나 효율 지표(MER·ROAS·전환율)는 하락한 — <b>성장과 적자가 함께 나타난</b> 한 주입니다.</p>
 
     <div class="chan-band">📊 지표 비교 (동일 소스 · 주간 윈도우 직접 집계)</div>
     <div class="tbl-scroll">
@@ -607,9 +634,9 @@
     <div class="chan-band" style="margin-top:24px">🗂 액션 비교 — 같은 회사, 다른 모드</div>
     <div class="tbl-scroll">
       <table class="tbl">
-        <thead><tr><th>구분</th><th>1주차 — "깔기" (런칭·셋업)</th><th>2주차 — "키우고 → 되돌리기"</th></tr></thead>
+        <thead><tr><th>구분</th><th>1주차 — 기반 구축 (런칭·세팅)</th><th>2주차 — 확장 후 조정</th></tr></thead>
         <tbody>
-          <tr><td><b>성격</b></td><td>0→1 구축</td><td>공격적 확장 후 코스코렉션</td></tr>
+          <tr><td><b>성격</b></td><td>초기 구축</td><td>공격적 확장 후 조정</td></tr>
           <tr><td><b>입찰</b></td><td>$0.70 → $0.90 (첫 인상)</td><td>$0.90→$1.30 인상 → <b>$0.90 롤백</b>(실패 인정)</td></tr>
           <tr><td><b>캠페인</b></td><td>66 → ~210 (M3 150 집행)</td><td>~210 → 635 (크림150·UGC125 추가)</td></tr>
           <tr><td><b>소재</b></td><td>M3 150 (정지형)</td><td>비포애프터 800+ (모션·B&A로 선회)</td></tr>
@@ -645,24 +672,33 @@
       </div>
     </div>
 
-    <div class="proof" style="margin-top:18px">🧭 <b>종합:</b> 2주차는 <b>"배움의 비용을 치른 주"</b>다. 돈으로 <b>전환율이 진짜 병목</b>임을 확증했고, 측정·소재·진단 인프라를 깔았다. 외형은 컸지만 효율은 적자 — 이 둘은 모순이 아니라 <b>"전환을 안 고친 채 트래픽만 키운" 결과</b>다. 3주차 과제는 명확하다: <b>깔아둔 인프라 위에서 전환 공략 + 지출 효율화</b>로 모드 전환(→ 8번).</div>
+    <div class="proof" style="margin-top:18px">🧭 <b>종합:</b> 2주차는 <b>값진 학습을 얻은 한 주</b>였습니다. 실제 비용을 투입한 결과 <b>전환율이 진짜 병목</b>임을 확인했고, 측정·소재·진단 체계를 갖췄습니다. 외형은 성장했으나 효율은 적자였는데, 이는 모순이 아니라 <b>전환율을 개선하지 않은 채 유입만 늘린 결과</b>입니다. 3주차의 과제는 분명합니다: <b>구축한 체계 위에서 전환율 개선과 지출 효율화에 집중</b>하는 것입니다(→ 8번).</div>
   </section>
 
   <!-- 8. 이번 주 할 일 -->
   <section id="actions">
     <div class="sec-head"><span class="sec-num">8</span><h2>이번 주 진행할 일</h2>
-      <span class="note">우선순위 · 기대효과 (인사이트 근거)</span></div>
+      <span class="note">광고비 효율화 → 신규 테스트 → 전환율 개선</span></div>
+    <p class="lead">2주차 진단(효율 적자 · 전환율 병목)에 따라, 이번 주는 <b>새는 비용을 먼저 막고, 성과가 검증된 소재를 늘린 뒤, 가장 중요한 전환율 개선에 집중</b>합니다. 상태 칸의 <b>✅ 완료(6/29)</b>는 보고서 작성일에 이미 실행을 마친 항목입니다.</p>
     <div class="tbl-scroll">
       <table class="tbl act">
-        <thead><tr><th>할 일</th><th>우선순위</th><th>기대효과 (근거 인사이트)</th></tr></thead>
+        <thead><tr><th>구분</th><th>할 일</th><th>왜 하나 (쉬운 설명)</th><th>상태</th></tr></thead>
         <tbody>
-          <tr><td class="first">전환율 공략 — PDP 영상 효과 7/3 측정 + 리뷰 확보(Request a Review·써클)<br><span class="exp">세럼 3.55%·크림 1.11% baseline 대비 6/26~7/2 unitSessionPercentage 비교. 상승 시 영상=전환 레버 입증</span></td><td><span class="p p-top">최우선</span></td><td class="exp">진짜 병목 직접 공략 (인사이트 ②)</td></tr>
-          <tr><td class="first">지출 추가 축소 + 위너 집중 — US는 7월 UAE 공격의 테스트베드<br><span class="exp">MER 0.88 적자 → 무리한 물량 중단. 입찰 본전선 이하 유지, M3·스튜디오 위너만 예산 배분</span></td><td><span class="p p-hi">높음</span></td><td class="exp">적자 출혈 차단 (인사이트 ①②)</td></tr>
-          <tr><td class="first">비포애프터 800+ 소재 집행·A/B — 메타 1:1 400 + 아마존 16:9 600(영상 600)<br><span class="exp">위너축(M3·손/볼·B&A)에 집중. 정지형 거절 회피 위해 영상 비중 ↑. 소재 승자 식별</span></td><td><span class="p p-hi">높음</span></td><td class="exp">위너 패턴 물량화·거절 회피 (인사이트 ③)</td></tr>
-          <tr><td class="first">메타 Hands BA 스케일 + UGC 정리<br><span class="exp">IC당 $1.05 위너 예산↑, ROAS 0 UGC 릴스/주차 캠 축소. 어트리뷰션 실구매 누적 관측</span></td><td><span class="p p-hi">높음</span></td><td class="exp">메타 효율 극대화 (인사이트 ④)</td></tr>
-          <tr><td class="first">네거티브 키워드 확장 + 경쟁사 컨퀘스팅 강화<br><span class="exp">낭비 검색어 추가 차단, 전환원(paulas choice·anua·the ordinary) 테마·broad 보강</span></td><td><span class="p p-mid">중간</span></td><td class="exp">낭비↓·전환 트래픽↑ (인사이트 ⑤)</td></tr>
-          <tr><td class="first">크림 메시지 정합 or 축소 결정<br><span class="exp">LASER(세럼 클레임)→크림 미스매치 해소(글래스스킨/배리어 메시지 재설계) 전엔 크림 광고 축소</span></td><td><span class="p p-mid">중간</span></td><td class="exp">크림 출혈 차단 (인사이트 ⑥)</td></tr>
-          <tr><td class="first">메타 인크리멘탈 홀드아웃 검토<br><span class="exp">아마존 안정 후 메타 off 효과 분리 측정(6/23 John 트리거 조건 — attribution 정착됨)</span></td><td><span class="p p-mid">중간</span></td><td class="exp">메타 진짜 기여도 측정 (인사이트 ④)</td></tr>
+          <tr><td rowspan="4"><b>🔧 광고비<br>효율화</b></td>
+            <td class="first">비용만 발생하는 캠페인(버너)·무전환 캠페인 정리</td><td class="exp">클릭만 받고 구매가 0인 캠페인을 중단해 새는 비용을 막습니다. 버너는 대부분 크림에 집중돼 아래 '크림 전면 중단'으로 함께 정리했고, 표본이 너무 적은 세럼 25개는 섣불리 끄지 않고 관찰합니다.</td><td><span class="p p-hi">✅ 완료(6/29)</span></td></tr>
+          <tr><td class="first">세럼 위너 7개 캠페인 클릭단가(CPC)를 $0.90로 하향</td><td class="exp">클릭당 비용이 본전선($0.44~0.77)을 넘어, 잘 팔리던 소재까지 비싸게 유입을 사고 있었습니다. 단가를 낮춰 효율을 회복합니다.</td><td><span class="p p-hi">✅ 완료(6/29)</span></td></tr>
+          <tr><td class="first">UGC(후기형) 125개 캠페인 클릭단가를 $0.90로 상향</td><td class="exp">이 소재들은 단가가 너무 낮아($0.70) 광고가 거의 노출되지 않았습니다. 단가를 올려 '노출 자체가 없어 성과가 없던 것인지'를 검증합니다.</td><td><span class="p p-hi">✅ 완료(6/29)</span></td></tr>
+          <tr><td class="first">크림 캠페인 전면 중단</td><td class="exp">크림은 심사 거절 35% + 전환율 1.11% + 메시지 불일치로 비용만 발생하는 상태입니다. 상세페이지·메시지를 보완하기 전까지 광고를 중단합니다(96개 캠페인).</td><td><span class="p p-hi">✅ 완료(6/29)</span></td></tr>
+
+          <tr><td rowspan="2"><b>🚀 신규<br>집행·테스트</b></td>
+            <td class="first">신규 비포애프터 소재 대량 집행·A/B 테스트 — 아마존 1,000개 · 메타 6개</td><td class="exp">성과가 검증된 패턴(레이저 메시지 · 손/볼 클로즈업 · 비포애프터)으로 제작한 소재를 집행해 어떤 조합이 가장 잘 판매되는지 비교합니다. 심사 거절을 피하기 위해 영상(모션) 비중을 높입니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
+          <tr><td class="first">비용만 발생하는 검색어 확인 후 네거티브 등록</td><td class="exp">구매로 이어지지 않으면서 광고비만 소진하는 검색어를 찾아 광고 노출에서 제외합니다. 단, 우리 매출을 일으키는 경쟁사명 검색어는 그대로 유지합니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
+
+          <tr><td rowspan="4"><b>🎯 전환율<br>개선 (추천)</b></td>
+            <td class="first">세럼 상세페이지(PDP) 전환 보완</td><td class="exp"><b>가장 중요한 과제입니다.</b> 광고로 방문을 늘려도 상세페이지에서 구매로 이어지는 비율(전환율)이 낮은 것이 근본 원인입니다. 대표 이미지·설명·후기·혜택을 보강합니다. 제품 영상 효과는 7/3에 측정 예정입니다.</td><td><span class="p p-top">추천 · 최우선</span></td></tr>
+          <tr><td class="first">고객 리뷰 확보</td><td class="exp">리뷰 수가 늘면 구매 전환율이 상승합니다. 실제 구매 고객 대상 'Request a Review' 발송과 레몬더마 써클을 통해 확보합니다(Vine 프로그램은 이미 소진).</td><td><span class="p p-mid">추천</span></td></tr>
+          <tr><td class="first">크림 메시지·상세페이지 재설계 (광고 재개 전제)</td><td class="exp">크림에는 세럼용 메시지(레이저)가 잘못 적용돼 있었습니다. 크림 본연의 강점(글래스 스킨 · 장벽 보습)으로 다시 구성한 뒤 광고를 재개합니다.</td><td><span class="p p-mid">추천</span></td></tr>
+          <tr><td class="first">메타 'Hands BA' 위너 예산 확대 + 기여도 분리 측정</td><td class="exp">메타에서 효율이 가장 좋은 손 비포애프터 소재에 예산을 더 배분합니다. 또한 메타 광고가 실제 매출에 기여하는 정도를 별도로 측정(인크리멘탈 홀드아웃)하는 방안을 검토합니다.</td><td><span class="p p-mid">추천</span></td></tr>
         </tbody>
       </table>
     </div>
