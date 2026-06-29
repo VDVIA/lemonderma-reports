@@ -44,6 +44,36 @@
   @media(max-width:720px){.g-grid{grid-template-columns:1fr}}
   .g-grid div{font-size:13px;color:#46433c;line-height:1.5}
   .g-grid b{color:var(--ink);font-weight:800}
+  details.glossary > summary{list-style:none;cursor:pointer}
+  details.glossary > summary::-webkit-details-marker{display:none}
+  details.glossary > summary::after{content:'  ▾';color:var(--lime-deep);font-weight:800}
+  details.glossary[open] > summary::after{content:'  ▴'}
+
+  /* 흐름 탭 네비 */
+  .navhint{font-size:13px;color:#5c5a52;background:#f4f3ec;border-left:3px solid var(--lime);border-radius:0 10px 10px 0;padding:11px 14px;margin-top:24px}
+  .navhint b{color:var(--ink)}
+  .tabnav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    background:rgba(250,249,244,.93);backdrop-filter:saturate(150%) blur(10px);-webkit-backdrop-filter:saturate(150%) blur(10px);
+    padding:12px 2px;margin:10px 0 4px;border-bottom:1px solid var(--line)}
+  .tabnav::-webkit-scrollbar{height:0}
+  .tab{flex:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:inherit;
+    font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s,transform .08s}
+  .tab:hover{border-color:var(--lime);color:var(--ink)}
+  .tab:active{transform:scale(.96)}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow)}
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:fadeUp .4s cubic-bezier(.22,.61,.36,1)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .tabpanel > section:first-of-type{margin-top:30px}
+  .tabfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:42px;padding-top:18px;border-top:2px solid var(--ink)}
+  .tabfoot .step{font-size:12.5px;color:var(--muted);font-weight:800;letter-spacing:.03em}
+  .tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:11px;padding:11px 18px;border:none;transition:transform .08s,background .2s,color .2s}
+  .tabfoot button:active{transform:scale(.96)}
+  .tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:var(--shadow);margin-left:auto}
+  .tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff}
+  .tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line)}
+  .tabfoot .prevbtn:hover{border-color:var(--ink);color:var(--ink)}
+  @media(max-width:720px){.tab{font-size:12.5px;padding:8px 13px}.tabfoot button{font-size:13px;padding:10px 13px}.tabfoot .step{display:none}}
 
   section{margin-top:46px}
   .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
@@ -224,8 +254,8 @@
   </div>
 
   <!-- 용어 안내 -->
-  <div class="glossary">
-    <div class="g-h">📖 읽기 전에 — 이 보고서의 핵심 용어</div>
+  <details class="glossary" open>
+    <summary class="g-h">📖 읽기 전에 — 핵심 용어 10가지 (마케팅 용어가 낯설면 펼쳐 보세요)</summary>
     <div class="g-grid">
       <div><b>MER</b> · 광고비 대비 전체 매출 배수입니다. 1.0보다 작으면 광고비보다 매출이 적다는 뜻(적자)입니다.</div>
       <div><b>ROAS</b> · 광고비 1달러가 만든 매출입니다. 광고를 거쳐 발생한 매출만 계산합니다.</div>
@@ -238,8 +268,18 @@
       <div><b>본전선(손익분기·BEP)</b> · 손해도 이득도 아닌 기준점입니다. 이보다 높으면 흑자, 낮으면 적자입니다.</div>
       <div><b>버너(Burner)</b> · 클릭만 발생하고 구매가 0이라 비용만 소진하는 캠페인입니다.</div>
     </div>
-  </div>
+  </details>
 
+  <p class="navhint">📑 보고서를 <b>5개 단락</b>으로 나눴습니다. 아래 탭을 누르면 <b>그 단락만</b> 보여요. 처음부터 순서대로 보려면 각 단락 끝의 <b>‘다음 →’</b> 버튼을 누르세요.</p>
+  <nav class="tabnav" id="tabnav">
+    <button class="tab active" data-tab="t1">① 💰 이번 주 성적표</button>
+    <button class="tab" data-tab="t2">② 🔍 무엇을 알게 됐나</button>
+    <button class="tab" data-tab="t3">③ 🗂 지난주 한 일</button>
+    <button class="tab" data-tab="t4">④ 📈 1주차 vs 2주차</button>
+    <button class="tab" data-tab="t5">⑤ 🎯 이번 주 할 일</button>
+  </nav>
+
+  <div class="tabpanel active" id="t1">
   <!-- 1. 흑자 기준선 -->
   <section id="be">
     <div class="sec-head"><span class="sec-num">1</span><h2>💰 흑자 기준선</h2>
@@ -342,6 +382,10 @@
     <div class="flag meta-flag">📈 <b>메타의 한 줄:</b> 손 비포애프터(<b>Hands BA</b>)가 IC당 $1.05·CTR 8.34%로 발군이고, UGC 릴스는 IC당 $2.55로 약합니다. 퍼널(메타 런칭 6/18 이후 누적)은 <b>노출 8,941 → 클릭 723 → 브리치 LPV 678 → Buy클릭 312 → 아마존 도달 375 → 상세 343 → 장바구니 62 → 구매 3</b>. 윗단(클릭·도달)은 강한데 <b>장바구니→구매</b>에서 급감 — 아마존 쪽 전환 문제와 동일 신호입니다.</div>
   </section>
 
+    <div class="tabfoot"><span class="step">① / ⑤ · 이번 주 성적표</span><button class="nextbtn" data-go="t2">다음: 무엇을 알게 됐나 →</button></div>
+  </div><!-- /t1 -->
+
+  <div class="tabpanel" id="t2">
   <!-- 4. 임팩트 소재 -->
   <section id="creatives">
     <div class="sec-head"><span class="sec-num">4</span><h2>임팩트 소재 분석 — 무엇이 팔렸나</h2>
@@ -417,6 +461,10 @@
     </div>
   </section>
 
+    <div class="tabfoot"><button class="prevbtn" data-go="t1">← 이전</button><span class="step">② / ⑤ · 무엇을 알게 됐나</span><button class="nextbtn" data-go="t3">다음: 지난주 한 일 →</button></div>
+  </div><!-- /t2 -->
+
+  <div class="tabpanel" id="t3">
   <!-- 6. 액션아이템 전수 로그 (NEW) -->
   <section id="actionlog">
     <div class="sec-head"><span class="sec-num">6</span><h2>지난주 실행한 액션아이템 전수 — 이유·결과·효과 판정</h2>
@@ -595,6 +643,10 @@
     </div>
   </section>
 
+    <div class="tabfoot"><button class="prevbtn" data-go="t2">← 이전</button><span class="step">③ / ⑤ · 지난주 한 일</span><button class="nextbtn" data-go="t4">다음: 1주차 vs 2주차 →</button></div>
+  </div><!-- /t3 -->
+
+  <div class="tabpanel" id="t4">
   <!-- 7. 주차 비교 (NEW) -->
   <section id="compare">
     <div class="sec-head"><span class="sec-num">7</span><h2>1주차 vs 2주차 — 무엇이 나아지고 무엇이 나빠졌나</h2>
@@ -670,6 +722,10 @@
     <div class="proof" style="margin-top:18px">🧭 <b>종합:</b> 2주차는 <b>값진 학습을 얻은 한 주</b>였습니다. 실제 비용을 투입한 결과 <b>전환율이 진짜 병목</b>임을 확인했고, 측정·소재·진단 체계를 갖췄습니다. 외형은 성장했으나 효율은 적자였는데, 이는 모순이 아니라 <b>전환율을 개선하지 않은 채 유입만 늘린 결과</b>입니다. 3주차의 과제는 분명합니다: <b>구축한 체계 위에서 전환율 개선과 지출 효율화에 집중</b>하는 것입니다(→ 8번).</div>
   </section>
 
+    <div class="tabfoot"><button class="prevbtn" data-go="t3">← 이전</button><span class="step">④ / ⑤ · 1주차 vs 2주차</span><button class="nextbtn" data-go="t5">다음: 이번 주 할 일 →</button></div>
+  </div><!-- /t4 -->
+
+  <div class="tabpanel" id="t5">
   <!-- 8. 이번 주 할 일 -->
   <section id="actions">
     <div class="sec-head"><span class="sec-num">8</span><h2>이번 주 진행할 일</h2>
@@ -696,10 +752,33 @@
     </div>
   </section>
 
+    <div class="tabfoot"><button class="prevbtn" data-go="t4">← 이전</button><span class="step">⑤ / ⑤ · 이번 주 할 일 · 끝까지 읽으셨습니다 👏</span></div>
+  </div><!-- /t5 -->
+
   <footer>
     Lemonderma · VDVIA — US 퍼포먼스 마케팅 주간 보고서 · 성과기간 2026.06.22–28 · 작성 2026.06.29 (2주차)<br>
     데이터 출처: Amazon Ads Reporting API(SB, 14일 귀속) · Amazon orderMetrics(주문일 매출 정본, 셀러센트럴 대조) · Meta Marketing API(KRW 계정, ₩→$ ≈1,450원/$ 환산) · Amazon Attribution(메타 귀속) · Microsoft Clarity(브리치 LP) · 회사 ROAS 게이트(2026-05-23) · 단위경제성 정본 = 2026 사업계획 §2. 액션아이템 = changelog.md(6/22~6/28 전수). 6/28은 정산 미성숙(매출 상향 여지). 라이브 정본 대시보드와 동일 소스.
   </footer>
 </div>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.tabpanel'));
+  function show(id, doScroll){
+    if(!document.getElementById(id)) return;
+    tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab===id); });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id===id); });
+    if(history.replaceState){ try{ history.replaceState(null,'','#'+id); }catch(e){} }
+    if(doScroll){ var n=document.getElementById('tabnav'); if(n) n.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+  document.addEventListener('click', function(e){
+    var t=e.target.closest('.tab'); if(t){ show(t.dataset.tab, true); return; }
+    var b=e.target.closest('[data-go]'); if(b){ show(b.dataset.go, true); }
+  });
+  var h=(location.hash||'').replace('#','');
+  var el=h && document.getElementById(h);
+  if(el && el.classList.contains('tabpanel')) show(h, false);
+})();
+</script>
 </body>
 </html>
