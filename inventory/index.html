@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VDVIA 재고 현황</title>
+<style>
+:root{--bg:#0f1115;--card:#1a1d24;--line:#2a2e38;--txt:#e8eaed;--mut:#9aa0aa;--accent:#4f9cf9;
+--ok:#34c759;--warn:#ffcc00;--danger:#ff453a;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Apple SD Gothic Neo',Segoe UI,Roboto,sans-serif;padding:24px;max-width:1100px;margin:0 auto}
+h1{font-size:20px;margin-bottom:2px}
+.sub{color:var(--mut);font-size:13px;margin-bottom:20px}
+.totbar{display:flex;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.tot{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;flex:1;min-width:150px}
+.tot .n{font-size:26px;font-weight:700}.tot .l{color:var(--mut);font-size:12px;margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card-h{font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sku{color:var(--mut);font-size:11px;font-weight:400;margin-left:auto}
+.big{font-size:34px;font-weight:800;margin-bottom:12px}.big .unit{font-size:13px;color:var(--mut);font-weight:400;margin-left:6px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.grid4 .n{font-size:18px;font-weight:700}.grid4 .l{font-size:10px;color:var(--mut);margin-top:2px}
+.dot{width:9px;height:9px;border-radius:50%}.dot.ok{background:var(--ok)}.dot.warn{background:var(--warn)}.dot.danger{background:var(--danger)}
+.n.ok{color:var(--ok)}.n.warn{color:var(--warn)}.n.danger{color:var(--danger)}
+h2{font-size:14px;color:var(--mut);margin:24px 0 12px;text-transform:uppercase;letter-spacing:.5px}
+.pipe-row{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.pipe-label{font-weight:600;margin-bottom:10px}
+.pipe{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.stage{text-align:center;min-width:74px;padding:8px 6px;border-radius:8px;border:1px solid var(--line)}
+.stage.empty{opacity:.4}.stage.filled{background:#222733}.stage.fba{border-color:var(--accent)}
+.sq{font-size:18px;font-weight:700}.sl{font-size:10px;color:var(--mut);margin-top:2px}
+.arr{color:var(--mut);font-size:13px}
+.lots{list-style:none;margin-top:10px;font-size:12px;color:var(--mut)}.lots li{padding:2px 0}
+.trend{display:flex;align-items:flex-end;gap:5px;height:140px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.bar .fill{width:60%;background:linear-gradient(var(--accent),#2d6fd6);border-radius:3px 3px 0 0;min-height:2px}
+.bar .bu{font-size:10px;margin-top:3px}.bar .bd{font-size:9px;color:var(--mut);margin-top:2px}
+.zombie{margin-top:20px;color:var(--mut);font-size:12px;background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:12px}
+.foot{color:var(--mut);font-size:11px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>📦 VDVIA 재고 현황</h1>
+<div class="sub">생성 2026-06-29 · 미국 FBA 실시간(SP-API) · 미국 3PL CGETC 실시간(ERP 2026-06-29T05:15:41+00:00) · 한국·이동중 수동(2026-06-28)</div>
+
+<div class="totbar">
+  <div class="tot"><div class="n">4,108</div><div class="l">전체 재고 (모든 위치)</div></div>
+  <div class="tot"><div class="n">1,075</div><div class="l">미국 FBA</div></div>
+  <div class="tot"><div class="n">1,033</div><div class="l">미국 3PL 창고</div></div>
+  <div class="tot"><div class="n">2,000</div><div class="l">한국·이동중</div></div>
+</div>
+
+<div class="cards">
+        <div class="card">
+          <div class="card-h"><span class="dot ok"></span>크림 <span class="sku">BU-GUG9-BPOQ</span></div>
+          <div class="big">2,040<span class="unit">개 (전체)</span></div>
+          <div class="grid4">
+            <div><div class="n">551</div><div class="l">미국 FBA 가용</div></div>
+            <div><div class="n">486</div><div class="l">미국 3PL</div></div>
+            <div><div class="n">1,000</div><div class="l">한국·이동중</div></div>
+            <div><div class="n ok">1037일</div><div class="l">소진(美 1.0/일)</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-h"><span class="dot ok"></span>세럼 <span class="sku">BU-GUG9-BPSR</span></div>
+          <div class="big">2,068<span class="unit">개 (전체)</span></div>
+          <div class="grid4">
+            <div><div class="n">519</div><div class="l">미국 FBA 가용</div></div>
+            <div><div class="n">547</div><div class="l">미국 3PL</div></div>
+            <div><div class="n">1,000</div><div class="l">한국·이동중</div></div>
+            <div><div class="n ok">310일</div><div class="l">소진(美 3.4/일)</div></div>
+          </div>
+        </div></div>
+
+<h2>위치별 파이프라인 (생산 → 입고 → 창고 → FBA)</h2>
+
+        <div class="pipe-row">
+          <div class="pipe-label">크림</div>
+          <div class="pipe"><div class="stage empty"><div class="sq">0</div><div class="sl">생산중</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">1,000</div><div class="sl">선적/입고중</div></div><span class='arr'>→</span><div class="stage empty"><div class="sq">0</div><div class="sl">통관중</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">486</div><div class="sl">창고 보관</div></div><span class='arr'>→</span><div class="stage filled fba"><div class="sq">551</div><div class="sl">미국 FBA 가용</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">3</div><div class="sl">FBA 예약</div></div></div>
+          <ul class="lots"><li>한국 입고중(선적) — <b>1,000개</b> · 한국으로 오는 중 (Marco 2026-06-28 입력)</li><li>미국 3PL (CGETC) — <b>486개</b> · ERP 실시간 · 예측 486 · 예약 0</li></ul>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-label">세럼</div>
+          <div class="pipe"><div class="stage empty"><div class="sq">0</div><div class="sl">생산중</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">1,000</div><div class="sl">선적/입고중</div></div><span class='arr'>→</span><div class="stage empty"><div class="sq">0</div><div class="sl">통관중</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">547</div><div class="sl">창고 보관</div></div><span class='arr'>→</span><div class="stage filled fba"><div class="sq">519</div><div class="sl">미국 FBA 가용</div></div><span class='arr'>→</span><div class="stage filled"><div class="sq">2</div><div class="sl">FBA 예약</div></div></div>
+          <ul class="lots"><li>한국 입고중(선적) — <b>1,000개</b> · 한국으로 오는 중 (Marco 2026-06-28 입력)</li><li>미국 3PL (CGETC) — <b>547개</b> · ERP 실시간 · 예측 547 · 예약 0</li></ul>
+        </div>
+
+<h2>미국 매출 추이 (최근 14일, 단위 수)</h2>
+<div class="trend"><div class="bar"><div class="fill" style="height:12%"></div><div class="bu">1</div><div class="bd">06-15</div></div><div class="bar"><div class="fill" style="height:0%"></div><div class="bu"></div><div class="bd">06-16</div></div><div class="bar"><div class="fill" style="height:12%"></div><div class="bu">1</div><div class="bd">06-17</div></div><div class="bar"><div class="fill" style="height:12%"></div><div class="bu">1</div><div class="bd">06-18</div></div><div class="bar"><div class="fill" style="height:37%"></div><div class="bu">3</div><div class="bd">06-19</div></div><div class="bar"><div class="fill" style="height:12%"></div><div class="bu">1</div><div class="bd">06-20</div></div><div class="bar"><div class="fill" style="height:25%"></div><div class="bu">2</div><div class="bd">06-21</div></div><div class="bar"><div class="fill" style="height:75%"></div><div class="bu">6</div><div class="bd">06-22</div></div><div class="bar"><div class="fill" style="height:100%"></div><div class="bu">8</div><div class="bd">06-23</div></div><div class="bar"><div class="fill" style="height:37%"></div><div class="bu">3</div><div class="bd">06-24</div></div><div class="bar"><div class="fill" style="height:50%"></div><div class="bu">4</div><div class="bd">06-25</div></div><div class="bar"><div class="fill" style="height:50%"></div><div class="bu">4</div><div class="bd">06-26</div></div><div class="bar"><div class="fill" style="height:37%"></div><div class="bu">3</div><div class="bd">06-27</div></div><div class="bar"><div class="fill" style="height:37%"></div><div class="bu">3</div><div class="bd">06-28</div></div></div>
+
+<div class="zombie">🗑️ 비활성·0재고 SKU (5): 8K-FCQW-ECGU, 8K-Z06O-XB0O, 9A-B3C7-2P3H, BU-GUG9-BPOQ-스티커 없음, BU-GUG9-BPSR-스티커 없음</div>
+
+<div class="foot">데이터: Amazon SP-API(FBA 실시간) + inventory_locations.json(비-FBA 수동). 한국·태국·생산중 물량은 inventory_locations.json 에서 갱신.</div>
+</body></html>
