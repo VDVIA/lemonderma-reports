@@ -16,7 +16,7 @@
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);
+  body{margin:0;overflow-anchor:none;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
@@ -57,25 +57,28 @@
     padding:12px 2px;margin:10px 0 4px;border-bottom:1px solid var(--line)}
   .tabnav::-webkit-scrollbar{height:0}
   .tab{flex:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:inherit;
-    font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s,transform .08s}
-  .tab:hover{border-color:var(--lime);color:var(--ink)}
-  .tab:active{transform:scale(.96)}
+    font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;
+    transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .15s cubic-bezier(.34,1.56,.64,1)}
+  .tab:hover{border-color:var(--lime);color:var(--ink);transform:translateY(-1px) scale(1.05);box-shadow:0 4px 14px rgba(126,140,0,.22)}
+  .tab:active{transform:scale(.97)}
   .tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow)}
+  .tab.active:hover{transform:translateY(-1px) scale(1.05);box-shadow:0 6px 18px rgba(0,0,0,.24)}
   .tabpanel{display:none}
   .tabpanel.active{display:block;animation:fadeUp .4s cubic-bezier(.22,.61,.36,1)}
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   .tabpanel > section:first-of-type{margin-top:30px}
   .tabfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:42px;padding-top:18px;border-top:2px solid var(--ink)}
   .tabfoot .step{font-size:12.5px;color:var(--muted);font-weight:800;letter-spacing:.03em}
-  .tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:11px;padding:11px 18px;border:none;transition:transform .08s,background .2s,color .2s}
-  .tabfoot button:active{transform:scale(.96)}
-  .tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:var(--shadow);margin-left:auto}
-  .tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff}
-  .tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line)}
-  .tabfoot .prevbtn:hover{border-color:var(--ink);color:var(--ink)}
+  .tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;border:none;
+    transition:transform .16s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .2s,color .2s,filter .2s}
+  .tabfoot button:active{transform:translateY(1px) scale(.97);box-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:0 3px 10px rgba(126,140,0,.30);margin-left:auto}
+  .tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff;transform:translateY(-2px) scale(1.04);box-shadow:0 10px 24px rgba(126,140,0,.48)}
+  .tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+  .tabfoot .prevbtn:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.14)}
   @media(max-width:720px){.tab{font-size:12.5px;padding:8px 13px}.tabfoot button{font-size:13px;padding:10px 13px}.tabfoot .step{display:none}}
 
-  section{margin-top:46px}
+  section{margin-top:46px;scroll-margin-top:84px}
   .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
   .sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--ink);min-width:26px;height:26px;border-radius:7px;
     display:inline-flex;align-items:center;justify-content:center}
@@ -769,7 +772,15 @@
     tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab===id); });
     panels.forEach(function(p){ p.classList.toggle('active', p.id===id); });
     if(history.replaceState){ try{ history.replaceState(null,'','#'+id); }catch(e){} }
-    if(doScroll){ var n=document.getElementById('tabnav'); if(n) n.scrollIntoView({behavior:'smooth', block:'start'}); }
+    if(doScroll){
+      // 새 단락의 첫 섹션을 화면 상단(sticky 네비 아래)으로. scroll-margin-top:84px가 네비 높이를 비워준다.
+      // setTimeout(0): 패널 display 전환의 리플로우·스크롤 앵커링이 끝난 뒤 실행해야 덮어써지지 않음.
+      // (비-sticky 섹션이라 scrollIntoView가 정상 동작 — sticky 네비엔 안 먹힘)
+      setTimeout(function(){
+        var sec=document.querySelector('#'+id+' section');
+        if(sec) sec.scrollIntoView(true);
+      }, 0);
+    }
   }
   document.addEventListener('click', function(e){
     var t=e.target.closest('.tab'); if(t){ show(t.dataset.tab, true); return; }
