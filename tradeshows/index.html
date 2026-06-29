@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VDVIA 해외영업 · 박람회 관리</title>
+<style>
+  :root {
+    --bg: #0a0c10; --bg-2: #12151c; --card: #1a1d24; --card-2: #232730;
+    --card-hover: #2a2f3a; --border: #2a2f3a; --border-strong: #3a4150;
+    --text: #f0f2f5; --text-2: #d0d4db; --muted: #8b94a3; --muted-2: #5b6473;
+    --accent: #5b8def; --accent-2: #7da7ff; --green: #4ade80; --yellow: #fbbf24;
+    --orange: #fb923c; --red: #f87171; --gray: #6b7280; --purple: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Helvetica Neue", sans-serif;
+    line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  body { padding: 28px; }
+  .container { max-width: 1500px; margin: 0 auto; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-2); }
+  h1 { margin: 0 0 4px; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+  h2 { margin: 28px 0 12px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-2); }
+
+  /* summary cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 12px; margin-bottom: 8px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+  .card .num { font-size: 30px; font-weight: 800; line-height: 1; }
+  .card .lbl { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .card.red .num { color: var(--red); } .card.star .num { color: var(--yellow); }
+  .card.blue .num { color: var(--accent); } .card.green .num { color: var(--green); }
+
+  /* deadline hero */
+  .hero { background: linear-gradient(135deg, rgba(248,113,113,0.12), rgba(251,191,36,0.05));
+    border: 1px solid rgba(248,113,113,0.3); border-radius: 14px; padding: 18px 22px; margin: 18px 0 6px;
+    display: flex; align-items: center; gap: 22px; }
+  .hero .dday { font-size: 44px; font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg,#fbbf24,#f87171); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero .txt { flex: 1; font-size: 13px; color: var(--text-2); }
+  .hero .txt strong { color: var(--text); }
+
+  /* controls */
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 12px; }
+  .chip { background: var(--card); border: 1px solid var(--border); color: var(--text-2);
+    padding: 6px 13px; border-radius: 20px; font-size: 12.5px; cursor: pointer; user-select: none; transition: .12s; }
+  .chip:hover { border-color: var(--border-strong); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  select { background: var(--card); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 6px 10px; font-size: 12.5px; }
+  .sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+
+  /* table */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th { text-align: left; padding: 10px 10px; color: var(--muted); font-weight: 600; font-size: 11.5px;
+    text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border-strong); cursor: pointer; white-space: nowrap; }
+  tbody td { padding: 11px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:hover { background: var(--card); }
+  tr.excluded { opacity: .5; }
+  .name { font-weight: 600; color: var(--text); }
+  .name .star { color: var(--yellow); margin-right: 3px; }
+  .loc { color: var(--muted); font-size: 11.5px; }
+  .est { color: var(--muted-2); font-size: 11px; }
+
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .b-pure { background: rgba(74,222,128,.13); color: var(--green); }
+  .b-mix { background: rgba(91,141,239,.13); color: var(--accent-2); }
+  .b-salon { background: rgba(251,191,36,.13); color: var(--yellow); }
+  .b-ingr { background: rgba(167,139,250,.14); color: var(--purple); }
+  .b-b2c { background: rgba(107,114,128,.18); color: var(--gray); }
+
+  .st { display: inline-block; padding: 2px 9px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  .st-urgent { background: rgba(248,113,113,.15); color: var(--red); }
+  .st-open { background: rgba(74,222,128,.13); color: var(--green); }
+  .st-soon { background: rgba(91,141,239,.13); color: var(--accent-2); }
+  .st-booth { background: rgba(251,146,60,.14); color: var(--orange); }
+  .st-closed { background: rgba(107,114,128,.16); color: var(--gray); }
+
+  .fitwrap { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+  .fitbar { flex: 1; height: 7px; background: var(--card-2); border-radius: 4px; overflow: hidden; }
+  .fitfill { height: 100%; border-radius: 4px; }
+  .fitnum { font-weight: 700; font-size: 12.5px; min-width: 26px; }
+  .cost { color: var(--text-2); white-space: nowrap; }
+  .memo { width: 100%; background: var(--bg-2); border: 1px solid var(--border); color: var(--text-2);
+    border-radius: 6px; padding: 4px 7px; font-size: 11.5px; font-family: inherit; }
+  .stsel { background: var(--bg-2); border: 1px solid var(--border); color: var(--text-2); border-radius: 6px; padding: 3px 5px; font-size: 11px; }
+  .det { font-size: 11.5px; color: var(--muted); }
+  .det b { color: var(--text-2); }
+  .foot { margin-top: 26px; padding: 18px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; font-size: 12px; color: var(--muted); }
+  .foot h3 { margin: 0 0 8px; font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: .05em; }
+  .foot table { font-size: 11.5px; } .foot td { padding: 3px 10px 3px 0; border: none; color: var(--muted); }
+  .foot td:first-child { color: var(--text-2); white-space: nowrap; }
+  .caveat { color: var(--orange); margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>해외영업 · 글로벌 박람회 관리 <span style="font-size:13px;color:var(--muted);font-weight:400">Lemonderma B2B</span></h1>
+  <div class="subtitle">유통사·리테일 바이어 발굴용 박람회 캘린더 · 적합도 자동계산 · 접수현황·예상비용 관리 · 기준일 2026-06-29 · SSOT: knowledge/tradeshows.md</div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="hero">
+    <div class="dday">D-4</div>
+    <div class="txt"><strong>⏰ 멕시코 K-EXPO 화장품 통합부스</strong> — 신청 마감 <strong>7/3</strong>. 9월 멕시코시티, 부스·바이어매칭·통역·항공료 최대 100만원 정부지원. 신청: 대한화장품산업연구원 <a href="https://pms.allcos.biz/" target="_blank">pms.allcos.biz</a> · 비건 더마 스타트업 최저비용 LATAM 진입 카드.</div>
+  </div>
+
+  <div class="controls" id="controls"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th data-sort="iso">일자 ▲</th>
+        <th data-sort="name">박람회</th>
+        <th data-sort="region">권역</th>
+        <th data-sort="type">성격</th>
+        <th data-sort="fit">적합도</th>
+        <th data-sort="status">접수현황</th>
+        <th data-sort="costLo">예상비용(자부담)</th>
+        <th>메모</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <div class="foot">
+    <h3>적합도 계산식 (100점)</h3>
+    <table>
+      <tr><td>시장 티어 /25</td><td>Tier A(US)·국내 25 · Tier B(동남아·MENA·LATAM·러시아/CIS·CPNP후 EU) 18~20 · Tier C(일본·UK·인도) 12~16 · 중국 4</td></tr>
+      <tr><td>B2B 순도 /25</td><td>순수 B2B 25 · 혼합 18 · 살롱/전문가 10 · 원료 5 · B2C 3</td></tr>
+      <tr><td>카테고리 /20</td><td>더마·비건·스킨케어 정합 높음 20 · 중 12 · 낮음 6</td></tr>
+      <tr><td>한국관·KOTRA /15</td><td>검증 15 · 후보 8 · 없음 3</td></tr>
+      <tr><td>자산 레버리지 /15</td><td>러시아 IO Beauty·GCC LIFE Pharmacy·US Beauteers·국내 겹침 강 15 · 중 8 · 무 3</td></tr>
+    </table>
+    <h3 style="margin-top:14px">예상비용 (1인·단체관 자부담·정부지원 전, 만원)</h3>
+    <table>
+      <tr><td>국내 80~200 · 일본 250~450 · 대만/홍콩/동남아 350~650 · 중동/터키 500~900 · 러시아/CIS 550~950 · 유럽 600~1,050 · 인도 450~800 · 미국 700~1,250 · 중남미 700~1,300 · 중국 450~850</td></tr>
+    </table>
+    <div class="caveat">⚠️ `~` 추정 일자·한국관 여부·접수현황은 자동 추정값. 부킹·단체관 신청 전 공식사이트 + KOTRA 무역관 재확인 필수. 접수현황·메모는 직접 수정 가능(브라우저에 저장됨).</div>
+  </div>
+</div>
+
+<script>
+const TODAY = new Date('2026-06-29');
+// 권역 비용밴드 (만원) [low, high]
+const COST = { KR:[80,200], JP:[250,450], SEA:[350,650], HK:[350,650], TW:[350,650],
+  MENA:[500,900], RU:[550,950], EU:[600,1050], IN:[450,800], US:[700,1250], LATAM:[700,1300], CN:[450,850] };
+const REGION_KO = { KR:'국내', JP:'일본', SEA:'동남아', HK:'홍콩', TW:'대만', MENA:'중동/아프리카', RU:'러시아/CIS', EU:'유럽', IN:'인도', US:'미국', LATAM:'중남미', CN:'중국' };
+const TYPE = { pure:['순수 B2B','b-pure'], mix:['B2B 혼합','b-mix'], salon:['살롱/전문가','b-salon'], ingr:['원료·성분','b-ingr'], b2c:['B2C','b-b2c'] };
+
+// data: comp = [tier,b2b,cat,sup,lev]
+const DATA = [
+  {id:'tones', name:'Tones of Beauty London', date:'7.1~2', iso:'2026-07-01', region:'EU', city:'런던', type:'pure', comp:[12,20,16,8,3], url:'https://greatreporter.com'},
+  {id:'peru', name:'CosmoBeauty Peru', date:'7.5~6', iso:'2026-07-05', region:'LATAM', city:'리마', type:'mix', comp:[18,18,14,8,3], url:'https://www.tradefairdates.com/CosmoBeauty-Professional-M1120/Lima.html'},
+  {id:'cpna-lv', name:'Cosmoprof North America', star:1, date:'7.13~15', iso:'2026-07-13', region:'US', city:'라스베이거스', type:'pure', comp:[25,25,18,15,12], url:'https://cosmoprofnorthamerica.com/las-vegas/'},
+  {id:'vietbeauty', name:'Vietbeauty/Cosmobeauté', date:'7.23~25', iso:'2026-07-23', region:'SEA', city:'호치민', type:'pure', comp:[20,25,16,8,8], url:'https://www.vietbeautyshow.com/'},
+  {id:'mx-kexpo', name:'K-EXPO 멕시코 통합부스', star:1, date:'9월(예정)', iso:'2026-09-15', region:'LATAM', city:'멕시코시티', type:'mix', comp:[18,18,14,15,3], url:'https://pms.allcos.biz/', deadline:'7/3'},
+  {id:'belleza', name:'Belleza y Salud', date:'8.13~17', iso:'2026-08-13', region:'LATAM', city:'보고타', type:'mix', comp:[18,18,14,8,3], url:'https://feriabellezaysalud.com/'},
+  {id:'hktdc', name:'HKTDC Beauty&Wellness', date:'8.13~17', iso:'2026-08-13', region:'HK', city:'홍콩', type:'b2c', comp:[18,3,12,3,3], url:'https://www.hktdc.com/event/hkbeautyexpo/en'},
+  {id:'pbindia', name:'Professional Beauty India', date:'8.31~9.1', iso:'2026-08-31', region:'IN', city:'뭄바이', type:'salon', comp:[12,10,10,3,3], url:'https://professionalbeauty.in'},
+  {id:'beaueurasia', name:'Beauty Eurasia', date:'9.2~4', iso:'2026-09-02', region:'MENA', city:'이스탄불', type:'pure', comp:[18,20,14,8,3], url:'https://beautyeurasia.com'},
+  {id:'pbjoburg', name:'Professional Beauty Johannesburg', date:'9.6~7', iso:'2026-09-06', region:'MENA', city:'요하네스버그', type:'salon', comp:[16,10,10,3,3], url:'#'},
+  {id:'uzbek', name:'BeautyExpo Uzbekistan', date:'9.15~17', iso:'2026-09-15', region:'RU', city:'타슈켄트', type:'mix', comp:[18,14,10,3,8], url:'https://www.showsbee.com/fairs/BeautyExpo-Uzbekistan.html'},
+  {id:'bite', name:'BITE NYC (구 Indie Beauty Expo)', date:'9.24', iso:'2026-09-24', region:'US', city:'뉴욕', type:'mix', comp:[25,18,16,3,8], url:'https://www.beautyindependentevents.com/'},
+  {id:'cb-my', name:'Cosmobeauté Malaysia', date:'9.29~10.1', iso:'2026-09-29', region:'SEA', city:'쿠알라룸푸르', type:'pure', comp:[20,25,16,8,8], url:'https://www.cosmobeauteasia.com/malaysia/'},
+  {id:'cb-id', name:'Cosmobeauté Indonesia', date:'10.1~3', iso:'2026-10-01', region:'SEA', city:'자카르타', type:'pure', comp:[18,20,14,8,3], url:'https://www.cosmobeauteasia.com/indonesia/'},
+  {id:'bwme', name:'Beautyworld Middle East', star:1, date:'10.6~8', iso:'2026-10-06', region:'MENA', city:'두바이', type:'pure', comp:[20,25,16,15,15], url:'https://beautyworld-middle-east.ae.messefrankfurt.com/'},
+  {id:'intercharm', name:'InterCHARM Moscow', star:1, date:'10.14~17', iso:'2026-10-14', region:'RU', city:'모스크바', type:'mix', comp:[20,18,16,8,15], url:'https://en.intercharm.ru/'},
+  {id:'kbe-kr', name:'K-Beauty Expo Korea', star:1, date:'10.15~17', iso:'2026-10-15', region:'KR', city:'고양', type:'pure', comp:[25,22,18,15,10], url:'https://k-beautyexpo.co.kr/'},
+  {id:'bwj-osaka', name:'Beautyworld Japan Osaka', date:'10.19~21', iso:'2026-10-19', region:'JP', city:'오사카', type:'salon', comp:[16,18,10,8,3], url:'https://beautyworld-japan-osaka.jp.messefrankfurt.com/'},
+  {id:'ebs-mx', name:'Expo Beauty Show', date:'10.24~26', iso:'2026-10-24', region:'LATAM', city:'멕시코시티', type:'pure', comp:[18,22,14,15,3], url:'https://www.expobeautyshow.com/'},
+  {id:'sbs-vn', name:'Saigon Beauty Show/K뷰티엑스포VN', star:1, date:'10.29~31', iso:'2026-10-29', region:'SEA', city:'호치민', type:'pure', comp:[20,22,16,15,8], url:'https://saigonbeautyshow.com/'},
+  {id:'amwc-la', name:'AMWC Latin America', date:'10.29~31', iso:'2026-10-29', region:'LATAM', city:'메데인', type:'salon', comp:[18,12,12,3,3], url:'https://amwc-la.com/en/'},
+  {id:'incos-asia', name:'in-cosmetics Asia', date:'11.3~5', iso:'2026-11-03', region:'SEA', city:'방콕', type:'ingr', comp:[20,5,6,3,3], url:'https://www.in-cosmetics.com/asia/en-gb.html', excl:1},
+  {id:'bf-budapest', name:'Beauty Forum Budapest', date:'11.6~7', iso:'2026-11-06', region:'EU', city:'부다페스트', type:'salon', comp:[18,10,8,3,3], url:'https://www.tradefairdates.com/Beauty-Forum-M559/Budapest.html', excl:1},
+  {id:'cpa-hk', name:'Cosmoprof Asia', star:1, date:'11.11~13', iso:'2026-11-11', region:'HK', city:'홍콩', type:'pure', comp:[20,25,18,15,8], url:'https://www.cosmoprof-asia.com/'},
+  {id:'look-madrid', name:'Salón LOOK Madrid', date:'11.13~15', iso:'2026-11-13', region:'EU', city:'마드리드', type:'b2c', comp:[18,3,8,3,3], url:'https://www.ifema.es/en/look', excl:1},
+  {id:'look-santiago', name:'Salón Look Santiago', date:'~11월', iso:'2026-11-15', est:1, region:'LATAM', city:'산티아고', type:'mix', comp:[18,18,14,8,3], url:'https://www.espacioriesco.cl/'},
+  {id:'bwa', name:'Beauty West Africa', date:'11.24~26', iso:'2026-11-24', region:'MENA', city:'라고스', type:'pure', comp:[18,22,12,15,3], url:'https://beautywestafrica.com/'},
+  {id:'cp-india', name:'Cosmoprof India', date:'12.10~12', iso:'2026-12-10', region:'IN', city:'뭄바이', type:'pure', comp:[12,25,14,8,3], url:'https://www.cosmoprofindia.com/'},
+  // 2027
+  {id:'cpna-mia', name:'Cosmoprof North America Miami', star:1, date:"'27 1.26~28", iso:'2027-01-26', region:'US', city:'마이애미', type:'pure', comp:[22,25,16,15,10], url:'https://cosmoprofnorthamerica.com/miami/'},
+  {id:'saudiderm', name:'SaudiDerm', date:"'27 ~1월", iso:'2027-01-15', est:1, region:'MENA', city:'리야드', type:'salon', comp:[18,10,14,3,8], url:'#'},
+  {id:'vivaness', name:'Vivaness (BioFach)', star:1, date:"'27 2.16~19", iso:'2027-02-16', region:'EU', city:'뉘른베르크', type:'pure', comp:[18,25,20,8,8], url:'https://www.biofach.de/en/vivaness'},
+  {id:'cosme-tokyo', name:'COSME Week Tokyo', date:"'27 2.17~19", iso:'2027-02-17', region:'JP', city:'도쿄', type:'pure', comp:[16,22,16,15,3], url:'https://www.cosme-week.jp/tokyo/en-gb.html'},
+  {id:'jeddaderm', name:'JeddaDerm', date:"'27 ~2월", iso:'2027-02-15', est:1, region:'MENA', city:'제다', type:'salon', comp:[18,10,14,3,8], url:'#'},
+  {id:'npew', name:'Natural Products Expo West', date:"'27 3.2~5", iso:'2027-03-02', region:'US', city:'애너하임', type:'mix', comp:[25,18,14,3,3], url:'https://www.expowest.com/'},
+  {id:'cp-bologna', name:'Cosmoprof Worldwide Bologna', star:1, date:"'27 3.18~21", iso:'2027-03-18', region:'EU', city:'볼로냐', type:'pure', comp:[20,25,18,15,8], url:'https://www.cosmoprof.com/'},
+  {id:'bc-istanbul', name:'Beauty & Care Istanbul', date:"'27 ~3.18", iso:'2027-03-18', est:1, region:'MENA', city:'이스탄불', type:'salon', comp:[18,12,12,3,3], url:'#'},
+  {id:'beauty-dus', name:'Beauty Düsseldorf', date:"'27 ~3월", iso:'2027-03-20', est:1, region:'EU', city:'뒤셀도르프', type:'salon', comp:[18,10,10,3,3], url:'https://www.beauty-duesseldorf.com/', excl:1},
+  {id:'bf-warsaw', name:'Beauty Forum Warsaw', date:"'27 ~3월", iso:'2027-03-07', est:1, region:'EU', city:'바르샤바', type:'salon', comp:[18,10,8,3,3], url:'https://www.tradefairdates.com/BEAUTY-FORUM-M3423/Warsaw.html', excl:1},
+  {id:'incos-global', name:'in-cosmetics Global', date:"'27 4.6~8", iso:'2027-04-06', region:'EU', city:'바르셀로나', type:'ingr', comp:[18,5,6,3,3], url:'https://www.in-cosmetics.com/global/en-gb.html', excl:1},
+  {id:'egy', name:'Egy Beauty Africa', date:"'27 4.24~26", iso:'2027-04-24', region:'MENA', city:'카이로', type:'mix', comp:[18,18,12,3,3], url:'https://egybeautyafrica.com/'},
+  {id:'cosmetista', name:'Cosmetista N&W Africa', date:"'27 ~5월", iso:'2027-05-15', est:1, region:'MENA', city:'카사블랑카', type:'mix', comp:[18,12,12,3,3], url:'#'},
+  {id:'cb-seoul', name:'COSMOBEAUTY Seoul', date:"'27 ~5월", iso:'2027-05-15', est:1, region:'KR', city:'서울', type:'mix', comp:[25,18,16,15,8], url:'https://cosmobeautyseoul.com/'},
+  {id:'cbe-sh', name:'CBE 상하이', date:"'27 ~5월", iso:'2027-05-12', est:1, region:'CN', city:'상하이', type:'mix', comp:[4,18,10,3,3], url:'https://www.chinabeautyexpo.com/', excl:1},
+  {id:'bwj-tokyo', name:'Beautyworld Japan Tokyo', date:"'27 ~5월", iso:'2027-05-18', est:1, region:'JP', city:'도쿄', type:'salon', comp:[16,18,10,8,3], url:'https://beautyworld-japan.jp.messefrankfurt.com/'},
+  {id:'beautyistanbul', name:'BEAUTYISTANBUL', star:1, date:"'27 6.3~5", iso:'2027-06-03', region:'MENA', city:'이스탄불', type:'pure', comp:[20,25,16,15,3], url:'https://beauty-istanbul.com/'},
+  {id:'fce', name:'FCE Cosmetique', date:"'27 6.8~10", iso:'2027-06-08', region:'LATAM', city:'상파울루', type:'ingr', comp:[18,18,10,3,3], url:'#'},
+  {id:'cbe-asean', name:'Cosmoprof CBE ASEAN', star:1, date:"'27 ~6월", iso:'2027-06-24', est:1, region:'SEA', city:'방콕', type:'pure', comp:[20,25,16,15,8], url:'https://www.cosmoprofcbeasean.com/'},
+  {id:'bwsa', name:'Beautyworld Saudi', date:"'27 6.21~23", iso:'2027-06-21', region:'MENA', city:'리야드', type:'pure', comp:[20,25,16,15,8], url:'https://beautyworld-riyadh.ksa.messefrankfurt.com/'},
+  {id:'kbe-tw', name:'K-Beauty Expo Taiwan', date:"'27 ~8월", iso:'2027-08-14', est:1, region:'TW', city:'타이베이', type:'pure', comp:[18,20,14,15,3], url:'#'},
+  {id:'cibe', name:'CIBE 광저우', date:"'27 ~9월", iso:'2027-09-04', est:1, region:'CN', city:'광저우', type:'mix', comp:[4,18,10,3,3], url:'https://www.tradefairdates.com/CIBE-China-International-Beauty-Expo-M7904/Guangzhou.html', excl:1},
+];
+
+// overrides (localStorage)
+const LS = 'vdvia_tradeshow_ov';
+let OV = {};
+try { OV = JSON.parse(localStorage.getItem(LS) || '{}'); } catch(e) { OV = {}; }
+function saveOV(){ localStorage.setItem(LS, JSON.stringify(OV)); }
+
+function fitScore(d){ return d.comp.reduce((a,b)=>a+b,0); }
+function fitColor(f){ return f>=80?'var(--green)':f>=65?'var(--accent)':f>=50?'var(--yellow)':'var(--gray)'; }
+function autoStatus(d){
+  if (OV[d.id] && OV[d.id].status) return OV[d.id].status;
+  if (d.deadline) return 'urgent';
+  const days = Math.round((new Date(d.iso)-TODAY)/86400000);
+  if (days < 0) return 'closed';
+  if (days <= 75) return 'booth';
+  if (days <= 180) return 'open';
+  return 'soon';
+}
+const ST_LABEL = { urgent:['⏰ 마감임박','st-urgent'], booth:['부스마감·방문가능','st-booth'], open:['접수중·마감주시','st-open'], soon:['접수예정','st-soon'], closed:['종료','st-closed'] };
+
+let filt = { period:'all', region:'all', type:'all', star:false };
+let sort = { key:'iso', asc:true };
+
+function render(){
+  // cards
+  const total = DATA.length, stars = DATA.filter(d=>d.star).length;
+  const h2 = DATA.filter(d=>d.iso<'2027-01-01' && d.iso>='2026-07-01').length;
+  const y27 = DATA.filter(d=>d.iso>='2027-01-01').length;
+  const urgent = DATA.filter(d=>autoStatus(d)==='urgent'||autoStatus(d)==='booth').length;
+  document.getElementById('cards').innerHTML =
+    `<div class="card blue"><div class="num">${total}</div><div class="lbl">전체 박람회</div></div>
+     <div class="card star"><div class="num">${stars}</div><div class="lbl">⭐ 전략 추천</div></div>
+     <div class="card red"><div class="num">${urgent}</div><div class="lbl">마감임박·부스마감</div></div>
+     <div class="card green"><div class="num">${h2}</div><div class="lbl">2026 하반기</div></div>
+     <div class="card"><div class="num">${y27}</div><div class="lbl">2027</div></div>`;
+
+  // controls
+  const regions = [...new Set(DATA.map(d=>d.region))];
+  const c = document.getElementById('controls');
+  c.innerHTML =
+    ['all','2026','2027'].map(p=>`<span class="chip ${filt.period===p?'active':''}" data-f="period" data-v="${p}">${p==='all'?'전체기간':p+'년'}</span>`).join('')
+    + `<span class="sep"></span>`
+    + `<span class="chip ${filt.star?'active':''}" data-f="star" data-v="toggle">⭐ 추천만</span>`
+    + `<span class="sep"></span>`
+    + `<select id="selRegion"><option value="all">전권역</option>${regions.map(r=>`<option value="${r}" ${filt.region===r?'selected':''}>${REGION_KO[r]}</option>`).join('')}</select>`
+    + `<select id="selType"><option value="all">전체성격</option>${Object.keys(TYPE).map(t=>`<option value="${t}" ${filt.type===t?'selected':''}>${TYPE[t][0]}</option>`).join('')}</select>`;
+
+  // filter
+  let rows = DATA.filter(d=>{
+    if (filt.period==='2026' && !(d.iso>='2026-07-01' && d.iso<'2027-01-01')) return false;
+    if (filt.period==='2027' && d.iso<'2027-01-01') return false;
+    if (filt.region!=='all' && d.region!==filt.region) return false;
+    if (filt.type!=='all' && d.type!==filt.type) return false;
+    if (filt.star && !d.star) return false;
+    return true;
+  });
+  // sort
+  rows.sort((a,b)=>{
+    let av,bv;
+    if (sort.key==='fit'){ av=fitScore(a); bv=fitScore(b); }
+    else if (sort.key==='costLo'){ av=COST[a.region][0]; bv=COST[b.region][0]; }
+    else if (sort.key==='region'){ av=REGION_KO[a.region]; bv=REGION_KO[b.region]; }
+    else if (sort.key==='type'){ av=a.type; bv=b.type; }
+    else if (sort.key==='status'){ av=autoStatus(a); bv=autoStatus(b); }
+    else { av=a[sort.key]; bv=b[sort.key]; }
+    if (av<bv) return sort.asc?-1:1; if (av>bv) return sort.asc?1:-1; return 0;
+  });
+
+  // body
+  document.getElementById('tbody').innerHTML = rows.map(d=>{
+    const f = fitScore(d), st = autoStatus(d), [stl,stc]=ST_LABEL[st], [tl,tc]=TYPE[d.type];
+    const [lo,hi]=COST[d.region];
+    const memo = (OV[d.id]&&OV[d.id].memo)||'';
+    const link = d.url && d.url!=='#' ? `<a href="${d.url}" target="_blank" title="공식 사이트">↗</a>` : '';
+    return `<tr class="${d.excl?'excluded':''}">
+      <td style="white-space:nowrap">${d.date}${d.est?' <span class="est">추정</span>':''}</td>
+      <td><div class="name">${d.star?'<span class="star">⭐</span>':''}${d.name} ${link}</div>
+          <div class="det" title="시장${d.comp[0]}·B2B${d.comp[1]}·카테고리${d.comp[2]}·한국관${d.comp[3]}·레버리지${d.comp[4]}">시장 <b>${d.comp[0]}</b> · B2B <b>${d.comp[1]}</b> · 카테고리 <b>${d.comp[2]}</b> · 한국관 <b>${d.comp[3]}</b> · 자산 <b>${d.comp[4]}</b></div></td>
+      <td>${REGION_KO[d.region]}<div class="loc">${d.city}</div></td>
+      <td><span class="badge ${tc}">${tl}</span></td>
+      <td><div class="fitwrap"><div class="fitbar"><div class="fitfill" style="width:${f}%;background:${fitColor(f)}"></div></div><span class="fitnum" style="color:${fitColor(f)}">${f}</span></div></td>
+      <td><select class="stsel" data-id="${d.id}">${Object.keys(ST_LABEL).map(k=>`<option value="${k}" ${st===k?'selected':''}>${ST_LABEL[k][0]}</option>`).join('')}</select></td>
+      <td class="cost">${lo.toLocaleString()}~${hi.toLocaleString()}만</td>
+      <td><input class="memo" data-id="${d.id}" value="${memo.replace(/"/g,'&quot;')}" placeholder="메모…"></td>
+    </tr>`;
+  }).join('');
+
+  // bind controls
+  c.querySelectorAll('.chip').forEach(el=>el.onclick=()=>{
+    const f=el.dataset.f, v=el.dataset.v;
+    if (f==='star') filt.star=!filt.star; else filt[f]=v;
+    render();
+  });
+  document.getElementById('selRegion').onchange=e=>{filt.region=e.target.value; render();};
+  document.getElementById('selType').onchange=e=>{filt.type=e.target.value; render();};
+  document.querySelectorAll('.stsel').forEach(el=>el.onchange=()=>{
+    OV[el.dataset.id]=OV[el.dataset.id]||{}; OV[el.dataset.id].status=el.value; saveOV(); render();
+  });
+  document.querySelectorAll('.memo').forEach(el=>el.onchange=()=>{
+    OV[el.dataset.id]=OV[el.dataset.id]||{}; OV[el.dataset.id].memo=el.value; saveOV();
+  });
+}
+
+document.querySelectorAll('thead th[data-sort]').forEach(th=>th.onclick=()=>{
+  const k=th.dataset.sort;
+  if (sort.key===k) sort.asc=!sort.asc; else { sort.key=k; sort.asc=true; }
+  document.querySelectorAll('thead th').forEach(t=>t.textContent=t.textContent.replace(/ [▲▼]/,''));
+  th.textContent += sort.asc?' ▲':' ▼';
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
