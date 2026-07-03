@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Lemonderma · US 퍼포먼스 마케팅 주간 보고서 (6/22–28) — 강화판 v2</title>
+<title>Lemonderma · US 퍼포먼스 마케팅 주간 보고서 (6/22–28)</title>
 <style>
   :root{
     --ink:#1b1a17; --muted:#6b675e; --line:#e7e3d8; --bg:#faf9f4; --card:#ffffff;
@@ -127,39 +127,6 @@
   .merband .mer-meta{font-size:13.5px;color:#cfcabb}
   .merband .mer-meta b{color:#fff}
   .merband .arrow{font-size:15px;color:var(--lime);font-weight:700}
-
-  /* ① 북극성 — 주간 유료 순매출 (맨 위 단일 숫자) */
-  .northstar{margin-top:34px;background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:18px;padding:24px 28px;box-shadow:var(--shadow);display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-  .northstar .ns-left{flex:1;min-width:240px}
-  .northstar .ns-kicker{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
-  .northstar .ns-num{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:4px 0 2px}
-  .northstar .ns-num small{font-size:20px;font-weight:700;color:#cfcabb}
-  .northstar .ns-sub{font-size:13px;color:#cfcabb;line-height:1.5}
-  .northstar .ns-sub b{color:#fff}
-  .northstar .ns-side{font-size:13px;color:#cfcabb;border-left:1px solid #4a463c;padding-left:24px;min-width:170px}
-  @media(max-width:720px){.northstar{gap:14px}.northstar .ns-side{border-left:none;border-top:1px solid #4a463c;padding-left:0;padding-top:14px}.northstar .ns-num{font-size:42px}}
-
-  /* ⑤ 측정 배지 — 🟢측정 / 🟡추정 / 🔴깜깜 */
-  .mbadge{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;vertical-align:1px}
-  .mbadge.meas{background:var(--good-bg);color:var(--good)}
-  .mbadge.est{background:var(--warn-bg);color:var(--warn)}
-  .mbadge.dark{background:var(--bad-bg);color:var(--bad)}
-  .kpi .k-top .mbadge{margin-left:auto}
-
-  /* ④ 블로커 → CEO 결정큐 */
-  .decq{margin-top:6px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
-  .decq .dq-h{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:4px}
-  .decq .dq-sub{font-size:12.5px;color:var(--lime-deep);font-weight:700;margin-bottom:14px;line-height:1.5}
-  .decq .dq-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px dashed var(--line)}
-  .decq .dq-row:first-of-type{border-top:none}
-  .decq .dq-dl{flex:none;font-size:11px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap;min-width:54px;text-align:center}
-  .decq .dq-dl.urgent{background:var(--bad-bg);color:var(--bad)}
-  .decq .dq-dl.soon{background:var(--warn-bg);color:var(--warn)}
-  .decq .dq-dl.wait{background:#eceadf;color:#46433c}
-  .decq .dq-body{font-size:13.5px;color:#3b3a35;line-height:1.6}
-  .decq .dq-body b{color:var(--ink);font-weight:800}
-  .decq .dq-body .need{font-size:12px;color:var(--lime-deep);font-weight:700}
-  .decq .dq-note{margin-top:12px;font-size:12px;color:var(--muted)}
 
   .intent{margin-top:18px;background:linear-gradient(135deg,#fffdf2,#f7f9e6);border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
   .intent .in-h{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:4px}
@@ -302,20 +269,6 @@
 
 <div class="wrap">
 
-  <!-- ① 북극성 기여 — 주간 유료 순매출 (CEO가 30초에 읽는 단일 숫자) -->
-  <div class="northstar">
-    <div class="ns-left">
-      <div class="ns-kicker">① 북극성 기여 · 주간 유료 순매출 <span class="mbadge est">🟡 추정</span></div>
-      <div class="ns-num">$779<small> /주</small></div>
-      <div class="ns-sub"><b>유료(광고 기여) 순매출</b> = 아마존 광고귀속 $779.08 · 메타 실측귀속 3건은 이 안에 포함(아마존 도달). 광고비 $1,158 대비 <b>회수 미달(MER 0.88×)</b> — 이 숫자를 본전선 위로 올리는 게 이 팀의 단일 목표.</div>
-    </div>
-    <div class="ns-side">
-      <b style="color:#fff">왜 $779인가</b><br>
-      통합매출 $1,014에는 오가닉 주문이 섞여 있어 "유료가 만든 매출"을 과대 표기. 광고귀속(14일 룰)만 떼어내 <b style="color:#fff">유료 순매출</b>으로 고정.<br>
-      <span style="color:#b4c400">🟡 추정 사유:</span> 어트리뷰션 14일 시차 — 미성숙분 상향 여지.
-    </div>
-  </div>
-
   <!-- TL;DR -->
   <div class="tldr">
     <div class="t-h">⚡ 핵심 요약 — 2주차는 '공격적 확장'을 시도했고, 그 과정에서 중요한 사실 하나를 확인했습니다</div>
@@ -360,7 +313,7 @@
     <button class="tab" data-tab="t2">② 🔍 무엇을 알게 됐나</button>
     <button class="tab" data-tab="t3">③ 🗂 지난주 한 일</button>
     <button class="tab" data-tab="t4">④ 📈 1주차 vs 2주차</button>
-    <button class="tab" data-tab="t5">⑤ 🚦 결정큐 · 할 일</button>
+    <button class="tab" data-tab="t5">⑤ 🎯 이번 주 할 일</button>
   </nav>
 
   <div class="tabpanel active" id="t1">
@@ -450,27 +403,27 @@
 
     <div class="chan-band"><span class="tag amz">🟠 아마존</span> 대량 변형을 깔아두고 — 위너만 키우고 출혈은 끄는 정리 단계로 전환</div>
     <div class="kpis">
-      <div class="kpi dot-w"><div class="k-top"><span class="k-label">전체 / 가동 / 멈춘 광고</span><span class="mbadge meas">🟢 측정</span><span class="led w"></span></div>
+      <div class="kpi dot-w"><div class="k-top"><span class="k-label">전체 / 가동 / 멈춘 광고</span><span class="led w"></span></div>
         <div class="k-val">635 / 390 / 245</div><div class="k-judge v-w">🟡 거절(서빙불가) 정리 후 활성 거절 0</div><div class="k-trend">전주 210 → 635 (3배)</div></div>
-      <div class="kpi dot-b"><div class="k-top"><span class="k-label">클릭 1번 비용 (CPC)</span><span class="mbadge meas">🟢 측정</span><span class="led b"></span></div>
+      <div class="kpi dot-b"><div class="k-top"><span class="k-label">클릭 1번 비용 (CPC)</span><span class="led b"></span></div>
         <div class="k-val">$1.03</div><div class="k-judge v-b">🔴 본전선($0.44~0.77) 초과</div><div class="k-trend">입찰 인상의 직접 결과</div></div>
-      <div class="kpi dot-b"><div class="k-top"><span class="k-label">구매 전환율 (CVR)</span><span class="mbadge meas">🟢 측정</span><span class="led b"></span></div>
+      <div class="kpi dot-b"><div class="k-top"><span class="k-label">구매 전환율 (CVR)</span><span class="led b"></span></div>
         <div class="k-val">2.85%</div><div class="k-judge v-b">🔴 목표 5% · 1주차 3.9%보다 하락</div><div class="k-trend">진짜 병목(→5번)</div></div>
-      <div class="kpi dot-w"><div class="k-top"><span class="k-label">광고비 / 광고귀속 매출</span><span class="mbadge meas">🟢 측정</span><span class="led w"></span></div>
+      <div class="kpi dot-w"><div class="k-top"><span class="k-label">광고비 / 광고귀속 매출</span><span class="led w"></span></div>
         <div class="k-val">$819 / $779</div><div class="k-judge v-w">🟡 ROAS 0.95 · 본전 미달</div><div class="k-trend">전주 $160 / $211</div></div>
     </div>
     <div class="flag">🔻 <b>아마존의 한 줄:</b> 입찰을 $0.90 → $1.10~$1.30으로 올려 <b>노출·클릭은 폭증</b>(노출 6/24 하루 +229%)했지만, 늘어난 트래픽이 저전환 리스팅에 막혀 <b>CPC가 본전선을 6일 연속 초과</b>했습니다. 6/25 이를 진단하고 입찰을 다시 $0.90으로 롤백(위너 7캠만 보존)했습니다(→ 6번 입찰 카테고리).</div>
 
     <div class="chan-band"><span class="tag meta">🔵 메타 (인스타·페북)</span> 본격 가동 — 지출 9배 확대, 클릭률 우수, 어트리뷰션 첫 실구매 포착</div>
     <div class="kpis">
-      <div class="kpi dot-g"><div class="k-top"><span class="k-label">광고비 (이번 주)</span><span class="mbadge meas">🟢 측정</span><span class="led g"></span></div>
+      <div class="kpi dot-g"><div class="k-top"><span class="k-label">광고비 (이번 주)</span><span class="led g"></span></div>
         <div class="k-val">$338.55</div><div class="k-judge v-g">🟢 본격 집행 시작</div><div class="k-trend">전주 $37.9 → 9배</div></div>
-      <div class="kpi dot-g"><div class="k-top"><span class="k-label">클릭률 (CTR)</span><span class="mbadge meas">🟢 측정</span><span class="led g"></span></div>
+      <div class="kpi dot-g"><div class="k-top"><span class="k-label">클릭률 (CTR)</span><span class="led g"></span></div>
         <div class="k-val">8.1%</div><div class="k-judge v-g">🟢 매우 높음 (보통 1–2%)</div><div class="k-trend">소재 매력도 우수</div></div>
-      <div class="kpi dot-w"><div class="k-top"><span class="k-label">Buy 클릭(IC) 1건 비용</span><span class="mbadge meas">🟢 측정</span><span class="led w"></span></div>
+      <div class="kpi dot-w"><div class="k-top"><span class="k-label">Buy 클릭(IC) 1건 비용</span><span class="led w"></span></div>
         <div class="k-val">$1.23</div><div class="k-judge v-w">🟡 Hands BA는 $1.05로 양호</div><div class="k-trend">IC 8 → 292건 (이번 주)</div></div>
-      <div class="kpi dot-b"><div class="k-top"><span class="k-label">메타 기여 매출 (범위)</span><span class="mbadge est">🟡 추정</span><span class="led b"></span></div>
-        <div class="k-val">$146~$235</div><div class="k-judge v-b">🔴 최소~최대 모두 본전선($521) 아래</div><div class="k-trend">어트리뷰션 시차 · 실측 3건(하한)~비광고 전액(상한)</div></div>
+      <div class="kpi dot-b"><div class="k-top"><span class="k-label">메타 기여 매출 (범위)</span><span class="led b"></span></div>
+        <div class="k-val">$146~$235</div><div class="k-judge v-b">🔴 최소~최대 모두 본전선($521) 아래</div><div class="k-trend">실측 3건(하한)~비광고 아마존 전액</div></div>
     </div>
     <div class="flag meta-flag">📈 <b>메타의 한 줄:</b> 손 비포애프터(<b>Hands BA</b>)가 IC당 $1.05·CTR 8.34%로 발군이고, UGC 릴스는 IC당 $2.55로 약합니다. 퍼널(메타 런칭 6/18 이후 누적)은 <b>노출 8,941 → 클릭 723 → 브리치 LPV 678 → Buy클릭 312 → 아마존 도달 375 → 상세 343 → 장바구니 62 → 구매 3</b>. 윗단(클릭·도달)은 강한데 <b>장바구니→구매</b>에서 급감 — 아마존 쪽 전환 문제와 동일 신호입니다.</div>
   </section>
@@ -541,139 +494,6 @@
   </section>
 
   <!-- 5. 인사이트 -->
-<!-- ═══════════ 강화판 v2 신규 블록: 브랜드 분석 × 광고 원본 전수 심층 ═══════════ -->
-<section id="ba-deep">
-  <style>
-    #ba-deep .bd-sub{margin:26px 0 8px;padding-top:14px;border-top:1px dashed #d8d2c4}
-    #ba-deep .bd-sub h3{font-size:16px;margin:0 0 10px;color:#1a1a1a}
-    #ba-deep .bd-sub h3 .bd-n{display:inline-block;background:#0e7a4f;color:#fff;border-radius:6px;padding:1px 8px;font-size:13px;margin-right:8px}
-    #ba-deep table{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
-    #ba-deep th,#ba-deep td{border:1px solid #e2ddd2;padding:6px 9px;text-align:left;vertical-align:top}
-    #ba-deep th{background:#f4f1e9}
-    #ba-deep .bd-hot{background:#fff3ec}
-    #ba-deep .bd-good{background:#edf7f0}
-    #ba-deep .bd-note{font-size:12px;color:#8a836f;margin:4px 0 0}
-    #ba-deep .bd-verify{display:inline-block;background:#eef4ff;color:#274b8f;border:1px solid #c9d8f5;border-radius:20px;padding:2px 10px;font-size:12px;margin-left:8px}
-    #ba-deep .bd-fix{background:#fdf3d7;border:1px solid #ecd9a0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px}
-    #ba-deep p{font-size:14px;line-height:1.62}
-  </style>
-
-  <div class="sec-head"><span class="sec-num">★</span><h2>심층 강화 — 브랜드 분석 × 광고 원본 전수 <span class="bd-verify">신규 수집 26파일 · 발견 44건 · 전건 적대검증(확정 36 / 수치수정 8 / 기각 0)</span></h2>
-    <span class="note">셀러센트럴 브랜드 분석 전 메뉴 + 광고 API 원본(캠페인 346·키워드 7,942행·검색어 645행)을 7/3 풀수집. 모든 수치는 원본 파일 재계산으로 교차검증됨 (raw/ 폴더 보존)</span></div>
-
-  <!-- 1. 키워드 경제학 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★1</span>이번 주 아마존 광고의 실체 — "매출은 10개 캠페인·키워드 14개가 전부"</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>SB 전체 (6/21–27)</th><th>노출</th><th>클릭</th><th>CTR</th><th>비용</th><th>매출</th><th>ROAS</th><th>손익분기</th></tr>
-      <tr><td>346개 캠페인 합계</td><td>183,352</td><td>743</td><td>0.41%</td><td>$774.77</td><td>$776.06</td><td class="bd-hot"><b>1.00</b></td><td>1.75 (충족률 57%)</td></tr>
-    </table></div>
-    <p>이 ROAS 1.00을 뜯어보면 극단적인 집중 구조가 나옵니다. <b>매출 100%가 캠페인 10개</b>에서 나왔고(346개 중), 손익분기 1.75를 넘긴 캠페인은 <b>단 2개</b>(볼광대 M3 2.07 · 손등야외 base2 1.76)입니다. 키워드 640개 중 <b>매출을 만든 건 14개</b>(비용 $324 → 매출 $776, ROAS 2.39)이고, 나머지 <b>626개는 매출 0에 $450.67(비용의 58.2%)</b>을 소진했습니다. 검색어 단위로 봐도 전환 검색어 18개가 쓴 돈은 전체의 4.4%($34.04)뿐 — 95.6%는 전환 기여가 없었습니다.</p>
-    <div class="tbl-scroll"><table>
-      <tr><th>돈 버는 키워드 (상위)</th><th>비용→매출</th><th>ROAS</th><th>돈 태우는 키워드 (상위)</th><th>비용</th><th>전환</th></tr>
-      <tr><td class="bd-good">is serum (PHRASE)</td><td>$21.42→$109.74</td><td>5.12</td><td class="bd-hot">the ordinary (EXACT · 60클릭)</td><td>$55.47</td><td>0</td></tr>
-      <tr><td class="bd-good">roc retinol correxion… (BROAD)</td><td>$1.09→$98.13</td><td>90.0</td><td class="bd-hot">skin (PHRASE · 최대 지출 단일어)</td><td>$100.21</td><td>ROAS 1.03 (BEP 미달)</td></tr>
-      <tr><td class="bd-good">lemonderma (EXACT · 자사어)</td><td>$1.33→$73.16</td><td>55.0</td><td class="bd-hot">tirtir</td><td>$18.16</td><td>0</td></tr>
-      <tr><td class="bd-good">pharmacy (PHRASE)</td><td>$19.25→$73.16</td><td>3.80</td><td class="bd-hot">ordinary (EXACT)</td><td>$41.24</td><td>ROAS 0.89</td></tr>
-    </table></div>
-    <p><b>네거티브 즉시 후보 3건</b>: ① <b>the ordinary</b>(60클릭 $55.47 전환 0 — 주간 평균 CVR 2.7% 기준 통계적으로 유의한 실패. 단 'ordinary' 단독은 전환 1건 있어 EXACT만 차단) ② <b>pharmacy amazon pharmacy</b>($7.60, 약국 이용 목적 무관 트래픽) ③ <b>creamer</b>($4.10, 'cream' PHRASE가 커피 크리머에 오발동). 등록 시 주당 약 $67(비용 8.7%) 절감 추정. tirtir·froya organics는 1주 더 관찰 후 판정.</p>
-  </div>
-
-  <!-- 2. 검색 수요 지형 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★2</span>검색 수요 지형 — 광고비가 수요와 정반대로 흐르고 있다</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>카테고리 (주간 검색빈도순위 · 낮을수록 인기)</th><th>대표 검색어 순위</th><th>이번 주 우리 SB 집행</th></tr>
-      <tr class="bd-hot"><td><b>다크스팟</b> — 우리 핵심 포지셔닝</td><td>dark spot remover for face <b>4,999위</b> · corrector 37,829위 · serum 41,131위</td><td><b>노출 5회 · $4.98 · 매출 0</b> (키워드 7개는 등록돼 있으나 입찰에서 밀려 노출 자체가 안 잡힘)</td></tr>
-      <tr><td>스피큘/리들샷 — 세럼 USP(비건 마이크로크리스탈) 직결</td><td>vt cica reedle shot 계열 <b>261,400위</b></td><td>노출 425회 · 매출 0 (19개 키워드)</td></tr>
-      <tr><td>엑소좀</td><td>exosome serum <b>557,882위</b></td><td>노출 1,238회 · 매출 0</td></tr>
-      <tr><td>브랜드 지명 (lemonderma)</td><td><b>3,371,676위</b> · 주간 실검색 66회</td><td>ROAS 55 (극소액 $1.33)</td></tr>
-    </table></div>
-    <p>반면 이번 주 노출 상위는 전부 <b>경쟁 브랜드 지명</b>이었습니다(the ordinary 1.8만 · anua 7.3천 · medicube 5.4천 · beauty of joseon 2.7천). 다크스팟 일반어는 <b>1위 브랜드 클릭점유가 8~11%에 불과한 분산 시장</b>(PURITO 8.85% · GOOD MOLECULES 8.21% · ANUA 10.63%)이라 신규 진입 여지가 있고, 상위 클릭 브랜드 대부분이 K뷰티(ANUA·Axis-Y·celimax·PURITO·MANYO)라 K뷰티 프레임 자체는 우리에게 유리한 지형입니다. <b>진짜 벽은 가격</b>: 경쟁 쿼리의 시장 클릭 중간가는 $10.9~18.7인데 우리는 $36.58로 노출됩니다(2~4배). 논브랜드에서 노출 554회에 클릭이 4건뿐인 구조적 원인 후보입니다(가격 단독 인과는 미검증).</p>
-  </div>
-
-  <!-- 3. 상품 역할 분화 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★3</span>상품 역할 분화 — 세럼은 '클릭 자석', 크림이 '구매 전담'</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>ASIN (검색 경유, 주 26)</th><th>노출</th><th>클릭</th><th>장바구니</th><th>구매</th><th>비고</th></tr>
-      <tr><td>세럼 B0FV7XWDYF</td><td>1,400</td><td>34</td><td>11</td><td class="bd-hot"><b>0</b></td><td>브랜드 지명검색에서도 클릭 48% 가져가고 전환 0%</td></tr>
-      <tr class="bd-good"><td>크림 B0FV3QXSBF</td><td>653</td><td>15</td><td>6</td><td><b>2</b> ($49.94)</td><td>CVR 13.3% · 지명검색 전환점유 100%</td></tr>
-      <tr><td>번들 B0H3H18F96</td><td>158 (52개 쿼리에 분산)</td><td>13</td><td>—</td><td class="bd-hot"><b>0</b></td><td>쿼리당 1~7회 노출 스프레이 · 장바구니 조합에도 부재</td></tr>
-    </table></div>
-    <p>장바구니 분석이 이를 굳혀줍니다: <b>크림 구매자의 40%가 세럼을 동반구매</b>하는데 역방향은 13.3%뿐 — 크림이 세트를 끌고 옵니다. 그런데 v1 보고서는 "크림 축소"를 결론으로 냈습니다(소재·광고 관점). 검색·전환 관점에서는 <b>크림이 유일한 전환 상품</b>이므로, "크림 광고 소재는 정비하되 크림 리스팅·검색 존재감은 오히려 키운다"로 분리해서 봐야 합니다. 크림 폼팩터의 다크스팟 수요는 검증돼 있습니다(celimax pore dark spot brightening cream 9,648위). 세럼 클릭 중간가 $36.58은 6/22 가격 조정($36.58 + 2+1 쿠폰)이 그대로 반영된 값으로 정합 확인 — 데이터 이상 아님.</p>
-    <p>브랜드 지명검색 'lemonderma'(주 66회)에서는 노출 점유 24.7%로 지면의 75%를 타사에 내주고 있으나, <b>클릭 점유 85% · 구매 점유 100%</b>로 클릭 이후는 방어 중 — 브랜드 방어 입찰 증액의 한계효용은 낮습니다. 병목은 오히려 <b>장바구니→구매 11.1%</b> (시장 벤치마크 28.0~37.5%의 1/3 수준, 표본 18건이라 2~3주 누적 후 확정).</p>
-  </div>
-
-  <!-- 4. 고객 프로필 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★4</span>누가 사는가 — 중장년·고소득·여성 (페르소나 가설과 괴리)</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>연령 (고유 구매자)</th><th>소득</th><th>성별</th><th>신규 비중</th></tr>
-      <tr><td>45세+ 합산 <b>44%</b> (65+ 단독 20%) · 35-44 20% · <b>18-24는 0%</b></td><td>연소득 $250k 초과 <b>24%</b> · $150k+ 합산 32%</td><td>여성 44% vs 남성 24% (무응답 제외 시 여성 ~65%)</td><td>SB 매출의 <b>96.8%가 브랜드 신규(NTB)</b> · 구매 20건 중 19건</td></tr>
-    </table></div>
-    <p>personas.md의 Primary 가설(Cautious Glow Seeker 28–40세)보다 실구매자가 확연히 위쪽입니다. 다크스팟·안티에이징 소재, 메타 '50대 손 비포애프터' 위너와는 정합 — 소재 방향은 유지하고 <b>페르소나 문서를 데이터로 갱신</b>할 때입니다(단 표본 주간 25명·1주라 2~3주 누적 후 확정 권장). SNS Z세대 팬덤 트랙과 퍼포먼스 타깃은 계속 분리 운영. 신규 고객 획득비로 환산하면 SB 스펜드 $774.77 ÷ NTB 구매 20건 = <b>신규 1인당 약 $38.7</b> (동반 매출 $787.67) — 채널별 신규고객 획득비 비교표의 첫 기준점입니다.</p>
-  </div>
-
-  <!-- 5. 퍼널과 리텐션 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★5</span>퍼널의 병목과 방치된 리텐션 레버</h3>
-    <p><b>여정 퍼널(주 24=6/7–13 기준 · 이 메뉴는 2주 지연 제공)</b>: SB 대량 가동 직후 인지 고객이 <b>4,705명(+9,125%)</b>으로 폭발했지만 고려(상세페이지 방문)는 42명 — <b>인지→고려 전환 0.89%</b>. 고려→의도는 26.2%로 상대적으로 정상이므로, 병목은 압도적으로 "노출은 됐는데 클릭을 안 한다"입니다(SB CTR 0.41%·viewable 13%와 같은 그림). 주 26 여정 데이터가 열리는 7월 둘째 주에 이 0.89%가 추적 지표입니다.</p>
-    <p><b>장바구니 포기 196명 vs 구매 25명 (약 8:1)</b>: 포기 고객이 전주 대비 +104% 폭증했습니다. 카트까지 온 수요가 결제에서 대량 이탈 중 — Amazon Brand Tailored Promotions(브랜드 맞춤 프로모션)의 '장바구니 포기' 세그먼트로 직접 타겟 가능한 자산입니다. 할인은 전환 시에만 비용이 발생하므로 10% 안팎이면 마진 내 소화 가능 범위로 추정(발행 전 정본 비용표 §2로 실효 마진 검증 필수). <b>재구매도 0→1 발생</b>(재구매율 4% · $24.97): 절대치는 미미하나 리텐션 지표가 처음 움직였고, 소진 주기(1.69oz ≈ 6-8주) 도래하는 8월 초부터 진짜 재구매 코호트를 읽을 수 있습니다.</p>
-  </div>
-
-  <!-- 6. 트래픽 품질 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★6</span>트래픽 품질 — 클릭 신호의 15%는 무효</h3>
-    <p>총클릭 874건 중 무효클릭 131건(<b>15.0%</b> — 노출 무효율 3.7%의 4배). 무효분은 과금에서 차감되므로 돈 손실은 아니지만, <b>클릭 6~7건 중 1건이 봇/무효</b>라는 뜻이라 클릭 기반 판정(CVR·CPC·"20클릭 0전환 OFF" 룰)에 노이즈가 낍니다. 무효클릭률 20%+ 캠페인이 13개(6/22 신규 배치군에 집중, 최대 50%). SB 비디오의 viewable 노출률은 <b>13.2%</b>(전 캠페인 균일하게 낮음 — 소재가 아니라 지면 특성) → <b>노출·노출점유율은 SB 평가 지표에서 배제</b>하고 클릭·매출 기준만 유지합니다. 판정 룰 보완: 클릭 10건 미만 캠페인은 승패 판정 보류.</p>
-  </div>
-
-  <!-- 7. 이퀄베리 벤치마크 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★7</span>이퀄베리 벤치마크 — "메타로 키워서 아마존 검색을 만든다"의 실물 증거</h3>
-    <p>우리가 메타 소재 벤치마크로 삼은 이퀄베리(EQQUALBERRY)가 아마존 검색에서도 교과서였습니다: ① 지명검색 'eqqualberry' 주간 <b>23,370회</b> — 우리 'lemonderma'(66회)의 <b>354배</b> ② 다크스팟 일반어 3개(dark spot remover · dark spot serum · vitamin illuminating dark spot serum)에서 상위 3 클릭 브랜드 진입 — 특히 자기 제품명을 그대로 검색어로 만든 'vitamin illuminating dark spot serum'(147,315위)은 클릭·전환 점유 75%를 독식 ③ 우리 고객 여정에서도 'eqqualberry' 검색자가 고려→의도→구매 전 단계에 등장(스필오버 유입 실증). ④ 단, 우리 SB의 eqqualberry 타기팅은 검색어 합산 클릭 6·$6.47·매출 0으로 아직 효과 없음.</p>
-    <p><b>전략 시사점</b>: 외부(메타) 광고가 아마존 지명 검색 수요를 만들고, 제품명 자체를 '고유 지명어'로 설계해 그 검색을 독식한다 — 우리도 리스팅 타이틀·메타 소재에 동일 문구의 고유 지명어(예: lemonshot vegan spicule dark spot serum 류)를 심는 것을 다음 리스팅 개편 안건으로 상정.</p>
-  </div>
-
-  <!-- 8. 기존 결론 정정 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★8</span>v1 결론 정정 — 새 데이터가 바꾼 것 4가지</h3>
-    <div class="bd-fix"><b>① 인사이트 5 "매출 검색어=경쟁사 브랜드 검색" → 혼합으로 정정.</b> paulas choice 계열(검색어 매출 1위 $98.13)은 여전히 유효하지만, 'the ordinary'는 60클릭 $55.47 전환 0으로 <b>주간 낭비 1위</b>였고, 키워드 매출 1·2위는 오히려 일반어 PHRASE(is serum $109.74 · skin $103.55)였습니다. "경쟁사어=전환원, 일반어=낭비" 프레임은 데이터와 다릅니다.</div>
-    <div class="bd-fix"><b>② 6/26 자사 브랜드어 네거티브(자기잠식 제거 ✅ 판정) → 재검토 필요.</b> 자사어 lemonderma EXACT는 ROAS 55($1.33→$73.16)로 이번 주 최고 효율이었고, 브랜드 검색 지면의 75%를 타사가 점유 중이라 자기잠식 전제가 약합니다. 차단으로 아끼는 돈은 주 $3.45. <b>해제(최소 예산 방어 유지)를 결정 안건으로 상정.</b></div>
-    <div class="bd-fix"><b>③ 'niacinamide=낭비 검색어' 단정 → 세분화.</b> 'niacinamide 10% + zinc 1%' 검색어에서 1클릭 $1.46→$36.58 전환 발생, PHRASE 키워드 전체 ROAS 1.18(BEP 미달이나 전환 0 아님). 전면 차단 대신 단독어만 차단하고 구체 조합 쿼리는 살리는 방향.</div>
-    <div class="bd-fix"><b>④ "크림 축소" → 광고 소재와 검색 존재감 분리.</b> 검색·지명·장바구니 데이터 전부에서 크림이 유일한 전환 상품(★3). 크림 소재 정비와 별개로 크림 리스팅·검색 확장(dark spot brightening 앵글)은 강화가 맞습니다.</div>
-  </div>
-
-  <!-- 9. 수치 크로스워크 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★9</span>수치 크로스워크 — 어떤 숫자를 믿어야 하나</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>소스</th><th>기간 창</th><th>정의</th><th>주문</th><th>매출</th></tr>
-      <tr><td>v1 보고서 (orderMetrics)</td><td>6/22–28</td><td>전체 주문</td><td>24</td><td>$1,013.85 (통합)</td></tr>
-      <tr><td>브랜드 분석 충성도</td><td>6/21–27</td><td>신규 고객 주문</td><td>26</td><td>$1,070.13 (신규만) + 재구매 $24.97</td></tr>
-      <tr><td>SB 광고 귀속 (14일)</td><td>6/21–27</td><td>광고 귀속 구매</td><td>20</td><td>$776.06</td></tr>
-      <tr><td>장바구니 분석</td><td>6/21–27</td><td>ASIN 주문(세럼15+크림5)</td><td>20</td><td>—</td></tr>
-    </table></div>
-    <p class="bd-note">차이 원인: 집계 창 1일 차이(6/21 시작 vs 6/22 시작) + 정의 차이(전체 주문 vs 신규 고객 vs 광고 귀속). 단 "신규 고객만 $1,070 &gt; 통합 $1,014" 역전은 창 차이만으로 자명하지 않아 orderMetrics 일별 원본으로 6/21 하루치 대조 필요(3주차 과제). 이 표는 매주 재사용.</p>
-  </div>
-
-  <!-- 10. 3주차 액션 후보 -->
-  <div class="bd-sub">
-    <h3><span class="bd-n">★10</span>이 데이터가 가리키는 3주차 액션 후보 (우선순위순)</h3>
-    <div class="tbl-scroll"><table>
-      <tr><th>#</th><th>액션</th><th>근거</th><th>기대 효과</th></tr>
-      <tr><td>1</td><td>전환 0 서구 지명어(the ordinary 계열 등) 하향 + <b>dark spot 일반어 입찰 상향</b> 재배분</td><td>★1·★2 — 수요 1위 카테고리에 주 $4.98만 집행</td><td>적자 구조(ROAS 1.00)의 반전 경로</td></tr>
-      <tr><td>2</td><td>네거티브 3건 등록(the ordinary·pharmacy amazon pharmacy·creamer) + 자사어 네거티브 해제 검토</td><td>★1·★8②</td><td>주 ~$67 절감 + 최고 ROAS 키워드 복구</td></tr>
-      <tr><td>3</td><td>Brand Tailored Promotions — 장바구니 포기 196명 대상 ~10% 쿠폰 (마진 검증 후)</td><td>★5</td><td>카트 이탈 8:1 회수 · 전환 시에만 비용</td></tr>
-      <tr><td>4</td><td>승자 2캠페인($10→$20-30 예산 상향) + 비용 상위·매출 0 4캠페인 정지</td><td>★1 — 345개 일괄 $10 예산이 승자 확장을 캡</td><td>주 ~$100 절감 + 위너 스케일</td></tr>
-      <tr><td>5</td><td>세럼 PDP 전환 점검(장바구니→구매 11.1% vs 시장 28~37.5%) — 가격 앵커·리뷰·쿠폰 노출</td><td>★3</td><td>클릭 자석인 세럼의 구매 0 해소</td></tr>
-      <tr><td>6</td><td>스피큘/리들샷·vitamin c dark spot 키워드 확장 + 크림 dark spot brightening 앵글 테스트</td><td>★2·★7</td><td>USP 직결 미개척 수요 진입</td></tr>
-    </table></div>
-    <p class="bd-note">주의: 여정 데이터는 주 24 기준(2주 지연 메뉴), 인구통계는 주간 표본 소규모(비율만 신뢰). SB 배치(게재위치) 리포트는 API 미지원으로 이번 주기 미수집 — 콘솔 수동 확인 필요. 상세 수집 커버리지는 raw/_collection-log.md.</p>
-  </div>
-</section>
-
-
   <section id="insights">
     <div class="sec-head"><span class="sec-num">5</span><h2>인사이트 — 이번 주가 가르쳐준 것</h2>
       <span class="note">데이터가 확정한 핵심 6가지</span></div>
@@ -682,7 +502,7 @@
       <div class="ins-item"><span class="n">2</span><p><b>진짜 병목은 입찰이 아니라 전환율입니다.</b> CPC $1.03이 본전선($0.44)을 6일 연속 초과한 것은 입찰이 높아서가 아니라 <b>상세페이지 전환율(세럼 3.55%·크림 1.11%)이 낮아</b> 클릭이 구매로 이어지지 못했기 때문입니다. 최우선 과제는 전환율 개선(영상·리뷰·메시지 정합)입니다. (→ 6번 전환)</p></div>
       <div class="ins-item"><span class="n">3</span><p><b>매출은 M3·스튜디오·손/볼 클로즈업에서만 발생합니다.</b> M3가 매출 약 97%, 스튜디오 촬영분이 전 매출을 차지하며, UGC는 3주째 ROAS 0입니다. 성과 패턴이 명확해진 만큼 신소재(800여 개)를 이 방향에 집중합니다. (→ 4번·6번 소재)</p></div>
       <div class="ins-item"><span class="n">4</span><p><b>메타 기여는 "최소 3건($146) ~ 최대 $235"의 범위로 봐야 합니다.</b> 어트리뷰션 실측은 하한(과소집계)이고, 오가닉이 0에 수렴하므로 상한은 비광고 아마존 매출 전액입니다. <b>단, 상한으로 잡아도 ROAS 0.69로 본전선(1.54) 한참 아래 — 현재 메타는 손실</b>입니다. CTR은 높으니 문제는 소재가 아니라 전환(상세페이지). (→ 8번 메타)</p></div>
-      <div class="ins-item"><span class="n">5</span><p><b>매출을 일으키는 검색어는 경쟁사 브랜드 검색입니다.</b> 우리 매출은 paulas choice·anua·the ordinary·beauty of joseon 등 <b>경쟁사명 검색</b>에서 발생합니다(우리 세럼으로 유입). 반대로 tirtir·niacinamide 등 구매로 이어지지 않는 검색에 $635를 낭비해, 네거티브 키워드로 차단합니다. (→ 6번 네거티브)<br><span style="display:inline-block;margin-top:6px;background:#fdf3d7;border:1px solid #ecd9a0;border-radius:6px;padding:2px 8px;font-size:12.5px">⚠ 강화판 정정: 원본 검색어 전수 분석 결과 이 결론은 절반만 맞음 — ★8① 참조</span></p></div>
+      <div class="ins-item"><span class="n">5</span><p><b>매출을 일으키는 검색어는 경쟁사 브랜드 검색입니다.</b> 우리 매출은 paulas choice·anua·the ordinary·beauty of joseon 등 <b>경쟁사명 검색</b>에서 발생합니다(우리 세럼으로 유입). 반대로 tirtir·niacinamide 등 구매로 이어지지 않는 검색에 $635를 낭비해, 네거티브 키워드로 차단합니다. (→ 6번 네거티브)</p></div>
       <div class="ins-item"><span class="n">6</span><p><b>크림은 아직 판매 준비가 부족합니다.</b> 심사 거절률 35% + 전환율 1.11% + 상위 비용 낭비가 크림에 집중돼 있습니다. 메시지(글래스 스킨)와 소재(레이저=세럼 클레임)의 불일치가 원인이며, 메시지를 정비하기 전까지는 축소가 적절합니다. (→ 6번 크림)</p></div>
     </div>
   </section>
@@ -952,30 +772,6 @@
   </div><!-- /t4 -->
 
   <div class="tabpanel" id="t5">
-  <!-- ④ 블로커 → CEO 결정큐 (팀이 자체 진행 못 하는 · CEO 결정·리소스 필요 항목) -->
-  <section id="decq-sec">
-    <div class="sec-head"><span class="sec-num">④</span><h2>🚦 CEO 결정큐 — 막힌 것</h2>
-      <span class="note">팀이 자체 진행 불가 · CEO 결정/리소스 필요 → ops_health 전사 결정큐로 합류</span></div>
-    <p class="lead">아래 항목은 팀이 스스로 못 푸는 <b>블로커</b>입니다. 결정이 나야 다음 주 실행(아래 '할 일')이 풀립니다.</p>
-    <div class="decq">
-      <div class="dq-h">결정 대기 3건</div>
-      <div class="dq-sub">각 항목 = 무엇을 / 왜 막혔나 / CEO에게 필요한 것.</div>
-      <div class="dq-row">
-        <span class="dq-dl urgent">D 7/3</span>
-        <div class="dq-body"><b>아마존 상세페이지(PDP) 전환 개선 — 사우디 외주 초안 검수·발주 게이트.</b> 진짜 병목은 입찰이 아니라 PDP 전환율(세럼 3.55%·크림 1.11%)입니다. 7/3(금) 외주 초안이 도착하면 채택·예산을 승인해야 제작에 들어갑니다. <span class="need">→ 필요: CEO 검수·외주비 승인</span></div>
-      </div>
-      <div class="dq-row">
-        <span class="dq-dl soon">입찰</span>
-        <div class="dq-body"><b>광고 예산 재배분 — 크림 전면 중단(96캠) + 세럼 위너 7캠 집중 승인.</b> 크림은 거절 35%·전환 1.11%로 비용만 소진 중. 크림을 끄고 검증된 세럼 위너에 예산을 모으는 방향에 대한 승인이 필요합니다. <span class="need">→ 필요: CEO 자원배분 결정</span></div>
-      </div>
-      <div class="dq-row">
-        <span class="dq-dl wait">방향</span>
-        <div class="dq-body"><b>유료 순매출 회복 게이트 — 7/3 전환율 비교 후 증액/축소 분기.</b> 현재 MER 0.88×(적자). 7/3 전환율 측정 결과가 본전선 회복 신호면 증액, 아니면 발굴 규모를 축소합니다. 어느 쪽으로 갈지 사전 합의가 필요합니다. <span class="need">→ 필요: CEO 증액/축소 기준 합의</span></div>
-      </div>
-      <div class="dq-note">* 미해결 시 자동으로 전사 결정큐(ops_health)로 합류. UAE 7/13 확장 등 시장 게이트는 본 US 리포트 범위 밖이라 여기서 제외.</div>
-    </div>
-  </section>
-
   <!-- 8. 이번 주 할 일 -->
   <section id="actions">
     <div class="sec-head"><span class="sec-num">8</span><h2>이번 주 진행할 일</h2>
