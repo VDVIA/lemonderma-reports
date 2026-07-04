@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VDVIA 해외영업팀 대시보드 (40)</title>
+<style>
+  :root{
+    --bg:#faf9f5; --card:#ffffff; --ink:#1c1b18; --mut:#6b6a64; --line:#e6e3da; --soft:#f1efe8;
+    --g:#1d9e75; --gb:#e1f5ee; --gd:#0f6e56;
+    --a:#ba7517; --ab:#faeeda; --ad:#854f0b;
+    --r:#e24b4a; --rb:#fcebeb; --rd:#a32d2d;
+    --b:#185fa5; --bb:#e6f1fb; --bd:#0c447c;
+  }
+  @media(prefers-color-scheme:dark){:root{--bg:#1b1a17;--card:#252420;--ink:#f1efe8;--mut:#a8a69d;--line:#3a382f;--soft:#2c2b27;--gb:#0f3d31;--gd:#9fe1cb;--ab:#3d2c0a;--ad:#fac775;--rb:#3d1414;--rd:#f09595;--bb:#0c2e4f;--bd:#b5d4f4;}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;line-height:1.55;padding:26px 20px 40px;max-width:1060px;margin:0 auto}
+  h1{font-size:21px;font-weight:700;letter-spacing:-.01em}
+  h2{font-size:12.5px;font-weight:700;color:var(--mut);letter-spacing:.06em;text-transform:uppercase;margin:24px 0 10px}
+  .sub{color:var(--mut);font-size:12.5px;margin-top:3px}
+  .grid{display:grid;gap:12px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 17px}
+  .lbl{font-size:11.5px;color:var(--mut);font-weight:600;letter-spacing:.02em}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex:none}
+  .ch{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap;vertical-align:middle}
+  .g_{background:var(--gb);color:var(--gd)} .a_{background:var(--ab);color:var(--ad)} .r_{background:var(--rb);color:var(--rd)} .b_{background:var(--bb);color:var(--bd)}
+  .big{font-size:25px;font-weight:700;letter-spacing:-.01em}
+  .big small{font-size:12px;color:var(--mut);font-weight:500}
+  /* 팀 뼈대 지표 스트립 */
+  .own{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+  .own .card{border-top:3px solid var(--rd);border-radius:0 0 14px 14px}
+  /* 신호등·판정 */
+  .sig{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-top:5px}
+  .why{font-size:12px;color:var(--mut);margin-top:5px;line-height:1.5}
+  /* 펀널 (궤도 스트립 재사용) */
+  .track{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+  .step{flex:1;min-width:118px;border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .step .k{font-size:10.5px;color:var(--mut)}
+  .step .v{font-size:16px;font-weight:700}
+  .step .e{font-size:10.5px;color:var(--mut);margin-top:2px}
+  .step.bad{background:var(--rb);border-color:transparent}
+  .step.bad .k,.step.bad .v{color:var(--rd)}
+  .step.now{background:var(--bb);border-color:transparent}
+  .step.now .k,.step.now .v{color:var(--bd)}
+  /* 결정큐 */
+  .dq .row{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .dq .row:last-child{border-bottom:0}
+  .tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap;flex:none;margin-top:1px}
+  /* 시장 스코어보드 표 */
+  .tbl{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:12.8px}
+  th{text-align:left;padding:9px 12px;color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line);background:var(--soft);white-space:nowrap}
+  td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  tr:last-child td{border-bottom:0}
+  td.nm{font-weight:600;white-space:nowrap}
+  td.dt{color:var(--mut);font-size:12px}
+  tr.off{opacity:.55}
+  /* 북극성 */
+  .ns{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start}
+  .ns .blk{min-width:180px}
+  .verdict{font-size:11.5px;margin-top:9px;padding:6px 10px;border-radius:8px;background:var(--soft)}
+  a.full{font-size:11.5px;color:var(--b);text-decoration:none;font-weight:600}
+  a.full:hover{text-decoration:underline}
+  /* 링크 카드 */
+  .linkcard{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .linkcard a{font-size:14px;font-weight:700;color:var(--b);text-decoration:none}
+  .linkcard a:hover{text-decoration:underline}
+  .foot{font-size:11px;color:var(--mut);margin-top:24px;border-top:1px solid var(--line);padding-top:12px;line-height:1.7}
+</style>
+</head>
+<body>
+  <h1>해외영업팀 대시보드 <span class="ch b_">40 · B2B</span> <span class="ch a_">전략기획 관리</span></h1>
+  <div class="sub">2026-07-02 · 표준 5칸 보고계약 · 출처: knowledge/markets.md · memory/email_warmup_state.json · memory/notion_pipeline.json · contracts/</div>
+
+  <!-- ② 뼈대 수치 스트립 -->
+  <div class="own">
+    <div class="card">
+      <div class="lbl">주간 신규 컨택</div>
+      <div class="big">0<small> 건 </small><span class="ch r_">🔴 정지</span></div>
+      <div class="why">이메일 warm-up 발송 0건 — SPF/DKIM·GMAIL_APP_PASSWORD 미설정. <b>실측 0 (날조 아님).</b></div>
+    </div>
+    <div class="card">
+      <div class="lbl">컨택→응답→상담 통과율</div>
+      <div class="big">—<span class="ch r_" style="margin-left:8px">🔴 깜깜</span></div>
+      <div class="why">발송 0건이라 측정 자체가 불가. Notion CRM 토큰 미연결.</div>
+    </div>
+    <div class="card">
+      <div class="lbl">재주문율</div>
+      <div class="big">—<span class="ch r_" style="margin-left:8px">🔴 깜깜</span></div>
+      <div class="why">파트너 2곳(Beauteers·IO Beauty) stage 미확정 — 리오더 추적 미가동.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <div class="lbl">방향 판정</div>
+    <div class="sig"><span class="dot" style="background:var(--r)"></span>🔴 어긋남</div>
+    <div class="why">"끊임없는 소통"이 미션인데 <b>컨택 0인 주 지속</b>. 해소 = <b>API키 4종 발급</b> (GMAIL_APP_PASSWORD · Apollo · Anthropic · Notion) → 엔진 가동 → 펀널·국가 실적 자동 측정 시작.</div>
+  </div>
+
+  <!-- ① 북극성 -->
+  <h2>북극성 — B2B 파이프라인 $ + 체결 PO</h2>
+  <div class="card">
+    <div class="ns">
+      <div class="blk">
+        <div class="lbl">파이프라인 $</div>
+        <div class="big">$ —<span class="ch r_" style="margin-left:8px">🔴 깜깜</span></div>
+      </div>
+      <div class="blk">
+        <div class="lbl">체결 PO (누적)</div>
+        <div class="big">1<small> 건 </small><span class="ch g_">🟢 측정</span> <span class="ch r_">금액 깜깜</span></div>
+      </div>
+    </div>
+    <div class="why" style="margin-top:8px">활성 distributor 1건(IO Beauty 러시아, 계약서 <b>VD-RU1-IOB-260520</b>)은 체결 PO로 집계 — <b>금액 미기록</b>. 신규 outbound 파이프라인 $는 Notion CRM 미연결·발송 0건이라 <b>가짜 숫자 대신 정직하게 "—"</b>.</div>
+  </div>
+
+  <!-- 펀널 -->
+  <h2>발굴 → 컨택 → 응답 → 상담 → 체결 펀널 — 엔진 가동 상태</h2>
+  <div class="card">
+    <div class="track">
+      <div class="step"><div class="k">발굴 (Lead)</div><div class="v">—</div><div class="e">Apollo 설계 완료 · 미가동</div></div>
+      <div class="step bad"><div class="k">컨택 (Outreach)</div><div class="v">0</div><div class="e">warm-up 발송 0 · 실측</div></div>
+      <div class="step"><div class="k">응답 (Reply)</div><div class="v">0</div><div class="e">발송 0 → 응답 0</div></div>
+      <div class="step"><div class="k">상담 / Trial</div><div class="v">—</div><div class="e">데이터 없음</div></div>
+      <div class="step now"><div class="k">체결 / Reorder</div><div class="v">2</div><div class="e">Beauteers · IO Beauty (stage 미확정)</div></div>
+    </div>
+    <div class="why" style="margin-top:8px"><b>엔진 정지 🔴.</b> 발굴(Apollo)·CRM(Notion)·시퀀스 <b>설계는 완료</b>, 가동 전. 정지 원인 = SPF/DKIM·GMAIL_APP_PASSWORD(이메일) · Apollo·Anthropic 키 · Notion 토큰 미발급. 키 발급 = 엔진 가동.</div>
+  </div>
+
+  <!-- 시장 스코어보드 -->
+  <h2>국가별 시장 스코어보드 — 어디부터·어디가 잘하나</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>시장</th><th>Tier</th><th>인증</th><th>진입</th><th>메시지 angle</th><th>현재 활동 / 실적</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">미국</td><td><span class="ch g_">A</span></td><td>FDA ✓</td><td class="dt">즉시</td><td class="dt">FDA·clean·vegan + Beauteers 사례</td><td class="dt">파트너 Beauteers (case)</td></tr>
+        <tr><td class="nm">태국</td><td><span class="ch g_">A</span></td><td>FDA TH ✓</td><td class="dt">즉시</td><td class="dt">동남아 K-beauty·derma 강세</td><td class="dt">—</td></tr>
+        <tr><td class="nm">러시아·CIS</td><td><span class="ch b_">B</span></td><td>약함</td><td class="dt">빠름</td><td class="dt">IO Beauty 사례·vegan derma 공백</td><td><span class="ch g_">체결 PO 1 — IO Beauty</span></td></tr>
+        <tr><td class="nm">동남아 (베·필·인니·말)</td><td><span class="ch b_">B</span></td><td>약함</td><td class="dt">빠름</td><td class="dt">K-beauty 강세</td><td class="dt">—</td></tr>
+        <tr><td class="nm">동유럽 (헝·루·불)</td><td><span class="ch b_">B</span></td><td>없음</td><td class="dt">빠름</td><td class="dt">가격 fit·clean beauty 가속</td><td class="dt">—</td></tr>
+        <tr><td class="nm">MENA mid (UAE·터키·이집트·모로코·요르단)</td><td><span class="ch b_">B</span></td><td>약함</td><td class="dt">빠름</td><td class="dt">halal-친화 vegan·sensitive</td><td class="dt">—</td></tr>
+        <tr><td class="nm">LATAM (멕·칠·콜·페)</td><td><span class="ch b_">B</span></td><td>약함</td><td class="dt">빠름</td><td class="dt">보급형 K-beauty 수요</td><td class="dt">—</td></tr>
+        <tr class="off"><td class="nm">영·일·호·브</td><td><span class="ch a_">C</span></td><td>mid</td><td class="dt">추후</td><td class="dt">인증 비용·시간</td><td class="dt">Marco 컨펌 후</td></tr>
+        <tr class="off"><td class="nm">EU·폴·체·중국</td><td><span class="ch r_">D</span></td><td>과대</td><td class="dt">보류</td><td class="dt">CPNP/NMPA·ROI 의문</td><td class="dt">자동 제외</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="verdict" style="margin-top:10px">첫 sprint = <b>Tier A·B만</b> (인증 보유·제약 약함). ⚠️ <b>"어디가 잘하는지" 성과비교 = 🔴 깜깜</b> — 국가별 PO·resell-through 실적 미기록(과거 박람회 ROI 0). 현재 유일 실적 = 러시아 IO Beauty PO 1건. 펀널이 돌기 시작하면 이 칸이 채워진다.</div>
+
+  <!-- 블로커 → 결정큐 -->
+  <h2>블로커 → 결정큐 (CEO 결정·리소스)</h2>
+  <div class="card dq">
+    <div class="row"><span class="tag r_">필요</span><span><b>API키 4종 발급</b> — GMAIL_APP_PASSWORD(이메일 발송, SPF/DKIM/DMARC 포함) · Apollo Basic $49/mo(발굴, Free는 API 403) · Anthropic(personalize) · Notion 토큰(CRM read/write). <b>엔진 가동의 유일 조건.</b></span></div>
+    <div class="row"><span class="tag a_">입력</span><span><b>파트너 2곳 stage 확정</b> — Beauteers·IO Beauty (Reorder / Dormant) → 재주문율 측정 시작</span></div>
+    <div class="row"><span class="tag a_">입력</span><span><b>IO Beauty PO 금액 입력</b> — 북극성 파이프라인 $ 첫 실측치</span></div>
+  </div>
+  <div class="why" style="margin-top:6px">→ ops_health 전사 결정큐로 합류. (대기: LinkedIn Sales Navigator 전환 요청 중)</div>
+
+  <!-- 박람회 자산 링크 -->
+  <h2>발굴 자산</h2>
+  <div class="card linkcard">
+    <div>
+      <a href="tradeshows.html">박람회 캘린더 (50개 · 발굴 자산) →</a>
+      <div class="why">적합도 자동계산(≥65 = 21곳 <span class="ch a_">🟡 추정</span>) · 접수현황·메모 브라우저 저장 · ⏰ 멕시코 K-EXPO 통합부스 마감 7/3</div>
+    </div>
+    <span class="ch b_">자체완결 페이지</span>
+  </div>
+
+
+  <!-- 디스트리뷰터 파이프라인 (SSOT: knowledge/distributors.md · 2026-07-03) -->
+  <h2>디스트리뷰터 파이프라인 — 전체 거래선·리드·회사정보 <a class="full" href="knowledge/distributors.md">SSOT 상세 →</a></h2>
+  <div class="own" style="margin-top:0">
+    <div class="card"><div class="lbl">🟢 활성 거래선</div><div class="big">4<small> 곳 · 美·러·몽골·태국</small></div></div>
+    <div class="card"><div class="lbl">🟡 론칭 준비</div><div class="big">2<small> 곳 · UAE·사우디 (7월)</small></div></div>
+    <div class="card"><div class="lbl">🔵 검증 통과 리드</div><div class="big">4<small> 곳 · 파킹 4 · 드롭 4</small></div></div>
+  </div>
+  <div class="tbl" style="margin-top:12px">
+    <table>
+      <thead><tr><th>회사</th><th>국가</th><th>상태</th><th>채널·회사정보</th><th>진행사항</th><th>다음 액션</th></tr></thead>
+      <tbody>
+        <tr><td class="nm">Beauteers LLC<div class="dt">Martin·Hamin Kim</div></td><td>미국</td><td><span class="ch g_">활성</span></td><td class="dt">오프라인 리테일+자사몰(Cupiddrop·TikTokShop) · TikTok LOA 체결 · NYC KOOM 인연</td><td class="dt">Trial 176개 → <b>5K+5K 확장 제안 발송</b> (7/3·유효 7/15). 코스트코는 Phase 2 보류</td><td class="dt">제안 회신 대기 → 계약서 초안</td></tr>
+        <tr><td class="nm">IO Beauty<div class="dt">TES 경유</div></td><td>러시아</td><td><span class="ch g_">활성</span></td><td class="dt">모스크바 리테일·유통 · Zishel→TES referral</td><td class="dt">첫 오더 세럼50+크림50 출고 (6/15 항공)</td><td class="dt">90일 재주문 체크인 · 제재/결제 상시 확인</td></tr>
+        <tr><td class="nm">Emh outsourcing<div class="dt">Maral · 이태림(TES)</div></td><td>몽골</td><td><span class="ch g_">활성</span></td><td class="dt">울란바토르 리테일(Akoya mall) · 라포 강함</td><td class="dt">250/250 발주완료 + <b>400/400 일괄배송 협의</b> · 마스크팩 8월 건 별도 · 샘플 5매 DHL</td><td class="dt">400/400 회신 → PI 발행</td></tr>
+        <tr><td class="nm">Rose Innovation<div class="dt">Prim (Beautrium 위탁)</div></td><td>태국</td><td><span class="ch g_">활성</span></td><td class="dt">Beautrium 리테일 50+ 매장 · 태국 FDA 보유</td><td class="dt">웹리포트 계정 수령(태국 IP 전용) · <b>RTV 반품 알림 다수</b></td><td class="dt">판매·반품 리포트 요청 → 첫 sell-through 실측</td></tr>
+        <tr><td class="nm">UAE 파트너</td><td>UAE</td><td><span class="ch a_">론칭준비</span></td><td class="dt">세부 기입 필요 [Marco]</td><td class="dt">7월 론칭 물량 배치 (몽골 건과 배분 조정)</td><td class="dt">파트너·채널·조건 SSOT 기입</td></tr>
+        <tr><td class="nm">사우디 파트너</td><td>사우디</td><td><span class="ch a_">론칭준비</span></td><td class="dt">세부 기입 필요 [Marco]</td><td class="dt">7월 론칭 물량 배치</td><td class="dt">파트너·채널·조건 SSOT 기입</td></tr>
+        <tr><td class="nm">BHAB Cosmetics<div class="dt">Youliya · LinkedIn 1촌</div></td><td>러시아</td><td><span class="ch b_">리드 7/10</span></td><td class="dt">MA:NYO 공식 배급 · Letual·Gold Apple 입점 · 15년+</td><td class="dt">검증 완료 — 리드 중 최상</td><td class="dt">IO Beauty 충돌+OFAC 게이트 → 1차 접촉</td></tr>
+        <tr><td class="nm">LIFE Pharmacy<div class="dt">Nutripharm · 컨택 재탐색</div></td><td>UAE/GCC</td><td><span class="ch b_">리드 9/10</span></td><td class="dt">GCC 약국체인 500+ 매장 · K뷰티·더마 카테고리 보유</td><td class="dt">회사 최상급 · 기존 1촌은 경쟁사 영업으로 판명</td><td class="dt">진짜 K뷰티 바이어 컨택 발굴</td></tr>
+        <tr><td class="nm">Skin Zephyr<div class="dt">Christina Thornton</div></td><td>미국</td><td><span class="ch b_">리드 5/10</span></td><td class="dt">NC 샬럿 · K뷰티 온라인몰(2006~) · 취급가 $6~30 저가존</td><td class="dt">인바운드 샘플 요청 (배송비 부담 의사) · 가격 미스매치 주의</td><td class="dt">샘플 발송 + 가격 포지셔닝 답장</td></tr>
+        <tr><td class="nm">Connoii</td><td>이탈리아</td><td><span class="ch b_">리드 미검증</span></td><td class="dt">K-beauty Co-founder — 실체 미확인 (사이트 접속불가)</td><td class="dt">인바운드 통화 요청 수신</td><td class="dt">실체 검증 후 대응</td></tr>
+        <tr class="off"><td class="nm">B2B-ICOSMO</td><td>폴란드</td><td><span class="ch a_">파킹</span></td><td class="dt">EU K뷰티 도매 (COSRX 등 취급) — 실재 확인</td><td class="dt">전 제품 CPNP 요구로 보류</td><td class="dt"><b>CPNP 취득 시 승격 재접촉</b></td></tr>
+        <tr class="off"><td class="nm">Harrods / Glow Pro / Pieter</td><td>UK·EU·NL</td><td><span class="ch a_">파킹</span></td><td class="dt">백화점 장기목표 · 에이전시 · 네트워커(referral 소스)</td><td class="dt">관계 유지 모드</td><td class="dt">레퍼런스 축적 · intro 관찰</td></tr>
+        <tr class="off"><td class="nm">J&amp;J Global · Insol · Qogita · ARUM</td><td>—</td><td><span class="ch r_">드롭</span></td><td class="dt">유령 법인 · 경쟁사(NINOVA) · 그레이마켓 · 실체 없음</td><td class="dt">검증 탈락</td><td class="dt">재접촉 안 함</td></tr>
+      </tbody>
+    </table>
+  </div>
+\n  <div class="foot">
+    체계: 이 화면(팀 수집) → 전략기획 L1(취합·판단) → 결정큐(환류) · 표준 5칸 보고계약 준수.
+    측정배지 <span class="ch g_">측정</span> <span class="ch a_">추정</span> <span class="ch r_">깜깜</span> — 발송 0건·prospect 0건은 <b>날조 아닌 실측 0</b>.
+    출처: knowledge/markets.md · memory/email_warmup_state.json(total_sent 0) · memory/notion_pipeline.json(CRM 스키마) · contracts/(VD-RU1-IOB-260520) · 박람회 SSOT knowledge/tradeshows.md ·
+    <a class="full" href="../../10_strategy/dashboard/index.html">L1 전략기획 대시보드 →</a>
+  </div>
+</body>
+</html>
