@@ -529,7 +529,7 @@
     <button class="tab" data-tab="t2">② 🔍 무엇을 알게 됐나</button>
     <button class="tab" data-tab="t3">③ 🗂 지난주 한 일</button>
     <button class="tab" data-tab="t4">④ 📈 2주차 vs 3주차</button>
-    <button class="tab" data-tab="t5">⑤ 🚦 결정큐 · 할 일</button>
+    <button class="tab" data-tab="t5">⑤ 📋 이번 주 할 일</button>
   </nav>
 
   <div class="tabpanel active" id="t1">
@@ -1068,46 +1068,33 @@
   </div><!-- /t4 -->
 
   <div class="tabpanel" id="t5">
-  <!-- ④ 블로커 → CEO 결정큐 (팀이 자체 진행 못 하는 · CEO 결정·리소스 필요 항목) -->
+  <!-- ④ CEO 에스컬레이션 (이번 주는 0건 — 팀 결정 권한 내 사안은 8번 실행계획으로 이관) -->
   <section id="decq-sec">
-    <div class="sec-head"><span class="sec-num">④</span><h2>🚦 CEO 결정큐 — 막힌 것</h2>
-      <span class="note">팀이 자체 진행 불가 · CEO 결정/리소스 필요 → ops_health 전사 결정큐로 합류</span></div>
-    <p class="lead">아래 항목은 팀이 스스로 못 푸는 <b>블로커</b>입니다. 결정이 나야 다음 주 실행(아래 '할 일')이 풀립니다.</p>
-    <div class="decq">
-      <div class="dq-h">결정 대기 3건</div>
-      <div class="dq-sub">각 항목 = 무엇을 / 왜 막혔나 / CEO에게 필요한 것.</div>
-      <div class="dq-row">
-        <span class="dq-dl urgent">재상정</span>
-        <div class="dq-body"><b>자사 브랜드어(lemonderma) 네거티브 해제 여부.</b> 2주차 관찰(ROAS 55) 근거로 해제를 제안했으나 2주 연속 미반영 상태입니다. 브랜드 검색 지면의 노출점유 약 76%(자사 23.8%)를 타사가 가져가는데 방어 입찰이 0인 상태를 계속 둘지, 최소 방어 예산을 켤지 결정이 필요합니다. <span class="need">→ 필요: CEO 해제/유지 결정</span></div>
-      </div>
-      <div class="dq-row">
-        <span class="dq-dl soon">정리</span>
-        <div class="dq-body"><b>ENABLED 149개 매출0 캠페인 정리 승인.</b> 지금도 매출 없이 주 $329.02를 태우고 있습니다. 클릭 10회 이상 누적된 캠페인부터 우선 PAUSE하는 방향에 대한 승인이 필요합니다. <span class="need">→ 필요: CEO 정리 범위·속도 승인</span></div>
-      </div>
-      <div class="dq-row">
-        <span class="dq-dl wait">스케일</span>
-        <div class="dq-body"><b>히어로 소재 DNA 복제 규모 — 3개 축(아마존 UGC · 아마존 M1클리닉 · 메타 흰배경 손).</b> 세 소재군 모두 이번 주 각 플랫폼 BEP를 상회했습니다(UGC 1.40 / M1클리닉 3.42 / 메타 White 2.46). 변주 증식(같은 씬·메시지·배경의 대량 변형)을 얼마나 빠르게 늘릴지 예산·물량 방향 결정이 필요합니다. 특히 <b>메타는 '흰/클린 배경 B&A' 배경 변주가 최우선</b>입니다. <span class="need">→ 필요: CEO 확장 규모 승인</span></div>
-      </div>
-      <div class="dq-note">* 미해결 시 자동으로 전사 결정큐(ops_health)로 합류. UAE 등 다른 시장 게이트는 본 US 리포트 범위 밖이라 여기서 제외.</div>
-    </div>
+    <div class="sec-head"><span class="sec-num">④</span><h2>🚦 CEO 에스컬레이션 — 0건</h2>
+      <span class="note">→ ops_health 전사 결정큐 연동 칸</span></div>
+    <p class="lead">이번 주는 CEO 결정이 필요한 블로커가 없습니다. 이전 주 대기 중이던 3건(브랜드어 네거티브 해제·매출0 캠페인 정리·히어로 소재 확장)은 전부 <b>성과마케팅팀 자체 결정 권한</b> 범위의 사안으로 확인돼, 존이 직접 결정하고 8번 실행계획에 반영했습니다.</p>
   </section>
 
   <!-- 8. 이번 주 할 일 -->
   <section id="actions">
     <div class="sec-head"><span class="sec-num">8</span><h2>이번 주 진행할 일</h2>
-      <span class="note">굶는 캠페인 정리 → 히어로 DNA 복제 → 카테고리 미점유 공략</span></div>
+      <span class="note">브랜드 방어 재개 → 굶는 캠페인 정리 → 히어로 DNA 복제 → 카테고리 미점유 공략</span></div>
     <p class="lead">3주차 진단(MER 반등·매출 집중도 악화·UGC-M1클리닉 오판 정정)에 따라, 4주차는 <b>새는 비용부터 막고, 검증된 히어로를 물량화하고, 완전히 비어있는 카테고리(다크스팟·엑소좀)를 공략</b>합니다. 입찰은 건드리지 않고(저CPC=필터 doctrine), 소재 볼륨과 캠페인 정리로만 움직입니다.</p>
     <div class="tbl-scroll">
       <table class="tbl act">
         <thead><tr><th>구분</th><th>할 일</th><th>왜 하나 (쉬운 설명)</th><th>상태</th></tr></thead>
         <tbody>
+          <tr><td class="catcell"><span class="ci">🛡</span>브랜드 방어</td>
+            <td class="first">자사 브랜드어(lemonderma) 네거티브 해제 — 최소 방어 입찰 재개</td><td class="exp">우리 브랜드 이름을 검색해도 노출 지면의 약 76%를 타사가 가져가는데(자사 노출점유 23.8%), 방어 입찰이 2주째 꺼져 있었습니다. 결정: 최소 방어 예산으로 다시 켭니다.</td><td><span class="p p-hi">✅ 결정</span></td></tr>
+
           <tr><td rowspan="2" class="catcell"><span class="ci">🔧</span>비용 정리</td>
-            <td class="first">ENABLED 149개 매출0 캠페인 중 클릭 10회+ 누적분 우선 PAUSE</td><td class="exp">지금도 돈이 새고 있는 캠페인입니다. 클릭이 충분히 쌓였는데 한 번도 안 팔린 캠페인부터 먼저 끕니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
+            <td class="first">ENABLED 149개 매출0 캠페인 중 클릭 10회+ 누적분 우선 PAUSE</td><td class="exp">지금도 매출 없이 주 $329.02가 새고 있는 캠페인입니다. 클릭이 충분히 쌓였는데 한 번도 안 팔린 캠페인부터 먼저 끕니다.</td><td><span class="p p-hi">✅ 결정</span></td></tr>
           <tr><td class="first">네거티브 28개 신규 등록(skin·beauty·serum·THEME자동 등)</td><td class="exp">특정 검색어 하나(skin)가 SB 전체 비용의 14.9%를 혼자 태우고 있습니다. 매출 없이 반복 소진되는 키워드 28개를 광고 노출에서 제외합니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
 
-          <tr><td rowspan="2" class="catcell"><span class="ci">🚀</span>히어로 DNA 복제</td>
-            <td class="first">UGC 히어로 소재(ROAS 1.40) 변주 증식</td><td class="exp">굶고 있다가 서빙이 풀리면서 잘 팔린 UGC 소재를 더 만들어 노출 표면적을 넓힙니다. 입찰은 그대로 두고 소재 수만 늘립니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
+          <tr><td rowspan="3" class="catcell"><span class="ci">🚀</span>히어로 DNA 복제</td>
+            <td class="first">UGC 히어로 소재(1.40배) 변주 증식</td><td class="exp">굶고 있다가 노출이 풀리면서 잘 팔린 UGC 소재를 더 만들어 노출 표면적을 넓힙니다. 입찰은 그대로 두고 소재 수만 늘립니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
           <tr><td class="first">M1클리닉 메시지 추가 스케일 + M3 단일집중 서사 폐기</td><td class="exp">M3(레이저)만 매출을 낸다는 전제가 이번 주 깨졌습니다. M1클리닉이 유일하게 본전을 넘긴 메시지라 이 방향의 소재를 더 만듭니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
+          <tr><td class="first">메타 '흰 배경 손' 소재 배경 변주 확장 (2.46배)</td><td class="exp">메타 광고 중 유일하게 본전을 넘긴 소재입니다. 같은 손 사용 전·후 구도를 유지한 채 흰/클린 배경 변형만 늘려 대량 복제합니다. 결정: 3개 히어로 축(UGC·M1클리닉·메타 흰배경) 전부 확장 승인.</td><td><span class="p p-hi">✅ 결정</span></td></tr>
 
           <tr><td class="catcell"><span class="ci">🎯</span>카테고리 공략</td>
             <td class="first">다크스팟 백엔드 키워드 리스팅 삽입 + 크림 'exosome serum' 키워드 매핑</td><td class="exp"><b>가장 중요한 과제입니다.</b> 다크스팟(25개 검색어)·엑소좀(12개 검색어) 카테고리에서 우리 브랜드가 완전히 검색되지 않는 상태입니다. 리스팅 제목·백엔드 키워드에 이 단어들을 채워 넣어 검색에 걸리게 만듭니다.</td><td><span class="p p-mid">🔜 예정</span></td></tr>
