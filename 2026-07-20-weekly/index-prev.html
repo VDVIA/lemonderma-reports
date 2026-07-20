@@ -590,7 +590,18 @@
     <div class="kpis">
       <div class="kpi dot-w"><div class="k-top"><span class="k-label">주간 지출</span><span class="led w"></span></div><div class="k-val">$248.14</div><div class="k-judge">🟡 3캠 유지 (₩14,000/일 CBO)</div><div class="k-trend">전주 $262.17 · 급변 금지 운영 원칙 준수</div></div><div class="kpi dot-b"><div class="k-top"><span class="k-label">채널 귀속 ROAS</span><span class="led b"></span></div><div class="k-val">0.74</div><div class="k-judge">🔴 본전선(1.49)의 50%</div><div class="k-trend">전주 0.56 — White_v1 지연 귀속 포함</div></div><div class="kpi dot-b"><div class="k-top"><span class="k-label">현역 3종 누적</span><span class="led b"></span></div><div class="k-val">J2 1.20 · F4 0.39 · C5 0.00</div><div class="k-judge">🔴 전원 본전선 미달</div><div class="k-trend">C5는 누적 $92를 썼지만 구매 0건 — 완전 중단 검토 대상 (★10)</div></div><div class="kpi dot-w"><div class="k-top"><span class="k-label">White_v1 지연 귀속</span><span class="led w"></span></div><div class="k-val">2건 $109.74</div><div class="k-judge">🟡 중지(7/16) 후 잡힌 매출</div><div class="k-trend">판정 타이밍에 귀속 지연 반영 필요 (★8)</div></div>
     </div>
-    <div class="bd-warn" style="margin-top:14px">📐 <b>메타 소재 판정 룰 v1.1 확정 (7/20)</b> — 이번 주 지적된 "소재가 애매하게 오래 가는" 문제를 끝내기 위해, 소재를 <b>버튼값</b>(LP "Buy on Amazon" 버튼 클릭 1건당 비용)으로 판정하는 룰을 확정했습니다. 아마존 구매 집계는 늦고 일부만 잡혀 단기 판정이 불가능하기 때문입니다. 관문 3개: ① 누적 $25에 버튼값 $1.20 초과 → 교체 ② 누적 $56 무구매 → 교체(버튼값 $0.80 이하면 $84까지 유예) ③ 1개당 광고비 $28 초과 2주 연속 → 교체. 구매 3개를 $18.8 이하로 팔면 승자 확정·예산 집중, 무구매 10일이면 무조건 교체. 매일 아침 브리핑이 자동 판정합니다(정본: 결정 기록 2026-07-20).</div>
+    <div class="bd-warn" style="margin-top:14px">📐 <b>메타 소재 판정 룰 v1.1 확정 (7/20)</b> — 이번 주 지적된 "소재가 애매하게 오래 가는" 문제를 끝내는 룰입니다. 판정 기준 = <b>버튼값</b>(LP "Buy on Amazon" 버튼 클릭 1건당 비용). 아마존 구매 집계는 늦고 일부만 잡혀 단기 판정이 불가능하기 때문입니다.</div>
+    <div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th>관문</th><th>언제</th><th>조건</th><th>조치</th></tr></thead>
+      <tbody>
+        <tr><td><b>① 버튼이라도 누르게 하나</b></td><td>누적 $25 (보통 2~3일)</td><td class="num">버튼값 &gt; $1.20</td><td>🔴 즉시 교체</td></tr>
+        <tr><td><b>② 실제로 팔리나</b></td><td>누적 $56 (보통 5~7일)</td><td class="num">구매 0</td><td>🔴 교체 — 단 버튼값 ≤ $0.80이면 $84까지 1회 유예 · 판정 +3일 지연 집계 확인</td></tr>
+        <tr><td><b>③ 남는 장사인가</b></td><td>매주 월요일</td><td class="num">1개당 광고비 &gt; $28 · 2주 연속</td><td>🔴 교체</td></tr>
+        <tr style="background:#eef3dd"><td><b>🏆 승자 확정</b></td><td>상시</td><td class="num">구매 3개+ &amp; 1개당 ≤ $18.8</td><td>🟢 예산 집중 (증액 스텝 20%)</td></tr>
+        <tr><td><b>⏱ 안전핀</b></td><td>—</td><td class="num">무구매 10일 (지출 무관)</td><td>🔴 무조건 교체</td></tr>
+      </tbody>
+    </table></div>
+    <div class="bd-src">교체로 빈 슬롯은 대기열의 다음 소재로 즉시 충원(총예산 동결) · 매일 아침 브리핑이 자동 판정 · 기준 상수: 1개 판매당 본전 광고비 $18.8, 버튼값 본전선 $0.80 (정본: 결정 기록 2026-07-20)</div>
     <div class="tbl-scroll"><table class="tbl">
       <thead><tr><th>소재</th><th class="num">누적 지출</th><th class="num">버튼값 (최근 7일)</th><th class="num">구매 · 1개당 광고비</th><th>판정 (7/20 첫 적용)</th></tr></thead>
       <tbody>
