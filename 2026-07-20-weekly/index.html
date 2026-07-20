@@ -334,6 +334,29 @@
 .board .b-ref{font-size:12px;color:var(--muted)}
 .pill-board{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#eef3dd;color:#4a6b1d;vertical-align:2px;margin-right:6px}
 @media(max-width:760px){.boards{grid-template-columns:1fr}}
+
+.gamerule{margin-top:16px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--lime-deep);border-radius:14px;padding:16px 20px 14px;box-shadow:var(--shadow)}
+.gr-h{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep);margin-bottom:12px}
+.gr-flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.gr-step{flex:1;min-width:180px;background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.gr-step.win{background:#eef3dd;border-color:var(--lime-deep)}
+.gr-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.gr-step.win .gr-n{background:var(--lime-deep)}
+.gr-t{font-size:13px;line-height:1.5;color:#3b3a35}
+.gr-t b{display:block;font-size:14px;color:var(--ink);margin-bottom:2px}
+.gr-arrow{align-self:center;font-size:20px;font-weight:800;color:var(--lime-deep)}
+.gr-kpi{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);font-size:14.5px;color:var(--ink)}
+.gr-kpi b{font-size:17px;color:var(--lime-deep)}
+@media(max-width:760px){.gr-flow{flex-direction:column}.gr-arrow{transform:rotate(90deg);align-self:center}}
+
+.acc{margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.acc summary{cursor:pointer;padding:13px 16px;font-size:14.5px;font-weight:800;color:var(--ink);list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"▾ 펼치기";margin-left:auto;font-size:11.5px;font-weight:700;color:var(--muted)}
+.acc[open] summary::after{content:"▴ 접기"}
+.acc summary:hover{background:#faf9f4}
+.acc .bd-sub{margin:0;padding:2px 16px 16px;border:0;box-shadow:none;background:transparent}
+.acc-group{margin:20px 0 2px;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep)}
 </style>
 </head>
 <body>
@@ -392,9 +415,16 @@
     <div class="tw-sub" style="margin:6px 0 0">* 전 주차는 대시보드 정본 산식으로 재계산(뒤늦게 잡힌 매출까지 반영 — 게시 당시 수치와 소폭 차이 가능). 5주차는 이번 주 게시 시점 수치로, SB 어트리뷰션 3~14일에 걸쳐 마저 잡히면서 소폭 상향될 수 있습니다. 1주차는 광고비 $98의 소규모 워밍업 주라 MER 비교 참고용.</div>
   </div>
 
-  <div style="margin-top:16px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--lime-deep);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow);font-size:14px;color:#2f2e29;line-height:1.7">
-    <b style="font-size:12px;letter-spacing:.06em;color:var(--lime-deep)">📐 이 보고서의 판단 기준 — 우리가 하는 게임</b><br>
-    우리 퍼포먼스 광고는 단순한 게임입니다. <b>① 흑자가 나는 클릭 단가로 고정해 소재를 대량으로 깐다 → ② 경매에서 노출을 따내 팔리는 소재를 찾는다 → ③ 특정 소재 × 특정 검색어에서 반복 구매가 나오면 '히어로 조합'으로 확정하고, 그것만 키운다.</b> 이 조합을 얼마나 많이 모았는지가 핵심 KPI입니다. 아래 모든 숫자는 이 기준으로 읽으면 됩니다 — 이번 주 스코어: <b>히어로 조합 확정 0 · 후보 6</b> (관문별 상세는 ② 탭).
+  <div class="gamerule">
+    <div class="gr-h">📐 이 보고서의 판단 기준 — 우리가 하는 게임은 단순합니다</div>
+    <div class="gr-flow">
+      <div class="gr-step"><div class="gr-n">1</div><div class="gr-t"><b>소재를 대량으로 깐다</b>흑자가 나는 클릭 단가로 고정하고($0.9), 소재를 최대한 많이 투입</div></div>
+      <div class="gr-arrow">→</div>
+      <div class="gr-step"><div class="gr-n">2</div><div class="gr-t"><b>경매를 통과하는 소재를 찾는다</b>대부분은 노출조차 안 됨 — 노출을 따내고 팔리는 소재가 '후보'</div></div>
+      <div class="gr-arrow">→</div>
+      <div class="gr-step win"><div class="gr-n">3</div><div class="gr-t"><b>히어로 조합을 확정한다</b>같은 소재 × 같은 검색어에서 반복 구매(2회+ · 누적 8건+)가 나오면 확정하고, 그것만 키운다</div></div>
+    </div>
+    <div class="gr-kpi">🏁 핵심 KPI = 히어로 조합 수 · 이번 주 스코어 <b>확정 0 · 후보 6</b> <span style="font-size:12.5px;color:var(--muted)">(관문별 상세는 ② 탭)</span></div>
   </div>
 
   
@@ -442,10 +472,11 @@
 
   <!-- TL;DR -->
   <div class="tldr">
-    <div class="t-h">TL;DR — 광고비를 반으로 줄였는데, 매출은 그대로 지켰다</div>
+    <div style="font-size:11.5px;font-weight:800;letter-spacing:.08em;color:var(--lime-deep);margin-bottom:5px">📌 이번 주 핵심 요약</div>
+    <div class="t-h" style="font-size:23px;line-height:1.35;margin-bottom:12px">광고비를 반으로 줄였는데, 매출은 그대로 지켰다</div>
     <div class="t-row"><span class="ic">💰</span><div>이번 주 광고비 <b>$581(−35%)</b>, 매출 <b>$830(−2.4%)</b>. 광고비 1달러가 벌어온 매출이 <b>$0.95 → $1.43</b>로 좋아졌습니다. 지난주(7/13) 대청소로 "돈만 쓰고 매출은 없던 광고"를 잘라냈는데, 그 판단이 옳았다는 게 숫자로 확인됐습니다(낭비성 지출 $482→$223).</div></div>
     <div class="t-row"><span class="ic">🏆</span><div>제일 잘 버는 광고는 2주 연속 <b>아마존 자동 광고(SP-Auto)</b> — 광고비의 <b>5.25배</b>를 벌었고, 이번 주 광고 매출의 절반이 여기서 나왔습니다. 더 키우려면 예산이 아니라 <b>클릭 단가(입찰가)를 올려야 한다</b>는 걸 확인하고 7/19에 올렸습니다. 효과는 7/23에 판정합니다.</div></div>
-    <div class="t-row"><span class="ic">⚠️</span><div>걱정거리는 둘 — ① <b>크림</b>: 아마존 검색에서 노출·상세조회·장바구니가 모두 급감했습니다(각 −95%·−87%·0건). ② <b>메타(인스타·페북)</b>: 지난주까지 잘 되던 소재들이 이번 주 일제히 꺾였고, 광고 1건이 정책 심사에 걸려 있습니다(7/21 이의제기 결과 대기).</div></div>
+    <div class="t-row"><span class="ic">⚠️</span><div>걱정거리는 둘 — ① <b>크림</b>: 영상 광고(SB)를 끈 상태라 검색 유입이 준 것 자체는 예상대로입니다. 진짜 신호는 <b>SP 자동광고가 노출 6,100회·$19.97을 썼는데도 구매 0</b> — 노출돼도 안 팔리니, 문제는 광고가 아니라 상품페이지입니다(리뉴얼 확인 대기). ② <b>메타(인스타·페북)</b>: 지난주까지 잘 되던 소재들이 이번 주 일제히 꺾였고, 광고 1건이 정책 심사에 걸려 있습니다(7/21 이의제기 결과 대기).</div></div>
     <div class="t-row"><span class="ic">🧭</span><div>지난주 세운 운영 원칙이 처음 실전을 치렀습니다. 약속대로 안 되는 소재를 끈 것은 <b>성공</b>, 반대로 "4일 뒤 재점검" 약속 하나는 시스템 버그로 조용히 누락됐습니다(버그 수정 완료). 이번 주 최고 성과 소재 <b>김보은C1(5.96배)</b>은 아직 우연일 수 있어 <b>'후보'로만</b> 관리합니다.</div></div>
   </div>
 
@@ -652,7 +683,7 @@
       <div class="b-ref">상세 → ★2·★3·★4·★5·★7</div>
     </div>
   </div>
-  <div class="bd-warn" style="margin-bottom:18px">⚠️ <b>판 밖 조건 변화 2가지</b> — ① 무효 트래픽 3주 연속 악화(★6): 원인 확정 전 SP-Auto 추가 증액 보류. ② 크림 검색 퍼널 붕괴(★3)와 메타 중간 페이지 정책 리스크(탭①·7/21 재심사): 게임 자체와 별개로 이번 주 지켜볼 변수.</div>
+  <div class="bd-warn" style="margin-bottom:18px">⚠️ <b>판 밖 조건 변화 2가지</b> — ① 무효 트래픽 3주 연속 악화(★6): 원인 확정 전 SP-Auto 추가 증액 보류. ② 크림 "노출돼도 안 팔림" 신호(★3)와 메타 중간 페이지 정책 리스크(탭①·7/21 재심사): 게임 자체와 별개로 이번 주 지켜볼 변수.</div>
 
   <section id="ba-deep">
   <style>
@@ -673,12 +704,27 @@
   #ba-deep table.mini th{background:#f4f3ec;font-size:11.5px}
   #ba-deep table.mini td.num,#ba-deep table.mini th.num{text-align:right;font-variant-numeric:tabular-nums}
 </style>
-<div class="sec-head"><span class="sec-num">★</span><h2>심층 — 브랜드 분석 × 광고 원장 풀수집 (5주차)</h2>
+<div class="sec-head"><span class="sec-num">★</span><h2>상세 근거 — 헤드라인을 누르면 펼쳐집니다</h2>
   <span class="note">위 4개 판의 상세 근거 — 발견 45건 전부 검증 통과(확정 41·수치정정 4·기각 0)</span></div>
 <p class="lead">아마존 브랜드 분석(SQP·카탈로그·여정·충성도·시장구매액·TST)과 광고 API 원본 데이터(SB 1,326캠·SP·SD 13종)을 전부 수집해 6각도로 분석하고, 적대 검증관 2인이 원본 파일에서 전 수치를 재계산해 대조했습니다. <b>검색·소비자행동 계열은 아마존 발행 지연으로 주 28(7/5–7/11) 기준</b> — 각 블록에 기간을 명기합니다.</p>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">② 키워드판</span>★1 키워드 경제학 — 전환 검색어 6종이 쓴 돈은 SB 총비용의 1.7%</h3>
+  <div class="acc-group">📦 소재판 · 조합판 — 상세 근거</div>
+  <details class="acc"><summary><span class="pill-board">①·③ 소재판·조합판</span>★8 전주 결론 정정 — 뒤집힌 판단 3건 + 판단 규칙 첫 성적표</summary><div class="bd-sub">
+  
+  <div class="bd-src">출처: 4주차 index-v2.html 대조 · changelog 7/13~7/19 · 주 29 원본 데이터 — 감사관+검증관 이중 확인</div>
+  <p><b>정정 ① 메타 '긍정 신호'가 사라졌습니다.</b> 4주차 보고서가 유일한 긍정 신호로 꼽았던 F4·J2(각 ROAS 1.73배)는 이번 주 실측에서 F4 0.39배(구매 1건)·J2 1.20배(구매 2건)로 손익분기선(1.49배) 아래로 확정됐습니다. C5는 $92를 쓰고 구매가 0건입니다. 4주차 스스로 "구매 1건짜리 신호는 아직 믿기 이르다"고 경고했던 위험이 그대로 현실이 됐습니다 — 구매가 여러 번 쌓여야 성공으로 인정한다는 판단 규칙의 필요성이 메타 데이터에서도 다시 확인된 셈입니다.</p>
+  <p><b>정정 ② SB 검색어 성적이 뒤집혔습니다.</b> 지난주까지는 "우리 브랜드·경쟁사 브랜드 검색어는 흑자, 일반 검색어는 적자"였는데 이번 주는 반대입니다. 경쟁사 브랜드 검색어는 $16.81을 쓰고 매출 0, 전환 6건은 전부 일반 검색어에서 나왔습니다(★1). 6/26에 세웠던 "경쟁사 이름 검색어 공략이 전환을 만든다"는 판단 규칙은 이번 주엔 재현되지 않았습니다(금액이 작아 규칙을 폐기하지는 않고 계속 지켜보는 중입니다).</p>
+  <p><b>정정 ③ 크림 진단이 바뀌었습니다.</b> 4주차에는 "장바구니엔 잘 담기는데 결제에서 이탈한다"고 봤는데, 실제로는 그 훨씬 앞 단계(검색 노출·상세페이지 조회·장바구니 진입)가 무너진 것이었습니다(★3). 번들도 "클릭 자체가 안 된다"던 진단과 달리 클릭률 2.01%로 역전됐습니다.</p>   <p><b>추가 경고 — 카피 승자 서사 일반화 금지 (발행 전 추가 발굴):</b> 이번 주 히어로·후보 SB 캠들은 같은 씬의 자매 카피 5~10개 중 <b>단 하나가 노출을 독식</b>한 결과입니다(김보은C1 = 자매 노출 90%·비용 85%·구매 전부, C3은 노출 0회). "c10·C1 카피가 우수하다"가 아니라 "그 카피만 경매에서 평가받았다"가 정확한 서술이므로, 다음 배치 카피 전략의 학습 근거로 쓰면 안 됩니다.</p>
+  <p><b>운영 원칙 첫 적용 성적판:</b></p>
+  <div class="tbl-scroll"><table class="mini"><thead><tr><th>운영 원칙 조항</th><th>적용 사례</th><th>결과</th></tr></thead><tbody>
+    <tr class="row-win"><td>메타 D+7 학습 재안정 관찰 후 판정</td><td>White_v1 (7/16)</td><td>✅ 규칙대로 중지 — 첫 작동 성공. 단 중지 후 뒤늦게 잡힌 매출 2건($109.74)이 이번 주 잡힘 — 귀속 지연을 감안한 판정 타이밍은 보완점</td></tr>
+    <tr class="row-bad"><td>예산을 늘리거나 새로 만든 광고는 D+4(4일 뒤 효과 판정)에 구매 0이면 되돌리기</td><td>B&A 노출 복구(입찰가가 낮아 막혔던 노출을 다시 열어준 조치) 15개 캠페인 (7/13 실행→D+4는 7/17)</td><td>❌ 되돌리기도 재평가도 하지 않고 그냥 넘어갔습니다 — 감시 도구(watchlist_check.py)의 분류 오류(7/19 수정)로 감시 목록에서 통째로 빠졌고, 7/15~16 결제 장애로 브리핑이 안 만들어진 것까지 겹쳤습니다. <b>판단 규칙이 도구 버그 때문에 작동하지 못한 첫 사례입니다.</b></td></tr>
+    <tr><td>단발 전환 = '후보', 증액 금지</td><td>김보은C1 (7/19 소폭 증액)</td><td>🟡 주 29 ROAS 5.96로 이번 주 SB 최대 승자이나, 두 주 검색어 검색 기록 대조 결과 구매 4건 전부 <b>서로 다른 검색어 1클릭 전환</b> — M1 오독과 동일 구조. '2주 연속 전환 후보'로만 관리, D+4(7/23) 되돌리기 라인 유지</td></tr>
+  </tbody></table></div>
+  <p><b>노출 복구(입찰가가 낮아서 노출이 막힌 광고를 다시 노출되게 올리는 조치) 자체도 실패했습니다.</b> 15개 캠페인 입찰가를 $0.7에서 $0.9로 올렸는데도, 260709 배치는 한 주 동안 노출 158회·클릭 1회·매출 $0.90에 그쳤습니다. $0.9로는 경매에서 낙찰되는 가격(경매 청산가)에 못 미친다는 뜻입니다. 지금 실제로 노출되고 있는 260624 배치는 $1.00까지 올라간 이력이 있으므로(6/25 $0.70→6/29 $0.90→7/1 $1.00), 다시 시도한다면 $1.00 이상이 근거 있는 기준입니다.</p>
+<div class="sowhat">💡 <b>그래서:</b> 이번 주 교훈은 하나 — 단발 신호로 늘리거나 줄이지 말 것. "4일 뒤 재점검" 규칙이 버그로 한 번 빠졌으니, 다음 주는 7/23 재평가가 실제 실행되는지만 확인하면 됩니다.</div></div></details>
+  <div class="acc-group">🔑 키워드판 — 상세 근거</div>
+  <details class="acc"><summary><span class="pill-board">② 키워드판</span>★1 키워드 경제학 — 전환 검색어 6종이 쓴 돈은 SB 총비용의 1.7%</summary><div class="bd-sub">
+  
   <div class="bd-src">출처: ads-api-sb-search-term(주 29, 349행) · ads-api-sb-campaigns(1,326캠) — 전 수치 검증관 재계산 일치</div>
   <p>이번 주 SB에서 구매가 발생한 검색어는 정확히 6개, 전부 <b>1클릭 → 1구매($36.58 세럼)</b>의 단발이었습니다. 이 6개가 쓴 광고비는 합쳐서 <b>$4.63 — SB 총비용 $279.27의 1.7%</b>입니다. 나머지 98.3%는 이번 주 매출 기준으로는 무수익이었다는 뜻입니다.</p>
   <table class="mini"><thead><tr><th>전환 검색어</th><th>매칭 키워드</th><th>캠페인</th><th class="num">비용</th><th class="num">ROAS</th></tr></thead><tbody>
@@ -693,7 +739,9 @@
   <div class="bd-warn">⚠️ 이 6건은 전부 1회성 구매라 광고비를 늘리는 근거로 쓰면 안 됩니다. 같은 검색어가 <b>2번 이상 반복되고 누적 구매가 8건을 넘어야</b> '진짜 잘 팔리는 검색어'로 인정합니다. 지금은 <b>"이쪽 방향이 유망하다"는 참고 정도</b>로만 쓰세요. 4주차에 없애자고 했던 넓은 범위 키워드 'face'도 이번 주 $39.35 써서 1건 전환(0.93배)이 나와 "낭비" 결론이 흔들렸고, 'beauty' 키워드는 여전히 $12.33 쓰고 매출 0입니다.</div>
 <div class="bd-warn">🧭 <b>매치타입(검색어와 키워드를 얼마나 느슨하게 연결할지 정하는 설정)의 발견 (발행 전 추가 발굴):</b> 이번 주 SB에서 전환된 6건은 <b>전부 BROAD(가장 넓게 매칭하는 방식)</b>였습니다. 반대로 좁게 매칭하는 PHRASE·THEME·EXACT 3종은 합쳐서 SB 비용의 20.4%($56.88, 900+216+145건)를 썼는데 매출은 0이었습니다. 클릭당 비용(CPC)은 $0.79~0.87로 방식별 차이가 거의 없었으니, 비용 효율이 아니라 <b>매칭 방식 자체가 안 팔린 것</b>입니다. 새 키워드를 넓힐 땐 BROAD를 우선하는 것이 이번 주 데이터로는 근거 있어 보입니다(단일 주 표본, 2주 더 반복 확인 후 확정).</div>
    <div class="bd-warn">💸 <b>새로 찾은 사실 — 처음부터 깔아둔 기본 검색어(시드 키워드)가 돈을 새고 있습니다:</b> 50개 넘는 캠페인에 똑같이 반복 삽입된 흔한 단어 17개가 <b>합산 $108.85, SB 비용의 39%</b>를 썼습니다. 본문에 나온 'face'($39.35) 외에도 'skin'(88캠·$19.47)·'beauty'(71캠·$12.33)·'serum'(142캠·$8.96)·자동 테마 키워드(216캠·$8.18)가 숨어 있고, 이 17개가 만든 매출은 'face' 1건($36.58)뿐입니다. 캠페인을 하나씩 끄는 것보다 <b>이 단어들을 캠페인 생성 기본 틀과 전사 제외 목록에서 한 번에 빼는 쪽</b>이 효과가 훨씬 큽니다(★10 후보).</div>
-  <div class="sowhat">💡 <b>그래서:</b> 키워드 확장은 넓은 매치(BROAD) 위주로. 캠페인마다 자동 삽입돼 온 제네릭 시드 17개(SB 비용의 39%)는 생성 템플릿·네거티브에서 일괄 제거를 검토하세요(★10).</div></div>  <div class="bd-sub">   <h3><span class="pill-board">④ 고객 힌트판</span>★2 검색 수요 지형 — 병목은 단 하나, "검색결과 화면에서 클릭받지 못함"</h3>
+  <div class="sowhat">💡 <b>그래서:</b> 키워드 확장은 넓은 매치(BROAD) 위주로. 캠페인마다 자동 삽입돼 온 제네릭 시드 17개(SB 비용의 39%)는 생성 템플릿·네거티브에서 일괄 제거를 검토하세요(★10).</div></div></details>
+  <div class="acc-group">👥 고객 힌트판 — 상세 근거</div>
+  <details class="acc"><summary><span class="pill-board">④ 고객 힌트판</span>★2 검색 수요 지형 — 병목은 단 하나, "검색결과 화면에서 클릭받지 못함"</summary><div class="bd-sub">   
   <div class="bd-src">출처: ba-sqp-brands-comprehensive(주 29) · ba-tst 3종(주 28) — 검증관 재계산 일치(시장 총노출 정확값 4,874,711)</div>
   <div class="bd-kv">
     <div><b>0.04%</b>논브랜드 노출 점유율 (1,939 / 487만)</div>
@@ -705,23 +753,32 @@
   <p><b>클릭이 부진한 원인 후보는 "가격이 안 맞는 검색어에 노출된다"는 것입니다.</b> 지금 우리 제품($36.58)이 노출되는 검색어들은 실제 시장 클릭가가 중간값 $10~25인 저가대입니다 — 우리 가격은 그 중간값의 1.74~2.54배입니다(예: korean lemon cream 검색 시 시장가 $14.16 vs 우리 $36.00). 반대로 가격대가 맞는 고가 검색어(jiyu $59.95·mela b3 $44.99)에는 노출은 돼도 클릭이 0인데, 이 검색어를 치는 사람들은 이미 다른 브랜드 충성 고객이기 때문입니다.</p>
   <p><b>우리 브랜드 이름으로 검색하는 고객은 이미 거의 다 삽니다.</b> 'lemonderma'로 검색한 경우(주 58회) 클릭률(CTR) 14.9%로 시장 평균의 4.2배이고, 클릭의 92.6%·장바구니의 100%를 가져가며, 이번 주 검색발 구매 2건도 전부 여기서 나왔습니다. <b>즉 검색만 일어나면 거의 다 우리가 가져가고, 유일한 한계는 그 검색이 얼마나 자주 일어나느냐입니다.</b> 이건 광고 입찰로는 못 늘립니다 — 메타·인플루언서·SNS에서 브랜드를 알게 된 사람이 아마존 검색으로 돌아오는 구조라는 뜻입니다. K뷰티 경쟁사들은 '브랜드+카테고리'를 묶은 검색어를 키워서 이 구조를 활용했습니다(예: celimax는 pore dark spot cream 검색의 46~63%를 독식). SNS·인플루언서 콘텐츠의 행동유도 문구(CTA)를 "lemonderma dark spot serum"처럼 브랜드+카테고리 조합으로 통일하는 것이 이 벤치마크를 실행에 옮기는 방법입니다.</p>
   <div class="bd-warn">⚠️ 자사 쿼리 'lemonderma'에서 노출 슬롯 점유는 22.5%(171/759)뿐 — 슬롯의 77%를 경쟁사가 차지 중. 현재 유출은 2클릭으로 미미하지만 브랜드 검색량이 커질수록 유출 리스크도 비례합니다.</div>
-<div class="sowhat">💡 <b>그래서:</b> 문제는 노출이 아니라 "검색결과 화면에서 클릭을 못 받는 것"입니다. 다음 개선은 광고 추가가 아니라 검색 타일(대표 이미지·가격·리뷰)에서 찾아야 합니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">④ 고객 힌트판</span>★3 상품 역할 분화 — 세럼만 전환 엔진, 크림은 위기, 번들은 "보이지만 안 담김"</h3>
+<div class="sowhat">💡 <b>그래서:</b> 문제는 노출이 아니라 "검색결과 화면에서 클릭을 못 받는 것"입니다. 다음 개선은 광고 추가가 아니라 검색 타일(대표 이미지·가격·리뷰)에서 찾아야 합니다.</div></div></details>
+  <details class="acc"><summary><span class="pill-board">④ 고객 힌트판</span>★3 상품 역할 분화 — 세럼만 전환 엔진, 크림은 위기, 번들은 "보이지만 안 담김"</summary><div class="bd-sub">
+  
   <div class="bd-src">출처: ba-sqp-asin 3종·ba-catalog-performance(주 29) · ba-market-basket(주 28) · ads-api-sp-purchased-product(주 29)</div>
   <table class="mini"><thead><tr><th>주 29 검색 퍼널</th><th class="num">노출</th><th class="num">클릭(CTR)</th><th class="num">장바구니</th><th class="num">구매</th></tr></thead><tbody>
     <tr class="row-win"><td>세럼 B0FV7XWDYF</td><td class="num">3,498</td><td class="num">32 (0.91%)</td><td class="num">12</td><td class="num">2 ($73.16 · CVR 6.25%)</td></tr>
     <tr class="row-bad"><td>크림 B0FV3QXSBF</td><td class="num">990</td><td class="num">7 (0.71%)</td><td class="num"><b>0</b></td><td class="num">0</td></tr>
     <tr><td>번들 B0H3H18F96</td><td class="num">448</td><td class="num">9 (<b>2.01%</b>)</td><td class="num">2</td><td class="num">0</td></tr>
   </tbody></table>
-  <p><b>크림 부진의 원인은 "결제 직전 이탈"이 아니라 그 이전 단계 전체가 무너진 것입니다(4주차 진단 정정).</b> 인지 유입 −94.65%·상세페이지 조회 −87.01%·구매 의도 신호 −75%로 전 단계가 꺾였고, 장바구니 담기는 0건, 광고비 $19.97을 써도 매출은 0이었습니다. 지금 노출되는 검색어도 lumi vera·froya·eqqualberry 같은 무관한 타 브랜드 검색어라 애초에 클릭이 없습니다. <b>크림은 혼자서 사람을 끌어오지 못하고 세럼에 딸려 팔리는 상품</b>입니다 — 크림 구매자의 80%는 세럼도 함께 삽니다. 반대로 세럼 구매자 중 크림을 함께 사는 비율은 33.3%뿐이라, 세럼이 주력이고 크림은 곁들이 상품이라는 구조가 수치로 확인됩니다. 그래서 번들로 묶어 파는 것보다 <b>"세럼으로 유입시킨 뒤 구매 후 크림을 교차 추천"</b>하는 방식이 이 구조에 맞습니다. 크림 상품페이지 개편(7/17 예정, 완료 여부 미확인)을 먼저 확인해야 합니다.</p>
+  <p><b>먼저 맥락 — 크림은 영상 광고(SB)를 돌리지 않는 상태입니다</b>(주 29 크림 SB 지출 $0). 그래서 검색 유입 하락(인지 −94.65%·상세조회 −87.01%·의도 −75%) 자체는 광고를 끈 데 따른 <b>예상된 결과</b>이지, 그 자체가 위기는 아닙니다. 진짜 신호는 따로 있습니다: <b>SP 자동광고는 크림에 노출 6,100회·$19.97(전주 $8.21의 2.4배)을 썼는데 구매가 0건</b> — 노출이 있어도 안 팔린다는 뜻이므로 문제는 유입량이 아니라 상품페이지(PDP)입니다. 장바구니 담기도 0건이었습니다. 지금 노출되는 검색어도 lumi vera·froya·eqqualberry 같은 무관한 타 브랜드 검색어라 애초에 클릭이 없습니다. <b>크림은 혼자서 사람을 끌어오지 못하고 세럼에 딸려 팔리는 상품</b>입니다 — 크림 구매자의 80%는 세럼도 함께 삽니다. 반대로 세럼 구매자 중 크림을 함께 사는 비율은 33.3%뿐이라, 세럼이 주력이고 크림은 곁들이 상품이라는 구조가 수치로 확인됩니다. 그래서 번들로 묶어 파는 것보다 <b>"세럼으로 유입시킨 뒤 구매 후 크림을 교차 추천"</b>하는 방식이 이 구조에 맞습니다. 크림 상품페이지 개편(7/17 예정, 완료 여부 미확인)을 먼저 확인해야 합니다.</p>
   <p><b>번들은 더는 "클릭조차 안 되는" 상품이 아닙니다(4주차 대비 개선).</b> 클릭률이 2.01%로 세럼의 2.2배라 검색결과에서 시선은 끕니다. 하지만 장바구니 담기는 2건, 실제 구매는 0건입니다 — $57.34 세트 가격을 보고 계산하다 멈추는 것으로 보입니다(개별 구매 합산가 $72.58 대비 절약폭이 화면에 안 보임). 주의할 점은, 번들 광고 라인의 매출 $114.68(구매 4건) 중 대부분($85.78)은 실제로는 세럼·크림 단품 판매입니다. <b>"번들이 팔리기 시작했다"고 읽으면 오독</b>입니다 — 번들 자체 구매는 여전히 0건입니다.</p>
   <p><b>'spicule'(마이크로 크리스탈을 뜻하는 영어 성분명) 검색 수요를 놓치고 있습니다.</b> 이 단어로 검색하는 양은 주간 551회나 되는데, 세럼 본품 상품명에는 이 단어가 없이 'Vegan Microcrystal'만 쓰고 있고, 대신 $57 번들 상품명에만 등록돼 있어 클릭이 0건입니다. 반대로 우리가 만든 용어 'microcrystal serum'의 검색량은 13회뿐이라 수요 자체가 거의 없습니다. 세럼 상품명이나 검색용 백엔드 키워드에 'spicule'을 같이 써넣는 걸 검토할 가치가 있습니다. 다만 규제·표시 문제가 없는지 먼저 확인해야 합니다 — 번들 상품명에는 이미 영문 spicule을 쓰고 있습니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 광고비·프로모션은 세럼에 집중하세요. 크림은 상세페이지 리뉴얼 확인 전까지 지출 최소 유지, 판매는 세럼 구매자 대상 구매 후 교차추천이 데이터에 맞습니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">④ 고객 힌트판</span>★4 고객 프로필 — 이번 주는 새 데이터 없음(표본이 너무 적어 비공개)</h3>
+<div class="sowhat">💡 <b>그래서:</b> 광고비·프로모션은 세럼에 집중하세요. 크림은 상세페이지 리뉴얼 확인 전까지 지출 최소 유지, 판매는 세럼 구매자 대상 구매 후 교차추천이 데이터에 맞습니다.</div></div></details>
+  <details class="acc"><summary><span class="pill-board">④ 고객 힌트판</span>★5 구매까지 가는 길 — 인지 5.6만 명 중 19명만 구매, 크림에서 시작된 수축</summary><div class="bd-sub">
+  
+  <div class="bd-src">출처: ba-customer-journey 4탭(주 28 — 지연 메뉴, 주 29 미제공 확인)</div>
+  <table class="mini"><thead><tr><th>여정 단계 (주 28)</th><th class="num">고객 수</th><th class="num">전주 대비</th><th>비고</th></tr></thead><tbody>
+    <tr><td>인지 (검색·검색결과 조회)</td><td class="num">56,024</td><td class="num">−2.27%</td><td>브랜드 검색 비율 0.04% (−44.69%)</td></tr>
+    <tr><td>고려 (상세페이지·리뷰 조회)</td><td class="num">1,017</td><td class="num">−13.52%</td><td>잠재력 높은 고객 617 (+37.72%)</td></tr>
+    <tr><td>의도 (장바구니·위시리스트)</td><td class="num">403</td><td class="num">−9.03%</td><td>장바구니 249 (−7.09%) · 나중저장 82 (+15.49%)</td></tr>
+    <tr><td>구매 (신규 브랜드 고객)</td><td class="num">19</td><td class="num">−26.92%</td><td>$850.64 (−28.56%) · 재구매 0</td></tr>
+  </tbody></table>
+  <div class="bd-src">비고 열 보조 수치(잠재력 617·나중저장 82·장바구니 델타·$850.64 등)는 검증 45건 세트 외 — 원장(ba-customer-journey-4tabs) 직접 인용, 발행 전 재검증에서 원장 일치 확인.</div><p>전체 단계가 줄어든 원인은 크림입니다(★3). 세럼은 상세페이지 조회 −0.98%·구매 의도 −4.21%로 선방했지만, 크림이 −87%/−75%로 무너지면서 전체 수치를 끌어내렸습니다. 좋은 신호도 있습니다 — 구매 가능성이 높은 고객이 +37.72%(617명) 늘었고 "나중에 사기" 저장도 +15.49% 늘어, <b>구매를 미루고 있는 수요가 쌓이는 중</b>입니다. 60일간 구매 의도를 보인 고객 719명은 아직 프로모션으로 다가갈 수 있는 대상으로 남아 있습니다. 다만 이 단계들에서 함께 검색되는 상위 브랜드가 medicube·dr melaxin이라는 점은 유의해야 합니다 — 7/17에 이 브랜드들을 광고 타겟에서 차단하기로 한 결정과는 별개로, 우리 고객이 실제로 이들과 비교하며 고민한다는 뜻이기 때문입니다.</p>
+<div class="sowhat">💡 <b>그래서:</b> 퍼널 수축의 진원은 크림인데, 크림은 영상 광고를 끈 상태라 감소 자체는 예상된 것입니다(★3). 진짜 확인할 것은 하나 — 크림 상세페이지(7/17 리뉴얼 예정 건) 완료 여부. 노출돼도 안 팔리는 원인이 거기 있습니다.</div></div></details>
+  <details class="acc"><summary><span class="pill-board">④ 고객 힌트판</span>★4 고객 프로필 — 이번 주는 새 데이터 없음(표본이 너무 적어 비공개)</summary><div class="bd-sub">
+  
   <div class="bd-src">출처: ba-demographics(주 28) — 전 버킷 0 · ba-customer-loyalty(주 28)</div>
   <p>고객 인구통계(나이·성별 등)는 이번 주에도 주간 구매 고객이 100명을 못 넘어 전 항목이 비공개 처리됐습니다. 아마존은 표본이 너무 적으면 이렇게 자동으로 숨깁니다. 다만 '전주 대비 변동'을 적는 칸의 숫자를 다 더하면 정확히 −100%가 나와서, 그 안에 전전주(주 27) 데이터가 그대로 남아 있다는 걸 확인했습니다(45–54세 27.45%·남 27.45%/여 23.53%·기혼 23.53% 등 — 4주차 보고서 수치와 일치). <b>4주차에 냈던 "표본 100명은 우연에 의한 왜곡이 크니 타겟을 바꾸지 말라"는 경고는 그대로 유효</b>합니다. 표본이 다시 100명을 넘는 주까지는 고객 프로필 업데이트를 미룹니다.</p>
   <div class="bd-kv">
@@ -731,22 +788,18 @@
     <div><b>0명</b>재구매 고객 (주문 19 전원 신규)</div>
   </div>
   <p>고객 충성도 데이터(주 28) 기준 전체 고객(+13%)과 유망 고객(+23%)은 늘고 있는데 <b>재구매는 0명</b>입니다. Vine 체험단이 소진돼 리뷰·재방문 경로가 구매 후 안내뿐인 지금 상황과 맞아떨어집니다. 장바구니에 담고 이탈한 671명(+52.5%)에게는 아마존의 브랜드 맞춤 할인 발송 기능(BTP)으로 <b>접근할 수 없습니다</b>. 7/8 콘솔에서 확인한 결과, BTP는 과거 구매 이력이 있는 그룹만 지원하고 '장바구니 이탈' 그룹은 애초에 지원하지 않습니다. 재방문 유도용 그룹도 최소 500명 조건에 못 미칩니다(23·0·2명). 지금 이 671명에게 닿는 유일한 수단은 우리 상품을 본 사람에게 다시 보여주는 광고입니다(SD 리마케팅, 캠페인 239629138456130, 하루 $10, 7/8부터 집행). BTP는 과거 구매 이력 그룹이 500명 넘게 쌓이면 다시 검토합니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 이번 주 이 데이터로 결정할 것은 없습니다. 장바구니 포기 671명에게 닿는 유일한 수단인 SD 뷰 리마케팅($10/일)의 다음 주 성적만 지켜보면 됩니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">④ 고객 힌트판</span>★5 구매까지 가는 길 — 인지 5.6만 명 중 19명만 구매, 크림에서 시작된 수축</h3>
-  <div class="bd-src">출처: ba-customer-journey 4탭(주 28 — 지연 메뉴, 주 29 미제공 확인)</div>
-  <table class="mini"><thead><tr><th>여정 단계 (주 28)</th><th class="num">고객 수</th><th class="num">전주 대비</th><th>비고</th></tr></thead><tbody>
-    <tr><td>인지 (검색·검색결과 조회)</td><td class="num">56,024</td><td class="num">−2.27%</td><td>브랜드 검색 비율 0.04% (−44.69%)</td></tr>
-    <tr><td>고려 (상세페이지·리뷰 조회)</td><td class="num">1,017</td><td class="num">−13.52%</td><td>잠재력 높은 고객 617 (+37.72%)</td></tr>
-    <tr><td>의도 (장바구니·위시리스트)</td><td class="num">403</td><td class="num">−9.03%</td><td>장바구니 249 (−7.09%) · 나중저장 82 (+15.49%)</td></tr>
-    <tr><td>구매 (신규 브랜드 고객)</td><td class="num">19</td><td class="num">−26.92%</td><td>$850.64 (−28.56%) · 재구매 0</td></tr>
-  </tbody></table>
-  <div class="bd-src">비고 열 보조 수치(잠재력 617·나중저장 82·장바구니 델타·$850.64 등)는 검증 45건 세트 외 — 원장(ba-customer-journey-4tabs) 직접 인용, 발행 전 재검증에서 원장 일치 확인.</div><p>전체 단계가 줄어든 원인은 크림입니다(★3). 세럼은 상세페이지 조회 −0.98%·구매 의도 −4.21%로 선방했지만, 크림이 −87%/−75%로 무너지면서 전체 수치를 끌어내렸습니다. 좋은 신호도 있습니다 — 구매 가능성이 높은 고객이 +37.72%(617명) 늘었고 "나중에 사기" 저장도 +15.49% 늘어, <b>구매를 미루고 있는 수요가 쌓이는 중</b>입니다. 60일간 구매 의도를 보인 고객 719명은 아직 프로모션으로 다가갈 수 있는 대상으로 남아 있습니다. 다만 이 단계들에서 함께 검색되는 상위 브랜드가 medicube·dr melaxin이라는 점은 유의해야 합니다 — 7/17에 이 브랜드들을 광고 타겟에서 차단하기로 한 결정과는 별개로, 우리 고객이 실제로 이들과 비교하며 고민한다는 뜻이기 때문입니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 퍼널 수축의 진원은 크림입니다. 세럼 쪽은 지키고, 크림 상세페이지(7/17 리뉴얼 예정 건) 확인부터 하세요.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">판 밖 조건</span>★6 트래픽 품질 — SB 무효클릭률 3주 연속 악화 · SP 무효노출 55.9%로 급등</h3>
+<div class="sowhat">💡 <b>그래서:</b> 이번 주 이 데이터로 결정할 것은 없습니다. 장바구니 포기 671명에게 닿는 유일한 수단인 SD 뷰 리마케팅($10/일)의 다음 주 성적만 지켜보면 됩니다.</div></div></details>
+  <details class="acc"><summary><span class="pill-board">④ 고객 힌트판</span>★7 벤치마크 — 다크스팟 지형에서 우리가 서 있는 곳</summary><div class="bd-sub">
+  
+  <div class="bd-src">출처: ba-tst-dark-spot·ba-tst-lemonderma·ba-tst-exosome-serum(주 28)</div>
+  <p><b>카테고리별 수요 크기:</b> 다크스팟 일반 검색어가 순위 7,629위로 셋 중 가장 많이 검색됩니다(순위 숫자가 작을수록 인기 검색어). 경쟁 브랜드 이름 검색이 그다음(순위 65만~166만위), 엑소좀 일반 검색어는 사실상 수요가 없습니다(순위 158만위). 크림이 내세우는 'lemon exosome'이 만날 일반 검색 풀은 얇고, 엑소좀을 찾는 사람들은 아직 VT·medicube 같은 브랜드 이름으로만 검색합니다.</p>
+  <p><b>일반 검색어 시장은 4개 브랜드가 나눠 갖고 있습니다.</b> Good Molecules(dark spot serum 클릭 18.6%·구매전환 20.1%)·The Ordinary·VALITIC·AXIS-Y가 주요 검색어의 클릭·구매전환을 나눠 가지며, 우리는 다크스팟 검색어군에서 클릭 상위 3위 안에 아직 없습니다(주 28). 반면 <b>경쟁 브랜드 이름 검색어 5개(la roche posay mela b3·joseon glow serum·derma e serum·olay niacinamide·metagenics vitamin c)에서는 Lemonderma가 처음으로 '클릭 상위 3개 브랜드'에 들었습니다.</b> 경쟁사를 찾는 고객 눈에 처음 띄기 시작했다는 뜻입니다. 다만 주 29 데이터에서는 이 중 mela b3만 노출이 남아 있어, 나머지 4개도 계속 이어지는지 다음 주 확인이 필요합니다.</p>
+  <p><b>K뷰티 승자 패턴(자사어 육성):</b> celimax·Dr.Melaxin·MANYO·MEDITHERAPY 전부 '브랜드+카테고리 복합어'를 검색빈도 1.2만~5.6만까지 키워 그 쿼리의 클릭·전환 45~75%를 독식합니다. 우리 자사어 퍼널 효율은 이미 그들 수준(클릭 점유 92.6%)인데 볼륨만 37 vs 107,553 — <b>격차는 제품이 아니라 외부 유입량</b>입니다.</p>
+  <div class="bd-good">🟢 흥미 신호: calcium dark spot eye cream 쿼리에서 TWMKLP가 클릭 91.2%를 가져가지만 전환 0%, Dr.Melaxin은 클릭 5.1%로 전환 72.2%를 가져감 — 클릭을 많이 받는 브랜드와 실제로 팔리는 브랜드가 완전히 다를 수 있다는 실측 사례입니다. 싸 보이거나 과장된 타일은 클릭을 모으고, 구매는 신뢰가 쌓인 브랜드로 갑니다 — 우리 검색 타일을 개선할 때 "신뢰 요소"를 넣어야 하는 이유입니다.</div>
+<div class="sowhat">💡 <b>그래서:</b> 우리는 수요가 가장 큰 "다크스팟" 축에 제대로 서 있습니다. 소재·카피 방향은 유지하되, 경쟁 브랜드 검색어로의 확전은 아직 돈 대비 효과가 없으니 넓히지 마세요(★1).</div></div></details>
+  <div class="acc-group">⚙️ 판 밖 조건 · 데이터 검증</div>
+  <details class="acc"><summary><span class="pill-board">판 밖 조건</span>★6 트래픽 품질 — SB 무효클릭률 3주 연속 악화 · SP 무효노출 55.9%로 급등</summary><div class="bd-sub">
+  
   <div class="bd-src">출처: ads-api-sb-gross-invalid · ads-api-sp-gross-invalid(주 29) — 검증관 3주 파일 직접 집계 일치</div>
   <div class="bd-kv">
     <div><b>14.8%</b>SB 무효클릭률 (8.4→12.1→14.8, 3주 연속↑)</div>
@@ -755,34 +808,9 @@
     <div><b>6.7%</b>SB 무효노출률 (gross 36,802 중 2,470)</div>
   </div>
   <p>이 무효클릭·무효노출은 아마존이 자동으로 과금을 빼줘서 직접적인 돈 손실은 아닙니다(4주차 확인). 다만 광고 품질이 나빠지고 있다는 경보 신호이고, 3주 연속 악화 중입니다. 특히 SP-Auto는 입찰가를 올릴 때마다($0.8→$0.9→$1.10) 무효노출률도 같이 뛰었습니다(39.8%→55.9%) — 4주차가 "재확인 필요"로 짚었던 항목이 실제로 나빠진 것으로 확정됐습니다. SP는 지금 매출의 54%를 만드는 핵심 엔진이라, <b>어느 노출 지면에서 무효가 몰리는지 나눠 보는 것</b>이 차주 진단 1순위입니다. SB 무효클릭률 14.8%는 클릭 수를 기준으로 판정하는 다른 지표들(전환 검색어·폐기 기준)의 신뢰도까지 갉아먹는 수준입니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 무효 트래픽이 3주 연속 나빠지고 있습니다. 다음 주 노출 위치(지면) 분해로 원인을 확정하기 전까지, SP-Auto 추가 증액은 보류가 안전합니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">④ 고객 힌트판</span>★7 벤치마크 — 다크스팟 지형에서 우리가 서 있는 곳</h3>
-  <div class="bd-src">출처: ba-tst-dark-spot·ba-tst-lemonderma·ba-tst-exosome-serum(주 28)</div>
-  <p><b>카테고리별 수요 크기:</b> 다크스팟 일반 검색어가 순위 7,629위로 셋 중 가장 많이 검색됩니다(순위 숫자가 작을수록 인기 검색어). 경쟁 브랜드 이름 검색이 그다음(순위 65만~166만위), 엑소좀 일반 검색어는 사실상 수요가 없습니다(순위 158만위). 크림이 내세우는 'lemon exosome'이 만날 일반 검색 풀은 얇고, 엑소좀을 찾는 사람들은 아직 VT·medicube 같은 브랜드 이름으로만 검색합니다.</p>
-  <p><b>일반 검색어 시장은 4개 브랜드가 나눠 갖고 있습니다.</b> Good Molecules(dark spot serum 클릭 18.6%·구매전환 20.1%)·The Ordinary·VALITIC·AXIS-Y가 주요 검색어의 클릭·구매전환을 나눠 가지며, 우리는 다크스팟 검색어군에서 클릭 상위 3위 안에 아직 없습니다(주 28). 반면 <b>경쟁 브랜드 이름 검색어 5개(la roche posay mela b3·joseon glow serum·derma e serum·olay niacinamide·metagenics vitamin c)에서는 Lemonderma가 처음으로 '클릭 상위 3개 브랜드'에 들었습니다.</b> 경쟁사를 찾는 고객 눈에 처음 띄기 시작했다는 뜻입니다. 다만 주 29 데이터에서는 이 중 mela b3만 노출이 남아 있어, 나머지 4개도 계속 이어지는지 다음 주 확인이 필요합니다.</p>
-  <p><b>K뷰티 승자 패턴(자사어 육성):</b> celimax·Dr.Melaxin·MANYO·MEDITHERAPY 전부 '브랜드+카테고리 복합어'를 검색빈도 1.2만~5.6만까지 키워 그 쿼리의 클릭·전환 45~75%를 독식합니다. 우리 자사어 퍼널 효율은 이미 그들 수준(클릭 점유 92.6%)인데 볼륨만 37 vs 107,553 — <b>격차는 제품이 아니라 외부 유입량</b>입니다.</p>
-  <div class="bd-good">🟢 흥미 신호: calcium dark spot eye cream 쿼리에서 TWMKLP가 클릭 91.2%를 가져가지만 전환 0%, Dr.Melaxin은 클릭 5.1%로 전환 72.2%를 가져감 — 클릭을 많이 받는 브랜드와 실제로 팔리는 브랜드가 완전히 다를 수 있다는 실측 사례입니다. 싸 보이거나 과장된 타일은 클릭을 모으고, 구매는 신뢰가 쌓인 브랜드로 갑니다 — 우리 검색 타일을 개선할 때 "신뢰 요소"를 넣어야 하는 이유입니다.</div>
-<div class="sowhat">💡 <b>그래서:</b> 우리는 수요가 가장 큰 "다크스팟" 축에 제대로 서 있습니다. 소재·카피 방향은 유지하되, 경쟁 브랜드 검색어로의 확전은 아직 돈 대비 효과가 없으니 넓히지 마세요(★1).</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">①·③ 소재판·조합판</span>★8 전주 결론 정정 — 뒤집힌 판단 3건 + 판단 규칙 첫 성적표</h3>
-  <div class="bd-src">출처: 4주차 index-v2.html 대조 · changelog 7/13~7/19 · 주 29 원본 데이터 — 감사관+검증관 이중 확인</div>
-  <p><b>정정 ① 메타 '긍정 신호'가 사라졌습니다.</b> 4주차 보고서가 유일한 긍정 신호로 꼽았던 F4·J2(각 ROAS 1.73배)는 이번 주 실측에서 F4 0.39배(구매 1건)·J2 1.20배(구매 2건)로 손익분기선(1.49배) 아래로 확정됐습니다. C5는 $92를 쓰고 구매가 0건입니다. 4주차 스스로 "구매 1건짜리 신호는 아직 믿기 이르다"고 경고했던 위험이 그대로 현실이 됐습니다 — 구매가 여러 번 쌓여야 성공으로 인정한다는 판단 규칙의 필요성이 메타 데이터에서도 다시 확인된 셈입니다.</p>
-  <p><b>정정 ② SB 검색어 성적이 뒤집혔습니다.</b> 지난주까지는 "우리 브랜드·경쟁사 브랜드 검색어는 흑자, 일반 검색어는 적자"였는데 이번 주는 반대입니다. 경쟁사 브랜드 검색어는 $16.81을 쓰고 매출 0, 전환 6건은 전부 일반 검색어에서 나왔습니다(★1). 6/26에 세웠던 "경쟁사 이름 검색어 공략이 전환을 만든다"는 판단 규칙은 이번 주엔 재현되지 않았습니다(금액이 작아 규칙을 폐기하지는 않고 계속 지켜보는 중입니다).</p>
-  <p><b>정정 ③ 크림 진단이 바뀌었습니다.</b> 4주차에는 "장바구니엔 잘 담기는데 결제에서 이탈한다"고 봤는데, 실제로는 그 훨씬 앞 단계(검색 노출·상세페이지 조회·장바구니 진입)가 무너진 것이었습니다(★3). 번들도 "클릭 자체가 안 된다"던 진단과 달리 클릭률 2.01%로 역전됐습니다.</p>   <p><b>추가 경고 — 카피 승자 서사 일반화 금지 (발행 전 추가 발굴):</b> 이번 주 히어로·후보 SB 캠들은 같은 씬의 자매 카피 5~10개 중 <b>단 하나가 노출을 독식</b>한 결과입니다(김보은C1 = 자매 노출 90%·비용 85%·구매 전부, C3은 노출 0회). "c10·C1 카피가 우수하다"가 아니라 "그 카피만 경매에서 평가받았다"가 정확한 서술이므로, 다음 배치 카피 전략의 학습 근거로 쓰면 안 됩니다.</p>
-  <p><b>운영 원칙 첫 적용 성적판:</b></p>
-  <div class="tbl-scroll"><table class="mini"><thead><tr><th>운영 원칙 조항</th><th>적용 사례</th><th>결과</th></tr></thead><tbody>
-    <tr class="row-win"><td>메타 D+7 학습 재안정 관찰 후 판정</td><td>White_v1 (7/16)</td><td>✅ 규칙대로 중지 — 첫 작동 성공. 단 중지 후 뒤늦게 잡힌 매출 2건($109.74)이 이번 주 잡힘 — 귀속 지연을 감안한 판정 타이밍은 보완점</td></tr>
-    <tr class="row-bad"><td>예산을 늘리거나 새로 만든 광고는 D+4(4일 뒤 효과 판정)에 구매 0이면 되돌리기</td><td>B&A 노출 복구(입찰가가 낮아 막혔던 노출을 다시 열어준 조치) 15개 캠페인 (7/13 실행→D+4는 7/17)</td><td>❌ 되돌리기도 재평가도 하지 않고 그냥 넘어갔습니다 — 감시 도구(watchlist_check.py)의 분류 오류(7/19 수정)로 감시 목록에서 통째로 빠졌고, 7/15~16 결제 장애로 브리핑이 안 만들어진 것까지 겹쳤습니다. <b>판단 규칙이 도구 버그 때문에 작동하지 못한 첫 사례입니다.</b></td></tr>
-    <tr><td>단발 전환 = '후보', 증액 금지</td><td>김보은C1 (7/19 소폭 증액)</td><td>🟡 주 29 ROAS 5.96로 이번 주 SB 최대 승자이나, 두 주 검색어 검색 기록 대조 결과 구매 4건 전부 <b>서로 다른 검색어 1클릭 전환</b> — M1 오독과 동일 구조. '2주 연속 전환 후보'로만 관리, D+4(7/23) 되돌리기 라인 유지</td></tr>
-  </tbody></table></div>
-  <p><b>노출 복구(입찰가가 낮아서 노출이 막힌 광고를 다시 노출되게 올리는 조치) 자체도 실패했습니다.</b> 15개 캠페인 입찰가를 $0.7에서 $0.9로 올렸는데도, 260709 배치는 한 주 동안 노출 158회·클릭 1회·매출 $0.90에 그쳤습니다. $0.9로는 경매에서 낙찰되는 가격(경매 청산가)에 못 미친다는 뜻입니다. 지금 실제로 노출되고 있는 260624 배치는 $1.00까지 올라간 이력이 있으므로(6/25 $0.70→6/29 $0.90→7/1 $1.00), 다시 시도한다면 $1.00 이상이 근거 있는 기준입니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 이번 주 교훈은 하나 — 단발 신호로 늘리거나 줄이지 말 것. "4일 뒤 재점검" 규칙이 버그로 한 번 빠졌으니, 다음 주는 7/23 재평가가 실제 실행되는지만 확인하면 됩니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">부록</span>★9 숫자 맞춰보기 — 여러 자료의 수치가 서로 맞는지 확인</h3>
+<div class="sowhat">💡 <b>그래서:</b> 무효 트래픽이 3주 연속 나빠지고 있습니다. 다음 주 노출 위치(지면) 분해로 원인을 확정하기 전까지, SP-Auto 추가 증액은 보류가 안전합니다.</div></div></details>
+  <details class="acc"><summary><span class="pill-board">부록</span>★9 숫자 맞춰보기 — 여러 자료의 수치가 서로 맞는지 확인</summary><div class="bd-sub">
+  
   <div class="bd-src">출처: dashboard_data.json(7/20 06:40) · Ads API 원장 · BA 충성도 — 검증관 센트 단위 대조</div>
   <div class="tbl-scroll"><table class="mini"><thead><tr><th>대조 항목</th><th>결과</th></tr></thead><tbody>
     <tr class="row-win"><td>대시보드 광고비 $329.03 vs 광고 API 원본 데이터</td><td>= SB $279.27 + SP $49.76, <b>센트 단위까지 일치</b>합니다. 다만 SD $4.30은 빠져 있습니다 — 7/13에 추가한 SD 캠페인이 아직 대시보드 합산 코드에 연결이 안 돼서입니다(그만큼 MER이 살짝 과대평가됨). 연결 작업 필요</td></tr>
@@ -792,10 +820,10 @@
     <tr class="row-bad"><td>브랜드 인지 지표</td><td>lemonderma 검색량 64(주 27)→37(주 29) · 여정 브랜드 검색 비율 −44.69% — <b>인지 지표 동반 하락</b>. 4주차가 권장한 월별 추적 지표화 필요</td></tr>
   </tbody></table></div>
   <p>참고로 SB 구매 6건은 전원 신규 브랜드 고객(NTB)이었고 재구매는 0건(★4)이라 앞선 결과와 맞아떨어집니다. 7/15~16 이틀간 아마존 결제 시스템 오류로 광고 노출 자체가 줄면서(하루 소진액이 평일 평균의 절반 이하인 $30.74·$14.90) 이번 주 지출 감소분의 일부는 의도한 절감이 아니라 사고성입니다. SB 지출이 반토막(−53%) 난 이유를 나눠보면 7/13 광고 중단으로 주간 약 $146 절감, 네거티브 키워드 8,516건 유입 차단, 그리고 이 결제 오류로 인한 소진 저하가 겹친 결과입니다.</p>
-<div class="sowhat">💡 <b>그래서:</b> 이 보고서의 숫자는 대시보드 정본과 센트 단위까지 일치합니다. 남은 배선 문제 하나(SD $4.30이 대시보드 광고비 합산에 빠짐)만 수정하면 됩니다.</div></div>
-
-<div class="bd-sub">
-  <h3><span class="pill-board">액션</span>★10 차주 액션 후보 — 우선순위표 (전부 '후보', 집행은 별도 승인)</h3>
+<div class="sowhat">💡 <b>그래서:</b> 이 보고서의 숫자는 대시보드 정본과 센트 단위까지 일치합니다. 남은 배선 문제 하나(SD $4.30이 대시보드 광고비 합산에 빠짐)만 수정하면 됩니다.</div></div></details>
+  <div class="acc-group">📋 차주 액션 후보</div>
+  <details class="acc"><summary><span class="pill-board">액션</span>★10 차주 액션 후보 — 우선순위표 (전부 '후보', 집행은 별도 승인)</summary><div class="bd-sub">
+  
   <div class="bd-src">근거: 검증 통과 발견 45건 → 액션으로 수렴. 광고 설정 변경은 이 보고서에서 실행하지 않음(읽기 전용)</div>
   <div class="tbl-scroll"><table class="mini"><thead><tr><th>순위</th><th>액션 후보</th><th>근거(★)</th><th>기한·트리거</th></tr></thead><tbody>
     <tr><td>1</td><td><b>김보은C1 · SP-Auto 입찰 D+4 재평가</b> — 미달 시 되돌리기(이번엔 점검 누락 금지, 자동 재점검 목록 버그 수정 완료)</td><td>★8</td><td>7/23</td></tr>
@@ -810,7 +838,25 @@
     <tr><td>10</td><td><b>번들 PDP에 단품 대비 절약액 명시 테스트</b> — CTR 2.01% 확보, 결심 단계만 막힘</td><td>★3</td><td>여유 시</td></tr>
   </tbody></table></div>
    <div class="bd-warn">📌 <b>1순위 액션의 근거 보강 — 광고가 뜨는 위치별 성과는 이미 이번 주 데이터에 있습니다(발행 전 추가 발굴):</b> 검색결과 맨 위(Top of Search) ROAS <b>7.30</b>($10.02→$73.16)·상품상세페이지 4.69(지출의 65%, $32.24→$151.26)·그 외 위치 5.46 — 어느 위치든 손익은 남지만 위치별 격차가 큽니다. 구매 7건 중 새 경쟁사 고객을 뺏어온 것(anua)은 2건뿐이고, 나머지 5건은 자사 상품 방어 3건과 자사 브랜드어 방어 2건입니다. 7/19에 입찰가를 $0.9→$1.10로 올린 것은 이 방어형 트래픽에도 똑같이 적용됐으므로, 7/23 재평가 때는 <b>검색결과 맨 위 위치만 우선 인상</b>하는 것이 새 매출을 더 효율적으로 사는지 비교해봐야 합니다.</div>
-</div>
+</div></details>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </section>
 
@@ -925,7 +971,7 @@
       <div class="score lose">
         <h3>🔴 나빠진 것</h3>
         <ul>
-          <li><b>크림 퍼널 붕괴</b> — 인지 −95%·상세조회 −87%·장바구니 0</li><li><b>메타 긍정 신호 소멸</b> — F4 0.39·J2 1.20·C5 구매 0 (전원 본전선 미달)</li><li><b>무효 지표 동반 악화</b> — SB 클릭 14.8%·SP 노출 55.9%</li><li><b>브랜드 검색량 −42%</b> — 외부 인지 유입 약화 신호</li><li><b>Sahar 광고 거부</b> — 브릿지 LP 정책 리스크 부상(7/21 분기점)</li><li><b>노출 복구 실패</b> — 294캠 굶음 지속 + D+4 되돌리기 점검 누락</li>
+          <li><b>크림: 노출돼도 안 팔림</b> — SP 노출 6,100회·$19.97에 구매 0 (검색 유입 감소는 SB 광고 중단의 예상된 결과)</li><li><b>메타 긍정 신호 소멸</b> — F4 0.39·J2 1.20·C5 구매 0 (전원 본전선 미달)</li><li><b>무효 지표 동반 악화</b> — SB 클릭 14.8%·SP 노출 55.9%</li><li><b>브랜드 검색량 −42%</b> — 외부 인지 유입 약화 신호</li><li><b>Sahar 광고 거부</b> — 브릿지 LP 정책 리스크 부상(7/21 분기점)</li><li><b>노출 복구 실패</b> — 294캠 굶음 지속 + D+4 되돌리기 점검 누락</li>
         </ul>
       </div>
     </div>
