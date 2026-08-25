@@ -1,0 +1,191 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>US 퍼포먼스 일일 브리핑 — 2026.08.26</title>
+<style>
+.hero{border-radius:16px;padding:18px 22px;margin:14px 0 14px;background:#fff;border:1px solid var(--line,#e5e2d9);border-left:6px solid #6b6960}
+.hero.good{border-left-color:#1c8c48}.hero.bad{border-left-color:#c0392b}
+.hero .hl{font-size:11px;font-weight:800;letter-spacing:.09em;color:#6b6960}
+.hero .hv{font-size:44px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.hero .hv small{font-size:19px;color:#6b6960}
+.hero .hs{font-size:13px;color:#6b6960;margin-top:2px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.kpis .k{background:#fff;border:1px solid #e5e2d9;border-radius:12px;padding:11px 13px}
+.kpis .kl{font-size:11px;color:#6b6960;font-weight:700}
+.kpis .kv{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
+.kpis .ks{font-size:11px;color:#6b6960}
+.situation{background:#fff;border:1px solid #e5e2d9;border-radius:12px;padding:14px 18px;font-size:14px}
+.situation ul{margin:6px 0;padding-left:18px}.situation li{margin:5px 0}
+.al.ok{color:#1c8c48;font-weight:600}
+
+@page{size:1180px 1670px;margin:0}
+:root{--ground:#eef2f6;--panel:#fff;--ink:#14181f;--soft:#5b6573;--faint:#8a93a0;--line:#e2e7ee;
+  --navy:#0d3b66;--navy2:#1d5a96;--navybg:#eaf1f9;--good:#1e8e5a;--goodbg:#e7f5ed;--warn:#c77800;--warnbg:#fdf0d9;--crit:#c0392b;--critbg:#fbe9e7;--r:12px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Pretendard','Apple SD Gothic Neo','Helvetica Neue',sans-serif;font-size:14px;line-height:1.5}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 28px 60px}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:'SF Mono',Menlo,monospace}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:2px solid var(--navy)}
+.head h1{font-size:23px;margin:0 0 4px;letter-spacing:-.01em;font-weight:800}
+.head .sub{color:var(--soft);font-size:13px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:700}
+.badge.fresh{background:var(--goodbg);color:var(--good)} .badge.stale{background:var(--critbg);color:var(--crit)}
+.verdict{margin-top:14px;padding:13px 16px;border-radius:var(--r);background:var(--navy);color:#fff;font-size:14px;line-height:1.55;display:flex;gap:10px}
+.verdict b{color:#ffd98a}
+h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);margin:28px 0 12px;font-weight:700}
+h2 .tag{font-size:11px;letter-spacing:0;text-transform:none;color:var(--faint);font-weight:500;margin-left:6px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:13px 14px;position:relative;overflow:hidden}
+.kpi .lbl{font-size:11px;color:var(--soft);font-weight:600} .kpi .val{font-size:24px;font-weight:800;margin:5px 0 2px;letter-spacing:-.02em}
+.kpi .meta{font-size:11px;color:var(--faint)} .kpi .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
+.s-good{background:var(--good)} .s-warn{background:var(--warn)} .s-crit{background:var(--crit)} .s-navy{background:var(--navy)}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.act{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.act.span2{grid-column:1/-1}
+.act .ah{display:flex;align-items:center;gap:9px;padding:11px 15px;border-bottom:1px solid var(--line);font-weight:800;font-size:14px}
+.act .ah .ic{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:14px}
+.ic.kill{background:var(--critbg)} .ic.scale{background:var(--goodbg)} .ic.make{background:var(--navybg)} .ic.neg{background:var(--warnbg)} .ic.conv{background:#efe9f7} .ic.harv{background:#eef7e2}
+.act ul{list-style:none;margin:0;padding:9px 15px 13px} .act li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.act li:last-child{border-bottom:0}
+.act li.ai-item{display:block}
+.ai-top{display:flex;gap:9px;align-items:flex-start}
+.ai-title{flex:1;font-weight:700}
+details.ai-kv{margin-top:6px}
+details.ai-kv summary{cursor:pointer;font-size:11.5px;font-weight:700;color:var(--navy2);list-style:none}
+details.ai-kv summary::-webkit-details-marker{display:none}
+details.ai-kv summary::before{content:"▸ "}
+details.ai-kv[open] summary::before{content:"▾ "}
+.ai-kv .kv-row{display:grid;grid-template-columns:52px 1fr;gap:8px;margin-top:7px;font-size:12.5px;align-items:start}
+.ai-kv .kv-row .k{font-weight:700;color:var(--faint)}
+.ai-kv .kv-row.eff .k{color:var(--navy2)}
+.ai-verify{margin-top:6px;font-size:11px;color:var(--faint);border-top:1px dashed var(--line);padding-top:5px}
+.pri{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 6px;border-radius:5px;margin-right:7px}
+.pri.h{background:var(--critbg);color:var(--crit)} .pri.m{background:var(--warnbg);color:var(--warn)} .pri.l{background:var(--goodbg);color:var(--good)} .pri.done{background:var(--navybg);color:var(--navy)} .pri.due{background:var(--navybg);color:var(--navy2)}
+.alerts{margin-top:10px} .al{padding:8px 12px;border-radius:8px;font-size:12.5px;margin:6px 0;font-weight:600}
+.al.bad{background:var(--critbg);color:var(--crit)} .al.warn{background:var(--warnbg);color:#8a5a00}
+details.alfold{margin:6px 0} details.alfold summary{cursor:pointer;font-size:12.5px;font-weight:700;color:#8a5a00;background:var(--warnbg);padding:8px 12px;border-radius:8px}
+.vchip{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 7px;border-radius:5px}
+.vchip.ok{background:var(--goodbg);color:var(--good)} .vchip.no{background:var(--critbg);color:var(--crit)} .vchip.hold{background:var(--warnbg);color:#8a5a00} .vchip.na{background:#eef0f3;color:var(--faint)}
+.cid{font-size:10px;color:var(--faint)}
+.excl{grid-column:1/-1;background:var(--panel);border:1px dashed var(--line);border-radius:var(--r);padding:10px 15px}
+.excl .eh{font-weight:700;color:var(--faint);font-size:11.5px;margin-bottom:4px} .excl ul{list-style:none;margin:0;padding:0} .excl li{color:#8a93a0;font-size:11.5px;padding:2px 0}
+.row{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:start}
+.row.thirds{grid-template-columns:1fr 1fr 1fr}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px}
+.card .ct{font-size:13px;font-weight:700;margin:0 0 12px;display:flex;justify-content:space-between;align-items:baseline}
+.card .ct .hint{font-size:11px;color:var(--faint);font-weight:500}
+.dim{display:grid;grid-template-columns:84px 1fr 50px;gap:9px;align-items:center;margin:7px 0;font-size:12.5px}
+.dim .k{color:var(--soft);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dim .track{height:16px;background:#f0f3f7;border-radius:4px;position:relative;overflow:hidden}
+.dim .fill{height:100%;border-radius:4px} .dim .v{text-align:right;font-weight:700}
+.bepl{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink);opacity:.45}
+.kw{display:grid;grid-template-columns:1fr auto;gap:6px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:12.5px;align-items:center}
+.kw:last-child{border-bottom:0} .kw .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .kw .n{color:var(--soft);font-size:11.5px;white-space:nowrap}
+.chip{font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;margin-left:6px} .chip.g{background:var(--goodbg);color:var(--good)} .chip.r{background:var(--critbg);color:var(--crit)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--soft);font-weight:600;font-size:11px;text-transform:uppercase;padding:6px 8px;border-bottom:1px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px solid var(--line)} tr:last-child td{border-bottom:0}
+.mr{display:inline-block;height:8px;border-radius:3px;vertical-align:middle;margin-right:6px}
+.st-on{font-size:10px;font-weight:700;color:var(--good)} .st-off{font-size:10px;font-weight:700;color:var(--crit)}
+.fn{display:grid;grid-template-columns:74px 1fr 64px;gap:8px;align-items:center;margin:5px 0;font-size:12px}
+.fn .fk{color:var(--soft);font-weight:600} .fn .ft{height:20px;background:var(--navy);border-radius:4px;opacity:.85} .fn .fv{text-align:right;font-weight:700}
+.drop{color:var(--crit);font-size:10.5px;font-weight:700}
+.note{font-size:11px;color:var(--faint);margin-top:8px}
+details.appx{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:6px 16px}
+details.appx summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--navy);padding:8px 0}
+.appx .ins p,.appx .ins li{font-size:12.5px} .appx code{background:#eef0f3;border-radius:3px;padding:1px 4px;font-size:11px}
+.appx .timeline{list-style:none;padding:0} .appx .timeline li{margin:6px 0;padding:2px 0 2px 12px;border-left:2px solid #cdd6e0;font-size:11.5px}
+.appx h3{font-size:13px;color:var(--navy);margin:14px 0 6px}
+.gates{margin-top:22px;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);font-size:12.5px;color:var(--soft)}
+.gate{display:inline-block;background:var(--navybg);color:var(--navy);font-weight:700;font-size:11.5px;padding:3px 9px;border-radius:6px;margin:3px 6px 3px 0}
+.foot{margin-top:18px;color:var(--faint);font-size:11px}
+/* 비주얼 액션 — 실제 소재 썸네일 */
+.act li.vis{display:flex;gap:11px;align-items:flex-start}
+.thumb{width:56px;height:56px;border-radius:7px;object-fit:cover;flex-shrink:0;border:1px solid var(--line);background:#f0f3f7;position:relative}
+.thumb.ph{display:grid;place-items:center;color:#b9c4d2;font-size:9px;font-weight:700;text-align:center;line-height:1.2}
+.act li .body{flex:1;min-width:0}
+.rbadge{display:inline-block;font-size:11px;font-weight:800;padding:1px 7px;border-radius:5px;margin-left:6px}
+.rbadge.g{background:var(--goodbg);color:var(--good)} .rbadge.r{background:var(--critbg);color:var(--crit)}
+/* 소재 제작 갤러리 */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 4px}
+.gcard{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}
+.gcard .gimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0f3f7}
+.gcard .gm{padding:7px 9px} .gcard .gk{font-size:11.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gcard .gr{font-size:11px;color:var(--good);font-weight:800;margin-top:1px}
+.glabel{font-size:11.5px;font-weight:700;color:var(--soft);margin:10px 0 4px}
+.gbad{display:flex;gap:6px;flex-wrap:wrap}
+.gbad .b{font-size:11px;background:#f4f0f0;color:#b06a6a;border-radius:5px;padding:3px 9px;text-decoration:line-through;text-decoration-color:#d8b0b0}
+/* ── 반응형 (2026-07-21) — GitHub Pages 브라우저 열람이 정본이 되며 추가.
+   폰에서 확대 없이 읽히는 게 목표: 고정 그리드 해제 + 표는 카드 안에서만 가로 스크롤(페이지는 안 밀림). */
+img,svg{max-width:100%;height:auto}
+.card,.act,details.appx{overflow-x:auto}          /* 넓은 표·차트는 제 카드 안에서 스크롤 */
+table{min-width:480px}                            /* 그 이하로 찌그러지면 판독 불가 → 스크롤 전환 */
+@media (max-width:900px){
+  .wrap{padding:16px 14px 44px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .acts{grid-template-columns:1fr}
+  .row,.row.thirds{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .head h1{font-size:20px}
+  .verdict{font-size:13.5px}
+}
+@media (max-width:560px){
+  body{font-size:15px;line-height:1.6}            /* 본문 가독성 — 확대 안 해도 읽히는 하한 */
+  .kpis{grid-template-columns:1fr}
+  .kpi .val{font-size:22px}
+  .act li,.card,.appx .ins p,.appx .ins li{font-size:14px}
+  .act li.vis{gap:9px} .thumb{width:48px;height:48px}
+  .gallery{grid-template-columns:1fr}
+  .dim{grid-template-columns:72px 1fr 46px}
+  h2{margin:22px 0 10px}
+}
+</style></head><body>
+<div class="wrap">
+  <div class="head">
+    <div><h1>US 퍼포먼스 — 일일 의사결정 브리핑</h1>
+      <div class="sub num">2026.08.26 · 생성 2026-08-26 08:00 KST · 윈도우 2026-06-15–2026-08-26</div></div>
+    <span class="badge stale">⚠ 오늘 변경 기록 없음 — 갱신 점검</span>
+  </div>
+  <div class="hero bad"><div class="hl">블렌디드 MER</div><div class="hv">1.26<small>×</small></div><div class="hs">본전미달 · 흑자선 1.59 · shipped 1.22× · 정산 2026-08-24까지 확정</div></div>
+  <div class="kpis"><div class="k"><div class="kl">전체매출</div><div class="kv">$11,282</div><div class="ks">아마존 $11,282 · 쇼피 $0 · 환불·프로모 보정</div></div><div class="k"><div class="kl">광고비</div><div class="kv">$8,955</div><div class="ks">아마존 $6,990 · 메타 $1,965</div></div><div class="k"><div class="kl">아마존 ROAS</div><div class="kv">1.32</div><div class="ks">BEP 1.59 · CPC $0.92</div></div><div class="k"><div class="kl">전환율 CVR</div><div class="kv">2.31~2.48%</div><div class="ks">흑자CPC $0.52~$0.56 (최근14일 n=45)</div></div><div class="k"><div class="kl">주문</div><div class="kv">291</div><div class="ks">개수 370 · 광고귀속 $9,219</div></div><div class="k"><div class="kl">메타 IC</div><div class="kv">2979</div><div class="ks">IC당 $0.66</div></div></div>
+  <h2>⚠️ 경보</h2>
+  <div class="alerts"><details class="alfold"><summary>⚠️ 경고 16건 — 펼치기</summary><div class="al warn">⚠️ 미회수 변화 — 2026-08-12 「8/11 밤 진단(17/30 노출 0·입찰 동일해도 결과 다름·전문가 교재 근거로 원인=$3/」 D+14, 결과 미확인. changelog에 <code>→ 결과(...)</code> 추가 요망.</div><div class="al warn">⚠️ 미회수 변화 — 2026-08-12 「① <strong>7/12주 잔차 +$423 원인 실측 분해 추가</strong>: Attribution API 주간」 D+14, 결과 미확인. changelog에 <code>→ 결과(...)</code> 추가 요망.</div><div class="al warn">⚠️ 미회수 변화 — 2026-08-13 「§7 조치 우선순위 1번(B1) 집행. Amazon Attribution 콘솔에서 신규 캠페인」 D+13, 결과 미확인. changelog에 <code>→ 결과(...)</code> 추가 요망.</div><div class="al warn">⚠️ 미회수 변화 — 2026-08-14 「다만 오늘 브리핑 텍스트가 이 정지 사실을 언급 안 하고 &quot;이미 집행 완료&quot;로만 뭉뚱그려 오해」 D+12, 결과 미확인. changelog에 <code>→ 결과(...)</code> 추가 요망.</div><div class="al warn">⚠️ 🎬 메타게이트 🔴 [UGC_Reel4_viki_jgerenaia_BA] 게이트B 유예 만료 교체 권고 — 누적 $119 무구매 (+3일 지연 귀속 확인 후 확정)</div><div class="al warn">⚠️ 🎬 메타게이트 🔴 [ad_US-Manyo-meta_03_i_finally_got_that_glow] 게이트B 유예 만료 교체 권고 — 누적 $87 무구매 (+3일 지연 귀속 확인 후 확정)</div><div class="al warn">⚠️ 🎬 메타게이트 🟡 [ad_US-Manyo-meta_02_my_dark_spots_faded] 게이트C 관찰 — 누적 CPA $43.3 &gt; $28.0 (2주 연속 시 교체, 주간보고 판정)</div><div class="al warn">⚠️ 🎬 메타게이트 🟡 [ad_US-Manyo-meta_01_my_dark_spots_are_gone] 게이트C 관찰 — 누적 CPA $86.0 &gt; $28.0 (2주 연속 시 교체, 주간보고 판정)</div><div class="al warn">⚠️ 네거티브 재감사 — [SB] &#x27;topicals&#x27;(negativePhrase, 90캠)이 매출 이력 검색어를 차단 중: &#x27;faded topicals brightening ser&#x27;(구매2) — 누적 매출 $60. 오차단 의심, 확인 후 해제/EXACT 전환 검토.</div><div class="al warn">⚠️ 네거티브 재감사 — 정책 차단 7종은 의도된 차단이라 억제(클레임 준수 · whitening 금지(6/17) 1종 · 경쟁사 브랜드어 정지(8/13) 5종 · 수확 중복방지 · 수동 EXACT 가동 1종). 정본·해제 절차: amazon-ads-api/negative_policy_registry.json</div><div class="al warn">⚠️ 계정 변경 감지·changelog 미기록 — 2026-08-24 13:37:56 PUT /sp/keywords (ID: 149996186569503, 164293711250252, 217124935737020, 성공 14·실패 0) → 판단 전 changelog·라이브 상태 재확인 필요</div><div class="al warn">⚠️ 계정 변경 감지·changelog 미기록 — 2026-08-24 17:19:33 PUT /sb/themes (ID: 234689843806457, 422715672610234, status 200) → 판단 전 changelog·라이브 상태 재확인 필요</div><div class="al warn">⚠️ 계정 변경 감지·changelog 미기록 — 2026-08-24 20:14:27 POST /sb/negativeKeywords (ID: 13088856048389, 151254773734459, 442439768137736, 성공 100·실패 0) → 판단 전 changelog·라이브 상태 재확인 필요</div><div class="al warn">⚠️ 계정 변경 감지·changelog 미기록 — 2026-08-24 21:07:46 PUT /sb/v4/campaigns (ID: 102225595468930, 102745461102352, 102883818333018, 성공 10·실패 0) → 판단 전 changelog·라이브 상태 재확인 필요</div><div class="al warn">⚠️ 무효클릭률 SB 11.6% (최근 14일) — 품질 감시용(net 손익엔 이미 제외·별도 차감 금지). 특정 캠 집중이면 placement 분해 검토.</div><div class="al warn">⚠️ 무효클릭률 SP 37.4% (최근 14일) — 품질 감시용(net 손익엔 이미 제외·별도 차감 금지). 특정 캠 집중이면 placement 분해 검토.</div></details></div>
+  <h2>🧭 상황</h2>
+  <div class="situation"><h3>💡 증분 마진이 1.0× 아래로 내려앉았다 — 새로 태우는 돈이 본전에 못 미친다</h3>
+<ul>
+<li>근거: 최근 14일 광고비 +$1,802.17($7,152.98→$8,955.15, +25%)인데 총매출 +$1,761.08($9,520.46→$11,281.54, +18.5%) → 증분 MER ≈0.98× (history 정본). 같은 기간 블렌디드 MER 1.33→1.26로 계단식 하락.</li>
+<li>의미/가설: 블렌디드 1.26×는 초기 히어로가 떠받치는 평균값이고, <strong>최근 추가된 지출의 실제 회수율은 ~0.98×</strong>다. 즉 &#x27;전체가 조금씩 나빠진&#x27; 게 아니라 &#x27;증액분이 본전 밑에서 유입돼 평균을 끌어내리는&#x27; 구조. 성장국면상 정상 범위지만, 이 증분이 어디로 흘렀는지가 다음 카드의 핵심.</li>
+<li>필요하면: 오늘은 총 MER가 아니라 &#x27;지난 3~5일 증분 지출의 MER&#x27;를 별도 추적선으로 봐야 한다 — 블렌디드는 하락을 늦게 알린다.</li>
+</ul>
+<h3>💡 병목은 예산이 아니라 &#x27;서빙&#x27;이다 — 스케일 후보 6개 전부 증액이 무효 판정</h3>
+<ul>
+<li>근거: 스케일 후보 6개 중 5개가 <a href="오늘소진 0%·예산 $10">예산 여유</a>, 1위 SP-Auto-All-SKU(ROAS 3.41·매출$2,278)는 [입찰·랭크 병목] TOS IS 0.0%. 활성 소재 222개 중 굶음 192개(86%)·UGC 156개 중 굶음 141개(90%). 노출받은 30개 CVR 6.0%(본전 ~5%) (병목 진단·소재 상태 블록).</li>
+<li>의미/가설: 증분 MER 0.98×의 정체가 여기 있다 — 히어로는 예산이 남아도는데(돈이 제약이 아님) 노출 자체를 못 받고, 새 돈은 검증 안 된 굶음 소재로 흩어진다. <strong>소재가 약한 게 아니라 서빙(입찰·관련성)이 병목</strong>. 노출받기만 하면 CVR 6%로 본전을 넘긴다는 게 결정적 증거.</li>
+<li>필요하면: 오늘의 레버는 예산 증액이 아니라 히어로 소재의 입찰·관련성 상향(TOS IS 확보). 돈을 더 넣는 액션은 전부 무효다.</li>
+</ul>
+<h3>💡 최고 캠페인이 노출 기근인데, 그 레버가 이번 주 Optapex로 넘어간다</h3>
+<ul>
+<li>근거: SP-Auto-All-SKU 주문69·전환일27, ROAS 3.41 HERO인데 TOS IS 0.0%·예산 $40에 오늘소진 13% → 예산 병목 아님, 레버=입찰/관련성/소재. 동시에 Marco+John 합의: &quot;SP는 앞으로 직접 운영 안 하고 Optapex에 위임&quot; (병목 진단·CHANGELOG).</li>
+<li>의미/가설: 계정 최대 수익원의 유일한 성장 레버(입찰·랭크)가 우리 손을 떠나는 시점이다. 위임 자체는 방향이지만, <strong>인계 전 TOS IS 0.0% 상태 그대로 넘기면 Optapex가 병목을 물려받는 것</strong>. 위임=방치가 되면 이 히어로의 증분이 죽는다.</li>
+<li>필요하면: Optapex 연결 전, SP 히어로의 현재 입찰·IS 상태를 스냅샷으로 인계 노트에 남길 것. SP 자동화는 측정 전용 전환(CHANGELOG 잔여과제)과 함께 처리.</li>
+</ul>
+<h3>💡 SD 뷰 리마케팅은 구조적 낭비 — 30일간 $200 태워 $37 회수</h3>
+<ul>
+<li>근거: SD 지출 $199.8 · 매출 $36.58(ROAS 0.18) · 구매 1 · NTB 0 · DPV 316 (SD 블록). 반면 SB NTB는 89/96=92.7%로 신규 유입은 SB가 담당 중.</li>
+<li>의미/가설: 리마케팅이 신규(NTB 0)도 못 잡고 재구매 회수율도 0.18×로 바닥. DPV 316인데 구매 1 = 트래픽은 도는데 전환이 안 붙는다. 성장국면에서도 이건 &#x27;학습 중&#x27;이 아니라 채널 부적합 신호에 가깝다. 끌 후보 캠페인이 0개인 지금, <strong>가장 명확한 낭비 라인은 여기</strong>.</li>
+<li>필요하면: SD 뷰 리마케팅 일시정지 검토 — 절감분($200/월)을 서빙 병목(히어로 입찰)에 재배치.</li>
+</ul>
+<h3>💡 매출이 단일 ASIN에 77% 몰려 있다 — 히어로 집중의 양면</h3>
+<ul>
+<li>근거: 전환 ASIN B0FV7XWDYF 291유닛 $8,654 vs B0FV3QXSBF 79유닛 $2,276 → 전자가 전환매출의 79%, 총매출($11,281) 대비 ~77%. 검색어 &#x27;b0fv7xwdyf&#x27;도 주문19·전환일10 HERO (전환 ASIN·히어로 보드).</li>
+<li>의미/가설: 성장이 한 제품에 실려 있다 — 모멘텀은 진짜지만 집중 리스크도 진짜. B0FV3QXSBF는 아직 후보(주문5·전환일3, 최근 8/14). NTB 92.7%와 겹쳐보면 신규 고객이 이 한 ASIN으로 들어오는 중.</li>
+<li>필요하면: 없음 — 오늘 액션보다 &#x27;이 집중이 의도된 것인지, 2번째 ASIN을 히어로로 키울지&#x27;를 로드맵(세럼 사이클) 우선순위 정할 때 참조.</li>
+</ul>
+<hr>
+<p>오늘의 실제 레버는 예산이 아니라 두 가지다: ① <strong>SD 뷰 리마케팅(지출 $199.8·매출 $36.58·ROAS 0.18) 일시정지 검토</strong> — 끌 후보 0개인 지금 가장 명확한 낭비 라인. ② <strong>SP 히어로(SP-Auto-All-SKU, id=151465731502810·TOS IS 0.0%) Optapex 인계 전 입찰·IS 스냅샷 남기기</strong> — 위임 시점이라 지금 안 남기면 병목을 그대로 물려주게 됨. 스케일 후보 6개 예산 증액은 전부 무효 판정이니 오늘 돈을 더 넣을 곳은 없다.</p></div>
+  <div class="foot">자동 생성 · amazon-ads-api/daily_report.py · 데이터 정본 = dashboard_data.json ·
+  상세 분석(차원분해·검색어·위너버너·퍼널)은 <a href="https://lemonderma-perf-admin.pages.dev/">어드민 대시보드</a>에서 확인<br>
+  데이터 소스: dashboard_data.json (Amazon Ads·SP-API·Meta·Shopify) · 기준 시각: 2026-08-26 06:40 (PT 버킷 · 신뢰 구간 ~2026-08-24, 최근 2일 정산중) · 정의 정본: metrics.md + metrics_config.json (updated 2026-07-27, BEP Amazon 1.59×)</div>
+</div>
+<!-- build:49f8c4e1bca0 --></body></html>
