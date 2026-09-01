@@ -486,6 +486,16 @@ details.fold>.fold-in{padding:2px 16px 16px}
 .tbl-scroll{overflow-x:auto;margin:8px 0}
 table.mini{width:100%;border-collapse:collapse;font-size:12.8px;line-height:1.55}
 table.mini th{background:#f4f2e9;text-align:left;font-size:11.5px;letter-spacing:.02em;color:#6b675e;padding:7px 9px;border-bottom:2px solid var(--line);white-space:nowrap}
+/* 2026-09-01 표 데스크톱 오른쪽 공백/모바일 잘림 수정(John 지적) — table-layout:auto가 데스크톱에선 폭을 안 늘리고 모바일에선 안 줄여 화면 밖으로 밀려남.
+   149행 근처 min-width:0 리셋이 159행 td.tw,th.tw{min-width:190px}에 순서상 덮여 무효화되던 버그도 여기서 후순위로 다시 정정 */
+table,table.mini{table-layout:fixed}
+@media(max-width:900px){
+  td.tw,th.tw{min-width:0}
+  .tbl-scroll table{min-width:0}
+  table.mini th{white-space:normal}
+  /* 열 5개 이상 표는 100% 압축 시 열이 짓눌려 못 읽게 되므로 자연 폭+가로 스크롤로 전환(:has 미지원 브라우저는 압축 폴백) */
+  .tbl-scroll table:has(th:nth-child(5)){table-layout:auto;width:auto;min-width:560px}
+}
 table.mini td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
 table.mini td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
 .v-pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap}
