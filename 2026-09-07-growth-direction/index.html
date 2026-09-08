@@ -59,6 +59,10 @@ details.fold{background:var(--card);border:1px solid var(--line);border-radius:1
 .idn{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--lemon);font-size:12px;font-weight:800;flex:none}
 .ist{font-size:11.5px;font-weight:800;white-space:nowrap}
 .itag{font-size:11.5px;color:var(--muted);margin:-2px 0 6px 30px}
+.fn-small{font-size:12.5px;color:var(--muted);margin:6px 0 0;line-height:1.65}
+.ceil{margin:10px 0;padding-left:22px;font-size:14px}
+.ceil li{margin:8px 0;line-height:1.7}
+.unlock{display:block;color:var(--green);font-size:13px;margin-top:3px}
 /* ── 7장 근거 블록 ── */
 .srcbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px;margin:12px 0}
 .srch{font-size:13px;font-weight:800;margin-bottom:8px}
@@ -181,17 +185,18 @@ details.fold{background:var(--card);border:1px solid var(--line);border-radius:1
   <ol class="ansl">
   <li><b>지금 UAE는 12/31 목표의 1.8%</b>에 있고, 런칭 6주차(8/30~9/5)에 처음으로 의미 있는 주 매출(AED 2,234)이 났습니다.</li>
   <li><b>그 매출은 메타가 사 온 방문이 만들었고, 메타는 쓴 돈보다 덜 벌어 왔습니다.</b> 그래서 9/8에 메타 지출을 57% 줄였습니다.</li>
-  <li><b>광고만으로 $100K에 닿는 길은 없습니다.</b> 방문 100명 중 4명이 사는 상태를 먼저 만들고, 목표의 절반 이상은 광고 밖(7장)에서 만들어야 합니다.</li>
+  <li><b>지금 조건 그대로 계산하면 광고가 채우는 몫은 목표의 23~47%입니다.</b> 막는 것은 예산이 아니라 재고·위임 도구 증액 상한·전환율 셋이고, 셋 다 우리가 푸는 중입니다. 그래도 남는 몫은 광고 밖(7장)에서 만듭니다.</li>
   </ol>
 </div>
 <div class="kpis kpi4">
 <div class="kpi"><div class="k">누적 매출</div><div class="v">$1.8K</div><div class="pb"><i style="width:1.8%"></i></div><div class="s">12/31 목표 $100K의 <b>1.8%</b> · 남은 16주</div></div>
 <div class="kpi"><div class="k">효율(MER) — 6주차</div><div class="v">1.27</div><div class="pb"><i style="width:78%"></i></div><div class="s">지킬 선 <b>1.63</b> · 누적은 0.83</div></div>
 <div class="kpi"><div class="k">방문 100명 중 구매</div><div class="v">3.0명</div><div class="pb"><i style="width:75%"></i></div><div class="s">관문 <b>4명</b> · 9/28 4주 실측으로 판정</div></div>
-<div class="kpi"><div class="k">세럼 카테고리 순위</div><div class="v">218위</div><div class="pb"><i style="width:4.6%"></i></div><div class="s">목표 <b>상위 10위</b> · 6주 전 607위</div></div>
+<div class="kpi"><div class="k">카테고리 순위</div><div class="v">218 · 295위</div><div class="pb"><i style="width:4.6%"></i></div><div class="s">세럼 218위 · 크림 295위 · 목표는 <b>둘 다 상위 10위</b></div></div>
 </div>
 <p>목표 세 개는 지금 자리에서 각각 다르게 멉니다. 매출은 57배, 순위는 20~30배, 효율은 2배입니다. 그래서 순서를 정했습니다.
 <b>① 전환율 4%를 먼저 만들고 → ② 세럼·크림 재고를 깔고 → ③ 흑자선(MER 1.63)을 지키는 한 광고는 계속 키우고 → ④ 광고로 못 사는 방문은 광고 밖(7장)에서 만듭니다.</b> 아래 다섯 절이 이 순서를 차례로 답합니다.</p>
+<p class="fn-small">순위 목표는 <b>세럼·크림 둘 다 각자 카테고리 상위 10위</b>입니다(세럼은 Facial Treatments &amp; Masks, 크림은 Facial Moisturizers). 지금은 218위·295위입니다.</p>
 <div class="subh"><span class="sn">6-1</span><h3>지금 어디에 있나</h3><span class="sq">오픈 51일</span></div>
 <p>UAE는 7/20 오픈해 9/8 기준 51일째입니다. 누적 매출 AED 6,549(약 $1,783), 누적 광고비 AED 7,893이고 그중 67%가 메타였습니다.
 런칭 6주차(8/30~9/5)에 <b>처음으로 주 매출이 AED 2,234</b>까지 올라왔습니다. 전주의 2.6배입니다. 효율은 1.27로, 지킬 선 1.63에는 아직 못 미칩니다.</p>
@@ -227,17 +232,23 @@ details.fold{background:var(--card);border:1px solid var(--line);border-radius:1
 <p>전환율은 광고비에 곱해지는 숫자라서, 이걸 먼저 4%로 올려놓지 않으면 광고비를 얼마를 넣든 결과는 적자 쪽으로 커집니다.
 4%를 만드는 재료는 크림 AED 99·Amazon's Choice 배지(세럼·크림 둘 다 보유)·현지 리뷰·정품 표시(7장)이고, <b>9/28에 4주 실측으로 확인</b>합니다.</p>
 <div class="chart"><div class="ct">방문 100명(광고비 AED 282)에서 몇 명이 사느냐가 흑자·적자를 가릅니다</div><svg viewBox="0 0 720 232" role="img" aria-label="전환율별 MER"><line x1="268" y1="16" x2="268" y2="196" stroke="#e6e1d3"/><text x="268" y="210" font-size="10" fill="#6f685a" text-anchor="middle">0.5</text><line x1="385" y1="16" x2="385" y2="196" stroke="#e6e1d3"/><text x="385" y="210" font-size="10" fill="#6f685a" text-anchor="middle">1.0</text><line x1="502" y1="16" x2="502" y2="196" stroke="#e6e1d3"/><text x="502" y="210" font-size="10" fill="#6f685a" text-anchor="middle">1.5</text><line x1="620" y1="16" x2="620" y2="196" stroke="#e6e1d3"/><text x="620" y="210" font-size="10" fill="#6f685a" text-anchor="middle">2.0</text><rect x="510" y="16" width="23" height="180" fill="#c9a227" opacity=".14"/><line x1="533" y1="16" x2="533" y2="196" stroke="#b3261e" stroke-width="2" stroke-dasharray="5 4"/><text x="533" y="12" font-size="10.5" fill="#b3261e" text-anchor="middle" font-weight="800">지킬 선 1.63</text><text x="0" y="35" font-size="12.5" fill="#1b1a17" font-weight="800">3.0% · 3명 구매 (지금)</text><rect x="150" y="22" width="292" height="22" rx="5" fill="#b3261e"/><text x="450" y="37" font-size="12.5" font-weight="800" fill="#1b1a17">1.24배 · 매출 AED 351</text><text x="0" y="81" font-size="12.5" fill="#1b1a17" font-weight="500">3.5% · 3.5명 구매</text><rect x="150" y="68" width="341" height="22" rx="5" fill="#b3261e"/><text x="499" y="83" font-size="12.5" font-weight="800" fill="#1b1a17">1.45배 · 매출 AED 410</text><text x="0" y="127" font-size="12.5" fill="#1b1a17" font-weight="800">4.0% · 4명 구매 (관문)</text><rect x="150" y="114" width="390" height="22" rx="5" fill="#2e7d32"/><text x="548" y="129" font-size="12.5" font-weight="800" fill="#1b1a17">1.66배 · 매출 AED 468</text><text x="0" y="173" font-size="12.5" fill="#1b1a17" font-weight="500">4.5% · 4.5명 구매</text><rect x="150" y="160" width="439" height="22" rx="5" fill="#2e7d32"/><text x="597" y="175" font-size="12.5" font-weight="800" fill="#1b1a17">1.87배 · 매출 AED 526</text><text x="716" y="228" font-size="11" fill="#6f685a" text-anchor="end">한 명 구매 = AED 117 · 클릭당 AED 2.82 · 광고비 대비 매출(MER)</text></svg><div class="cn">3%에서는 광고비 100을 넣어 124를 돌려받아 마진을 못 채우고, 4%부터 166으로 지킬 선 1.63을 넘깁니다. 이 숫자는 아마존 광고만의 계산이고, 메타를 섞으면 더 낮아집니다.</div></div><div class="subh"><span class="sn">6-5</span><h3>$100K까지 얼마나 먼가</h3><span class="sq">광고 최선 47%</span></div>
-<p class="secsum">남은 16주에 $98K를 더 팔아야 하는데, <b>광고만으로는 가장 잘 돼도 목표의 절반 언저리에서 멈춥니다.</b></p>
-<p>$98K는 세럼·크림 각 약 1,550개입니다. 그러려면 방문자가 지금의 약 10배(주 640명 → 6,300명)로 늘어야 합니다.
-이 방문을 전부 아마존 광고로 사면 광고비가 약 AED 29만 들고, 전환율 4%를 만들어도 4분기 예산·재고·위임 도구 상한에 걸려 <b>목표의 23~47%에서 멈춥니다</b>(대안 4개와 채점은 부록 C).
-나머지는 광고 밖 트래픽(7장)이 만들어야 하고, 9/30에 중간 점검합니다.</p>
+<p class="secsum">남은 16주에 $98K를 더 팔아야 합니다. <b>지금 조건을 그대로 두고 계산하면 광고가 채우는 몫은 목표의 23~47%입니다.</b> 이것은 "광고로는 안 된다"가 아니라, <b>지금 막혀 있는 것 셋을 풀지 않으면 그렇다</b>는 뜻입니다.</p>
+<p>$98K는 세럼·크림 각 약 1,550개이고, 그러려면 방문자가 지금의 약 10배(주 640명 → 6,300명)로 늘어야 합니다. 이 방문을 전부 아마존 광고로 사면 광고비가 약 AED 29만 듭니다.
+그 계산에서 천장을 만드는 것은 <b>예산 의지가 아닙니다</b>. 예산은 병목이 아니라는 것이 9/8 결정입니다(8장 ⑦). 천장은 아래 셋입니다.</p>
+<ol class="ceil">
+<li><b>재고</b> — UAE 창고 재고로 채울 수 있는 몫이 목표의 21%입니다. <span class="unlock">푸는 법: 9/14 재입고 부킹. 한국에 세럼 5,000·크림 10,000개가 이미 있어 배정과 운송 시점의 문제입니다.</span></li>
+<li><b>위임 도구 증액 상한</b> — 지금 쓰는 자동 위임 도구는 주당 올릴 수 있는 폭이 정해져 있어 16주 동안 실제로 태울 수 있는 광고비가 약 $19,680입니다. <span class="unlock">푸는 법: 국가별 요금제(8장 ⑧ 결정 완료)와 학습 기간 경과, 그리고 직접 운영 캠페인 병행.</span></li>
+<li><b>전환율</b> — 3.0%에서는 광고를 늘릴수록 적자가 커져 애초에 태울 수가 없습니다. <span class="unlock">푸는 법: 6-4의 4% 관문. 9/28에 4주 실측으로 판정합니다.</span></li>
+</ol>
+<p>셋이 다 풀리면 광고가 채우는 몫은 위 범위의 위쪽으로 갑니다. 다만 셋 다 9~10월에야 확인되고 그 사이 시간은 지나갑니다.
+그래서 <b>광고 밖 트래픽(7장)을 지금부터 같이 깔아 두는 것</b>이고, 9/30에 중간 점검해 어느 쪽이 얼마나 채우고 있는지 다시 봅니다. 이 범위의 근거와 대안 4개 채점은 부록 C에 있습니다.</p>
 <h3>되는 순서</h3>
 <ol class="flow">
-<li><b>전환율 4%를 확인한다</b><span>지금 3.0%, 관문은 9/28입니다. 광고만으로 1.63을 넘기는 유일한 조건이라 이것이 1번입니다.</span></li>
+<li><b>전환율 4%를 확인한다</b><span>지금 3.0%, 관문은 9/28입니다. 이 숫자가 광고비에 곱해지기 때문에, 여기가 올라가지 않으면 뒤의 둘(재고·증액)을 풀어도 늘린 만큼 적자가 같이 커집니다. 그래서 1번입니다.</span></li>
 <li><b>재고를 깐다</b><span>$100K를 세럼·크림 같은 개수로 잡으면 각 약 1,550개인데, UAE 창고엔 세럼 192·크림 521개뿐입니다. 세럼은 지금 속도면 10월 중~말 소진이라 <b>9/14 재입고 부킹이 마감</b>입니다(8장 ①). 한국 입고분(9/11 세럼 5,000·크림 10,000개)에서 배정·운송 시점이 관문이고, 어느 쪽이 더 잘 팔리는지 판정할 표본이 아직 없어 동수로 시작합니다.</span></li>
 <li><b>1.63을 지키는 한 광고를 키운다</b><span>예산은 병목이 아닙니다(John 9/8). 전환율 4%가 확인되면 4분기 광고비는 약 $40~66K이고, 그 전에는 지금 수준을 유지하며 소재·키워드 누수를 잡습니다.</span></li>
 </ol>
-<div class="chart"><div class="ct">12/31 누적 $100K를 무엇으로 채우나</div><svg viewBox="0 0 720 106" role="img" aria-label="목표 구성"><rect x="24" y="28" width="316" height="44" fill="#1b1a17"/><text x="182" y="55" font-size="13" font-weight="800" fill="#fbfaf6" text-anchor="middle">광고만으로 가장 잘 될 때 $47K</text><rect x="340" y="28" width="356" height="44" fill="#c9e265"/><text x="518" y="55" font-size="13" font-weight="800" fill="#1b1a17" text-anchor="middle">광고 밖 트래픽이 만들어야 할 $53K</text><rect x="24" y="28" width="12" height="44" fill="#b3261e"/><text x="24" y="20" font-size="11" fill="#b3261e" font-weight="800">지금 $1.8K</text><text x="24" y="96" font-size="11.5" fill="#6f685a">광고 최선 = 부록 C 대안 A(재입고 후 아마존 예산 매주 1.5배 상향, 효율 2.3배 유지) 상한. 광고 밖 = 7장 기회 11개 + AI 레버 9개.</text></svg></div>
+<div class="chart"><div class="ct">12/31 누적 $100K를 무엇으로 채우나</div><svg viewBox="0 0 720 106" role="img" aria-label="목표 구성"><rect x="24" y="28" width="316" height="44" fill="#1b1a17"/><text x="182" y="55" font-size="13" font-weight="800" fill="#fbfaf6" text-anchor="middle">지금 조건에서 광고가 채우는 몫 $47K</text><rect x="340" y="28" width="356" height="44" fill="#c9e265"/><text x="518" y="55" font-size="13" font-weight="800" fill="#1b1a17" text-anchor="middle">광고 밖 트래픽이 채울 몫 $53K</text><rect x="24" y="28" width="12" height="44" fill="#b3261e"/><text x="24" y="20" font-size="11" fill="#b3261e" font-weight="800">지금 $1.8K</text><text x="24" y="96" font-size="11.5" fill="#6f685a">가운데 값은 지금 조건(재고 천장 21% · 위임 도구 16주 증액 상한 약 $19,680 · 전환율 3.0%) 그대로 갔을 때입니다.</text></svg><div class="cn"><b>이 그림은 "광고를 그만 쓰자"가 아닙니다.</b> 광고 쪽 몫을 묶고 있는 것은 예산 의지가 아니라 재고·위임 도구 증액 상한·전환율 셋이고(예산은 병목이 아님, 8장 ⑦), 셋이 풀리면 광고 몫은 범위 23~47%의 위쪽으로 갑니다. 다만 확인이 9~10월이라 <b>광고 밖도 지금부터 같이 깝니다.</b> 광고 몫은 부록 C 대안 A(재입고 후 아마존 예산 매주 1.5배 상향, 효율 2.3배 유지) 상한이고, 광고 밖은 7장 아이디어 11개입니다.</div></div>
 <div class="xfer">
   <div class="xh">미국 12주에서 UAE로 가져갈 것 네 가지</div>
   <ol>
