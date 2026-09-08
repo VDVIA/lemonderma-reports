@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>UAE 퍼포먼스 마케팅 — 주간 보고서 · 6주차 (8/30–9/05)</title>
+<style>
+:root{
+  --ink:#1b1a17; --muted:#6b675e; --line:#e7e3d8; --bg:#faf9f4; --card:#fff;
+  --lime:#b4c400; --lime-deep:#7e8c00;
+  --amz:#FF9900; --amz-bg:#fff6e8;
+  --good:#1a8f3c; --good-bg:#e8f6ec; --warn:#c98300; --warn-bg:#fdf3e0; --bad:#d23b2e; --bad-bg:#fbeceb;
+  --g-dark:#1a8f3c; --g-serum:#4f6fc4; --g-cream:#b45f06; --g-na:#d8d2c4;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-anchor:none;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+a{color:var(--lime-deep)}
+header{background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;padding:40px 0 34px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#0e0d0b;background:var(--lime);padding:5px 11px;border-radius:999px}
+h1{font-size:30px;line-height:1.2;margin:16px 0 6px;font-weight:800;letter-spacing:-.01em}
+.sub{color:#cfcabb;font-size:15px;margin:0}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13.5px;color:#e7e3d8}
+.meta-row b{color:#fff}
+
+/* ── 서장: 훅 + 북극성 ── */
+.hook{margin-top:34px;background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:18px;padding:26px 28px;box-shadow:var(--shadow)}
+.hook .hq{font-size:20px;font-weight:800;line-height:1.5;letter-spacing:-.01em}
+.hook .hq em{font-style:normal;color:var(--lime)}
+.hook .ha{margin-top:14px;padding-top:14px;border-top:1px solid #4a463c;font-size:15.5px;line-height:1.7;color:#e8e4d8}
+.hook .ha b{color:#fff}
+.ns-row{display:flex;flex-wrap:wrap;gap:10px 34px;align-items:baseline;margin-top:18px}
+.ns-item .nl{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.ns-item .nv{font-size:36px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.ns-item .nv small{font-size:15px;font-weight:700;color:#cfcabb}
+.ns-note{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.6}
+.ns-note b{color:var(--ink)}
+/* 본전 게이지 */
+.gauge{position:relative;height:16px;background:#4a463c;border-radius:8px;margin:14px 0 6px;max-width:520px}
+.gauge .gf{position:absolute;left:0;top:0;bottom:0;width:72.5%;background:#f5b942;border-radius:8px 0 0 8px}
+.gauge .gm{position:absolute;top:-5px;bottom:-5px;width:3px;background:#fff;border-radius:2px}
+.gauge .gm.alt{background:transparent;border-left:3px dashed #7fb069}
+.gauge-lbl{display:flex;justify-content:space-between;max-width:520px;font-size:11px;color:#cfcabb}
+.badge-legend{margin:10px 0 0;font-size:12px;color:var(--muted);background:#f4f2e9;border:1px solid var(--line);border-radius:9px;padding:8px 12px;display:inline-block}
+.badge-legend b{color:var(--ink)}
+
+/* ── 스토리 스파인 차트 ── */
+.spine-card{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px 14px;box-shadow:var(--shadow)}
+.sp-h{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin-bottom:2px}
+.sp-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.spine{display:flex;gap:3px;align-items:flex-end;height:210px;border-bottom:2px solid var(--ink);padding:0 2px}
+.sp-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative;min-width:0}
+.sp-bars{display:flex;gap:2px;align-items:flex-end;width:100%;height:100%;justify-content:center}
+.sp-spend{width:40%;max-width:16px;background:#d8d2c4;border-radius:4px 4px 0 0}
+.sp-rev{width:40%;max-width:16px;background:var(--g-dark);border-radius:4px 4px 0 0}
+.sp-day.susp{background-image:repeating-linear-gradient(45deg,#e6e2d6,#e6e2d6 4px,#f4f1e8 4px,#f4f1e8 8px);background-size:100% 15%;background-repeat:no-repeat;background-position:bottom}
+.sp-tag{position:absolute;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:800;color:#0c441d;background:#fff;border:1px solid #bfe6c9;border-radius:999px;padding:1px 6px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.sp-dates{display:flex;gap:3px;padding:5px 2px 0}
+.sp-dates span{flex:1;text-align:center;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:0}
+.sp-events{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.sp-ev{font-size:11.5px;font-weight:700;background:#f4f3ec;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#46433c}
+.sp-ev.k{background:var(--bad-bg);border-color:#f0c7c2;color:#8f261c}
+.sp-legend{display:flex;gap:14px;margin-top:10px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.sp-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+
+/* ── 5분 요약 ── */
+.tldr{margin-top:18px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.tldr .t-h{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:10px}
+.tldr .t-row{display:flex;gap:11px;align-items:flex-start;padding:8px 0;font-size:14.5px;border-top:1px dashed var(--line);line-height:1.7}
+.tldr .t-row:first-of-type{border-top:none}
+.tldr .t-row .ic{flex:none;font-size:17px;line-height:1.5}
+.tldr .t-row b{font-weight:800}
+.tldr .nextq{color:var(--muted);font-size:13px}
+
+/* (용어 사전 섹션은 2026-08-11 John 피드백으로 폐지 — 새 개념은 첫 등장 문장에서 한 줄 풀이) */
+
+/* ── 탭 ── */
+.navhint{font-size:13px;color:#5c5a52;background:#f4f3ec;border-left:3px solid var(--lime);border-radius:0 10px 10px 0;padding:11px 14px;margin-top:22px}
+.navhint b{color:var(--ink)}
+.tabnav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  background:rgba(250,249,244,.93);backdrop-filter:saturate(150%) blur(10px);-webkit-backdrop-filter:saturate(150%) blur(10px);
+  padding:12px 2px;margin:10px 0 4px;border-bottom:1px solid var(--line)}
+.tabnav::-webkit-scrollbar{height:0}
+.tab{flex:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:inherit;
+  font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;
+  transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .15s cubic-bezier(.34,1.56,.64,1)}
+.tab:hover{border-color:var(--lime);color:var(--ink);transform:translateY(-1px) scale(1.05);box-shadow:0 4px 14px rgba(126,140,0,.22)}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow)}
+.tabpanel{display:none}
+.tabpanel.active{display:block;animation:fadeUp .4s cubic-bezier(.22,.61,.36,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tabpanel > section:first-of-type{margin-top:26px}
+.tabfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:38px;padding-top:18px;border-top:2px solid var(--ink)}
+.tabfoot .step{font-size:12.5px;color:var(--muted);font-weight:800}
+.tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;border:none;
+  transition:transform .16s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .2s,color .2s}
+.tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:0 3px 10px rgba(126,140,0,.30);margin-left:auto}
+.tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff;transform:translateY(-2px) scale(1.04)}
+.tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line)}
+@media(max-width:720px){.tab{font-size:12.5px;padding:8px 13px}.tabfoot button{font-size:13px;padding:10px 13px}.tabfoot .step{display:none}}
+
+section{margin-top:40px;scroll-margin-top:84px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;flex-wrap:wrap}
+.sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--ink);min-width:26px;height:26px;border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center}
+.sec-head h2{font-size:21px;margin:0;font-weight:800;letter-spacing:-.01em}
+.sec-head .note{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.lead{font-size:15px;color:#46433c;margin:0 0 16px;line-height:1.7}
+.actlead{font-size:14px;color:#5c5a52;background:#f4f3ec;border-radius:12px;padding:12px 16px;margin:0 0 20px;line-height:1.65}
+.actlead b{color:var(--ink)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+/* 돈 블록 */
+.money{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
+@media(max-width:720px){.money{grid-template-columns:1fr}}
+.money .m{padding:20px 22px;text-align:center}
+.money .m.spent{background:#fbeceb}
+.money .m.made{background:#e8f6ec}
+.money .m .lbl{font-size:12.5px;font-weight:700;color:var(--muted)}
+.money .m .big{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px}
+.money .m .sm{font-size:12px;color:var(--muted)}
+.money .eq{display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted);padding:0 6px;background:#faf9f4}
+
+/* 그룹 소개 카드 */
+.groups{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+@media(max-width:820px){.groups{grid-template-columns:1fr 1fr}}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-top:4px solid var(--line)}
+.gcard.win{border-top-color:var(--g-dark);background:#fbfdf8}
+.gcard.cream{border-top-color:var(--g-cream)}
+.gcard.serum{border-top-color:var(--g-serum)}
+.gcard .gn{font-size:14.5px;font-weight:800}
+.gcard .gc{font-size:11px;color:var(--muted);font-weight:700}
+.gcard .gv{font-size:22px;font-weight:800;margin-top:5px}
+.gcard .gd{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.5}
+.gcard .tagline{display:inline-block;font-size:10.5px;font-weight:800;border-radius:999px;padding:2px 8px;margin-top:7px}
+.gcard.win .tagline{background:var(--good-bg);color:var(--good)}
+.gcard.cream .tagline{background:var(--warn-bg);color:var(--warn)}
+.gcard.serum .tagline{background:var(--bad-bg);color:var(--bad)}
+
+.b{display:inline-block;font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:999px;vertical-align:middle}
+.b-good{background:var(--good-bg);color:var(--good)}
+.b-warn{background:var(--warn-bg);color:var(--warn)}
+.b-bad{background:var(--bad-bg);color:var(--bad)}
+.b-amz{background:var(--amz-bg);color:#a35c00}
+
+/* 표 */
+.tbl-scroll{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:
+  linear-gradient(to right,var(--card) 92%,rgba(0,0,0,.045))}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tbl-scroll table{min-width:540px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);word-break:keep-all;overflow-wrap:anywhere}
+td.num,th.num,td.nowrap,th.nowrap{white-space:nowrap}
+@media(max-width:900px){th,td{padding:8px 9px;font-size:12.5px}table{font-size:12.5px}.tbl-scroll table{min-width:0}td.tw,th.tw{min-width:0}}
+th{background:#f4f3ec;font-weight:800;font-size:12px;color:#4a473f}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.tw,th.tw{white-space:normal;min-width:190px;vertical-align:top;padding:10px 13px}
+tr.hi td{background:#fffdf2}
+tr.bad td{background:#fdf6f5}
+td.num{position:relative}
+td.num .cell-bar{position:absolute;right:2px;top:3px;bottom:3px;z-index:0;border-radius:4px;opacity:.16}
+td.num span.cv{position:relative;z-index:1}
+
+.flag{margin-top:14px;background:var(--bad-bg);border:1px solid #f3c9c4;border-radius:12px;padding:12px 14px;font-size:13px;color:#8f261c}
+.flag b{color:#6e1c14}
+.flag.lime-flag{background:#f7f9e6;border-color:#dde39a;color:#5c6300}.flag.lime-flag b{color:#444a00}
+.flag.good-flag{background:var(--good-bg);border-color:#bfe6c9;color:#13602a}.flag.good-flag b{color:#0c441d}
+
+/* 도넛 + 통계 */
+.statline{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin:14px 0;flex-wrap:wrap}
+.donut{width:58px;height:58px;border-radius:50%;flex:none;position:relative}
+.donut::after{content:'';position:absolute;inset:14px;background:var(--card);border-radius:50%}
+.statline .st{font-size:14px;line-height:1.6;flex:1;min-width:220px}
+.statline .st b{font-size:17px}
+
+/* ── ②탭: 장(챕터) 서사 ── */
+.chapter{margin:22px 0 10px;display:flex;align-items:center;gap:10px}
+.chapter .cn{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.chapter h3{margin:0;font-size:17px;font-weight:800}
+.chapter .cd{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* 배분 차트 */
+.alloc-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px 14px;box-shadow:var(--shadow);margin:14px 0}
+.alloc{display:flex;gap:6px;align-items:flex-end;height:190px;border-bottom:2px solid var(--ink);padding:26px 2px 0;position:relative}
+.al-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;position:relative;min-width:0}
+.al-day.wide{flex:1.6}
+.al-col{display:flex;flex-direction:column-reverse;width:70%;max-width:44px;margin:0 auto}
+.al-seg{border-radius:3px;margin-top:2px;min-height:2px}
+.al-seg.dk{background:var(--g-dark)} .al-seg.sr{background:var(--g-serum)} .al-seg.cr{background:var(--g-cream)} .al-seg.na{background:var(--g-na)}
+.al-dt{text-align:center;font-size:10.5px;color:var(--muted);padding-top:5px;white-space:nowrap}
+.al-ev{position:absolute;top:2px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:800;color:#8f261c;white-space:nowrap}
+.al-ev.g{color:var(--good)}
+.al-brace{position:absolute;top:-2px;font-size:11px;font-weight:800;color:var(--bad);text-align:center;border-top:2px solid var(--bad);padding-top:3px}
+.al-legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:#46433c;flex-wrap:wrap}
+.al-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* 반전 히어로 */
+.roas-flip{display:flex;align-items:center;justify-content:center;gap:26px;background:linear-gradient(135deg,#1b1a17,#322f27);border-radius:16px;padding:24px 20px;color:#fff;margin:18px 0;flex-wrap:wrap;box-shadow:var(--shadow)}
+.rf-cell{text-align:center}
+.rf-lbl{font-size:12px;font-weight:700;color:#cfcabb;margin-bottom:4px}
+.rf-num{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.rf-num.up{color:#7fb069} .rf-num.dn{color:#ff7a6e}
+.rf-sub{font-size:12px;color:#cfcabb;margin-top:5px}
+.rf-arrow{font-size:34px;color:#8a836f;font-weight:800}
+.rf-donuts{display:flex;gap:22px;align-items:center}
+.rf-d{text-align:center}
+.rf-d .donut{margin:0 auto 5px}
+.rf-d .donut::after{background:#242219}
+.rf-d span{font-size:11.5px;color:#cfcabb}
+
+/* ── ③탭: 자물쇠·사슬·채팅 ── */
+.locks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+@media(max-width:900px){.locks{grid-template-columns:minmax(0,1fr)}}
+.lock{border:2px solid var(--ink);border-radius:16px;padding:18px 20px;background:var(--card);box-shadow:var(--shadow);min-width:0;overflow-wrap:anywhere}
+.lock code{white-space:normal;overflow-wrap:anywhere}
+.lock .lh{font-size:16px;font-weight:800;margin-bottom:6px}
+.lock p{margin:6px 0;font-size:13.5px;line-height:1.65;color:#3b3a35}
+
+.chain{display:flex;flex-direction:column;align-items:center;max-width:660px;margin:16px auto}
+.chain-step{width:100%;border:2px solid var(--line);border-radius:14px;padding:13px 18px;background:var(--card)}
+.chain-step.root{border-color:var(--bad);border-width:3px;background:var(--bad-bg)}
+.chain-step .cs-t{font-size:14.5px;font-weight:800}
+.chain-step .cs-d{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.55}
+.chain-arrow{width:2px;height:22px;background:var(--ink);position:relative}
+.chain-arrow::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink)}
+.chain-side{width:92%;border:2px dashed var(--line);border-radius:12px;padding:11px 16px;background:#faf9f4;margin-top:14px;font-size:12.5px;color:#46433c}
+.chain-side b{color:var(--ink)}
+
+.convo{display:flex;flex-direction:column;gap:12px;max-width:680px;margin:16px auto}
+.bub{border-radius:14px;padding:11px 15px;max-width:82%;font-size:13.5px;line-height:1.6;position:relative}
+.bub .who{font-size:10.5px;font-weight:800;letter-spacing:.05em;color:var(--muted);display:block;margin-bottom:3px}
+.bub.us{align-self:flex-start;background:#eceadf;border-radius:14px 14px 14px 4px}
+.bub.amz{align-self:flex-end;background:var(--amz-bg);border-radius:14px 14px 4px 14px}
+.bub.amz.rej{border:1.5px solid #e5b8b2}
+.bub.amz.brk{border:2px solid var(--good);background:var(--good-bg)}
+.bub .rtag{position:absolute;top:-9px;right:10px;font-size:10px;font-weight:800;background:var(--bad-bg);color:var(--bad);border-radius:999px;padding:1px 8px}
+.bub .rtag.ok{background:var(--good-bg);color:var(--good)}
+.convo-note{font-size:12px;color:var(--muted);max-width:680px;margin:4px auto 0;text-align:center}
+
+/* 단계 스테퍼 */
+.stepper{display:flex;justify-content:space-between;position:relative;margin:26px 4px 6px}
+.stepper::before{content:'';position:absolute;top:19px;left:6%;right:6%;height:2px;background:var(--line)}
+.stp{position:relative;z-index:1;text-align:center;flex:1}
+.stp .nd{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:var(--card);border:2px solid var(--line);margin:0 auto}
+.stp.now .nd{border-color:var(--bad);box-shadow:0 0 0 4px var(--bad-bg)}
+.stp .nm{font-size:12px;font-weight:800;margin-top:6px}
+.stp .tg{font-size:10.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.mini-progress{max-width:180px;height:8px;background:#eceadf;border-radius:4px;margin:8px auto 2px;overflow:hidden}
+.mini-progress .fill{height:100%;width:63%;background:var(--warn);border-radius:4px}
+@media(max-width:720px){.stepper{flex-direction:column;gap:14px;align-items:flex-start}.stepper::before{display:none}.stp{display:flex;gap:12px;text-align:left;align-items:center}.stp .nd{margin:0}.mini-progress{margin:6px 0 0}}
+
+/* ── ④탭 ── */
+.herostrip{margin-top:14px}
+.hs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:820px){.hs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hs-grid{grid-template-columns:1fr}}
+.herocard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.herocard img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--line)}
+.herocard .hc-body{padding:13px 16px 15px}
+.herocard .hc-plat{display:inline-flex;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:7px}
+.herocard .hc-plat.dk{background:var(--good-bg);color:#0c441d}
+.herocard .hc-plat.cr{background:var(--warn-bg);color:#7a5800}
+.herocard .hc-name{font-size:14px;font-weight:800;margin-bottom:3px}
+.herocard .hc-roas{font-size:19px;font-weight:800;color:var(--good)}
+.herocard .hc-metric{font-size:12.5px;color:#3b3a35;line-height:1.55;margin-top:4px}
+
+.conc-bar{display:flex;height:40px;border-radius:10px;overflow:hidden;margin:12px 0 6px;border:1px solid var(--line)}
+.conc-bar .cw{background:var(--good);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;white-space:nowrap;padding:0 6px}
+.conc-bar .cl{background:var(--bad-bg);color:var(--bad);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800}
+.conc-cap{font-size:12.5px;color:var(--muted)}
+
+.rejbars{margin:14px 0}
+.rej-row{display:flex;align-items:center;gap:10px;margin:9px 0}
+.rej-row .rl{flex:none;width:130px;font-size:12.5px;font-weight:700;text-align:right;color:#46433c}
+.rej-row .rt{flex:1;background:#f4f3ec;border-radius:6px;height:24px;position:relative;overflow:hidden}
+.rej-row .rf{height:100%;border-radius:6px}
+.rej-row .rv{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:var(--ink);white-space:nowrap;text-shadow:0 0 4px rgba(255,255,255,.9)}
+
+.confess{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
+.cf{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:13px 17px}
+.cf .was{font-size:13.5px;font-weight:800;color:var(--muted);text-decoration:line-through}
+.cf .now2{font-size:13.5px;margin-top:4px;line-height:1.6}
+.cf .now2 b{color:var(--ink)}
+
+/* ── ⑤탭 ── */
+.decq{margin-top:6px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.decq .dq-h{font-size:14px;font-weight:800;margin-bottom:4px}
+.decq .dq-sub{font-size:12px;color:var(--lime-deep);font-weight:700;margin-bottom:12px}
+.decq .dq-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px dashed var(--line)}
+.decq .dq-row:first-of-type{border-top:none}
+.decq .dq-dl{flex:none;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap;min-width:54px;text-align:center}
+.decq .dq-dl.urgent{background:var(--bad-bg);color:var(--bad)}
+.decq .dq-dl.wait{background:#eceadf;color:#46433c}
+.decq .dq-body{font-size:13px;color:#3b3a35;line-height:1.6}
+.decq .dq-body b{color:var(--ink)}
+
+/* 아코디언(부록) */
+.acc{margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.acc summary{cursor:pointer;padding:13px 16px;font-size:14px;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'▾ 펼치기';margin-left:auto;font-size:11px;font-weight:700;color:var(--muted)}
+.acc[open] summary::after{content:'▴ 접기'}
+.acc summary:hover{background:#faf9f4}
+.acc .bd{margin:0;padding:2px 16px 16px;font-size:13.5px;color:#3b3a35;line-height:1.65}
+.acc-group{margin:22px 0 2px;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep)}
+.pill-board{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#eef3dd;color:#4a6b1d;vertical-align:2px;margin-right:6px}
+.sowhat{margin-top:12px;background:#f3f7e6;border-left:4px solid var(--lime-deep);border-radius:0 10px 10px 0;padding:11px 15px;font-size:13.5px;color:#2f2e29;line-height:1.65}
+.sowhat b{color:#4a6b1d}
+.jump{cursor:pointer;color:var(--lime-deep);font-weight:700;text-decoration:underline dotted}
+.actlog{width:100%;border-collapse:collapse;font-size:13px}
+.actlog th,.actlog td{padding:10px 12px;vertical-align:top;white-space:normal}
+.actlog .when{white-space:nowrap;font-size:11.5px;color:var(--muted)}
+.v-pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap}
+.v-pill.win{background:var(--good-bg);color:var(--good)}
+.v-pill.lose{background:var(--bad-bg);color:var(--bad)}
+.v-pill.pend{background:var(--warn-bg);color:var(--warn)}
+.v-pill.infra{background:#eceef5;color:#3a4a73}
+code{background:#f1f0e8;padding:1px 5px;border-radius:5px;font-size:12.5px}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--muted)}
+
+/* ── 2026-08-11 신설 (John 피드백 반영: 플로우·타임라인·퍼널·마스터-디테일·액션 위계) ── */
+
+/* ① 핵심 요약 박스 플로우 */
+.flow4{display:flex;align-items:stretch;gap:8px;margin-top:6px}
+.fbox{flex:1 1 0;min-width:0;background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:13px 15px}
+.fbox .fb-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.fbox .fb-n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.fbox .fb-t{font-size:13.5px;font-weight:800;line-height:1.35}
+.fbox p{margin:0;font-size:12.5px;line-height:1.65;color:#46433c}
+.fb-arr{flex:none;align-self:center;font-size:20px;font-weight:800;color:var(--lime-deep)}
+@media(max-width:900px){
+  .flow4{flex-direction:column;gap:6px}
+  .fb-arr{align-self:flex-start;margin-left:24px;transform:rotate(90deg)}
+}
+
+/* ② 무슨 일이 있었나 — 하루 카드 (구 .chapter 원형 배지 오용 수리) */
+.jday{margin:20px 0;padding:2px 0 2px 16px;border-left:3px solid var(--line)}
+.jday.epi{border-left-color:var(--warn)}
+.jday .jhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.jday .jdate{flex:none;font-size:11.5px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:2px 10px;font-variant-numeric:tabular-nums}
+.jday.epi .jdate{background:var(--warn)}
+.jday h3{margin:0;font-size:16px;font-weight:800}
+.jday p{margin:7px 0 0;font-size:13.5px;line-height:1.75;color:#3b3a35}
+
+/* ③탭 병목 도식 공통 */
+.lock.wide{margin:14px 0}
+.bnk-h{margin:20px 0 10px;font-size:13px;font-weight:800;letter-spacing:.05em;color:var(--lime-deep)}
+.bnk-steps{max-width:720px}
+.bnk-steps .cs-t .bs-d{display:inline-block;margin-right:8px;font-size:11px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:1px 9px;vertical-align:1px;font-variant-numeric:tabular-nums}
+.bnk-steps .chain-step.root .cs-t .bs-d{background:var(--bad)}
+.bnk-why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.bnk-why.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.bnk-why,.bnk-why.three{grid-template-columns:1fr}}
+.bw-card{border:1px solid var(--line);border-radius:12px;background:#faf9f4;padding:13px 15px}
+.bw-card .bw-t{font-size:13.5px;font-weight:800;margin-bottom:5px;line-height:1.45}
+.bw-card p{margin:0;font-size:12.5px;line-height:1.65;color:#3b3a35}
+.bw-tag{display:inline-block;font-size:10.5px;font-weight:800;background:#eceadf;color:#46433c;border-radius:999px;padding:1px 8px;vertical-align:1px;margin-left:4px;white-space:nowrap}
+.bw-tag.hot{background:var(--bad-bg);color:var(--bad)}
+.bnk-gate{border:1px dashed var(--line);border-radius:12px;padding:12px 16px;margin:8px 0 12px;background:#fffdf2}
+.bnk-gate .bg-lbl{font-size:13px;margin-bottom:8px}
+.bnk-gate .gauge{background:#eceadf}
+.bnk-gate .gauge .gm{background:var(--ink)}
+
+/* ③탭 메타 퍼널 */
+.funnel{display:flex;align-items:stretch;gap:6px;margin:10px 0;flex-wrap:nowrap}
+.fn-stage{flex:1 1 0;min-width:0;border:1.5px solid var(--line);border-radius:11px;padding:10px 10px;background:var(--card);text-align:center}
+.fn-stage .fs-l{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.02em}
+.fn-stage .fs-v{font-size:16px;font-weight:800;letter-spacing:-.01em;margin-top:2px;line-height:1.3}
+.fn-stage .fs-r{font-size:11px;font-weight:700;color:var(--muted);margin-top:3px;line-height:1.4}
+.fn-stage.ok{border-color:#bfe6c9;background:#fbfdf8}
+.fn-stage.ok .fs-r{color:var(--good)}
+.fn-stage.bad{border-color:var(--bad);border-width:2.5px;background:var(--bad-bg)}
+.fn-stage.bad .fs-r{color:var(--bad)}
+.fn-stage.bad .fs-l::after{content:' · 병목';color:var(--bad)}
+.fn-stage.est{border-style:dashed;background:#fdf9ef}
+.fn-stage.est .fs-r{color:var(--warn)}
+.fn-arr{flex:none;align-self:center;font-size:16px;font-weight:800;color:#8a836f}
+@media(max-width:900px){
+  .funnel{flex-direction:column;gap:5px}
+  .fn-arr{align-self:center;transform:rotate(90deg)}
+  .fn-stage{padding:9px 12px}
+}
+.fn-note{font-size:13px;line-height:1.7;color:#3b3a35;margin:8px 0 0}
+.fn-foot{margin-top:14px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--muted);line-height:1.6}
+
+/* ④탭 마스터-디테일 */
+.md-wrap{display:grid;grid-template-columns:minmax(230px,320px) 1fr;gap:12px;margin-top:8px}
+.md-r{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.md-r:checked+.md-item{border-color:var(--ink);background:#fffdf2;color:var(--ink)}
+.md-r:checked+.md-item .md-n{background:var(--ink);color:#fff}
+.md-r:checked+.md-item+.md-panel{display:block}
+.md-item{display:flex;gap:9px;align-items:flex-start;text-align:left;width:100%;cursor:pointer;font-family:inherit;
+  background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font-size:13px;font-weight:700;
+  line-height:1.5;color:#3b3a35;transition:border-color .15s,background .15s}
+.md-item:hover{border-color:var(--lime)}
+.md-item.on{border-color:var(--ink);background:#fffdf2;color:var(--ink)}
+.md-item .md-n{flex:none;width:20px;height:20px;border-radius:50%;background:#eceadf;color:#46433c;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.md-item.on .md-n{background:var(--ink);color:#fff}
+.md-panel{display:none;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:16px 20px;box-shadow:var(--shadow)}
+.md-panel.on{display:block}
+.md-panel h3{margin:0 0 8px;font-size:16.5px;font-weight:800;line-height:1.5}
+.md-panel p{margin:0;font-size:13.5px;line-height:1.8;color:#2f2e29}
+.md-hint{font-size:11.5px;color:var(--muted);margin:8px 0 0}
+@media(max-width:760px){
+  .md-wrap{display:block}
+  .md-item{margin-top:8px}
+  .md-panel.on{margin-top:6px;border-radius:11px}
+}
+
+/* ⑤탭 핵심 액션 위계 */
+.hero-act{background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+.hero-act .ha-k{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.hero-act .ha-t{font-size:21px;font-weight:800;line-height:1.4;margin-top:8px;letter-spacing:-.01em}
+.hero-act .ha-why{margin-top:10px;font-size:13.5px;line-height:1.7;color:#e8e4d8}
+.hero-act .ha-why b{color:#fff}
+.hero-act .ha-sub{margin-top:10px;padding-top:10px;border-top:1px solid #4a463c;font-size:12px;color:#cfcabb}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+@media(max-width:860px){.act-grid{grid-template-columns:1fr}}
+.act-grid .decq{margin-top:0}
+.dq-cnt{font-size:11px;font-weight:800;color:var(--lime-deep);background:#f0f3da;border-radius:999px;padding:1px 8px;vertical-align:2px;margin-left:4px}
+.fbox .fb-t,.bw-card .bw-t,.md-item,.hero-act .ha-t,.fn-stage .fs-l{word-break:keep-all}
+
+/* ── 히어로 '돈의 방향' 배분 바 + 승인 대기 블록 (2026-08-11 규칙 8 — 2주차 2차 피드백) ── */
+.mdir{margin-top:22px;max-width:660px}
+.mdir-k{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.mdir-line{margin:10px 0 7px;font-size:13.5px;line-height:1.55;color:#e8e4d8;word-break:keep-all}
+.mdir-line b{color:#fff;font-size:15.5px}
+.mdir-line.meta{margin:7px 0 0;text-align:right}
+.mdir-line .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px}
+.mdir-line .dot.amz{background:#7fb069}
+.mdir-line .dot.meta{background:#c0463a}
+.mdir-bar{display:flex;height:36px;border-radius:10px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.mdir-bar .seg{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;min-width:0}
+.mdir-bar .seg.amz{background:#7fb069;color:#14200e}
+.mdir-bar .seg.meta{background:#c0463a;color:#fff}
+.mdir-sub{margin-top:12px;font-size:13px;color:#cfcabb;line-height:1.6}
+.mdir-sub b{color:#f5b942}
+.blockers{margin-top:12px;border:1px solid rgba(245,185,66,.5);background:rgba(245,185,66,.09);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.75;color:#e8e4d8}
+.blockers .bk-k{font-weight:800;color:#f5b942;font-size:12px;letter-spacing:.05em;margin-bottom:2px}
+
+
+/* ── 2026-08-11 John 4차 피드백: ⑤탭 '이번 주 할 일' 체크리스트 + 토글 ── */
+.hook-cta{margin-top:14px;font-size:12.5px;color:#cfcabb}
+.hook-cta b{color:var(--lime)}
+.wk-do{background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.wk-do .wk-k{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:12px}
+.wk-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px dashed var(--line)}
+.wk-item:first-of-type{border-top:none}
+.wk-st{flex:none;font-size:10.5px;font-weight:800;padding:4px 9px;border-radius:7px;white-space:nowrap;min-width:52px;text-align:center}
+.wk-st.done{background:var(--good-bg);color:var(--good)}
+.wk-st.wait{background:var(--warn-bg);color:var(--warn)}
+.wk-st.go{background:#e8eefb;color:#2f56b5}
+.wk-tx{flex:1;min-width:0;font-size:14px;line-height:1.55;word-break:keep-all}
+.wk-tx b{font-weight:800}
+.wk-meta{display:block;margin-top:3px;font-size:11.5px;color:var(--muted)}
+details.fold{margin-top:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+details.fold>summary{cursor:pointer;padding:12px 16px;font-size:14px;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::before{content:"▸";color:var(--lime-deep);font-weight:800}
+details.fold[open]>summary::before{content:"▾"}
+details.fold>summary .fc{font-size:11.5px;font-weight:700;color:var(--muted)}
+details.fold>.fold-in{padding:2px 16px 16px}
+
+/* ── US 원장 양식 이식 (2026-08-24 John 지시 — 상세 원장을 US식으로) ── */
+.bd-src{font-size:11.5px;color:var(--muted);background:#f4f2e9;border-radius:8px;padding:6px 10px;margin:2px 0 10px}
+.dnote{font-size:12.5px;color:#6b675e;background:#f4f3ec;border-left:4px solid var(--line);border-radius:8px;padding:9px 12px;margin:10px 0;line-height:1.65}
+.dstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:12px 0}
+.dstat .ds{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.dstat .ds-v{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.dstat .ds-l{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:3px;line-height:1.4}
+.dstat .ds.g .ds-v{color:var(--good)} .dstat .ds.b .ds-v{color:var(--bad)} .dstat .ds.w .ds-v{color:var(--warn)}
+.dflow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:12px 0}
+.dflow .df{flex:1;min-width:112px;background:#faf9f4;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.dflow .df-t{font-size:11px;font-weight:800;color:var(--lime-deep);letter-spacing:.03em}
+.dflow .df-v{font-size:15px;font-weight:800;margin:2px 0 1px}
+.dflow .df-d{font-size:11.5px;color:var(--muted);line-height:1.5}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+table.mini{width:100%;border-collapse:collapse;font-size:12.8px;line-height:1.55}
+table.mini th{background:#f4f2e9;text-align:left;font-size:11.5px;letter-spacing:.02em;color:#6b675e;padding:7px 9px;border-bottom:2px solid var(--line);white-space:nowrap}
+/* 2026-09-01 표 데스크톱 오른쪽 공백/모바일 잘림 수정(John 지적) — table-layout:auto가 데스크톱에선 폭을 안 늘리고 모바일에선 안 줄여 화면 밖으로 밀려남.
+   149행 근처 min-width:0 리셋이 159행 td.tw,th.tw{min-width:190px}에 순서상 덮여 무효화되던 버그도 여기서 후순위로 다시 정정 */
+table,table.mini{table-layout:fixed}
+@media(max-width:900px){
+  td.tw,th.tw{min-width:0}
+  .tbl-scroll table{min-width:0}
+  table.mini th{white-space:normal}
+  /* 열 5개 이상 표는 100% 압축 시 열이 짓눌려 못 읽게 되므로 자연 폭+가로 스크롤로 전환(:has 미지원 브라우저는 압축 폴백) */
+  .tbl-scroll table:has(th:nth-child(5)){table-layout:auto;width:auto;min-width:560px}
+}
+table.mini td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+table.mini td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.v-pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.v-pill.win{background:var(--good-bg);color:var(--good)} .v-pill.lose{background:var(--bad-bg);color:var(--bad)}
+.v-pill.pend{background:var(--warn-bg);color:var(--warn)} .v-pill.infra{background:#eceae1;color:#6b675e}
+/* 2026-09-02 — PONY 실행 표(4열)는 모바일에서 열이 40px까지 눌려 가로 스크롤로 전환 */
+@media(max-width:900px){.tbl-scroll table.pony-tbl{table-layout:auto;width:auto;min-width:620px}.tbl-scroll table.pony-tbl th,.tbl-scroll table.pony-tbl td{white-space:normal}}
+
+.glossary{margin-top:18px;background:#f4f6ec;border:1px solid #dde39a;border-radius:14px;padding:16px 20px}
+details.glossary > summary{list-style:none;cursor:pointer;font-size:13px;font-weight:800;color:var(--lime-deep)}
+details.glossary > summary::-webkit-details-marker{display:none}
+details.glossary > summary::after{content:'  ▾';color:var(--lime-deep);font-weight:800}
+details.glossary[open] > summary::after{content:'  ▴'}
+.throughline{margin-top:14px;font-size:14.5px;font-weight:700;color:var(--lime-deep);background:#f4f6ec;border-radius:10px;padding:10px 16px;line-height:1.6}
+.ins-tier{font-size:13px;font-weight:800;margin:16px 0 8px;color:var(--ink)}
+.tier-tag{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:2px 10px;margin-right:6px}
+.tier-tag.d{background:#1b1a17;color:#c9e265}
+.l1sec{margin-top:40px}
+.dsub{display:block;font-size:11.5px;color:#6b675e;font-weight:400;margin-top:3px;line-height:1.5}
+.l1-head{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:14px}
+.l1-head h2{font-size:20px;font-weight:800;margin:0;letter-spacing:-.01em}
+.l1-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.l1-lead{font-size:14px;line-height:1.75;color:#3b3a35;margin:0 0 14px}
+.goalbar{background:#fffdf2;border:2px solid var(--lime);border-radius:14px;padding:16px 20px}
+.goalbar .gb-k{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-deep)}
+.goalbar .gb-goal{font-size:19px;font-weight:800;margin-top:6px;letter-spacing:-.01em}
+.goalbar .gb-sub2{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.6}
+.hookblock{box-shadow:var(--shadow)}
+.v22{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.v22-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.v22-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.v22-4{grid-template-columns:1fr}}
+.v22-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 19px;box-shadow:var(--shadow);border-top:4px solid var(--lime)}
+.v22-h{font-size:13.5px;font-weight:800}
+.v22-d{font-size:13px;line-height:1.65;color:#3b3a35}
+.ins-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.ins-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 17px;box-shadow:var(--shadow);border-left:5px solid #1b1a17}
+.ins-card .ic-h{font-size:14px;font-weight:800;margin-bottom:5px}
+.ins-card p{font-size:13.5px;line-height:1.7;margin:0;color:#3b3a35}
+.l2-divider{margin:44px 0 10px;display:flex;align-items:center;gap:12px}
+.l2-divider .l2-line{flex:1;height:2px;background:var(--line)}
+.l2-divider .l2-t{font-size:14px;font-weight:800;color:var(--muted);letter-spacing:.04em}
+section{margin-top:0}
+.jmer{display:flex;gap:6px;align-items:flex-end;height:190px;padding:0 2px;border-bottom:2px solid var(--ink)}
+.jm-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0}
+.jm-v{font-size:12px;font-weight:800;font-variant-numeric:tabular-nums;margin-bottom:3px}
+.jm-bar{width:60%;max-width:34px;border-radius:5px 5px 0 0;background:#d8d2c4}
+.jm-bar.up{background:var(--good)}
+.jm-bar.mid{background:#c98300}
+.jm-d{font-size:10.5px;color:var(--muted);margin-top:5px;font-variant-numeric:tabular-nums}
+.jm-b{font-size:10.5px;font-weight:800;color:#46433c;text-align:center;line-height:1.3;margin-top:2px;word-break:keep-all}
+.twk{display:flex;gap:16px;align-items:flex-end;padding:6px 2px 0;flex-wrap:wrap}
+.twk-col{flex:1;display:flex;flex-direction:column;align-items:center;min-width:88px}
+.twk-mer{font-size:15px;font-weight:800;margin-bottom:4px}
+.twk-mer.bad{color:var(--bad)}
+.twk-bars{display:flex;gap:6px;align-items:flex-end;height:150px;width:100%;justify-content:center;border-bottom:2px solid var(--ink);padding:0 8px}
+.twk-sp{width:34%;max-width:44px;background:#d8d2c4;border-radius:5px 5px 0 0}
+.twk-rv{width:34%;max-width:44px;border-radius:5px 5px 0 0;background:#8fbf7f}
+.twk-rv.bad{background:#d99a93}
+.twk-l{font-size:11.5px;color:var(--muted);text-align:center;margin-top:7px;line-height:1.45;font-variant-numeric:tabular-nums}
+.chk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.chk-list li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.chk-due{font-size:11px;font-weight:800;background:#fdf3e0;color:#c98300;border-radius:999px;padding:2px 9px}
+.chk-why{font-size:12px;color:var(--muted);flex-basis:100%}
+.chk-who{font-size:11.5px;color:var(--muted);margin-left:auto}
+@media(max-width:860px){.v22{grid-template-columns:1fr}.jm-b{display:none}.twk{gap:10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="kicker">◆ Lemonderma · UAE Performance</span>
+    <h1>UAE 퍼포먼스 마케팅 — 주간 보고서</h1>
+    <div class="meta-row">
+      <span>성과 기간 <b>2026.08.30–09.05</b></span>
+      <span>작성 <b>9/7(월) 예약분 · 9/8(화) 발행</b></span>
+      <span>채널 <b>Amazon AE · Meta</b></span>
+      <span>회차 <b>6주차</b></span>
+      <span>통화 <b>AED · 전 금액 $ 병기</b> (1 USD = AED 3.6725)</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">1</span><h2>성적표 — 그리고 질문</h2></div>
+  <div class="goalbar">
+  <div class="gb-k">🎯 목표 — 분기 방침 (변하지 않는 한 줄)</div>
+  <div class="gb-goal">9/30까지 누적매출 $10,000 — 최종 MER 2.0배로 마감</div>
+  <div class="gb-sub2">모든 액션·인사이트·결정은 이 한 줄에 대한 기여로 판정합니다. 예산은 클릭 단가가 본전(남지도 잃지도 않는 손익분기 지점) 아래로 관리될 때만 제한 없이 늘립니다.<br>⚠️ 목표·주차별 계단 수치는 계획 원문 그대로 <b>달러(USD) 표기</b>이고, 그 외 이 보고서의 모든 집행·성과 수치는 AED입니다.</div>
+</div>
+  <div class="dnote" style="border-left-color:#c98300;background:#fdf3e0;margin-top:12px">
+  ⚠️ <b>이번 주부터 본전선이 바뀝니다</b> — 2026-09-08 두 가지가 바뀌었습니다. ① 크림 판매가를 현행 실판매가 AED 99(9/30까지 Sale Price)로 반영해 크림 단독 본전이 1.48→1.63으로 올랐습니다(마진/주문 AED 89.16 ($24)→60.85). ② 보고서 본전 표기 규칙(John): SKU 중 높은 쪽이 아니라 세럼·크림 평균가 기준으로 씁니다 → 이 보고서의 본전선은 1.53이고, 2+1(3개 담으면 2개 값) 프로모션이 주문의 20%에 걸리면 1.6까지 올라갑니다. 폐기 기준·대시보드 자동 판정은 보수값 1.63(크림 단독)을 그대로 씁니다. 지난 호까지의 1.48은 크림 정가 기준 값이라 같은 잣대로 다시 그었습니다.
+</div>
+  <div class="throughline">이 주를 한 줄로 — <b>이번 주 매출은 광고가 아니라 방문이 만들었고 광고 안에서는 위임이 팔았습니다 — PONY는 아직 집행이 아니라 집행 준비 상태이므로, 다음 주의 일은 판정이 아니라 판정이 성립하게 만드는 것입니다.</b></div>
+  <div class="hookblock" style="background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:18px;padding:20px 26px;margin-top:14px">
+  <div style="font-size:15.5px;font-weight:700;line-height:1.85;color:#f0ede3">PONY 활용에 온 집중을 쏟기로 한 첫 주, 실주문 매출은 AED 2,234.40 ($608)으로 전주 869.70의 2.57배가 됐습니다. 그런데 PONY 광고는 4갈래 중 메타(인스타그램·페이스북 광고) 2캠만 돌았고, 아마존 SB 세럼 캠은 7일 내내 노출 0이었으며 소비자가 'pony'라고 검색해 들어온 건은 0건이었습니다. 매출을 밀어 올린 것은 광고 클릭이 아니라 285명에서 640명으로 2.25배 늘어난 방문이었고, 그 증가분의 약 93%는 아마존 광고 밖에서 왔습니다. <b style="color:#c9e265">질문 — 그렇다면 PONY 집중은 이미 매출로 바뀌기 시작한 것입니까, 아니면 아직 집행조차 안 된 것입니까?</b><br>광고로서의 PONY는 아직 집행 준비 단계입니다 — 이번 주 매출은 출처가 특정되지 않은 비광고 방문 급증과 자동위임(SP 입찰·키워드 운용을 외부 자동화 도구에 맡긴 것) SP 광고(귀속(그 광고 덕에 팔린 것으로 집계된) 매출 AED 997.02 ($271), ROAS 2.93)가 만들었고, 방문 급증의 가장 유력한 후보는 8/31 PONY 게시물이지만 실측으로 확인되지 않았으므로, 다음 주는 PONY를 판정하는 주가 아니라 세럼 SB를 서빙시키고 유입원을 특정해 판정이 성립하게 만드는 주입니다.</div>
+</div>
+  <div class="v22 v22-4"><div class="v22-card"><div class="v22-h">기 · 무슨 일</div><div class="v22-d" style="margin-top:8px">실주문 AED 2,234.40 ($608) · 19개(전주 869.70 · 7개) — 전 채널 광고비 AED 1,754.30 ($478) 대비 MER 1.274배입니다. 본전 1.48배에는 못 미치지만, 지출이 주 AED 1,000 ($272)을 넘긴 주 가운데 최고 효율이며 전주 1.24배를 지출 2.5배 상태에서 넘었습니다. 광고에 귀속된 매출은 자동위임 SP의 AED 997.02(ROAS 2.93)뿐이고, 나머지 AED 1,237.38 ($337)은 아마존 광고 밖 매출입니다. 참고로 본전선은 9/8부터 세럼·크림 평균가 기준 1.53(2+1 감안 1.60, 자동 게이트 보수값 1.63)으로 다시 그었으며 이번 주의 판정 방향은 구 기준 1.48에서도 같습니다.</div></div><div class="v22-card"><div class="v22-h">승 · 해석의 열쇠</div><div class="v22-d" style="margin-top:8px">매출 성장을 가르면 유닛 2.71배 = 방문 2.25배 × 방문 전환율 1.21배입니다. 방문 증가분 355명 중 광고 클릭 증가로 설명되는 몫은 약 26명뿐이고 나머지 약 329명은 비광고 유입입니다. 지연 귀속은 이번 주 0건이라 이 숫자에 전주 광고비 몫은 섞여 있지 않습니다. 따라서 이번 주 성적은 '광고가 잘 팔았다'가 아니라 '아마존 광고 밖 방문이 늘었고 자동위임 SP가 콜드스타트를 지나 본전을 넘겼다'로 읽어야 합니다.</div></div><div class="v22-card"><div class="v22-h">전 · 전환점</div><div class="v22-d" style="margin-top:8px">PONY 4갈래 중 실제로 돌아간 것은 메타 2캠뿐입니다 — 세럼 SB는 노출 0, 틱톡은 이번 주 집행 기록 없음, 전용 랜딩페이지는 완료 기록 없음입니다. 메타 PONY 2캠은 CTR 9.3%대로 기존 UGC8·CreamUGC7의 5–6%대보다 뚜렷이 높아 '포니가 신뢰를 준다'는 가설과 방향이 맞습니다. 한편 S1 635캠은 8/30 재가동 뒤 이틀 만에 전량 재정지돼 보류 중이고, 크림 캠의 세럼 ASIN(아마존 상품 고유번호) 제외 조치는 SP 매출의 47%를 만든 최우수 전환처를 막으려던 것으로 판명됐습니다.</div></div><div class="v22-card"><div class="v22-h">결 · 다음 판정</div><div class="v22-d" style="margin-top:8px">9/9 PONY D+7(집행 7일 뒤) 재판정은 세럼 SB가 옥션에 참여해야 성립하므로, 서빙 실패 원인 점검이 먼저입니다. 비광고 방문 2.25배의 출처는 다음 주 발행 전에 특정해야 하며, 확인 전까지 이 성장을 예산 증액 근거로 쓰지 않습니다. 메타 잔차(광고로 설명되지 않는 매출) ROAS 0.94배는 본전 미달이지만 전주 0.67배보다 나아졌고, 증액 판단은 보류합니다. 자동위임 SP 예산 확대는 9주문 소표본이라 2주 더 관찰 후 판단합니다.</div></div></div>
+  <div class="spine-card">
+  <div class="sp-h">📊 7주 추이 — 주간 광고비 vs 실주문 매출, 그리고 MER</div>
+  <div class="sp-sub">막대 높이 = 실제 금액(회색 = 광고비 · 색 = 실주문 매출), 숫자 = MER(본전 1.53 미만은 빨강 — 이번 주부터 신 본전 기준). 첫 막대는 6일 기간(7/20–25)입니다.</div>
+  <div class="twk"><div class="twk-col"><div class="twk-mer bad">0.87×</div><div class="twk-bars"><div class="twk-sp" style="height:7%"></div><div class="twk-rv bad" style="height:6%"></div></div><div class="twk-l"><b>창간 전</b><br>7/20–7/25<br>AED 154 ($42) → 134</div></div><div class="twk-col"><div class="twk-mer ">1.95×</div><div class="twk-bars"><div class="twk-sp" style="height:15%"></div><div class="twk-rv " style="height:30%"></div></div><div class="twk-l"><b>1주차</b><br>7/26–8/1<br>AED 342 ($93) → 667</div></div><div class="twk-col"><div class="twk-mer bad">0.70×</div><div class="twk-bars"><div class="twk-sp" style="height:51%"></div><div class="twk-rv bad" style="height:36%"></div></div><div class="twk-l"><b>2주차</b><br>8/2–8/8<br>AED 1,137 ($310) → 802</div></div><div class="twk-col"><div class="twk-mer bad">0.55×</div><div class="twk-bars"><div class="twk-sp" style="height:77%"></div><div class="twk-rv bad" style="height:42%"></div></div><div class="twk-l"><b>3주차</b><br>8/9–8/15<br>AED 1,715 ($467) → 938</div></div><div class="twk-col"><div class="twk-mer bad">0.46×</div><div class="twk-bars"><div class="twk-sp" style="height:66%"></div><div class="twk-rv bad" style="height:30%"></div></div><div class="twk-l"><b>4주차</b><br>8/16–8/22<br>AED 1,468 ($400) → 670</div></div><div class="twk-col"><div class="twk-mer bad">1.25×</div><div class="twk-bars"><div class="twk-sp" style="height:31%"></div><div class="twk-rv bad" style="height:39%"></div></div><div class="twk-l"><b>5주차</b><br>8/23–8/29<br>AED 695 ($189) → 870</div></div><div class="twk-col" style="background:#fffdf2;border-radius:8px"><div class="twk-mer bad">1.27×</div><div class="twk-bars"><div class="twk-sp" style="height:79%"></div><div class="twk-rv bad" style="height:100%"></div></div><div class="twk-l"><b>6주차</b><br>8/30–9/5<br>AED 1,754 ($478) → 2,234</div></div></div>
+  <div class="sp-sub" style="margin-top:8px">* 신·구 본전을 같은 기준으로 다시 그은 것이라, 이전 호에 실린 막대 색(초록/빨강)과 이번 표의 색이 일부 주차에서 달라질 수 있습니다 — 본전선 자체가 바뀌었기 때문입니다(1.48 → 1.53).</div>
+</div>
+  <details class="glossary"><summary>📖 용어 5개 — 처음 읽는 분만 펼치세요 (그 외 용어는 본문 첫 등장에서 풀이)</summary><div style="padding:10px 4px 4px;font-size:13px;line-height:1.7">
+  <p><b>MER</b> — 전체 광고비 대비 전체 매출 배수(채널 불문). 이 보고서의 기준 지표이며 본전선은 1.53입니다(2026-09-08부터 신 기준 — 아래 고지 참고).</p>
+  <p><b>ROAS</b> — 특정 광고(캠페인·채널)의 지출 대비 그 광고에 귀속된 매출 배수. MER과 달리 광고별 성적입니다.</p>
+  <p><b>잔차(아마존 광고 밖 매출)</b> — 전체 매출에서 아마존 광고 덕분으로 집계된 매출을 뺀 나머지. UAE는 인지도·다른 유입원이 거의 없어 이 몫을 메타로 봅니다. 단 지난주 아마존 광고 클릭이 이번 주 구매로 잡히는 지연 귀속이 섞일 수 있어 매주 확인합니다(이번 주는 0건 — §2 참고).</p>
+  <p><b>SB · SP</b> — 아마존 광고 두 종류. SB는 검색 결과 위 영상·배너, SP는 상품 리스팅이 검색 결과에 끼어 노출되는 광고.</p>
+  <p><b>자동위임(Optapex)</b> — SP 입찰·키워드 운용을 외부 자동화 도구에 맡긴 것(8/28 전환, 캠 이름 mop_).</p>
+</div></details>
+</section>
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">2</span><h2>원인 분석 — 돈이 어디로 갔나</h2></div>
+  <div class="spine-card">
+  <div class="sp-h">📅 이번 주 7일의 일별 여정</div>
+  <div class="sp-sub">막대 = 일별 MER(그날 실매출 ÷ 그날 전 채널 광고비). 초록 = 본전(1.53) 이상 · 주황 = 미달 · 회색 = 0. 막대는 3배에서 잘라 그립니다.</div>
+  <div class="jmer"><div class="jm-col"><div class="jm-v">3.94×</div><div class="jm-bar up" style="height:100%"></div><div class="jm-d">08/30</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">0.54×</div><div class="jm-bar mid" style="height:18%"></div><div class="jm-d">08/31</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">0.00×</div><div class="jm-bar zero" style="height:3%"></div><div class="jm-d">09/01</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">1.47×</div><div class="jm-bar mid" style="height:49%"></div><div class="jm-d">09/02</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">0.67×</div><div class="jm-bar mid" style="height:22%"></div><div class="jm-d">09/03</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">1.33×</div><div class="jm-bar mid" style="height:44%"></div><div class="jm-d">09/04</div><div class="jm-b"></div></div><div class="jm-col"><div class="jm-v">0.99×</div><div class="jm-bar mid" style="height:33%"></div><div class="jm-d">09/05</div><div class="jm-b"></div></div></div>
+</div>
+<div class="tbl-scroll" style="margin-top:10px"><table class="mini"><thead><tr><th style="width:9%">날짜</th><th style="width:20%">그날</th><th>내용</th></tr></thead><tbody><tr><td style="white-space:nowrap"> (일)</td><td class="tw"><b>재가동</b></td><td class="tw">S1 다크스팟 5캠을 먼저 켜 안전성을 확인한 뒤 나머지 630캠까지 총 635캠을 재가동했고, 이날 S1은 7클릭·AED 14.60 ($3.98)을 썼습니다. 같은 날 자동위임 SP에서 주문 2건이 나왔고, 아마존 광고 밖 매출 추정은 AED 502.02 ($137)로 주 최대였습니다.</td></tr><tr><td style="white-space:nowrap"> (월)</td><td class="tw"><b>전량 재정지</b></td><td class="tw">재가동분에 정책위반 정지 이력 소재가 섞여 있음이 확인되자 '정지됐던 소재는 싹다 정지' 지시로 635캠 전량을 다시 정지했고, 같은 날 자동위임 8캠에 브랜드어 네거티브(그 검색어엔 광고가 안 뜨게 막는 것) 38건과 크림 캠 세럼 ASIN 제외 4건을 등록했습니다. S1은 이날 3클릭·AED 6.00 ($1.63)을 마지막으로 활동이 끝났고, PONY 단독 리뷰가 게재된 날이기도 합니다.</td></tr><tr><td style="white-space:nowrap"> (화)</td><td class="tw"><b>이상한 정적</b></td><td class="tw">메타 지출이 AED 9.24 ($2.52)로 주 평균의 5%까지 떨어졌는데 changelog에 원인 기록이 없습니다. 아마존은 이날 자동위임 SP 주문 3건·귀속 매출 AED 332.34 ($90)가 잡힌 반면 주문일 기준 실매출은 0.0으로, 귀속창과 주문일이 어긋난 유일한 날입니다.</td></tr><tr><td style="white-space:nowrap"> (수)</td><td class="tw"><b>PONY 4갈래 착수</b></td><td class="tw">'이번 주 액션은 PONY 활용에 온 집중' 지시로 아마존 SB 2캠과 메타 2캠을 신설하고, SB 입찰을 전면 AED 4.77 ($1.30)→3.06으로 낮췄으며, 메타 UGC8의 심사 거절 소재 애드셋을 정지했습니다. 'UAE가 미국보다 비싼 게 말이 되나'라는 질문에는 랜딩 도착→장바구니 11.7%가 병목이라는 진단으로 답했습니다.</td></tr><tr><td style="white-space:nowrap"> (목)</td><td class="tw"><b>랜딩 손질</b></td><td class="tw">크림 LP 7개 항목 수정과 CTA 버튼화를 배포했고, 세럼 LP는 크림 구조를 이식한 새 템플릿을 올렸는데 배포 당일 장바구니 전환율이 8.4%로 주중 최저를 찍었습니다. 포니 4캠페인을 파트너십 광고로 전환한 날이며, 자동위임 SP 주문 2건 중 크림 캠의 세럼 ASIN 타겟이 제외 조치 이후에도 AED 233.34 ($64)를 전환했습니다.</td></tr><tr><td style="white-space:nowrap"> (금)</td><td class="tw"><b>4연속 보완</b></td><td class="tw">세럼 LP 2–4차 보완 4건을 같은 날 순차 배포해 장바구니 전환율이 12.6%로 회복됐지만 개별 기여는 분리할 수 없습니다. 자동위임 SP 주문 2건, 아마존 일 지출 AED 71.18 ($19)로 주 2위, PONY 크림 SB는 1클릭이 잡혔습니다.</td></tr><tr><td style="white-space:nowrap"> (토)</td><td class="tw"><b>회복 확인</b></td><td class="tw">크림 LP 장바구니 전환율 14.3%, 세럼 12.9%로 두 LP 모두 배포 전 수준 이상을 되찾았습니다. 자동위임 SP는 AED 49.01 ($13)을 쓰고 매출 0이었고, 누적 귀속매출 3,908.64가 이번 주 귀속 997.02와 정확히 일치해 지연 귀속 0건이 확정됐습니다.</td></tr></tbody></table></div>
+  <div style="margin-top:16px"><div class="tbl-scroll"><table class="mini"><thead><tr><th style="width:34%">원인</th><th style="width:16%">비중</th><th>근거</th></tr></thead><tbody><tr><td class="tw">🟢 <b>1.</b> ▲ 비광고 방문 급증 — 방문 285→640(2.25배), 증가분의 약 93%가 아마존 광고 밖 유입</td><td class="tw" style="font-size:12.5px">지배 — 유닛 2.71배 중 2.25배 몫</td><td class="tw">방문·전환율 실측 기록 방문 285→640 · 대시보드 캐시 주간 슬라이스 141→154(+9.2%) · finding 601·603</td></tr><tr><td class="tw">🟢 <b>2.</b> ▲ 방문 전환율 개선 — 합계 2.46%→2.97%, 세럼 2.90%·크림 3.05%</td><td class="tw" style="font-size:12.5px">보조 — 1.21배 몫, 사전등록 기각선(세럼 1.8%·전체 1.5%) 통과하나 '광고 유입 급증' 전제 붕괴로 참고치</td><td class="tw">방문·전환율 실측 기록 · finding 502·604</td></tr><tr><td class="tw">🟢 <b>3.</b> ▲ 자동위임 SP 콜드스타트 통과 — 지출 AED 340.43 ($93)·매출 997.02·주문 9(4일 분산)·ROAS 2.929</td><td class="tw" style="font-size:12.5px">광고 귀속 매출 100% — 신·구 본전 모두 상회, 레거시 4.31배엔 미달</td><td class="tw">광고 API 주간 리포트 mop_ 5캠 합산 · finding 503·505</td></tr><tr><td class="tw">🟢 <b>4.</b> ▲ 지연 귀속 0건 — 전주 클릭의 소급 귀속 없음</td><td class="tw" style="font-size:12.5px">해석 신뢰도 — 5주차 AED 502.02 ($137)와 달리 잔차 차감 불필요</td><td class="tw">수집 로그 누적 귀속 2,911.62→3,908.64(차이 997.02) · finding 508</td></tr><tr><td class="tw">🟢 <b>5.</b> ▼ 메타 지출 3.8배 확대(348.88→1,319.45)인데 잔차 ROAS 0.94배</td><td class="tw" style="font-size:12.5px">MER을 본전 아래로 끌어내린 주 요인 — 계정 지출의 75%, 🟡추정치</td><td class="tw">대시보드 캐시 주간 슬라이스 total_sales 2,234.40−amz_sales 997.02=1,237.38 ÷ meta_spend 1,319.45 · finding 301</td></tr><tr><td class="tw">🟢 <b>6.</b> ▼ 일반 키워드 63.9% 지출 전환 0 — AED 277.93 ($76)·80클릭·주문 0, 브랜드+자사ASIN 36.1%가 주문 9건 전부</td><td class="tw" style="font-size:12.5px">아마존 ROAS를 2.29에 묶은 요인 — 신규 수요 창출 증거 없음</td><td class="tw">ads-api-sp-search-term·sb-search-term 89행 집계: 브랜드 87.98/3건 + ASIN 68.94/6건 vs 일반 277.93/0건 · finding 101·105</td></tr><tr><td class="tw">🟢 <b>7.</b> ▼ SB 75캠 전량 매출 0 — AED 94.42 ($26)·48클릭, S1은 이틀만 가동(AED 20.60 ($5.61)·10클릭)</td><td class="tw" style="font-size:12.5px">판정불가 — S1은 가동일수 부족, AEC3P·PONY는 학습기(37클릭 기대주문 1.47건, 0건 확률 약 23%)</td><td class="tw">ads-api-sb-search-term 47행 sales 0 · 대시보드 캐시 주간 슬라이스 기타 71.82/S1 20.60/S2 2.0 · finding 108·201·202</td></tr><tr><td class="tw">🟢 <b>8.</b> ▼ 크림 캠 세럼 ASIN 제외(8/31) — 제외 대상 타겟이 SP 매출의 47%(AED 466.68 ($127)·4건) 생산, 조치 후 9/3에도 233.34 전환</td><td class="tw" style="font-size:12.5px">미달 — '누수 차단' 진단이 반대로 나옴, 배제 실효 증거 없음</td><td class="tw">대시보드 캐시 주간 슬라이스272436416603549].daily 8/30 233.34·9/3 233.34 · _audit/mop_brand_neg_0831.json · 성적표 id7</td></tr><tr><td class="tw">🟢 <b>9.</b> ▼ 9/1 메타 지출 95% 급감(AED 9.24 ($2.52), UGC8·CreamUGC7 동반)</td><td class="tw" style="font-size:12.5px">원인 불명 — 확인 안 됨, 주간 지출 분포 왜곡</td><td class="tw">대시보드 캐시 주간 슬라이스 2026-09-01 spend 9.24·impr 684 · changelog·이번 주 실행 목록 기록 없음 · finding 304</td></tr><tr><td class="tw">🟢 <b>10.</b> ▼ PONY 세럼 SB 노출 0 · 'pony' 소비자 검색어 0건</td><td class="tw" style="font-size:12.5px">PONY 지시의 아마존 갈래 미집행 — 9/9 판정 성립 조건 미충족</td><td class="tw">광고 API 주간 리포트 캠 236052750187239 매치 0건 · sb-search-term 'pony' 실검색어 0 · finding 206</td></tr></tbody></table></div></div>
+  <details class="acc" style="margin-top:12px"><summary>📊 경로별 분해 — 채널별 손익 (펼쳐서 보기)</summary><div class="bd"><div class="tbl-scroll"><table class="mini"><thead><tr><th style="width:30%">채널</th><th class="num" style="width:16%">지출</th><th class="tw">그 채널 매출(효율)</th></tr></thead><tbody>
+  <tr><td>아마존 SP(자동위임 Optapex, 5캠)</td><td class="num">AED 340.43 ($93)</td><td class="tw">AED 997.02 ($271) · 주문 9건 (2.93배)</td></tr>
+  <tr><td>아마존 SB(크림 5축 AEC3P + PONY 2 + 세럼 잔여, 75캠)</td><td class="num">AED 94.42 ($26)</td><td class="tw">0 · 주문 0건 (—)</td></tr>
+  <tr><td>메타(인스타·페이스북)</td><td class="num">AED 1,319.45 ($359)</td><td class="tw">직접 귀속 불가 — UAE는 Amazon Attribution 미지원 — 직접 귀속 매출 없음, 잔차로만 추정(delayed_attribution 참고)</td></tr>
+  <tr><td><b>합계</b></td><td class="num"><b>AED 1,754.30 ($478)</b></td><td class="tw"><b>실주문 AED 2,234.40 ($608) · 19개 (1.27배)</b></td></tr>
+</tbody></table></div>
+<p class="fn-note">아마존 광고 귀속 매출(AED 997.02 ($271))을 뺀 나머지(잔차 AED 1,237.38 ($337))는 메타·기타 유입 몫입니다. 이번 주는 전주 클릭의 지연 귀속이 0건으로 확인돼(누적 귀속매출 시계열 대조 — _status.md 일별 미러(매일 09:40 스냅샷)의 누적 아마존 광고 귀속매출 시계열 대조: 08-30 09:40 스냅샷 2,911.62 → 09-07 스냅샷 3,908.64, 차이 997.02 = 이번 주 week_totals.amz_sales(997.02)와 정확히 일치) 잔차를 지연분 차감 없이 그대로 메타·기타 유입 몫으로 읽을 수 있습니다.</p></div></details>
+</section>
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">3</span><h2>인사이트 — 원인이 말해주는 것</h2></div>
+  <p class="l1-lead">전부 데이터를 다시 계산해서 확인(37건 검증 — 36건 확정·8건 수정·1건 기각)한 것만 실었습니다.</p>
+  <div class="ins-grid"><div class="ins-card"><div class="ic-h"><b>1</b> 이번 주 매출 2.57배의 동력은 광고가 아니라 비광고 방문 2.25배입니다</div><p>광고 클릭은 141→154로 9.2% 늘었을 뿐이고, 방문 증가분 355명 중 약 329명은 아마존 광고 밖에서 왔습니다. 유입원은 아직 특정되지 않았으며 8/31 PONY 게시물이 가장 유력한 후보이지만 🟡추정입니다. 확인 전까지 이 성장을 광고 성과나 예산 증액 근거로 쓰지 않습니다.</p></div><div class="ins-card"><div class="ic-h"><b>2</b> 광고 안에서는 '위임'이 팔고 '지정'은 아직 못 팔았습니다</div><p>자동위임 SP 5캠이 주문 9건·AED 997.02 ($271)·ROAS 2.93으로 본전을 넘긴 반면, 수동 큐레이션 SB 75캠은 AED 94.42 ($26)를 쓰고 주문 0입니다. SP 안에서도 브랜드·자사 ASIN 타겟 36.1% 지출이 전환 100%를 만들었고 일반 키워드 63.9%는 0건이라, 신규 수요를 광고가 만들었다는 증거는 아직 없습니다. US의 '위임→유도' 전략을 UAE에 지금 이식할 근거는 없습니다.</p></div><div class="ins-card"><div class="ic-h"><b>3</b> PONY 집중은 지시 대비 절반만 집행됐습니다</div><p>메타 PONY 2캠은 CTR 9.3%대로 상단 퍼널이 강하고 세럼은 랜딩→장바구니 20.63%로 4캠 중 최고이지만, 아마존 세럼 SB는 노출 0·틱톡은 집행 기록 없음·전용 랜딩페이지는 완료 기록 없음입니다. 메타 잔차 ROAS 0.94배는 본전 미달이나 전주 0.67배보다 개선됐고, 병목은 여전히 랜딩 도착→장바구니 11.12%입니다. 9/9 D+7 판정은 세럼 SB가 살아나야 성립합니다.</p></div></div>
+</section>
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">4</span><h2>해결책 — 인사이트와 1:1 대응</h2></div>
+  <p class="l1-lead">위 인사이트 각각에 맞는 대응책입니다.</p>
+  <div class="tbl-scroll"><table class="mini"><thead><tr style="text-align:left"><th style="width:32%">무엇을 보고(인사이트)</th><th style="width:48%">어떻게 하나(해결책)</th><th style="width:20%">상태</th></tr></thead><tbody><tr><td class="tw">인사이트 1 — 이번 주 매출 2.57배의 동력은 광고가 아니라 비광고 방문 2.25배입니다</td><td class="tw">비광고 방문 2.25배의 출처를 다음 주 발행 전에 특정합니다 — 검색순위·BSR·외부 referral 변화와 BA SQP(검색어별 성과 데이터) 2주치(8/23–29 재확인 + 8/30–9/5 신규) 회수를 함께 봅니다. 결과에 따라 '잔차 귀속 기본값=메타, UAE에 오가닉 없음'(9/1 결정)을 정정 후보로 올리되, 실측 전에는 뒤집지 않습니다.</td><td>🔧이번주설계</td></tr><tr><td class="tw">인사이트 2 — 광고 안에서는 '위임'이 팔고 '지정'은 아직 못 팔았습니다</td><td class="tw">예산 우위를 자동위임 SP에 유지하고, 입찰 여유 20.2%(실측 CPC 2.824 vs 본전 3.54)는 전환 세그먼트인 브랜드·자사 ASIN 타겟에만 검토합니다. 일반 키워드 exploration 확대는 보류하고, 크림 캠 세럼 ASIN 제외(id7)는 API 재조회로 실효 여부를 확인한 뒤 해제 여부를 결정합니다. 브랜드어 네거티브 38건 이식은 완료됐으나 일자별 검색어 데이터가 없어 효과 판정은 다음 주로 넘깁니다.</td><td>🔧이번주설계</td></tr><tr><td class="tw">인사이트 3 — PONY 집중은 지시 대비 절반만 집행됐습니다</td><td class="tw">PONY 세럼 SB의 서빙 실패 원인(예산·입찰·타겟팅·ASIN 승인·심사 상태)을 9/9 재판정 전에 점검해 옥션 참여부터 복구합니다. 메타 PONY 2캠은 IC(광고에서 구매 버튼을 누른 횟수) 각 50건이 쌓일 때까지 정지·감액 없이 유지하고, 전용 랜딩페이지는 완료·투입 후 랜딩→장바구니 변화를 다음 주에서 확인합니다. 틱톡 첫 집행은 기한 재설정이 필요합니다.</td><td>🔴장애물보류</td></tr></tbody></table></div>
+</section>
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">5</span><h2>이번 주 실행 계획</h2></div>
+  <div class="lock" style="margin-top:0;border-left:5px solid #c9a227">
+  <div class="lh">⭐ 이번 주 최우선</div>
+  <p>9/2 John 지시 '이번 주 액션은 8/31 PONY 업로드를 활용하는 데 온 집중'이 이번 주 유일한 최우선 지시였습니다. 4갈래(아마존 SB 신규 소재·검색어 / 메타 자사계정 집행 / 틱톡 신규 채널 / PONY 전용 랜딩페이지) 중 실제로 돌아간 것은 메타 2캠뿐이고, 아마존 세럼 SB는 노출 0, 틱톡은 이번 주 액션 인벤토리 23건에 집행 기록이 없으며, 전용 랜딩페이지는 완료 기록이 없습니다. PONY 관련 실행 5건은 전부 '이월'로 채점됐는데, 판정 재료 부족의 원인은 표본이 아니라 집행입니다. 창은 두 개입니다 — 9/9 D+7 재판정은 세럼 SB가 옥션에 참여해야 성립하고, 5주차 보고서가 적은 '9/15 PONY 유료확산 2단계까지 2주 창'은 이제 한 주 남았습니다. 9/15 이후에는 PONY 측 확산 효과와 우리 광고 효과가 섞여 우리 집행분의 단독 판정이 어려워지므로, 이번 주는 PONY를 '판정'하는 주가 아니라 '집행되게 만드는' 주입니다.</p>
+  <div class="tbl-scroll"><table class="mini pony-tbl"><thead><tr><th style="width:14%">채널</th><th style="width:34%">이번 주에 하는 것</th><th style="width:34%">왜 지금 이 순서인가</th><th style="width:18%">상태·기한</th></tr></thead><tbody><tr><td><b>아마존 SB</b></td><td class="tw">9/2 신설 PONY 크림 SB만 소량 서빙(AED 6.12 ($1.67)·2클릭·매출 0). PONY 세럼 SB(236052750187239)는 7일간 노출·클릭·지출 전부 0. 입찰은 9/2 전면 AED 4.77 ($1.30)→3.06으로 하향 반영 확인. 소비자가 실제 입력한 검색어에 'pony'는 0건.</td><td class="tw">9/9 D+7 재판정 대상인데 세럼 캠이 옥션에 참여하지 못한 상태라 판정 자체가 성립하지 않습니다. 4일 넘게 노출 0은 콜드스타트로 보기 어렵습니다.</td><td class="tw">🔴 세럼 SB 서빙 실패 원인 점검(예산·입찰·타겟팅·ASIN 승인·심사) · 9/9 재판정 전</td></tr><tr><td><b>메타</b></td><td class="tw">PONY-Serum·PONY-Cream 2캠 9/2 자사 계정에서 신규 가동, 9/3 포니 본인 게시물 부스팅(파트너십 광고)으로 격상 완료. CTR 9.33%·9.31%로 기존 UGC8 6.06%·CreamUGC7 5.09%보다 높음. 랜딩→장바구니는 세럼 20.63%(4캠 중 최고) vs 크림 13.33%, 장바구니당 비용 세럼 3.09 vs 크림 5.04.</td><td class="tw">지시가 실제로 집행된 유일한 갈래이며 상단 퍼널 신호가 가설과 같은 방향입니다. 표본이 IC 26건·16건이라 단발 판정은 금지 대상이고, 각 50건이 쌓이면 크림 쪽 LP·소재 원인을 가를 수 있습니다.</td><td class="tw">✅ 집행 중 · IC 50건 도달 시 크림·세럼 분리 판정 · 9/9 1차 확인</td></tr><tr><td><b>틱톡</b></td><td class="tw">이번 주 액션 인벤토리 23건에 틱톡 집행 기록 없음 — 5주차 계획의 '9/5까지 첫 집행'은 미개시. 광고 계정·픽셀·타겟·예산 설정 재정비가 선행 과제로 남아 있습니다.</td><td class="tw">PONY 영상은 틱톡에도 올라가 있는데 우리 광고는 없습니다. 9/15 창 안에 첫 집행이 없으면 그 창의 틱톡 몫은 판정 없이 지나갑니다.</td><td class="tw">🔴 미개시 · 설정 재정비 선행 · 기한 재설정 필요(John)</td></tr><tr><td><b>PONY 전용 LP</b></td><td class="tw">전용 페이지 완료 기록 없음. 대신 크림 LP에 포니 소재·CTA 버튼화 반영(9/3)으로 랜딩→장바구니 8.1%→14.3%(9/5), 세럼 LP는 크림 구조 통일 배포 당일 8.4% 최저 후 4차례 보완으로 12.9%(9/5) 회복.</td><td class="tw">이번 주 메타 퍼널 병목은 여전히 랜딩→장바구니 11.12%로 9/2 진단 11.7%와 같습니다. 랜딩이 아직 손대지 않은 유일한 레버이며, UAE는 구매가 아마존에서 일어나 이 페이지가 우리가 직접 셀 수 있는 지점입니다.</td><td class="tw">🔧 완료·투입 후 랜딩→장바구니 변화 다음 주 확인 · 9/14 발행 전</td></tr></tbody></table></div>
+</div>
+  <ul class="chk-list" style="margin-top:14px"><li><span class="chk-due">9/9 재판정 전</span><b>PONY 세럼 SB 노출 0 원인 점검 → 옥션 참여 복구</b><span class="chk-why">9/2 신설 세럼 캠이 7일간 지출·클릭·노출 0으로 Ads API 어디에도 잡히지 않아, 9/9 D+7 재판정이 성립하지 않습니다. 예산·입찰·타겟팅·ASIN 승인·심사 상태 순으로 확인합니다.</span><span class="chk-who">Claude 점검 → John 확인</span></li><li><span class="chk-due">9/14 발행 전</span><b>비광고 방문 2.25배의 출처 특정 + BA SQP 2주치 회수</b><span class="chk-why">방문 증가분 355명 중 약 329명이 아마존 광고 밖 유입인데 원인이 미확인 상태입니다. 검색순위·BSR·외부 referral과 SQP(8/23–29 재확인, 8/30–9/5 신규)를 함께 봐야 이 성장을 예산 근거로 쓸 수 있는지 판정됩니다. TST(많이 검색된 상위 검색어 데이터)는 daily 옵션 우회로 재시도합니다.</span><span class="chk-who">Claude 수집·분석 → John 확인</span></li><li><span class="chk-due">9/10</span><b>크림 캠 세럼 ASIN 제외(id7) 실효 여부 API 재조회 → 유지·해제 결정</b><span class="chk-why">제외 대상 타겟이 이번 주 SP 매출의 47%(AED 466.68 ($127)·4건)를 만든 최우수 전환처였고, 조치 등록 이후인 9/3에도 233.34가 전환됐습니다. 배제가 실제로 걸렸는지 먼저 확인하고, 걸렸다면 최우수 채널을 잃는 셈이라 해제 여부를 결정해야 합니다. 같은 캠에 'lemonderma' 수동 키워드와 네거티브 정확매치가 동시에 걸린 구조 충돌도 함께 점검합니다.</span><span class="chk-who">Claude 재조회 → John 결정</span></li><li><span class="chk-due">9/10</span><b>메타 9/1 지출 95% 급감 딜리버리 로그 확인 + UGC8 컷라인 재산정 적용 결정</b><span class="chk-why">9/1 메타 지출 AED 9.24 ($2.52)는 주 평균의 5%인데 changelog에 원인이 없어 주간 지출 분포 해석이 흔들립니다. 컷라인 재산정은 IC 50건 조건이 5주차부터 충족됐고 이번 주 IC 396건까지 쌓였는데 3주째 승인 대기라 결정 큐를 닫아야 합니다.</span><span class="chk-who">Claude 조회 → John 결정</span></li><li><span class="chk-due">9/14 발행 전</span><b>본전 1.53–1.60(평균가) 반영 + 결정 큐 ①② 종결</b><span class="chk-why">9/8 크림 판매가 AED 99 ($27) 반영으로 본전 ROAS가 1.48→1.63, 크림 본전 CPC 4.46→3.04로 바뀌었습니다. 7주차부터 신 기준을 쓰되 원본 캐시 재생성 필요 여부를 확인하고, 5주차부터 미집행인 메타 언어 설정·최적화 신호 결정도 같이 닫습니다.</span><span class="chk-who">John 결정 → Claude 반영</span></li></ul>
+</section>
+<section class="l1sec">
+  <div class="l1-head"><span class="l1-n">6</span><h2>이번 주가 분기 목표의 어디쯤인가</h2></div>
+  <div class="lock wide" style="margin-top:0">
+    <div class="lh">🧗 분기 목표 산수</div>
+    <p style="white-space:pre-line">분기 목표는 9/30까지 누적매출 $10,000 · MER 램프 W1 1.00→W6 2.20입니다. 이번 보고 주(8/30–9/5)는 분기 2주차(8/29–9/4)와 하루 어긋나므로 근사치로 대조합니다. 실주문 AED 2,234.40(약 $608)은 분기 2주차 매출 목표 $690의 88%이고, 5주차에서 분기 1주차 미달분을 주당 약 AED 158(약 $43)씩 얹기로 한 기준(약 $733)으로는 83%입니다. 광고비 AED 1,754.30(약 $478)은 목표 $531의 90%, MER 1.27배는 계단 목표 1.3배에 근접합니다. 분기 1주차 실적 AED 503(약 $137)·효율 0.64배에서 한 주 만에 매출 4.4배·효율 2배 수준으로 올라선 것이지만, 그 매출의 동력이 출처 미확인 비광고 방문이라는 점에서 계단을 '광고로 밟았다'고 쓰지는 않습니다. 다음 분기 3주차(9/5–11) 목표는 효율 1.6배 · 광고비 $779 · 매출 $1,246으로 이번 주 매출의 2.05배이며, 효율 1.6배는 구 본전 1.48은 물론 9/8부터 쓰는 평균가 본전 1.53(2+1 감안 1.60)을 넘고 게이트 보수값 1.63과 거의 같은 선입니다. 지금 확인된 레버는 자동위임 SP(ROAS 2.93) 하나이고, 메타는 잔차 기준 0.94배로 본전 미달이라, 3주차 목표는 세럼 SB 복구와 비광고 유입원 특정 없이는 광고비 확대만으로 도달할 근거가 없습니다.</p>
+    <div class="tbl-scroll"><table class="mini"><thead><tr><th>주차 (기간)</th><th class="num">효율 목표(배)</th><th class="num">주간 광고비</th><th class="num">주간 매출 목표</th><th class="num">누적</th></tr></thead><tbody><tr><td><b>분기 1주차</b> <span style="font-size:10px;color:#a06a00">(미집행 제외)</span> (8/22–28)</td><td class="num">1.0</td><td class="num">$354</td><td class="num">$354</td><td class="num">$1,228</td></tr><tr><td><b>분기 2주차</b> (8/29–9/4)</td><td class="num">1.3</td><td class="num">$531</td><td class="num">$690</td><td class="num">$1,919</td></tr><tr style="background:#fffdf2"><td><b>분기 3주차</b> (9/5–11)</td><td class="num">1.6</td><td class="num">$779</td><td class="num">$1,246</td><td class="num">$3,165</td></tr><tr><td><b>분기 4주차</b> (9/12–18)</td><td class="num">1.8</td><td class="num">$1,062</td><td class="num">$1,911</td><td class="num">$5,076</td></tr><tr><td><b>분기 5주차</b> (9/19–25)</td><td class="num">2.0</td><td class="num">$1,416</td><td class="num">$2,832</td><td class="num">$7,908</td></tr><tr><td><b>분기 6주차</b> (9/26–30)</td><td class="num">2.2</td><td class="num">$1,133</td><td class="num">$2,492</td><td class="num">$10,400</td></tr></tbody></table></div>
+    <div class="dnote">참고 — 분기 2주차(8/29–9/04) 실적: 매출 $618.04(목표 $690) · MER 1.47(목표 1.3) → 미달 1주(매출 $618.04 vs 램프 $690 미달 · MER 1.47 vs 램프 1.3 통과 — 매출 미달 하나로 그 주 판정은 미달). 연속 미달 1주(2주=재협의 경보). 분기 1주차는 계정 정지로 미집행 판정(판정 모집단 제외, 2026-08-22 John 확정 램프 + 2026-08-27 재확정(MER 2.0 기준·누적 $10,000·흑자 CPC 준수 시 예산 무제한) + 2026-09-08 John 확정(00_compass/decisions/2026-09-08-UAE-연속미달-정의확정-램프기준-미집행주제외.md) — 미달 판정은 램프(매출·MER 중 하나라도 미달)기준, W1은 계정정지로 미집행 주라 판정 모집단에서 제외).
+    분기 3주차 초입(9/05 1일) 참고치: 매출 $90.49 · MER 0.99 — 1일 표본이라 판정 대상 아님.
+    주차별 목표 수치는 계획 원문 그대로 달러(USD)입니다.</div>
+  </div>
+</section>
+<div class="l2-divider"><div class="l2-line"></div><div class="l2-t">📂 상세 원장 — 위 결론들의 근거 전량 (필요한 것만 펼쳐 보세요)</div><div class="l2-line"></div></div><p class="l1-lead" style="margin-top:10px">경영 뷰의 모든 수치·판정의 근거가 아래에 있습니다 — 골라내기 없음 원칙(성적표·발견 전수 게재)은 그대로입니다.</p><div class="acc-group">— 기준선 · 돈의 흐름 —</div><details class="acc"><summary><span class="pill-board">★1</span>★1 흑자 기준선 — 본전 ROAS 1.53 · 운영 본전 CPC AED 1.96(28일 창)</summary><div class="bd"><div class="bd-src">출처: 광고 API 클릭·주문 창별 집계(amazon_cumulative.daily) — 신 마진(2026-09-08) 기준 재계산</div><div class="tbl-scroll"><table>
+  <tr><th>창</th><th class="num">클릭</th><th class="num">주문</th><th class="num">CVR</th><th class="num">실 CPC</th><th class="num">본전 CPC</th></tr>
+  <tr><td>이번 주 단독</td><td class="num">154</td><td class="num">9</td><td class="num">5.84%</td><td class="num">AED 2.82 ($0.77)</td><td class="num">AED 3.55 ($0.97)</td></tr>
+  <tr style="background:#fffdf2"><td><b>28일 창 (운영 정본)</b></td><td class="num">622</td><td class="num">20</td><td class="num">3.22%</td><td class="num"><b>AED 2.67 ($0.73)</b></td><td class="num"><b>AED 1.96 ($0.53)</b></td></tr>
+  <tr><td>누적 전체</td><td class="num">1041</td><td class="num">31</td><td class="num">2.98%</td><td class="num">AED 2.41 ($0.66)</td><td class="num">AED 1.81 ($0.49)</td></tr>
+</table></div>
+<div class="sowhat"><b>💡 그래서:</b> 입찰 판단은 28일 창으로만 합니다 — 이번 주 실 CPC AED 2.824 ($0.77)는 운영 본전(AED 1.96 ($0.53), 2026-09-08 신 마진 76.01 반영)보다 44.1% 높은 초과 상태입니다. 계획 문서의 AED 3.04 ($0.83)는 운영 판단에 쓰지 않습니다.</div></div></details><details class="acc"><summary><span class="pill-board">★2</span>★2 방문·전환율 실측 — 제품별 방문·CVR과 교차 검증</summary><div class="bd"><div class="bd-src">출처: Seller Central AE Business Report 실조회(9/7) — 매출 정본은 SP-API</div><div class="tbl-scroll"><table>
+  <tr><th>제품</th><th class="num">이번 주 방문</th><th class="num">전주 방문</th><th class="num">이번 주 CVR</th><th class="num">전주 CVR</th><th class="num">US 벤치마크</th></tr>
+  <tr><td>세럼</td><td class="num">345</td><td class="num">233</td><td class="num"><b>2.9%</b></td><td class="num">2.15%</td><td class="num">3.23%</td></tr>
+  <tr><td>크림</td><td class="num">295</td><td class="num">52</td><td class="num"><b>3.05%</b></td><td class="num">3.85%</td><td class="num">11.34%</td></tr>
+  <tr><td><b>합계</b></td><td class="num"><b>640</b></td><td class="num">285</td><td class="num"><b>2.97%</b></td><td class="num">2.46%</td><td class="num">—</td></tr>
+</table></div>
+<p class="fn-note">이번 주 BR 합계 640방문·19유닛, 유닛×현행가 분해 매출(세럼 134.34·크림 Sale Price 99.00) = AED 2,234.40 ($608) = SP-API 주간 total_sales(2,234.40)와 완전 일치. 전주도 AED 869.70 ($237)으로 SP-API와 완전 일치(5주차의 1유닛 경계 오차 해소). 매출·MER 정본은 SP-API.</p>
+<p class="fn-note">5주차는 전주(8/23–29) BR 합계가 8유닛(세럼6·크림2)으로 SP-API 7유닛과 1유닛 경계일 오차가 있었다 — 이번 주 같은 기간을 재실측하니 세럼5·크림2=7유닛으로 SP-API와 정확히 일치(BR 자체 성숙 재계산으로 해석).</p></div></details><div class="acc-group">— 채널 원장 —</div><details class="acc"><summary><span class="pill-board">★3</span>★3 메타 원장 — 전주 대비</summary><div class="bd"><div class="bd-src">출처: 메타 일별 집계 2구간 비교</div><div class="tbl-scroll"><table class="mini"><thead><tr><th>구간</th><th class="num">지출</th><th class="num">클릭률</th><th class="num">도착률</th><th class="num">IC율</th><th class="num">IC당 비용</th></tr></thead><tbody>
+  <tr><td>전주 (8/23–29)</td><td class="num">AED 348.88 ($95)</td><td class="num">8.52%</td><td class="num">77.8%</td><td class="num">11.9%</td><td class="num">AED 3.03 ($0.83)</td></tr>
+  <tr style="background:#fffdf2"><td><b>이번 주 (8/30–9/05)</b></td><td class="num"><b>AED 1,319.45 ($359)</b></td><td class="num"><b>5.74%</b></td><td class="num">75.6%</td><td class="num"><b>11.1%</b></td><td class="num"><b>AED 3.33 ($0.91)</b></td></tr>
+</tbody></table></div>
+<p class="fn-note">6주차 해당 없음 — 이번 주는 메타 지면(광고가 나오는 화면 자리)·언어 게이트 등 주중 이벤트가 없어 주 전체를 this_week 하나로 판정(5주차의 정지·재개 같은 중간 이벤트가 없었음)(전주 대비 단일 구간 비교로 대신함)</p></div></details><details class="acc"><summary><span class="pill-board">🗺</span>검색어 시장 지도(BA) — SQP만 부분 확보(전주분), TST·Market Basket 결손</summary><div class="bd"><div class="bd-src">출처: 수집 로그 — 셀러센트럴 실조회로 "Invalid Input" 확인</div><p class="actlead">이번 주는 브랜드 분석(SQP·TST·Market Basket) 중 SQP만 확보했고 그마저 전주(8/23–29)분입니다 — 대상 주(8/30–9/05) 선택 시 아마존이 "Invalid Input"을 반환해 아직 미발행입니다(수집 로그 실측, 2주째 동일 패턴). TST는 브랜드 필터 파라미터가 화면에서 드롭돼 미확보, Market Basket은 대상 주 미발행이 확정된 상태라 이번 주에서 생략했습니다. 다음 주에서 두 주치를 함께 회수합니다.</p></div></details><div class="acc-group">— 실행 검증 · 성적표 —</div><details class="acc"><summary><span class="pill-board">★4</span>★4 실행 성적표 — 16건 전수: 미달 2 · 효과 4 · 판정불가 5 · 이월 5</summary><div class="bd"><div class="bd-src">출처: changelog 8/30–9/05 실행 전수 × 전후 데이터 채점 — 골라내기 없음 원칙</div><p class="actlead">이번 주 23건 실행(인프라 7건 제외 16건 채점) — 효과4·미달2·역효과0·혼조0·판정불가5·이월5. 가장 무거운 발견 2건: ①S1 635캠 재가동(id2·3)은 기술적으로 깨끗이 성공했으나 익일 정책위반 이력 소재 혼입이 발견돼 하루 반 만에 전량 재정지(id5)로 이어져 독립 성과판정은 이월. ②크림 캠의 세럼 ASIN 상품 제외(id7)는 '누수 차단'으로 설계됐지만, 정작 그 타겟이 이번 주 SP그룹 매출의 47%(AED466.68 ($127)·4건)를 만든 최우수 전환처였고 조치 등록(8/31 14:12) 이후인 9/3에도 AED233.34 ($64)가 그대로 전환돼 배제가 실효화된 증거가 없습니다 — 미달. PONY 관련 5건(id9·10·11·16 + 관련 이월)은 UAE changelog 자체가 '9/5까지 구매 0, 9/9 D+7 판정 예정'이라 명시하고 있어 이월 처리. 제외 7건: 인프라성(성과 지표 없음) — id1(리뷰요청 자동 발송 1건, 정기자동화) · id4(주간보고 5호 발행) · id8(주간보고서 GitHub Pages 공개 게시 전환) · id13(주간보고서 금액 USD 병기 정규식 버그 수정) · id21(리뷰요청 자동 발송 2건) · id22(리뷰요청 자동 발송 3건) · id23(일일 브리핑·운영보고 DNS 장애 수동 복구)</p>
+<div class="tbl-scroll"><table>
+  <tr><th class="tw">한 일</th><th class="tw">왜 했나 (기대)</th><th class="tw">실제 결과 (전 → 후)</th><th>판정</th><th class="tw">배운 것 → 차주 반영</th></tr>
+  <tr><td class="tw">UAE 세럼 전용 메타 LP 신규 템플릿 배포(크림 구조 이식)</td><td class="tw" style="font-size:12.5px">John 'US 세럼은 건들지 말고 UAE 세럼만 크림과 구조 통일' — LP 구조 통일로 전환 개선</td><td class="tw" style="font-size:12.5px">UAE 세럼 캠페인(120255323539140348) 배포일 IC/LPV·LPV/클릭 비율(대시보드 캐시 주간 슬라이스) · 8/31 IC/LPV 12.6%·LPV/클릭 78.1%, 9/2 IC/LPV 12.0%·LPV/클릭 76.4% → 9/3(배포 당일) IC/LPV 8.4%·LPV/클릭 70.2% — 주중 최저</td><td><span class="v-pill pend">➖ 미달</span></td><td class="tw" style="font-size:12.5px">새 템플릿 배포 당일 전환율·페이지뷰율 모두 주중 최저치를 찍었습니다 — 같은 날 John이 '카드1 보완할 게 많다'고 즉시 피드백을 준 것과 일치하는 신호입니다. 다음날부터 4차례 보완(id17–20)으로 9/5엔 12.9%까지 회복해 배포 전 수준을 되찾았습니다. 큰 구조 변경은 배포 직후 하루 회귀를 각오하고 다음날 바로 보완 사이클을 도는 흐름이 유효했습니다.</td></tr><tr><td class="tw">크림 위임 캠 4개에 자사 세럼 ASIN(B0FV7XWDYF) 상품 제외 등록(4건)</td><td class="tw" style="font-size:12.5px">크림 캠이 세럼 지면에 지출하던 것을 '누수'로 보고 차단</td><td class="tw" style="font-size:12.5px">등록은 감사 파일로 확인(_audit/mop_brand_neg_0831.json cream_asin_excluded 4캠, 272436416603549 포함). 그러나 그 캠의 'asin-expanded=b0fv7xwdyf' 수동 상품타겟이 이번 주 22클릭·AED26.91 ($7.33)·구매4건·매출AED466.68(SP그룹 전체 매출 997.02의 47%, 캠페인 자체 매출의 82%)을 기록 — 캠페인 일별 매출(대시보드 캐시 주간 슬라이스=272436416603549].daily)과 대조하면 4건 중 2건·AED233.34 ($64)이 8/30(조치 전), 나머지 2건·AED233.34 ($64)이 9/3(조치 후) · 8/30(조치 전) 크림 validation 캠 ASIN타겟 라인: 2건·AED233.34 ($64) → 9/3(조치 등록 8/31 14:12 이후 이틀) 동일 ASIN타겟 라인: 2건·AED233.34 ($64) — 조치 이후에도 동일 규모로 전환 지속</td><td><span class="v-pill pend">➖ 미달</span></td><td class="tw" style="font-size:12.5px">'누수 차단'이라는 진단 자체가 이번 주 데이터로는 반대로 나왔습니다 — 세럼 지면 크림 노출은 사실 이번 주 최우수 전환처였고(ROAS 17배 수준), 캠페인 레벨 제외 등록 이후에도 같은 타겟에서 매출이 이어져 배제가 실효화됐다는 증거가 없습니다. 다음 조치 전에는 (a) 이 타겟이 실제로 배제됐는지 API 재조회, (b) 배제가 유효하다면 오히려 최우수 채널을 잃는 셈이니 유지 여부 재검토가 필요.</td></tr><tr><td class="tw">UAE UGC8 face-darkspot 애드셋 정지(메타, 심사 거절 소재) + 누락 기록 사후 복원</td><td class="tw" style="font-size:12.5px">심사 거절(정책) 소재 정지 — 16:41 실행분이 changelog 기록에서 누락된 것을 활동 로그 대조로 복원</td><td class="tw" style="font-size:12.5px">정지 대상 애드셋의 상위 캠페인(20260827 UAE-MedithBench-UGC8, 120255323539140348)은 이번 주 정상 서빙 지속: 일별 합산 spend 약 AED619 ($169)·IC 220건(대시보드 캐시 주간 슬라이스). 거절 소재는 애초 서빙되지 않으므로(REJECTED) 지출 손실 자체가 없음 · — → —</td><td><span class="v-pill win">✅ 효과</span></td><td class="tw" style="font-size:12.5px">거절 소재를 정지하고 기록까지 복원해 계정 상태와 changelog가 다시 일치했습니다. 상위 캠페인 서빙에는 영향이 없었다는 것도 확인 — 좁은 목표(정합성 확보)를 그대로 달성.</td></tr><tr><td class="tw">US·UAE 크림 메타 LP 7개 항목 수정 + CTA 버튼화 배포</td><td class="tw" style="font-size:12.5px">John 피드백 7건 반영(마감 카운트다운·포니 소재·CTA 버튼)으로 신뢰·클릭 개선</td><td class="tw" style="font-size:12.5px">UAE 크림 캠페인(120255364343680348) IC(장바구니시작)/LPV(랜딩뷰) 비율(대시보드 캐시 주간 슬라이스) · 배포 전 3일(8/31·9/1·9/2) IC/LPV 7.5%·10.0%·6.7%, 평균 약 8.1% → 배포일 9/3 7.9% → 9/4 9.9% → 9/5 14.3%</td><td><span class="v-pill win">✅ 효과</span></td><td class="tw" style="font-size:12.5px">CTA 버튼화 이후 이틀에 걸쳐 장바구니 시작 전환율이 뚜렷하게 올라갔습니다. 다만 9/4에 크림 LP 리터치 이미지 반영(id20)도 겹쳐 9/4–9/5 구간은 완전한 단일변수는 아닙니다 — 그래도 배포 당일(9/3, 단일 변수 구간)부터 이미 개선 조짐이 있었다는 점이 근거.</td></tr><tr><td class="tw">S1 다크스팟 5캠 테스트 재가동(PAUSED→ENABLED, 키워드 2,475건 bid AED2.00 ($0.54))</td><td class="tw" style="font-size:12.5px">635캠 중 5캠만 먼저 켜서 계정 정지 등 안전성 문제가 없는지 확인 후 전량 확대 여부를 결정</td><td class="tw" style="font-size:12.5px">재가동 직후 독립 재조회로 확인된 계정 안전성 신호(정지·경고 없음) · PAUSED, 서빙 없음 → 5/5 ENABLED · ad servingStatus=AD_STATUS_LIVE 5/5 · creativeStatus=PUBLISHED 유지 · GET /v2/profiles validPaymentMethod=true(운영 기록(changelog) 2026-08-30 [S1 재가동 5캠 테스트 집행])</td><td><span class="v-pill win">✅ 효과</span></td><td class="tw" style="font-size:12.5px">좁은 목표(안전성 검증)는 정확히 달성됐습니다. 다만 검증 체크리스트에 '과거 정지 사유 대조'가 없었던 게 다음날(8/31) 정책위반 소재 혼입 발견(id5)으로 이어졌습니다 — 다음 재가동 실험에는 정지 이력 대조를 체크리스트에 포함.</td></tr><tr><td class="tw">구배치 635캠 전량 재정지(PAUSED)</td><td class="tw" style="font-size:12.5px">John 지시 '정지됐던 소재는 싹다 정지' — 8/24 정책위반 정지 이력(얼굴06·07 등) 소재가 재가동분에 섞여 있던 것 수습</td><td class="tw" style="font-size:12.5px">PUT PAUSED 635/635 성공·재조회 검증(스크립트 amazon/_pause_relaunch_batch_0831.py, 감사 _audit/pause_relaunch_0831.json) · 635캠 ENABLED, 일 예산 노출 AED23,324 ($6,351) → 635캠 PAUSED 전건 확인(재조회 ENABLED 잔존 0), 유지 캠은 AEC3P 크림 25캠뿐, 노출 AED918 ($250)로 축소</td><td><span class="v-pill win">✅ 효과</span></td><td class="tw" style="font-size:12.5px">지시 즉시 전량 정지 + 독립 검증까지 깔끔하게 완료. 재발방지로 '재가동 전 정지 사유 대조 의무'가 결정기록(2026-08-31)으로 신설돼 같은 패턴의 구조적 재발을 막았습니다.</td></tr><tr><td class="tw">UAE 세럼 LP 카드 보완 2차(카드1 재작성·카드3 확장·카드4 교체)</td><td class="tw" style="font-size:12.5px">크림 LP와 대조해 누락 요소(헤드라인·금장 배지 등) 보완</td><td class="tw" style="font-size:12.5px">같은 날(9/4) id18·19·20과 순차 배포돼 개별 기여 분리 불가. 그날 공동 결과만 확인 가능: 세럼 캠 IC/LPV 9/3 8.4%→9/4 12.6% · — → —</td><td><span class="v-pill infra">⏳ 판정불가</span></td><td class="tw" style="font-size:12.5px">조치 1개당 변수 1개 원칙에 어긋나는 하루 4연속 배포 사례 — 이 항목만의 개별 효과는 분리할 수 없습니다. 급한 결함 수정이 필요했던 상황이라 불가피했지만, 다음엔 같은 날 여러 건을 배포해야 한다면 배포 시각이라도 기록해 사후 분리 여지를 남기는 게 좋겠습니다.</td></tr><tr><td class="tw">UAE 세럼 LP 3차 보완(배지 크림 실물 교체·가격 삭제·헤드라인 확대·Amazon's Choice 반영)</td><td class="tw" style="font-size:12.5px">John '크림과 똑같은 것으로'</td><td class="tw" style="font-size:12.5px">id17과 동일 사유로 개별 분리 불가(같은 날 4건 순차 배포, 세럼 캠 IC/LPV는 9/4 하루 전체로만 12.6% 확인) · — → —</td><td><span class="v-pill infra">⏳ 판정불가</span></td><td class="tw" style="font-size:12.5px">id17과 동일 — 이날의 4건은 하나의 묶음으로만 해석 가능합니다.</td></tr><tr><td class="tw">UAE 세럼 카드1 텍스트 여백 조정(상하 128px 균등)</td><td class="tw" style="font-size:12.5px">John '위 아래 여백 비슷하게'</td><td class="tw" style="font-size:12.5px">순수 여백 조정으로 그 자체의 전환 영향은 캠페인 일별 집계 해상도로는 원천적으로 분리 측정 불가 + 같은 날 3건과 동시 배포 · — → —</td><td><span class="v-pill infra">⏳ 판정불가</span></td><td class="tw" style="font-size:12.5px">이 정도 수준의 미세 조정은 애초에 일별 캠페인 집계로 단독 검증할 대상이 아닙니다 — 스크린샷 기반 육안 QC로 충분하고, 전환 지표로 개별 판정을 받으려 하지 않는 게 맞습니다.</td></tr><tr><td class="tw">UAE 세럼 LP 4차 보완(카드3 배경 결함 원인수정·카드4 얼굴 리터치) + 동일 리터치 크림 LP(US·UAE) 반영</td><td class="tw" style="font-size:12.5px">John 신고 '카드3 세럼 이미지 상단이 반으로 짤린다' 원인수정 + 주름 리터치 개선 반영</td><td class="tw" style="font-size:12.5px">세럼 쪽은 같은 날 4건 동시 배포로 개별 분리 불가. 크림 쪽은 id14의 개선 추세(9/4 9.9%→9/5 14.3%)에 얹힌 변경이라 이 항목만의 순증분 분리 불가 · — → —</td><td><span class="v-pill infra">⏳ 판정불가</span></td><td class="tw" style="font-size:12.5px">실제로 화면이 반으로 잘리는 버그를 고친 조치라 방향은 맞다고 보이지만, 같은 날 다른 3건과 뒤섞여 이 조치만의 전환 기여도는 이번 데이터로 분리할 수 없습니다. 세럼 LP가 안정된 상태의 지표를 다음 베이스라인으로 삼으면 이후 단일 변경들은 더 깨끗하게 판정할 수 있습니다.</td></tr><tr><td class="tw">자동위임(mop_) 8캠에 브랜드어 NEGATIVE_EXACT 5종 이식(38건)</td><td class="tw" style="font-size:12.5px">8/24 등록분이 신설 위임 캠에 미상속돼 브랜드어 클릭에 3일간 AED39.95 ($11) 무전환 지출 발생 — 공백 봉합</td><td class="tw" style="font-size:12.5px">등록 자체는 감사 파일로 확인(amazon/_audit/mop_brand_neg_0831.json, 8캠×5종 verified). 다만 대상 주 검색어 리포트(광고 API 주간 리포트)에 일자 필드가 없어 8/31 14:12 전/후 분리 불가 — 등록 5종 중 실제 매칭된 정확검색어 'lemonderma'가 대상 mop_ 캠페인들에서 이번 주 총 32클릭·AED49.73(전환 0건) 발생, 그중 최대 건(16클릭·AED24.66 ($6.71))은 세럼검증캠(211831203620285)의 자체 'lemonderma' PHRASE 키워드에서 발생 · — → —</td><td><span class="v-pill infra">⏳ 판정불가</span></td><td class="tw" style="font-size:12.5px">일자별 검색어 데이터가 없어 조치의 즉시 효과를 이번 주 안에서 확인할 수 없습니다 — 억지로 효과/미달을 판정하지 않고 다음 주 재확인 대상으로 남깁니다. 부수 발견: 같은 캠페인에 'lemonderma' 수동 키워드(매입 중)와 'lemonderma' 네거티브 정확매치가 동시에 걸려 있어 구조적 충돌 가능성 — 다음 점검 항목.</td></tr><tr><td class="tw">PONY UAE 메타 2캠 신규 생성+활성화(세럼 120255406141560348·크림 120255406142130348, ₩10,000/일)</td><td class="tw" style="font-size:12.5px">포니 영상 소재로 UAE 메타 신뢰 확보</td><td class="tw" style="font-size:12.5px">누적 실측(meta_cumulative_all, 9/2–9/7 09:10창): 세럼 spend AED120.19 ($33)·IC37·CTR7.2%·cost/IC AED3.25 ($0.88) / 크림 spend AED117.29 ($32)·IC24·CTR8.24%·cost/IC AED4.89 ($1.33) — 계정 이번 주 평균 cost/IC(AED1,319.45 ($359)÷396≈3.33)와 비슷–다소 높은 수준 · — → —</td><td><span class="v-pill infra">⏳ 이월</span></td><td class="tw" style="font-size:12.5px">IC(장바구니 시작) 지표만으로는 초기 반응이 나쁘지 않습니다. 다만 UAE는 메타 구매 직접귀속이 안 되고, 9/5까지 아마존 구매 0(changelog 확정)에 9/9 판정 예정이 이미 걸려 있어 이번 주에서는 이월. 판정 방법은 홀드아웃이 아니라 귀속성숙 재집계·일별 주문구성 대조(9/2 결정 준수).</td></tr><tr><td class="tw">UAE SB 입찰 전면 하향 AED4.77 ($1.30)→AED3.06(세럼52·크림58건 전량)</td><td class="tw" style="font-size:12.5px">John '일단 본전의 1.2배로' — 본전 CPC AED2.55 ($0.69)×1.2로 정합</td><td class="tw" style="font-size:12.5px">기계적 실행 확인: PONY_CREAM 캠 실측 CPC = AED6.12 ($1.67)÷2clicks = AED3.06 ($0.83), 목표 입찰가와 정확히 일치(대시보드 캐시 주간 슬라이스). 표본은 2클릭뿐. 참고: 하향 근거로 쓰인 '본전 CPC AED2.55 ($0.69)'는 이 보고서 정본 breakeven_cpc(amazon_cumulative.recent, 21일창) AED3.54 ($0.96)와 다름 — 계산 시점 데이터창 차이로 추정 · — → —</td><td><span class="v-pill infra">⏳ 이월</span></td><td class="tw" style="font-size:12.5px">설정이 의도대로 반영됐다는 것만 확인됐고, 이 입찰가가 충분한 물량·전환을 만드는지는 PONY 판정 사이클(9/9)과 함께 봐야 합니다. 다음엔 입찰 근거로 쓴 breakeven CPC의 계산 데이터창을 액션 로그에 같이 남기면 이런 대조가 쉬워집니다.</td></tr><tr><td class="tw">포니 4캠페인 파트너십 광고(ad code)로 전환 — UAE 2건 포함(세럼 2189163988477844·크림 2157311688249731)</td><td class="tw" style="font-size:12.5px">John '포니가 올린 영상을 부스팅해서 신뢰도 확보' — 재업로드본 대신 원 게시물 부스팅</td><td class="tw" style="font-size:12.5px">id10과 동일 캠페인 내 크리에이티브 형식 전환이라 캠페인 주간 합산 데이터만으로는 전/후 분리 불가. 9/5까지 아마존 구매 0(UAE changelog 2026-09-07 확정) · — → —</td><td><span class="v-pill infra">⏳ 이월</span></td><td class="tw" style="font-size:12.5px">크리에이티브 단위 전/후 비교 데이터가 없어(캠페인 합산만 존재) 이번 주에서는 판정 재료가 부족합니다. id9·10과 같은 9/9 D+7 판정에 묶어 다음 주에서 함께 봅니다.</td></tr><tr><td class="tw">S1 다크스팟 잔여 630캠 확대 재가동(총 635캠, bid AED2.00 ($0.54) 유지, 예산 AED36.73 ($10) 유지)</td><td class="tw" style="font-size:12.5px">5캠 무사고 확인 후 나머지 전량 확대 재가동</td><td class="tw" style="font-size:12.5px">S1 그룹 이번 주 실측(대시보드 캐시 주간 슬라이스1, 46개 캠 합산): spend AED20.60 ($5.61) · clicks 10 · orders 0 · sales 0. 일별: 8/30 spend14.60/clicks7, 8/31 spend6.00/clicks3, 9/1–9/5 전부 0(재정지 반영) · 정지 상태, 노출 0 → 635/635 ENABLED·서빙 전건 검증 완료, 일 예산 노출 AED23,324 ($6,351)/일(약 $6,355) 오픈 — 그러나 실가동 기간은 8/30–31 약 1.5일뿐</td><td><span class="v-pill infra">⏳ 이월</span></td><td class="tw" style="font-size:12.5px">집행(상태전환·입찰·서빙 검증)은 깨끗했습니다. 그러나 확대 다음날 정책위반 정지 이력 소재(얼굴06·07 등) 혼입이 발견돼 635캠 전량이 하루 반 만에 재정지(id5)됐습니다 — 표본(클릭10·매출0·1.5일)이 너무 얇아 이번 주 안에서 독립 성과 판정은 이월. 재개는 정책 준수 소재 교체 후 별도 결정.</td></tr><tr><td class="tw">PONY UAE SB 2캠 신규 생성(세럼 236052750187239·크림 157365120486587, bid AED4.77 ($1.30), 세럼52+크림58 BROAD)</td><td class="tw" style="font-size:12.5px">포니 발견 키워드 확보 목적, 본전 CPC 초과는 발견 목적의 의도적 초과</td><td class="tw" style="font-size:12.5px">크림 캠만 이번 주 서빙 확인: spend AED6.12 ($1.67)·impr1,901·clicks2·sales0(대시보드 캐시 주간 슬라이스). 세럼 캠은 이번 주 Ads API 풀(ads-api-sb-campaigns-2026-08-30-2026-09-05)에 전혀 잡히지 않아(노출 0) 9/2 22:10 예약된 심사확인 이후 changelog 후속기록도 없어 승인 여부 확인 안 됨 · — → —</td><td><span class="v-pill infra">⏳ 이월</span></td><td class="tw" style="font-size:12.5px">UAE changelog 2026-09-07 자체가 '9/2 SB 2캠… 9/5까지 구매 0. 9/9 D+7 판정 예정'이라고 이미 명시하고 있습니다 — 이 보고서 시점(9/7)에서 성급히 판정하지 않고 예정된 재판정일(9/9)까지 이월하는 게 맞습니다. 다음 주에서는 세럼 캠 심사 결과부터 확인.</td></tr>
+</table></div></div></details><div class="acc-group">— 대조 · 발견 원장 —</div><details class="acc"><summary><span class="pill-board">📈</span>5주차 vs 6주차 — 지표 전면 대조</summary><div class="bd"><div class="bd-src">출처: 5호 발행분(재수집 성숙치) + 이번 주 재계산 — 주간 정본 데이터 기준</div><div class="tbl-scroll"><table class="mini"><thead><tr><th>지표</th><th class="num">5주차 (8/23–29)</th><th class="num">6주차 (8/30–9/05)</th><th class="tw">해석</th></tr></thead><tbody>
+  <tr><td>전 채널 광고비</td><td class="num">AED 694.85 ($189)</td><td class="num">AED 1,754.30 ($478)</td><td class="tw">+152.5%</td></tr>
+  <tr><td>실주문 매출</td><td class="num">AED 869.70 ($237)</td><td class="num">AED 2,234.40 ($608)</td><td class="tw">+156.9%</td></tr>
+  <tr><td>MER</td><td class="num">1.25배</td><td class="num"><b>1.27배</b></td><td class="tw">본전 1.53(신 기준) 대비 미달</td></tr>
+  <tr><td>아마존 광고 ROAS</td><td class="num">0.39배</td><td class="num">2.29배</td><td class="tw">SP 자동위임 콜드스타트 이탈 — 성숙 궤도</td></tr>
+  <tr><td>메타 지출</td><td class="num">AED 348.88 ($95)</td><td class="num">AED 1,319.45 ($359)</td><td class="tw">+278.2%</td></tr>
+  <tr><td>방문 전환율</td><td class="num">2.46%</td><td class="num"><b>2.97%</b></td><td class="tw">방문 285→640(2.25배)</td></tr>
+</tbody></table></div></div></details><p class="fn-note">SB 매트릭스(누적 15종)는 이번 주 전환 0건 — 이번 주 전환 9건 전부 SP 캠페인(자동위임)에서 나와 매트릭스(SB 전용 수집)에 잡히지 않는다. SP 원본(ads-api-sp-search-term) 직접 대조: ASIN 타겟팅 검색어 'b0fv3qxsbf'(크림 자체 ASIN)가 5주차(1건)·6주차(2건) 반복 전환, 'b0fv7xwdyf'(세럼 자체 ASIN)가 4주차(2건)·6주차(4건) 반복 전환 — 둘 다 상품(ASIN) 타겟팅이라 진짜 키워드 신호는 아니다. 브랜드어 3종(lemonderma·lemonshot cream·lemonshot exo:booster cream, 각 1건)은 이번 주 신규 전환.</p><details class="acc"><summary><span class="pill-board">📂</span>발견 원장 · keywords — 8건 전문</summary><div class="bd"><div class="locks"><div class="lock"><div class="lh">SP 매출 997.02 전액이 '브랜드명 검색' 또는 '자사 ASIN 교차타겟'에서만 발생 — 순수 일반 키워드 전환 0건 <span style="font-size:11px;color:#999">발견 101</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>SP ROAS 2.929는 일반(비브랜드) 검색어 성과가 아닙니다. 이번 주 검색어 리포트를 브랜드명 문자열('lemon'류)·ASIN 타겟팅(asin-expanded/substitutes/complements 키워드 유형)·일반(나머지)으로 3분해 원본에서 재계산한 결과: 브랜드 검색 AED87.98(44클릭·3주문·매출297.00) + ASIN 타겟팅 AED68.94(30클릭·6주문·매출700.02) = AED156.92(총비용의 36.1%)가 9주문·매출997.02(=100%) 전부를 만들었고, 일반 키워드에 쓴 AED277.93(총비용의 63.9%, 80클릭)은 주문 0건이었습니다. 다만 'ASIN 타겟팅' 버킷 전체(68.94/30클릭)를 '자사 페이지 재포착'으로 서술하는 것은 과장입니다 — 전환 6건·매출700.02는 전부 진짜 자사ASIN 상호타겟팅 2행(asin-expanded 자사크림타겟 10.07/11클릭/466.68/4건 + substitutes 자사세럼타겟 18.19/4클릭/233.34/2건, 합계 28.26)에서만 나왔고, 같은 버킷의 비전환 6행(AED23.19 ($6.31)·7클릭)은 substitutes/complements 자동타겟팅이 자사와 무관한 제3자 경쟁 ASIN에 랜딩된 것입니다. 전환·매출 총계에는 영향 없지만 '이미 자사 페이지에 있던 사람 재포착'이라는 인과 서술은 이 버킷의 약 3분의 1(비용 기준)에는 적용되지 않습니다.</p><div class="bd-src">근거 — 광고 API 주간 리포트 + 광고 API 주간 리포트 원본 89행 직접 집계(python3 csv 파싱, 반올림 오차 없이 검증). 브랜드=87.98/44클릭/297.00/3건, ASIN교차=68.94/30클릭/700.02/6건, 일반=277.93/80클릭/0/0건. 합계 434.85/154클릭/997.02/9건 = `대시보드 캐시 주간 슬라이스` week_totals(amz_spend434.85·amz_clicks154·amz_sales997.02·amz_orders9)와 정확히 일치.</div><div class="sowhat"><b>💡 다음 수:</b> SP ROAS 2.929를 '광고가 신규 수요를 만든다'는 근거로 쓰지 말 것 — 브랜드/자사 페이지 방어형 캠페인은 유지하되, exploration(일반 키워드) 예산 확대는 이번 주 데이터만으로는 정당화 안 됨. 다음 주도 일반 키워드 전환 0이면 exploration 세그먼트 자체의 구조(입찰가·타겟팅 방식) 재검토 필요.</div></div><div class="lock"><div class="lh">이번 주 검색어 낭비 AED398.85(총비용의 91.7%) — 상위 5개 낭비어에 AED123.19 ($34) <span style="font-size:11px;color:#999">발견 102</span></div><p>SP+SB 검색어 리포트 89행 중 전환 0건인 행이 84행, 그 비용 합계가 AED398.85(총 AED434.85의 91.7%)다. 전환이 발생한 5행(브랜드3+ASIN2)만 AED36.00 ($9.80)을 썼습니다. 행 단위(캠페인·매치타입 구분) 상위 5개 낭비 검색어: ① brightening serum(SP loose-match, AED31.36 ($8.54)·3클릭) ② lemonderma(SP PHRASE, 크림 검증캠페인, AED24.66 ($6.71)·16클릭 — 세럼쪽 동일 문구는 1건 전환) ③ face serum(SP loose-match, AED24.18 ($6.58)·2클릭) ④ lemon cream(SP TARGETING_EXPRESSION_PREDEFINED, AED21.67 ($5.90)·4클릭) ⑤ glycolic acid the ordinary(SP loose-match, AED21.52 ($5.86)·6클릭·노출5889 — CTR0.10%).</p><div class="bd-src">근거 — ads-api-sp-search-term/ads-api-sb-search-term CSV 89행 전수 집계: 전환0행 84개·비용398.85·클릭134 vs 전환행 5개·비용36.00. 상위5 개별 수치는 원본 행 그대로(예: 'glycolic acid the ordinary' impressions=5889, clicks=6, cost=21.52).</div><div class="sowhat"><b>💡 다음 수:</b> brightening serum·face serum·glycolic acid the ordinary·lemon cream(TARGETING_EXPRESSION_PREDEFINED 쪽) 4개는 loose-match/close-match 자동타겟 산출물이라 개별 네거티브 등록이 안 되고 캠페인의 자동타겟 신뢰도 자체를 낮춰야 함. 'lemonderma'(크림 검증캠페인)는 브랜드 키워드인데도 이번 주 전환이 0이라 낭비 1위 후보로 잡히는 역설적 사례 — 표본 작아 판정 보류, 다음 주 재확인.</div></div><div class="lock"><div class="lh">S1 다크스팟 635캠(키워드 2,475+266,792=269,267건) — 실제로는 46캠·10클릭만 발생, 그마저도 재정지 전 이틀에 집중 <span style="font-size:11px;color:#999">발견 103</span></div><p>8/30 재가동된 635개 캠페인·269,267개 키워드 중 이번 주 노출이라도 발생한 캠페인은 46개(7.2%)뿐이고, 나머지 589개(92.8%)는 노출 0·클릭 0으로 269,267건 키워드 대부분이 사실상 작동하지 않았습니다. 활동이 있었던 46개 캠페인도 클릭이 발생한 건 6개뿐(40개는 노출은 있었지만 클릭 0, 총 노출6,731에 클릭10=CTR 0.15%). 일자별로 보면 클릭·비용이 8/30(7클릭·AED14.60 ($3.98))·8/31(3클릭·AED6.00 ($1.63))에만 몰려 있고 9/1–9/5는 전부 0 — 8/31 '구배치 635캠 전량 재정지' 액션(액션인벤토리 id5)과 정확히 일치합니다. 이번 주 매출 0.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: 'S1다크스팟' 문자열 포함 캠페인 46개(전체 635개 중), 총 clicks=10·spend=AED20.60 ($5.61)·impressions=6,731, 일자별 합산 결과 08-30=7클릭/AED14.60 ($3.98), 08-31=3클릭/AED6.00 ($1.63), 09-01–09-05=0. 40/46 캠페인이 clicks=0(impressions은 0인 캠페인 없음, 즉 46개 전부 노출은 있었음). 키워드 건수는 이번 주 실행 목록 id2·id3(2,475건+266,792건, 예산AED36.73/일 유지) 근거.</div><div class="sowhat"><b>💡 다음 수:</b> 키워드 물량(269K건)이 문제가 아니라 '가동 시간'이 실질 변수였습니다(2일만 라이브). 재가동 재개 여부는 키워드 볼륨 조정이 아니라 정책위반 소재 대조(§함정6, 8/31 보류 결정)가 먼저 풀려야 함 — 조치 1개당 변수 1개 원칙상 지금 재가동해도 '키워드가 많아서'인지 '가동일수가 짧아서'인지 다음 주도 분리 안 됨.</div></div><div class="lock"><div class="lh">폐기 기준(AED89.16 ($24)+클릭25+매출0) — items=[] 원본 교차검증 결과 정확, 단 크림 검증캠페인이 클릭 임계값(25)은 이미 충족한 근접 후보 <span style="font-size:11px;color:#999">발견 104</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>캐시의 kill_candidates.items=[]가 맞습니다 — 이번 주 캠페인 80개 중 '비용≥89.16 AND 클릭≥25 AND 매출=0'을 동시 충족하는 캠은 0개입니다. 가장 근접한 캠페인은 mop_B0FV7XWDYF_..._sp_campaign_validation(세럼 ASIN 검증캠페인 — B0FV7XWDYF=세럼·B0FV3QXSBF=크림이 확정 매핑이며, 원문의 '크림 ASIN 검증캠페인' 표기는 오류)으로 클릭=25(임계값 정확히 충족)·매출=0이지만 비용은 AED38.78 ($11)로 게이트(89.16)의 43%에 불과해 미충족. 이 캠페인은 finding#1의 'lemonderma'(16클릭·비전환) + asin-expanded 자사크림타겟(6클릭·비전환, 대상 ASIN=B0FV3QXSBF/크림 — 원문의 '자사세럼타겟' 표기도 동일하게 오류) 등이 섞여 있습니다. 2위 근접은 SB AEC3P-darkspot-p03(16클릭·AED29.60 ($8.06)·매출0).</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스={gate:89.16,min_clicks:25,items:[]}. campaigns_week 80개 전수 필터링(spend&gt;=89.16 and clicks&gt;=25 and sales==0) → 0건. 근접값: mop_B0FV7XWDYF_..._validation spend=38.78/clicks=25/sales=0.00.</div><div class="sowhat"><b>💡 다음 수:</b> 다음 주 이 캠페인(크림 검증)의 비용이 지금 속도로 2배(≈AED77 ($21)) 이상 늘고 여전히 매출 0이면 게이트에 근접 — 별도 추적 필요. 조기 개입(비용 늘기 전 선제 차단)은 표본 부족 근거로 권장 안 함.</div></div><div class="lock"><div class="lh">'lemonderma'류 자사 브랜드 검색 비중: 비용 20.2%(AED87.98 ($24)/434.85)·매출 29.8%(AED297.00 ($81)/997.02)·주문 33.3%(3/9) — SP 매출 전부가 브랜드에서 나온 건 아닙니다 <span style="font-size:11px;color:#999">발견 105</span></div><p>질문 ⓒ에 대한 직접 답: SP 매출 997.02 전부가 '문자 그대로의 브랜드명 검색'은 아닙니다. 순수 브랜드 문자열(lemonderma·lemon shot booster·lemonshot cream·lemonshot exo:booster cream) 합산은 비용 AED87.98(44클릭)·매출 AED297.00 ($81)·주문 3건뿐이고, 나머지 6주문·매출 AED700.02 ($191)는 finding#1의 ASIN 교차타겟(자사 페이지 방문객 재포착)에서 나왔습니다. 다만 두 버킷을 합치면(브랜드+자사ASIN=AED156.92 ($43), 36.1%) 이번 주 전환 전액을 설명하므로, 'SP ROAS가 순수 신규수요로 부풀려졌다'는 방향의 판정은 맞습니다 — 다만 '브랜드 검색어' 단독 귀책은 과장입니다.</p><div class="bd-src">근거 — finding#1과 동일 원본 집계(SP+SB CSV 89행). 브랜드 서브셋만: cost=87.98, clicks=44, sales=297.00, orders=3 (SP 43클릭/85.98 + SB 1클릭/2.00 'lemon shot booster'). 비율: 87.98/434.85=20.2%, 297.00/997.02=29.8%, 3/9=33.3%.</div><div class="sowhat"><b>💡 다음 수:</b> 보고서에 'SP ROAS 2.929=브랜드 검색어 덕분'이라고 쓰면 부정확 — '브랜드+자사ASIN 재포착 합산 36.1% 지출이 100% 전환, 일반키워드 63.9% 지출은 0건'으로 정확히 표기할 것(finding#1과 함께 인용).</div></div><div class="lock"><div class="lh">네거티브 후보 11건 확정(카테고리 완전 이탈) — 합계 AED24.09 ($6.56)·11클릭, 전량 BROAD/loose-match 오귀속 <span style="font-size:11px;color:#999">발견 106</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>스킨케어 크림·세럼과 무관한 카테고리 검색어가 브로드/느슨한 매치로 노출·클릭됐습니다: testosterone booster for men(SP, AED3.53 ($0.96)), 헤어 카테고리 3건(hair serum·advanced hair growth serum·split ends serum, SB 각AED2.00=계6.00, 모두 S1 UGC 캠페인의 'serum' PHRASE 키워드 오매칭), 바디/기기/타브랜드 5건(booster pro x2 glow beauty device·nyx body glow·rotho optic glow·sunset glow bath and body works·johnson cream melasma, SB 각AED1.9–2.0=계9.60, 전부 AEC3P 'glow'/'dark spot' BROAD 키워드 오매칭), 무의미 조각어 2건(glow 190·glow 90, 계AED3.80), 오타/노이즈 쿼리 1건(skin care seat, PONY_CREAM SB, AED3.06 ($0.83)). 원본 CSV 재검증 결과 이 12개 항목의 정확한 합계는 AED25.99 ($7.08)·12클릭(전체 비용의 5.98%)이며 전량 비전환입니다.</p><div class="bd-src">근거 — ads-api-sp-search-term·ads-api-sb-search-term CSV 원본 11행 개별 확인(각 행 cost/clicks 직접 인용, 위 detail의 금액 그대로). 재검증: 11개 항목 재합산 시 AED24.09 ($6.56)/11클릭(1차 집계 시도에서 중복오차 있었으나 재확인 완료).</div><div class="sowhat"><b>💡 다음 수:</b> 네거티브 등록 권장 대상은 정확 매치 기준 11건. 단 개별 비용이 AED1.9 ($0.52)–3.5 수준이라 이번 주 단독으로는 손익에 미미 — BROAD 매치 자체가 구조적으로 이런 오매칭을 계속 만든다는 신호로만 취급(9/6 니아신아마이드 네거티브 근본원인 정정 사례처럼, 레지스트리/매치타입 구조 문제일 가능성 열어둘 것).</div></div><div class="lock"><div class="lh">이번 주 실측 CPC(AED2.824 ($0.77))가 실측 본전 CPC(AED3.54 ($0.96))보다 20.2% 낮음 — 브랜드/ASIN타겟 세그먼트에 여유폭 있음 <span style="font-size:11px;color:#999">발견 107</span></div><p>본전 CPC는 config 계획값(4.46)이 아니라 `amazon_cumulative.recent`(최근21일 실측)의 breakeven_cpc=AED3.54(직접귀속만이면 3.35)를 써야 한다는 원칙에 따라 계산하면, 이번 주 실제 amz_cpc=AED2.824(434.85÷154클릭, 캐시 필드와 일치)는 본전 대비 79.8% 수준 — AED0.716(20.2%)의 여유가 있습니다. 단 이번 주 CVR(5.844%, 9주문/154클릭)은 21일 CVR(3.97%)보다 높게 찍혀 있는데 표본이 9주문뿐이라 노이즈 가능성이 큼 — CVR이 21일 기준선(3.97%)으로 회귀하면 여유폭은 줄어듭니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: {window 8/16–9/5, breakeven_cpc:3.54, breakeven_cpc_direct:3.35, cvr:3.97, orders:19, clicks:479}. week_totals: amz_cpc:2.824, amz_cvr_pct:5.844, amz_clicks:154, amz_orders:9. 계산: (3.54-2.824)/3.54=20.2%.</div><div class="sowhat"><b>💡 다음 수:</b> 입찰 상향은 finding#1에서 확인된 전환 세그먼트(브랜드·자사ASIN타겟, 현재 비중36.1%)에 한정해 검토 — 일반 키워드(exploration, 이번 주 0전환)에는 여유폭을 근거로 입찰 상향할 근거 없음. 표본 9건은 단발 판정 금지 원칙(§함정8) 적용 대상.</div></div><div class="lock"><div class="lh">SB(Sponsored Brands) 검색어 47건 전량 이번 주 매출 0 — PONY_CREAM SB 신규 캠페인 포함 <span style="font-size:11px;color:#999">발견 108</span></div><p>SB 검색어 리포트 47행(AED94.42 ($26)·48클릭) 전부 purchases=0, sales=0으로 groups_week의 기타(71.82)+S1(20.60)+S2(2.0)=94.42/매출0과 정확히 일치합니다. 9/2 'PONY 활용 집중' 지시로 신설된 260902_AE_SB_PONY_CREAM 캠페인도 이번 주 2클릭·AED6.12 ($1.67)·매출0(검색어 'korean skin care for scared'·'skin care seat' 각1클릭) — 결정큐 미해결항목의 D+7(9/9) 재판정 대상 캠페인과 별개로, 발견 목적 신규 SB 자체는 아직 판정 불가한 초기 단계.</p><div class="bd-src">근거 — ads-api-sb-search-term CSV 47행 전수: sum(sales)=0.00, sum(purchases)=0. 대시보드 캐시 주간 슬라이스 기타+S1+S2 spend합=71.82+20.6+2.0=94.42 (=SB CSV cost합 94.42, 오차 없음). PONY_CREAM 캠페인 행: 'korean skin care for scared'(cost3.06·click1)+'skin care seat'(cost3.06·click1)=6.12/2클릭, campaigns_week 항목(260902_AE_SB_PONY_CREAM spend=6.12·clicks=2)과 일치.</div><div class="sowhat"><b>💡 다음 수:</b> SB는 이번 주 검색어 단위로는 판정 불가(전량 0전환, 표본 극소) — PONY_CREAM SB는 9/9 재판정 예정 액션(액션인벤토리 id9)이 이미 걸려있으므로 그 시점까지 대기. AEC3P 25캠(기타+S1+S2 다수)은 애초에 SB 매출이 구조적으로 0에 수렴 중이라는 5주차 이후 패턴 지속 여부 확인 필요.</div></div></div></div></details><details class="acc"><summary><span class="pill-board">📂</span>발견 원장 · 아마존 구조 — 6건 전문</summary><div class="bd"><div class="locks"><div class="lock"><div class="lh">SP만 매출을 냈고, S1·S2·기타 매출 0은 '실패'가 아니라 노출 기간/표본 부족 <span style="font-size:11px;color:#999">발견 201</span></div><p>6주차 아마존 매출 997.02 AED는 전액 SP 그룹(캠 5개)에서 나왔습니다(ROAS 2.929). S1(20.6)·S2(2.0)·기타(71.82)는 매출 0이지만 원인이 서로 다릅니다 — S1·S2는 '노출 자체가 없어서'가 아니라 '거의 즉시 꺼져서'(뒤 finding 참조)이고, 기타(AEC3P+PONY, 8/27–9/2 신규런칭)는 클릭은 있는데(37클릭·10,816노출) 아직 전환이 없는 케이스입니다. 다만 amazon_cumulative.recent의 실측 CVR(3.97%)로 기대전환을 계산하면 37클릭의 기대주문은 약 1.47건, 포아송분포상 '0건이 나올 확률'이 약 23%로 드물지 않습니다 — 표본이 작아 실패로 단정할 근거가 안 됩니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: SP(spend340.43·sales997.02·clicks106·orders9·roas2.929) / 기타(spend71.82·sales0·clicks37·impr10816·camps23) / S1(spend20.6·clicks10·camps46) / S2(spend2.0·clicks1·camps6). 합계 340.43+71.82+20.6+2.0=434.85=week_totals.amz_spend와 일치. 기타 top 캠: 20260827 AEC3P-darkspot-p03-jungjuwon(spend29.6·clicks16), AEC3P-dullskin-p09-viki(13.3·7클릭) 등(캠페인 daily 필드에서 직접 합산).</div><div class="sowhat"><b>💡 다음 수:</b> S1/S2/기타를 같은 '매출 0' 취급으로 묶어 판단하지 말 것 — 기타는 신설 학습기로 이번엔 판정 보류, 다음 주 클릭 볼륨이 더 쌓인 뒤 재판정.</div></div><div class="lock"><div class="lh">S1 635캠 재가동은 실제로 8/30–31 이틀만 서빙되고 9/1부터 0캠 — '보류' 지시가 그대로 지켜지고 있음 <span style="font-size:11px;color:#999">발견 202</span></div><p>S1 그룹의 일별 지출을 캠페인 daily로 분해하면 8/30(AED14.60 ($3.98)·7클릭)·8/31(AED6.00 ($1.63)·3클릭) 이틀에만 지출이 발생하고 9/1–9/5는 7일 내내 전 캠페인 지출 0·클릭 0·노출 0입니다. 이는 8/31 14:08 John '정지됐던 소재는 싹다 정지시켜' 지시로 635캠 전량 재정지(액션 인벤토리 id5) 후, 같은 날 15시경 '껐다켰다 하면 문제될 수 있으니 보류'(_week-context.md) 결정으로 이후 재가동을 하지 않은 결과로 정확히 일치합니다. 이번 주 Ads API 원본(sb-campaigns, 366캠 중 S1 103캠 전량 PAUSED)에서도 살아있는 S1캠은 0개로 확인. S2도 같은 시점(8/31, AED2.00 ($0.54)·1클릭)에 잔여 활동이 딱 하루만 잡히는 동일 패턴.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스의 S1/S2 그룹 daily 합산: 8/30 spend14.60·clicks7 / 8/31 spend6.00·clicks3 / 9/1–9/5 전부 0. 광고 API 주간 리포트: S1 103건 전부 campaignStatus=PAUSED, S2 101건 전부 PAUSED. 이번 주 실행 목록 id5(8/31 '구배치 635캠 전량 재정지, 재조회 ENABLED 잔존 0'). _week-context.md 12행 '껐다켰다 하면 문제될 수 있으니 보류'.</div><div class="sowhat"><b>💡 다음 수:</b> S1 재가동 재개는 '정지 이력 대조 의무'(id5 재발방지 조치) 완료 전까지 보류 유지가 맞음 — 이번 주 리포트에서 S1을 '역효과' 또는 '회복'으로 단정하지 말고 판정불가로 남길 것.</div></div><div class="lock"><div class="lh">라이브 상태 SB27·SP8은 amazon_ops(enabled27)와 정확히 일치 — SB27=AEC3P25+PONY2, SP8은 별도 트랙 <span style="font-size:11px;color:#999">발견 203</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>amazon_ops.enabled=27은 build_dashboard.py 코드상 SB 전용 카운트(fetch_amazon_ops 함수 주석 'SB 운영현황')다. 수집 로그의 live_state.py --uae 실측(9/7 09:58) 'ENABLED = SB 27(AEC3P 25 + PONY 2) · SP 8(자동위임 mop_)'과 대조하면 SB 쪽 27이 정확히 일치. 익일 대시보드 캐시로 직접 재검증해도 enabled 캠 35개 중 AEC3P 25 + PONY 2 = SB 27, SP(mop_) 8로 정확히 나뉩니다. 단, 이번 주 Ads API 리포트(활동 있는 캠만 반환)에는 SB 23개(AEC3P 22 + PONY_CREAM 1)·SP 5개만 잡혔습니다 — 즉 SB 4개(AEC3P 3개 + PONY_SERUM 1개)·SP 3개는 ENABLED 상태지만 이번 주 노출이 0이었다는 뜻입니다.</p><div class="bd-src">근거 — 수집 로그 4행. reports/dashboard/cache/대시보드 캐시(2026-09-08 09:10): amazon.campaigns 380건 중 enabled=35(AEC3P 25·PONY 2·SP mop_ 8, python 카운트로 검증). 대시보드 캐시 주간 슬라이스=27. ads-api-sb-campaigns pull(366건)엔 ENABLED 23건만 존재(나머지 4개 무활동), ads-api-sp-campaigns pull엔 5건만(나머지 3개 무활동).</div><div class="sowhat"><b>💡 다음 수:</b> amazon_ops 수치를 'SB+SP 전체 라이브 캠 수'로 오독하지 말 것 — SB 전용 필드입니다. SP 8캠 중 이번 주 무활동 3캠(신규 생성 직후 콜드스타트 가능성)은 다음 주 서빙 여부 확인 대상.</div></div><div class="lock"><div class="lh">과거의 계정 지출한도 고정 패턴(AED49.5 ($13)–52.6)이 이번 주엔 사라짐 — 캡이 더 이상 묶어두지 않는 것으로 보임 <span style="font-size:11px;color:#999">발견 204</span></div><p>이번 주 아마존 일별 지출은 8/30 74.83 · 8/31 59.85 · 9/1 52.28 · 9/2 63.24 · 9/3 53.06 · 9/4 71.18 · 9/5 60.41로, 과거 고정폭이었던 AED49.5 ($13)–52.6 범위를 매일 벗어나 최대 74.83까지 변동합니다. SB 서빙상태 실측(includeExtendedDataFields)에서도 spend_limited_count=0(EXCEED_SPENDS_LIMIT 캠 0개), serving_sample 6건 전부 CAMPAIGN_STATUS_ENABLED로 확인돼 지출한도로 막힌 흔적이 없습니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스 배열: 2026-08-30 amz_spend74.83, 08-31 59.85, 09-01 52.28, 09-02 63.24, 09-03 53.06, 09-04 71.18, 09-05 60.41. amazon_ops.spend_limited_count=0, serving_sample=['CAMPAIGN_STATUS_ENABLED']×6. build_dashboard.py 751–780행 주석: '지출한도 서빙 상태 — UAE 최대 병목(2026-07-23– 계정 단위 일 상한 –AED 50 ($14))'.</div><div class="sowhat"><b>💡 다음 수:</b> 지출한도가 더 이상 병목이 아니라면 예산 확대 여지가 있다는 뜻 — 다음 액션 검토 시 '한도 때문에 못 늘린다' 전제를 재확인할 것(단발 1주 데이터라 2주 더 관찰 권고).</div></div><div class="lock"><div class="lh">폐기 기준 전수 0건은 정확 — 유일한 게이트 통과 후보는 이미 정지된 캠(김보은C1), SP validation(세럼) 캠은 다음 순번 근접 <span style="font-size:11px;color:#999">발견 205</span></div><p>kill_candidates.items=[]가 실제로 맞는지 대시보드 캐시(amazon.campaigns, 누적 cost/sales/clicks)로 전수 재계산한 결과, 원 게이트 조건(누적비용≥89.16 AND 매출0 AND 클릭≥25)을 만족하는 캠은 정확히 1개(260812_UAE_SB영상_S1다크스팟_김보은C1_US히어로이식, 누적 101.43·클릭37·매출0) 뿐인데, 이 캠은 enabled=false(이미 정지)라 build_dashboard.py의 실제 로직(kill_candidates 함수: enabled==True·SB·mop_제외만 대상)에서 애초에 제외 대상입니다 — 이미 꺼진 캠을 '킬'할 필요는 없으므로 빈 배열이 맞습니다. 근접 후보는 SP validation(세럼, mop_B0FV7XWDYF..._validation) 캠으로 누적비용 81.57·클릭54·매출0 — 게이트(89.16)까지 7.59 AED 남았고 이번 주에만 38.78 AED·25클릭·주문0을 추가해 다음 주 안에 게이트를 넘을 가능성이 있습니다. 단 이 캠은 mop_(자동위임) 접두라 현재 코드의 폐기 기준 대상에서 원천 제외됨(위임 제외 조항) — 매출 0가 계속되면 수동 검토가 필요.</p><div class="bd-src">근거 — reports/dashboard/cache/대시보드 캐시 전수 스캔(cost≥89.16 AND sales==0 AND clicks≥25) → 166165223660833(101.43·0·37·enabled:false) 1건. build_dashboard.py 1047–1092행 kill_candidates(): 'if not c.get("enabled") or sub!=SB or name startswith mop_: continue'. 대시보드 캐시 주간 슬라이스: 211831203620285(mop_B0FV7XWDYF..._validation) 이번 주 spend38.78·clicks25·orders0; 대시보드 캐시 누적 81.57·clicks54.</div><div class="sowhat"><b>💡 다음 수:</b> SP validation(세럼) mop_ 캠은 자동 폐기 기준 대상이 아니므로 사람이 직접 추적 — 다음 주에도 매출 0이면 예산 재배분 검토.</div></div><div class="lock"><div class="lh">PONY 신규 SB 2캠 중 SERUM은 이번 주 노출 0(집행 실패 신호), CREAM만 소량 서빙·문자 그대로의 'pony' 검색어는 0건 <span style="font-size:11px;color:#999">발견 206</span></div><p>9/2 신규 생성된 PONY 세럼 캠(236052750187239)은 이번 주 7일간 SB 캠페인/일별 리포트 어디에도 단 1행도 잡히지 않습니다 — 지출·클릭·노출 전부 0으로, ENABLED 상태임에도 auction에 전혀 참여하지 못한 것으로 보입니다(콜드스타트 지연일 수도 있으나 4일이 지나도록 0은 이례적). PONY 크림 캠(157365120486587)은 소량 서빙(AED6.12 ($1.67)·클릭2·노출1901, 9/3–9/4에만 지출)됐지만 주문 0이고, 타겟팅은 'skin care'·'korean skin care'·'face cream' 등 제네릭 브로드 키워드입니다 — 검색어 리포트(SP·SB 둘 다) 전수를 봐도 실제 소비자가 입력한 검색어에 'pony'라는 문자열이 담긴 건은 0건입니다(캠페인명에만 PONY가 들어갈 뿐, 소비자가 'pony'로 검색해서 들어온 게 아닙니다).</p><div class="bd-src">근거 — grep '236052750187239' 광고 API 주간 리포트 / ads-api-sb-campaigns-daily-...json → 매치 0건. 대시보드 캐시 주간 슬라이스에도 해당 campaign_id 없음. PONY_CREAM(157365120486587)은 campaigns_week에 spend6.12·clicks2·impr1901·orders0, daily는 9/3(3.06/1클릭)·9/4(3.06/1클릭)만. grep -i 'pony' ads-api-sb-search-term/-targeting-*.csv → 전부 'pony-ae_cream'(캠페인 alias)일 뿐 실제 검색어는 'korean skin care', 'skin care' 등 제네릭. ads-api-sp-search-term에는 'pony' 매치 0건.</div><div class="sowhat"><b>💡 다음 수:</b> PONY_SERUM 캠 서빙 실패 원인 점검 필요(예산·입찰·타겟팅·ASIN 승인 상태 확인) — 이번 주 지시('PONY 활용 집중')가 세럼 쪽에서는 아직 집행되지 못한 상태.</div></div></div></div></details><details class="acc"><summary><span class="pill-board">📂</span>발견 원장 · 메타 — 8건 전문</summary><div class="bd"><div class="locks"><div class="lock"><div class="lh">메타 잔차 ROAS 0.94배 — 본전 1.48 미달이나 전주 0.67배 대비 개선 <span style="font-size:11px;color:#999">발견 301</span></div><p>이번 주 아마존 광고 밖 매출(잔차, 기본값=메타) = total_sales 2,234.40 − amz_sales 997.02 = AED 1 ($0.27),237.38. 메타 지출 1,319.45 대비 잔차 ROAS = 0.938배. 본전(BEP) 1.48 미달이지만, 전주(5주차) 메타 순기여 0.669배(233.34÷348.88)보다는 개선. 지연귀속은 이번 주 0건으로 확인됐으므로(아래 근거) 이 잔차에서 추가로 뺄 것은 없습니다 — 즉 0.94배는 이미 순수치입니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: total_sales=2234.4, amz_sales=997.02, meta_spend=1319.45. 수집 로그 '지연 귀속' 절: 9/5 09:40 미러 누적귀속매출 3,908.64 − 8/30 09:40 2,911.62 = 997.02(이번 주 귀속매출과 정확히 일치, 소급 반영 0). 직전 두 호 보고서 정독 기록 A절: 5주차 메타 순기여 0.67배(233.34÷348.88).</div><div class="sowhat"><b>💡 다음 수:</b> 메타는 여전히 본전 미달 상태 — 증액 판단은 보류. 다음 주(7주차)에도 같은 방식(주간 총합 기준)으로 재계산해 개선 추세가 이어지는지 확인.</div></div><div class="lock"><div class="lh">일별 meta_est 필드를 단순 합산하면 잔차가 36.9% 부풀려짐 — 반드시 주간 총합 기준으로 계산 <span style="font-size:11px;color:#999">발견 302</span></div><p>대시보드 캐시 주간 슬라이스의 'daily' 배열 각 항목에 이미 'meta_est'(일별 잔차 추정)가 들어있는데, 이를 7일 합산하면 AED 1,569.72 ($427)로 실제 주간 잔차(1,237.38)보다 332.34(36.9%) 과대계상됩니다. 원인: 9/1 하루가 amz_sales(332.34)가 total_sales(0.0)보다 큰 역전 상태(귀속창이 주문일과 다른 날짜 기준이라 발생 추정)인데, 일별 meta_est가 음수를 0으로 바닥처리(floor)해 다른 날의 초과분과 상쇄되지 못하고 그대로 누적됩니다. 이 함정에 걸리면 메타 잔차 ROAS가 1.19배(≈본전 근접)로 잘못 보여 실제(0.94배, 본전 미달)와 반대 인상을 줍니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: 2026-09-01 { total_sales: 0.0, amz_sales: 332.34, meta_est: 0.0 } — amz_sales가 total_sales를 초과하는 유일한 날. daily 7건의 meta_est 합계 = 502.02+134.34+0.0+367.68+0.0+233.34+332.34 = 1,569.72 (직접 합산 재계산). 주간 정본(week_totals 기준) 잔차 1,237.38과 332.34 차이 = 정확히 9/1 amz_sales 값과 일치.</div><div class="sowhat"><b>💡 다음 수:</b> 이번 주와 향후 호 모두 메타 잔차·ROAS는 week_totals(total_sales−amz_sales) 기준으로만 계산하고, daily.meta_est 필드는 일별 추이 참고용으로만 쓰되 합산해서 주간치로 쓰지 말 것 — 캐시 빌드 스크립트에 이 필드의 합산 위험을 주석으로 남기는 것을 백로그 후보로 제안.</div></div><div class="lock"><div class="lh">온플랫폼 퍼널 병목은 여전히 LPV→IC 단계 — 9/2 진단과 재확인 일치 <span style="font-size:11px;color:#999">발견 303</span></div><p>이번 주 메타 퍼널: 노출82,037→클릭4,709(CTR 5.74%)→LPV3,562(클릭의 75.64%, 강함)→IC396(LPV의 11.12%, 약함). 상단(클릭→LPV)은 견고하고 하단(LPV→IC)만 약한 구조가 그대로 재현됐습니다 — 9/2 John 질문 대응 진단(당시 IC/LPV 11.7%)과 사실상 동일 수치(11.12%)로, 그 사이 랜딩페이지 변경(9/3–9/4 세럼·크림 LP 구조 통일)에도 불구하고 병목 위치는 안 바뀌었습니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: spend_usd=1319.45, impr=82037, clicks=4709, lpv=3562, ic=396 (직접계산: CTR=4709/82037=5.740%, LPV율=3562/4709=75.64%, IC/LPV=396/3562=11.12%). UAE 운영 기록(changelog) 2026-09-02 '저녁 3' 항목: 'UAE ₩118÷11.7%=₩1,009'.</div><div class="sowhat"><b>💡 다음 수:</b> PONY 전용 랜딩페이지(9/7까지 예정) 완료·투입 후 IC/LPV 변화를 다음 주에서 확인 — 랜딩이 유일하게 아직 손 안 댄 레버.</div></div><div class="lock"><div class="lh">9/1 메타 지출 95% 급감(양대 캠페인 동반) — 원인 changelog에 없음, 확인 안 됨 <span style="font-size:11px;color:#999">발견 304</span></div><p>2026-09-01 하루 메타 전체 지출이 AED 9.24(주 평균 188.5의 5%)로 급감, 클릭 39건·노출 684건도 같은 폭으로 감소. 캠페인별로도 UGC8(지출 4.63, 클릭22)·CreamUGC7(지출 4.61, 클릭17) 둘 다 동시에 거의 정지 수준으로 떨어졌습니다 — 특정 캠페인 예산 소진이 아니라 계정/지면 단위 이슈로 보이나, 운영 기록(changelog)·이번 주 실행 목록 어디에도 9/1 메타 관련 조치나 원인 기록이 없습니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스'2026-09-01']: spend_usd=9.24, impr=684, clicks=39, lpv=28, ic=4 (전후일 대비 impr 8–19배 낮음). meta_campaigns_week: campaign 120255323539140348(UGC8) 2026-09-01 spend=4.62735·clicks=22 / campaign 120255364343680348(CreamUGC7) 2026-09-01 spend=4.60962·clicks=17. 이번 주 실행 목록·운영 기록(changelog) grep 결과 9/1 메타 관련 조치 기록 없음.</div><div class="sowhat"><b>💡 다음 수:</b> 확인 안 됨 — 원인 불명이므로 판정 보류. 메타 광고관리자에서 9/1 당일 딜리버리 로그(검토·정책·예산 이벤트)를 직접 확인 필요(광고 설정 변경 권한 없어 여기서는 조회만 권고).</div></div><div class="lock"><div class="lh">최대 두 지출처(UGC8·CreamUGC7) IC당비용 격차 43% — 판정 임계 없어 관찰만 <span style="font-size:11px;color:#999">발견 305</span></div><p>이번 주 메타 지출 상위 2개 캠페인(합쳐서 주 지출의 87.7%)의 효율이 갈립니다: UGC8 지출618.74·IC당비용2.81 vs CreamUGC7 지출539.66·IC당비용4.03(+43%). CTR·LPV율은 비슷(6.06%/5.09%, 75.96%/74.29%)하고 격차는 LPV→IC 단계에서만 벌어집니다(11.70% vs 9.33%). 단, 운영 기록(changelog) 9/6 기록대로 메타 채널 단위 cost_per_ic에는 코드에 확립된 임계값이 없어(관용 캠페인 vs 폐기 기준이 아직 없음) '언더퍼폼'으로 판정하지 않고 관찰 항목으로만 남깁니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스 7일 합산(직접계산): UGC8(id 120255323539140348) spend=618.74·clicks=2475·lpv=1880·ic=220·cost_per_ic=2.81·ctr=6.06%·lpv율=75.96%·ic/lpv=11.70%. CreamUGC7(id 120255364343680348) spend=539.66·clicks=1933·lpv=1436·ic=134·cost_per_ic=4.03·ctr=5.09%·lpv율=74.29%·ic/lpv=9.33%. UAE 운영 기록(changelog) 2026-09-07 Phase1 항목: 'core.meta 자체가 없습니다... 확립된 임계가 코드에 없어 판정색을 넣지 않았다'.</div><div class="sowhat"><b>💡 다음 수:</b> 크림 LP 구조 개편(9/3–9/4)이 CreamUGC7에 어떤 영향을 줬는지 다음 주에서 재확인 — 임계값이 없으므로 지금 정지·감액 등 조치는 제안하지 않음.</div></div><div class="lock"><div class="lh">PONY 세럼·크림 캠페인 — 상단퍼널은 동일하게 강하나 하단퍼널(IC 전환)에서 갈림 <span style="font-size:11px;color:#999">발견 306</span></div><p>PONY-Serum·PONY-Cream 둘 다 CTR 9.3%대로 UGC8·CreamUGC7(5–6%대)보다 뚜렷이 높습니다 — '포니가 신뢰를 준다'는 가설과 방향이 일치. 그러나 LPV→IC에서 갈립니다: PONY-Serum 20.63%(이번 주 4개 캠페인 중 최고) vs PONY-Cream 13.33%. 결과적으로 IC당비용도 PONY-Serum 3.09(양호) vs PONY-Cream 5.04(4캠 중 최저 효율)로 벌어집니다. 두 캠페인 다 이번 주 신규(9/2 개시)라 표본이 작습니다(IC 26건·16건) — 단발 전환 판정 금지 원칙상 확정적 결론은 아닙니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스 7일 합산(직접계산): PONY-Serum(id 120255406141560348) spend=80.46·clicks=155·lpv=126·ic=26·cost_per_ic=3.09·ctr=9.33%·lpv율=81.29%·ic/lpv=20.63%. PONY-Cream(id 120255406142130348) spend=80.59·clicks=146·lpv=120·ic=16·cost_per_ic=5.04·ctr=9.31%·lpv율=82.19%·ic/lpv=13.33%.</div><div class="sowhat"><b>💡 다음 수:</b> 표본(IC 16–26건)이 작아 판정 보류. 다음 주까지 표본이 쌓이면(각 50건+) 크림 쪽 LP·소재 원인 분리 재검토.</div></div><div class="lock"><div class="lh">'메타 자사계정 우선집행' 지시(9/2) 실행 확인 — 이후 파트너십 광고로 격상 <span style="font-size:11px;color:#999">발견 307</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>John 9/2 지시('포니 계정 명의 광고 권한 열리기 전까지 우리 계정에서 그 영상으로 집행')대로 9/2 PONY-Serum·PONY-Cream 두 캠페인이 VDVIA 자사 메타 계정에 신규 생성·활성화됐고, 기존 UGC8·CreamUGC7 외 이번 주 유일하게 스펜드가 발생한 4개 ACTIVE 캠페인에 포함됩니다(나머지 12개 캠페인은 전부 PAUSED — 그중 11개(W1_01–05·C1M_01–03·Manyo_01–03)는 meta_campaigns_week에서 스펜드 0으로 확인되고, 나머지 1개 ProvenReuse는 주간 데이터 자체가 없어 스펜드 미확인). 이후 9/3에 포니 본인 계정 게시물을 직접 부스팅하는 '파트너십 광고(ad code)' 방식으로 전환돼, 애초 '권한 열리기 전까지의 임시조치'에서 한 단계 더 나아갔습니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: status=ACTIVE인 것은 UGC8·CreamUGC7·PONY-Serum(id 120255406141560348)·PONY-Cream(id 120255406142130348) 4개뿐, 나머지 11개(W1_01–05·C1M_01–03·Manyo_01–03)는 전부 PAUSED. meta_campaigns_week에서 이 11개 PAUSED 캠페인은 전부 빈 딕셔너리(스펜드 0). 이번 주 실행 목록 id10: '20260902 PONY UAE 메타 2캠 신규 생성+활성화... 기존 UGC8v2·CreamUGC7 세팅 승계' / id16: '포니 4캠페인 파트너십 광고(ad code)로 전환 — UAE 2건 포함(세럼 2189163988477844·크림 2157311688249731)'.</div><div class="sowhat"><b>💡 다음 수:</b> 없음 — 지시 이행 확인 완료, 추가 조치 불필요.</div></div><div class="lock"><div class="lh">홀드아웃 없이 판별 가능한 것만 판정 — 이번 주 활성 캠페인은 4개뿐이라 대조군 자체가 없음 <span style="font-size:11px;color:#999">발견 308</span></div><p>9/2 결정대로 메타 홀드아웃(검증 목적 OFF)은 제안하지 않았습니다. 대신 ⓐ주간 총합 잔차 vs 본전(finding 1) ⓑ일별 퍼널 단계 분해(finding 3) ⓒ캠페인 간 교차비교(finding 5·6)로 판별 가능한 것만 판정했습니다. 다만 이번 주는 ACTIVE 캠페인이 UGC8·CreamUGC7·PONY-Serum·PONY-Cream 4개뿐이고 나머지는 전부 PAUSED라 자연 대조군(다른 조건에서 계속 도는 캠페인)이 사실상 없습니다 — 4개 캠페인 자체가 서로의 비교 기준이 되는 구조라 외부 벤치마크 없이는 '좋다/나쁘다' 판정에 한계가 있습니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: 16개 캠페인 중 status=ACTIVE 4개·PAUSED 11개(+ProvenReuse 1개 스펜드 0 데이터 없음). meta_campaigns_week: PAUSED 11개 캠페인 ID 전부 값이 {}(스펜드 0). UAE 운영 기록(changelog) 2026-09-02: '메타 홀드아웃 금지... 별도 세트 병행 비교로 대체' (결정파일 2026-09-02-폐기-검증목적-메타-홀드아웃-학습단절.md).</div><div class="sowhat"><b>💡 다음 수:</b> 없음 — 이번 주는 판정 방법론 준수만 확인. 캠페인 수가 늘어나면(재가동·신규) 자연 대조군 확보 여부를 다시 점검할 것.</div></div></div></div></details><details class="acc"><summary><span class="pill-board">📂</span>발견 원장 · prevgap — 8건 전문</summary><div class="bd"><div class="locks"><div class="lock"><div class="lh">BEP 정본이 발행 다음날(9/8) 1.48→1.63로 소급 정정 — 6주차 전체 판정 기준이 이미 바뀜 <span style="font-size:11px;color:#999">발견 501</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>6주차 보고서(대상 주 8/30–9/5)가 참조해온 본전 ROAS 1.48은, 실제 발행일인 2026-09-08 10:44 John 결정(크림 판매가 AED132.21 ($36)→99.00 반영)으로 metrics_config_uae.json이 1.63으로 갱신·커밋됐습니다(commit d8791e7: bep_roas_amazon 1.48→1.63·cpc_breakeven_usd 4.46→3.04·contribution_margin_usd 89.16→60.85). 이 정정은 '다음 주(7주차)부터 적용'이 아니라 이미 이번 6주차 보고서 자체의 빌드 산출물(_build_facts.py→주간 정본 데이터)에 반영돼 있습니다 — FACTS.constants가 명시적으로 '이번 주부터 신 본전(1.63)을 쓴다'고 기록합니다. 단 대시보드 캐시 주간 슬라이스(대시보드 원 캐시, 9/7 09:10 생성)의 bep_config.overall_pass는 여전히 구값 1.48을 담고 있어 원본 캐시와 최종 보고서 계산값이 어긋난 상태이므로 캐시 재생성 필요 여부를 확인해야 합니다. 판정 방향은 불변: 전체 MER 1.274는 신·구 BEP 모두 미달, SP(자동위임) ROAS 2.929는 신·구 BEP 모두 상회.</p><div class="bd-src">근거 — 30_growth/marketing/metrics_config_uae.json (git diff, working tree 미커밋 상태): computed.cream.bep_roas_amazon 1.48→1.63, cpc_breakeven_usd 4.46→3.04, contribution_margin_usd 89.16→60.85, representative.bep_roas_amazon 1.48→1.63. 00_compass/decisions/2026-09-08-UAE-크림-판매가-AED99-config반영.md ('아마존 계정 ROAS 1.53이 흑자에서 본전미달로 바뀐다'). 대시보드 캐시 주간 슬라이스=1.48(구값, 아직 옛 config 기준)·amazon_cpc_breakeven=4.46(구값).</div><div class="sowhat"><b>💡 다음 수:</b> 7주차 보고서부터 본전 1.63·크림 본전CPC 3.04 채택(이미 config 반영 진행 중). 6주차 발행본 재발행은 불필요(방향 판정 불변)하되, 7주차 서두에 'BEP 9/8부로 1.48→1.63 정정' 각주를 명시해 침묵 회귀를 막을 것.</div></div><div class="lock"><div class="lh">판정 예약 ⓑ 방문 전환율 — 임계값은 통과했으나 '광고 유입 급증' 전제가 무너져 시험 강도가 약함 <span style="font-size:11px;color:#999">발견 502</span></div><p>사전등록 임계값(세럼 CVR≤1.8% 또는 전체≤1.5%면 우연 기각)은 이번 주 세럼 2.90%·전체 2.97%로 둘 다 크게 상회 — 문자 그대로는 기각되지 않고 가설(유입 질 개선)이 지지됩니다. 그러나 이 시험이 전제한 'S1 635캠 재가동으로 광고 유입 급증'은 실제로 일어나지 않았습니다: S1·S2 지출은 8/30–31 이틀에만 몰렸고(AED22.6 ($6.15)·클릭11) 9/1부터는 0으로 죽었습니다(8/31 전량 재정지 확인). 그 결과 광고클릭/방문 비중이 154/640=24.1%로, 전주 141/285≈49.5%('50%대')보다 오히려 낮아졌습니다. 즉 이번 주는 '광고 유입이 급증해도 전환율이 버텼다'가 아니라 '광고는 오히려 줄고 비광고 유입(2.25배)이 급증한 가운데 전환율이 유지·개선됐다'는, 설계와 다른 실험이 됐습니다.</p><div class="bd-src">근거 — 방문·전환율 실측 기록 (세럼2.90%·전체2.97% vs 전주 재계산 2.15%/2.46%, 방문 285→640). 대시보드 캐시 주간 슬라이스(S1+S2 daily 합산: 8/30 spend14.6·clicks7, 8/31 spend8.0·clicks4, 9/1–9/5 전부 0) — 직접 재계산. week_totals.amz_clicks=154 / 방문합계640 = 24.1%. 전주 대시보드 캐시 주간 슬라이스(prev) week_totals.amz_clicks=141, 방문285 → 49.5%. 2026-08-31-weekly/index.html 원문 인용('광고클릭 방문비중 50%대').</div><div class="sowhat"><b>💡 다음 수:</b> '우연 기각 안 됨(가설 지지)'로 기계적으로는 답하되, '검증 강도는 설계보다 약하다'는 단서를 반드시 병기. 다음 판정은 S1이 실제로 재가동돼 광고 유입이 커지는 주에 다시 걸어야 진짜 반증 조건이 성립합니다.</div></div><div class="lock"><div class="lh">판정 예약 ⓐ 자동위임(Optapex) 단독 성적 — 2주차에 흑자 전환, 단 레거시 ROAS엔 아직 못 미침 <span style="font-size:11px;color:#999">발견 503</span></div><p>SP 그룹(=mop_ 자동위임 5캠 전량, 다른 SP 없음)이 이번 주 spend AED340.43 ($93)·sales AED997.02 ($271)·주문9·ROAS2.929로 신·구 본전(1.48/1.63) 모두 상회. 5주차 콜드스타트 ROAS 1.02–1.35 대비 뚜렷한 개선이고, 주문도 8/30·9/1·9/3·9/4 서로 다른 4일에 분산돼 단일 이벤트 우연이 아닙니다. verify_due였던 '9/4 기준'으로 잘라도(9/5 지출 AED49.01 ($13)·매출0 제외) 누적 spend AED291.42 ($79)·sales AED997.02 ($271)로 ROAS 3.42 — 오히려 더 높습니다. 다만 8/28 정지된 레거시 SP의 정지 시점 누적 ROAS 4.31에는 아직 못 미칩니다.</p><div class="bd-src">근거 — 광고 API 주간 리포트 (5개 mop_ 캠페인 spend 170.54+38.78+89.09+40.01+2.01=340.43, sales7d 233.34+0+198.0+565.68+0=997.02, purchases7d 2+0+2+5+0=9). ads-api-sp-campaigns-daily...csv 일별 재계산(8/30:주문2, 8/31:0, 9/1:3, 9/2:0, 9/3:2, 9/4:2, 9/5:0). 운영 기록(changelog) 2026-08-28 '레거시 SP(ROAS 4.31)'.</div><div class="sowhat"><b>💡 다음 수:</b> '본전 넘김'은 확정이나 '레거시를 완전 대체했다'는 아직 이릅니다 — 9주문 소표본. 예산 확대는 2주 더 관찰 후 판단.</div></div><div class="lock"><div class="lh">판정 예약 ⓒ 메타 UGC8 장바구니 컷라인 재산정 — 표본 조건 충족, 적용은 여전히 미집행 <span style="font-size:11px;color:#999">발견 504</span></div><p>IC(장바구니 진입) 50건 이상 조건은 이미 5주차 발행 시점(IC 87)부터 충족돼 있었고 이번 주 컨텍스트에서도 IC 171로 재확인됐지만, 재산정된 컷라인 값을 실제로 적용하는 결정은 아직 John 승인 대기 — 6주차에도 미집행 상태가 이어집니다. '판정 완료'로 서술하면 안 되고 '적용 대기'로 남겨야 합니다. 참고로 이번 한 주만의 메타 IC는 396건으로 더 쌓였습니다.</p><div class="bd-src">근거 — _week-context.md L41 'IC 50건 이상 조건 충족(IC 171) 확인됐으나 재산정 실제 적용은 John 승인 대기 상태로 남음'. 2026-08-31-weekly/index.html 원문 'IC≥50 조건 충족(87건)이므로 컷라인 판정을 다음 방문에 회수'. 대시보드 캐시 주간 슬라이스=396(이번 주).</div><div class="sowhat"><b>💡 다음 수:</b> 재산정 적용 여부를 John에게 명시적으로 다시 물어 결정 큐를 닫을 것 — 데이터는 이미 3주째 대기 중.</div></div><div class="lock"><div class="lh">3→4→5호 진단 흐름 — 6주차는 '구조교체' 원인론을 지지(정정 아님), 단 회복은 SP 국한 <span style="font-size:11px;color:#999">발견 505</span></div><p>5호는 '광고클릭 CVR 0.7% 재붕괴는 전환율 전반 붕괴가 아니라 검증캠 3개 정지+자동위임 콜드스타트라는 구조교체 탓'이라고 특정했습니다. 6주차 amz_cvr_pct는 5.844%(9/154)로 크게 회복됐는데, 재계산해 보면 이 회복은 정확히 그 구조교체의 당사자인 SP(자동위임)에서만 발생했습니다 — SP 클릭 CVR 8.49%(9/106) vs SB 클릭 CVR 0%(0/48, S1·AEC3P·PONY 전부 매출 0). 즉 '광고클릭 전환이 좋아졌다'는 일반화가 아니라 '구조를 바꾼 그 채널이 콜드스타트를 지나며 회복했다'는 5호 원인론이 정확히 지지됩니다. 침묵 회귀 없이 '지지, 단 SP 한정'으로 명시해야 합니다.</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스=5.844(9/154 재계산 일치). groups_week SP(orders9/clicks106=8.49%) vs 기타+S1+S2(orders0/clicks48=0%). 2026-08-31-weekly 원문(4호 하향수정·5호 구조교체 진단) 재인용.</div><div class="sowhat"><b>💡 다음 수:</b> 6주차 서술에서 'CVR 회복'을 SP 채널로 스코프하고, SB(S1·AEC3P·PONY) CVR 0%는 별개 미해결 축으로 남겨 낙관 편향을 막을 것.</div></div><div class="lock"><div class="lh">US 월간 전략(SP고도화·SB키워드우선)과 이번 주 UAE 실측 — 방향이 반대, 이식은 시기상조 <span style="font-size:11px;color:#999">발견 506</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>US 8월 전략은 '위임보다 우리가 지정하는 게 낫다'(SP 고도화+SB 키워드 우선, 위임→유도로 전환)입니다. 그러나 이번 주 UAE는 정반대 패턴을 보입니다 — 매출 AED997.02(9주문) 전액이 자동위임 SP에서 나왔고, 수동 큐레이션 SB 전체(S1다크스팟46캠+S2 6캠+AEC3P22캠+PONY1캠=75캠, 지출AED94.42·클릭48)는 매출 0입니다. UAE의 SB는 아직 탐색 단계(S1은 이틀 만에 재정지, PONY는 집행 3일차)라 US와 같은 국면이 아니고, 이번 주 데이터만으로 US식 'SB 키워드 우선' 이식을 정당화할 수 없습니다 — 오히려 위임이 작동하고 유도는 아직 증명 전이라는 반대 신호입니다.</p><div class="bd-src">근거 — 광고 API 주간 리포트(mop_ 5캠이 SP 전체). 대시보드 캐시 주간 슬라이스 SB sub 75캠 합계 spend94.42·clicks48·sales0(재계산). 직전 두 호 보고서 정독 기록 §D(US 3대전략 원문 인용).</div><div class="sowhat"><b>💡 다음 수:</b> US 전략을 UAE에 조기 이식하지 말 것 — S1·AEC3P·PONY SB가 최소 유의미 표본(클릭 300+ 등)을 쌓기 전까지는 예산 우위를 SP(위임)에 유지하는 편이 이번 주 데이터와 정합합니다.</div></div><div class="lock"><div class="lh">BA(SQP·TST·Market Basket) 2주 연속 결손 지속 — 신규 확보 여전히 실패 <span style="font-size:11px;color:#999">발견 507</span></div><p>대상 주(8/30–9/5) 아마존 BA SQP가 여전히 미발행이라(주 선택기 'Invalid Input', 9/7 09:50 실측) 5주차와 같은 전주분(8/23–29)을 재인용할 수밖에 없었습니다. 저장소를 확인하면 4주차·5주차 자체 SQP 파일은 아예 존재하지 않았고(8/17호의 8/9–15분과 이번에 받은 8/23–29분 두 스냅샷뿐), TST 브랜드필터는 SPA 리다이렉트로 1회 실패 후 중단, Market Basket은 이번 주에서 아예 미시도입니다.</p><div class="bd-src">근거 — 수집 로그 표(BA 3종 행). ba-sqp-brand-2026-08-23_2026-08-29.md 헤더('대상 주는 아마존 미발행'). find 결과: 2026-08-24-weekly·2026-08-31-weekly의 raw/에 sqp 파일 부재, 2026-08-17-weekly와 2026-09-07-weekly에만 존재.</div><div class="sowhat"><b>💡 다음 수:</b> 다음 주에서 8/23–29(재확인)+8/30–9/5(신규) 2주치 회수 시도, TST는 5주차에서 계획한 daily 옵션 우회로 재시도할 것.</div></div><div class="lock"><div class="lh">지연 귀속 실측 0건 — 5주차와 달리 이번 주는 잔차 계산에 조정 불필요 <span style="font-size:11px;color:#999">발견 508</span></div><p>_status.md 일별 미러 대조 결과 8/30–9/7 사이 누적 아마존 광고 귀속매출이 정확히 이번 주 amz_sales(AED997.02 ($271))만큼만 증가했습니다(2,911.62→3,908.64) — 전주 클릭이 이번 주로 소급 귀속된 건이 0건입니다. 5주차(전주 클릭 지연구매 4건·AED502.02 ($137), 잔차 계산 왜곡 요인)와 대비되는 깨끗한 주로, 이번 주 잔차(total_sales−amz_sales=2,234.40−997.02=AED1,237.38 ($337), 메타 기본값 귀속 대상)는 별도 지연귀속 차감 없이 그대로 읽어도 됩니다.</p><div class="bd-src">근거 — 수집 로그 §지연 귀속 표(08-30 09:40: 2,911.62 → 09-07: 3,908.64, 차이 997.02 = amz_sales와 정확 일치). 대시보드 캐시 주간 슬라이스(total_sales 2234.4, amz_sales 997.02).</div><div class="sowhat"><b>💡 다음 수:</b> 이번 주 잔차/메타 순기여 밴드 계산 시 지연귀속 조정 단계를 생략해도 무방함을 다른 섹션(잔차 귀속 담당)에 명시적으로 전달할 것.</div></div></div></div></details><details class="acc"><summary><span class="pill-board">📂</span>발견 원장 · sqp — 6건 전문</summary><div class="bd"><div class="locks"><div class="lock"><div class="lh">방문 2.25배 급증은 광고클릭이 아니라 오가닉 유입발 — 매출 급증의 주 동력 <span style="font-size:11px;color:#999">발견 601</span></div><p>이번 주 총매출(AED2,234.40 ($608)) 급증의 주 원인은 방문 증가(285→640, +124.6%)이고, 그 방문 증가분의 대부분은 비광고 유입입니다. 같은 기간 광고클릭은 141→154(+9.2%)만 늘어, 방문 증가분 355건 중 광고기여로 설명되는 부분은(기존 방문:클릭 비율 2.02 유지 가정 시) 약 26건뿐 — 나머지 –329건(약 93%)이 비광고(오가닉·직접 등) 유입으로 추정됩니다.</p><div class="bd-src">근거 — 방문·전환율 실측 기록: 총방문 전주285→이번주640. 대시보드 캐시 주간 슬라이스=154 vs prev/대시보드 캐시 주간 슬라이스=141(+13, +9.2%).</div><div class="sowhat"><b>💡 다음 수:</b> 다음 주 발행 전 오가닉 유입원(검색순위 변화·BSR·외부 referral 등) 특정 필요 — 원인이 확인되지 않은 채 이 성장을 광고 성과나 예산 증액 근거로 쓰지 말 것.</div></div><div class="lock"><div class="lh">매출 급증 분해: 방문기여 2.25배 &gt; CVR기여 1.21배 — CVR 개선은 실재하나 보조적 <span style="font-size:11px;color:#999">발견 603</span></div><p>유닛 성장(7→19, 2.71배)은 방문성장(2.25배)×CVR성장(2.97%/2.46%=1.21배)로 정확히 분해됩니다. 이번 주 판매 급증의 지배 요인은 방문(트래픽)이고 CVR 개선(+0.51%p)은 보조적 기여입니다. 매출 성장(869.70→2,234.40 AED, 2.57배)이 유닛 성장(2.71배)보다 소폭 낮아 블렌디드 단가가 약간 하락 — 크림 2+1 BOGO 믹스 영향 가능성이 있으나 원본에 직접 근거 없음(확인 안 됨).</p><div class="bd-src">근거 — 방문·전환율 실측 기록: 합계 CVR 2.46%→2.97%, 방문285→640, 유닛7→19. 대시보드 캐시 주간 슬라이스=2234.4 vs prev/대시보드 캐시 주간 슬라이스=869.7.</div><div class="sowhat"><b>💡 다음 수:</b> 다음 주 보고 시 'CVR이 개선됐다'만 단독 서술하지 말고 방문 기여를 분리해 제시 — 방문 원인이 불명한 상태에서 CVR 개선을 광고 최적화 성과로 귀속하는 서술은 근거 없음.</div></div><div class="lock"><div class="lh">5주차 사전등록 판정: CVR 상승 '우연 기각선' 안 걸림 → 지지, 단 전제 붕괴로 참고치 <span style="font-size:11px;color:#999">발견 604</span></div><p>5주차 발행 시 사전등록한 판정 기준(세럼 CVR 1.8%↓ 또는 전체 1.5%↓ 시 우연 기각)을 이번 주 실측(세럼2.90%·전체2.97%)에 대입하면 둘 다 기각선 위 → 우연으로 기각되지 않음(가설 지지). 그러나 이 기준은 '광고 유입 급증 주'를 전제로 설계됐는데, 실측상 광고클릭은 +9.2%에 그쳤습니다(finding 1 참조) — 원설계 전제가 성립하지 않은 채 나온 결과라 확정 판정이 아닌 참고치로만 취급해야 합니다. 표본도 여전히 작습니다(주간 총유닛 19).</p><div class="bd-src">근거 — 직전 두 호 보고서 정독 기록 27행("세럼 CVR 1.8%↓ 또는 전체 1.5%↓면 우연 기각") 및 88행("방문 전환율 2배 상승이 우연인지 6주차 판정 예정"). 방문·전환율 실측 기록: 세럼CVR2.90%·합계CVR2.97%.</div><div class="sowhat"><b>💡 다음 수:</b> 이 판정을 다음 보고서에 '개선 확정'으로 넘기지 말 것 — 전제(광고유입 급증) 붕괴 사실을 함께 명기하고 참고치로만 인용.</div></div><div class="lock"><div class="lh">브랜드 검색 체크아웃 붕괴 지속 (⚠️전주 8/23-29분, 대상 주 2주 연속 BA 미발행) <span style="font-size:11px;color:#999">발견 605</span></div><p>브랜드 쿼리 'lemonderma'(검색량51)에서 자사 클릭점유86.21%·장바구니점유91.67%까지 갔지만 그 쿼리에서 나온 전체(전 판매자 합산) 구매가 0건이었습니다 — 우리만 못 판 게 아니라 그 검색→구매 경로 자체가 그 주엔 아무에게도 결제로 이어지지 않았다는 뜻. lemonshot 계열 변형어(150 exo booster 등)도 전부 동일 패턴(장바구니 있음, 구매 0). 이 데이터는 대상 주(8/30-9/05)가 아닌 전주(8/23-29)분이며, 대상 주 BA는 2주 연속 미발행 상태.</p><div class="bd-src">근거 — ba-sqp-brand-2026-08-23_2026-08-29.md: lemonderma 행(노출699·자사노출196[28.04%]·클릭29·자사클릭25[86.21%]·담기12·자사담기11[91.67%]·구매0[0%]).</div><div class="sowhat"><b>💡 다음 수:</b> 체크아웃 이탈 원인 실사(결제 UI·배송비 노출·재고 표시 등)가 아직 미완이면 우선순위 재상정 — BA 결손이 2주째라 7주차에도 이 데이터가 없을 가능성 대비 필요.</div></div><div class="lock"><div class="lh">비브랜드 대형검색어 클릭점유 0% 지속되지만, 온페이지 전환력은 시장 구매율 수준에 근접 <span style="font-size:11px;color:#999">발견 606</span> <span style="font-size:10.5px;font-weight:800;color:#a06a00;background:#fdf3e0;border-radius:999px;padding:1px 8px">수정 반영</span></div><p>niacinamide serum(검색량2,966)·serum(1,837)·korean skincare(4,017)는 자사 클릭·구매 점유 정확히 0%입니다. retinol(3,356)은 구매 점유는 0%이나 클릭 점유는 0%가 아니라 0.07%(자사클릭 1건/전체 1,392건으로 사실상 미미)입니다 — 노출은 잡히지만(0.09–1.06%) 4개 검색어 모두 사실상 클릭으로 이어지지 않습니다. 반면 이번 주 실측 온페이지 CVR(세럼2.90%·크림3.05%)은 이 시장 검색어들의 시장평균 구매율(serum2.89%·retinol3.13%)과 이미 비슷한 구간에 와 있습니다 — 병목이 페이지 전환력에서 검색결과 클릭 획득으로 이동했다는 기존 전략문서 진단(3갈래 병목 중 ⓑ 비브랜드 클릭 획득)을 재확인. 단 SQP 구매율(검색어 단위·전 판매자 합산)과 Unit Session %(방문 단위·자사 리스팅)는 정의가 달라 직접 등치는 아니며, SQP는 전주분.</p><div class="bd-src">근거 — ba-sqp-brand-2026-08-23_2026-08-29.md: niacinamide serum 구매율4.25%·serum 구매율2.89%·retinol 구매율3.13%(자사클릭·구매 전부 0%). 방문·전환율 실측 기록: 세럼CVR2.90%·크림CVR3.05%.</div><div class="sowhat"><b>💡 다음 수:</b> 비브랜드 클릭 획득(SB/SP 타겟팅·소재 노출력) 개선을 여전히 최우선 레버로 유지 — 온페이지는 상대적으로 손볼 여지가 줄었다는 근거로 우선순위 재확인.</div></div><div class="lock"><div class="lh">캐시 week_totals.orders 필드가 총주문수 아닌 광고귀속주문수와 동일 — AOV 왜곡 위험 <span style="font-size:11px;color:#999">발견 607</span></div><p>대시보드 캐시 주간 슬라이스의 week_totals.orders(9건)는 amz_orders(광고귀속 직접주문, 9건)와 정확히 같은 값입니다. 그러나 SP-API 실측 총주문은 17건(수집 로그)으로, 오가닉·기타 경로 주문 8건이 이 필드에서 누락돼 있습니다. 전주도 동일 패턴(orders=1=amz_orders=1, SP-API 실제 6건). 유닛 필드(total_units=19)는 방문리포트·SP-API와 정확히 일치해 신뢰 가능하나, orders 필드만 광고귀속치로 오염돼 있어 이 필드로 AOV를 계산하면 왜곡(9건 기준 AED248 ($68)/건 vs 실제 17건 기준 AED131 ($36)/건).</p><div class="bd-src">근거 — 대시보드 캐시 주간 슬라이스: orders=9, amz_orders=9(동일값). 수집 로그: "SP-API order_metrics ... 이번 주 AED2,234.40 ($608)·주문17·유닛19 / 전주 AED869.70 ($237)·주문6·유닛7".</div><div class="sowhat"><b>💡 다음 수:</b> 다음 주 이후 이 필드를 총주문수로 인용하는 다른 섹션(잔차·AOV 계산 등)이 있으면 정정 필요 — week_slice_ae.py 빌드 스크립트에 필드명 명확화(amz_orders_direct vs total_orders) 백로그 등록 제안.</div></div></div></div></details>
+<div class="dnote" style="margin-top:26px">
+  데이터 출처 — 실주문 정본: SP-API order_metrics(Asia/Dubai 기준) · 광고: Ads API EU 리전 주간 슬라이스 + 대시보드 캐시(2026-09-07 09:10 스냅샷) · 방문·전환율: 셀러센트럴 비즈니스 리포트 실조회 · 메타: 일별 집계.<br>
+  방법론 — 분석 발견 37건 전건을 원본 재계산으로 별도 검증(확정 36·수정 8·기각 1·미검증 0)했고 본문은 검증 통과 수치만 사용.
+  실행 성적표(★4)는 실행 전수 16건을 전후 데이터로 채점 — 무효 레버·미이행 포함 전건 게재. 구조 v4(2026-08-25 John 확정 계승, synth 스키마 개편은 6호).<br>
+  주의 — 통화는 전부 AED이며 전 금액 $ 병기(고정 페그 1 USD = AED 3.6725) · 본전(BEP)은 2026-09-08부터 1.53(구 1.48) · 브랜드 분석 3종은 결손(다음 주 회수 예정) · 수집 방법론은 <code>reports/2026-09-07-weekly/raw/수집 로그</code>.
+</div>
+<footer>Lemonderma · VDVIA — UAE 퍼포먼스 마케팅 6주차 · 성과 기간 8/30–9/5 · 9/7(월) 09:40 예약 실행 → 09:40–10:10 수집 완료, 5주차·US 월간 정독 등 조립 준비 중 지연 → 9/8(화) 발행</footer>
+</div>
+</body>
+</html>
