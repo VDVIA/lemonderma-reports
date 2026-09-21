@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>UAE 커뮤니티 1기 운영안</title>
+<meta name="description" content="레몬더마 Lemonderma First Look Partners 1기 — 목적, 타겟 페르소나, 커뮤니티·운영모델, 전체 타임라인, 모집·보상, 실행 체크리스트">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --mark:rgba(221,247,70,.32);
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --wall:#e23b3b; --wall-bg:#fde3df;
+  --gold-bg:#faefc0; --gold-ink:#6a5000;
+  --shadow:0 1px 0 rgba(0,0,0,.05);
+  --serif:"Libre Caslon Text", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Pretendard", -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --mark:rgba(221,247,70,.20);
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --wall:#ff7a6b; --wall-bg:#2c1512;
+    --gold-bg:#2b2410; --gold-ink:#e3c775;
+    --shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground-top:#1b200f; --ground:#100f0a;
+  --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+  --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+  --mark:rgba(221,247,70,.20);
+  --num:#c9e46c; --headline:#bdd382;
+  --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+  --pill-bg:#242812; --pill-ink:#c9e46c;
+  --wall:#ff7a6b; --wall-bg:#2c1512;
+  --gold-bg:#2b2410; --gold-ink:#e3c775;
+  --shadow:0 1px 0 rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 460px);
+  color:var(--ink); font-family:var(--sans);
+  padding:0 20px; padding-block:0;
+}
+.wrap{max-width:760px;margin:0 auto}
+::selection{background:var(--mark)}
+h1,h2,h3{text-wrap:balance;font-weight:900;letter-spacing:-.01em}
+p{line-height:1.72;color:var(--ink-2)}
+a{color:var(--headline)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+.scroll{overflow-x:auto}
+
+/* header */
+header{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--headline);
+  letter-spacing:.02em;margin:0 0 14px;
+}
+h1{font-size:clamp(1.9rem,5.6vw,2.7rem);margin:0 0 12px;line-height:1.16}
+.sub{font-size:1.05rem;color:var(--ink-2);margin:0 0 20px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-ink);
+  font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:99px;
+}
+.pill.date{background:transparent;color:var(--ink-3);font-weight:400}
+.pill.date::before{content:"·";margin-right:6px;color:var(--ink-3)}
+
+/* toc */
+nav.toc{
+  display:flex;flex-wrap:wrap;gap:6px 0;padding:22px 0 8px;margin-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+nav.toc a{
+  font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:5px 12px 5px 0;
+  white-space:nowrap;
+}
+nav.toc a:not(:last-child)::after{content:"/";margin-left:12px;color:var(--line-strong)}
+nav.toc a:hover{color:var(--headline)}
+
+/* sections */
+section{padding:46px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{
+  font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin:0 0 6px;
+}
+h2.sec-title{font-size:1.55rem;margin:0 0 18px}
+h3{font-size:1.06rem;margin:26px 0 10px;color:var(--ink)}
+.lead{font-size:1.05rem;line-height:1.75}
+
+.quote{
+  font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.6;color:var(--ink);
+  border-left:3px solid var(--line-strong);padding-left:20px;margin:22px 0;max-width:58ch;
+}
+
+/* concept two-col */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.why-grid.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:680px){.why-grid{grid-template-columns:1fr}}
+.name-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media (max-width:620px){.name-cards{grid-template-columns:1fr}}
+.name-card{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel)}
+.name-card h5{margin:0 0 4px;font-size:1.05rem;font-family:var(--serif);font-style:italic;color:var(--ink)}
+.name-card .sells{margin:0 0 8px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--headline)}
+.name-card p:last-child{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.6}
+.why-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.why-card .k{font-weight:700;font-size:.92rem;margin-bottom:6px;color:var(--ink)}
+.why-card p{font-size:.88rem;margin:0}
+
+/* callout */
+.callout{
+  display:flex;gap:14px;background:var(--panel-3);border-radius:12px;padding:18px 20px;margin:18px 0;
+}
+.callout .ic{font-size:1.3rem;line-height:1}
+.callout p{margin:0;font-size:.9rem}
+.callout.safety{background:var(--gold-bg)}
+.callout.safety p{color:var(--gold-ink)}
+.callout.wall{background:var(--wall-bg)}
+.callout.wall p{color:var(--wall)}
+.callout.wall b{color:var(--wall)}
+
+/* structure diagram */
+.rooms{display:flex;gap:14px;margin:22px 0;flex-wrap:wrap}
+.room{
+  flex:1 1 220px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel);
+}
+.room h4{margin:0 0 8px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.room .tag{font-size:.68rem;font-weight:700;background:var(--pill-bg);color:var(--pill-ink);padding:2px 8px;border-radius:99px}
+.room ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--ink-2);line-height:1.7}
+.room .arrow{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:var(--ink-3);font-size:1.3rem}
+@media (max-width:620px){.rooms{flex-direction:column}.room .arrow{transform:rotate(90deg);padding:2px 0}}
+
+/* recruiting waterfall */
+.chan{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column}
+.chan li{
+  display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;
+  padding:13px 4px;border-top:1px solid var(--line);
+}
+.chan li:last-child{border-bottom:1px solid var(--line)}
+.chan .rank{font-family:var(--serif);font-style:italic;color:var(--num);font-size:1.1rem}
+.chan .name{font-weight:700;font-size:.92rem}
+.chan .how{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+.chan .reach{font-size:.84rem;color:var(--ink-2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.chan li.excluded{opacity:.55}
+.chan li.excluded .name::after{content:" — 제외";color:var(--wall);font-weight:400;font-size:.8rem}
+.chan .name a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.chan .name a:hover{color:var(--headline)}
+.chan .desc{color:var(--ink-2);font-size:.85rem;margin-top:3px;line-height:1.55;max-width:56ch}
+.badge-conf{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.badge-conf.ok{background:var(--pill-bg);color:var(--pill-ink)}
+.badge-conf.check{background:var(--gold-bg);color:var(--gold-ink)}
+.badge-conf.unk{background:var(--wall-bg);color:var(--wall)}
+
+/* benefits table */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media (max-width:620px){.benefit-grid{grid-template-columns:1fr}}
+.benefit-card{border-radius:14px;padding:24px}
+.benefit-card.entry{background:var(--panel-3);border:1px solid var(--line)}
+.benefit-card.all{background:var(--panel-2);border:1px solid var(--line)}
+.benefit-card.top{background:var(--gold-bg)}
+.benefit-card .tag{font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3)}
+.benefit-card.top .tag{color:var(--gold-ink)}
+.benefit-card .who{font-weight:900;font-size:1.05rem;margin:6px 0 14px}
+.benefit-card.top .who{color:var(--gold-ink)}
+.benefit-card ul{margin:0;padding-left:18px;font-size:.9rem;line-height:1.8;color:var(--ink-2)}
+.benefit-card.top ul{color:var(--gold-ink)}
+.benefit-card .amount{font-family:var(--serif);font-size:2.1rem;color:var(--gold-ink);margin:0 0 4px}
+
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+@media (max-width:680px){.cal{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.cal{grid-template-columns:1fr}}
+.wk{border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;background:var(--panel)}
+.wk .wn{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.85rem}
+.wk h5{margin:4px 0 10px;font-size:.94rem}
+.wk p{margin:0;font-size:.82rem;color:var(--ink-2);line-height:1.6}
+.wk ul{margin:8px 0 0;padding-left:16px;font-size:.82rem;color:var(--ink-2);line-height:1.65}
+
+/* steps */
+ol.steps{margin:18px 0 0;padding:0;list-style:none;counter-reset:s}
+ol.steps li{
+  counter-increment:s;position:relative;padding:0 0 18px 40px;font-size:.92rem;color:var(--ink-2);
+  border-left:1px solid var(--line);margin-left:14px;
+}
+ol.steps li:last-child{border-color:transparent;padding-bottom:0}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:-14px;top:-2px;width:28px;height:28px;border-radius:50%;
+  background:var(--panel-2);border:1px solid var(--line-strong);color:var(--num);font-weight:700;
+  font-size:.82rem;display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+ol.steps b{color:var(--ink)}
+
+/* checklist */
+.open-list{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.open-list li{
+  display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem;
+}
+.open-list li:last-child{border-bottom:1px solid var(--line)}
+.open-list .box{
+  flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px;
+}
+.open-list b{color:var(--ink)}
+.open-list span{color:var(--ink-2)}
+
+/* footer / sources */
+footer{padding:40px 0 70px}
+.src{font-size:.84rem;color:var(--ink-3);line-height:2}
+.src a{color:var(--ink-2)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Lemonderma · UAE WhatsApp Community</p>
+  <h1>UAE 커뮤니티 1기 운영안</h1>
+</header>
+
+<nav class="toc">
+  <a href="#purpose">목적</a>
+  <a href="#persona">타겟 페르소나</a>
+  <a href="#structure">커뮤니티·운영구조</a>
+  <a href="#calendar">전체 타임라인</a>
+  <a href="#reward">보상</a>
+  <a href="#recruit">모집</a>
+  <a href="#todo">실행 체크리스트</a>
+</nav>
+
+<section id="purpose">
+  <p class="sec-label">Why This Exists</p>
+  <h2 class="sec-title">목적</h2>
+  <p class="lead">CEO Marco와 마케터 John이 직접 나서서, 레몬더마에 애정을 갖는 팬을 한 사람 한 사람 만드는 것.</p>
+  <p>제품·가격·프로모션은 다른 브랜드도 따라할 수 있다. 창업자가 직접 소통하는 것은 지금 시점에 가장 큰 차별점이고, 시간이 지날수록 따라하기 어려워진다 — 관계는 복제가 안 되기 때문이다. 4주짜리 1기 파일럿으로 시작해 2기, 3기로 이어질 기수제 프로그램이다.</p>
+
+  <h3>기대되는 효과</h3>
+  <p>매출이나 전환율로 재는 자리가 아니다. 이 프로그램이 실제로 만드는 건 네 가지다.</p>
+  <ol class="steps">
+    <li><b>진짜 팬 자산.</b> 4주 뒤에도 방에 남아 먼저 말을 거는 사람이 누군지가 신호다. 그 사람들의 공통점이 2기 타겟을 정교화한다.</li>
+    <li><b>UAE 정품 불안 해소.</b> K뷰티 위조가 세관에서 실제로 적발되는 시장이다(2025년 1분기 화장품 3.7만 점 압류, 레몬더마 경쟁 K뷰티 브랜드가 최다 위조 표적). "이 사람이 만든 걸 안다"는 감각이 여기서 신뢰로 작동한다.</li>
+    <li><b>진짜 콘텐츠 자산.</b> 완주자 전원이 남기는 릴스(형식 자유·진심 중심)가 이후 광고·SNS에 쓸 수 있는 실제 소재가 된다.</li>
+    <li><b>다음 기수로 이어지는 구조.</b> 완주자가 2기에 친구를 데려오는 방식으로 풀이 자연히 넓어진다.</li>
+  </ol>
+  <p>제품 원가 자체는 작다 — 진짜 들어가는 자원은 John의 4주 시간이다. 이 프로그램이 증명해야 하는 건 완성된 커뮤니티가 아니라, 진심을 어떻게 전할 때 팬이 되는지에 대한 배움이다.</p>
+</section>
+
+<section id="persona">
+  <p class="sec-label">Targeting</p>
+  <h2 class="sec-title">타겟 페르소나</h2>
+  <p class="lead">타겟은 성격이 아니라 니즈로 정한다. 모두를 만족시키려는 커뮤니티는 특별하지 않다.</p>
+
+  <h3>어떤 사람인가</h3>
+  <p>30~50대 여성. 성분표를 읽고 "왜 이걸 넣었지"를 궁금해하는 사람. 화장품을 마케팅이 아니라 결정으로 산다. 이런 대화를 하는 것에 관심이 있고, 브랜드가 하는 말을 곧이곧대로 믿기보다 직접 확인하고 싶어한다. 거울 볼 때 신경 쓰이는 건 색소침착, 스킨케어에 쓰는 돈은 이미 당연한 지출이다. 한국 화장품을 들어봤거나 써본 적 있다.</p>
+
+  <h3>왜 이 조합이 이 사람에게 통하는가</h3>
+  <p>이 사람이 먼저 흥미를 느끼는 지점은 "브랜드를 만든 사람"이라는 사실 자체가 아니라, <b style="color:var(--ink)">뷰티업계에서 흔히 볼 수 없는 조합</b> — 화장품 일을 하는 비주얼 좋은 젊은 한국인 남자 둘이라는 낯섦이다. 이미 한국 화장품에 호기심이 있었기 때문에 이 낯섦이 그냥 신기함으로 끝나지 않고 실제 흥미로 이어진다. 그리고 브랜드가 하는 말을 곧이곧대로 안 믿는 버릇이 있기 때문에, 대리인이 아니라 만든 사람이 직접 말한다는 것 자체가 이 사람에게는 드문 신뢰 신호다.</p>
+  <div class="quote">"화장품 일 하는 비주얼 좋은 젊은 한국인 남자 둘 — 뷰티업계에서 흔한 조합은 아니다. 그 낯섦이 먼저 눈길을 끌고, 그 다음이 진짜 소통이다."</div>
+</section>
+
+<section id="structure">
+  <p class="sec-label">Community & Operating Model</p>
+  <h2 class="sec-title">Lemonderma First Look Partners</h2>
+  <p class="lead">커뮤니티 이름: <b style="color:var(--ink)">Lemonderma First Look Partners</b>. "First Look"이 그녀가 얻는 것(신제품을 남들보다 먼저 보는 특권)을 먼저 말하고, "Partners"는 완주 조건(릴스 1개 제출)과 맞는 정확한 표현으로 뒤에 온다 — 좋은 감정이 먼저, 역할은 그다음.</p>
+  <p class="small muted" style="font-size:.85rem;color:var(--ink-3)">이름 결정 경위(Mom Partners → Anti-aging Skin Lab → First Look Partners, 100여 개 대안 검토): plan/2026-09-16-cohort1-decisions.md §9 (2026-09-20).</p>
+
+  <p>왓츠앱 커뮤니티 1개 = 공지방 + 라운지. 크게 두 갈래로만 나눈다.</p>
+  <div class="rooms">
+    <div class="room">
+      <h4>공지방 <span class="tag">전원 자동 가입</span></h4>
+      <ul>
+        <li>관리자(John·Marco)만 게시</li>
+        <li>답글 허용 여부는 실물 테스트로 확정</li>
+        <li>주 1회 미션·영상, 가끔 깜짝 이벤트</li>
+      </ul>
+    </div>
+    <div class="arrow">+</div>
+    <div class="room">
+      <h4>라운지 <span class="tag">원하는 사람만</span></h4>
+      <ul>
+        <li>전원 자유롭게 대화</li>
+        <li>질문엔 최대한 빨리 응답</li>
+        <li>실시간 상주는 아님</li>
+      </ul>
+    </div>
+  </div>
+  <h3>CEO 등장 방식</h3>
+  <p>매일·자주 공지할 필요는 없다. <b style="color:var(--ink)">주 1회 미션 또는 이벤트 1개</b>를 공지하고, 그 안에서 CEO와 마케터가 영상으로 레몬더마 소식을 직접 전한다. 가끔 예고 없는 깜짝 이벤트로 리듬을 깬다.</p>
+  <h3>누가 주인공인가 — 엄마들이 주최, 우리는 응원</h3>
+  <p>Marco·John이 콘텐츠를 만들어 보내지만, 그게 이들이 무대에 서는 걸 뜻하진 않는다. 기수제로 운영되는 활동인 만큼 <b style="color:var(--ink)">주최는 멤버들</b>이고 우리는 응원하고 동기를 돋우는 역할이다. 그래서 콘텐츠는 항상 "CEO·마케터가 먼저 자기 얘기를 짧게 공유 + 여러분은 어떤가요?"로 끝낸다 — 브랜드가 설문을 돌리는 느낌이 아니라 친구가 먼저 얘기를 꺼내고 물어보는 느낌으로. 답은 방 안에 자유롭게, 강요 없이.</p>
+</section>
+
+<section id="calendar">
+  <p class="sec-label">Content</p>
+  <h2 class="sec-title">전체 타임라인</h2>
+  <p class="lead">모집 시작일이 <b style="color:var(--ink)">2026년 9월 21일</b>로 확정되면서 아래 날짜가 모두 고정됐다.</p>
+
+  <h3>시작 전</h3>
+  <ol class="steps">
+    <li><b>모집 · 9/21 → 10/5 (2주)</b> — §멤버 모집의 인스타그램 소싱 방법론으로 진행.</li>
+    <li><b>최종 합격 공지 및 제품 배송 · 10/5 → 10/19 (2주)</b> — 한국 직송, 선정자에게 1:1 개별 통보.</li>
+    <li><b>10/17 — 개인 맞춤 영상편지</b>(시작 2일 전) — CEO·마케터가 정면으로 말하는 공용 바디 + 사람마다 다른 10~15초 개인화 인트로(이름+신청서 언급). 아래 §영상편지 구성 참고.</li>
+  </ol>
+
+  <h3>4주 프로그램 · 10/19 → 11/16</h3>
+  <div class="cal">
+    <div class="wk"><div class="wn">Week 1 · 10/19</div><h5>시작</h5><ul><li>콘텐츠1 — 마르코·존 모닝 스킨케어 루틴 공유 + "여러분은요?"</li><li>콘텐츠2 — 레몬더마 소개</li></ul></div>
+    <div class="wk"><div class="wn">Week 2 · 10/26</div><h5>가까워지기</h5><ul><li>콘텐츠3 — 깜짝 이벤트: 가벼운 반응에 적극 답한 2명에게 세럼·크림 세트</li><li>콘텐츠4 — 약국 소개(명동 오아시스 약국)</li></ul></div>
+    <div class="wk"><div class="wn">Week 3 · 11/2</div><h5>신뢰</h5><ul><li>콘텐츠5 — 레몬더마에 대해 궁금하거나 요청하고 싶은 점 질문</li><li>콘텐츠6 — 콘텐츠5 질문에 마르코·존이 하나하나 영상으로 답변</li></ul></div>
+    <div class="wk"><div class="wn">Week 4 · 11/9</div><h5>마무리 준비</h5><ul><li>콘텐츠7 — 공장 소개</li><li>콘텐츠8 — 릴스 제출 리마인드</li></ul></div>
+  </div>
+
+  <h3>종료 후</h3>
+  <ol class="steps">
+    <li><b>11/18 — 콘텐츠9</b>(4주 종료 + 2일) — 최우수 1명($500) 발표 + 2기 안내(친구와 함께 오라는 제안). 릴스 제출분을 검토할 버퍼로 2일을 둔다.</li>
+  </ol>
+
+  <h3>영상편지 구성</h3>
+  <p>공용 바디(CEO·마케터가 정면으로 말하는 기본 영상, 환영·자기소개·커뮤니티 목적을 여기서 다룬다) + 사람마다 다른 개인화 인트로. 중간중간 대사에 맞춰 b-roll(제주 레몬·실험실·공장·약국)을 넣어 완성도를 높인다. 세부 대사·순서는 실제 제작 시 구체화한다.</p>
+</section>
+
+<section id="reward">
+  <p class="sec-label">Incentive</p>
+  <h2 class="sec-title">보상 구조</h2>
+  <p class="lead">기대감이 모집율을 결정한다. 가입·완주·최우수 3단 사다리로 설계하고, 두바이 판촉허가(UAE 판촉 행사에 필요한 현지 허가) 회색지대는 인지한 채로 감수하며 포스터·DM에 그대로 명시한다.</p>
+  <div class="benefit-grid">
+    <div class="benefit-card entry">
+      <div class="tag">가입하면 바로 (20명 전원)</div>
+      <div class="amount" style="color:var(--headline)">$72</div>
+      <div class="who">상당 안티에이징 세트 무료</div>
+      <ul>
+        <li>세럼 + 크림 1세트(정가 $36×2)</li>
+      </ul>
+    </div>
+    <div class="benefit-card all">
+      <div class="tag">4주 완주 전원</div>
+      <div class="who">완주 기준: 릴스 1개 제출</div>
+      <ul>
+        <li>형식 자유, 퀄리티 무관 — 진심이면 충분</li>
+        <li>2기 우선 초대(친구와 함께 가능)</li>
+      </ul>
+    </div>
+    <div class="benefit-card top">
+      <div class="tag">최우수 활동자 1명</div>
+      <div class="amount">$500</div>
+      <div class="who">상당 레몬더마 풀세트</div>
+      <ul>
+        <li>세럼 7개 + 크림 7개</li>
+        <li>선정 기준: 레몬더마 내부 심사 + 방 안 대화 참여도</li>
+        <li>4주 종료 2일 뒤 발표</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:14px;font-size:.82rem;color:var(--ink-3)">커뮤니티 진행 중 신제품이 출시되면 멤버 전원에게 우선 체험 기회를 준다. 깜짝 이벤트도 준비되어 있으며, 보상은 세럼·크림 1세트다.</p>
+</section>
+
+<section id="recruit">
+  <p class="sec-label">Recruiting</p>
+  <h2 class="sec-title">멤버 모집</h2>
+  <p class="lead">20명은 <b style="color:var(--ink)">엄선된 느낌을 주기 위한 하한선</b>이다. 지원이 몰리면 선별 기준은 그대로 두고 인원을 확대한다. 연락은 John 개인 인스타그램 DM으로 보낸다.</p>
+
+  <h3>인스타그램 소싱 방법론</h3>
+  <p>성공 가능성 순으로 정렬했다.</p>
+  <ol class="steps">
+    <li><b>커뮤니티 계정의 인게이지 유저.</b> 아래 시드 계정 게시물에서 태그되거나 진짜 댓글을 남긴 사람을 찾는다 — 이미 UAE 맘 커뮤니티 안에 있는 사람이라 걸러진 상태로 시작한다.</li>
+    <li><b>좋은 시드로 팔로잉 그래프 확장.</b> 1번에서 찾은 검증된 맘 계정의 팔로잉 목록에서 UAE 거주·30~50대로 보이는 계정만 추리고 2~3단계 반복한다. 비공개 계정은 목록이 안 보여 공개 계정에서만 가능하다.</li>
+    <li><b>K뷰티 게시물 댓글창 마이닝.</b> K뷰티 리셀러·스킨케어 게시물 댓글에서 색소침착·성분 관련 진짜 질문을 남긴 사람 — 페르소나 니즈를 직접 거르는 방식이라 정확도가 가장 높다. 프로필에서 나이대(30~50)만 확인되면 충분하다 — 자녀 여부까지 확인하려 하지 않는다.</li>
+    <li><b>해시태그·위치 태그.</b> #dubaimums 등과 특정 컴파운드 위치 태그. 그물은 넓지만 걸러내는 수고가 더 든다.</li>
+  </ol>
+  <p class="small muted" style="font-size:.85rem;color:var(--ink-3)">시드 계정 — 두바이: @ranchesladies(1.4천) · @expatmumsdubai_(1.7천 커뮤니티) · @dubaimumsmeet(1.5만). 아부다비: @awnabudhabi · @women.of.abu.dhabi · @abudhabiladiesclub.</p>
+</section>
+
+<section id="todo">
+  <p class="sec-label">Execution</p>
+  <h2 class="sec-title">실행 체크리스트</h2>
+  <p class="lead">시간 흐름순. 담당 표시는 <span class="badge-conf ok">John</span> 사람이 직접 해야 하는 일 · <span class="badge-conf check">Claude</span> 작업 위임 · <span class="badge-conf unk">미정</span> 아직 정하지 않은 것.</p>
+
+  <h3>지금 — 모집 첫 발송 전</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>인스타 DM 1·2차 문안 확정</b><span class="badge-conf check">Claude</span> — 초안 완료, 컨펌 대기. 1차는 짧게 후킹만, 답장이 오면 2차로 상세와 신청 폼 링크를 보낸다.</span></li>
+    <li><span class="box"></span><span><b>1일차 발송 대상 90명 검수</b><span class="badge-conf ok">John</span> — 555명 전수 검수는 출발 조건이 아니다. 90명만 골라도 시작할 수 있고, 나머지는 보내면서 검수한다.</span></li>
+    <li><span class="box"></span><span><b>사람별 개인화 첫 줄 90개 생성</b><span class="badge-conf check">Claude</span> — 후보 DB의 개인화포인트(바이오) 열을 재료로 미리 뽑아둔다. 검수 완료 후 착수.</span></li>
+    <li><span class="box"></span><span><b>신청 폼 제작 · GitHub 게시 · 시트 자동 연동</b><span class="badge-conf check">Claude</span> — 게시 위치와 필수 입력 목록 승인이 먼저 필요하다.</span></li>
+    <li><span class="box"></span><span><b>왓츠앱 공지방·라운지 개설</b><span class="badge-conf ok">John</span> — 존 휴대폰 번호로 진행. 개설하면서 답글 허용 여부와 채팅목록 이름 잘림을 함께 확인한다.</span></li>
+  </ul>
+
+  <h3>모집 · 9/21 → 10/5</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>DM 발송 하루 90건</b><span class="badge-conf ok">John</span> — 오전 30 · 오후 30 · 밤 30. 1일차 응답률과 폼 작성률을 실측한 뒤 2일차 물량을 정한다. 필요한 건 20명이고 명단은 2기 자산이라 한 번에 소진할 이유가 없다.</span></li>
+    <li><span class="box"></span><span><b>나머지 명단 검수 병행</b><span class="badge-conf ok">John</span></span></li>
+    <li><span class="box"></span><span><b>합격·불합격 통보 문안 제작</b><span class="badge-conf check">Claude</span> — 모집 DM과는 별개의 글이다.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠 1·2·3 + 7·8·9 제작</b><span class="badge-conf check">Claude</span> — 4주차 것까지 미리 만들어 프로그램 중 여유를 확보한다.</span></li>
+    <li><span class="box"></span><span><b>영상편지 b-roll 확보</b><span class="badge-conf ok">John</span> — 제주 레몬 · 실험실 · 공장 · 약국. 기존 촬영본이 있고 없는 건 추가 촬영한다.</span></li>
+  </ul>
+
+  <h3>합격 통보 · 배송 · 10/5 → 10/19</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>폼 응답 검토 · 20명 선별</b><span class="badge-conf ok">John</span> — 선별 기준은 별도 규칙을 두지 않고 직접 검수한다.</span></li>
+    <li><span class="box"></span><span><b>합격 통보 1:1 발송</b><span class="badge-conf ok">John</span></span></li>
+    <li><span class="box"></span><span><b>불합격자 처리 방침</b><span class="badge-conf unk">미정</span> — 침묵할지 따로 알릴지. 이들은 2기 후보 풀이기도 하다.</span></li>
+    <li><span class="box"></span><span><b>한국 직송 58개 발송</b><span class="badge-conf ok">John</span> — 20세트 40개 + 최우수 14개 + 깜짝 4개. 재고·리드타임 확인 완료. 2기 가능성이 보이면 슈크란 3PL 협업을 검토한다.</span></li>
+    <li><span class="box"></span><span><b>왓츠앱 1:1 초대 링크 발송</b><span class="badge-conf ok">John</span> — 폼으로 받은 번호로 개별 발송.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠 4·5 제작</b><span class="badge-conf check">Claude</span></span></li>
+    <li><span class="box"></span><span><b>영상편지 공용 바디 1개 + 개인화 인트로 20개</b><span class="badge-conf check">Claude</span> — 10/17 발송 기한.</span></li>
+  </ul>
+
+  <h3>프로그램 4주 · 10/19 → 11/16</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>주 1회 콘텐츠 발행</b> — 1주 1·2 / 2주 3·4 / 3주 5·6 / 4주 7·8.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠6은 3주차 실시간 제작</b><span class="badge-conf check">Claude</span> — 콘텐츠5에서 받은 멤버 질문에 답하는 영상이라 미리 만들 수 없는 유일한 콘텐츠다.</span></li>
+    <li><span class="box"></span><span><b>2주차 깜짝 이벤트</b><span class="badge-conf ok">John</span> — 가벼운 반응에 적극적이었던 2명에게 세럼·크림 세트. 예고 없이 진행한다.</span></li>
+    <li><span class="box"></span><span><b>릴스 제출 수집</b><span class="badge-conf ok">John</span> — 업로드한 릴스 링크는 커뮤니티 방에 올리게 하고, 원본 파일이 필요하면 1:1 왓츠앱으로 직접 받는다.</span></li>
+    <li><span class="box"></span><span><b>완주자 기록</b><span class="badge-conf ok">John</span> — 2기 우선초대와 최우수 선정의 근거가 된다.</span></li>
+  </ul>
+
+  <h3>종료 후 · 11/18</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>릴스 검토 2일 버퍼</b> — 11/16 종료 후 11/18까지.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠9 발표</b><span class="badge-conf check">Claude</span> — 최우수 1명 $500 발표 + 2기 안내.</span></li>
+    <li><span class="box"></span><span><b>최우수 1인 선정 세부 기준</b><span class="badge-conf unk">미정</span> — 현재는 "내부 심사 + 방 안 대화 참여도"까지만 정해져 있다.</span></li>
+    <li><span class="box"></span><span><b>2기 우선초대 발송</b><span class="badge-conf ok">John</span> — 완주자 전원, 친구 동반 가능.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p class="src">
+    근거 자료 — 9/16 결정 기록 · 9/15 리서치 결정카드 · 사실 원장
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
