@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lemonderma Skin Lab Partners — Application</title>
+<meta name="description" content="Apply to join Lemonderma Skin Lab Partners, Cohort 1. 20 members in the UAE, four weeks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --err:#c0392b; --err-bg:#fdecea;
+  --serif:"Libre Caslon Text", Georgia, serif;
+  --sans:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --err:#ff7a6b; --err-bg:#2c1512;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 420px);
+  color:var(--ink); font-family:var(--sans); padding:0 20px;
+}
+.wrap{max-width:620px;margin:0 auto;padding-bottom:80px}
+
+header{padding:52px 0 26px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--headline);margin:0 0 12px}
+h1{font-size:clamp(1.7rem,5.4vw,2.3rem);margin:0 0 14px;line-height:1.18;font-weight:900;letter-spacing:-.01em;text-wrap:balance}
+.sub{font-size:1rem;line-height:1.7;color:var(--ink-2);margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{display:inline-flex;align-items:center;background:var(--pill-bg);color:var(--pill-ink);font-size:.76rem;font-weight:700;padding:5px 11px;border-radius:99px}
+
+.intro{padding:26px 0;border-bottom:1px solid var(--line)}
+.intro p{font-size:.94rem;line-height:1.75;color:var(--ink-2);margin:0 0 12px}
+.intro p:last-child{margin:0}
+.intro b{color:var(--ink)}
+
+fieldset{border:0;margin:0;padding:34px 0 8px;border-bottom:1px solid var(--line)}
+legend{padding:0;font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin-bottom:4px}
+.grp-title{font-size:1.12rem;font-weight:900;margin:0 0 22px;letter-spacing:-.01em}
+
+.f{margin-bottom:22px}
+label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px;color:var(--ink)}
+.hint{display:block;font-weight:400;font-size:.8rem;color:var(--ink-3);margin-top:3px}
+.req{color:var(--headline);margin-left:3px}
+
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:13px 14px;transition:border-color .15s, box-shadow .15s;
+}
+textarea{resize:vertical;min-height:96px;line-height:1.6}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 15px) calc(50% + 2px);background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:42px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--line-strong);box-shadow:0 0 0 3px var(--pill-bg)}
+input.bad,select.bad,textarea.bad{border-color:var(--err)}
+.err{display:none;color:var(--err);font-size:.8rem;margin-top:6px}
+.err.on{display:block}
+
+.radios{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.radios label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.93rem;line-height:1.5;margin:0;cursor:pointer;color:var(--ink-2)}
+.radios input{margin:3px 0 0;accent-color:var(--headline);flex:0 0 auto}
+
+.consent{background:var(--panel-3);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.consent label{display:flex;gap:11px;align-items:flex-start;font-weight:400;font-size:.9rem;line-height:1.6;margin:0;cursor:pointer;color:var(--ink-2)}
+.consent input{margin:3px 0 0;accent-color:var(--headline);flex:0 0 auto;width:17px;height:17px}
+.consent b{color:var(--ink)}
+
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+
+.actions{padding:30px 0 0}
+button{
+  width:100%;font-family:var(--sans);font-size:1.02rem;font-weight:700;color:#10240a;
+  background:var(--line-strong);border:0;border-radius:99px;padding:17px 20px;cursor:pointer;
+  transition:transform .12s, opacity .15s;
+}
+button:hover{transform:translateY(-1px)}
+button:disabled{opacity:.55;cursor:default;transform:none}
+.formnote{font-size:.82rem;color:var(--ink-3);text-align:center;margin:14px 0 0;line-height:1.6}
+.failnote{display:none;background:var(--err-bg);color:var(--err);font-size:.87rem;line-height:1.6;border-radius:10px;padding:14px 16px;margin-top:16px}
+.failnote.on{display:block}
+
+#done{display:none;padding:70px 0;text-align:center}
+#done.on{display:block}
+#done .mark{font-family:var(--serif);font-size:2.6rem;color:var(--headline);margin-bottom:18px}
+#done h2{font-size:1.5rem;margin:0 0 14px;font-weight:900}
+#done p{font-size:.97rem;line-height:1.75;color:var(--ink-2);margin:0 auto;max-width:42ch}
+
+footer{padding:34px 0 0;border-top:1px solid var(--line);margin-top:34px}
+footer p{font-size:.8rem;color:var(--ink-3);line-height:1.7;margin:0}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div id="form-view">
+
+<header>
+  <p class="eyebrow">Lemonderma · Cohort 1</p>
+  <h1>Skin Lab Partners</h1>
+  <p class="sub">Twenty women in the UAE. Four weeks. You test what we make, and you tell us what's wrong with it.</p>
+  <div class="meta">
+    <span class="pill">20 members</span>
+    <span class="pill">4 weeks</span>
+    <span class="pill">Starts 19 October</span>
+  </div>
+</header>
+
+<div class="intro">
+  <p>We're Lemonderma — a vegan skincare brand from Korea. Our CEO and our marketer run this group themselves. No agency, no brand account.</p>
+  <p>Every member receives our full anti-aging set (serum + cream) shipped from Korea, free, as soon as you join. At the end of four weeks we ask for <b>one Reel</b> — any format, any quality. Honest is the only requirement.</p>
+  <p>This takes a few minutes to fill in. We read every one of them.</p>
+</div>
+
+<form id="f" novalidate>
+
+  <fieldset>
+    <legend>01</legend>
+    <p class="grp-title">About you</p>
+
+    <div class="f">
+      <label for="name">Your name<span class="req">*</span>
+        <span class="hint">As it should appear on the delivery label.</span>
+      </label>
+      <input type="text" id="name" name="name" autocomplete="name">
+      <p class="err" id="e-name">Please enter your name.</p>
+    </div>
+
+    <div class="f">
+      <label for="instagram">Instagram handle<span class="req">*</span></label>
+      <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocapitalize="none" autocorrect="off">
+      <p class="err" id="e-instagram">Please enter your Instagram handle.</p>
+    </div>
+
+    <div class="f">
+      <label for="ageBand">Age<span class="req">*</span></label>
+      <select id="ageBand" name="ageBand">
+        <option value="">Select</option>
+        <option>Under 30</option>
+        <option>30–39</option>
+        <option>40–49</option>
+        <option>50 or over</option>
+      </select>
+      <p class="err" id="e-ageBand">Please select your age range.</p>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>02</legend>
+    <p class="grp-title">Your skin</p>
+
+    <div class="f">
+      <label for="skinConcern">What bothers you most when you look in the mirror?<span class="req">*</span></label>
+      <select id="skinConcern" name="skinConcern">
+        <option value="">Select</option>
+        <option>Dark spots / uneven tone</option>
+        <option>Dullness</option>
+        <option>Fine lines / firmness</option>
+        <option>Dryness</option>
+        <option>Texture / pores</option>
+        <option>Sensitivity / redness</option>
+        <option>Something else</option>
+      </select>
+      <p class="err" id="e-skinConcern">Please choose one.</p>
+    </div>
+
+    <div class="f">
+      <label>Do you read the ingredient list before you buy?<span class="req">*</span></label>
+      <div class="radios">
+        <label><input type="radio" name="ingredients" value="Always — I look it up"> Always — I look it up</label>
+        <label><input type="radio" name="ingredients" value="Sometimes, for new brands"> Sometimes, for new brands</label>
+        <label><input type="radio" name="ingredients" value="Rarely"> Rarely</label>
+      </div>
+      <p class="err" id="e-ingredients">Please choose one.</p>
+    </div>
+
+    <div class="f">
+      <label for="currentProducts">What are you using right now?
+        <span class="hint">Brands or products — optional, but it helps us.</span>
+      </label>
+      <input type="text" id="currentProducts" name="currentProducts">
+    </div>
+
+    <div class="f">
+      <label for="kbeauty">Have you tried Korean skincare before?<span class="req">*</span></label>
+      <select id="kbeauty" name="kbeauty">
+        <option value="">Select</option>
+        <option>Yes, I use it regularly</option>
+        <option>I've tried a few things</option>
+        <option>Heard of it, never tried</option>
+        <option>No</option>
+      </select>
+      <p class="err" id="e-kbeauty">Please choose one.</p>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>03</legend>
+    <p class="grp-title">Why you</p>
+
+    <div class="f">
+      <label for="why">Why do you want to be in this group?<span class="req">*</span>
+        <span class="hint">A sentence or two is enough. There's no right answer — we just want to hear it in your words.</span>
+      </label>
+      <textarea id="why" name="why"></textarea>
+      <p class="err" id="e-why">Please tell us briefly.</p>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>04</legend>
+    <p class="grp-title">How we reach you</p>
+
+    <div class="f">
+      <label for="whatsapp">WhatsApp number<span class="req">*</span>
+        <span class="hint">With country code — this is how we send your invitation.</span>
+      </label>
+      <input type="tel" id="whatsapp" name="whatsapp" placeholder="+971 50 000 0000" autocomplete="tel">
+      <p class="err" id="e-whatsapp">Please enter your WhatsApp number with country code.</p>
+    </div>
+
+    <div class="f">
+      <label for="email">Email<span class="req">*</span>
+        <span class="hint">A backup, in case WhatsApp doesn't reach you.</span>
+      </label>
+      <input type="email" id="email" name="email" autocapitalize="none" autocorrect="off" autocomplete="email">
+      <p class="err" id="e-email">Please enter a valid email address.</p>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>05</legend>
+    <p class="grp-title">Where we'd ship it</p>
+    <p style="font-size:.88rem;color:var(--ink-3);line-height:1.65;margin:-14px 0 22px">Used only if you're selected. We ship from Korea.</p>
+
+    <div class="f">
+      <label for="emirate">Emirate<span class="req">*</span></label>
+      <select id="emirate" name="emirate">
+        <option value="">Select</option>
+        <option>Dubai</option>
+        <option>Abu Dhabi</option>
+        <option>Sharjah</option>
+        <option>Ajman</option>
+        <option>Ras Al Khaimah</option>
+        <option>Fujairah</option>
+        <option>Umm Al Quwain</option>
+      </select>
+      <p class="err" id="e-emirate">Please select your emirate.</p>
+    </div>
+
+    <div class="f">
+      <label for="city">Area / district<span class="req">*</span>
+        <span class="hint">e.g. Jumeirah Village Circle, Al Nahyan</span>
+      </label>
+      <input type="text" id="city" name="city">
+      <p class="err" id="e-city">Please enter your area.</p>
+    </div>
+
+    <div class="f">
+      <label for="address">Building, street, apartment<span class="req">*</span></label>
+      <input type="text" id="address" name="address" autocomplete="street-address">
+      <p class="err" id="e-address">Please enter your address.</p>
+    </div>
+
+    <div class="f">
+      <label for="landmark">Nearest landmark
+        <span class="hint">Optional, but couriers here find addresses faster with one.</span>
+      </label>
+      <input type="text" id="landmark" name="landmark">
+    </div>
+  </fieldset>
+
+  <fieldset style="border-bottom:0">
+    <legend>06</legend>
+    <p class="grp-title">Before you send</p>
+
+    <div class="consent">
+      <label><input type="checkbox" id="agreeReel" name="agreeReel">
+        <span>I understand that finishing the four weeks means posting <b>one Reel</b> at the end — any format, any quality.</span>
+      </label>
+    </div>
+    <p class="err" id="e-agreeReel" style="margin:-8px 0 14px">Please confirm.</p>
+
+    <div class="consent">
+      <label><input type="checkbox" id="agreePrivacy" name="agreePrivacy">
+        <span>I agree that Lemonderma may use the details above to <b>select members and ship the product</b>. They won't be used for anything else and will be deleted after Cohort 1 ends.</span>
+      </label>
+    </div>
+    <p class="err" id="e-agreePrivacy" style="margin:-8px 0 0">Please confirm.</p>
+
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+  </fieldset>
+
+  <div class="actions">
+    <button type="submit" id="submit">Send my application</button>
+    <p class="formnote">We're choosing 20. You'll hear from us either way by <b>5 October</b>.</p>
+    <div class="failnote" id="fail"></div>
+  </div>
+
+</form>
+
+<footer>
+  <p>Lemonderma · VDVIA Co., Ltd. — Cohort 1 runs 19 October to 16 November 2026.</p>
+</footer>
+
+</div>
+
+<div id="done">
+  <div class="mark">✓</div>
+  <h2>Thank you — we've got it.</h2>
+  <p>We read every application ourselves. You'll hear from us by <b>5 October</b>, whether or not you're selected. If you are, we'll send your WhatsApp invitation to the number you gave us.</p>
+</div>
+
+</div>
+
+<script>
+// ── 접수 창구 ──────────────────────────────────────────────
+// Google Apps Script 웹앱 URL. 배포 후 이 한 줄만 교체하면 폼이 살아난다.
+// 코드·배포 절차: plan/apply/apps-script.gs
+const ENDPOINT = "PASTE_APPS_SCRIPT_URL_HERE";
+// ──────────────────────────────────────────────────────────
+
+const form = document.getElementById('f');
+const btn = document.getElementById('submit');
+const fail = document.getElementById('fail');
+
+const REQUIRED = ['name','instagram','ageBand','skinConcern','kbeauty','why','whatsapp','email','emirate','city','address'];
+
+function val(n){ return (document.getElementById(n)?.value || '').trim(); }
+function setBad(n, bad){
+  const el = document.getElementById(n);
+  const err = document.getElementById('e-' + n);
+  if (el) el.classList.toggle('bad', bad);
+  if (err) err.classList.toggle('on', bad);
+}
+
+function validate(){
+  let firstBad = null;
+
+  for (const n of REQUIRED){
+    const bad = !val(n);
+    setBad(n, bad);
+    if (bad && !firstBad) firstBad = document.getElementById(n);
+  }
+
+  const email = val('email');
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    setBad('email', true);
+    if (!firstBad) firstBad = document.getElementById('email');
+  }
+
+  const phone = val('whatsapp');
+  if (phone && phone.replace(/\D/g,'').length < 8){
+    setBad('whatsapp', true);
+    if (!firstBad) firstBad = document.getElementById('whatsapp');
+  }
+
+  const ing = form.querySelector('input[name=ingredients]:checked');
+  document.getElementById('e-ingredients').classList.toggle('on', !ing);
+  if (!ing && !firstBad) firstBad = form.querySelector('input[name=ingredients]');
+
+  for (const n of ['agreeReel','agreePrivacy']){
+    const ok = document.getElementById(n).checked;
+    document.getElementById('e-' + n).classList.toggle('on', !ok);
+    if (!ok && !firstBad) firstBad = document.getElementById(n);
+  }
+
+  return firstBad;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  fail.classList.remove('on');
+
+  const firstBad = validate();
+  if (firstBad){
+    firstBad.scrollIntoView({behavior:'smooth', block:'center'});
+    firstBad.focus({preventScroll:true});
+    return;
+  }
+
+  // 봇 함정: 사람에게는 보이지 않는 칸이 채워져 있으면 조용히 성공 처리
+  if (val('website')){
+    document.getElementById('form-view').style.display = 'none';
+    document.getElementById('done').classList.add('on');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const payload = {
+    name: val('name'),
+    instagram: val('instagram'),
+    whatsapp: val('whatsapp'),
+    email: val('email'),
+    emirate: val('emirate'),
+    city: val('city'),
+    address: val('address'),
+    landmark: val('landmark'),
+    ageBand: val('ageBand'),
+    skinConcern: val('skinConcern'),
+    ingredients: form.querySelector('input[name=ingredients]:checked')?.value || '',
+    currentProducts: val('currentProducts'),
+    kbeauty: val('kbeauty'),
+    why: val('why'),
+    agreeReel: document.getElementById('agreeReel').checked ? 'Y' : 'N',
+    agreePrivacy: document.getElementById('agreePrivacy').checked ? 'Y' : 'N'
+  };
+
+  try {
+    if (!ENDPOINT || ENDPOINT.indexOf('PASTE_') === 0) throw new Error('endpoint not configured');
+    // text/plain 으로 보내면 프리플라이트(OPTIONS)가 생기지 않아 Apps Script가 그대로 받는다
+    await fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    document.getElementById('form-view').style.display = 'none';
+    document.getElementById('done').classList.add('on');
+    window.scrollTo({top:0, behavior:'smooth'});
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Send my application';
+    fail.textContent = "We couldn't send that — please check your connection and try again. If it keeps failing, reply to our DM and we'll take your details there.";
+    fail.classList.add('on');
+  }
+});
+</script>
+
+</body>
+</html>
