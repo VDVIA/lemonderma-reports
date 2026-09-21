@@ -34,7 +34,9 @@
   --shadow-m:0 2px 6px rgba(0,0,0,.05), 0 18px 46px rgba(75,97,45,.10);
   --shadow-l:0 4px 12px rgba(0,0,0,.06), 0 34px 80px rgba(75,97,45,.14);
   --ease:cubic-bezier(.16,.84,.28,1);
-  --gut:22px;
+  --gut:18px;
+  /* PC에서도 모바일과 같은 한 칼럼으로 본다 — 실제 열람은 대부분 휴대폰 */
+  --col:420px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -65,18 +67,18 @@ body{
 .rail b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--edge),var(--headline));
         transition:width .7s var(--ease)}
 
-.wrap{max-width:660px;margin:0 auto;padding:0 var(--gut) 90px}
+.wrap{max-width:var(--col);margin:0 auto;padding:0 var(--gut) 90px}
 
 /* ── 스크롤 등장 ─────────────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 
 /* ═══ 히어로 ═══════════════════════════════════════════════════ */
-header{padding:46px 0 0;text-align:center}
+header{padding:34px 0 0;text-align:center}
 .mark{height:26px;width:auto;opacity:.92;margin-bottom:30px}
 .eyebrow{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--headline);
          letter-spacing:.03em;margin-bottom:12px}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,11.5vw,4.2rem);
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,11.5vw,2.7rem);
    line-height:1.02;letter-spacing:-.022em;margin-bottom:18px}
 .sub{font-size:1.06rem;line-height:1.62;max-width:29em;margin:0 auto}
 .sub em{font-style:normal;background:linear-gradient(transparent 71%,var(--marker) 71%);padding-bottom:1px}
@@ -85,20 +87,16 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,11.5vw,4.2rem
 .pill{font-size:.83rem;font-weight:500;color:var(--headline);background:var(--edge-soft);
       padding:7px 15px;border-radius:99px;letter-spacing:.005em}
 
-/* ── 히어로 이미지: 포인터에 따라 아주 미세하게 기운다 ─────────── */
+/* ── 히어로: 포인터에 따라 아주 미세하게 기운다 ───────────────── */
 .stage{perspective:1300px;margin:34px 0 0}
-.hero-frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-l);
-  transform-style:preserve-3d;transition:transform .5s var(--ease);will-change:transform;
-  background:linear-gradient(135deg,#f6f5d8,#ffffff)}
-.hero-frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-.hero-frame::after{content:"";position:absolute;inset:0;pointer-events:none;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.34), inset 0 -60px 80px -60px rgba(0,0,0,.22)}
+.stage .slot{border-radius:20px;box-shadow:var(--shadow-l);
+  transform-style:preserve-3d;transition:transform .5s var(--ease);will-change:transform}
 
 /* ═══ 섹션 공통 ════════════════════════════════════════════════ */
-section{margin-top:64px}
+section{margin-top:52px}
 .kicker{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--deep);
         margin-bottom:16px;letter-spacing:.01em}
-h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,6vw,2.05rem);
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,6vw,1.6rem);
    line-height:1.14;letter-spacing:-.016em;margin-bottom:16px}
 
 /* ── 브랜드 소개 5줄 ─────────────────────────────────────────── */
@@ -111,14 +109,8 @@ h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,6vw,2.05rem);
 .facts .hl{background:linear-gradient(transparent 71%,var(--marker) 71%)}
 
 /* ── 제품 듀오 ───────────────────────────────────────────────── */
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;perspective:1000px}
-.duo figure{position:relative;border-radius:16px;overflow:hidden;background:#fbfbee;
-  border:1px solid var(--edge);box-shadow:var(--shadow-s);
-  transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
-.duo figure:hover{box-shadow:var(--shadow-m)}
-.duo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
-.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:9px 12px;font-size:.78rem;
-  font-weight:500;color:var(--headline);background:linear-gradient(transparent,rgba(255,255,255,.94) 52%)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.duo .slot{border-radius:16px;box-shadow:var(--shadow-s)}
 
 /* ── What you get / What we ask 박스 ─────────────────────────── */
 .box{margin-top:22px;background:#fbfbee;border:1.5px solid var(--edge);border-radius:18px;
@@ -133,7 +125,7 @@ h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,6vw,2.05rem);
 .box .free{display:block;margin-top:8px;font-size:.9rem;color:var(--ink-soft)}
 
 /* ── 일정 ────────────────────────────────────────────────────── */
-.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:26px;
+.dates{display:grid;grid-template-columns:1fr;gap:1px;margin-top:26px;
        background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .dates div{background:var(--paper-2);padding:18px 12px;text-align:center}
 .dates dt{font-family:var(--serif);font-size:1.12rem;color:var(--deep);font-weight:600;
@@ -144,9 +136,10 @@ h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,6vw,2.05rem);
 .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
 
 /* ── 운영자 서명 ─────────────────────────────────────────────── */
-.signed{display:flex;gap:18px;align-items:center;margin-top:26px;padding:20px;
+.signed{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
+        margin-top:26px;padding:20px;
         border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.7)}
-.signed .who{flex:0 0 78px}
+.signed .who{flex:0 0 auto;width:78px}
 .signed .who .slot{border-radius:50%;aspect-ratio:1/1}
 .signed p{font-size:.95rem;line-height:1.55}
 .signed .nm{font-family:var(--serif);font-size:1.05rem;color:var(--headline);margin-top:7px}
@@ -181,7 +174,7 @@ body.slots .slot::after{content:attr(data-spec);position:absolute;inset:8px;
 #apply{margin-top:72px;scroll-margin-top:26px}
 
 .card{position:relative;background:var(--paper-2);border:1px solid var(--line);
-  border-radius:24px;box-shadow:var(--shadow-m);padding:30px 26px 28px;
+  border-radius:20px;box-shadow:var(--shadow-m);padding:24px 18px 24px;
   transform-style:preserve-3d}
 .card-stage{perspective:1500px}
 
@@ -223,7 +216,7 @@ input.bad,select.bad,textarea.bad{border-color:var(--alert);background:rgba(226,
 
 /* ── 선택지 카드 (라디오·체크박스) ───────────────────────────── */
 .opts{display:grid;gap:9px}
-.opts.two{grid-template-columns:1fr 1fr}
+.opts.two{grid-template-columns:1fr}
 .opt{position:relative;display:flex;align-items:center;gap:11px;cursor:pointer;
   border:1px solid rgba(0,0,0,.14);border-radius:12px;padding:13px 14px;background:#fdfdf6;
   font-size:.95rem;line-height:1.35;
@@ -320,17 +313,8 @@ button{font-family:var(--sans);font-size:1rem;font-weight:500;cursor:pointer;bor
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
        text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.6}
 
-/* ═══ 모바일 ═══════════════════════════════════════════════════ */
-@media (max-width:520px){
-  :root{--gut:18px}
-  header{padding-top:34px}
-  .card{padding:24px 18px 24px;border-radius:20px}
-  .dates{grid-template-columns:1fr}
-  .opts.two{grid-template-columns:1fr}
-  .signed{flex-direction:column;text-align:center;gap:14px}
-  .signed .who{flex:0 0 auto;width:78px}
-  section{margin-top:52px}
-}
+/* 아주 좁은 기기에서만 좌우 여백을 더 줄인다 */
+@media (max-width:360px){ :root{--gut:15px} }
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
@@ -362,9 +346,9 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
 </header>
 
 <div class="stage rv">
-  <div class="hero-frame" data-tilt>
-    <img src="assets/brand-hero.jpg" alt="Lemonderma" fetchpriority="high">
-  </div>
+  <figure class="slot wide" data-tilt data-spec="① 히어로 — 이미지 또는 영상&#10;16:9 · 1600×900&#10;첫 화면 대표 컷&#10;(영상이면 5~8초 무음 루프·2MB 이하)">
+    <span>Lemonderma</span>
+  </figure>
 </div>
 
 <section class="rv">
@@ -379,13 +363,13 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   </ol>
 
   <div class="proof">
-    <figure class="slot" data-spec="① PONY 릴스 스틸컷&#10;1:1 · 1000×1000&#10;영상 첫 프레임 캡처">
+    <figure class="slot" data-spec="② PONY 릴스 스틸컷&#10;1:1 · 1000×1000&#10;영상 첫 프레임 캡처">
       <span>PONY<br>reviewed</span>
     </figure>
-    <figure class="slot" data-spec="② Amazon's Choice 뱃지&#10;1:1 · 1000×1000&#10;PDP 뱃지 영역 스크린샷">
+    <figure class="slot" data-spec="③ Amazon's Choice 뱃지&#10;1:1 · 1000×1000&#10;PDP 뱃지 영역 스크린샷">
       <span>Amazon's<br>Choice</span>
     </figure>
-    <figure class="slot" data-spec="③ 한국 약국 진열 사진&#10;1:1 · 1000×1000&#10;매대에 놓인 실물">
+    <figure class="slot" data-spec="④ 한국 약국 진열 사진&#10;1:1 · 1000×1000&#10;매대에 놓인 실물">
       <span>Korean<br>pharmacy</span>
     </figure>
   </div>
@@ -396,13 +380,11 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <h2>The set, first</h2>
 
   <div class="duo">
-    <figure data-tilt>
-      <img src="assets/serum-tile.jpg" alt="Lemonderma serum" loading="lazy">
-      <figcaption>Serum</figcaption>
+    <figure class="slot" data-spec="⑤ 세럼 제품컷&#10;1:1 · 1000×1000&#10;카피 없는 깨끗한 컷">
+      <span>Serum</span>
     </figure>
-    <figure data-tilt>
-      <img src="assets/cream-tile.jpg" alt="Lemonderma cream" loading="lazy">
-      <figcaption>Cream</figcaption>
+    <figure class="slot" data-spec="⑥ 크림 제품컷&#10;1:1 · 1000×1000&#10;카피 없는 깨끗한 컷">
+      <span>Cream</span>
     </figure>
   </div>
 
@@ -436,7 +418,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <h2>Two people. No agency.</h2>
   <div class="signed">
     <div class="who">
-      <figure class="slot" data-spec="④ John 인물 사진&#10;1:1 · 600×600&#10;얼굴 중앙, 밝은 배경">
+      <figure class="slot" data-spec="⑦ John 인물 사진&#10;1:1 · 600×600&#10;얼굴 중앙, 밝은 배경">
         <span>John</span>
       </figure>
     </div>
@@ -668,7 +650,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <h2>That's with us now.</h2>
   <p>We read every application ourselves. Applications close <b>5 October</b> and we announce the final twenty on <b>6 October</b> — you'll hear from us either way. If you're in, your WhatsApp invitation comes to the number you gave us.</p>
   <div class="after">
-    <figure class="slot wide" data-spec="⑤ 언박싱·패키지 사진&#10;16:9 · 1600×900&#10;도착한 박스를 여는 장면">
+    <figure class="slot wide" data-spec="⑧ 언박싱·패키지 사진&#10;16:9 · 1600×900&#10;도착한 박스를 여는 장면">
       <span>Your set, on its way</span>
     </figure>
   </div>
@@ -941,22 +923,31 @@ show(1, true);   /* 첫 렌더에서는 스크롤하지 않는다 — 히어로�
 ════════════════════════════════════════════════════════════════════
  소재 자리 안내 (John)
 
- · 이 페이지 주소 뒤에 ?slots=1 을 붙여서 열면, 아직 비어 있는 5자리에
-   필요한 소재 규격이 화면에 표시된다.   예) …/apply/?slots=1
-   (신청자에게는 절대 안 보인다. 비어 있는 동안에는 브랜드 톤 패널로 보인다.)
+ · 이 페이지 주소 뒤에 ?slots=1 을 붙여서 열면, 비어 있는 8자리에
+   필요한 소재 규격이 화면에 표시된다.   예) …/skinlab-apply/?slots=1
+   (신청자에게는 안 보인다. 비어 있는 동안에는 브랜드 톤 패널로 보인다.)
 
  · 소재가 생기면 apply/assets/ 에 파일을 넣고, 해당 <figure class="slot">를
    <img src="assets/파일명.jpg" alt="설명" loading="lazy"> 로 바꾸면 끝.
 
-   ① PONY 릴스 스틸컷      1:1  1000×1000
-   ② Amazon's Choice 뱃지  1:1  1000×1000
-   ③ 한국 약국 진열 사진    1:1  1000×1000
-   ④ John 인물 사진        1:1  600×600
-   ⑤ 언박싱·패키지 사진    16:9 1600×900
+   ① 히어로 (이미지 또는 영상)   16:9  1600×900   ← 첫 화면, 가장 큼
+   ② PONY 릴스 스틸컷            1:1   1000×1000
+   ③ Amazon's Choice 뱃지        1:1   1000×1000
+   ④ 한국 약국 진열 사진          1:1   1000×1000
+   ⑤ 세럼 제품컷                 1:1   1000×1000  ← 카피 없는 깨끗한 컷
+   ⑥ 크림 제품컷                 1:1   1000×1000  ← 카피 없는 깨끗한 컷
+   ⑦ John 인물 사진              1:1   600×600
+   ⑧ 언박싱·패키지 사진           16:9  1600×900   ← 제출 완료 화면
 
- · (선택) 맨 위 히어로 이미지는 5~8초 무음 루프 영상으로 바꾸면 더 산다.
+ · ① 을 영상으로 넣을 때:
    <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
    2MB 이하로 — 모바일에서 첫 화면이 늦게 뜨면 그게 더 손해다.
+
+ · assets/ 에 남아 있는 파일은 lemonderma-logo.png (brand.md 정본 워드마크) 하나뿐.
+   로고는 "에셋을 쓴다"가 정본이라 타이핑 대체 금지.
+
+ · 레이아웃: PC에서도 모바일과 같은 한 칼럼으로 고정한다(--col: 420px).
+   열람이 대부분 휴대폰이므로 두 화면을 따로 관리하지 않는다.
 ════════════════════════════════════════════════════════════════════
 -->
 
