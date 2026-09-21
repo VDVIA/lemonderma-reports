@@ -2,452 +2,963 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Lemonderma Skin Lab Partners — Application</title>
-<meta name="description" content="Apply to join Lemonderma Skin Lab Partners, Cohort 1. 20 members in the UAE, four weeks.">
+<title>Skin Lab Partners — Lemonderma Cohort 1</title>
+<meta name="description" content="Twenty women in the UAE. Four weeks with Lemonderma. Applications close 5 October.">
+<meta name="theme-color" content="#fefcd0">
+
+<!-- 브랜드 정본 서체 (Adobe Fonts). 발행 도메인이 Typekit 킷에 등록돼 있지 않으면
+     아래 Google Fonts 대체본(Libre Caslon Text)으로 조용히 떨어진다. -->
+<link rel="stylesheet" href="https://use.typekit.net/ycy6gis.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+
 <style>
+/* ══════════════════════════════════════════════════════════════
+   Lemonderma — Skin Lab Partners 신청 폼
+   팔레트·서체는 00_compass/identity/brand.md SSOT (2026-07-29 Sol 확정)
+   배경 #fefcd0→#ffffff · 테두리 #ddea65 · 제목 #4b612d · 수치 #025200
+   본문은 순블랙, 눌러야 할 텍스트만 블랙 투명도로 처리(회색 색상값 금지)
+   ══════════════════════════════════════════════════════════════ */
 :root{
-  --ground-top:#fefcd0; --ground:#ffffff;
-  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
-  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
-  --num:#025200; --headline:#4b612d;
-  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
-  --pill-bg:#eef0dc; --pill-ink:#4b612d;
-  --err:#c0392b; --err-bg:#fdecea;
-  --serif:"Libre Caslon Text", Georgia, serif;
-  --sans:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --paper:#fefcd0; --paper-2:#ffffff;
+  --ink:#000000; --ink-soft:rgba(0,0,0,.62); --ink-mute:rgba(0,0,0,.42);
+  --line:rgba(0,0,0,.11); --edge:#ddea65; --edge-soft:rgba(221,234,101,.42);
+  --headline:#4b612d; --deep:#025200; --marker:rgba(221,247,70,.55);
+  --alert:#e23b3b;
+  --serif:"adobe-caslon-pro","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --sans:"neue-haas-grotesk-text","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --shadow-s:0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(75,97,45,.055);
+  --shadow-m:0 2px 6px rgba(0,0,0,.05), 0 18px 46px rgba(75,97,45,.10);
+  --shadow-l:0 4px 12px rgba(0,0,0,.06), 0 34px 80px rgba(75,97,45,.14);
+  --ease:cubic-bezier(.16,.84,.28,1);
+  --gut:22px;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground-top:#1b200f; --ground:#100f0a;
-    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
-    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
-    --num:#c9e46c; --headline:#bdd382;
-    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
-    --pill-bg:#242812; --pill-ink:#c9e46c;
-    --err:#ff7a6b; --err-bg:#2c1512;
-  }
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0; background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 420px);
-  color:var(--ink); font-family:var(--sans); padding:0 20px;
+  font-family:var(--sans);color:var(--ink);background:var(--paper-2);
+  font-size:16px;line-height:1.6;letter-spacing:-.004em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
 }
-.wrap{max-width:620px;margin:0 auto;padding-bottom:80px}
 
-header{padding:52px 0 26px;border-bottom:1px solid var(--line)}
-.eyebrow{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--headline);margin:0 0 12px}
-h1{font-size:clamp(1.7rem,5.4vw,2.3rem);margin:0 0 14px;line-height:1.18;font-weight:900;letter-spacing:-.01em;text-wrap:balance}
-.sub{font-size:1rem;line-height:1.7;color:var(--ink-2);margin:0}
-.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.pill{display:inline-flex;align-items:center;background:var(--pill-bg);color:var(--pill-ink);font-size:.76rem;font-weight:700;padding:5px 11px;border-radius:99px}
+/* ── 앰비언트 배경: 시트러스 톤 오브가 아주 느리게 흐른다 ───────── */
+.amb{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+     linear-gradient(180deg,var(--paper) 0,#fffef0 380px,var(--paper-2) 820px)}
+.amb i{position:absolute;display:block;border-radius:50%;filter:blur(70px);opacity:.5}
+.amb i:nth-child(1){width:640px;height:640px;top:-220px;left:-180px;
+  background:radial-gradient(circle,rgba(230,238,122,.62),transparent 68%);animation:drift1 34s var(--ease) infinite alternate}
+.amb i:nth-child(2){width:520px;height:520px;top:34vh;right:-200px;
+  background:radial-gradient(circle,rgba(221,247,70,.40),transparent 70%);animation:drift2 42s var(--ease) infinite alternate}
+.amb i:nth-child(3){width:700px;height:700px;bottom:-320px;left:26vw;
+  background:radial-gradient(circle,rgba(75,97,45,.14),transparent 70%);animation:drift3 50s var(--ease) infinite alternate}
+@keyframes drift1{to{transform:translate3d(120px,90px,0) scale(1.14)}}
+@keyframes drift2{to{transform:translate3d(-130px,-70px,0) scale(1.1)}}
+@keyframes drift3{to{transform:translate3d(90px,-110px,0) scale(1.08)}}
 
-.intro{padding:26px 0;border-bottom:1px solid var(--line)}
-.intro p{font-size:.94rem;line-height:1.75;color:var(--ink-2);margin:0 0 12px}
-.intro p:last-child{margin:0}
-.intro b{color:var(--ink)}
+/* ── 상단 진행 바 ───────────────────────────────────────────── */
+.rail{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:transparent}
+.rail b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--edge),var(--headline));
+        transition:width .7s var(--ease)}
 
-fieldset{border:0;margin:0;padding:34px 0 8px;border-bottom:1px solid var(--line)}
-legend{padding:0;font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin-bottom:4px}
-.grp-title{font-size:1.12rem;font-weight:900;margin:0 0 22px;letter-spacing:-.01em}
+.wrap{max-width:660px;margin:0 auto;padding:0 var(--gut) 90px}
+
+/* ── 스크롤 등장 ─────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ═══ 히어로 ═══════════════════════════════════════════════════ */
+header{padding:46px 0 0;text-align:center}
+.mark{height:26px;width:auto;opacity:.92;margin-bottom:30px}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--headline);
+         letter-spacing:.03em;margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.7rem,11.5vw,4.2rem);
+   line-height:1.02;letter-spacing:-.022em;margin-bottom:18px}
+.sub{font-size:1.06rem;line-height:1.62;max-width:29em;margin:0 auto}
+.sub em{font-style:normal;background:linear-gradient(transparent 71%,var(--marker) 71%);padding-bottom:1px}
+
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.pill{font-size:.83rem;font-weight:500;color:var(--headline);background:var(--edge-soft);
+      padding:7px 15px;border-radius:99px;letter-spacing:.005em}
+
+/* ── 히어로 이미지: 포인터에 따라 아주 미세하게 기운다 ─────────── */
+.stage{perspective:1300px;margin:34px 0 0}
+.hero-frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-l);
+  transform-style:preserve-3d;transition:transform .5s var(--ease);will-change:transform;
+  background:linear-gradient(135deg,#f6f5d8,#ffffff)}
+.hero-frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.hero-frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.34), inset 0 -60px 80px -60px rgba(0,0,0,.22)}
+
+/* ═══ 섹션 공통 ════════════════════════════════════════════════ */
+section{margin-top:64px}
+.kicker{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--deep);
+        margin-bottom:16px;letter-spacing:.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,6vw,2.05rem);
+   line-height:1.14;letter-spacing:-.016em;margin-bottom:16px}
+
+/* ── 브랜드 소개 5줄 ─────────────────────────────────────────── */
+.facts{list-style:none;counter-reset:fx;border-top:1px solid var(--line)}
+.facts li{counter-increment:fx;position:relative;padding:17px 2px 17px 36px;
+          border-bottom:1px solid var(--line);font-size:1rem;line-height:1.55}
+.facts li::before{content:counter(fx,decimal-leading-zero);position:absolute;left:2px;top:19px;
+  font-family:var(--serif);font-size:.82rem;color:var(--headline);letter-spacing:.06em;opacity:.8}
+.facts b{font-weight:700}
+.facts .hl{background:linear-gradient(transparent 71%,var(--marker) 71%)}
+
+/* ── 제품 듀오 ───────────────────────────────────────────────── */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;perspective:1000px}
+.duo figure{position:relative;border-radius:16px;overflow:hidden;background:#fbfbee;
+  border:1px solid var(--edge);box-shadow:var(--shadow-s);
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
+.duo figure:hover{box-shadow:var(--shadow-m)}
+.duo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:9px 12px;font-size:.78rem;
+  font-weight:500;color:var(--headline);background:linear-gradient(transparent,rgba(255,255,255,.94) 52%)}
+
+/* ── What you get / What we ask 박스 ─────────────────────────── */
+.box{margin-top:22px;background:#fbfbee;border:1.5px solid var(--edge);border-radius:18px;
+     padding:24px 24px 22px}
+.box-label{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--deep);margin-bottom:14px}
+.box ul{list-style:none}
+.box li{display:flex;gap:11px;font-size:.98rem;line-height:1.5;margin-bottom:11px}
+.box li:last-child{margin-bottom:0}
+.box li .d{color:var(--edge);flex:0 0 auto;font-weight:700}
+.box .amount{color:var(--deep);font-weight:700}
+.box p{font-size:1rem;line-height:1.5}
+.box .free{display:block;margin-top:8px;font-size:.9rem;color:var(--ink-soft)}
+
+/* ── 일정 ────────────────────────────────────────────────────── */
+.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:26px;
+       background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.dates div{background:var(--paper-2);padding:18px 12px;text-align:center}
+.dates dt{font-family:var(--serif);font-size:1.12rem;color:var(--deep);font-weight:600;
+          letter-spacing:-.01em;margin-bottom:3px}
+.dates dd{font-size:.8rem;color:var(--ink-soft);line-height:1.4}
+
+/* ── 프루프 타일 ─────────────────────────────────────────────── */
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+
+/* ── 운영자 서명 ─────────────────────────────────────────────── */
+.signed{display:flex;gap:18px;align-items:center;margin-top:26px;padding:20px;
+        border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.7)}
+.signed .who{flex:0 0 78px}
+.signed .who .slot{border-radius:50%;aspect-ratio:1/1}
+.signed p{font-size:.95rem;line-height:1.55}
+.signed .nm{font-family:var(--serif);font-size:1.05rem;color:var(--headline);margin-top:7px}
+
+/* ═══ 에셋 슬롯 ════════════════════════════════════════════════
+   아직 실물이 없는 자리. 비어 있어도 "디자인된 패널"로 보이게 만들어서
+   신청자에게 깨진 화면이 보이지 않는다.
+   ?slots=1 을 URL 뒤에 붙이면 각 자리에 필요한 소재 규격이 표시된다.
+   ══════════════════════════════════════════════════════════════ */
+.slot{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 28% 18%, rgba(255,255,255,.95), transparent 60%),
+    linear-gradient(150deg,#f4f3d2 0%,#fbfbee 46%,#eef0cf 100%);
+  border:1px solid var(--edge);display:flex;align-items:center;justify-content:center}
+.slot::before{content:"";position:absolute;width:44%;height:44%;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, rgba(255,255,255,.9), rgba(221,234,101,.55) 58%, rgba(75,97,45,.14));
+  box-shadow:0 10px 28px rgba(75,97,45,.16);animation:bob 7s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px) scale(1.03)}}
+.slot span{position:relative;font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:var(--headline);opacity:.92;text-align:center;padding:0 10px;line-height:1.35}
+.slot.wide{aspect-ratio:16/9}
+
+/* ?slots=1 일 때만 보이는 규격 라벨 */
+body.slots .slot{outline:2px dashed var(--headline);outline-offset:-6px}
+body.slots .slot span{display:none}
+body.slots .slot::after{content:attr(data-spec);position:absolute;inset:8px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--sans);font-size:.72rem;font-weight:500;line-height:1.42;color:var(--ink);
+  background:rgba(255,255,255,.9);border-radius:9px;padding:10px;white-space:pre-line}
+
+/* ═══ 폼 ═══════════════════════════════════════════════════════ */
+#apply{margin-top:72px;scroll-margin-top:26px}
+
+.card{position:relative;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:24px;box-shadow:var(--shadow-m);padding:30px 26px 28px;
+  transform-style:preserve-3d}
+.card-stage{perspective:1500px}
+
+.steps{display:flex;gap:6px;margin-bottom:22px}
+.steps i{flex:1;height:3px;border-radius:99px;background:rgba(0,0,0,.09);overflow:hidden;position:relative}
+.steps i::after{content:"";position:absolute;inset:0;width:0;border-radius:99px;
+  background:linear-gradient(90deg,var(--edge),var(--headline));transition:width .6s var(--ease)}
+.steps i.on::after{width:100%}
+.stepmeta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.stepmeta .of{font-size:.74rem;color:var(--ink-mute);letter-spacing:.09em;text-transform:uppercase}
+.stepmeta .nm{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--deep)}
+
+.step{display:none}
+.step.on{display:block;animation:stepIn .58s var(--ease) both}
+@keyframes stepIn{from{opacity:0;transform:translateY(16px) rotateX(5deg) scale(.988)}
+                  to{opacity:1;transform:none}}
+.step h3{font-family:var(--serif);font-weight:600;font-size:1.62rem;line-height:1.16;
+         letter-spacing:-.015em;margin-bottom:6px}
+.step .lead{font-size:.93rem;color:var(--ink-soft);line-height:1.55;margin-bottom:24px}
 
 .f{margin-bottom:22px}
-label{display:block;font-size:.9rem;font-weight:700;margin-bottom:7px;color:var(--ink)}
-.hint{display:block;font-weight:400;font-size:.8rem;color:var(--ink-3);margin-top:3px}
-.req{color:var(--headline);margin-left:3px}
+.f:last-of-type{margin-bottom:0}
+label.lb{display:block;font-size:.95rem;font-weight:500;margin-bottom:9px;line-height:1.45}
+.req{color:var(--deep);margin-left:3px}
+.hint{display:block;font-weight:400;font-size:.83rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
 
 input[type=text],input[type=tel],input[type=email],select,textarea{
   width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
-  background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  padding:13px 14px;transition:border-color .15s, box-shadow .15s;
-}
-textarea{resize:vertical;min-height:96px;line-height:1.6}
-select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 15px) calc(50% + 2px);background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:42px}
-input:focus,select:focus,textarea:focus{outline:0;border-color:var(--line-strong);box-shadow:0 0 0 3px var(--pill-bg)}
-input.bad,select.bad,textarea.bad{border-color:var(--err)}
-.err{display:none;color:var(--err);font-size:.8rem;margin-top:6px}
-.err.on{display:block}
+  background:#fdfdf6;border:1px solid rgba(0,0,0,.16);border-radius:12px;
+  padding:14px 15px;line-height:1.4;transition:border-color .25s,box-shadow .25s,background .25s;
+  -webkit-appearance:none;appearance:none}
+textarea{min-height:104px;resize:vertical;line-height:1.55}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%234b612d' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--headline);
+  background:var(--paper-2);box-shadow:0 0 0 4px rgba(221,234,101,.4)}
+input.bad,select.bad,textarea.bad{border-color:var(--alert);background:rgba(226,59,59,.035)}
+::placeholder{color:rgba(0,0,0,.3)}
 
-.radios{display:flex;flex-direction:column;gap:9px;margin-top:4px}
-.radios label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.93rem;line-height:1.5;margin:0;cursor:pointer;color:var(--ink-2)}
-.radios input{margin:3px 0 0;accent-color:var(--headline);flex:0 0 auto}
+/* ── 선택지 카드 (라디오·체크박스) ───────────────────────────── */
+.opts{display:grid;gap:9px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{position:relative;display:flex;align-items:center;gap:11px;cursor:pointer;
+  border:1px solid rgba(0,0,0,.14);border-radius:12px;padding:13px 14px;background:#fdfdf6;
+  font-size:.95rem;line-height:1.35;
+  transition:border-color .22s,background .22s,transform .3s var(--ease),box-shadow .3s var(--ease)}
+.opt:hover{border-color:var(--edge);transform:translateY(-1px);box-shadow:var(--shadow-s)}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt .tick{flex:0 0 19px;height:19px;border-radius:50%;border:1.5px solid rgba(0,0,0,.26);
+  position:relative;transition:border-color .22s,background .22s}
+.opt.cb .tick{border-radius:6px}
+.opt .tick::after{content:"";position:absolute;inset:0;margin:auto;width:9px;height:9px;
+  border-radius:50%;background:var(--headline);transform:scale(0);transition:transform .28s var(--ease)}
+.opt.cb .tick::after{width:10px;height:6px;border-radius:0;background:none;
+  border-left:2px solid var(--headline);border-bottom:2px solid var(--headline);
+  transform:rotate(-45deg) scale(0);margin-top:-2px}
+.opt input:checked ~ .tick{border-color:var(--headline);background:rgba(221,247,70,.4)}
+.opt input:checked ~ .tick::after{transform:scale(1)}
+.opt.cb input:checked ~ .tick::after{transform:rotate(-45deg) scale(1)}
+.opt.sel{border-color:var(--headline);background:rgba(221,247,70,.17)}
+.opt input:focus-visible ~ .tick{box-shadow:0 0 0 4px rgba(221,234,101,.5)}
+.opts.bad .opt{border-color:rgba(226,59,59,.5)}
 
-.consent{background:var(--panel-3);border-radius:12px;padding:18px 20px;margin-bottom:14px}
-.consent label{display:flex;gap:11px;align-items:flex-start;font-weight:400;font-size:.9rem;line-height:1.6;margin:0;cursor:pointer;color:var(--ink-2)}
-.consent input{margin:3px 0 0;accent-color:var(--headline);flex:0 0 auto;width:17px;height:17px}
-.consent b{color:var(--ink)}
+.counter{font-size:.8rem;color:var(--ink-soft);margin-top:9px}
+.counter b{color:var(--deep);font-weight:700}
+.opt.off{opacity:.42;pointer-events:none}
 
-.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.err{display:none;font-size:.84rem;color:var(--alert);margin-top:8px;line-height:1.45}
+.err.on{display:block;animation:nudge .32s var(--ease)}
+@keyframes nudge{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 
-.actions{padding:30px 0 0}
-button{
-  width:100%;font-family:var(--sans);font-size:1.02rem;font-weight:700;color:#10240a;
-  background:var(--line-strong);border:0;border-radius:99px;padding:17px 20px;cursor:pointer;
-  transition:transform .12s, opacity .15s;
-}
-button:hover{transform:translateY(-1px)}
-button:disabled{opacity:.55;cursor:default;transform:none}
-.formnote{font-size:.82rem;color:var(--ink-3);text-align:center;margin:14px 0 0;line-height:1.6}
-.failnote{display:none;background:var(--err-bg);color:var(--err);font-size:.87rem;line-height:1.6;border-radius:10px;padding:14px 16px;margin-top:16px}
+/* ── 거주 확인 안내 ─────────────────────────────────────────── */
+.gate{display:none;margin-top:12px;padding:15px 16px;border-radius:12px;
+      background:#fbfbee;border:1px solid var(--edge);font-size:.9rem;line-height:1.55}
+.gate.on{display:block;animation:stepIn .4s var(--ease) both}
+
+/* ── 동의 ───────────────────────────────────────────────────── */
+.consent{border:1.5px solid var(--edge);border-radius:16px;background:#fbfbee;padding:20px 20px 18px}
+.consent .head{display:flex;align-items:center;gap:12px;cursor:pointer;position:relative}
+.consent .head .tick{flex:0 0 22px;height:22px;border-radius:7px;border:1.5px solid rgba(0,0,0,.3);
+  position:relative;background:var(--paper-2);transition:border-color .22s,background .22s}
+.consent .head .tick::after{content:"";position:absolute;inset:0;margin:auto;width:11px;height:6px;
+  border-left:2.2px solid var(--headline);border-bottom:2.2px solid var(--headline);
+  transform:rotate(-45deg) scale(0);margin-top:-3px;transition:transform .3s var(--ease)}
+.consent input{position:absolute;opacity:0;width:0;height:0}
+.consent input:checked ~ .tick{border-color:var(--headline);background:rgba(221,247,70,.45)}
+.consent input:checked ~ .tick::after{transform:rotate(-45deg) scale(1)}
+.consent .head b{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--headline)}
+.consent ul{list-style:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.consent li{display:flex;gap:10px;font-size:.86rem;line-height:1.55;color:var(--ink-soft);margin-bottom:9px}
+.consent li:last-child{margin-bottom:0}
+.consent li .d{color:var(--edge);flex:0 0 auto;font-weight:700}
+
+/* ── 버튼 ───────────────────────────────────────────────────── */
+.nav{display:flex;gap:10px;align-items:center;margin-top:28px}
+button{font-family:var(--sans);font-size:1rem;font-weight:500;cursor:pointer;border:none;
+  border-radius:12px;transition:transform .22s var(--ease),box-shadow .22s var(--ease),
+  background .22s,opacity .22s}
+.btn{flex:1;background:var(--headline);color:#fff;padding:16px 20px;letter-spacing:.005em;
+     box-shadow:0 2px 10px rgba(75,97,45,.26);position:relative;overflow:hidden;min-height:54px}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 22px rgba(75,97,45,.3)}
+.btn:active:not(:disabled){transform:translateY(0)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn .lbl{display:inline-flex;align-items:center;gap:9px;transition:opacity .25s,transform .25s}
+.btn.busy .lbl{opacity:0;transform:translateY(-6px)}
+.btn .spin{position:absolute;inset:0;margin:auto;width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;opacity:0;animation:sp .8s linear infinite}
+.btn.busy .spin{opacity:1}
+@keyframes sp{to{transform:rotate(360deg)}}
+.back{flex:0 0 auto;background:transparent;color:var(--ink-soft);padding:16px 6px;font-size:.92rem}
+.back:hover{color:var(--ink)}
+.back[hidden]{display:none}
+
+.formnote{font-size:.83rem;color:var(--ink-soft);line-height:1.5;margin-top:14px;text-align:center}
+.failnote{display:none;margin-top:14px;padding:14px 15px;border-radius:12px;font-size:.88rem;
+  line-height:1.55;background:rgba(226,59,59,.06);border:1px solid rgba(226,59,59,.3)}
 .failnote.on{display:block}
 
-#done{display:none;padding:70px 0;text-align:center}
-#done.on{display:block}
-#done .mark{font-family:var(--serif);font-size:2.6rem;color:var(--headline);margin-bottom:18px}
-#done h2{font-size:1.5rem;margin:0 0 14px;font-weight:900}
-#done p{font-size:.97rem;line-height:1.75;color:var(--ink-2);margin:0 auto;max-width:42ch}
+/* 봇 함정 */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
-footer{padding:34px 0 0;border-top:1px solid var(--line);margin-top:34px}
-footer p{font-size:.8rem;color:var(--ink-3);line-height:1.7;margin:0}
+/* ═══ 완료 화면 ════════════════════════════════════════════════ */
+#done{display:none;text-align:center;padding:40px 0 0}
+#done.on{display:block;animation:stepIn .7s var(--ease) both}
+.seal{width:70px;height:70px;margin:0 auto 24px;border-radius:50%;
+  background:rgba(221,247,70,.35);border:1.5px solid var(--edge);
+  display:flex;align-items:center;justify-content:center}
+.seal svg{width:32px;height:32px}
+.seal path{stroke:var(--headline);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:36;stroke-dashoffset:36;animation:draw .7s .25s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#done h2{margin-bottom:14px}
+#done p{font-size:1rem;line-height:1.66;max-width:30em;margin:0 auto}
+#done .after{margin-top:30px}
+
+footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+       text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.6}
+
+/* ═══ 모바일 ═══════════════════════════════════════════════════ */
+@media (max-width:520px){
+  :root{--gut:18px}
+  header{padding-top:34px}
+  .card{padding:24px 18px 24px;border-radius:20px}
+  .dates{grid-template-columns:1fr}
+  .opts.two{grid-template-columns:1fr}
+  .signed{flex-direction:column;text-align:center;gap:14px}
+  .signed .who{flex:0 0 auto;width:78px}
+  section{margin-top:52px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
+
 <body>
+
+<div class="amb" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="rail" aria-hidden="true"><b id="rail"></b></div>
 
 <div class="wrap">
 
 <div id="form-view">
 
 <header>
-  <p class="eyebrow">Lemonderma · Cohort 1</p>
-  <h1>Skin Lab Partners</h1>
-  <p class="sub">Twenty women in the UAE. Four weeks. You test what we make, and you tell us what's wrong with it.</p>
-  <div class="meta">
+  <img class="mark" src="assets/lemonderma-logo.png" alt="Lemonderma">
+  <p class="eyebrow rv">Cohort 1 · United Arab Emirates</p>
+  <h1 class="rv">Skin Lab Partners</h1>
+  <p class="sub rv">Twenty women in the UAE. Four weeks with the people who actually make the products — <em>and the products before anyone else sees them.</em></p>
+  <div class="pills rv">
     <span class="pill">20 members</span>
     <span class="pill">4 weeks</span>
-    <span class="pill">Starts 19 October</span>
+    <span class="pill">19 Oct – 16 Nov</span>
   </div>
 </header>
 
-<div class="intro">
-  <p>We're Lemonderma — a vegan skincare brand from Korea. Our CEO and our marketer run this group themselves. No agency, no brand account.</p>
-  <p>Every member receives our full anti-aging set (serum + cream) shipped from Korea, free, as soon as you join. At the end of four weeks we ask for <b>one Reel</b> — any format, any quality. Honest is the only requirement.</p>
-  <p>This takes a few minutes to fill in. We read every one of them.</p>
+<div class="stage rv">
+  <div class="hero-frame" data-tilt>
+    <img src="assets/brand-hero.jpg" alt="Lemonderma" fetchpriority="high">
+  </div>
 </div>
 
-<form id="f" novalidate>
+<section class="rv">
+  <p class="kicker">Who we are</p>
+  <h2>Five things worth knowing<br>before you apply</h2>
+  <ol class="facts">
+    <li>Korean <b>pharmacy skincare</b> — the range sold out in pharmacies back home.</li>
+    <li><b class="hl">100% vegan</b>, built for skin that reacts to everything else.</li>
+    <li>Lemon-derived exosomes from <b>Zishel Bio</b>, the lab that supplies dermatology clinics in <b>50+ countries</b>.</li>
+    <li><b>Amazon's Choice</b> on both products within a month of our US launch.</li>
+    <li>Reviewed by <b>PONY</b>, who has 27 million followers.</li>
+  </ol>
 
-  <fieldset>
-    <legend>01</legend>
-    <p class="grp-title">About you</p>
+  <div class="proof">
+    <figure class="slot" data-spec="① PONY 릴스 스틸컷&#10;1:1 · 1000×1000&#10;영상 첫 프레임 캡처">
+      <span>PONY<br>reviewed</span>
+    </figure>
+    <figure class="slot" data-spec="② Amazon's Choice 뱃지&#10;1:1 · 1000×1000&#10;PDP 뱃지 영역 스크린샷">
+      <span>Amazon's<br>Choice</span>
+    </figure>
+    <figure class="slot" data-spec="③ 한국 약국 진열 사진&#10;1:1 · 1000×1000&#10;매대에 놓인 실물">
+      <span>Korean<br>pharmacy</span>
+    </figure>
+  </div>
+</section>
 
-    <div class="f">
-      <label for="name">Your name<span class="req">*</span>
-        <span class="hint">As it should appear on the delivery label.</span>
-      </label>
-      <input type="text" id="name" name="name" autocomplete="name">
-      <p class="err" id="e-name">Please enter your name.</p>
-    </div>
+<section class="rv">
+  <p class="kicker">What lands on your doorstep</p>
+  <h2>The set, first</h2>
 
-    <div class="f">
-      <label for="instagram">Instagram handle<span class="req">*</span></label>
-      <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocapitalize="none" autocorrect="off">
-      <p class="err" id="e-instagram">Please enter your Instagram handle.</p>
-    </div>
-
-    <div class="f">
-      <label for="ageBand">Age<span class="req">*</span></label>
-      <select id="ageBand" name="ageBand">
-        <option value="">Select</option>
-        <option>Under 30</option>
-        <option>30–39</option>
-        <option>40–49</option>
-        <option>50 or over</option>
-      </select>
-      <p class="err" id="e-ageBand">Please select your age range.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>02</legend>
-    <p class="grp-title">Your skin</p>
-
-    <div class="f">
-      <label for="skinConcern">What bothers you most when you look in the mirror?<span class="req">*</span></label>
-      <select id="skinConcern" name="skinConcern">
-        <option value="">Select</option>
-        <option>Dark spots / uneven tone</option>
-        <option>Dullness</option>
-        <option>Fine lines / firmness</option>
-        <option>Dryness</option>
-        <option>Texture / pores</option>
-        <option>Sensitivity / redness</option>
-        <option>Something else</option>
-      </select>
-      <p class="err" id="e-skinConcern">Please choose one.</p>
-    </div>
-
-    <div class="f">
-      <label>Do you read the ingredient list before you buy?<span class="req">*</span></label>
-      <div class="radios">
-        <label><input type="radio" name="ingredients" value="Always — I look it up"> Always — I look it up</label>
-        <label><input type="radio" name="ingredients" value="Sometimes, for new brands"> Sometimes, for new brands</label>
-        <label><input type="radio" name="ingredients" value="Rarely"> Rarely</label>
-      </div>
-      <p class="err" id="e-ingredients">Please choose one.</p>
-    </div>
-
-    <div class="f">
-      <label for="currentProducts">What are you using right now?
-        <span class="hint">Brands or products — optional, but it helps us.</span>
-      </label>
-      <input type="text" id="currentProducts" name="currentProducts">
-    </div>
-
-    <div class="f">
-      <label for="kbeauty">Have you tried Korean skincare before?<span class="req">*</span></label>
-      <select id="kbeauty" name="kbeauty">
-        <option value="">Select</option>
-        <option>Yes, I use it regularly</option>
-        <option>I've tried a few things</option>
-        <option>Heard of it, never tried</option>
-        <option>No</option>
-      </select>
-      <p class="err" id="e-kbeauty">Please choose one.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>03</legend>
-    <p class="grp-title">Why you</p>
-
-    <div class="f">
-      <label for="why">Why do you want to be in this group?<span class="req">*</span>
-        <span class="hint">A sentence or two is enough. There's no right answer — we just want to hear it in your words.</span>
-      </label>
-      <textarea id="why" name="why"></textarea>
-      <p class="err" id="e-why">Please tell us briefly.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>04</legend>
-    <p class="grp-title">How we reach you</p>
-
-    <div class="f">
-      <label for="whatsapp">WhatsApp number<span class="req">*</span>
-        <span class="hint">With country code — this is how we send your invitation.</span>
-      </label>
-      <input type="tel" id="whatsapp" name="whatsapp" placeholder="+971 50 000 0000" autocomplete="tel">
-      <p class="err" id="e-whatsapp">Please enter your WhatsApp number with country code.</p>
-    </div>
-
-    <div class="f">
-      <label for="email">Email<span class="req">*</span>
-        <span class="hint">A backup, in case WhatsApp doesn't reach you.</span>
-      </label>
-      <input type="email" id="email" name="email" autocapitalize="none" autocorrect="off" autocomplete="email">
-      <p class="err" id="e-email">Please enter a valid email address.</p>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>05</legend>
-    <p class="grp-title">Where we'd ship it</p>
-    <p style="font-size:.88rem;color:var(--ink-3);line-height:1.65;margin:-14px 0 22px">Used only if you're selected. We ship from Korea.</p>
-
-    <div class="f">
-      <label for="emirate">Emirate<span class="req">*</span></label>
-      <select id="emirate" name="emirate">
-        <option value="">Select</option>
-        <option>Dubai</option>
-        <option>Abu Dhabi</option>
-        <option>Sharjah</option>
-        <option>Ajman</option>
-        <option>Ras Al Khaimah</option>
-        <option>Fujairah</option>
-        <option>Umm Al Quwain</option>
-      </select>
-      <p class="err" id="e-emirate">Please select your emirate.</p>
-    </div>
-
-    <div class="f">
-      <label for="city">Area / district<span class="req">*</span>
-        <span class="hint">e.g. Jumeirah Village Circle, Al Nahyan</span>
-      </label>
-      <input type="text" id="city" name="city">
-      <p class="err" id="e-city">Please enter your area.</p>
-    </div>
-
-    <div class="f">
-      <label for="address">Building, street, apartment<span class="req">*</span></label>
-      <input type="text" id="address" name="address" autocomplete="street-address">
-      <p class="err" id="e-address">Please enter your address.</p>
-    </div>
-
-    <div class="f">
-      <label for="landmark">Nearest landmark
-        <span class="hint">Optional, but couriers here find addresses faster with one.</span>
-      </label>
-      <input type="text" id="landmark" name="landmark">
-    </div>
-  </fieldset>
-
-  <fieldset style="border-bottom:0">
-    <legend>06</legend>
-    <p class="grp-title">Before you send</p>
-
-    <div class="consent">
-      <label><input type="checkbox" id="agreeReel" name="agreeReel">
-        <span>I understand that finishing the four weeks means posting <b>one Reel</b> at the end — any format, any quality.</span>
-      </label>
-    </div>
-    <p class="err" id="e-agreeReel" style="margin:-8px 0 14px">Please confirm.</p>
-
-    <div class="consent">
-      <label><input type="checkbox" id="agreePrivacy" name="agreePrivacy">
-        <span>I agree that Lemonderma may use the details above to <b>select members and ship the product</b>. They won't be used for anything else and will be deleted after Cohort 1 ends.</span>
-      </label>
-    </div>
-    <p class="err" id="e-agreePrivacy" style="margin:-8px 0 0">Please confirm.</p>
-
-    <div class="hp" aria-hidden="true">
-      <label for="website">Leave this empty</label>
-      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-    </div>
-  </fieldset>
-
-  <div class="actions">
-    <button type="submit" id="submit">Send my application</button>
-    <p class="formnote">We're choosing 20. You'll hear from us either way by <b>5 October</b>.</p>
-    <div class="failnote" id="fail"></div>
+  <div class="duo">
+    <figure data-tilt>
+      <img src="assets/serum-tile.jpg" alt="Lemonderma serum" loading="lazy">
+      <figcaption>Serum</figcaption>
+    </figure>
+    <figure data-tilt>
+      <img src="assets/cream-tile.jpg" alt="Lemonderma cream" loading="lazy">
+      <figcaption>Cream</figcaption>
+    </figure>
   </div>
 
-</form>
+  <div class="box">
+    <p class="box-label">What you get</p>
+    <ul>
+      <li><span class="d">·</span><span>Our serum + cream set <b class="amount">($72)</b>, shipped from Korea at no cost</span></li>
+      <li><span class="d">·</span><span>New products free, before they launch</span></li>
+      <li><span class="d">·</span><span>A direct line to the CEO</span></li>
+      <li><span class="d">·</span><span>First in line for Cohort 2, if you finish the four weeks</span></li>
+      <li><span class="d">·</span><span>Top partner receives a full set worth <b class="amount">$500</b></span></li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <p class="box-label">What we ask</p>
+    <p>At the end, <b>one Reel</b> about your honest experience.
+      <span class="free">Any format, any quality. Honest is the only requirement.</span>
+    </p>
+  </div>
+
+  <dl class="dates">
+    <div><dt>5 Oct</dt><dd>Applications close</dd></div>
+    <div><dt>6 Oct</dt><dd>The final 20 announced</dd></div>
+    <div><dt>19 Oct</dt><dd>Four weeks begin</dd></div>
+  </dl>
+</section>
+
+<section class="rv">
+  <p class="kicker">Who reads this</p>
+  <h2>Two people. No agency.</h2>
+  <div class="signed">
+    <div class="who">
+      <figure class="slot" data-spec="④ John 인물 사진&#10;1:1 · 600×600&#10;얼굴 중앙, 밝은 배경">
+        <span>John</span>
+      </figure>
+    </div>
+    <div>
+      <p>Every application is read by us — not an agency, not a brand account. If you're in, I send your WhatsApp invitation myself, and I'm the one you'll be talking to for the next four weeks.</p>
+      <p class="nm">John · Head of Marketing, Lemonderma</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 신청 폼 ═══════════ -->
+<section id="apply" class="rv">
+  <p class="kicker">The application</p>
+  <h2>About three minutes</h2>
+
+  <div class="card-stage">
+  <form id="f" class="card" novalidate>
+
+    <div class="steps" aria-hidden="true">
+      <i class="on"></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="stepmeta">
+      <span class="of">Step <b id="n-now">1</b> of 5</span>
+      <span class="nm" id="n-name">About you</span>
+    </div>
+
+    <!-- ── 1 ─────────────────────────────────────────────── -->
+    <div class="step on" data-step="1" data-name="About you">
+      <h3>First, where you are</h3>
+      <p class="lead">Cohort 1 ships inside the UAE only — so this one decides the rest.</p>
+
+      <div class="f">
+        <label class="lb" for="emirate">Where do you live?<span class="req">*</span></label>
+        <select id="emirate" name="emirate">
+          <option value="">Select</option>
+          <option>Dubai</option>
+          <option>Abu Dhabi</option>
+          <option>Sharjah</option>
+          <option>Ajman</option>
+          <option>Ras Al Khaimah</option>
+          <option>Fujairah</option>
+          <option>Umm Al Quwain</option>
+          <option value="__out">I'm not in the UAE</option>
+        </select>
+        <p class="err" id="e-emirate">Please choose where you live.</p>
+        <div class="gate" id="gate">
+          <b>Cohort 1 is UAE-only.</b> We ship from Korea into one country this time so nothing gets lost on the way. Reply to our DM with your Instagram and we'll come back to you the moment we open yours.
+        </div>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="name">Your name<span class="req">*</span>
+          <span class="hint">As it should appear on a parcel.</span>
+        </label>
+        <input type="text" id="name" name="name" autocomplete="name">
+        <p class="err" id="e-name">Please enter your name.</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="instagram">Instagram handle<span class="req">*</span></label>
+        <input type="text" id="instagram" name="instagram" placeholder="@yourhandle" autocapitalize="none" autocorrect="off" spellcheck="false">
+        <p class="err" id="e-instagram">Please enter your Instagram handle.</p>
+      </div>
+
+      <div class="f">
+        <label class="lb">Your age<span class="req">*</span></label>
+        <div class="opts two" data-group="ageBand">
+          <label class="opt"><input type="radio" name="ageBand" value="Under 30"><span class="tick"></span>Under 30</label>
+          <label class="opt"><input type="radio" name="ageBand" value="30–39"><span class="tick"></span>30–39</label>
+          <label class="opt"><input type="radio" name="ageBand" value="40–49"><span class="tick"></span>40–49</label>
+          <label class="opt"><input type="radio" name="ageBand" value="50 or over"><span class="tick"></span>50 or over</label>
+        </div>
+        <p class="err" id="e-ageBand">Please choose one.</p>
+      </div>
+    </div>
+
+    <!-- ── 2 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="2" data-name="Your skin">
+      <h3>Your skin</h3>
+      <p class="lead">This is the part we actually use — it decides what goes in your box.</p>
+
+      <div class="f">
+        <label class="lb">How would you describe your skin?<span class="req">*</span></label>
+        <div class="opts two" data-group="skinType">
+          <label class="opt"><input type="radio" name="skinType" value="Dry"><span class="tick"></span>Dry</label>
+          <label class="opt"><input type="radio" name="skinType" value="Normal"><span class="tick"></span>Normal</label>
+          <label class="opt"><input type="radio" name="skinType" value="Combination"><span class="tick"></span>Combination</label>
+          <label class="opt"><input type="radio" name="skinType" value="Oily"><span class="tick"></span>Oily</label>
+        </div>
+        <p class="err" id="e-skinType">Please choose one.</p>
+        <div class="opts" style="margin-top:9px">
+          <label class="opt cb"><input type="checkbox" id="sensitive" name="sensitive"><span class="tick"></span>…and it's sensitive — things sting or turn red easily</label>
+        </div>
+      </div>
+
+      <div class="f">
+        <label class="lb">What would you most like to change?<span class="req">*</span>
+          <span class="hint">Choose up to three.</span>
+        </label>
+        <div class="opts" data-group="concerns" data-max="3">
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Dark spots / uneven tone"><span class="tick"></span>Dark spots, uneven tone</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Dullness"><span class="tick"></span>Dullness, no glow</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Fine lines / firmness"><span class="tick"></span>Fine lines, firmness</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Dryness / tightness"><span class="tick"></span>Dryness, tightness</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Texture / pores"><span class="tick"></span>Texture, pores</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Redness / reactivity"><span class="tick"></span>Redness, reactivity</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="Breakouts"><span class="tick"></span>Breakouts</label>
+        </div>
+        <p class="counter"><b id="cn">0</b> of 3 chosen</p>
+        <p class="err" id="e-concerns">Please choose at least one.</p>
+      </div>
+    </div>
+
+    <!-- ── 3 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="3" data-name="What you use">
+      <h3>What's on your shelf</h3>
+      <p class="lead">No right answer here. We just want to know what you'll be comparing us against.</p>
+
+      <div class="f">
+        <label class="lb">Have you used Korean skincare before?<span class="req">*</span></label>
+        <div class="opts" data-group="kbeauty">
+          <label class="opt"><input type="radio" name="kbeauty" value="Yes, regularly"><span class="tick"></span>Yes — it's part of my routine</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="Tried a few things"><span class="tick"></span>I've tried a few things</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="Heard of it, never tried"><span class="tick"></span>Heard of it, never tried it</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="No"><span class="tick"></span>No — this would be my first</label>
+        </div>
+        <p class="err" id="e-kbeauty">Please choose one.</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="lastProduct">The last skincare product you bought<span class="req">*</span>
+          <span class="hint">Brand and product, as best you remember.</span>
+        </label>
+        <input type="text" id="lastProduct" name="lastProduct" placeholder="e.g. La Roche-Posay Mela B3 serum">
+        <p class="err" id="e-lastProduct">Please tell us what it was.</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="lastReason">And what made you buy it?<span class="req">*</span>
+          <span class="hint">One line is plenty — an ad, a friend, a review, the ingredients.</span>
+        </label>
+        <input type="text" id="lastReason" name="lastReason">
+        <p class="err" id="e-lastReason">Please tell us briefly.</p>
+      </div>
+    </div>
+
+    <!-- ── 4 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="4" data-name="Why you">
+      <h3>Why you</h3>
+      <p class="lead">This is the answer we read most carefully. Write it the way you'd say it.</p>
+
+      <div class="f">
+        <label class="lb" for="why">Why do you want to be one of the twenty?<span class="req">*</span>
+          <span class="hint">Two or three sentences. There's no correct answer — we're looking for someone who'll actually tell us when something isn't working.</span>
+        </label>
+        <textarea id="why" name="why"></textarea>
+        <p class="err" id="e-why">Please tell us in your own words.</p>
+      </div>
+    </div>
+
+    <!-- ── 5 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="5" data-name="Staying in touch">
+      <h3>How we reach you</h3>
+      <p class="lead">We don't ask for your address yet — only if you're selected.</p>
+
+      <div class="f">
+        <label class="lb" for="whatsapp">WhatsApp number<span class="req">*</span>
+          <span class="hint">With country code. This is where your invitation goes.</span>
+        </label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+971 50 000 0000" autocomplete="tel">
+        <p class="err" id="e-whatsapp">Please enter your WhatsApp number with country code.</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="email">Email<span class="req">*</span>
+          <span class="hint">A backup, in case WhatsApp doesn't reach you.</span>
+        </label>
+        <input type="email" id="email" name="email" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="email">
+        <p class="err" id="e-email">Please enter a valid email address.</p>
+      </div>
+
+      <div class="f">
+        <div class="consent">
+          <label class="head" for="consent">
+            <input type="checkbox" id="consent" name="consent"><span class="tick"></span>
+            <b>I'm in.</b>
+          </label>
+          <ul>
+            <li><span class="d">·</span><span>At the end of the four weeks I'll post one Reel and send the original file. Lemonderma may share it with credit on their channels, website and ads — and will tell me before any ad use.</span></li>
+            <li><span class="d">·</span><span>My details are used only to choose members and contact me, are never passed to anyone else, and are deleted once Cohort 1 ends. My address is asked for only if I'm selected.</span></li>
+            <li><span class="d">·</span><span>I'm happy to hear when a future cohort opens.</span></li>
+          </ul>
+        </div>
+        <p class="err" id="e-consent">Please tick the box so we can proceed.</p>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="nav">
+      <button type="button" class="back" id="back" hidden>← Back</button>
+      <button type="submit" class="btn" id="go">
+        <span class="lbl" id="go-lbl">Continue</span>
+        <span class="spin" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <p class="formnote">Applications close <b>5 October</b>. The final 20 are announced <b>6 October</b>.</p>
+    <div class="failnote" id="fail"></div>
+
+  </form>
+  </div>
+</section>
 
 <footer>
-  <p>Lemonderma · VDVIA Co., Ltd. — Cohort 1 runs 19 October to 16 November 2026.</p>
+  <p>Lemonderma · VDVIA Co., Ltd.<br>Cohort 1 runs 19 October – 16 November 2026.</p>
 </footer>
 
-</div>
+</div><!-- /form-view -->
 
+<!-- ═══════════ 완료 ═══════════ -->
 <div id="done">
-  <div class="mark">✓</div>
-  <h2>Thank you — we've got it.</h2>
-  <p>We read every application ourselves. You'll hear from us by <b>5 October</b>, whether or not you're selected. If you are, we'll send your WhatsApp invitation to the number you gave us.</p>
+  <div class="seal">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.6 9.2 18 20 6.6"/></svg>
+  </div>
+  <h2>That's with us now.</h2>
+  <p>We read every application ourselves. Applications close <b>5 October</b> and we announce the final twenty on <b>6 October</b> — you'll hear from us either way. If you're in, your WhatsApp invitation comes to the number you gave us.</p>
+  <div class="after">
+    <figure class="slot wide" data-spec="⑤ 언박싱·패키지 사진&#10;16:9 · 1600×900&#10;도착한 박스를 여는 장면">
+      <span>Your set, on its way</span>
+    </figure>
+  </div>
+  <footer>
+    <p>Lemonderma · VDVIA Co., Ltd.<br>Any questions — just reply to our DM.</p>
+  </footer>
 </div>
 
-</div>
+</div><!-- /wrap -->
 
 <script>
-// ── 접수 창구 ──────────────────────────────────────────────
-// Google Apps Script 웹앱 URL. 배포 후 이 한 줄만 교체하면 폼이 살아난다.
-// 코드·배포 절차: plan/apply/apps-script.gs
+/* ══════════════════════════════════════════════════════════════
+   접수 창구 — Google Apps Script 웹앱 URL
+   배포 후 아래 한 줄만 교체하면 폼이 살아난다.
+   코드·배포 절차: 같은 폴더의 apps-script.gs
+   ══════════════════════════════════════════════════════════════ */
 const ENDPOINT = "PASTE_APPS_SCRIPT_URL_HERE";
-// ──────────────────────────────────────────────────────────
 
-const form = document.getElementById('f');
-const btn = document.getElementById('submit');
-const fail = document.getElementById('fail');
+const SAVE_KEY = 'sklab-c1-draft';
+const TOTAL = 5;
+let step = 1;
 
-const REQUIRED = ['name','instagram','ageBand','skinConcern','kbeauty','why','whatsapp','email','emirate','city','address'];
+const form    = document.getElementById('f');
+const goBtn   = document.getElementById('go');
+const goLbl   = document.getElementById('go-lbl');
+const backBtn = document.getElementById('back');
+const fail    = document.getElementById('fail');
+const rail    = document.getElementById('rail');
+const bars    = document.querySelectorAll('.steps i');
+const stepEls = document.querySelectorAll('.step');
 
-function val(n){ return (document.getElementById(n)?.value || '').trim(); }
-function setBad(n, bad){
-  const el = document.getElementById(n);
-  const err = document.getElementById('e-' + n);
-  if (el) el.classList.toggle('bad', bad);
-  if (err) err.classList.toggle('on', bad);
+/* ?slots=1 → 에셋 슬롯 규격 표시 (John 확인용, 신청자에게는 안 보임) */
+if (new URLSearchParams(location.search).has('slots')) document.body.classList.add('slots');
+
+/* ── 스크롤 등장 ─────────────────────────────────────────────── */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i) => {
+  el.style.transitionDelay = Math.min(i,5) * 60 + 'ms';
+  io.observe(el);
+});
+
+/* ── 포인터 3D 틸트 (마우스가 있는 기기에서만) ───────────────── */
+const fine = matchMedia('(pointer:fine)').matches &&
+             !matchMedia('(prefers-reduced-motion:reduce)').matches;
+if (fine){
+  document.querySelectorAll('[data-tilt]').forEach(el => {
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5;
+      const y = (e.clientY - r.top) / r.height - .5;
+      el.style.transition = 'transform .12s linear';
+      el.style.transform = 'rotateY(' + (x*5) + 'deg) rotateX(' + (-y*5) + 'deg) translateZ(8px)';
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.transition = 'transform .6s cubic-bezier(.16,.84,.28,1)';
+      el.style.transform = '';
+    });
+  });
 }
 
-function validate(){
+/* ── 값 읽기 ─────────────────────────────────────────────────── */
+const v   = id => (document.getElementById(id) ? document.getElementById(id).value : '').trim();
+const rad = n  => { const el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+const chk = n  => [].slice.call(form.querySelectorAll('input[name="' + n + '"]:checked')).map(i => i.value);
+
+function markField(id, bad){
+  const el = document.getElementById(id);      if (el)  el.classList.toggle('bad', bad);
+  const er = document.getElementById('e-'+id); if (er)  er.classList.toggle('on', bad);
+}
+function markGroup(name, bad){
+  const g  = form.querySelector('.opts[data-group="' + name + '"]');
+  if (g) g.classList.toggle('bad', bad);
+  const er = document.getElementById('e-'+name); if (er) er.classList.toggle('on', bad);
+}
+
+/* 선택된 카드에 배경을 입힌다 (:has 미지원 브라우저 대비) */
+function paintOpts(){
+  form.querySelectorAll('.opt').forEach(o => {
+    const i = o.querySelector('input');
+    o.classList.toggle('sel', !!(i && i.checked));
+  });
+}
+
+/* ── 거주 확인 게이트 ────────────────────────────────────────── */
+const emirate = document.getElementById('emirate');
+const gate = document.getElementById('gate');
+emirate.addEventListener('change', () => {
+  const out = emirate.value === '__out';
+  gate.classList.toggle('on', out);
+  if (!out) markField('emirate', false);
+  save();
+});
+
+/* ── 고민 최대 3개 ───────────────────────────────────────────── */
+const concernBox = form.querySelector('.opts[data-group="concerns"]');
+const cn = document.getElementById('cn');
+function syncConcerns(){
+  const picked = chk('concerns');
+  cn.textContent = picked.length;
+  concernBox.querySelectorAll('.opt').forEach(o => {
+    const input = o.querySelector('input');
+    o.classList.toggle('off', picked.length >= 3 && !input.checked);
+  });
+  if (picked.length) markGroup('concerns', false);
+}
+concernBox.addEventListener('change', (e) => {
+  /* pointer-events 만으로는 키보드(스페이스)로 4개째가 켜진다 — 여기서 실제로 막는다 */
+  if (e.target.checked && chk('concerns').length > 3) e.target.checked = false;
+  syncConcerns(); save();
+});
+
+/* ── 단계별 검증 ─────────────────────────────────────────────── */
+function validateStep(n){
   let firstBad = null;
+  const flagF = id => { markField(id, true); firstBad = firstBad || document.getElementById(id); };
+  const flagG = nm => { markGroup(nm, true);
+    firstBad = firstBad || form.querySelector('.opts[data-group="' + nm + '"]'); };
 
-  for (const n of REQUIRED){
-    const bad = !val(n);
-    setBad(n, bad);
-    if (bad && !firstBad) firstBad = document.getElementById(n);
+  if (n === 1){
+    if (!v('emirate')) flagF('emirate'); else markField('emirate', false);
+    if (v('emirate') === '__out'){ gate.classList.add('on'); firstBad = firstBad || gate; }
+    ['name','instagram'].forEach(id => v(id) ? markField(id,false) : flagF(id));
+    rad('ageBand') ? markGroup('ageBand',false) : flagG('ageBand');
   }
-
-  const email = val('email');
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    setBad('email', true);
-    if (!firstBad) firstBad = document.getElementById('email');
+  if (n === 2){
+    rad('skinType') ? markGroup('skinType',false) : flagG('skinType');
+    chk('concerns').length ? markGroup('concerns',false) : flagG('concerns');
   }
-
-  const phone = val('whatsapp');
-  if (phone && phone.replace(/\D/g,'').length < 8){
-    setBad('whatsapp', true);
-    if (!firstBad) firstBad = document.getElementById('whatsapp');
+  if (n === 3){
+    rad('kbeauty') ? markGroup('kbeauty',false) : flagG('kbeauty');
+    ['lastProduct','lastReason'].forEach(id => v(id) ? markField(id,false) : flagF(id));
   }
-
-  const ing = form.querySelector('input[name=ingredients]:checked');
-  document.getElementById('e-ingredients').classList.toggle('on', !ing);
-  if (!ing && !firstBad) firstBad = form.querySelector('input[name=ingredients]');
-
-  for (const n of ['agreeReel','agreePrivacy']){
-    const ok = document.getElementById(n).checked;
-    document.getElementById('e-' + n).classList.toggle('on', !ok);
-    if (!ok && !firstBad) firstBad = document.getElementById(n);
+  if (n === 4){
+    v('why').length >= 2 ? markField('why',false) : flagF('why');
   }
-
+  if (n === 5){
+    const phone = v('whatsapp');
+    (phone && phone.replace(/\D/g,'').length >= 8) ? markField('whatsapp',false) : flagF('whatsapp');
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email')) ? markField('email',false) : flagF('email');
+    const ok = document.getElementById('consent').checked;
+    document.getElementById('e-consent').classList.toggle('on', !ok);
+    if (!ok) firstBad = firstBad || document.getElementById('consent').closest('.consent');
+  }
   return firstBad;
 }
 
+/* ── 단계 이동 ───────────────────────────────────────────────── */
+function show(n, noScroll){
+  step = n;
+  stepEls.forEach(el => el.classList.toggle('on', +el.dataset.step === n));
+  bars.forEach((b,i) => b.classList.toggle('on', i < n));
+  rail.style.width = (n / TOTAL * 100) + '%';
+  document.getElementById('n-now').textContent = n;
+  document.getElementById('n-name').textContent =
+    document.querySelector('.step[data-step="' + n + '"]').dataset.name;
+  backBtn.hidden = n === 1;
+  goLbl.textContent = n === TOTAL ? 'Send my application' : 'Continue';
+
+  if (noScroll) return;
+  const top = form.getBoundingClientRect().top;
+  if (top < 0 || top > innerHeight * .5){
+    document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
+backBtn.addEventListener('click', () => { if (step > 1) show(step - 1); });
+
+/* 텍스트 칸에서 Enter → 제출이 아니라 다음 단계 */
+form.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.tagName === 'INPUT'){ e.preventDefault(); goBtn.click(); }
+});
+
+/* 입력하는 순간 빨간 표시 해제 */
+form.addEventListener('input', e => {
+  if (e.target.id) markField(e.target.id, false);
+  save();
+});
+form.addEventListener('change', e => {
+  paintOpts();
+  const box = e.target.closest('.opts');
+  if (box && box.dataset.group) markGroup(box.dataset.group, false);
+  save();
+});
+
+/* ── 작성 중인 내용 임시 보관 (새로고침해도 안 날아간다) ───────── */
+function payload(){
+  return {
+    emirate: v('emirate'), name: v('name'), instagram: v('instagram'),
+    ageBand: rad('ageBand'), skinType: rad('skinType'),
+    sensitive: document.getElementById('sensitive').checked ? 'Y' : 'N',
+    concerns: chk('concerns').join(', '),
+    kbeauty: rad('kbeauty'), lastProduct: v('lastProduct'), lastReason: v('lastReason'),
+    why: v('why'), whatsapp: v('whatsapp'), email: v('email'),
+    consent: document.getElementById('consent').checked ? 'Y' : 'N'
+  };
+}
+function save(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify(payload())); }catch(e){} }
+
+function pick(name, value){
+  const all = form.querySelectorAll('input[name="' + name + '"]');
+  for (let i = 0; i < all.length; i++){ if (all[i].value === value){ all[i].checked = true; return; } }
+}
+function restore(){
+  let d; try{ d = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); }catch(e){ return; }
+  if (!d) return;
+  ['emirate','name','instagram','lastProduct','lastReason','why','whatsapp','email']
+    .forEach(id => { if (d[id]) document.getElementById(id).value = d[id]; });
+  ['ageBand','skinType','kbeauty'].forEach(n => { if (d[n]) pick(n, d[n]); });
+  (d.concerns || '').split(', ').filter(Boolean).forEach(val => pick('concerns', val));
+  if (d.sensitive === 'Y') document.getElementById('sensitive').checked = true;
+  if (d.consent === 'Y') document.getElementById('consent').checked = true;
+  if (d.emirate === '__out') gate.classList.add('on');
+}
+restore();
+syncConcerns();
+paintOpts();
+
+/* ── 제출 ────────────────────────────────────────────────────── */
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   fail.classList.remove('on');
 
-  const firstBad = validate();
-  if (firstBad){
-    firstBad.scrollIntoView({behavior:'smooth', block:'center'});
-    firstBad.focus({preventScroll:true});
+  const bad = validateStep(step);
+  if (bad){
+    bad.scrollIntoView({behavior:'smooth', block:'center'});
+    const focusable = bad.querySelector ? bad.querySelector('input,select,textarea') : null;
+    (focusable || bad).focus && (focusable || bad).focus({preventScroll:true});
     return;
   }
 
-  // 봇 함정: 사람에게는 보이지 않는 칸이 채워져 있으면 조용히 성공 처리
-  if (val('website')){
-    document.getElementById('form-view').style.display = 'none';
-    document.getElementById('done').classList.add('on');
-    return;
-  }
+  if (step < TOTAL){ show(step + 1); return; }
 
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
+  /* 봇 함정: 사람 눈에 안 보이는 칸이 채워져 있으면 조용히 성공 처리 */
+  if (v('website')){ finish(); return; }
 
-  const payload = {
-    name: val('name'),
-    instagram: val('instagram'),
-    whatsapp: val('whatsapp'),
-    email: val('email'),
-    emirate: val('emirate'),
-    city: val('city'),
-    address: val('address'),
-    landmark: val('landmark'),
-    ageBand: val('ageBand'),
-    skinConcern: val('skinConcern'),
-    ingredients: form.querySelector('input[name=ingredients]:checked')?.value || '',
-    currentProducts: val('currentProducts'),
-    kbeauty: val('kbeauty'),
-    why: val('why'),
-    agreeReel: document.getElementById('agreeReel').checked ? 'Y' : 'N',
-    agreePrivacy: document.getElementById('agreePrivacy').checked ? 'Y' : 'N'
-  };
+  goBtn.disabled = true;
+  goBtn.classList.add('busy');
 
   try {
     if (!ENDPOINT || ENDPOINT.indexOf('PASTE_') === 0) throw new Error('endpoint not configured');
-    // text/plain 으로 보내면 프리플라이트(OPTIONS)가 생기지 않아 Apps Script가 그대로 받는다
+    /* text/plain 으로 보내면 프리플라이트(OPTIONS)가 안 생겨 Apps Script가 그대로 받는다 */
     await fetch(ENDPOINT, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'text/plain;charset=utf-8'},
-      body: JSON.stringify(payload)
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload())
     });
-    document.getElementById('form-view').style.display = 'none';
-    document.getElementById('done').classList.add('on');
-    window.scrollTo({top:0, behavior:'smooth'});
+    try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
+    finish();
   } catch (err) {
-    btn.disabled = false;
-    btn.textContent = 'Send my application';
-    fail.textContent = "We couldn't send that — please check your connection and try again. If it keeps failing, reply to our DM and we'll take your details there.";
+    goBtn.disabled = false;
+    goBtn.classList.remove('busy');
+    fail.textContent = "We couldn't send that — please check your connection and try again. If it keeps failing, just reply to our DM and we'll take your details there.";
     fail.classList.add('on');
   }
 });
+
+function finish(){
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('done').classList.add('on');
+  rail.style.width = '100%';
+  scrollTo({top:0, behavior:'smooth'});
+}
+
+show(1, true);   /* 첫 렌더에서는 스크롤하지 않는다 — 히어로부터 보여야 한다 */
 </script>
+
+<!--
+════════════════════════════════════════════════════════════════════
+ 소재 자리 안내 (John)
+
+ · 이 페이지 주소 뒤에 ?slots=1 을 붙여서 열면, 아직 비어 있는 5자리에
+   필요한 소재 규격이 화면에 표시된다.   예) …/apply/?slots=1
+   (신청자에게는 절대 안 보인다. 비어 있는 동안에는 브랜드 톤 패널로 보인다.)
+
+ · 소재가 생기면 apply/assets/ 에 파일을 넣고, 해당 <figure class="slot">를
+   <img src="assets/파일명.jpg" alt="설명" loading="lazy"> 로 바꾸면 끝.
+
+   ① PONY 릴스 스틸컷      1:1  1000×1000
+   ② Amazon's Choice 뱃지  1:1  1000×1000
+   ③ 한국 약국 진열 사진    1:1  1000×1000
+   ④ John 인물 사진        1:1  600×600
+   ⑤ 언박싱·패키지 사진    16:9 1600×900
+
+ · (선택) 맨 위 히어로 이미지는 5~8초 무음 루프 영상으로 바꾸면 더 산다.
+   <video src="assets/hero.mp4" autoplay muted loop playsinline></video>
+   2MB 이하로 — 모바일에서 첫 화면이 늦게 뜨면 그게 더 손해다.
+════════════════════════════════════════════════════════════════════
+-->
 
 </body>
 </html>
