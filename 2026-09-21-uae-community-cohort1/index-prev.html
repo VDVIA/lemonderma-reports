@@ -1,3 +1,4 @@
+<meta name="robots" content="noindex, nofollow">
 <title>UAE 커뮤니티 1기 운영안</title>
 <meta name="description" content="레몬더마 Lemonderma Skin Lab Partners 1기 — 목적, 타겟 페르소나, 커뮤니티·운영모델, 전체 타임라인, 모집·보상, 실행 체크리스트">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -277,7 +278,7 @@ footer{padding:40px 0 70px}
   <p class="sec-label">Community & Operating Model</p>
   <h2 class="sec-title">Lemonderma Skin Lab Partners</h2>
   <p class="lead">커뮤니티 이름: <b style="color:var(--ink)">Lemonderma Skin Lab Partners</b>. 받는 것이 아니라 <b style="color:var(--ink)">같이 하는 것</b>을 앞세운 이름이다 — 완주 조건이 릴스 1개 제출인 만큼, 먼저 받는 데 끌리는 사람보다 실제로 움직일 사람이 모이는 쪽이 낫다는 판단.</p>
-  <p class="small muted" style="font-size:.85rem;color:var(--ink-3)">이름 결정 경위(Mom Partners → Anti-aging Skin Lab → First Look Partners → Skin Lab Partners, 100여 개 대안 검토): <a href="2026-09-16-cohort1-decisions.md">plan/2026-09-16-cohort1-decisions.md §9·§10</a> (2026-09-20~21).</p>
+  <p class="small muted" style="font-size:.85rem;color:var(--ink-3)">이름 결정 경위(Mom Partners → Anti-aging Skin Lab → First Look Partners → Skin Lab Partners, 100여 개 대안 검토): plan/2026-09-16-cohort1-decisions.md §9·§10 (2026-09-20~21).</p>
 
   <p>왓츠앱 커뮤니티 1개 = 공지방 + 라운지. 크게 두 갈래로만 나눈다.</p>
   <div class="rooms">
@@ -392,15 +393,18 @@ footer{padding:40px 0 70px}
 
   <h3>지금 — 모집 첫 발송 전</h3>
   <ul class="open-list">
-    <li class="done"><span class="box"></span><span><b>인스타 DM 1·2차 문안 확정</b><span class="badge-conf ok">완료 9/21</span> — <a href="2026-09-21-outreach-dm.md">outreach-dm.md</a>. 고정 멘트 1개로 전원 발송(사람별 개인화는 폐기). 1차는 짧게 후킹만, 답장이 오면 2차(이미지+링크)로 상세와 신청 폼을 보낸다.</span></li>
-    <li class="done"><span class="box"></span><span><b>신청 폼 제작 · GitHub 게시</b><span class="badge-conf ok">완료 9/22</span> — 라이브: <a href="https://vdvia.github.io/lemonderma-reports/skinlab-apply/" target="_blank" rel="noopener">skinlab-apply</a>. 소재 5자리 중 4자리 채움(영상2·번들이미지·founder사진), 언박싱 사진 1자리만 남음. 존 피드백 반영 완료(9/22): 2기 우선권 문구 삭제, founder 사진 전체폭·Marco+John 공동 서명, 피부타입 복수선택.</span></li>
-    <li class="done"><span class="box"></span><span><b>Apps Script 배포(구글시트 자동 접수 연결)</b><span class="badge-conf ok">완료 9/22</span> — 배포·ENDPOINT 연결·실제 제출 1건→시트 반영까지 검증 완료. 코드: <code>plan/apply/apps-script.gs</code>.</span></li>
-    <li class="done"><span class="box"></span><span><b>왓츠앱 공지방·라운지 개설</b><span class="badge-conf ok">완료</span> — 존 휴대폰 번호로 개설 완료.</span></li>
+    <li><span class="box"></span><span><b>인스타 DM 1·2차 문안 확정</b><span class="badge-conf check">Claude</span> — 초안 완료, 컨펌 대기. 1차는 짧게 후킹만, 답장이 오면 2차로 상세와 신청 폼 링크를 보낸다.</span></li>
+    <li><span class="box"></span><span><b>1일차 발송 대상 90명 검수</b><span class="badge-conf ok">John</span> — 555명 전수 검수는 출발 조건이 아니다. 90명만 골라도 시작할 수 있고, 나머지는 보내면서 검수한다.</span></li>
+    <li><span class="box"></span><span><b>사람별 개인화 첫 줄 90개 생성</b><span class="badge-conf check">Claude</span> — 후보 DB의 개인화포인트(바이오) 열을 재료로 미리 뽑아둔다. 검수 완료 후 착수.</span></li>
+    <li class="done"><span class="box"></span><span><b>신청 폼 제작 · GitHub 게시</b><span class="badge-conf ok">완료 9/22</span> — 라이브: <a href="https://vdvia.github.io/lemonderma-reports/skinlab-apply/" target="_blank" rel="noopener">skinlab-apply</a>. 소재 5자리 중 4자리 채움(영상2·번들이미지·founder사진), 언박싱 사진 1자리만 남음.</span></li>
+    <li><span class="box"></span><span><b>Apps Script 배포(구글시트 자동 접수 연결)</b><span class="badge-conf ok">John</span> — 코드는 <code>plan/apply/apps-script.gs</code>에 준비됨(3분 작업, 파일 하단에 절차). 배포 전까지는 폼 제출이 시트에 안 꽂힌다 — 제출 시 "다시 시도해 주세요" 안내만 뜸.</span></li>
+    <li><span class="box"></span><span><b>왓츠앱 공지방·라운지 개설</b><span class="badge-conf ok">John</span> — 존 휴대폰 번호로 진행. 개설하면서 답글 허용 여부와 채팅목록 이름 잘림을 함께 확인한다.</span></li>
   </ul>
 
   <h3>모집 · 9/21 → 10/5 (마감)</h3>
   <ul class="open-list">
-    <li><span class="box"></span><span><b>DM 발송 하루 90건</b><span class="badge-conf ok">John</span> — 오전 30 · 오후 30 · 밤 30. 사전 일괄 검수 없이 보낼 때 그 자리에서 프로필을 본다. 1일차 응답률과 폼 작성률을 실측한 뒤 2일차 물량을 정한다. 필요한 건 20명이고 명단은 2기 자산이라 한 번에 소진할 이유가 없다.</span></li>
+    <li><span class="box"></span><span><b>DM 발송 하루 90건</b><span class="badge-conf ok">John</span> — 오전 30 · 오후 30 · 밤 30. 1일차 응답률과 폼 작성률을 실측한 뒤 2일차 물량을 정한다. 필요한 건 20명이고 명단은 2기 자산이라 한 번에 소진할 이유가 없다.</span></li>
+    <li><span class="box"></span><span><b>나머지 명단 검수 병행</b><span class="badge-conf ok">John</span></span></li>
     <li><span class="box"></span><span><b>합격·불합격 통보 문안 제작</b><span class="badge-conf check">Claude</span> — 모집 DM과는 별개의 글이다.</span></li>
     <li><span class="box"></span><span><b>콘텐츠 1·2·3 + 7·8·9 제작</b><span class="badge-conf check">Claude</span> — 4주차 것까지 미리 만들어 프로그램 중 여유를 확보한다.</span></li>
     <li><span class="box"></span><span><b>영상편지 b-roll 확보</b><span class="badge-conf ok">John</span> — 제주 레몬 · 실험실 · 공장 · 약국. 기존 촬영본이 있고 없는 건 추가 촬영한다.</span></li>
@@ -437,7 +441,7 @@ footer{padding:40px 0 70px}
 
 <footer>
   <p class="src">
-    근거 자료 — <a href="2026-09-16-cohort1-decisions.md">9/16 결정 기록</a> · <a href="2026-09-15-cohort1-decision.html">9/15 리서치 결정카드</a> · <a href="../_research-ledger-2026-09.md">사실 원장</a>
+    근거 자료 — 9/16 결정 기록 · 9/15 리서치 결정카드 · 사실 원장
   </p>
 </footer>
 
