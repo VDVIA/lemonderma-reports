@@ -29,6 +29,16 @@ var COLUMNS = [
   'consent'      // P 동의 (Y/N)
 ];
 
+/**
+ * 시트는 '+' '=' '-' '@'로 시작하는 값을 수식으로 해석한다 — 왓츠앱 번호(+971…)가
+ * "#ERROR! Formula parse error"로 저장되던 원인. 셀 서식을 텍스트로 바꿔도 막히지 않는다.
+ * 앞에 작은따옴표를 붙이면 시트가 강제로 텍스트로 저장한다(따옴표는 화면에 안 보인다).
+ */
+function asText(value) {
+  var s = String(value == null ? '' : value);
+  return /^[=+\-@]/.test(s) ? "'" + s : s;
+}
+
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
@@ -52,7 +62,7 @@ function doPost(e) {
 
     var row = [stamp, '']; // A 접수일시, B 검토상태(John이 직접 채움)
     for (var i = 0; i < COLUMNS.length; i++) {
-      row.push(data[COLUMNS[i]] || '');
+      row.push(asText(data[COLUMNS[i]] || ''));
     }
 
     sheet.appendRow(row);

@@ -529,7 +529,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
           <label class="opt cb"><input type="checkbox" name="skinType" value="Normal"><span class="tick"></span>Normal</label>
           <label class="opt cb"><input type="checkbox" name="skinType" value="Combination"><span class="tick"></span>Combination</label>
           <label class="opt cb"><input type="checkbox" name="skinType" value="Oily"><span class="tick"></span>Oily</label>
-          <label class="opt cb"><input type="checkbox" id="sensitive" name="sensitive" value="Sensitive"><span class="tick"></span>Sensitive</label>
+          <label class="opt cb"><input type="checkbox" name="skinType" value="Sensitive"><span class="tick"></span>Sensitive</label>
         </div>
         <p class="err" id="e-skinType">Please choose at least one.</p>
       </div>
@@ -879,9 +879,7 @@ function validateStep(n){
     rad('ageBand') ? markGroup('ageBand',false) : flagG('ageBand');
   }
   if (n === 2){
-    /* 민감성도 이 질문의 보기 중 하나 — 그것만 골라도 답한 것으로 본다 */
-    (chk('skinType').length || document.getElementById('sensitive').checked)
-      ? markGroup('skinType',false) : flagG('skinType');
+    chk('skinType').length ? markGroup('skinType',false) : flagG('skinType');
     chk('concerns').length ? markGroup('concerns',false) : flagG('concerns');
   }
   if (n === 3){
@@ -944,7 +942,8 @@ function payload(){
   return {
     emirate: v('emirate'), name: v('name'), instagram: v('instagram'),
     ageBand: rad('ageBand'), skinType: chk('skinType').join(', '),
-    sensitive: document.getElementById('sensitive').checked ? 'Y' : 'N',
+    /* 민감성은 피부 타입 보기 중 하나 — 시트 민감성 열은 여기서 파생시킨다 */
+    sensitive: chk('skinType').indexOf('Sensitive') >= 0 ? 'Y' : 'N',
     concerns: chk('concerns').join(', '),
     kbeauty: rad('kbeauty'), lastProduct: v('lastProduct'), lastReason: v('lastReason'),
     why: v('why'), whatsapp: v('whatsapp'), email: v('email'),
@@ -965,7 +964,6 @@ function restore(){
   ['ageBand','kbeauty'].forEach(n => { if (d[n]) pick(n, d[n]); });
   (d.skinType || '').split(', ').filter(Boolean).forEach(val => pick('skinType', val));
   (d.concerns || '').split(', ').filter(Boolean).forEach(val => pick('concerns', val));
-  if (d.sensitive === 'Y') document.getElementById('sensitive').checked = true;
   if (d.consent === 'Y') document.getElementById('consent').checked = true;
   if (d.emirate === '__out') gate.classList.add('on');
 }
