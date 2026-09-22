@@ -165,6 +165,10 @@ h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,6vw,1.6rem);
 .signed{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
         margin-top:26px;padding:20px;
         border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.7)}
+.signed .who{flex:0 0 auto;width:78px}
+.signed .who .slot{border-radius:50%;aspect-ratio:1/1}
+.who-photo{display:block;width:100%;aspect-ratio:1/1;border-radius:50%;object-fit:cover;
+           box-shadow:var(--shadow-s)}
 .signed p{font-size:.95rem;line-height:1.55}
 .signed .nm{font-family:var(--serif);font-size:1.05rem;color:var(--headline);margin-top:7px}
 
@@ -400,6 +404,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       <li><span class="d">·</span><span>Our serum + cream set <b class="amount">($72)</b>, shipped from Korea at no cost</span></li>
       <li><span class="d">·</span><span>New products free, before they launch</span></li>
       <li><span class="d">·</span><span>A direct line to the CEO</span></li>
+      <li><span class="d">·</span><span>First in line for Cohort 2, if you finish the four weeks</span></li>
       <li><span class="d">·</span><span>Top partner receives a full set worth <b class="amount">$500</b></span></li>
     </ul>
   </div>
@@ -407,7 +412,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <div class="box">
     <p class="box-label">What we ask</p>
     <p>At the end, <b>one Reel</b> about your honest experience.
-      <span class="free">Any format. Honest is the only requirement.</span>
+      <span class="free">Any format, any quality. Honest is the only requirement.</span>
     </p>
   </div>
 
@@ -440,12 +445,14 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
 <section class="rv">
   <p class="kicker">Who reads this</p>
   <h2>Straight to the founder</h2>
-  <div class="bundle">
-    <img src="assets/founder.jpg" alt="Marco and John of Lemonderma" loading="lazy">
-  </div>
   <div class="signed">
-    <p>Every application is read by the two of us. If you're in, we send your WhatsApp invitation ourselves — and for the next four weeks the three of us are in the same group.</p>
-    <p class="nm">Marco · CEO / John · Head of Marketing</p>
+    <div class="who">
+      <img class="who-photo" src="assets/founder.jpg" alt="Lemonderma team">
+    </div>
+    <div>
+      <p>Every application is read by our founder and me. If you're in, I send your WhatsApp invitation myself — and for the next four weeks the three of us are in the same group.</p>
+      <p class="nm">John · Head of Marketing, Lemonderma</p>
+    </div>
   </div>
 </section>
 
@@ -521,17 +528,17 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       <p class="lead">This is the part we actually use — it decides what goes in your box.</p>
 
       <div class="f">
-        <label class="lb">How would you describe your skin?<span class="req">*</span>
-          <span class="hint">Choose all that apply.</span>
-        </label>
+        <label class="lb">How would you describe your skin?<span class="req">*</span></label>
         <div class="opts two" data-group="skinType">
-          <label class="opt cb"><input type="checkbox" name="skinType" value="Dry"><span class="tick"></span>Dry</label>
-          <label class="opt cb"><input type="checkbox" name="skinType" value="Normal"><span class="tick"></span>Normal</label>
-          <label class="opt cb"><input type="checkbox" name="skinType" value="Combination"><span class="tick"></span>Combination</label>
-          <label class="opt cb"><input type="checkbox" name="skinType" value="Oily"><span class="tick"></span>Oily</label>
-          <label class="opt cb"><input type="checkbox" id="sensitive" name="sensitive" value="Sensitive"><span class="tick"></span>Sensitive</label>
+          <label class="opt"><input type="radio" name="skinType" value="Dry"><span class="tick"></span>Dry</label>
+          <label class="opt"><input type="radio" name="skinType" value="Normal"><span class="tick"></span>Normal</label>
+          <label class="opt"><input type="radio" name="skinType" value="Combination"><span class="tick"></span>Combination</label>
+          <label class="opt"><input type="radio" name="skinType" value="Oily"><span class="tick"></span>Oily</label>
         </div>
-        <p class="err" id="e-skinType">Please choose at least one.</p>
+        <p class="err" id="e-skinType">Please choose one.</p>
+        <div class="opts" style="margin-top:9px">
+          <label class="opt cb"><input type="checkbox" id="sensitive" name="sensitive"><span class="tick"></span>…and it's sensitive — things sting or turn red easily</label>
+        </div>
       </div>
 
       <div class="f">
@@ -569,17 +576,19 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       </div>
 
       <div class="f">
-        <label class="lb" for="lastProduct">The last skincare product you bought
-          <span class="hint">Optional — brand and product, as best you remember.</span>
+        <label class="lb" for="lastProduct">The last skincare product you bought<span class="req">*</span>
+          <span class="hint">Brand and product, as best you remember.</span>
         </label>
         <input type="text" id="lastProduct" name="lastProduct" placeholder="e.g. La Roche-Posay Mela B3 serum">
+        <p class="err" id="e-lastProduct">Please tell us what it was.</p>
       </div>
 
       <div class="f">
-        <label class="lb" for="lastReason">And what made you buy it?
-          <span class="hint">Optional — one line is plenty: an ad, a friend, a review, the ingredients.</span>
+        <label class="lb" for="lastReason">And what made you buy it?<span class="req">*</span>
+          <span class="hint">One line is plenty — an ad, a friend, a review, the ingredients.</span>
         </label>
         <input type="text" id="lastReason" name="lastReason">
+        <p class="err" id="e-lastReason">Please tell us briefly.</p>
       </div>
     </div>
 
@@ -879,13 +888,12 @@ function validateStep(n){
     rad('ageBand') ? markGroup('ageBand',false) : flagG('ageBand');
   }
   if (n === 2){
-    /* 민감성도 이 질문의 보기 중 하나 — 그것만 골라도 답한 것으로 본다 */
-    (chk('skinType').length || document.getElementById('sensitive').checked)
-      ? markGroup('skinType',false) : flagG('skinType');
+    rad('skinType') ? markGroup('skinType',false) : flagG('skinType');
     chk('concerns').length ? markGroup('concerns',false) : flagG('concerns');
   }
   if (n === 3){
     rad('kbeauty') ? markGroup('kbeauty',false) : flagG('kbeauty');
+    ['lastProduct','lastReason'].forEach(id => v(id) ? markField(id,false) : flagF(id));
   }
   if (n === 4){
     v('why').length >= 2 ? markField('why',false) : flagF('why');
@@ -943,7 +951,7 @@ form.addEventListener('change', e => {
 function payload(){
   return {
     emirate: v('emirate'), name: v('name'), instagram: v('instagram'),
-    ageBand: rad('ageBand'), skinType: chk('skinType').join(', '),
+    ageBand: rad('ageBand'), skinType: rad('skinType'),
     sensitive: document.getElementById('sensitive').checked ? 'Y' : 'N',
     concerns: chk('concerns').join(', '),
     kbeauty: rad('kbeauty'), lastProduct: v('lastProduct'), lastReason: v('lastReason'),
@@ -962,8 +970,7 @@ function restore(){
   if (!d) return;
   ['emirate','name','instagram','lastProduct','lastReason','why','whatsapp','email']
     .forEach(id => { if (d[id]) document.getElementById(id).value = d[id]; });
-  ['ageBand','kbeauty'].forEach(n => { if (d[n]) pick(n, d[n]); });
-  (d.skinType || '').split(', ').filter(Boolean).forEach(val => pick('skinType', val));
+  ['ageBand','skinType','kbeauty'].forEach(n => { if (d[n]) pick(n, d[n]); });
   (d.concerns || '').split(', ').filter(Boolean).forEach(val => pick('concerns', val));
   if (d.sensitive === 'Y') document.getElementById('sensitive').checked = true;
   if (d.consent === 'Y') document.getElementById('consent').checked = true;
@@ -1031,7 +1038,7 @@ show(1, true);   /* 첫 렌더에서는 스크롤하지 않는다 — 히어로�
 
    ①②  9:16 영상 — 채움 (assets/reel1.mp4, assets/reel2.mp4)
    ③   1:1(가로형 그대로) 이미지 — 채움 (assets/bundle.jpg)
-   ④   1:1 이미지, 원본 그대로 전체폭 — 채움 (assets/founder.jpg)
+   ④   1:1 이미지, 원형 크롭 — 채움 (assets/founder.jpg)
    ⑤   16:9 이미지 1600×900 — 비어 있음 (제출 완료 화면)
        assets/ 에 파일을 두고 <figure class="slot wide"> 를
        <img src="assets/파일명.jpg" alt="설명" loading="lazy"> 로 교체.
