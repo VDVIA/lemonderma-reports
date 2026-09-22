@@ -1,3 +1,4 @@
+<meta name="robots" content="noindex, nofollow">
 <title>UAE 커뮤니티 1기 운영안</title>
 <meta name="description" content="레몬더마 Lemonderma Skin Lab Partners 1기 — 목적, 타겟 페르소나, 커뮤니티·운영모델, 전체 타임라인, 모집·보상, 실행 체크리스트">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,6 +209,15 @@ ol.steps b{color:var(--ink)}
 .open-list .box{
   flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px;
 }
+.open-list li.done .box{
+  background:var(--line-strong);position:relative;
+}
+.open-list li.done .box::after{
+  content:"";position:absolute;left:3px;top:0px;width:4px;height:8px;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg);
+}
+.open-list li.done b{text-decoration:line-through;text-decoration-color:var(--line-strong);
+  text-decoration-thickness:1.5px}
 .open-list b{color:var(--ink)}
 .open-list span{color:var(--ink-2)}
 
@@ -386,7 +396,8 @@ footer{padding:40px 0 70px}
     <li><span class="box"></span><span><b>인스타 DM 1·2차 문안 확정</b><span class="badge-conf check">Claude</span> — 초안 완료, 컨펌 대기. 1차는 짧게 후킹만, 답장이 오면 2차로 상세와 신청 폼 링크를 보낸다.</span></li>
     <li><span class="box"></span><span><b>1일차 발송 대상 90명 검수</b><span class="badge-conf ok">John</span> — 555명 전수 검수는 출발 조건이 아니다. 90명만 골라도 시작할 수 있고, 나머지는 보내면서 검수한다.</span></li>
     <li><span class="box"></span><span><b>사람별 개인화 첫 줄 90개 생성</b><span class="badge-conf check">Claude</span> — 후보 DB의 개인화포인트(바이오) 열을 재료로 미리 뽑아둔다. 검수 완료 후 착수.</span></li>
-    <li><span class="box"></span><span><b>신청 폼 제작 · GitHub 게시 · 시트 자동 연동</b><span class="badge-conf check">Claude</span> — 게시 위치와 필수 입력 목록 승인이 먼저 필요하다.</span></li>
+    <li class="done"><span class="box"></span><span><b>신청 폼 제작 · GitHub 게시</b><span class="badge-conf ok">완료 9/22</span> — 라이브: <a href="https://vdvia.github.io/lemonderma-reports/skinlab-apply/" target="_blank" rel="noopener">skinlab-apply</a>. 소재 5자리 중 4자리 채움(영상2·번들이미지·founder사진), 언박싱 사진 1자리만 남음.</span></li>
+    <li><span class="box"></span><span><b>Apps Script 배포(구글시트 자동 접수 연결)</b><span class="badge-conf ok">John</span> — 코드는 <code>plan/apply/apps-script.gs</code>에 준비됨(3분 작업, 파일 하단에 절차). 배포 전까지는 폼 제출이 시트에 안 꽂힌다 — 제출 시 "다시 시도해 주세요" 안내만 뜸.</span></li>
     <li><span class="box"></span><span><b>왓츠앱 공지방·라운지 개설</b><span class="badge-conf ok">John</span> — 존 휴대폰 번호로 진행. 개설하면서 답글 허용 여부와 채팅목록 이름 잘림을 함께 확인한다.</span></li>
   </ul>
 
