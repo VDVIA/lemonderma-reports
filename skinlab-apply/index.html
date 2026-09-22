@@ -333,6 +333,7 @@ button{font-family:var(--sans);font-size:1rem;font-weight:500;cursor:pointer;bor
 #done h2{margin-bottom:14px}
 #done p{font-size:1rem;line-height:1.66;max-width:30em;margin:0 auto}
 #done .after{margin-top:30px}
+#done .after img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow-s)}
 
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
        text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.6}
@@ -668,7 +669,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <h2>That's with us now.</h2>
   <p>We read every application ourselves. Applications close <b>5 October</b> and we announce the final twenty on <b>6 October</b> — you'll hear from us either way. If you're in, your WhatsApp invitation comes to the number you gave us.</p>
   <div class="after">
-    <figure class="slot wide" data-spec="⑤&#10;16:9 이미지&#10;1600×900"></figure>
+    <img src="assets/unboxing.jpg" alt="Lemonderma serum and cream with fresh lemons" loading="lazy">
   </div>
   <footer>
     <p>Lemonderma · VDVIA Co., Ltd.<br>Any questions — just reply to our DM.</p>
@@ -1022,17 +1023,17 @@ show(1, true);   /* 첫 렌더에서는 스크롤하지 않는다 — 히어로�
 
 <!--
 ════════════════════════════════════════════════════════════════════
- 소재 자리 — 4/5 채움, 남은 건 ⑤ 하나
+ 소재 자리 — 5/5 전부 채움
 
- · 주소 뒤에 ?slots=1 을 붙여 열면 남은 빈 자리의 규격이 표시된다.
+ · 주소 뒤에 ?slots=1 을 붙여 열면 빈 자리의 규격이 표시된다(지금은 빈 자리 없음).
    예) …/skinlab-apply/?slots=1        (신청자에게는 안 보인다)
 
    ①②  9:16 영상 — 채움 (assets/reel1.mp4, assets/reel2.mp4)
    ③   1:1(가로형 그대로) 이미지 — 채움 (assets/bundle.jpg)
    ④   1:1 이미지, 원본 그대로 전체폭 — 채움 (assets/founder.jpg)
-   ⑤   16:9 이미지 1600×900 — 비어 있음 (제출 완료 화면)
-       assets/ 에 파일을 두고 <figure class="slot wide"> 를
-       <img src="assets/파일명.jpg" alt="설명" loading="lazy"> 로 교체.
+   ⑤   제출 완료 화면 — 채움 (assets/unboxing.jpg, 세로 733×1100)
+       원본이 세로 사진이라 16:9로 자르지 않고 원본 비율 그대로 전체폭으로 넣었다
+       (John 지시: 받은 이미지를 임의로 크롭하지 말 것).
 
  ── 영상 교체·수정 시 참고 ──────────────────────────────────────
    REELS 배열( <script> 상단)에서 src·poster·label 을 바꾼다.
