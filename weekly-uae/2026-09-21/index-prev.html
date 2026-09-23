@@ -519,10 +519,6 @@ details.glossary[open] > summary::after{content:'  ▴'}
 .l1-head h2{font-size:20px;font-weight:800;margin:0;letter-spacing:-.01em}
 .l1-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
 .l1-lead{font-size:14px;line-height:1.75;color:#3b3a35;margin:0 0 14px}
-.goalbar{background:#fffdf2;border:2px solid var(--lime);border-radius:14px;padding:16px 20px}
-.goalbar .gb-k{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-deep)}
-.goalbar .gb-goal{font-size:19px;font-weight:800;margin-top:6px;letter-spacing:-.01em}
-.goalbar .gb-sub2{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.6}
 .hookblock{box-shadow:var(--shadow);background:linear-gradient(135deg,#1b1a17,#322f27);color:#f0ede3;border-radius:18px;padding:22px 26px;margin-top:14px;font-size:14.5px;line-height:1.8}
 .hk-label{font-size:13px;color:#b8b09a;font-weight:700;letter-spacing:.02em}
 .hk-lead{font-size:18px;font-weight:800;color:#c9e265;margin:3px 0 15px;line-height:1.6}
@@ -532,6 +528,30 @@ details.glossary[open] > summary::after{content:'  ▴'}
 .hk-note{display:inline-block;margin-top:4px;font-size:12.5px;color:#b8b09a}
 .hk-next{margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.16);font-size:14.5px}
 .hk-em{color:#c9e265;font-weight:700}
+/* 채널별 성적표(2026-09-22 US 14주차 이식) — 훅 블록(어두운 박스) 안에 들어가면 밝은 글자색이 상속돼 흰 표에서 안 보인다 → 색을 명시로 되돌린다 */
+.cw-tbl{min-width:680px}
+.cw-tbl th:first-child{width:128px}  /* 좁은 화면(가로 스크롤)에서 채널 이름·설명이 4~5줄로 쪼개지지 않게 */
+.cw-tbl td,.cw-tbl th{vertical-align:top;padding:11px 12px}
+table.mini.cw-tbl td.num{white-space:normal}  /* 공용 CSS table.mini td.num{nowrap}보다 특이성 높게 — 보조문(.cw-s)은 줄바꿈 */
+.cw-tbl .cw-v{white-space:nowrap}
+.cw-usd{display:block;font-size:11.5px;font-weight:600;color:#8a836f;letter-spacing:0;line-height:1.2;margin-top:1px}
+.cw-tbl tbody tr+tr{border-top:1px solid #ece8dd}
+.cw-all td{background:#fbfaf6}
+.cw-v{font-size:19px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
+.cw-d{display:inline-block;font-size:11.5px;font-weight:700;color:#8a836f;margin-top:3px}
+.cw-s{font-size:11px;color:#9a9483;margin-top:4px;font-weight:400;line-height:1.45}
+.cw-v.v-good{color:var(--good,#1e8e5a)}
+.cw-v.v-warn{color:var(--warn,#c77800)}
+.cw-v.v-mid{color:#6b675e}
+@media(max-width:560px){.cw-v{font-size:17px}}
+.hookblock .cw-wrap{color:#1b1a17}
+.hookblock .cw-wrap .lh{color:#1b1a17}
+.hookblock .cw-wrap th{color:#6b675e}
+.hookblock .cw-wrap td{color:#3b3a35}
+.hookblock .cw-wrap .cw-v{color:#1b1a17}
+.hookblock .cw-wrap .cw-v.v-good{color:#1e8e5a}
+.hookblock .cw-wrap .cw-v.v-warn{color:#c77800}
+.hookblock .cw-wrap .cw-v.v-mid{color:#6b675e}
 @media(max-width:520px){.hk-row{flex-direction:column;gap:4px}.hk-t{flex:none}}
 .v22{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 .v22-4{grid-template-columns:repeat(4,1fr)}
@@ -613,66 +633,42 @@ section{margin-top:0}
 <div class="wrap">
 <section class="l1sec">
   <div class="l1-head"><span class="l1-n">1</span><h2>성적표</h2></div>
-  <div class="goalbar">
-  <div class="gb-k">🎯 목표 — 분기 방침 (변하지 않는 한 줄)</div>
-  <div class="gb-goal">9/30까지 누적매출 $10,000 — 최종 MER 2.0배로 마감</div>
-  <div class="gb-sub2">모든 액션·인사이트·결정은 이 한 줄에 대한 기여로 판정합니다. 예산은 클릭 단가가 본전(남지도 잃지도 않는 손익분기 지점) 아래로 관리될 때만 제한 없이 늘립니다.<br>⚠️ 목표·주차별 계단 수치는 계획 원문 그대로 <b>달러(USD) 표기</b>이고, 그 외 이 보고서의 모든 집행·성과 수치는 AED입니다.</div>
-</div>
-  <div class="dnote" style="border-left-color:#c98300;background:#fdf3e0;margin-top:12px">
-  ⚠️ <b>본전선 이력 — 8주차엔 변경 없음</b> — 본전선은 창간(7/20) 이후 지금까지 세 차례 상향됐습니다 — 8/26 1.48→1.53(게이트 1.48→1.63, 크림 AED 99 ($27) 반영), 9/11 1.53→1.73(게이트 1.63→1.85, SP-API 정산 원장 실측 반영), 9/15 1.73→1.85(게이트 1.85→1.99, referral을 원장 실측 11% 대신 공시요율 15%로 안전 채택). 8주차(9/13–9/19) 안에서는 새 변경이 없었습니다 — 9/15 갱신값(평균가 1.85–1.97·게이트 1.99)이 대부분 적용됐지만, 주 시작 이틀(9/13–9/14)은 그 갱신 이전 값(1.73·게이트 1.85)이 적용 중이었습니다(bep_history 배열을 날짜로 훑으면 나오는 결과).
-</div>
   <div class="hookblock">
   <div class="hk-label">8주차 한 줄 (9/13–9/19)</div>
-  <div class="hk-lead">8주차는 광고비를 25% 줄였는데도(AED 1,416 ($386)→1,059) 매출은 799→594로 더 내려갔고, 팔린 6개는 전부 크림이었습니다. 아마존 광고비 425 전액이 하루 AED 60 ($16)에서 7일 내내 한 번도 안 올라간 계정 한도 안에서 15개 축이 나눠 쓰느라 축당 하루 3–4 AED로 굶었고, 메타(인스타그램·페이스북 광고) 634는 결제 시작(IC(광고에서 구매 버튼을 누른 횟수)) 218건까지만 보이고 그 뒤는 볼 수 없는 구조 그대로였습니다. 이번 주는 새 캠페인을 더 여는 주가 아니라, 한도를 확인해 푸는 것이 첫 일이고 입찰·예산 손질은 그 답이 나올 때까지 멈추는 주입니다.</div>
-  <div class="hk-row"><div class="hk-t">고친 것</div><div class="hk-b">아마존 광고 구조를 세럼 7축·크림 8축 = 15개 축 캠페인으로 전량 라이브했고(9/14–15), 승인 없이 들어가 있던 3단 입찰 구조를 걷어내 세럼 2.5·크림 2.2로 통일했습니다(9/17).<br>메타에서 가장 비싸던 PONY 소재 2개를 껐습니다(9/16) — 결제 시작 1건당 비용이 AED 3.09 ($0.84)에서 2.91로 내려갔습니다.<br>7주차에 0건이던 아마존 광고 귀속(그 광고 덕에 팔린 것으로 집계된) 주문이 2건(AED 198 ($54)) 돌아왔습니다 — 둘 다 크림 건조·수분 축 캠페인입니다.</div></div><div class="hk-row"><div class="hk-t">빠진 것</div><div class="hk-b">계정 일 한도 — 9/13 예산을 37→100으로 올린 바로 그날부터 아마존 총지출이 하루 60–61에서 잠겼는데, 이걸 실시간으로 확인하지 못했습니다(아침 스냅샷은 한도가 풀린 직후라 못 봅니다).<br>클릭률 최상위 5개 소재(Viki 19.5% 등)를 새 캠페인으로 만들어 두고 광고를 연결하지 못해 지출 0인 채 주가 끝났습니다.<br>크림 발견캠은 유일한 광고가 심사 거절이라 처음부터 노출이 없었는데, 재제출을 못 했습니다.<br>세럼이 왜 0개인지 — 표본이 작아(방문 226) 우연을 배제하지 못했고, 세럼 축 캠페인 대부분이 9/16–18에야 첫 지출을 내 판정 자체가 이릅니다.</div></div><div class="hk-row"><div class="hk-t">광고 성적</div><div class="hk-b">아마존 광고: AED 425 ($116) 써서 198 회수(0.47배). 클릭 195건 중 2건 구매. 15개 축 중 주문 1개 축·클릭만 8개 축·노출만 6개 축(대부분 3–5일 된 신축).<br>메타: AED 634 ($173) 써서 결제 시작 218건. 구매는 구조적으로 안 잡히며, 아마존 광고 밖 매출 396 전액을 메타 몫으로 봐도 0.62배.<br>합계: 매출 594 ÷ 광고비 1,059 = MER 0.56배 — 본전 1.85–1.97배의 3분의 1. 7주차(0.56배)와 같습니다.</div></div>
-  <div class="hk-next"><b>그래서 이번 주</b> — ① 오늘(9/22) 두바이 낮–저녁 시간에 광고 상태를 다시 조회해 한도를 확정합니다(읽기 전용). ② 한도가 맞으면 예산·입찰은 그대로 두고, 한도 해제 문의와 축별 배분(발견캠·SP 위임을 줄여 축캠에 몰아주기)만 합니다. ③ 메타는 현 수준을 유지하고 클릭률 상위 5개 새 캠페인에 광고를 연결합니다. ④ 세럼 판정은 9/29(축캠 2주 데이터)까지 유예합니다.</div>
-</div>
-  <div class="v22"><div class="v22-card bad">
-  <div class="v22-h">축 1 · 성적 <span class="v22-badge bad">매출 -26% · 효율은 0.56→0.56 보합</span></div>
-  <div class="v22-num">0.56<small>× · AED 594.00 ($162)</small></div>
-  <div class="v22-d">아마존 광고 귀속 주문 2건(총주문 6건 · 지난주 귀속 0건) · 광고비 합계 AED 1,059.14 ($288)로 지난주보다 -25% — 아마존 AED 357.43 ($97)→AED 424.81(+19%), 메타 AED 1,058.71 ($288)→AED 634.33(-40%). 효율은 자동 판정 게이트(1.99, 2026-09-15 10:02 갱신) 대비 28%(지난주 28%). <b>아마존 광고만 따로 보면 0.47배(귀속 매출 AED 198.00 ($54))</b>입니다 — 채널 세 갈래 근거는 아래 스코어보드에.</div>
-</div><div class="v22-card bad">
-  <div class="v22-h">축 2 · 분기 램프 <span class="v22-badge bad">분기 4주차 미달 1주 · 9/30 누적 목표 $10,000의 21%</span></div>
-  <div class="v22-num">21<small>% / $10,000(9/30)</small></div>
-  <div class="v22-d">지금까지 누적 실주문(약 $2,099)은 9/30 목표 $10,000의 21%, 이번 주가 속한 분기 4주차까지의 누적 목표선($5,076)의 41%입니다. 분기 4주차 단독 성적은 매출 $144.41(목표 $1,911) · MER 0.472(목표 1.8) — 매출 $144.41 vs 램프 $1911 미달 · MER 0.472 vs 램프 1.8 미달. 분기 3주차도 매출 미달이라 연속 미달 3주 = 재협상 임계 도달(6번에 상세).</div>
-</div></div>
-  <div class="lock" style="margin-top:14px;border-left:5px solid #b3261e">
-  <div class="lh">🔎 확실한 것과 추정인 것 — 이 보고서를 읽는 전제</div>
-  <div class="tbl-scroll"><table class="mini" style="min-width:560px"><thead><tr><th style="width:46%">확실한 것 (실측)</th><th>추정인 것 (확정 불가)</th></tr></thead><tbody>
-  <tr><td>상품페이지 방문 503→502명, 아마존 광고 클릭 141→195건, 광고 귀속 주문 0→2건(AED 198 ($54), 전부 크림 건조·수분 축), 전체 주문 7→6건(전부 크림).</td><td>아마존 광고 밖 주문 4건(396)이 어디서 왔는지는 확정할 수 없습니다. UAE는 메타 구매 귀속·프로모코드가 둘 다 없어 메타→아마존 경로를 직접 못 잽니다.</td></tr><tr><td>아마존 총지출이 9/13–19 7일 내내 하루 60.01–61.43, SB와 SP가 역상관(−0.997)으로 합만 고정. 9/17 입찰 +10% 후 축캠 노출 −9.6%.</td><td>이것이 계정 단위 일 한도 때문이라는 판단은 통계 신호 기반(확신 높음)이며, '한도 초과' 플래그를 실시간으로 본 것은 아닙니다 — 오늘 저녁 조회로 확정합니다.</td></tr><tr><td>세럼 226명 방문에 0개 판매(전주 234명·3개). 세럼 축 7개 지출 55.30·클릭 23·주문 0. 세럼 순위 25,969→49,249.</td><td>우연으로 0이 나올 확률 8.8% — 붕괴로 단정하지 않습니다. 대부분 축이 9/16–18에 첫 지출을 내 실제 가동이 2–4일이라 판정은 9/29로 유예합니다.</td></tr><tr><td>메타 지출 634(전주 1,059), 결제 시작 218건, 브랜드 검색량 62회(전주 115·그 전 162).</td><td>검색량 하락이 메타 감축 때문인지 9/8 브랜드어 차단 때문인지는 시점이 겹쳐 가르지 못했습니다 — 감축 폭과 검색량 하락 폭이 비례해 메타 쪽에 무게가 실릴 뿐입니다.</td></tr>
+  <div class="lock cw-wrap" style="margin:12px 0;border-left:5px solid #1b1a17"><div class="lh">📊 채널별 성적 — 8주차, 지난주(7주차) 대비</div>
+  <div class="tbl-scroll"><table class="mini cw-tbl"><thead><tr>
+    <th>채널</th><th class="num">광고비</th><th class="num">매출</th><th class="num">ROAS</th><th class="num">주문</th>
+  </tr></thead><tbody>
+  <tr class="cw-row cw-all">
+    <td><b>전체</b><div class="cw-s">아마존 + 메타</div></td>
+    <td class="num"><div class="cw-v">AED 1,059.14<span class="cw-usd">($288)</span></div><span class="cw-d">▼ 25%</span></td>
+    <td class="num"><div class="cw-v">AED 594.00<span class="cw-usd">($162)</span></div><span class="cw-d">▼ 26%</span><div class="cw-s">전체 주문 매출(SP-API 실측)</div></td>
+    <td class="num"><div class="cw-v v-warn">0.56×</div><span class="cw-d">보합</span><div class="cw-s">MER · 본전 1.85–1.97</div></td>
+    <td class="num"><div class="cw-v">6건</div><span class="cw-d">▼ 14%</span></td>
+  </tr>
+  <tr class="cw-row">
+    <td><b>아마존 광고</b><div class="cw-s">SP·SB</div></td>
+    <td class="num"><div class="cw-v">AED 424.81<span class="cw-usd">($116)</span></div><span class="cw-d">▲ 19%</span></td>
+    <td class="num"><div class="cw-v">AED 198.00<span class="cw-usd">($54)</span></div><span class="cw-d">지난주 0</span><div class="cw-s">광고로 잡힌 매출(클릭 후 14일 귀속)</div></td>
+    <td class="num"><div class="cw-v v-warn">0.47×</div><span class="cw-d">지난주 0</span><div class="cw-s">본전 1.85–1.97</div></td>
+    <td class="num"><div class="cw-v">2건</div><span class="cw-d">지난주 0</span><div class="cw-s">광고 귀속 주문</div></td>
+  </tr>
+  <tr class="cw-row">
+    <td><b>메타 광고</b><div class="cw-s">아마존으로 보내는 광고</div></td>
+    <td class="num"><div class="cw-v">AED 634.33<span class="cw-usd">($173)</span></div><span class="cw-d">▼ 40%</span></td>
+    <td class="num"><div class="cw-v">≤ AED 396.00<span class="cw-usd">($108)</span></div><span class="cw-d">▼ 50%</span><div class="cw-s">아마존 광고 밖 매출 전액 = 상한(구매 귀속 없음)</div></td>
+    <td class="num"><div class="cw-v v-warn">≤ 0.62×</div><span class="cw-d">지난주 ≤ 0.76</span><div class="cw-s">상한값도 본전 1.85–1.97 미달</div></td>
+    <td class="num"><div class="cw-v">≤ 4건</div><span class="cw-d">▼ 43%</span><div class="cw-s">아마존 광고 밖 주문 = 상한 · 결제 시작 218건(전주 343)</div></td>
+  </tr>
   </tbody></table></div>
-  <div class="sowhat" style="margin-top:8px"><b>💡 그래서:</b> 지금 확실한 것은 전체 효율 0.56배와 '총량이 잠겨 있다'는 모양이고, 채널별 몫은 여전히 못 가릅니다. 이번 주 한도 확정이 아마존 쪽 해석을, 브랜드 검색량 반등 여부가 메타 쪽 해석을 각각 결정합니다.</div>
 </div>
-  <div class="spine-card" style="margin-top:12px">
-  <div class="sp-h">🔁 한 퍼널로 보면 — 이번 주 돈과 사람이 흐른 길</div>
-  <svg viewBox="0 0 1000 150" style="width:100%;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="메타에서 주문까지 퍼널">
-    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a836f"/></marker></defs>
-    <rect x="10" y="30" width="170" height="90" rx="12" fill="#1b1a17"/><text x="95" y="58" font-size="12" fill="#c9e265" text-anchor="middle" font-weight="800">메타 광고</text><text x="95" y="80" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">AED 634 ($173)</text><text x="95" y="102" font-size="10.5" fill="#cfc9b8" text-anchor="middle">광고비의 60%</text>
-    <line x1="182" y1="75" x2="228" y2="75" stroke="#8a836f" stroke-width="2" marker-end="url(#ar)"/>
-    <rect x="232" y="30" width="170" height="90" rx="12" fill="#fff" stroke="#e6e1d3"/><text x="317" y="58" font-size="12" fill="#6f685a" text-anchor="middle" font-weight="800">상품페이지 방문</text><text x="317" y="80" font-size="15" fill="#1b1a17" text-anchor="middle" font-weight="800">502명</text><text x="317" y="102" font-size="10.5" fill="#6f685a" text-anchor="middle">전주 503명</text>
-    <line x1="404" y1="55" x2="450" y2="42" stroke="#8a836f" stroke-width="2" marker-end="url(#ar)"/><line x1="404" y1="95" x2="450" y2="108" stroke="#8a836f" stroke-width="2" marker-end="url(#ar)"/>
-    <rect x="454" y="12" width="230" height="58" rx="10" fill="#fdf3e0" stroke="#e6e1d3"/><text x="569" y="34" font-size="11.5" fill="#1b1a17" text-anchor="middle" font-weight="800">아마존 광고 클릭 195명</text><text x="569" y="54" font-size="10.5" fill="#6f685a" text-anchor="middle">SP 24 · SB 171 — 광고비 AED 425 ($116)</text>
-    <rect x="454" y="82" width="230" height="58" rx="10" fill="#f6faf6" stroke="#e6e1d3"/><text x="569" y="104" font-size="11.5" fill="#1b1a17" text-anchor="middle" font-weight="800">아마존 광고 밖 방문 307명</text><text x="569" y="124" font-size="10.5" fill="#6f685a" text-anchor="middle">구매 버튼(IC) 218건</text>
-    <line x1="686" y1="41" x2="732" y2="41" stroke="#8a836f" stroke-width="2" marker-end="url(#ar)"/><line x1="686" y1="111" x2="732" y2="111" stroke="#8a836f" stroke-width="2" marker-end="url(#ar)"/>
-    <rect x="736" y="12" width="250" height="58" rx="10" fill="#fff" stroke="#e6e1d3"/><text x="861" y="34" font-size="11.5" fill="#1b1a17" text-anchor="middle" font-weight="800">SP 귀속 주문 2건 · AED 198 ($54)</text><text x="861" y="54" font-size="10.5" fill="#b3261e" text-anchor="middle">이번 주 아마존 광고 귀속 주문 2건 — 아마존 광고 클릭 195건 중 CVR 1.03%</text>
-    <rect x="736" y="82" width="250" height="58" rx="10" fill="#fff" stroke="#e6e1d3"/><text x="861" y="104" font-size="11.5" fill="#1b1a17" text-anchor="middle" font-weight="800">아마존 광고 밖 주문 4개 · AED 396 ($108)</text><text x="861" y="124" font-size="10.5" fill="#6f685a" text-anchor="middle">100명 중 1.3명 구매</text>
-  </svg>
-  <div class="sowhat"><b>💡 그래서:</b> 이번 주 주문 6건 중 2건은 아마존 광고 클릭에서, 나머지 4건은 아마존 광고 밖에서 왔습니다.</div>
-</div>
-  <div class="lock" style="margin-top:14px;border-left:5px solid #1b1a17">
-  <div class="lh">📊 채널 3분할 — 이번 주 돈이 어느 채널에서 돌아왔는지, 처음부터 셋으로 갈라 봅니다 <span style="font-size:11px;font-weight:400;color:var(--muted)">(본전선 2026-09-15 10:02 갱신)</span></div>
-  <div class="dstat" style="margin-top:6px">
-    <div class="ds"><div class="ds-v">0.47×</div><div class="ds-l">아마존 광고 — 지출 425 · 귀속 매출 198 · 0.47배(본전 미달). 귀속 주문 2건은 전부 크림 건조·수분 축</div></div>
-    <div class="ds"><div class="ds-v">AED 396.00 ($108)</div><div class="ds-l">아마존 광고 밖 — 매출 396(전체 594 − 귀속 198). 광고비 0(아마존 광고 기준)</div></div>
-    <div class="ds"><div class="ds-v">0.62×</div><div class="ds-l">메타 — 지출 634(계정의 60%) · 아마존 광고 밖 매출 전액을 메타 몫으로 봐도 0.62배 · 본전 미달</div></div>
-  </div>
-  <p class="l1-lead" style="margin:10px 0 0"><b>합계 — 매출 AED 594.00 ($162) · 지출 AED 1,059.14 ($288) · MER 0.56배.</b></p>
-  <div class="tbl-scroll" style="margin-top:10px"><table class="mini" style="min-width:560px"><thead><tr><th>귀속 가정</th><th class="num">아마존 광고 ROAS</th><th class="num">메타 ROAS</th><th>뜻</th></tr></thead><tbody><tr><td>마지막 클릭 기준 (지금 표기)</td><td class="num"><b>0.47×</b></td><td class="num"><b>0.62×</b></td><td class="tw">아마존 광고 귀속을 아마존 몫으로</td></tr><tr><td>교차 판매만 아마존 몫</td><td class="num"><b>해당 없음 — 0건</b></td><td class="num"><b>0.94×</b></td><td class="tw">이번 주 교차 판매 귀속 주문이 0건이라 이 줄은 값을 매길 수 없음</td></tr><tr><td>전부 아마존 광고 밖 수요</td><td class="num"><b>0.00×</b></td><td class="num"><b>0.94×</b></td><td class="tw">아마존 SP 지출은 이미 오는 손님을 받는 비용</td></tr></tbody></table></div><p class="fn-note">본전은 1.85–1.97(자동 판정 1.99, 2026-09-15 10:02 갱신값).</p><div class="sowhat" style="margin-top:8px"><b>💡 그래서:</b> 이번 주는 아마존 광고 귀속 주문이 2건 있어(매출 AED 198.00 ($54)) 세 시나리오가 아마존 0.00×–0.47×, 메타 0.62×–0.94× 범위로 갈립니다. 채널별 몫은 지난 두 주와 마찬가지로 <b>9/29 메타 지출 판정</b>(검색량·방문·총매출)으로 좁힙니다.</div>
-  <p style="margin-top:8px"><b>세 갈래의 뜻</b> — 아마존 광고는 마지막 클릭 기준 귀속(이번 주 2건 · AED 198.00 ($54)), 아마존 광고 밖은 전체 매출에서 그 귀속을 뺀 나머지(UAE는 메타 귀속 태그가 없어 메타·오가닉을 못 가름), 메타 칸은 상한값입니다.</p>
+  <div class="hk-lead">8주차는 광고비를 25% 줄였는데도(AED 1,416 ($386)→1,059) 매출은 799→594로 더 내려갔고, 팔린 6개는 전부 크림이었습니다. 아마존 광고비 425 전액이 하루 AED 60 ($16)에서 7일 내내 한 번도 안 올라간 계정 한도 안에서 15개 축이 나눠 쓰느라 축당 하루 3–4 AED로 굶었고, 메타(인스타그램·페이스북 광고) 634는 결제 시작(IC(광고에서 구매 버튼을 누른 횟수)) 218건까지만 보이고 그 뒤는 볼 수 없는 구조 그대로였습니다. 이번 주는 새 캠페인을 더 여는 주가 아니라, 한도를 확인해 푸는 것이 첫 일이고 입찰·예산 손질은 그 답이 나올 때까지 멈추는 주입니다.</div>
+  <div class="hk-row"><div class="hk-t">고친 것</div><div class="hk-b">아마존 광고 구조를 세럼 7축·크림 8축 = 15개 축 캠페인으로 전량 라이브했고(9/14–15), 승인 없이 들어가 있던 3단 입찰 구조를 걷어내 세럼 2.5·크림 2.2로 통일했습니다(9/17).<br>메타에서 가장 비싸던 PONY 소재 2개를 껐습니다(9/16) — 결제 시작 1건당 비용이 AED 3.09 ($0.84)에서 2.91로 내려갔습니다.<br>7주차에 0건이던 아마존 광고 귀속(그 광고 덕에 팔린 것으로 집계된) 주문이 2건(AED 198 ($54)) 돌아왔습니다 — 둘 다 크림 건조·수분 축 캠페인입니다.</div></div><div class="hk-row"><div class="hk-t">빠진 것</div><div class="hk-b">계정 일 한도 — 9/13 예산을 37→100으로 올린 바로 그날부터 아마존 총지출이 하루 60–61에서 잠겼는데, 이걸 실시간으로 확인하지 못했습니다(아침 스냅샷은 한도가 풀린 직후라 못 봅니다).<br>클릭률 최상위 5개 소재(Viki 19.5% 등)를 새 캠페인으로 만들어 두고 광고를 연결하지 못해 지출 0인 채 주가 끝났습니다.<br>크림 발견캠은 유일한 광고가 심사 거절이라 처음부터 노출이 없었는데, 재제출을 못 했습니다.<br>세럼이 왜 0개인지 — 표본이 작아(방문 226) 우연을 배제하지 못했고, 세럼 축 캠페인 대부분이 9/16–18에야 첫 지출을 내 판정 자체가 이릅니다.</div></div><div class="hk-row"><div class="hk-t">광고 성적</div><div class="hk-b">아마존 광고: 클릭 195건 중 2건 구매(1.0%). 15개 축 중 주문이 난 축 1개·클릭만 8개·노출만 6개(대부분 3–5일 된 신축)라, 위 표의 0.47배는 사실상 축 하나(크림 건조·수분)의 성적입니다.<br>메타: 결제 시작 218건(7주차 343). 구매는 구조적으로 안 잡혀 위 표의 매출·배수는 아마존 광고 밖 매출 전액을 메타 몫으로 본 상한값이고, 그 상한도 본전(남지도 잃지도 않는 손익분기 지점) 아래입니다.<br>합계: 광고비를 25% 줄였는데 MER은 0.56배 그대로 — 본전 1.85–1.97배의 3분의 1에서 한 주 더 머물렀습니다.</div></div>
+  <div class="hk-next"><b>그래서 이번 주</b> — ① 오늘(9/22) 두바이 낮–저녁 시간에 광고 상태를 다시 조회해 한도를 확정합니다(읽기 전용). ② 한도가 맞으면 예산·입찰은 그대로 두고, 한도 해제 문의와 축별 배분(발견캠·SP 위임을 줄여 축캠에 몰아주기)만 합니다. ③ 메타는 현 수준을 유지하고 클릭률 상위 5개 새 캠페인에 광고를 연결합니다. ④ 세럼 판정은 9/29(축캠 2주 데이터)까지 유예합니다.</div>
 </div>
   <div class="spine-card">
   <div class="sp-h">📊 주간 광고비 vs 실주문 매출, 그리고 MER — 9개 구간 추이</div>
-  <div class="sp-sub">막대 높이 = 실제 금액(회색=광고비·색=실주문 매출, 단위 AED), 막대 위 숫자 = MER(광고비 대비 매출 배수). 초록 = 그 주에 실제 적용되던 본전선을 넘긴 주 — 본전선 이력: 2026-07-20부터 1.48 → 2026-08-26부터 1.53 → 2026-09-11부터 1.73 → 2026-09-15부터 1.85(8/26 이전 주차는 구 본전 1.48). 캠페인 정지 같은 자동 판정에는 항상 보수값 1.99를 씁니다.</div>
+  <div class="sp-sub">막대 높이 = 실제 금액(회색=광고비·색=실주문 매출, 단위 AED), 막대 위 숫자 = MER(광고비 대비 매출 배수). 초록 = 그 주에 실제 적용되던 본전선을 넘긴 주 — 본전선 이력: 2026-07-20부터 1.48(자동 판정 1.48) → 2026-08-26부터 1.53(자동 판정 1.63) → 2026-09-11부터 1.73(자동 판정 1.85) → 2026-09-15부터 1.85(자동 판정 1.99). 캠페인 정지 같은 자동 판정에는 그 시점의 괄호 안 보수값(지금 1.99)을 씁니다.</div>
   <svg viewBox="0 0 1000 190" style="width:100%;height:auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="주차별 광고비 매출 MER 추이">
     <line x1="24" y1="140" x2="976" y2="140" stroke="#d8d2c4" stroke-width="1"/>
     <rect x="63" y="133" width="13" height="7" fill="#c9c4b6"/><rect x="78" y="134" width="13" height="6" fill="#c95d4a"/>
@@ -850,10 +846,10 @@ section{margin-top:0}
     <div class="tbl-scroll"><table class="mini"><thead><tr><th>주차 (기간)</th><th class="num">효율 목표(배)</th><th class="num">주간 광고비</th><th class="num">주간 매출 목표</th><th class="num">누적</th></tr></thead><tbody><tr><td><b>분기 1주차</b> <span style="font-size:10px;color:#a06a00">(미집행 제외)</span> (8/22–28)</td><td class="num">1.0</td><td class="num">$354</td><td class="num">$354</td><td class="num">$1,228</td></tr><tr><td><b>분기 2주차</b> (8/29–9/4)</td><td class="num">1.3</td><td class="num">$531</td><td class="num">$690</td><td class="num">$1,919</td></tr><tr><td><b>분기 3주차</b> (9/5–11)</td><td class="num">1.6</td><td class="num">$779</td><td class="num">$1,246</td><td class="num">$3,165</td></tr><tr style="background:#fffdf2"><td><b>분기 4주차</b> (9/12–18)</td><td class="num">1.8</td><td class="num">$1,062</td><td class="num">$1,911</td><td class="num">$5,076</td></tr><tr><td><b>분기 5주차</b> (9/19–25)</td><td class="num">2.0</td><td class="num">$1,416</td><td class="num">$2,832</td><td class="num">$7,908</td></tr><tr><td><b>분기 6주차</b> (9/26–30)</td><td class="num">2.2</td><td class="num">$1,133</td><td class="num">$2,492</td><td class="num">$10,400</td></tr></tbody></table></div>
     <div class="dnote">참고 — 분기 3주차(2026-09-05–11) 실적: 매출 $271.48 · MER 0.634 → 미달 1주(매출 $271.48 vs 램프 $1246 미달 · MER 0.634 vs 램프 1.6 미달). 분기 4주차(2026-09-12–18) 실적: 매출 $144.41 · MER 0.472 → 미달 1주(매출 $144.41 vs 램프 $1911 미달 · MER 0.472 vs 램프 1.8 미달). 연속 미달 3주 = 재협상 임계 도달(위 박스 참고) — 단 2026-09-16 John 결정으로 분기 램프 재협의 자체는 보류 상태입니다(운영 기록 2026-09-16, "UAE 이슈가 많았던 만큼 당장 고치지 않고 보류 — 나중에 별도 업데이트") — 아래 W4 판정은 목표 수치(테이블)는 그대로 두고 실적만 채운 것이며, 재협의 여부는 이 판정과 별개로 아직 미결입니다.
     분기 5주차 초입(2026-09-19–25 중 9/19 1일) 참고치: 매출 $53.91 · MER 1.751 — 1일 표본이라 판정 대상 아님.
-    주차별 목표 수치는 계획 원문 그대로 달러(USD)입니다.</div>
+    ⚠️ 목표·주차별 계단 수치는 계획 원문 그대로 <b>달러(USD) 표기</b>이고, 그 외 이 보고서의 모든 집행·성과 수치는 AED입니다(2026-09-22 §1 목표바 삭제로 이 고지는 여기로 옮김).</div>
   </div>
 </section>
-<div class="l2-divider"><div class="l2-line"></div><div class="l2-t">📂 상세 원장 — 위 결론들의 근거 전량 (필요한 것만 펼쳐 보세요)</div><div class="l2-line"></div></div><p class="l1-lead" style="margin-top:10px">경영 뷰의 모든 수치·판정의 근거가 아래에 있습니다 — 골라내기 없음 원칙(성적표·발견 전수 게재)은 그대로입니다.</p><p class="fn-note">이 보고서는 ★1–★4(및 검색어 시장 지도)까지만 번호를 매겼고, ★1 뒤에 번호 없는 필수 표 2종(💵 아마존 캠페인별 전수 · 📱 메타 소재별 전수)이 있습니다 — US 보고서의 ★5–★11에 해당하는 항목(캠페인 그룹별 스윕 분석·히어로판·깔때기)은 캠페인 표본이 그룹 스윕 자격선에 못 미치거나 판정 가능한 캠 수 자체가 부족해 이번 주에 싣지 않았습니다.</p><details class="acc"><summary>📋 이번 주 요약 4단 — §1 2카드로 압축되기 전 원문 그대로(무슨 일 · 해석의 열쇠 · 전환점 · 다음 판정)</summary><div class="bd"><div class="v22 v22-4"><div class="v22-card"><div class="v22-h">무슨 일이 벌어졌나</div><div class="v22-d" style="margin-top:8px">광고비를 AED 1,416 ($386)에서 1,059로 25% 줄였는데 매출은 799에서 594로 26% 더 빠졌습니다. 주문 6건은 전부 크림, 세럼은 0건 — 방문자는 502명으로 전주(503명)와 같았습니다.</div></div><div class="v22-card"><div class="v22-h">숫자를 해석하는 열쇠</div><div class="v22-d" style="margin-top:8px">아마존 광고비가 7일 내내 하루 AED 60 ($16)–61에 잠겨 있었습니다. SB가 오르는 날은 SP가 같은 폭으로 내려가 합만 고정됐고, 9/17 입찰을 올려도 노출·클릭이 늘지 않았습니다 — 경매가 아니라 계정 한도가 물량을 막고 있다는 뜻입니다.</div></div><div class="v22-card"><div class="v22-h">주중의 전환점</div><div class="v22-d" style="margin-top:8px">9/13 크림 두 축 예산을 37→100으로 올린 날이 한도가 잠긴 첫날이었고, 9/14–15 15개 축이 전부 켜졌으며, 9/17 입찰 구조를 단일화하고 PONY 메타 소재를 껐습니다. 그 사이 크림 건조·수분 축이 2주 만의 첫 광고 귀속 주문 2건을 냈습니다.</div></div><div class="v22-card"><div class="v22-h">다음 판정</div><div class="v22-d" style="margin-top:8px">오늘 저녁 한도 실측이 첫 판정입니다. 한도가 맞으면 입찰·예산 조정은 무의미하니 배분과 해제 문의로 전환하고, 세럼 축 캠페인은 9/29 2주 데이터로, 메타는 브랜드 검색량(62회, −46%)이 반등하는지로 재판정합니다.</div></div></div></div></details><div class="acc-group">— 돈의 흐름 —</div><details class="acc"><summary><span class="pill-board">★1</span>★1 흑자 기준선 — 본전 ROAS 1.85 · 운영 본전 CPC AED 1.3(28일 창)</summary><div class="bd"><div class="bd-src">출처: 광고 API 클릭·주문 창별 집계(amazon_cumulative.daily) — 신 마진 기준 재계산</div><div class="tbl-scroll"><table>
+<div class="l2-divider"><div class="l2-line"></div><div class="l2-t">📂 상세 원장 — 위 결론들의 근거 전량 (필요한 것만 펼쳐 보세요)</div><div class="l2-line"></div></div><p class="l1-lead" style="margin-top:10px">경영 뷰의 모든 수치·판정의 근거가 아래에 있습니다 — 골라내기 없음 원칙(성적표·발견 전수 게재)은 그대로입니다.</p><p class="fn-note">이 보고서는 ★1–★4(및 검색어 시장 지도)까지만 번호를 매겼고, ★1 뒤에 번호 없는 필수 표 2종(💵 아마존 캠페인별 전수 · 📱 메타 소재별 전수)이 있습니다 — US 보고서의 ★5–★11에 해당하는 항목(캠페인 그룹별 스윕 분석·히어로판·깔때기)은 캠페인 표본이 그룹 스윕 자격선에 못 미치거나 판정 가능한 캠 수 자체가 부족해 이번 주에 싣지 않았습니다.</p><details class="acc"><summary>📋 이번 주 요약 4단 — §1 채널별 성적표로 압축되기 전 원문 그대로(무슨 일 · 해석의 열쇠 · 전환점 · 다음 판정)</summary><div class="bd"><div class="v22 v22-4"><div class="v22-card"><div class="v22-h">무슨 일이 벌어졌나</div><div class="v22-d" style="margin-top:8px">광고비를 AED 1,416 ($386)에서 1,059로 25% 줄였는데 매출은 799에서 594로 26% 더 빠졌습니다. 주문 6건은 전부 크림, 세럼은 0건 — 방문자는 502명으로 전주(503명)와 같았습니다.</div></div><div class="v22-card"><div class="v22-h">숫자를 해석하는 열쇠</div><div class="v22-d" style="margin-top:8px">아마존 광고비가 7일 내내 하루 AED 60 ($16)–61에 잠겨 있었습니다. SB가 오르는 날은 SP가 같은 폭으로 내려가 합만 고정됐고, 9/17 입찰을 올려도 노출·클릭이 늘지 않았습니다 — 경매가 아니라 계정 한도가 물량을 막고 있다는 뜻입니다.</div></div><div class="v22-card"><div class="v22-h">주중의 전환점</div><div class="v22-d" style="margin-top:8px">9/13 크림 두 축 예산을 37→100으로 올린 날이 한도가 잠긴 첫날이었고, 9/14–15 15개 축이 전부 켜졌으며, 9/17 입찰 구조를 단일화하고 PONY 메타 소재를 껐습니다. 그 사이 크림 건조·수분 축이 2주 만의 첫 광고 귀속 주문 2건을 냈습니다.</div></div><div class="v22-card"><div class="v22-h">다음 판정</div><div class="v22-d" style="margin-top:8px">오늘 저녁 한도 실측이 첫 판정입니다. 한도가 맞으면 입찰·예산 조정은 무의미하니 배분과 해제 문의로 전환하고, 세럼 축 캠페인은 9/29 2주 데이터로, 메타는 브랜드 검색량(62회, −46%)이 반등하는지로 재판정합니다.</div></div></div></div></details><div class="acc-group">— 돈의 흐름 —</div><details class="acc"><summary><span class="pill-board">★1</span>★1 흑자 기준선 — 본전 ROAS 1.85 · 운영 본전 CPC AED 1.3(28일 창)</summary><div class="bd"><div class="bd-src">출처: 광고 API 클릭·주문 창별 집계(amazon_cumulative.daily) — 신 마진 기준 재계산</div><div class="tbl-scroll"><table>
   <tr><th>창</th><th class="num">클릭</th><th class="num">주문</th><th class="num">CVR</th><th class="num">실 CPC</th><th class="num">본전 CPC</th></tr>
   <tr><td>이번 주 단독</td><td class="num">195</td><td class="num">2</td><td class="num">1.03%</td><td class="num">AED 2.18 ($0.59)</td><td class="num">AED 0.65 ($0.18)</td></tr>
   <tr style="background:#fffdf2"><td><b>28일 창 (운영 정본)</b></td><td class="num">631</td><td class="num">13</td><td class="num">2.06%</td><td class="num"><b>AED 2.48 ($0.68)</b></td><td class="num"><b>AED 1.3 ($0.35)</b></td></tr>
