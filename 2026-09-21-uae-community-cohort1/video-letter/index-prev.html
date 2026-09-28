@@ -125,7 +125,7 @@ body.prompter .line{grid-template-columns:44px 52px 1fr}
 body.prompter .line .shot{display:none}
 body.prompter .line .say{font-size:1.35rem;line-height:1.5}
 body.prompter .line .say .note{display:none}
-body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles{display:none}
+body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #principles{display:none}
 
 /* 촬영 리스트 표 */
 table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:12px}
@@ -169,17 +169,16 @@ footer{padding:36px 0 70px}
   <div class="stepper">
     <span class="done">기획 9/28</span>
     <span class="done">대본 9/28</span>
-    <span class="now">본문 촬영 9/29 오후</span>
-    <span>인트로 촬영 10/6 이후(이름 확정 뒤, 15분)</span>
-    <span>편집·자막 John+Claude ~10/15</span>
+    <span class="now">본문 촬영 ~10/10</span>
+    <span>인트로 촬영 10/7~9</span>
+    <span>편집·자막 ~10/15</span>
     <span>John 검수 10/15</span>
     <span>발송 10/17</span>
   </div>
 </header>
 
 <nav class="toc">
-  <a href="#open">확정 사항</a>
-  <a href="#order">내일 촬영 순서</a>
+  <a href="#open">확인 필요</a>
   <a href="#principles">말하기 원칙</a>
   <a href="#intro">개인화 인트로</a>
   <a href="#body">본문 6덩어리</a>
@@ -189,31 +188,14 @@ footer{padding:36px 0 70px}
 </nav>
 
 <section id="open">
-  <p class="sec-label">Decided</p>
-  <h2 class="sec-title">확정 사항 (John, 9/28 밤)</h2>
+  <p class="sec-label">Open</p>
+  <h2 class="sec-title">지금 확인이 필요한 것</h2>
   <ul class="open-list">
-    <li class="done"><span class="box"></span><span><b>공장 촬영본 있음</b> — 본문 3-4(공장 줄) 유지. 제조사 이름·로고가 보이는 컷은 못 쓴다(2026-06-29 결정).</span></li>
-    <li class="done"><span class="box"></span><span><b>편집·자막은 John이 Claude와 먼저 시도</b> — 깔끔하게. 안 되면 그때 Sol.</span></li>
-    <li class="done"><span class="box"></span><span><b>본문 촬영 9/29(내일) 오후</b> — 영상편지만. 실험실·약국 인서트는 John 스케줄에 따라 유동적으로.</span></li>
-    <li class="done"><span class="box"></span><span><b>대본은 전부 미리 짜두고, 촬영은 John 스케줄대로</b> — 콘텐츠1~9 대본을 별도 페이지로 이어서 준비한다(허브 카드에서 진입).</span></li>
-    <li class="done"><span class="box"></span><span><b>개인화 인트로는 이름만 다르다</b> — "안녕하세요, {Name}." 뒤는 전원 동일. 인트로 바로 다음 컷에서 카메라 앵글이 바뀌며 Marco가 와서 앉는 장면으로 전환 → 그 뒤는 전원 공용.</span></li>
+    <li><span class="box"></span><span><b>공장 촬영본 유무</b><span class="badge-conf ok">John</span> — 없으면 본문 ③에서 공장 줄(3-4)을 뺀다. 있어도 제조사 이름·로고가 보이는 컷은 못 쓴다(2026-06-29 결정).</span></li>
+    <li><span class="box"></span><span><b>편집·자막 담당</b><span class="badge-conf unk">미정</span> — 운영안엔 Claude로 적혀 있으나 영상 편집 실물은 사람 손이 필요. Sol 확인.</span></li>
+    <li><span class="box"></span><span><b>본문 촬영일</b><span class="badge-conf ok">John</span> — 10/10 전 아무 날. 사무실 1일 + 실험실·약국 반나절씩. 날짜가 잡히면 프롬프터 텍스트를 뽑는다.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠1·2 대본을 같은 날 찍을지</b><span class="badge-conf ok">John</span> — 대본 준비 상태 보고 결정(9/28). 찍으려면 대본이 먼저 있어야 한다.</span></li>
   </ul>
-</section>
-
-<section id="order">
-  <p class="sec-label">Tomorrow</p>
-  <h2 class="sec-title">내일(9/29 오후) 촬영 순서 — 세팅별로 묶어서</h2>
-  <p class="lead">카메라 세팅을 바꾸는 횟수를 줄이려고 대본 순서가 아니라 <b style="color:var(--ink)">세팅 순서</b>로 찍는다. 각 줄은 대사 번호. 인트로(0-x)는 이름이 확정된 뒤 따로 찍는다.</p>
-  <table>
-    <tr><th>순서</th><th>세팅</th><th>찍을 대사</th><th>메모</th></tr>
-    <tr><td>1</td><td>투샷 와이드</td><td>1-1 (Marco 입장·착석부터), 1-4, 2-6, 3-6, 6-1, 6-2, 6-3, 6-4</td><td>1-1은 John 혼자 앉아 있는 상태에서 시작 — Marco가 걸어와 앉는 동작까지 한 컷. 인트로 다음에 이어 붙는 전환 컷.</td></tr>
-    <tr><td>2</td><td>Marco 클로즈</td><td>1-2, 2-1, 2-2, 2-3, 2-4, 2-5, 3-1, 3-2, 3-3, 3-4, 3-5, 4-3, 4-5, 4-6, 4-8, 4-10</td><td>3-2~3-5는 화면이 b-roll로 덮이지만 목소리는 필요 — 그대로 카메라 보고 읽는다.</td></tr>
-    <tr><td>3</td><td>John 클로즈</td><td>1-3, 4-1, 4-2, 4-4, 4-7, 4-9, 5-1, 5-2, 5-3, 5-4, 5-5, 5-6</td><td>5-x는 폰 화면 인서트로 덮이는 부분이 있어도 전부 읽는다.</td></tr>
-    <tr><td>4</td><td>제품·시연 인서트(탑다운/클로즈)</td><td>상자 여는 손 · 두 병 꺼내기 · 두 병 나란히 · 손바닥 세럼 · 얼굴 눌러 바르기 · 손등 세럼 · 크림 손등 · 상자 정리 · 풀세트 7+7</td><td>대사 없음. 각 4~6초씩 여유 있게.</td></tr>
-    <tr><td>5</td><td>사무실 생활 인서트</td><td>둘이 폰 보며 답장(앵글 2개) · 책상 위 시제품·메모 · 폰 왓츠앱 커뮤니티 화면</td><td>왓츠앱 화면은 테스트 커뮤니티로, 번호 가리기.</td></tr>
-    <tr><td>—</td><td>John 단독(인트로)</td><td>0-1, 0-2 × 20명</td><td>10/6 이름 확정 뒤. 세팅 1의 John 자리·옷 그대로.</td></tr>
-  </table>
-  <div class="callout"><div class="ic">🎬</div><p>준비물: 세트 상자 1개(미개봉) · 세럼·크림 여분 · 풀세트 7+7 · 프롬프터용 폰(이 페이지 "대사만 보기") · 왓츠앱 테스트 커뮤니티 만들어둔 폰.</p></div>
 </section>
 
 <section id="principles">
@@ -231,23 +213,31 @@ footer{padding:36px 0 70px}
 <section id="intro">
   <p class="sec-label">Personalised</p>
   <h2 class="sec-title">개인화 인트로 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">John 단독 · 10~15초 · 20개</span></h2>
-  <p class="lead">다른 건 전부 같고 <b style="color:var(--ink)">"안녕하세요" 뒤의 이름만</b> 바뀐다(John 9/28). 20명 × 2문장이라 이름 확정 뒤 15분이면 끝난다.</p>
   <div class="script">
-    <div class="line"><div class="n">0-1</div><div class="who"><i>J</i></div><div class="say"><span class="ko">안녕하세요</span>, {Name}. It's John — we talked on Instagram.<span class="note">자막: 이름만 크게(예: Mariya). 본문과 같은 장소·옷, John 혼자 앉아 있음.</span></div><div class="shot">J 단독 정면(세팅 1의 John 자리)</div></div>
-    <div class="line"><div class="n">0-2</div><div class="who"><i>J</i></div><div class="say">I read every application myself, and I remember yours. So this one is for you.</div><div class="shot">J 단독 정면 → <b>전환 컷</b>: 카메라 앵글이 바뀌고 Marco가 걸어와 John 옆에 앉는다(1-1로 이어짐)</div></div>
+    <div class="line"><div class="n">0-1</div><div class="who"><i>J</i></div><div class="say"><span class="ko">안녕하세요</span>, {Name}. It's John — we talked on Instagram.<span class="note">자막: 이름만 크게(예: Mariya). 본문과 같은 장소·옷.</span></div><div class="shot">J 단독 정면</div></div>
+    <div class="line"><div class="n">0-2</div><div class="who"><i>J</i></div><div class="say">You wrote that {hook}. I read every application myself, and I remember yours.</div><div class="shot">J 단독 정면</div></div>
+    <div class="line"><div class="n">0-3</div><div class="who"><i>J</i></div><div class="say">So this one is for you.</div><div class="shot">J 단독 → 본문 ①로 컷</div></div>
   </div>
-  <p style="font-size:.9rem;margin-top:12px">이름 명단은 10/6 선발 후 접수 탭에서 뽑아 프롬프터에 띄운다. 이름 발음이 애매한 사람은 명단 옆에 발음을 적어둔다.</p>
+  <h3>{hook} 규칙 — 신청 폼에 적힌 것만, 10단어 이하, 한 가지만</h3>
+  <table>
+    <tr><th>우선순위</th><th>폼 항목</th><th>예시</th></tr>
+    <tr><td>1</td><td>why (자유서술)에서 한 구절</td><td>you'd rather be brutally honest than polite</td></tr>
+    <tr><td>2</td><td>concerns</td><td>dark spots are the thing you most want to change</td></tr>
+    <tr><td>3</td><td>kbeauty</td><td>this would be your first Korean skincare / Korean skincare is already part of your routine</td></tr>
+    <tr><td>4</td><td>lastProduct</td><td>the last thing you bought was Mela B3 — we know it well</td></tr>
+  </table>
+  <p style="font-size:.9rem">20개를 <b style="color:var(--ink)">10/6 선발 후 한 자리에서 명단 보고 연속 촬영</b>(1시간). 명단은 접수 탭에서 이름·훅 2열로 뽑아 프롬프터에 띄운다.</p>
 </section>
 
 <section id="body">
   <p class="sec-label">Script</p>
   <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
   <h2 class="sec-title">본문 6덩어리</h2>
-  <p class="lead">표기 — <b style="color:var(--ink)">투샷</b> 두 사람 정면 · <b style="color:var(--ink)">M/J 단독</b> 클로즈 · <span class="tag have">기존</span>보유 촬영본 · <span class="tag new">신규</span>이번에 찍을 것.</p>
+  <p class="lead">표기 — <b style="color:var(--ink)">투샷</b> 두 사람 정면 · <b style="color:var(--ink)">M/J 단독</b> 클로즈 · <span class="tag have">기존</span>보유 촬영본 · <span class="tag new">신규</span>이번에 찍을 것 · <span class="tag unk">미확인</span>확보 안 된 것.</p>
 
   <h3>① 환영 + 우리는 누구 <span class="len">John→Marco · 20초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">1-1</div><div class="who"><i>J</i></div><div class="say">This is Marco. He's our CEO — the one who decided to make this.<span class="note">인트로에서 넘어오는 첫 공용 컷 — Marco가 앉는 동안 John이 말한다.</span></div><div class="shot">투샷 와이드(인트로와 다른 앵글). Marco가 화면 밖에서 걸어와 John 옆에 앉는다 → 앉으면 John이 Marco를 가리킴</div></div>
+    <div class="line"><div class="n">1-1</div><div class="who"><i>J</i></div><div class="say">This is Marco. He's our CEO — the one who decided to make this.</div><div class="shot">투샷, John이 Marco를 가리킴</div></div>
     <div class="line"><div class="n">1-2</div><div class="who"><i>M</i></div><div class="say"><span class="ko">안녕하세요</span>. I'm Marco.<span class="note">자막 Annyeonghaseyo (Hello)</span></div><div class="shot">M 단독</div></div>
     <div class="line"><div class="n">1-3</div><div class="who"><i>J</i></div><div class="say">I'm John — I do the marketing. I'm the one who's been messaging you.</div><div class="shot">J 단독</div></div>
     <div class="line"><div class="n">1-4</div><div class="who"><i>M</i></div><div class="say">We're a small team. When you write in the group, you're writing to the two of us.</div><div class="shot">투샷 → <span class="tag new">신규</span>사무실 책상에서 둘이 폰 보며 답장하는 컷 4초</div></div>
@@ -268,7 +258,7 @@ footer{padding:36px 0 70px}
     <div class="line"><div class="n">3-1</div><div class="who"><i>M</i></div><div class="say">Quickly — who we are.</div><div class="shot">M 단독</div></div>
     <div class="line"><div class="n">3-2</div><div class="who"><i>M</i></div><div class="say">Our lemons come from Jeju, an island in the south of Korea.</div><div class="shot"><span class="tag have">기존</span>제주 레몬 과수원·수확 5초</div></div>
     <div class="line"><div class="n">3-3</div><div class="who"><i>M</i></div><div class="say">They go to our lab. Our parent company, Zishel Bio, does the science.</div><div class="shot"><span class="tag have">기존</span>실험실 4초 + <span class="tag new">신규</span>연구원이 카메라 보고 "안녕하세요" 손 흔드는 3초</div></div>
-    <div class="line"><div class="n">3-4</div><div class="who"><i>M</i></div><div class="say">And they're made here, in Korea.</div><div class="shot"><span class="tag have">기존</span>공장·생산라인 4초 — 제조사 이름·로고가 보이는 컷은 제외</div></div>
+    <div class="line"><div class="n">3-4</div><div class="who"><i>M</i></div><div class="say">And they're made here, in Korea.<span class="note">공장 촬영본 확보 시에만. 없으면 이 줄 삭제.</span></div><div class="shot"><span class="tag unk">미확인</span>공장·생산라인 4초 — 제조사 이름·로고 노출 금지</div></div>
     <div class="line"><div class="n">3-5</div><div class="who"><i>M</i></div><div class="say">In Korea, you can only buy Lemonderma in pharmacies.<span class="note">"In Korea" 필수 — 현지 약국으로 오해 금지</span></div><div class="shot"><span class="tag have">기존</span>명동 오아시스 약국 진열 4초</div></div>
     <div class="line"><div class="n">3-6</div><div class="who"><i>M</i></div><div class="say">Over the next four weeks, we'll take you to each of these places.</div><div class="shot">투샷</div></div>
   </div>
@@ -312,10 +302,10 @@ footer{padding:36px 0 70px}
   <p class="sec-label">Shot list</p>
   <h2 class="sec-title">촬영 리스트</h2>
 
-  <h3>A-roll (본문 정면) — 9/29 오후 사무실, 같은 옷·같은 자리</h3>
+  <h3>A-roll (본문 정면) — 사무실 1회, 같은 옷·같은 자리</h3>
   <ul class="rules">
-    <li>투샷 와이드 1세팅 + Marco 클로즈 + John 클로즈 (카메라 1대면 세팅 3번, 2대면 동시). 순서는 위 §내일 촬영 순서.</li>
-    <li>개인화 인트로 20개(이름만 다름)는 <b>같은 장소에서 10/6 이후 15분</b>(John 단독, 세팅 1의 자리).</li>
+    <li>투샷 와이드 1세팅 + Marco 클로즈 + John 클로즈 (카메라 1대면 세팅 3번, 2대면 동시).</li>
+    <li>개인화 인트로 20개는 <b>같은 장소에서 10/6 이후 별도 날</b>(John 단독).</li>
   </ul>
 
   <h3>인서트 — <span class="tag new">신규</span>찍을 것</h3>
@@ -330,13 +320,13 @@ footer{padding:36px 0 70px}
   </table>
 
   <h3>인서트 — <span class="tag have">기존</span>보유 촬영본</h3>
-  <p style="font-size:.92rem">제주 레몬(3-2) · 실험실(2-5, 3-3) · 공장(3-4) · 약국(3-5). 공장 컷은 제조사 이름·로고가 보이는 부분 제외(2026-06-29 결정: 제조사명 외부 표기 금지). 실험실 재방문(연구원 인사 컷)·명동 오아시스 약국 추가 촬영은 John 스케줄대로.</p>
+  <p style="font-size:.92rem">제주 레몬(3-2) · 실험실(2-5, 3-3) · 약국(3-5). <b style="color:var(--ink)">공장은 미확인</b> — 있으면 3-4에 쓰되 제조사 이름·로고가 보이는 컷은 제외(2026-06-29 결정: 제조사명 외부 표기 금지).</p>
 
   <h3>자막·마감</h3>
   <ul class="rules">
     <li>영어 자막 박아 넣기, 큰 글씨, 문장당 1카드. 한국어 인사는 로마자+뜻.</li>
     <li>세로 9:16 1080×1920, 왓츠앱 전송용 압축.</li>
-    <li>편집·자막: <span class="badge-conf ok">John + Claude</span> — 깔끔하게 먼저 시도, 안 되면 Sol.</li>
+    <li>편집·자막 담당: <span class="badge-conf unk">미정</span> — Sol 확인.</li>
   </ul>
 </section>
 
@@ -345,14 +335,13 @@ footer{padding:36px 0 70px}
   <h2 class="sec-title">일정</h2>
   <table>
     <tr><th>언제</th><th>무엇</th><th>누가</th></tr>
-    <tr><td>9/29 오후</td><td>본문 A-roll + 사무실·제품·시연 인서트 촬영 (§내일 촬영 순서)</td><td>John · Marco</td></tr>
-    <tr><td>유동</td><td>실험실 재방문(연구원 인사 컷) · 명동 오아시스 약국 추가 촬영 — 필수 아님, 기존 촬영본으로도 완성 가능</td><td>John</td></tr>
-    <tr><td>10/6</td><td>최종 20인 확정 → 접수 탭에서 이름 명단(발음 메모 포함) 작성</td><td>Claude</td></tr>
-    <tr><td>10/6 이후</td><td>개인화 인트로 20개 연속 촬영(15분)</td><td>John</td></tr>
-    <tr><td>~10/15</td><td>편집·자막 → 10/15 검수</td><td>John + Claude</td></tr>
+    <tr><td>~10/10</td><td>본문 A-roll + 사무실 인서트 촬영(1일) · 실험실·약국 인서트(각 반나절, 가능한 날)</td><td>John · Marco</td></tr>
+    <tr><td>10/6</td><td>최종 20인 확정 → 접수 탭에서 이름·훅 명단 작성</td><td>Claude</td></tr>
+    <tr><td>10/7~10/9</td><td>개인화 인트로 20개 연속 촬영(1시간)</td><td>John</td></tr>
+    <tr><td>10/10~10/15</td><td>편집·자막 · 10/15 John 검수</td><td>미정(Sol) · John</td></tr>
     <tr><td>10/17</td><td>왓츠앱 개별 발송(폼의 번호로)</td><td>John</td></tr>
   </table>
-  <p style="font-size:.9rem">콘텐츠1~9 대본은 전부 미리 짜두고(별도 페이지, 허브 카드에서 진입), 촬영은 John 스케줄대로 유동적으로 진행한다(John 9/28).</p>
+  <p style="font-size:.9rem">콘텐츠1(아침 루틴)·2(레몬더마 소개)를 본문 촬영일에 같이 찍을지는 대본 준비 상태 보고 결정(John 9/28) — 그 대본은 별도 다음 단계.</p>
 </section>
 
 <section id="guard">
