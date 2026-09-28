@@ -1,3 +1,6 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>UAE 커뮤니티 1기 운영안</title>
 <meta name="description" content="레몬더마 Lemonderma Skin Lab Partners 1기 — 목적, 타겟 페르소나, 커뮤니티·운영모델, 전체 타임라인, 모집·보상, 실행 체크리스트">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,6 +223,25 @@ ol.steps b{color:var(--ink)}
 .open-list b{color:var(--ink)}
 .open-list span{color:var(--ink-2)}
 
+/* 콘텐츠 기획안 카드 */
+.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+@media (max-width:620px){.plan-grid{grid-template-columns:1fr}}
+.plan-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel);display:flex;flex-direction:column;gap:8px}
+.plan-card.ready{border-color:var(--line-strong);background:var(--panel-2)}
+.plan-card .when{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.82rem}
+.plan-card h5{margin:0;font-size:.98rem;color:var(--ink)}
+.plan-card p{margin:0;font-size:.84rem;color:var(--ink-2);line-height:1.6;flex:1}
+.plan-card .stage{display:flex;flex-wrap:wrap;gap:4px}
+.plan-card .stage span{font-size:.66rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3)}
+.plan-card .stage span.done{background:var(--line-strong);border-color:var(--line-strong);color:#1d2b00;font-weight:700}
+.plan-card .stage span.now{border-color:var(--headline);color:var(--headline);font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin-top:4px;font-size:.82rem;font-weight:700;
+  color:#1d2b00;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:99px;padding:8px 14px;text-decoration:none}
+.btn:hover{filter:brightness(.96)}
+.btn.off{background:transparent;color:var(--ink-3);border-color:var(--line);pointer-events:none}
+.mini-link{font-size:.8rem;font-weight:700;color:var(--headline);text-decoration:none;white-space:nowrap}
+.mini-link:hover{text-decoration:underline}
+
 /* footer / sources */
 footer{padding:40px 0 70px}
 .src{font-size:.84rem;color:var(--ink-3);line-height:2}
@@ -238,6 +260,7 @@ footer{padding:40px 0 70px}
   <a href="#persona">타겟 페르소나</a>
   <a href="#structure">커뮤니티·운영구조</a>
   <a href="#calendar">전체 타임라인</a>
+  <a href="#plans">콘텐츠 기획안</a>
   <a href="#reward">보상</a>
   <a href="#recruit">모집</a>
   <a href="#todo">실행 체크리스트</a>
@@ -314,7 +337,7 @@ footer{padding:40px 0 70px}
   <ol class="steps">
     <li><b>모집 · 9/21 → 10/5 (2주)</b> — §멤버 모집의 인스타그램 소싱 방법론으로 진행. <b>신청 마감 10/5</b>, 신청 폼으로 접수.</li>
     <li><b>최종 합격 공지 및 제품 배송 · 10/6 → 10/19 (2주)</b> — <b>10/6 최종 20인 발표</b>(신청자 전원에게 합격·불합격 통보). 한국 직송, 선정자에게 1:1 개별 통보 + 주소 이때 수집.</li>
-    <li><b>10/17 — 개인 맞춤 영상편지</b>(시작 2일 전) — CEO·마케터가 정면으로 말하는 공용 바디 + 사람마다 다른 10~15초 개인화 인트로(이름+신청서 언급). 아래 §영상편지 구성 참고.</li>
+    <li><b>10/17 — 개인 맞춤 영상편지</b>(시작 2일 전) — CEO·마케터가 정면으로 말하는 공용 바디 + 사람마다 다른 10~15초 개인화 인트로(이름+신청서 언급). <a class="mini-link" href="video-letter/">기획안 →</a></li>
   </ol>
 
   <h3>4주 프로그램 · 10/19 → 11/16</h3>
@@ -331,7 +354,85 @@ footer{padding:40px 0 70px}
   </ol>
 
   <h3>영상편지 구성</h3>
-  <p>공용 바디(CEO·마케터가 정면으로 말하는 기본 영상, 환영·자기소개·커뮤니티 목적을 여기서 다룬다) + 사람마다 다른 개인화 인트로. 중간중간 대사에 맞춰 b-roll(제주 레몬·실험실·공장·약국)을 넣어 완성도를 높인다. 세부 대사·순서는 실제 제작 시 구체화한다.</p>
+  <p>공용 바디(CEO·마케터가 정면으로 말하는 기본 영상, 환영·자기소개·커뮤니티 목적을 여기서 다룬다) + 사람마다 다른 개인화 인트로. 중간중간 대사에 맞춰 b-roll(제주 레몬·실험실·공장·약국)을 넣어 완성도를 높인다. 세부 대사·화면·촬영 리스트는 <a href="video-letter/">영상편지 기획안</a>(9/28 확정)에 있다.</p>
+</section>
+
+<section id="plans">
+  <p class="sec-label">Content Plans</p>
+  <h2 class="sec-title">콘텐츠 기획안</h2>
+  <p class="lead">발행 순서대로. 카드마다 지금 어느 단계인지 보이고, 버튼을 누르면 그 콘텐츠의 대사·화면·촬영 리스트 페이지로 간다. 기획 전인 것은 버튼이 꺼져 있다.</p>
+  <div class="plan-grid">
+    <div class="plan-card ready">
+      <div class="when">10/17 · 시작 2일 전</div>
+      <h5>영상편지 — 공용 바디 + 개인화 인트로 20개</h5>
+      <p>6덩어리 영어 대사, 대사별 화면, 촬영 리스트, 일정. 남은 확인: 공장 촬영본 · 편집 담당 · 촬영일.</p>
+      <div class="stage"><span class="done">기획</span><span class="done">대본</span><span class="now">촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn" href="video-letter/">기획안 열기 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 1 · 10/19</div>
+      <h5>콘텐츠1 — 마르코·존 모닝 스킨케어 루틴 + "여러분은요?"</h5>
+      <p>영상편지 본문 촬영일에 같이 찍을 수 있는 후보. 대본 준비 상태 보고 결정.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 1 · 10/19</div>
+      <h5>콘텐츠2 — 레몬더마 소개</h5>
+      <p>영상편지 ③이 예고편, 여기서 본편. 제주 레몬·실험실·약국 촬영본 재사용.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 2 · 10/26</div>
+      <h5>콘텐츠3 — 깜짝 이벤트</h5>
+      <p>가벼운 반응에 적극 답한 2명에게 세럼·크림 세트. 예고 없이 진행 — 영상편지·앞 콘텐츠에서 언급 금지.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 2 · 10/26</div>
+      <h5>콘텐츠4 — 약국 소개(명동 오아시스 약국)</h5>
+      <p>기존 촬영본 있음 + 추가 촬영 가능. 영상편지 3-5 컷과 같은 장소.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 3 · 11/2</div>
+      <h5>콘텐츠5 — 궁금한 점·요청 질문 받기</h5>
+      <p>텍스트 공지. 콘텐츠6의 재료를 모으는 회차.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 3 · 11/2</div>
+      <h5>콘텐츠6 — 질문에 영상으로 답변</h5>
+      <p>3주차 실시간 제작 — 미리 만들 수 없는 유일한 콘텐츠.</p>
+      <div class="stage"><span>기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">실시간 제작</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 4 · 11/9</div>
+      <h5>콘텐츠7 — 공장 소개</h5>
+      <p>공장 촬영본 확보가 선행. 제조사 이름·로고 노출 금지.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 4 · 11/9</div>
+      <h5>콘텐츠8 — 릴스 제출 리마인드</h5>
+      <p>완주 조건(릴스 1개, 형식 자유·진심만) 안내 + 제출 방법.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">11/18 · 종료 2일 뒤</div>
+      <h5>콘텐츠9 — 최우수 1명($500) 발표 + 2기 안내</h5>
+      <p>친구와 함께 오라는 제안 포함. 최우수 선정 세부 기준은 미정.</p>
+      <div class="stage"><span class="now">기획</span><span>대본</span><span>촬영</span><span>편집</span><span>발송</span></div>
+      <a class="btn off" href="#plans">기획 전</a>
+    </div>
+  </div>
 </section>
 
 <section id="reward">
@@ -403,7 +504,7 @@ footer{padding:40px 0 70px}
     <li><span class="box"></span><span><b>DM 발송 하루 90건</b><span class="badge-conf ok">John</span> — 오전 30 · 오후 30 · 밤 30. 사전 일괄 검수 없이 보낼 때 그 자리에서 프로필을 본다. 1일차 응답률과 폼 작성률을 실측한 뒤 2일차 물량을 정한다. 필요한 건 20명이고 명단은 2기 자산이라 한 번에 소진할 이유가 없다.</span></li>
     <li><span class="box"></span><span><b>합격·불합격 통보 문안 제작</b><span class="badge-conf check">Claude</span> — 모집 DM과는 별개의 글이다.</span></li>
     <li><span class="box"></span><span><b>콘텐츠 1·2·3 + 7·8·9 제작</b><span class="badge-conf check">Claude</span> — 4주차 것까지 미리 만들어 프로그램 중 여유를 확보한다.</span></li>
-    <li><span class="box"></span><span><b>영상편지 b-roll 확보</b><span class="badge-conf ok">John</span> — 제주 레몬 · 실험실 · 공장 · 약국. 기존 촬영본이 있고 없는 건 추가 촬영한다.</span></li>
+    <li><span class="box"></span><span><b>영상편지 b-roll 확보</b><span class="badge-conf ok">John</span> — 제주 레몬·실험실·약국은 보유 확인(9/28), 명동 오아시스 약국 추가 촬영·실험실 재방문·연구원 출연 가능. <b>공장만 미확인.</b></span></li>
   </ul>
 
   <h3>합격 통보 · 배송 · 10/6 발표 → 10/19 도착</h3>
@@ -414,7 +515,7 @@ footer{padding:40px 0 70px}
     <li><span class="box"></span><span><b>한국 직송 58개 발송</b><span class="badge-conf ok">John</span> — 20세트 40개 + 최우수 14개 + 깜짝 4개. 재고·리드타임 확인 완료. 2기 가능성이 보이면 슈크란 3PL 협업을 검토한다.</span></li>
     <li><span class="box"></span><span><b>왓츠앱 1:1 초대 링크 발송</b><span class="badge-conf ok">John</span> — 폼으로 받은 번호로 개별 발송.</span></li>
     <li><span class="box"></span><span><b>콘텐츠 4·5 제작</b><span class="badge-conf check">Claude</span></span></li>
-    <li><span class="box"></span><span><b>영상편지 공용 바디 1개 + 개인화 인트로 20개</b><span class="badge-conf check">Claude</span> — 10/17 발송 기한.</span></li>
+    <li><span class="box"></span><span><b>영상편지 공용 바디 1개 + 개인화 인트로 20개</b><span class="badge-conf check">Claude</span> — 10/17 발송 기한. 대본 확정 9/28 → <a href="video-letter/">기획안</a>. 다음은 본문 촬영(~10/10)·인트로 촬영(10/7~9).</span></li>
   </ul>
 
   <h3>프로그램 4주 · 10/19 → 11/16</h3>
