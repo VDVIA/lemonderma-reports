@@ -118,6 +118,13 @@ ul.rules b{color:var(--ink)}
   .line .shot{grid-column:1/-1;border-left:0;border-top:1px dashed var(--line)}
 }
 
+/* 대본 보고 읽기 OK 구간 (화면이 다른 영상으로 덮임) */
+.line.vo{box-shadow:inset 4px 0 0 var(--line-strong);background:var(--panel-2)}
+.vo-tag{display:inline-block;margin-top:6px;font-size:.62rem;font-weight:700;line-height:1.3;padding:2px 7px;border-radius:99px;background:var(--gold-bg);color:var(--gold-ink);white-space:nowrap}
+.sched{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sched table{margin:0}
+.sched td,.sched th{font-size:.86rem}
+
 /* 대사만 보기(프롬프터) */
 .toggle{position:sticky;top:10px;z-index:5;display:flex;justify-content:flex-end;margin:0 0 -30px}
 .toggle button{font:inherit;font-size:.8rem;font-weight:700;color:var(--pill-ink);background:var(--pill-bg);border:1px solid var(--line-strong);border-radius:99px;padding:7px 14px;cursor:pointer}
@@ -160,7 +167,7 @@ footer{padding:36px 0 70px}
   <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
   <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
   <h1>영상편지 — 공용 바디 + 개인화 인트로</h1>
-  <p class="sub">10/17 발송(시작 2일 전). 왓츠앱 개별 발송, 세로 9:16, 영어 자막 박아서. 현재 초안 <b>약 1분 44초</b>(인트로 10초 + 본문 약 100초) — 목표는 1분 30초, 촬영 후 편집에서 뺄 순서는 §본문 하단. 담백하게, 세팅 하나로.</p>
+  <p class="sub">10/17 발송(시작 2일 전). 왓츠앱 개별 발송, 세로 9:16, 영어 자막 박아서. 현재 초안 <b>약 1분 51초</b>(인트로 10초 + 본문 약 101초) — 목표는 1분 30초, 촬영 후 편집에서 뺄 순서는 §본문 하단. 담백하게, 세팅 하나로.</p>
   <div class="meta-row">
     <span class="pill">John · Marco 출연</span>
     <span class="pill">공용 바디 1개 + 인트로 20개</span>
@@ -179,7 +186,7 @@ footer{padding:36px 0 70px}
 
 <nav class="toc">
   <a href="#open">확정 사항</a>
-  <a href="#order">내일 촬영</a>
+  <a href="#order">오늘 촬영</a>
   <a href="#principles">말하기 원칙</a>
   <a href="#intro">개인화 인트로</a>
   <a href="#body">본문 6덩어리</a>
@@ -194,26 +201,27 @@ footer{padding:36px 0 70px}
   <ul class="open-list">
     <li class="done"><span class="box"></span><span><b>공장 촬영본 = 지쉘바이오 엑소좀 시설</b> — John 9/29 확인. 그래서 3-2 "We make this exosome ourselves — in our lab and our factory"는 사실 그대로 맞다. 단 완제품 충전·포장 공장이 아니므로 "완제품을 우리 공장에서 만든다"고는 말하지 않는다.</span></li>
     <li class="done"><span class="box"></span><span><b>편집·자막은 John이 Claude와 먼저 시도</b> — 깔끔하게. 안 되면 그때 Sol.</span></li>
-    <li class="done"><span class="box"></span><span><b>본문 촬영 9/29(내일) 오후</b> — 영상편지만. 실험실·약국 인서트는 John 스케줄에 따라 유동적으로.</span></li>
+    <li class="done"><span class="box"></span><span><b>본문 촬영 9/29 오후</b> — 영상편지만. 실험실·약국·제주·PONY는 기존 영상으로 대체(추가 촬영 없음).</span></li>
     <li class="done"><span class="box"></span><span><b>대본은 전부 미리 짜두고, 촬영은 John 스케줄대로</b> — 콘텐츠1~9 대본을 별도 페이지로 이어서 준비한다(허브 카드에서 진입).</span></li>
     <li class="done"><span class="box"></span><span><b>전체 1분 30초 안팎으로 압축, 담백하게</b> — 3분 초안에서 대사 절반으로. 세팅은 투샷 하나(4K 펀치인), 새 인서트는 제품 3컷만 — 촬영 공수 고려(John 9/28).</span></li>
+    <li class="done"><span class="box"></span><span><b>대본 보고 읽기 OK 구간 10줄</b> — 3-2~3-4(실험실→약국→제주 과수원 영상), 4-2~4-5(PONY 리뷰 영상), 5-1~5-3(4주 스케줄 표). 카메라 보고 말하는 건 6줄뿐(John 9/29).</span></li>
+    <li class="done"><span class="box"></span><span><b>콘텐츠는 매주 월·목 1분 쇼츠</b> — 보고 각자 의견 하나씩(John 9/29). 5-1에 명확히.</span></li>
     <li class="done"><span class="box"></span><span><b>개인화 인트로는 이름만 다르다</b> — "안녕하세요, {Name}." 뒤는 전원 동일. 인트로 바로 다음 컷에서 카메라 앵글이 바뀌며 Marco가 와서 앉는 장면으로 전환 → 그 뒤는 전원 공용.</span></li>
   </ul>
 </section>
 
 <section id="order">
-  <p class="sec-label">Tomorrow</p>
-  <h2 class="sec-title">내일(9/29 오후) 촬영 — 세팅 하나, 인서트 3컷</h2>
-  <p class="lead">카메라 세팅은 <b style="color:var(--ink)">투샷 하나</b>뿐이다. 4K로 찍고 편집에서 확대해 클로즈업을 만든다. 새로 찍을 인서트는 제품 3컷, 나머지 화면은 보유 촬영본(제주·실험실·공장·약국)으로 채운다. 전부 합쳐 <b style="color:var(--ink)">1시간</b>이면 끝난다.</p>
+  <p class="sec-label">Today</p>
+  <h2 class="sec-title">오늘(9/29 오후) 촬영 — 세팅 하나, 인서트 1컷</h2>
+  <p class="lead">카메라 세팅은 <b style="color:var(--ink)">투샷 하나</b>. 16줄 중 <b style="color:var(--ink)">카메라를 보고 말하는 건 6줄뿐</b>(1-1·2-1·3-1·4-1·6-1·6-2)이다. 나머지 10줄(3-2~3-4 · 4-2~4-5 · 5-1~5-3)은 화면이 다른 영상으로 덮여서 <span class="vo-tag">📄 보고 읽기</span> — 대본을 보며 읽어도 되고, 음성만 따로 녹음해도 된다. 새로 찍을 인서트는 상자 1컷. <b style="color:var(--ink)">30~40분</b>이면 끝난다.</p>
   <table>
     <tr><th>순서</th><th>세팅</th><th>찍을 것</th><th>메모</th></tr>
-    <tr><td>1</td><td>투샷 와이드(4K)</td><td>1-1 → 2-1 → 3-1 → 3-2 → 3-3 → 3-4 → 4-1 → 4-2 → 4-3 → 4-4 → 4-5 → 5-1 → 5-2 → 5-3 → 6-1 → 6-2</td><td>대본 순서 그대로 한 번에. 1-1은 John 혼자 앉아 있다가 Marco가 걸어와 앉으며 "안녕하세요"까지 한 컷. 틀리면 그 문장만 다시.</td></tr>
-    <tr><td>2</td><td>탑다운 인서트 ①</td><td>상자 열기 → 세럼·크림 두 병 꺼내 나란히 (한 컷, 6~8초)</td><td>대사 없음.</td></tr>
-    <tr><td>3</td><td>탑다운 인서트 ②</td><td>손바닥에 세럼 몇 방울 → 얼굴에 눌러 바르기 (한 컷, 8초)</td><td>John 손. 손등 클로즈로 대체해도 됨.</td></tr>
-    <tr><td>4</td><td>탑다운 인서트 ③</td><td>크림 덜어 손등에 펴 바르기 (4초)</td><td></td></tr>
+    <tr><td>1</td><td>투샷 와이드(4K) — 카메라 보고</td><td>1-1 → 2-1 → 3-1 → 4-1 → 6-1 → 6-2</td><td>얼굴이 나오는 6줄만. 1-1은 John 혼자 앉아 있다가 Marco가 걸어와 앉으며 "안녕하세요"까지 한 컷. 틀리면 그 문장만 다시.</td></tr>
+    <tr><td>2</td><td>같은 자리 — 대본 보고 읽기</td><td>3-2 → 3-3 → 3-4 (Marco) · 4-2 → 4-3 → 4-4 → 4-5 · 5-1 → 5-2 → 5-3 (John)</td><td>화면에 안 나오니 폰·종이 대본을 보며 읽는다. 목소리만 깨끗하면 된다 — 같은 마이크, 조용한 방.</td></tr>
+    <tr><td>3</td><td>탑다운 인서트 ①</td><td>상자 열기 → 세럼·크림 두 병 꺼내 나란히 (한 컷, 6~8초)</td><td>대사 없음. 2-1 끝에 들어간다.</td></tr>
     <tr><td>—</td><td>John 단독(인트로)</td><td>0-1, 0-2 × 20명</td><td>10/6 이름 확정 뒤 15분. 세팅 1의 John 자리·옷 그대로.</td></tr>
   </table>
-  <div class="callout"><div class="ic">🎬</div><p>준비물: 세트 상자 1개(미개봉) · 세럼·크림 여분 · 프롬프터용 폰(이 페이지 "대사만 보기"). 실험실 재방문·약국 추가 촬영·연구원 출연은 <b style="color:var(--ink)">이번 편지엔 불필요</b> — 콘텐츠2·4·7 때 쓴다.</p></div>
+  <div class="callout"><div class="ic">🎬</div><p>준비물: 세트 상자 1개(미개봉) · 프롬프터용 폰(이 페이지 "대사만 보기"). 편집 때 필요한 기존 영상: <b style="color:var(--ink)">실험실 · 약국 · 제주 레몬 과수원 · PONY 리뷰 영상</b> + 스케줄 표 그래픽(아래 §스케줄 표).</p></div>
 </section>
 
 <section id="principles">
@@ -244,8 +252,8 @@ footer{padding:36px 0 70px}
 <section id="body">
   <p class="sec-label">Script</p>
   <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
-  <h2 class="sec-title">본문 6덩어리 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">약 94초 · 222단어</span></h2>
-  <p class="lead">표기 — <b style="color:var(--ink)">투샷</b> 두 사람 정면(4K, 편집에서 확대) · <span class="tag have">기존</span>보유 촬영본 · <span class="tag new">신규</span>내일 찍을 인서트 3컷.</p>
+  <h2 class="sec-title">본문 6덩어리 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">약 101초 · 237단어</span></h2>
+  <p class="lead">표기 — <b style="color:var(--ink)">투샷</b> 두 사람 정면(4K, 편집에서 확대) · <span class="tag have">기존</span>보유 촬영본 · <span class="tag new">신규</span>새로 찍을 인서트 1컷 · <span class="vo-tag">📄 보고 읽기</span> = 화면이 다른 영상으로 덮이는 구간이라 카메라를 안 봐도 된다(대본 보고 읽기 OK, 음성만 따로 녹음해도 됨).</p>
 
   <h3>① Marco 인사 <span class="len">Marco · 4초</span></h3>
   <div class="script">
@@ -262,34 +270,45 @@ footer{padding:36px 0 70px}
   <p style="font-size:.9rem;margin:0 0 8px">John 9/29 확정 순서: <b>정체성(100% 비건 엑소좀 안티에이징·주름+미백 이중 기능성) → 그 엑소좀을 우리 실험실·공장에서 만든다 → 약국 전용·품절 → 마지막에 제주 이야기.</b> 정품 불안 줄(Dubai Municipality)은 뺐다.</p>
   <div class="script">
     <div class="line"><div class="n">3-1</div><div class="who"><i>M</i></div><div class="say">Lemonderma is 100% vegan exosome anti-aging skincare. In Korea, it's registered for two functions: wrinkles and brightening.<span class="note">효능은 "등록된 기능"까지 — 엑소좀 덕분에 효과가 난다는 식의 연결 금지(brand.md)</span></div><div class="shot">투샷 → 편집 확대(Marco). 편집 시 "100% Vegan · Anti-aging · Wrinkle + Brightening" 텍스트 카드(선택)</div></div>
-    <div class="line"><div class="n">3-2</div><div class="who"><i>M</i></div><div class="say">We make this exosome ourselves — in our lab and our factory here in Korea. Our lab, Zishel Bio, supplies clinics in over fifty countries.<span class="note">"13년" 없음(정본 근거 없음). 공장 = 지쉘바이오 엑소좀 시설(확인 9/29) — 엑소좀 제조까지만 말한다</span></div><div class="shot"><span class="tag have">기존</span>실험실 4초 → 지쉘바이오 엑소좀 시설 3초</div></div>
-    <div class="line"><div class="n">3-3</div><div class="who"><i>M</i></div><div class="say">In Korea, Lemonderma is sold only in pharmacies — and recently, it sold out.<span class="note">"in Korea" 필수 — 현지 약국으로 오해 금지. 품절은 DM 1차와 같은 사실</span></div><div class="shot"><span class="tag have">기존</span>명동 오아시스 약국 4초</div></div>
-    <div class="line"><div class="n">3-4</div><div class="who"><i>M</i></div><div class="say">And the lemons? They grow on Jeju — Korea's most famous island. Lemons, naturally rich in vitamin C.<span class="note">"제주가 비타민이 가장 풍부한 곳"은 근거 없음(brand.md: 기후로 우월성 논증 금지) → 레몬 자체의 사실 서술까지만</span></div><div class="shot"><span class="tag have">기존</span>제주 섬·바다 2초 → 레몬 과수원·수확 4초</div></div>
+    <div class="line vo"><div class="n">3-2</div><div class="who"><i>M</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">We make this exosome ourselves — in our lab and our factory here in Korea. Our lab, Zishel Bio, supplies clinics in over fifty countries.<span class="note">"13년" 없음(정본 근거 없음). 공장 = 지쉘바이오 엑소좀 시설(확인 9/29) — 엑소좀 제조까지만 말한다</span></div><div class="shot"><span class="tag have">기존</span>실험실 영상(지쉘바이오 엑소좀 시설 컷 포함 가능) — 대사 끝까지 덮음</div></div>
+    <div class="line vo"><div class="n">3-3</div><div class="who"><i>M</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">In Korea, Lemonderma is sold only in pharmacies — and recently, it sold out.<span class="note">"in Korea" 필수 — 현지 약국으로 오해 금지. 품절은 DM 1차와 같은 사실</span></div><div class="shot"><span class="tag have">기존</span>약국 영상(명동 오아시스)</div></div>
+    <div class="line vo"><div class="n">3-4</div><div class="who"><i>M</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">And the lemons? They grow on Jeju — Korea's most famous island. Lemons, naturally rich in vitamin C.<span class="note">"제주가 비타민이 가장 풍부한 곳"은 근거 없음(brand.md: 기후로 우월성 논증 금지) → 레몬 자체의 사실 서술까지만</span></div><div class="shot"><span class="tag have">기존</span>제주 레몬 과수원 영상</div></div>
   </div>
 
   <h3>④ 어떻게 쓰나 <span class="len">John · 24초</span></h3>
   <div class="script">
     <div class="line"><div class="n">4-1</div><div class="who"><i>J</i></div><div class="say">Serum first, then cream — morning and night.</div><div class="shot">투샷 → 편집 확대(John)</div></div>
-    <div class="line"><div class="n">4-2</div><div class="who"><i>J</i></div><div class="say">A few drops, pressed over your face.</div><div class="shot"><span class="tag new">신규</span>인서트 ② 손바닥 세럼 → 얼굴에 눌러 바르기</div></div>
-    <div class="line"><div class="n">4-3</div><div class="who"><i>J</i></div><div class="say">You'll feel a light tingle for a few minutes. That's the vegan microcrystal working — not a burn.<span class="note">자막 카드 2장</span></div><div class="shot">인서트 ② 이어서 → 투샷</div></div>
-    <div class="line"><div class="n">4-4</div><div class="who"><i>J</i></div><div class="say">Sensitive skin? Start every other day for the first week.</div><div class="shot">투샷</div></div>
-    <div class="line"><div class="n">4-5</div><div class="who"><i>J</i></div><div class="say">Then the cream, to seal it in.</div><div class="shot"><span class="tag new">신규</span>인서트 ③ 크림 손등</div></div>
+    <div class="line vo"><div class="n">4-2</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">A few drops, pressed over your face.</div><div class="shot"><span class="tag have">기존</span>PONY 리뷰 영상 — 여기서 시작, 4-5까지 한 흐름으로</div></div>
+    <div class="line vo"><div class="n">4-3</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">You'll feel a light tingle for a few minutes. That's the vegan microcrystal working — not a burn.<span class="note">자막 카드 2장</span></div><div class="shot">PONY 영상 이어서(세럼 바르는 구간에 맞춤)</div></div>
+    <div class="line vo"><div class="n">4-4</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">Sensitive skin? Start every other day for the first week.</div><div class="shot">PONY 영상 이어서</div></div>
+    <div class="line vo"><div class="n">4-5</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">Then the cream, to seal it in.</div><div class="shot">PONY 영상 이어서(크림 장면이 있으면 여기에 맞춤)</div></div>
   </div>
 
   <h3>⑤ 4주가 어떻게 굴러가나 <span class="len">John · 16초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">5-1</div><div class="who"><i>J</i></div><div class="say">One WhatsApp group. Once a week, Marco and I share something first — then we ask: and you?</div><div class="shot">투샷 → 편집 확대(John). 편집 시 "Announcements · Lounge" 텍스트 카드 넣어도 됨(선택)</div></div>
-    <div class="line"><div class="n">5-2</div><div class="who"><i>J</i></div><div class="say">Ask anything, any time. We read everything.</div><div class="shot">투샷</div></div>
-    <div class="line"><div class="n">5-3</div><div class="who"><i>J</i></div><div class="say">At the end, one Reel about your honest experience — any format.</div><div class="shot">투샷</div></div>
+    <div class="line vo"><div class="n">5-1</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">Here's how it works. Every Monday and Thursday, we post a one-minute video in our WhatsApp group. Watch it, and share one thought — anything you like. That's all we ask each week.</div><div class="shot">화면 가운데 <b>4주 스케줄 표</b>(아래 §스케줄 표) — 5-1~5-3 내내 유지</div></div>
+    <div class="line vo"><div class="n">5-2</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">Ask anything, any time. We read everything.</div><div class="shot">스케줄 표 유지</div></div>
+    <div class="line vo"><div class="n">5-3</div><div class="who"><i>J</i><br><span class="vo-tag">📄 보고 읽기</span></div><div class="say">At the end, one Reel about your honest experience — any format.</div><div class="shot">스케줄 표 유지 → 마지막 칸 "Your Reel" 강조</div></div>
   </div>
   <div class="callout"><div class="ic">🤫</div><p>$500·PONY·Amazon's Choice는 <b style="color:var(--ink)">넣지 않는다</b> — 이미 DM·신청 페이지에서 봤다. 깜짝 이벤트는 <b style="color:var(--ink)">2-1에서 "있다"고만</b> 말한다(John 9/29) — 언제·무엇·보상은 예고하지 않는다. 편지는 담백하게.</p></div>
 
+  <h3 id="schedule-card">스케줄 표 — 5-1~5-3 화면 가운데 <span class="len">편집에서 그래픽으로</span></h3>
+  <p style="font-size:.9rem;margin:0 0 6px">영어로, 한눈에. 월·목 1분 쇼츠 8편. 날짜는 한국 기준(10/19 월요일). 깜짝 이벤트 칸은 내용 없이 "?"만 — "있다"는 것만 알리는 원칙(9/29)과 같다.</p>
+  <div class="sched"><table>
+    <tr><th>Week</th><th>Mon</th><th>Thu</th></tr>
+    <tr><td>1</td><td>10/19 · Our anti-aging morning routine</td><td>10/22 · Meet Lemonderma</td></tr>
+    <tr><td>2</td><td>10/26 · ?</td><td>10/29 · The pharmacy in Seoul</td></tr>
+    <tr><td>3</td><td>11/2 · Ask us anything</td><td>11/5 · Your questions, answered</td></tr>
+    <tr><td>4</td><td>11/9 · Where our exosome is made</td><td>11/12 · Your Reel</td></tr>
+  </table></div>
+  <p style="font-size:.82rem;color:var(--ink-3);margin:8px 0 0">각 칸 = 콘텐츠1~8(허브 §콘텐츠 기획안과 같은 순서). 제목은 콘텐츠 기획하면서 바뀔 수 있다 — 바뀌면 이 표도 같이 고친다.</p>
+
   <h3>⑥ 마무리 <span class="len">둘 · 4초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">6-1</div><div class="who"><i>J</i></div><div class="say">We start Sunday, October 19th.</div><div class="shot">투샷</div></div>
+    <div class="line"><div class="n">6-1</div><div class="who"><i>J</i></div><div class="say">We start Monday, October 19th.</div><div class="shot">투샷</div></div>
     <div class="line"><div class="n">6-2</div><div class="who"><i>둘</i></div><div class="say"><span class="ko">감사합니다.</span><span class="note">둘이 같이 "감사합니다"만. 자막 Gamsahamnida (Thank you)</span></div><div class="shot">투샷, 가볍게 고개 숙임</div></div>
   </div>
-  <div class="callout"><div class="ic">✂️</div><p><b style="color:var(--ink)">길이 조절:</b> 본문 222단어·약 94초(전체 약 1분 44초). 더 줄이려면 3-4 둘째 문장("Lemons, naturally rich in vitamin C")부터 뺀다.</p></div>
+  <div class="callout"><div class="ic">✂️</div><p><b style="color:var(--ink)">길이 조절:</b> 본문 237단어·약 101초(전체 약 1분 51초). 더 줄이려면 3-4 둘째 문장("Lemons, naturally rich in vitamin C")부터 뺀다.</p></div>
 </section>
 
 <section id="shotlist" class="shotlist">
@@ -300,15 +319,21 @@ footer{padding:36px 0 70px}
     <li>두 사람이 나란히 앉은 투샷 한 세팅. 4K로 찍어 편집에서 1.3~1.5배 확대하면 말하는 사람 클로즈업이 나온다 — 별도 클로즈 세팅 없음.</li>
     <li>배경은 사무실이 넓어 보이는 쪽. 같은 옷·같은 자리에서 인트로(John 단독)도 나중에 찍는다.</li>
   </ul>
-  <h3>인서트 — <span class="tag new">신규</span>내일 찍을 3컷(탑다운, 대사 없음)</h3>
+  <h3>인서트 — <span class="tag new">신규</span>찍을 1컷(탑다운, 대사 없음)</h3>
   <table>
     <tr><th>#</th><th>컷</th><th>쓰이는 곳</th></tr>
     <tr><td>①</td><td>상자 열기 → 세럼·크림 두 병 꺼내 나란히 (6~8초)</td><td>2-1 끝</td></tr>
-    <tr><td>②</td><td>손바닥에 세럼 몇 방울 → 얼굴에 눌러 바르기 (8초)</td><td>4-2, 4-3</td></tr>
-    <tr><td>③</td><td>크림 덜어 손등에 펴 바르기 (4초)</td><td>4-5</td></tr>
   </table>
-  <h3>인서트 — <span class="tag have">기존</span>보유 촬영본</h3>
-  <p style="font-size:.92rem">제주 레몬(3-4) · 실험실·엑소좀 시설(3-2, 지쉘바이오 시설 — 외부 완제품 제조사의 이름·로고·충전라인이 잡히면 제외, 2026-06-29 결정) · 명동 오아시스 약국(3-3). 실험실 재방문·약국 추가 촬영·연구원 출연은 이번 편지엔 안 쓰고 콘텐츠2·4·7에서.</p>
+  <p style="font-size:.84rem;color:var(--ink-3)">세럼·크림 바르는 인서트(구 ②③)는 PONY 리뷰 영상으로 대체돼 안 찍는다(John 9/29).</p>
+  <h3>화면 대체 — <span class="tag have">기존</span>보유 영상 (John 9/29)</h3>
+  <table>
+    <tr><th>구간</th><th>영상</th><th>메모</th></tr>
+    <tr><td>3-2</td><td>실험실</td><td>지쉘바이오 엑소좀 시설 컷 포함 가능. 외부 완제품 제조사의 이름·로고·충전라인은 제외(2026-06-29 결정)</td></tr>
+    <tr><td>3-3</td><td>약국(명동 오아시스)</td><td></td></tr>
+    <tr><td>3-4</td><td>제주 레몬 과수원</td><td></td></tr>
+    <tr><td>4-2~4-5</td><td>PONY 리뷰 영상</td><td>한 흐름으로 이어서. 세럼·크림 바르는 구간을 대사에 맞춘다</td></tr>
+    <tr><td>5-1~5-3</td><td>4주 스케줄 표(그래픽)</td><td>편집에서 제작 — 내용은 §본문 ⑤ 아래 스케줄 표</td></tr>
+  </table>
   <h3>자막·마감</h3>
   <ul class="rules">
     <li>영어 자막 박아 넣기, 큰 글씨, 문장당 1카드. 한국어 인사는 로마자+뜻.</li>
@@ -322,7 +347,7 @@ footer{padding:36px 0 70px}
   <h2 class="sec-title">일정</h2>
   <table>
     <tr><th>언제</th><th>무엇</th><th>누가</th></tr>
-    <tr><td>9/29 오후</td><td>투샷 A-roll(대본 순서대로 한 번에) + 제품 인서트 3컷 — 약 1시간 (§내일 촬영)</td><td>John · Marco</td></tr>
+    <tr><td>9/29 오후</td><td>카메라 보고 6줄 + 대본 보고 읽기 10줄 + 상자 인서트 1컷 — 30~40분 (§오늘 촬영)</td><td>John · Marco</td></tr>
     <tr><td>—</td><td>실험실 재방문·약국 추가 촬영·연구원 출연은 이번 편지엔 불필요(콘텐츠2·4·7용)</td><td>—</td></tr>
     <tr><td>10/6</td><td>최종 20인 확정 → 접수 탭에서 이름 명단(발음 메모 포함) 작성</td><td>Claude</td></tr>
     <tr><td>10/6 이후</td><td>개인화 인트로 20개 연속 촬영(15분)</td><td>John</td></tr>
