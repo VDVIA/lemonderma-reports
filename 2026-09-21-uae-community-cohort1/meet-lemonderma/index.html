@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>콘텐츠2 기획안 — Skin Lab Partners</title>
+<meta name="description" content="Skin Lab Partners 1기 콘텐츠2 — Meet Lemonderma: 좋은 성분을 어떻게 전달할까? 3단계 딜리버리 시스템, 대본, 그래픽 카드, 촬영·자산, 문구 가드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --mark:rgba(221,247,70,.32);
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --wall:#e23b3b; --wall-bg:#fde3df;
+  --gold-bg:#faefc0; --gold-ink:#6a5000;
+  --serif:"Libre Caslon Text", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Pretendard", -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --mark:rgba(221,247,70,.20);
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --wall:#ff7a6b; --wall-bg:#2c1512;
+    --gold-bg:#2b2410; --gold-ink:#e3c775;
+  }
+}
+:root[data-theme="dark"]{
+  --ground-top:#1b200f; --ground:#100f0a;
+  --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+  --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+  --mark:rgba(221,247,70,.20);
+  --num:#c9e46c; --headline:#bdd382;
+  --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+  --pill-bg:#242812; --pill-ink:#c9e46c;
+  --wall:#ff7a6b; --wall-bg:#2c1512;
+  --gold-bg:#2b2410; --gold-ink:#e3c775;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 460px);color:var(--ink);font-family:var(--sans);padding:0 20px}
+.wrap{max-width:820px;margin:0 auto}
+::selection{background:var(--mark)}
+h1,h2,h3{text-wrap:balance;font-weight:900;letter-spacing:-.01em}
+p{line-height:1.72;color:var(--ink-2)}
+a{color:var(--headline)}
+header{padding:44px 0 26px;border-bottom:1px solid var(--line)}
+.back{display:inline-block;font-size:.84rem;text-decoration:none;color:var(--ink-3);margin-bottom:18px}
+.back:hover{color:var(--headline)}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--headline);letter-spacing:.02em;margin:0 0 12px}
+h1{font-size:clamp(1.7rem,5.2vw,2.4rem);margin:0 0 12px;line-height:1.18}
+.sub{font-size:1.02rem;color:var(--ink-2);margin:0 0 18px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-ink);font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:99px}
+.pill.date{background:transparent;color:var(--ink-3);font-weight:400}
+
+/* 진행 단계 */
+.stepper{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 0}
+.stepper span{font-size:.76rem;padding:6px 11px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3);background:var(--panel)}
+.stepper span.done{background:var(--line-strong);border-color:var(--line-strong);color:#1d2b00;font-weight:700}
+.stepper span.now{border-color:var(--headline);color:var(--headline);font-weight:700;box-shadow:inset 0 0 0 1px var(--headline)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stepper span.done{color:#0f1500}}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 0;padding:20px 0 8px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:5px 12px 5px 0;white-space:nowrap}
+nav.toc a:not(:last-child)::after{content:"/";margin-left:12px;color:var(--line-strong)}
+nav.toc a:hover{color:var(--headline)}
+
+section{padding:42px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin:0 0 6px}
+h2.sec-title{font-size:1.5rem;margin:0 0 16px}
+h3{font-size:1.06rem;margin:28px 0 10px;color:var(--ink)}
+h3 .len{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.9rem;margin-left:8px}
+.lead{font-size:1.02rem;line-height:1.75}
+
+.callout{display:flex;gap:14px;background:var(--panel-3);border-radius:12px;padding:16px 18px;margin:16px 0}
+.callout .ic{font-size:1.2rem;line-height:1.3}
+.callout p{margin:0;font-size:.9rem}
+.callout.safety{background:var(--gold-bg)}
+.callout.safety p{color:var(--gold-ink)}
+.callout.wall{background:var(--wall-bg)}
+.callout.wall p,.callout.wall b{color:var(--wall)}
+
+ul.rules{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:.92rem;line-height:1.8}
+ul.rules b{color:var(--ink)}
+
+/* 대사 블록 */
+.script{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.line{display:grid;grid-template-columns:44px 52px 1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.line:first-child{border-top:0}
+.line>div{padding:12px 12px}
+.line .n{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.82rem;padding-right:0}
+.line .who{font-size:.72rem;font-weight:700;color:var(--pill-ink)}
+.line .who i{font-style:normal;display:inline-block;background:var(--pill-bg);padding:2px 7px;border-radius:99px}
+.line .say{font-size:1rem;line-height:1.6;color:var(--ink)}
+.line .say .ko{font-weight:900}
+.line .say .note{display:block;font-size:.78rem;color:var(--ink-3);margin-top:4px}
+.line .shot{font-size:.84rem;line-height:1.6;color:var(--ink-2);background:var(--panel-2);border-left:1px solid var(--line)}
+.tag{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-right:5px;vertical-align:middle}
+.tag.have{background:var(--pill-bg);color:var(--pill-ink)}
+.tag.new{background:var(--gold-bg);color:var(--gold-ink)}
+.tag.unk{background:var(--wall-bg);color:var(--wall)}
+@media (max-width:640px){
+  .line{grid-template-columns:36px 1fr}
+  .line .who{grid-column:2;padding-bottom:0}
+  .line .say{grid-column:2;padding-top:6px}
+  .line .shot{grid-column:1/-1;border-left:0;border-top:1px dashed var(--line)}
+}
+
+/* 대본 보고 읽기 OK 구간 (화면이 다른 영상으로 덮임) */
+.line.vo{background:var(--gold-bg);box-shadow:inset 6px 0 0 var(--gold-ink)}
+.line.vo>div{position:relative}
+.line.vo .say::before{content:"📄 보고 읽기 OK";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:99px;background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .n{color:var(--gold-ink)}
+.line.vo .who i{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .shot{background:transparent;border-left:1px dashed var(--gold-ink);color:var(--gold-ink)}
+.line.vo .shot .tag.have{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .say .note{color:var(--gold-ink);opacity:.85}
+.vo-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--gold-bg);color:var(--gold-ink);border:1px solid var(--gold-ink);white-space:nowrap}
+.sched{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sched table{margin:0}
+.sched td,.sched th{font-size:.86rem}
+
+/* 대사만 보기(프롬프터) */
+.toggle{position:sticky;top:10px;z-index:5;display:flex;justify-content:flex-end;margin:0 0 -30px}
+.toggle button{font:inherit;font-size:.8rem;font-weight:700;color:var(--pill-ink);background:var(--pill-bg);border:1px solid var(--line-strong);border-radius:99px;padding:7px 14px;cursor:pointer}
+body.prompter .line{grid-template-columns:44px 52px 1fr}
+body.prompter .line .shot{display:none}
+body.prompter .line .say{font-size:1.35rem;line-height:1.5}
+body.prompter .line .say .note{display:none}
+body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
+
+/* 촬영 리스트 표 */
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:12px}
+th,td{padding:10px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top;color:var(--ink-2);line-height:1.55}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);border-top:0}
+td:first-child{color:var(--ink);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:1px solid var(--line)}
+
+@media (max-width:640px){td:first-child{white-space:normal}th,td{padding:9px 6px}}
+code{overflow-wrap:anywhere}
+@media (max-width:640px){
+  table.stack tr:first-child{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{border-top:1px solid var(--line);padding:12px 0}
+  table.stack td{border:0;padding:3px 0;white-space:normal}
+  table.stack td::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:700;color:var(--ink-3);letter-spacing:.04em;margin-top:8px}
+  table.stack td:first-child{font-size:1rem}
+}
+/* 체크리스트 */
+.open-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.open-list li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem}
+.open-list li:last-child{border-bottom:1px solid var(--line)}
+.open-list .box{flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px}
+.open-list li.done .box{background:var(--line-strong);position:relative}
+.open-list li.done .box::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+.open-list b{color:var(--ink)}
+.open-list span{color:var(--ink-2)}
+.badge-conf{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.badge-conf.ok{background:var(--pill-bg);color:var(--pill-ink)}
+.badge-conf.check{background:var(--gold-bg);color:var(--gold-ink)}
+.badge-conf.unk{background:var(--wall-bg);color:var(--wall)}
+
+footer{padding:36px 0 70px}
+.src{font-size:.84rem;color:var(--ink-3);line-height:2}
+.src a{color:var(--ink-2)}
+
+/* 선택 줄(넣어도 되고 빼도 되는 개인 한마디) */
+.line.opt{background:var(--panel-3);box-shadow:inset 6px 0 0 var(--line-strong)}
+.line.opt .say::before{content:"✏️ 선택 · 사실인 것만";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink)}
+.line.opt .say .fill{display:inline-block;border-bottom:2px dashed var(--headline);color:var(--headline);font-weight:700}
+.opt-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink);white-space:nowrap}
+/* 정할 것 카드 */
+.decide{margin:14px 0 0;display:flex;flex-direction:column;gap:12px}
+.decide .d{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px 16px}
+.decide .d h4{margin:0 0 6px;font-size:.98rem;color:var(--ink)}
+.decide .d h4 .no{font-family:var(--serif);font-style:italic;color:var(--num);font-weight:400;margin-right:6px}
+.decide .d p{margin:0 0 6px;font-size:.9rem;line-height:1.65}
+.decide .d .rec{color:var(--ink)}
+.decide .d .rec b{color:var(--headline)}
+.decide .d .alt{color:var(--ink-3);font-size:.84rem}
+.caption-box{margin:12px 0 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--line-strong);border-radius:10px;background:var(--panel-2);font-size:.96rem;line-height:1.7;color:var(--ink);white-space:pre-line}
+
+/* 하루 흐름 스토리보드 */
+.flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin:16px 0 0}
+.beat{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px 8px;text-align:center}
+.beat .ph{width:54px;height:96px;margin:0 auto 8px;border-radius:8px;overflow:hidden;border:1.5px solid var(--ink-3);display:flex;flex-direction:column}
+.beat .ph i{flex:1;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.62rem;font-weight:700;background:var(--pill-bg);color:var(--pill-ink)}
+.beat .ph i + i{border-top:2px solid var(--line-strong);background:var(--gold-bg);color:var(--gold-ink)}
+.beat .ph.one i{background:var(--line-strong);color:#1d2b00}
+.beat .t{display:block;font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35}
+.beat .s{display:block;font-size:.72rem;color:var(--ink-3);line-height:1.4;margin-top:2px}
+.beat.turn{border-color:var(--headline);box-shadow:inset 0 0 0 1px var(--headline)}
+.legend{font-size:.84rem;color:var(--ink-3);margin:10px 0 0}
+.must{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--line-strong);color:#1d2b00;margin-right:5px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
+  <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
+  <h1>콘텐츠2 — Meet Lemonderma: 좋은 성분을 어떻게 전달할까?</h1>
+  <p class="sub">목 10/22, 프로그램 4일째에 올리는 1분 쇼츠. <b>"좋은 성분을 어떻게 피부가 쓸 수 있는 곳까지 전달할까?"라는 질문에서 시작된 브랜드</b>라는 이야기로 열고, 그 답인 <b>3단계 딜리버리 시스템</b>(레몬 엑소좀 → 비건 마이크로크리스탈 → 성분)과 <b>누구를 위해 만들었는지</b>를 설명한다. "왜 레몬인가"는 한 문장으로만 짚는다(John 9/30). Marco 목소리 + 그래픽 카드, 카메라에 대고 말하지 않는다. 예상 길이 약 1분. <b>초안 — "정할 것 5개" 확정 대기.</b></p>
+  <div class="meta-row">
+    <span class="pill">Marco 목소리</span>
+    <span class="pill">9:16 · 왓츠앱 그룹 게시</span>
+    <span class="pill date">초안 2026-09-30</span>
+  </div>
+  <div class="stepper">
+    <span class="done">방향 확정 9/30</span>
+    <span class="now">대본 초안 → John 확정</span>
+    <span>컷 촬영·Marco 목소리 녹음(콘텐츠1 촬영일 10/6에 덧붙이기)</span>
+    <span>편집·그래픽 John+Claude ~10/20</span>
+    <span>게시 목 10/22 UAE 오전 8시 + 후속 질문</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#open">방향·정할 것</a>
+  <a href="#flow">이야기 흐름</a>
+  <a href="#body">대본</a>
+  <a href="#cards">그래픽 카드</a>
+  <a href="#order">촬영·자산</a>
+  <a href="#caption">왓츠앱 게시</a>
+  <a href="#schedule">일정</a>
+  <a href="#guard">문구 가드</a>
+</nav>
+
+<section id="open">
+  <p class="sec-label">Direction</p>
+  <h2 class="sec-title">방향 (John 9/30)과 문구 다듬기</h2>
+  <ul class="open-list">
+    <li class="done"><span class="box"></span><span><b>"왜 레몬인가"는 간단히만</b> — 뾰족하게 설명할 길이 많지 않다. 이름 이야기는 한 문장.</span></li>
+    <li class="done"><span class="box"></span><span><b>시작은 질문</b> — "어떻게 하면 좋은 성분을 피부에 전달할 수 있을까?"에서 시작된 브랜드.</span></li>
+    <li class="done"><span class="box"></span><span><b>중심은 딜리버리 시스템</b> — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜 순으로 설명.</span></li>
+    <li class="done"><span class="box"></span><span><b>누구를 위해 만들었는지</b>도 포함.</span></li>
+  </ul>
+  <div class="callout safety"><div class="ic">⚠️</div><p><b>그대로 쓰면 걸리는 표현 3개를 다듬어 뒀다.</b> 이 회차는 "성분표를 읽고 이유를 궁금해하는" 멤버가 받고, 한국 직송 상자에는 한국 라벨(레몬즙소포 2ppm 각주 등)이 그대로 있다. 말한 것이 상자와 부딪히면 신뢰를 잃는 자리다. 아래 표는 처음 표현 → 제안 표현 → 이유(출처)다. 다르게 가고 싶으면 알려 주세요.</p></div>
+  <table class="stack">
+    <tr><th>처음 표현</th><th>제안 표현</th><th>이유</th></tr>
+    <tr><td>"피부 <b>깊숙이</b> 전달"</td><td data-l="제안 표현">"피부가 쓸 수 있는 곳까지 전달" (<i>to where skin can use them</i>). "deep"·"깊숙이"·"침투"는 쓰지 않는다</td><td data-l="이유">"Deep penetration" 같은 심층 침투 표현은 한국·미국·UAE에서 의약품적 효능 암시로 금지 유지(2026-07-26, 8/3 부분 해제는 성분 이름 수식만). 딜리버리라는 개념 자체는 브랜드 명제라 그대로 쓴다.</td></tr>
+    <tr><td><b>비타민 리포솜</b></td><td data-l="제안 표현">3단계의 세 번째를 <b>"Niacinamide (vitamin B3) + Adenosine"</b>으로. 비타민은 그대로 나오고, 리포솜은 빼서 상자와 맞는다</td><td data-l="이유">처방 전성분 어디에도 Liposome 없음, 비타민 함량은 ppb 수준, 코스맥스가 "10종→9종" 지적(2026-05-30 폐기). 7/23에 어휘는 풀렸지만 brand.md가 "정확성이 필요한 자리에선 Niacinamide 2% + Adenosine 0.04% 소구"라고 명시. 7/26 "처방서에 없는 성분 표현 금지". 이 성분은 MFDS 주름·미백 등록 근거이기도 하다.</td></tr>
+    <tr><td><b>레몬 엑소좀이 운반</b>한다</td><td data-l="제안 표현">"우리가 출발한 과학"(혈통): 과즙에서 온 레몬 엑소좀을 지쉘바이오 실험실에서 만든다. <b>엑소좀이 다른 성분을 실어 나른다고는 말하지 않는다</b></td><td data-l="이유">엑소좀은 함량 2ppm이라 상자에도 그렇게 적혀 있다. "엑소좀 덕분에/이것이 운반" 같은 기전·효능 서술은 금지(2026-07-29 4역할 분리, 역할은 혈통). 운반 역할을 말하고 싶다면 지쉘바이오 실증 자료가 먼저 필요하다.</td></tr>
+    <tr><td>"마이크로크리스탈"을 시스템의 일부로</td><td data-l="제안 표현">"<b>세럼</b>의 비건 마이크로크리스탈"로 한정하고, 마지막을 "세럼이 열고 크림이 닫는다"로 맺어 두 제품 모두를 시스템에 넣는다</td><td data-l="이유">마이크로크리스탈은 세럼에만 있고 크림 처방에는 없다. 크림에 쓰는 문장은 폐기(2026-05-21).</td></tr>
+  </table>
+  <h3 style="margin-top:28px">정할 것 5개 — 추천을 먼저 적었다</h3>
+  <p class="lead">전부 추천대로면 <b style="color:var(--ink)">그렇게 가자</b> 한 마디면 된다. 다르게 갈 번호만 알려 주세요.</p>
+  <div class="decide">
+    <div class="d">
+      <h4><span class="no">1</span>세 번째 단계 이름</h4>
+      <p class="rec"><b>추천: "Niacinamide (vitamin B3) + Adenosine"</b> — 위 표 2번. 상자 성분표와 일치하고 MFDS 주름·미백 등록 근거라 멤버가 확인해도 흔들리지 않는다.</p>
+      <p class="alt">대안: 비타민 리포솜 유지 — 멤버가 성분표에서 Liposome을 찾다가 없으면 이 회차 전체가 의심받는다. 굳이 원하시면 brand.md 대체안대로 "Vitamin Delivery Complex" 정도까지만.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">2</span>전달 방식</h4>
+      <p class="rec"><b>추천: Marco 목소리 + 그래픽 카드.</b> 설명이 있는 회차라 콘텐츠1처럼 대사 없이 가면 글자가 너무 많아진다. 카메라에 대고 말하지 않고 대본을 보며 20분 녹음하면 끝(영상편지와 같은 방식).</p>
+      <p class="alt">대안: 콘텐츠1처럼 대사 없이 카드+음악만 — 3단계를 짧은 카드 3장으로 줄여야 해서 "누구를 위해"가 빠진다.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">3</span>화면</h4>
+      <p class="rec"><b>추천: 3단계 그래픽 + 새 컷.</b> 새 컷은 세럼 스포이드 매크로 · 크림 질감 · 상자, 제주 레몬은 영상편지 3-4에 안 쓴 클립. 실험실 영상은 그래픽이 대신하거나 영상편지와 다른 클립만. 약국은 콘텐츠4, 엑소좀 시설은 콘텐츠7 몫. 피부 단면도에 입자가 파고드는 그림은 <b>그리지 않는다</b>(침투를 시각으로 주장하는 셈).</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">4</span>후속 질문 (영상 뒤 텍스트)</h4>
+      <p class="rec"><b>추천: 20문항 중 ⑤ "요즘 제일 신경 쓰이는 피부 고민"</b> — "누구를 위해 만들었나"를 말한 직후라 자연스럽고, 답은 콘텐츠5·6과 제품 개선의 고객 목소리가 된다. 문안: "What's the skin concern you think about most right now? One line is perfect."</p>
+      <p class="alt">대안: ⑥ "성분표 볼 때 제일 먼저 보는 것" — 설명 회차와 잘 맞는다.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">5</span>언제 찍나</h4>
+      <p class="rec"><b>추천: 콘텐츠1 촬영일(화 10/6)에 사무실 30분 덧붙이기</b> — 제품 컷과 Marco 목소리 녹음까지. 그날이 어려우면 10/7~10/12 예비일에. 게시가 10/22라 편집 여유는 충분하다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <p class="sec-label">Flow</p>
+  <h2 class="sec-title">이야기 흐름 — 질문 · 이름 · 3단계 · 누구를 위해</h2>
+  <table>
+    <tr><th>구간</th><th>하는 일</th><th>길이</th></tr>
+    <tr><td>① 질문</td><td>브랜드가 어떤 질문에서 시작됐는지. "좋은 성분을 피부가 쓸 수 있는 곳까지 어떻게 전달할까?"</td><td>~10초</td></tr>
+    <tr><td>② 이름</td><td>Lemon + Derma를 한 문장으로. 길게 설명하지 않는다(John 9/30)</td><td>~5초</td></tr>
+    <tr><td>③ 우리의 답, 3단계</td><td>① 레몬 엑소좀(출발한 과학) → ② 비건 마이크로크리스탈(세럼의 통로) → ③ 나이아신아마이드·아데노신(등록된 성분). 마지막에 "세럼이 열고 크림이 닫는다"</td><td>~28초</td></tr>
+    <tr><td>④ 누구를 위해</td><td>결과를 원하지만 자극이 두려운 사람, 성분표를 읽는 사람</td><td>~10초</td></tr>
+    <tr><td>⑤ 마무리</td><td>"Lemonderma." + 끝 카드 "감사합니다"</td><td>~4초</td></tr>
+  </table>
+</section>
+
+<section id="body">
+  <p class="sec-label">Script</p>
+  <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
+  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">Marco 목소리 · 13줄 · 107단어 · 약 1분</span></h2>
+  <p class="lead">전부 <b style="color:var(--ink)">Marco가 조용한 방에서 대본을 보며 녹음</b>하는 목소리다. 화면에 얼굴이 나오지 않으니 카메라를 볼 필요가 없고 틀린 줄만 다시 녹음하면 된다. 오른쪽 위 "대사만 보기"가 녹음용 프롬프터. 표기 — <span class="tag new">신규</span>새로 찍을 컷 · <span class="tag have">기존</span>보유 영상 · <b style="color:var(--ink)">카드</b> 화면에 뜨는 그래픽/글자.</p>
+
+  <h3>① 질문 <span class="len">~10초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">1-1</div><div class="who"><i>M</i></div><div class="say">Lemonderma started with one question.</div><div class="shot"><span class="tag new">신규</span>세럼 스포이드에서 방울이 떨어지는 매크로. 글자 없음</div></div>
+    <div class="line"><div class="n">1-2</div><div class="who"><i>M</i></div><div class="say">How do we get good ingredients to where skin can use them?<span class="note">"deep"·"침투" 없이 — §문구 가드. 12단어</span></div><div class="shot">카드: 같은 문장을 큰 글씨로. 배경은 방울이 손바닥에 닿는 컷</div></div>
+  </div>
+
+  <h3>② 이름 <span class="len">~5초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">2-1</div><div class="who"><i>M</i></div><div class="say">Lemon — a fruit people fear. Derma — the science we take seriously.<span class="note">brand.md 명제 정본의 마지막 문장을 줄인 것. 이 이상 설명하지 않는다</span></div><div class="shot"><span class="tag have">기존</span>제주 레몬 클립(영상편지 3-4와 다른 것) → <span class="tag new">신규</span>사무실에서 레몬을 자르는 컷. 카드 "Lemon + Derma"</div></div>
+  </div>
+
+  <h3>③ 우리의 답 — 3단계 <span class="len">~28초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">3-1</div><div class="who"><i>M</i></div><div class="say">Our answer has three steps.</div><div class="shot">카드: 3단 그래픽 등장 (§그래픽 카드). 아직 칸은 비어 있음</div></div>
+    <div class="line"><div class="n">3-2</div><div class="who"><i>M</i></div><div class="say">One. Lemon exosome, made from the juice in our lab, Zishel Bio.<span class="note">"운반한다"는 말 없음 — 출발한 과학·혈통까지(2026-07-29)</span></div><div class="shot">카드: 1단 칸이 채워짐 "Lemon exosome · the science we start from". 배경은 <span class="tag have">기존</span>실험실 클립 1개(영상편지와 다른 것) 또는 그래픽만</div></div>
+    <div class="line"><div class="n">3-3</div><div class="who"><i>M</i></div><div class="say">Two. A vegan microcrystal in our serum.</div><div class="shot">카드: 2단 칸 "Vegan microcrystal · the pathway (serum)". <span class="tag new">신규</span>세럼 병 클로즈업</div></div>
+    <div class="line"><div class="n">3-4</div><div class="who"><i>M</i></div><div class="say">It opens a pathway. That's the light tingle — not a burn.<span class="note">영상편지 4-3과 같은 내용을 다시 짚는다. 세럼에만 해당</span></div><div class="shot">2단 카드 유지 → 스포이드 방울을 손바닥에 누르는 컷</div></div>
+    <div class="line"><div class="n">3-5</div><div class="who"><i>M</i></div><div class="say">Three. Niacinamide, vitamin B3, and adenosine.</div><div class="shot">카드: 3단 칸 "Niacinamide + Adenosine · what we bring"</div></div>
+    <div class="line"><div class="n">3-6</div><div class="who"><i>M</i></div><div class="say">Registered in Korea for brightening and wrinkles.<span class="note">영상편지 3-1과 같은 표현(MFDS 이중 기능성 등록)</span></div><div class="shot">3단 카드 유지 → 상자 뒷면 성분표가 보이는 컷 (읽을 수 있게 정지)</div></div>
+    <div class="line"><div class="n">3-7</div><div class="who"><i>M</i></div><div class="say">Then the cream seals it in.<span class="note">마이크로크리스탈은 세럼 한정이라, 크림은 마무리 역할로 시스템에 넣는다</span></div><div class="shot"><span class="tag new">신규</span>크림 질감 컷 → 카드 "Serum opens. Cream seals."</div></div>
+  </div>
+
+  <h3>④ 누구를 위해 <span class="len">~10초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">4-1</div><div class="who"><i>M</i></div><div class="say">We made it for people who want results, but fear irritation.<span class="note">brand.md 타겟 한 줄 그대로. "자극이 없다"는 약속이 아니다</span></div><div class="shot"><span class="tag new">신규</span>상자·세럼·크림이 나란히 놓인 탑다운</div></div>
+    <div class="line"><div class="n">4-2</div><div class="who"><i>M</i></div><div class="say">And for people who read the label. So we will show you everything.<span class="note">4주 프로그램의 약속(약국·실험실·질문 답변)으로 이어진다</span></div><div class="shot">성분표가 보이는 상자 뒷면 컷 → 두 병 나란히</div></div>
+  </div>
+
+  <h3>⑤ 마무리 <span class="len">~4초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">5-1</div><div class="who"><i>M</i></div><div class="say">Lemonderma.</div><div class="shot">제품 정면 → 검은 화면에 끝 카드 <b>감사합니다 (Thank you)</b>. 질문은 영상에 없다(§왓츠앱 게시)</div></div>
+  </div>
+  <div class="callout"><div class="ic">✂️</div><p><b style="color:var(--ink)">길이 조절:</b> 107단어·약 1분(목소리 46초 + 그래픽 호흡). 줄여야 하면 3-4의 둘째 문장, 그다음 4-2 둘째 문장을 뺀다. 늘려야 하면 3-6에 정지 시간을 준다.</p></div>
+</section>
+
+<section id="cards">
+  <p class="sec-label">Graphic</p>
+  <h2 class="sec-title">그래픽 카드 — 3단 딜리버리 시스템</h2>
+  <p class="lead">한 장의 세로 카드에 3개 칸이 위에서 아래로 이어지는 <b style="color:var(--ink)">경로 그림</b>이다. 목소리에 맞춰 칸이 하나씩 채워지고, 마지막에 "Serum opens. Cream seals."로 닫힌다. Claude가 만든다.</p>
+  <table>
+    <tr><th>칸</th><th>큰 글씨</th><th>작은 글씨</th></tr>
+    <tr><td>1</td><td>Lemon exosome</td><td>the science we start from</td></tr>
+    <tr><td>2</td><td>Vegan microcrystal</td><td>the pathway · in our serum</td></tr>
+    <tr><td>3</td><td>Niacinamide + Adenosine</td><td>what we bring · registered in Korea for brightening and wrinkles</td></tr>
+    <tr><td>끝</td><td>Serum opens. Cream seals.</td><td>(브랜드 루틴 서사 그대로)</td></tr>
+  </table>
+  <ul class="rules">
+    <li><b>피부 단면도·입자가 파고드는 화살표는 넣지 않는다.</b> 침투를 그림으로 주장하는 셈이라 "deep" 금지와 같은 문제다. 칸과 선으로만 이어지는 추상 경로로.</li>
+    <li>디자인은 브랜드 시각 규칙(라임/딥그린 팔레트, 서체 정본)을 따른다. 로고 워드마크는 재타이핑하지 않고 에셋을 쓴다.</li>
+  </ul>
+</section>
+
+<section id="order">
+  <p class="sec-label">Shoot</p>
+  <h2 class="sec-title">촬영·자산 — 사무실 30분 + 목소리 20분</h2>
+  <table class="stack">
+    <tr><th>무엇</th><th>어떻게</th><th>메모</th></tr>
+    <tr><td>세럼 스포이드 매크로<br><span class="tag new">신규</span></td><td data-l="어떻게">스포이드에서 방울이 손바닥에 떨어지는 컷 2테이크</td><td data-l="메모">1-1, 3-4. 창가 자연광, 피부 보정 없음</td></tr>
+    <tr><td>레몬 자르는 컷<br><span class="tag new">신규</span></td><td data-l="어떻게">사무실 테이블에서 통째 레몬 → 자르기 → 과즙이 맺힘</td><td data-l="메모">2-1. 레몬 3~4개, 칼, 도마, 접시만</td></tr>
+    <tr><td>제품 컷<br><span class="tag new">신규</span></td><td data-l="어떻게">세럼 병 클로즈업 · 크림 질감 · 상자+두 병 탑다운 · 상자 뒷면 성분표(글자가 읽히게)</td><td data-l="메모">3-3, 3-6, 3-7, 4-1, 4-2. 성분표 컷은 초점 선명하게 3초 정지</td></tr>
+    <tr><td>제주 레몬 클립<br><span class="tag have">기존</span></td><td data-l="어떻게">영상편지 3-4에 쓰지 않는 클립 1~2개</td><td data-l="메모">John이 어떤 클립을 썼는지 알려 주면 겹치지 않게 고른다</td></tr>
+    <tr><td>실험실 클립<br><span class="tag have">기존</span></td><td data-l="어떻게">영상편지 3-2와 다른 클립 1개, 없으면 그래픽만</td><td data-l="메모">외부 완제품 제조사의 이름·로고·충전라인은 제외(2026-06-29)</td></tr>
+    <tr><td>Marco 목소리</td><td data-l="어떻게">조용한 방, 폰·종이 대본, 13줄 20분 (이 페이지 "대사만 보기")</td><td data-l="메모">틀린 줄만 다시. 콘텐츠1 촬영일에 같이</td></tr>
+  </table>
+</section>
+
+<section id="caption">
+  <p class="sec-label">WhatsApp</p>
+  <h2 class="sec-title">왓츠앱 게시 — 영상 뒤에 후속 질문 메시지</h2>
+  <p class="lead">콘텐츠1과 같은 순서로 <b style="color:var(--ink)">두 개의 메시지</b>(John이 직접, 목 10/22 UAE 오전 8시 = 한국 13시). 이모지 없이 담백하게.</p>
+  <h3>메시지 ① 영상 + 짧은 설명</h3>
+  <div class="caption-box">Week 1, Thursday. Meet Lemonderma: the question we started with, and how we answered it in three steps.</div>
+  <h3>메시지 ② 후속 질문 (영상 올린 직후, 1~2분 안에)</h3>
+  <div class="caption-box">Your turn: what's the skin concern you think about most right now? One line is perfect.</div>
+</section>
+
+<section id="schedule">
+  <p class="sec-label">Timeline</p>
+  <h2 class="sec-title">일정 (제안)</h2>
+  <table>
+    <tr><th>언제</th><th>무엇</th><th>누가</th></tr>
+    <tr><td>지금</td><td>정할 것 5개 확정 → 대본 확정</td><td>John</td></tr>
+    <tr><td>화 10/6 (또는 10/7~12)</td><td>사무실 30분 컷 촬영(레몬·제품·성분표) + Marco 목소리 녹음 20분</td><td>John · Marco</td></tr>
+    <tr><td>~10/20</td><td>그래픽 카드 제작(Claude) → 편집 → 검수</td><td>John + Claude</td></tr>
+    <tr><td>목 10/22 UAE 08:00 (한국 13:00)</td><td>왓츠앱 그룹에 메시지 ① 영상 + 설명 → 메시지 ② 후속 질문 직접 게시</td><td>John</td></tr>
+    <tr><td>10/22~23</td><td>답장 24시간 안에 전원에게 (1기 AI 응답 미사용 원칙)</td><td>John · Marco</td></tr>
+  </table>
+</section>
+
+<section id="guard">
+  <p class="sec-label">Claims</p>
+  <h2 class="sec-title">문구 가드 — 대본·그래픽 수정 시 확인</h2>
+  <ul class="rules">
+    <li><b>"deep"·"깊숙이"·"침투(penetrate)"·"세포 레벨" 금지</b> — 심층 침투를 함의하면 화장품 범위를 넘는다(2026-07-26, 한국·미국·UAE). 딜리버리는 "피부가 쓸 수 있는 곳까지"로.</li>
+    <li><b>엑소좀은 혈통(출발한 과학)</b>으로만. "엑소좀 덕분에 개선된다", "엑소좀이 성분을 실어 나른다" 금지 — 함량 2ppm(상자에 표기)이라 기전·효능 서술은 반박당한다(2026-07-29).</li>
+    <li><b>Liposome·"10 Vitamin"</b>은 쓰지 않는다 — 처방 전성분에 없고 함량은 ppb 수준(2026-05-30). 세 번째 단계는 상자와 같은 Niacinamide + Adenosine.</li>
+    <li>마이크로크리스탈·tingle은 <b>세럼에만</b>. 크림에는 쓰지 않는다(2026-05-21). "painless" 금지.</li>
+    <li>효능은 <b>"registered in Korea for brightening and wrinkles"</b>(MFDS 이중 기능성)까지. 수치 효과·전후 비교·"임상적으로" 없음.</li>
+    <li>"우리 레몬 성분은 전부 과즙 유래"라고 일반화하지 않는다 — 레몬추출물의 추출 부위가 미확인이고 처방에 베르가모트·오렌지 오일이 있다. "레몬 엑소좀은 과즙에서"까지만.</li>
+    <li>"자극이 없다·전혀 안 따갑다" 금지. "results, but fear irritation"은 <b>누구를 위한 제품인지</b>일 뿐 약속이 아니다.</li>
+    <li>제조사(COSMAX 등) 이름·로고 금지. 회사를 작게 보이게 하는 표현 금지. 임신·수유 언급 없음.</li>
+    <li>영상편지 3편과 겹치지 않게: 약국(콘텐츠4)·엑소좀 시설(콘텐츠7) 영상은 여기서 쓰지 않는다. 같은 클립 재사용 금지.</li>
+  </ul>
+  <p class="src" style="margin-top:14px">근거 — <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/identity/brand.md" target="_blank" rel="noopener">brand.md</a>(명제 정본·4역할 분리·핵심 기술·SKU별 어휘) · <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-07-26-폐기-제품이름-Deep클레임-규제리스크.md" target="_blank" rel="noopener">2026-07-26 Deep 클레임</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-05-30-폐기-10Vitamin-Liposome-어휘.md" target="_blank" rel="noopener">2026-05-30 Liposome</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-05-21-엑소좀어휘-NTA-해외ppm제외-국내라벨각주-delivery세럼한정.md" target="_blank" rel="noopener">2026-05-21 delivery 세럼 한정</a> · 질문 원본 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/uae/community/plan/2026-09-16-cohort1-decisions.md" target="_blank" rel="noopener">decisions §6-보충4</a></p>
+</section>
+
+<footer>
+  <p class="src">상위 문서 — <a href="../">UAE 커뮤니티 1기 운영안</a> · 앞 콘텐츠 <a href="../morning-routine/">콘텐츠1</a> · <a href="../video-letter/">영상편지</a> · 저장소 정본 <code>30_growth/marketing/uae/community/plan/meet-lemonderma/index.html</code></p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('promptBtn'), body=document.body, KEY='c2-prompter';
+  function apply(on){body.classList.toggle('prompter',on);btn.textContent=on?'전체 보기':'대사만 보기';}
+  var saved=false; try{saved=localStorage.getItem(KEY)==='1';}catch(e){}
+  apply(saved);
+  btn.addEventListener('click',function(){var on=!body.classList.contains('prompter');apply(on);try{localStorage.setItem(KEY,on?'1':'0');}catch(e){}});
+})();
+</script>
+</body>
+</html>
