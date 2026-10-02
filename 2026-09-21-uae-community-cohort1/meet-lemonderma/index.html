@@ -107,6 +107,9 @@ ul.rules b{color:var(--ink)}
 .line .say .ko{font-weight:900}
 .line .say .note{display:block;font-size:.78rem;color:var(--ink-3);margin-top:4px}
 .line .shot{font-size:.84rem;line-height:1.6;color:var(--ink-2);background:var(--panel-2);border-left:1px solid var(--line)}
+.line .say .en{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:.86rem;line-height:1.5;color:var(--ink-3);margin-top:6px}
+.line.vo .say .en{color:var(--gold-ink);opacity:.9}
+body.prompter .line .say .en{display:none}
 .tag{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-right:5px;vertical-align:middle}
 .tag.have{background:var(--pill-bg);color:var(--pill-ink)}
 .tag.new{background:var(--gold-bg);color:var(--gold-ink)}
@@ -214,7 +217,7 @@ footer{padding:36px 0 70px}
   <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
   <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
   <h1>콘텐츠2 — Meet Lemonderma: 좋은 성분을 피부 깊숙이 전달하는 법</h1>
-  <p class="sub">목 10/22, 프로그램 4일째에 올리는 1분 쇼츠. <b>"어떻게 하면 좋은 성분을 피부 깊숙이 전달할 수 있을까?"에서 시작된 브랜드</b>라는 이야기로 열고, 그 답인 <b>딜리버리 시스템 — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜</b>을 설명하는 데 집중한다. 레몬은 이름 이야기로 짧게만 짚고, 마지막에 <b>누구를 위해 만들었는지</b>. <b>Marco와 John이 함께</b> 나와 설명하고, 딜리버리 구간은 피부 단면 그래픽이 화면을 채운다. 약 1분 5초. <b>촬영은 콘텐츠1 촬영일(화 10/6).</b></p>
+  <p class="sub">목 10/22, 프로그램 4일째에 올리는 1분 쇼츠. <b>"어떻게 하면 좋은 성분을 피부 깊숙이 전달할 수 있을까?"에서 시작된 브랜드</b>라는 이야기로 열고, 그 답인 <b>딜리버리 시스템 — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜</b>을 설명하는 데 집중한다. 레몬은 이름 이야기로 짧게만 짚고, 마지막에 <b>누구를 위해 만들었는지</b>. <b>Marco와 John이 함께</b> 나와 설명하고, 딜리버리 구간은 피부 단면 그래픽이 화면을 채운다. 약 1분 27초. <b>촬영은 콘텐츠1 촬영일(화 10/6).</b></p>
   <div class="meta-row">
     <span class="pill">Marco · John 함께</span>
     <span class="pill">9:16 · 왓츠앱 그룹 게시</span>
@@ -247,6 +250,7 @@ footer{padding:36px 0 70px}
     <li class="done"><span class="box"></span><span><b>중심은 딜리버리 시스템</b> — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜 순으로 설명.</span></li>
     <li class="done"><span class="box"></span><span><b>"왜 레몬인가"는 간단히만</b> — 뾰족하게 설명할 길이 많지 않다. 이름 이야기 한 줄.</span></li>
     <li class="done"><span class="box"></span><span><b>누구를 위해 만들었는지</b>도 포함.</span></li>
+    <li class="done"><span class="box"></span><span><b>말은 한국어, 자막은 영어</b> — 영상편지와 같은 말투(젠틀하고 진정성 있는 "~입니다/~합니다"의 진중·전문적인 남자 말투)로 말하고 영어 자막을 깐다. 앞으로 모든 콘텐츠 공통(John 10/2). 대사 아래 기울임 줄이 자막 문장.</span></li>
     <li class="done"><span class="box"></span><span><b>표현 제한 없음</b> — 공식 영상이 아니라 파트너스를 상대로 하는 콘텐츠라 서술 제한·리스크는 감수한다.</span></li>
   </ul>
   <h3 style="margin-top:28px">형식·촬영 확정 (John 9/30)</h3>
@@ -274,44 +278,44 @@ footer{padding:36px 0 70px}
 <section id="body">
   <p class="sec-label">Script</p>
   <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
-  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">Marco · John · 15줄 · 137단어 · 약 1분 5초</span></h2>
+  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">Marco · John · 15줄 · 417음절 · 약 1분 27초</span></h2>
   <p class="lead">투샷(둘이 나란히, 4K)에서 <b style="color:var(--ink)">카메라를 보고 말하는 건 6줄</b>(1-1·1-2·4-1·4-2·4-3·5-1)이다. 나머지 9줄은 화면이 그래픽·클립으로 덮이는 <span class="vo-tag">노란 칸 · 📄 보고 읽기</span> — 같은 자리에서 대본을 보며 읽으면 된다. 오른쪽 위 "대사만 보기"가 프롬프터. 표기 — <b style="color:var(--ink)">M</b> Marco · <b style="color:var(--ink)">J</b> John · <span class="tag new">신규</span>새로 찍을 컷 · <span class="tag have">기존</span>보유 영상 · <b style="color:var(--ink)">카드</b> 화면에 뜨는 그래픽/글자.</p>
 
   <h3>① 질문 <span class="len">~8초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">1-1</div><div class="who"><i>M</i></div><div class="say">Lemonderma started with one question.</div><div class="shot"><span class="tag new">신규</span>투샷 정면(4K) — 편집 확대(Marco)</div></div>
-    <div class="line"><div class="n">1-2</div><div class="who"><i>J</i></div><div class="say">How do we deliver good ingredients deep into the skin?</div><div class="shot">투샷 → 편집 확대(John) + 같은 문장을 큰 글씨 카드로</div></div>
+    <div class="line"><div class="n">1-1</div><div class="who"><i>M</i></div><div class="say">레몬더마는 하나의 질문에서 시작되었습니다.<span class="en">Lemonderma started with one question.</span></div><div class="shot"><span class="tag new">신규</span>투샷 정면(4K) — 편집 확대(Marco)</div></div>
+    <div class="line"><div class="n">1-2</div><div class="who"><i>J</i></div><div class="say">어떻게 하면 좋은 성분을 피부 깊숙이 전달할 수 있을까요?<span class="en">How do we deliver good ingredients deep into the skin?</span></div><div class="shot">투샷 → 편집 확대(John) + 같은 문장을 큰 글씨 카드로</div></div>
   </div>
 
   <h3>② 이름 <span class="len">~5초</span></h3>
   <div class="script">
-    <div class="line vo"><div class="n">2-1</div><div class="who"><i>M</i></div><div class="say">Our name says it. Lemon, from Jeju. Derma, for skin science.</div><div class="shot"><span class="tag have">기존</span>제주 레몬 클립 → <span class="tag new">신규</span>레몬을 자르는 컷. 카드 "Lemon + Derma"</div></div>
+    <div class="line vo"><div class="n">2-1</div><div class="who"><i>M</i></div><div class="say">레몬더마라는 이름에도 그 뜻이 담겨 있습니다. 레몬은 제주에서, 더마는 피부과학에서 왔습니다.<span class="en">Our name says it. Lemon, from Jeju. Derma, for skin science.</span></div><div class="shot"><span class="tag have">기존</span>제주 레몬 클립 → <span class="tag new">신규</span>레몬을 자르는 컷. 카드 "Lemon + Derma"</div></div>
   </div>
 
   <h3>③ 딜리버리 시스템 <span class="len">~32초</span></h3>
   <div class="script">
-    <div class="line vo"><div class="n">3-1</div><div class="who"><i>M</i></div><div class="say">Our answer is a three-step delivery system.</div><div class="shot">카드: 피부 단면 그래픽 등장, 3개 칸은 비어 있음 (§그래픽)</div></div>
-    <div class="line vo"><div class="n">3-2</div><div class="who"><i>M</i></div><div class="say">Step one: lemon exosome. Tiny carriers from Jeju lemon juice.</div><div class="shot">카드: 1단 "CARRY · Lemon exosome" — 작은 입자들이 성분을 싣는 애니메이션</div></div>
-    <div class="line vo"><div class="n">3-3</div><div class="who"><i>M</i></div><div class="say">From our lab, Zishel Bio. They carry good ingredients into the skin.</div><div class="shot"><span class="tag have">기존</span>실험실 클립 1개 → 단면 그래픽에서 입자가 피부 속으로 이동</div></div>
-    <div class="line vo"><div class="n">3-4</div><div class="who"><i>J</i></div><div class="say">Step two: vegan microcrystal. It opens tiny pathways in the skin.</div><div class="shot">카드: 2단 "OPEN · Vegan microcrystal" — 단면에 미세한 길이 열리는 그림. <span class="tag new">신규</span>세럼 병 클로즈업</div></div>
-    <div class="line vo"><div class="n">3-5</div><div class="who"><i>J</i></div><div class="say">That light tingle is the pathways opening — not a burn.</div><div class="shot">스포이드 방울을 손바닥에 눌러 바르는 컷</div></div>
-    <div class="line vo"><div class="n">3-6</div><div class="who"><i>J</i></div><div class="say">Step three: vitamin liposome. Vitamins wrapped to travel deep.</div><div class="shot">카드: 3단 "DELIVER · Vitamin liposome" — 비타민을 감싼 구가 열린 길을 따라 깊은 층까지 내려감</div></div>
-    <div class="line vo"><div class="n">3-7</div><div class="who"><i>M</i></div><div class="say">Skin doesn't get what you apply. It gets what reaches it.</div><div class="shot">카드: 3단계가 한 번에 이어지는 전체 그림 + 큰 글씨 "Skin gets what reaches it."</div></div>
-    <div class="line vo"><div class="n">3-8</div><div class="who"><i>J</i></div><div class="say">Serum opens the way. Cream seals it in.</div><div class="shot"><span class="tag new">신규</span>세럼 → 크림 질감 컷 → 카드 "Serum opens. Cream seals."</div></div>
+    <div class="line vo"><div class="n">3-1</div><div class="who"><i>M</i></div><div class="say">저희가 찾은 답은 3단계 딜리버리 시스템입니다.<span class="en">Our answer is a three-step delivery system.</span></div><div class="shot">카드: 피부 단면 그래픽 등장, 3개 칸은 비어 있음 (§그래픽)</div></div>
+    <div class="line vo"><div class="n">3-2</div><div class="who"><i>M</i></div><div class="say">첫 번째는 레몬 엑소좀입니다. 제주 레몬 과즙에서 얻은 아주 작은 전달체입니다.<span class="en">Step one: lemon exosome. Tiny carriers from Jeju lemon juice.</span></div><div class="shot">카드: 1단 "CARRY · Lemon exosome" — 작은 입자들이 성분을 싣는 애니메이션</div></div>
+    <div class="line vo"><div class="n">3-3</div><div class="who"><i>M</i></div><div class="say">저희 연구실인 지쉘바이오에서 만든 이 엑소좀이, 좋은 성분을 피부 속까지 실어 나릅니다.<span class="en">From our lab, Zishel Bio. They carry good ingredients into the skin.</span></div><div class="shot"><span class="tag have">기존</span>실험실 클립 1개 → 단면 그래픽에서 입자가 피부 속으로 이동</div></div>
+    <div class="line vo"><div class="n">3-4</div><div class="who"><i>J</i></div><div class="say">두 번째는 비건 마이크로 크리스탈입니다. 피부에 아주 작은 길을 열어 줍니다.<span class="en">Step two: vegan microcrystal. It opens tiny pathways in the skin.</span></div><div class="shot">카드: 2단 "OPEN · Vegan microcrystal" — 단면에 미세한 길이 열리는 그림. <span class="tag new">신규</span>세럼 병 클로즈업</div></div>
+    <div class="line vo"><div class="n">3-5</div><div class="who"><i>J</i></div><div class="say">바를 때 느껴지는 가벼운 따끔함은 이 길이 열리는 과정이며, 자극에 의한 화끈거림이 아닙니다.<span class="en">That light tingle is the pathways opening — not a burn.</span></div><div class="shot">스포이드 방울을 손바닥에 눌러 바르는 컷</div></div>
+    <div class="line vo"><div class="n">3-6</div><div class="who"><i>J</i></div><div class="say">세 번째는 비타민 리포솜입니다. 비타민을 감싸 피부 깊은 곳까지 전달합니다.<span class="en">Step three: vitamin liposome. Vitamins wrapped to travel deep.</span></div><div class="shot">카드: 3단 "DELIVER · Vitamin liposome" — 비타민을 감싼 구가 열린 길을 따라 깊은 층까지 내려감</div></div>
+    <div class="line vo"><div class="n">3-7</div><div class="who"><i>M</i></div><div class="say">피부는 바른 만큼이 아니라, 도달한 만큼 받아들입니다.<span class="en">Skin doesn't get what you apply. It gets what reaches it.</span></div><div class="shot">카드: 3단계가 한 번에 이어지는 전체 그림 + 큰 글씨 "Skin gets what reaches it."</div></div>
+    <div class="line vo"><div class="n">3-8</div><div class="who"><i>J</i></div><div class="say">세럼이 길을 열고, 크림이 잘 감싸 마무리합니다.<span class="en">Serum opens the way. Cream seals it in.</span></div><div class="shot"><span class="tag new">신규</span>세럼 → 크림 질감 컷 → 카드 "Serum opens. Cream seals."</div></div>
   </div>
 
   <h3>④ 누구를 위해 <span class="len">~10초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">4-1</div><div class="who"><i>J</i></div><div class="say">We made it for sensitive skin that still wants real results.</div><div class="shot">투샷 복귀 → 편집 확대(John)</div></div>
-    <div class="line"><div class="n">4-2</div><div class="who"><i>M</i></div><div class="say">For people who love vegan beauty, but want it to work.</div><div class="shot">투샷 → 편집 확대(Marco)</div></div>
-    <div class="line"><div class="n">4-3</div><div class="who"><i>J</i></div><div class="say">And for people who read every label.</div><div class="shot">투샷 → 편집 확대(John) → 상자 뒷면 성분표 컷</div></div>
+    <div class="line"><div class="n">4-1</div><div class="who"><i>J</i></div><div class="say">레몬더마는 피부가 민감하지만 확실한 효과를 원하시는 분들을 위해 만들었습니다.<span class="en">We made it for sensitive skin that still wants real results.</span></div><div class="shot">투샷 복귀 → 편집 확대(John)</div></div>
+    <div class="line"><div class="n">4-2</div><div class="who"><i>M</i></div><div class="say">비건 뷰티를 좋아하지만, 효과도 놓치고 싶지 않은 분들을 위해서이기도 합니다.<span class="en">For people who love vegan beauty, but want it to work.</span></div><div class="shot">투샷 → 편집 확대(Marco)</div></div>
+    <div class="line"><div class="n">4-3</div><div class="who"><i>J</i></div><div class="say">그리고 성분표 하나하나를 꼼꼼히 읽으시는 분들을 위해 만들었습니다.<span class="en">And for people who read every label.</span></div><div class="shot">투샷 → 편집 확대(John) → 상자 뒷면 성분표 컷</div></div>
   </div>
 
   <h3>⑤ 마무리 <span class="len">~4초</span></h3>
   <div class="script">
-    <div class="line"><div class="n">5-1</div><div class="who"><i>M</i></div><div class="say">Vegan that works. Lemonderma.</div><div class="shot">투샷, 둘 사이 테이블에 세럼·크림 + 카드 "Vegan that works." → 검은 화면에 끝 카드 <b>감사합니다 (Thank you)</b>. 질문은 영상에 없다(§왓츠앱 게시)</div></div>
+    <div class="line"><div class="n">5-1</div><div class="who"><i>M</i></div><div class="say">효과 있는 비건, 레몬더마입니다.<span class="en">Vegan that works. Lemonderma.</span></div><div class="shot">투샷, 둘 사이 테이블에 세럼·크림 + 카드 "Vegan that works." → 검은 화면에 끝 카드 <b>감사합니다 (Thank you)</b>. 질문은 영상에 없다(§왓츠앱 게시)</div></div>
   </div>
-  <div class="callout"><div class="ic">✂️</div><p><b style="color:var(--ink)">길이 조절:</b> 137단어·약 1분 5초(목소리 약 58초 + 그래픽 호흡). 줄여야 하면 3-5, 그다음 4-2를 뺀다. 늘려야 하면 3-7 그래픽에 정지 시간을 준다.</p></div>
+  <div class="callout"><div class="ic">✂️</div><p><b style="color:var(--ink)">길이 조절:</b> 417음절·약 1분 27초(목소리 약 79초 + 그래픽 호흡, 한국어 음절 수 추정). 줄여야 하면 3-5, 그다음 4-2를 뺀다. 늘려야 하면 3-7 그래픽에 정지 시간을 준다.</p></div>
 </section>
 
 <section id="cards">
