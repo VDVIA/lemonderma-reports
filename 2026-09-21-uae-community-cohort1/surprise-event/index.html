@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>콘텐츠3 기획안 — Skin Lab Partners</title>
+<meta name="description" content="Skin Lab Partners 1기 콘텐츠3 — 깜짝 이벤트: 1주차에 가장 활발했던 두 분께 세럼·크림 세트">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --mark:rgba(221,247,70,.32);
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --wall:#e23b3b; --wall-bg:#fde3df;
+  --gold-bg:#faefc0; --gold-ink:#6a5000;
+  --serif:"Libre Caslon Text", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Pretendard", -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --mark:rgba(221,247,70,.20);
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --wall:#ff7a6b; --wall-bg:#2c1512;
+    --gold-bg:#2b2410; --gold-ink:#e3c775;
+  }
+}
+:root[data-theme="dark"]{
+  --ground-top:#1b200f; --ground:#100f0a;
+  --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+  --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+  --mark:rgba(221,247,70,.20);
+  --num:#c9e46c; --headline:#bdd382;
+  --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+  --pill-bg:#242812; --pill-ink:#c9e46c;
+  --wall:#ff7a6b; --wall-bg:#2c1512;
+  --gold-bg:#2b2410; --gold-ink:#e3c775;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 460px);color:var(--ink);font-family:var(--sans);padding:0 20px}
+.wrap{max-width:820px;margin:0 auto}
+::selection{background:var(--mark)}
+h1,h2,h3{text-wrap:balance;font-weight:900;letter-spacing:-.01em}
+p{line-height:1.72;color:var(--ink-2)}
+a{color:var(--headline)}
+header{padding:44px 0 26px;border-bottom:1px solid var(--line)}
+.back{display:inline-block;font-size:.84rem;text-decoration:none;color:var(--ink-3);margin-bottom:18px}
+.back:hover{color:var(--headline)}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--headline);letter-spacing:.02em;margin:0 0 12px}
+h1{font-size:clamp(1.7rem,5.2vw,2.4rem);margin:0 0 12px;line-height:1.18}
+.sub{font-size:1.02rem;color:var(--ink-2);margin:0 0 18px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-ink);font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:99px}
+.pill.date{background:transparent;color:var(--ink-3);font-weight:400}
+
+/* 진행 단계 */
+.stepper{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 0}
+.stepper span{font-size:.76rem;padding:6px 11px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3);background:var(--panel)}
+.stepper span.done{background:var(--line-strong);border-color:var(--line-strong);color:#1d2b00;font-weight:700}
+.stepper span.now{border-color:var(--headline);color:var(--headline);font-weight:700;box-shadow:inset 0 0 0 1px var(--headline)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stepper span.done{color:#0f1500}}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 0;padding:20px 0 8px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:5px 12px 5px 0;white-space:nowrap}
+nav.toc a:not(:last-child)::after{content:"/";margin-left:12px;color:var(--line-strong)}
+nav.toc a:hover{color:var(--headline)}
+
+section{padding:42px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin:0 0 6px}
+h2.sec-title{font-size:1.5rem;margin:0 0 16px}
+h3{font-size:1.06rem;margin:28px 0 10px;color:var(--ink)}
+h3 .len{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.9rem;margin-left:8px}
+.lead{font-size:1.02rem;line-height:1.75}
+
+.callout{display:flex;gap:14px;background:var(--panel-3);border-radius:12px;padding:16px 18px;margin:16px 0}
+.callout .ic{font-size:1.2rem;line-height:1.3}
+.callout p{margin:0;font-size:.9rem}
+.callout.safety{background:var(--gold-bg)}
+.callout.safety p{color:var(--gold-ink)}
+.callout.wall{background:var(--wall-bg)}
+.callout.wall p,.callout.wall b{color:var(--wall)}
+
+ul.rules{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:.92rem;line-height:1.8}
+ul.rules b{color:var(--ink)}
+
+/* 대사 블록 */
+.script{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.line{display:grid;grid-template-columns:44px 52px 1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.line:first-child{border-top:0}
+.line>div{padding:12px 12px}
+.line .n{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.82rem;padding-right:0}
+.line .who{font-size:.72rem;font-weight:700;color:var(--pill-ink)}
+.line .who i{font-style:normal;display:inline-block;background:var(--pill-bg);padding:2px 7px;border-radius:99px}
+.line .say{font-size:1rem;line-height:1.6;color:var(--ink)}
+.line .say .ko{font-weight:900}
+.line .say .note{display:block;font-size:.78rem;color:var(--ink-3);margin-top:4px}
+.line .shot{font-size:.84rem;line-height:1.6;color:var(--ink-2);background:var(--panel-2);border-left:1px solid var(--line)}
+.line .say .en{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:.86rem;line-height:1.5;color:var(--ink-3);margin-top:6px}
+.line.vo .say .en{color:var(--gold-ink);opacity:.9}
+body.prompter .line .say .en{display:none}
+.tag{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-right:5px;vertical-align:middle}
+.tag.have{background:var(--pill-bg);color:var(--pill-ink)}
+.tag.new{background:var(--gold-bg);color:var(--gold-ink)}
+.tag.unk{background:var(--wall-bg);color:var(--wall)}
+@media (max-width:640px){
+  .line{grid-template-columns:36px 1fr}
+  .line .who{grid-column:2;padding-bottom:0}
+  .line .say{grid-column:2;padding-top:6px}
+  .line .shot{grid-column:1/-1;border-left:0;border-top:1px dashed var(--line)}
+}
+
+/* 대본 보고 읽기 OK 구간 (화면이 다른 영상으로 덮임) */
+.line.vo{background:var(--gold-bg);box-shadow:inset 6px 0 0 var(--gold-ink)}
+.line.vo>div{position:relative}
+.line.vo .say::before{content:"📄 보고 읽기 OK";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:99px;background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .n{color:var(--gold-ink)}
+.line.vo .who i{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .shot{background:transparent;border-left:1px dashed var(--gold-ink);color:var(--gold-ink)}
+.line.vo .shot .tag.have{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .say .note{color:var(--gold-ink);opacity:.85}
+.vo-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--gold-bg);color:var(--gold-ink);border:1px solid var(--gold-ink);white-space:nowrap}
+.sched{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sched table{margin:0}
+.sched td,.sched th{font-size:.86rem}
+
+/* 대사만 보기(프롬프터) */
+.toggle{position:sticky;top:10px;z-index:5;display:flex;justify-content:flex-end;margin:0 0 -30px}
+.toggle button{font:inherit;font-size:.8rem;font-weight:700;color:var(--pill-ink);background:var(--pill-bg);border:1px solid var(--line-strong);border-radius:99px;padding:7px 14px;cursor:pointer}
+body.prompter .line{grid-template-columns:44px 52px 1fr}
+body.prompter .line .shot{display:none}
+body.prompter .line .say{font-size:1.35rem;line-height:1.5}
+body.prompter .line .say .note{display:none}
+body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
+
+@media (max-width:640px){#body h2.sec-title{padding-right:112px}}
+/* 촬영 리스트 표 */
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:12px}
+th,td{padding:10px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top;color:var(--ink-2);line-height:1.55}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);border-top:0}
+td:first-child{color:var(--ink);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:1px solid var(--line)}
+
+@media (max-width:640px){td:first-child{white-space:normal}th,td{padding:9px 6px}}
+code{overflow-wrap:anywhere}
+@media (max-width:640px){
+  table.stack tr:first-child{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{border-top:1px solid var(--line);padding:12px 0}
+  table.stack td{border:0;padding:3px 0;white-space:normal}
+  table.stack td::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:700;color:var(--ink-3);letter-spacing:.04em;margin-top:8px}
+  table.stack td:first-child{font-size:1rem}
+}
+/* 체크리스트 */
+.open-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.open-list li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem}
+.open-list li:last-child{border-bottom:1px solid var(--line)}
+.open-list .box{flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px}
+.open-list li.done .box{background:var(--line-strong);position:relative}
+.open-list li.done .box::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+.open-list b{color:var(--ink)}
+.open-list span{color:var(--ink-2)}
+.badge-conf{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.badge-conf.ok{background:var(--pill-bg);color:var(--pill-ink)}
+.badge-conf.check{background:var(--gold-bg);color:var(--gold-ink)}
+.badge-conf.unk{background:var(--wall-bg);color:var(--wall)}
+
+footer{padding:36px 0 70px}
+.src{font-size:.84rem;color:var(--ink-3);line-height:2}
+.src a{color:var(--ink-2)}
+
+/* 선택 줄(넣어도 되고 빼도 되는 개인 한마디) */
+.line.opt{background:var(--panel-3);box-shadow:inset 6px 0 0 var(--line-strong)}
+.line.opt .say::before{content:"✏️ 선택 · 사실인 것만";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink)}
+.line.opt .say .fill{display:inline-block;border-bottom:2px dashed var(--headline);color:var(--headline);font-weight:700}
+.opt-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink);white-space:nowrap}
+/* 정할 것 카드 */
+.decide{margin:14px 0 0;display:flex;flex-direction:column;gap:12px}
+.decide .d{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px 16px}
+.decide .d h4{margin:0 0 6px;font-size:.98rem;color:var(--ink)}
+.decide .d h4 .no{font-family:var(--serif);font-style:italic;color:var(--num);font-weight:400;margin-right:6px}
+.decide .d p{margin:0 0 6px;font-size:.9rem;line-height:1.65}
+.decide .d .rec{color:var(--ink)}
+.decide .d .rec b{color:var(--headline)}
+.decide .d .alt{color:var(--ink-3);font-size:.84rem}
+.caption-box{margin:12px 0 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--line-strong);border-radius:10px;background:var(--panel-2);font-size:.96rem;line-height:1.7;color:var(--ink);white-space:pre-line}
+
+/* 하루 흐름 스토리보드 */
+.flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin:16px 0 0}
+.beat{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px 8px;text-align:center}
+.beat .ph{width:54px;height:96px;margin:0 auto 8px;border-radius:8px;overflow:hidden;border:1.5px solid var(--ink-3);display:flex;flex-direction:column}
+.beat .ph i{flex:1;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.62rem;font-weight:700;background:var(--pill-bg);color:var(--pill-ink)}
+.beat .ph i + i{border-top:2px solid var(--line-strong);background:var(--gold-bg);color:var(--gold-ink)}
+.beat .ph.one i{background:var(--line-strong);color:#1d2b00}
+.beat .t{display:block;font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35}
+.beat .s{display:block;font-size:.72rem;color:var(--ink-3);line-height:1.4;margin-top:2px}
+.beat.turn{border-color:var(--headline);box-shadow:inset 0 0 0 1px var(--headline)}
+.legend{font-size:.84rem;color:var(--ink-3);margin:10px 0 0}
+.must{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--line-strong);color:#1d2b00;margin-right:5px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
+  <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
+  <h1>콘텐츠3 — 깜짝 이벤트: 지난주 가장 활발했던 두 분께</h1>
+  <p class="sub">2주차 월요일 1분 쇼츠. 1주차에 그룹에서 가장 활발하게 이야기를 나눠 준 두 분께 레몬더마 세럼·크림 세트를 한 번 더 보낸다는 깜짝 소식. 영상편지에서는 예고하지 않았고 스케줄 표에도 "?"로만 나와 있다. Marco·John 투샷, 이름은 편집에서 카드로 넣으니 <b>지금 미리 찍어 둘 수 있다</b>. 예상 길이 <b>약 38초</b>(한국어 음절 수 추정). <b>초안 — 아래 "정할 것" 확정 대기.</b></p>
+  <div class="meta-row">
+    <span class="pill">Marco · John 투샷</span>
+    <span class="pill">9:16 · 왓츠앱 공지방</span>
+    <span class="pill">Week 2 · 월 10/26</span>
+    <span class="pill date">초안 2026-10-05</span>
+  </div>
+  <div class="stepper">
+    <span class="done">기획 10/5</span>
+    <span class="now">대본 초안 → John 확정</span>
+    <span>투샷 몰아 찍기(10/7~10/12)</span>
+    <span>두 분 선정 10/25 → 이름 카드 편집</span>
+    <span>게시 월 10/26 UAE 오전 8시</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#open">방향·정할 것</a>
+  <a href="#flow">흐름</a>
+  <a href="#body">대본</a>
+  <a href="#order">촬영</a>
+  <a href="#caption">왓츠앱 게시</a>
+  <a href="#schedule">일정</a>
+</nav>
+
+<section id="open">
+  <p class="sec-label">Direction</p>
+  <h2 class="sec-title">이미 정해진 것</h2>
+  <ul class="open-list">
+    <li class="done"><span class="box"></span><span><b>콘텐츠3 = 깜짝 이벤트</b> — 가벼운 반응에 적극 답한 2명에게 세럼·크림 세트(9/18 운영안)</span></li>
+    <li class="done"><span class="box"></span><span><b>예고 없음</b> — 영상편지에서도 말하지 않고(John 10/2), 4주 스케줄 표의 10/26 칸은 "?"(John 9/29)</span></li>
+    <li class="done"><span class="box"></span><span><b>말은 한국어, 자막은 영어</b> — 영상편지와 같은 말투(젠틀하고 진정성 있는 "~입니다/~합니다", 안내 문장만 "~주세요"). 대사 아래 기울임 줄이 영어 자막(John 10/2, 모든 콘텐츠 공통).</span></li>
+  </ul>
+  <h3 style="margin-top:28px">정할 것 — 추천을 먼저 적었다</h3>
+  <p class="lead">전부 추천대로면 <b style="color:var(--ink)">그렇게 가자</b> 한 마디면 된다. 다르게 갈 번호만 알려 주세요.</p>
+  <div class="decide">
+    <div class="d">
+      <h4><span class="no">1</span>두 분 고르는 기준</h4>
+      <p class="rec"><b>추천:</b> 1주차(10/19~10/25) 콘텐츠1·2 후속 질문에 답한 횟수와 그룹 대화 참여를 John이 보고 <b>10/25(일)까지</b> 두 분을 고른다. 근거는 콘텐츠1 "게시 후 답장"에서 남긴 멤버 기록.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">2</span>이름 공개 방식</h4>
+      <p class="rec"><b>추천:</b> 이름(first name)만 큰 카드로. 인스타 아이디·사진은 쓰지 않는다.</p>
+      <p class="alt">대안: 영상에서는 이름을 밝히지 않고 "두 분께 개인 메시지로 연락드렸습니다"로만.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">3</span>세트 배송</h4>
+      <p class="rec"><b>추천:</b> 선정 뒤 한국에서 따로 직송한다(누가 받을지 미리 모르므로). 허브의 "한국 직송 58개" 중 깜짝 4개(2세트)가 첫 배송에 이미 들어갔는지만 확인.</p>
+    </div>
+    <div class="d">
+      <h4><span class="no">4</span>촬영</h4>
+      <p class="rec"><b>추천:</b> 이름을 말하지 않는 대사라 지금 찍어 둘 수 있다. 3·5·7·8·9의 사무실 투샷은 한 세팅에서 몰아 찍는다(약 1시간). 회차마다 상의만 바꿔 입으면 같은 날 찍은 티가 안 난다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <p class="sec-label">Flow</p>
+  <h2 class="sec-title">흐름</h2>
+  <table>
+    <tr><th>구간</th><th>하는 일</th><th>길이</th></tr>
+    <tr><td>① 깜짝 소식</td><td>2주차 인사 + 두 분께 세트를 한 번 더 보낸다</td><td>~14초</td></tr>
+    <tr><td>② 두 분 발표</td><td>이름은 말하지 않고 편집에서 이름 카드로</td><td>~8초</td></tr>
+    <tr><td>③ 감사</td><td>모두의 한 줄을 읽고 있다는 것</td><td>~8초</td></tr>
+  </table>
+</section>
+
+<section id="body">
+  <p class="sec-label">Script</p>
+  <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
+  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">Marco · John · 7줄 · 161음절 · 약 38초</span></h2>
+  <p class="lead">카메라를 보고 말하는 줄 6개, 화면이 다른 영상·카드로 덮이는 <span class="vo-tag">노란 칸 · 📄 보고 읽기</span> 1개. 대사 아래 기울임 줄이 영어 자막이다. 오른쪽 위 "대사만 보기"가 프롬프터(한국어만). 표기 — <b style="color:var(--ink)">M</b> Marco · <b style="color:var(--ink)">J</b> John · <span class="tag new">신규</span>새로 찍을 컷 · <span class="tag have">기존</span>보유 영상.</p>
+
+  <h3>① 깜짝 소식 <span class="len">~14초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">1-1</div><div class="who"><i>M</i></div><div class="say">안녕하세요. 2주 차를 맞아 깜짝 소식을 하나 전해 드리겠습니다.<span class="en">Hello. As we begin week two, we have a surprise to share.</span></div><div class="shot">투샷 정면(사무실, 세로 4K 30fps). 첫 2초 타이틀 카드 "Week 2 · Mon · ?" → "?"가 "Surprise"로 바뀜</div></div>
+    <div class="line"><div class="n">1-2</div><div class="who"><i>J</i></div><div class="say">지난 한 주 동안 그룹에서 가장 활발하게 이야기를 나눠 주신 두 분께, 레몬더마 세럼과 크림 세트를 한 번 더 보내 드리겠습니다.<span class="en">To the two partners who shared the most in our group last week, we are sending another Lemonderma serum and cream set.</span><span class="note">자막 카드 2장</span></div><div class="shot">투샷 → 편집 확대(John) → <span class="tag new">신규</span>세트 두 개를 포장하는 손</div></div>
+  </div>
+
+  <h3>② 두 분 발표 <span class="len">~8초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">2-1</div><div class="who"><i>M</i></div><div class="say">첫 번째 주인공은, 이분입니다.<span class="en">Our first partner is…</span><span class="note">이름은 편집에서 카드로(예: "Mariya") — 그래서 지금 찍어 둘 수 있다</span></div><div class="shot">투샷 → 확대(Marco) → 이름 카드(크게)</div></div>
+    <div class="line"><div class="n">2-2</div><div class="who"><i>J</i></div><div class="say">두 번째 주인공은, 이분입니다.<span class="en">And our second partner is…</span></div><div class="shot">투샷 → 확대(John) → 이름 카드</div></div>
+    <div class="line vo"><div class="n">2-3</div><div class="who"><i>M</i></div><div class="say">두 분께는 개인 메시지로 따로 연락드리겠습니다.<span class="en">We will contact you both personally.</span></div><div class="shot"><span class="tag new">신규</span>이름 카드가 꽂힌 상자 두 개(빈 카드로 찍고 이름은 합성)</div></div>
+  </div>
+
+  <h3>③ 감사 <span class="len">~8초</span></h3>
+  <div class="script">
+    <div class="line"><div class="n">3-1</div><div class="who"><i>J</i></div><div class="say">남겨 주신 한 줄 한 줄을 저희 둘이 모두 읽고 있습니다. 앞으로도 편하게 이야기 나눠 주십시오.<span class="en">We read every single line you share. Please keep talking with us.</span></div><div class="shot">투샷 → 확대(John)</div></div>
+    <div class="line"><div class="n">3-2</div><div class="who"><i>둘</i></div><div class="say">감사합니다.<span class="en">Thank you.</span><span class="note">둘이 같이</span></div><div class="shot">투샷, 가볍게 고개 숙임</div></div>
+  </div>
+  <div class="callout"><div class="ic">✂️</div><p>이름 두 줄(2-1·2-2)은 대사에 이름이 없어서 촬영과 선정이 따로 움직인다 — 10/25 선정 뒤 편집에서 이름 카드만 넣으면 된다.</p></div>
+</section>
+
+<section id="order">
+  <p class="sec-label">Shoot</p>
+  <h2 class="sec-title">촬영 — 사무실 투샷 + 인서트 2컷</h2>
+  <table class="stack">
+    <tr><th>무엇</th><th>어떻게</th><th>메모</th></tr>
+    <tr><td>투샷<br><span class="tag new">신규</span></td><td data-l="어떻게">1-1·1-2·2-1·2-2·3-1·3-2 카메라 보고, 2-3은 같은 자리에서 대본 보고 읽기</td><td data-l="메모">3·5·7·8·9의 사무실 투샷은 한 세팅에서 몰아 찍는다(약 1시간). 회차마다 상의만 바꿔 입으면 같은 날 찍은 티가 안 난다.</td></tr>
+    <tr><td>포장 인서트<br><span class="tag new">신규</span></td><td data-l="어떻게">세트 두 개를 상자에 담는 손 · 이름 카드가 꽂힌 상자 두 개</td><td data-l="메모">이름 카드는 빈 카드로 찍고 편집에서 이름 합성</td></tr>
+    <tr><td>이름 카드(편집)</td><td data-l="어떻게">10/25 선정 뒤 이름만 넣는다</td><td data-l="메모">영어 이름 그대로, 큰 글씨</td></tr>
+  </table>
+</section>
+
+<section id="caption">
+  <p class="sec-label">WhatsApp</p>
+  <h2 class="sec-title">왓츠앱 게시 — 영상 뒤에 후속 질문 메시지</h2>
+  <p class="lead">공지방에 <b style="color:var(--ink)">두 개의 메시지</b>를 순서대로 올린다(John이 직접, 월 10/26 UAE 오전 8시 = 한국 13시). 이모지 없이 담백하게.</p>
+  <h3>메시지 ① 영상 + 짧은 설명</h3>
+  <div class="caption-box">Week 2, Monday. A surprise for the two partners who shared the most last week.</div>
+  <h3>메시지 ② 후속 질문 (영상 올린 직후, 1~2분 안에)</h3>
+  <div class="caption-box">Your turn: how did you feel when you first opened your Lemonderma box? One line is perfect.</div>
+  <p style="font-size:.84rem;color:var(--ink-3);margin:8px 0 0">후속 질문은 20문항 중 ⑧ "제품 받고 처음 열어봤을 때 느낌". 선정된 두 분께는 게시 직후 John이 1:1로 배송 확인 메시지를 보낸다.</p>
+</section>
+
+<section id="schedule">
+  <p class="sec-label">Timeline</p>
+  <h2 class="sec-title">일정 (제안)</h2>
+  <table>
+    <tr><th>언제</th><th>무엇</th><th>누가</th></tr>
+    <tr><td>10/7~10/12</td><td>사무실 투샷 몰아 찍기(3·5·7·8·9)</td><td>John · Marco</td></tr>
+    <tr><td>10/25(일)</td><td>두 분 선정 → 이름 카드 넣어 편집 마감</td><td>John (+Claude 편집)</td></tr>
+    <tr><td>월 10/26 UAE 08:00</td><td>영상 + 후속 질문 게시, 두 분께 1:1 연락</td><td>John</td></tr>
+    <tr><td>10/26~</td><td>한국에서 두 분께 세트 직송</td><td>John</td></tr>
+  </table>
+</section>
+
+<footer>
+  <p class="src">상위 문서 — <a href="../">UAE 커뮤니티 1기 운영안</a> · 영상편지 <a href="../video-letter/">기획안</a> · 저장소 정본 <code>30_growth/marketing/uae/community/plan/surprise-event/index.html</code></p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('promptBtn'), body=document.body, KEY='surprise-event-prompter';
+  function apply(on){body.classList.toggle('prompter',on);btn.textContent=on?'전체 보기':'대사만 보기';}
+  var saved=false; try{saved=localStorage.getItem(KEY)==='1';}catch(e){}
+  apply(saved);
+  btn.addEventListener('click',function(){var on=!body.classList.contains('prompter');apply(on);try{localStorage.setItem(KEY,on?'1':'0');}catch(e){}});
+})();
+</script>
+</body>
+</html>

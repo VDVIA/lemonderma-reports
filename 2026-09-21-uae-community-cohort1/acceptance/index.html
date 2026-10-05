@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>합격 안내 메시지 — Skin Lab Partners</title>
+<meta name="description" content="Skin Lab Partners 1기 합격 안내 — 10/6 개인 왓츠앱 메시지, 배송 주소 받기, UAE 시간 마감">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --mark:rgba(221,247,70,.32);
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --wall:#e23b3b; --wall-bg:#fde3df;
+  --gold-bg:#faefc0; --gold-ink:#6a5000;
+  --serif:"Libre Caslon Text", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Pretendard", -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --mark:rgba(221,247,70,.20);
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --wall:#ff7a6b; --wall-bg:#2c1512;
+    --gold-bg:#2b2410; --gold-ink:#e3c775;
+  }
+}
+:root[data-theme="dark"]{
+  --ground-top:#1b200f; --ground:#100f0a;
+  --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+  --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+  --mark:rgba(221,247,70,.20);
+  --num:#c9e46c; --headline:#bdd382;
+  --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+  --pill-bg:#242812; --pill-ink:#c9e46c;
+  --wall:#ff7a6b; --wall-bg:#2c1512;
+  --gold-bg:#2b2410; --gold-ink:#e3c775;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 460px);color:var(--ink);font-family:var(--sans);padding:0 20px}
+.wrap{max-width:820px;margin:0 auto}
+::selection{background:var(--mark)}
+h1,h2,h3{text-wrap:balance;font-weight:900;letter-spacing:-.01em}
+p{line-height:1.72;color:var(--ink-2)}
+a{color:var(--headline)}
+header{padding:44px 0 26px;border-bottom:1px solid var(--line)}
+.back{display:inline-block;font-size:.84rem;text-decoration:none;color:var(--ink-3);margin-bottom:18px}
+.back:hover{color:var(--headline)}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--headline);letter-spacing:.02em;margin:0 0 12px}
+h1{font-size:clamp(1.7rem,5.2vw,2.4rem);margin:0 0 12px;line-height:1.18}
+.sub{font-size:1.02rem;color:var(--ink-2);margin:0 0 18px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-ink);font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:99px}
+.pill.date{background:transparent;color:var(--ink-3);font-weight:400}
+
+/* 진행 단계 */
+.stepper{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 0}
+.stepper span{font-size:.76rem;padding:6px 11px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3);background:var(--panel)}
+.stepper span.done{background:var(--line-strong);border-color:var(--line-strong);color:#1d2b00;font-weight:700}
+.stepper span.now{border-color:var(--headline);color:var(--headline);font-weight:700;box-shadow:inset 0 0 0 1px var(--headline)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stepper span.done{color:#0f1500}}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 0;padding:20px 0 8px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:5px 12px 5px 0;white-space:nowrap}
+nav.toc a:not(:last-child)::after{content:"/";margin-left:12px;color:var(--line-strong)}
+nav.toc a:hover{color:var(--headline)}
+
+section{padding:42px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin:0 0 6px}
+h2.sec-title{font-size:1.5rem;margin:0 0 16px}
+h3{font-size:1.06rem;margin:28px 0 10px;color:var(--ink)}
+h3 .len{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.9rem;margin-left:8px}
+.lead{font-size:1.02rem;line-height:1.75}
+
+.callout{display:flex;gap:14px;background:var(--panel-3);border-radius:12px;padding:16px 18px;margin:16px 0}
+.callout .ic{font-size:1.2rem;line-height:1.3}
+.callout p{margin:0;font-size:.9rem}
+.callout.safety{background:var(--gold-bg)}
+.callout.safety p{color:var(--gold-ink)}
+.callout.wall{background:var(--wall-bg)}
+.callout.wall p,.callout.wall b{color:var(--wall)}
+
+ul.rules{margin:12px 0 0;padding-left:18px;color:var(--ink-2);font-size:.92rem;line-height:1.8}
+ul.rules b{color:var(--ink)}
+
+/* 대사 블록 */
+.script{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.line{display:grid;grid-template-columns:44px 52px 1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.line:first-child{border-top:0}
+.line>div{padding:12px 12px}
+.line .n{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.82rem;padding-right:0}
+.line .who{font-size:.72rem;font-weight:700;color:var(--pill-ink)}
+.line .who i{font-style:normal;display:inline-block;background:var(--pill-bg);padding:2px 7px;border-radius:99px}
+.line .say{font-size:1rem;line-height:1.6;color:var(--ink)}
+.line .say .ko{font-weight:900}
+.line .say .note{display:block;font-size:.78rem;color:var(--ink-3);margin-top:4px}
+.line .shot{font-size:.84rem;line-height:1.6;color:var(--ink-2);background:var(--panel-2);border-left:1px solid var(--line)}
+.line .say .en{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:.86rem;line-height:1.5;color:var(--ink-3);margin-top:6px}
+.line.vo .say .en{color:var(--gold-ink);opacity:.9}
+body.prompter .line .say .en{display:none}
+.tag{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-right:5px;vertical-align:middle}
+.tag.have{background:var(--pill-bg);color:var(--pill-ink)}
+.tag.new{background:var(--gold-bg);color:var(--gold-ink)}
+.tag.unk{background:var(--wall-bg);color:var(--wall)}
+@media (max-width:640px){
+  .line{grid-template-columns:36px 1fr}
+  .line .who{grid-column:2;padding-bottom:0}
+  .line .say{grid-column:2;padding-top:6px}
+  .line .shot{grid-column:1/-1;border-left:0;border-top:1px dashed var(--line)}
+}
+
+/* 대본 보고 읽기 OK 구간 (화면이 다른 영상으로 덮임) */
+.line.vo{background:var(--gold-bg);box-shadow:inset 6px 0 0 var(--gold-ink)}
+.line.vo>div{position:relative}
+.line.vo .say::before{content:"📄 보고 읽기 OK";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:99px;background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .n{color:var(--gold-ink)}
+.line.vo .who i{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .shot{background:transparent;border-left:1px dashed var(--gold-ink);color:var(--gold-ink)}
+.line.vo .shot .tag.have{background:var(--gold-ink);color:var(--gold-bg)}
+.line.vo .say .note{color:var(--gold-ink);opacity:.85}
+.vo-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--gold-bg);color:var(--gold-ink);border:1px solid var(--gold-ink);white-space:nowrap}
+.sched{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.sched table{margin:0}
+.sched td,.sched th{font-size:.86rem}
+
+/* 대사만 보기(프롬프터) */
+.toggle{position:sticky;top:10px;z-index:5;display:flex;justify-content:flex-end;margin:0 0 -30px}
+.toggle button{font:inherit;font-size:.8rem;font-weight:700;color:var(--pill-ink);background:var(--pill-bg);border:1px solid var(--line-strong);border-radius:99px;padding:7px 14px;cursor:pointer}
+body.prompter .line{grid-template-columns:44px 52px 1fr}
+body.prompter .line .shot{display:none}
+body.prompter .line .say{font-size:1.35rem;line-height:1.5}
+body.prompter .line .say .note{display:none}
+body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
+
+@media (max-width:640px){#body h2.sec-title{padding-right:112px}}
+/* 촬영 리스트 표 */
+table{border-collapse:collapse;width:100%;font-size:.9rem;margin-top:12px}
+th,td{padding:10px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top;color:var(--ink-2);line-height:1.55}
+th{font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-3);border-top:0}
+td:first-child{color:var(--ink);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:1px solid var(--line)}
+
+@media (max-width:640px){td:first-child{white-space:normal}th,td{padding:9px 6px}}
+code{overflow-wrap:anywhere}
+@media (max-width:640px){
+  table.stack tr:first-child{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{border-top:1px solid var(--line);padding:12px 0}
+  table.stack td{border:0;padding:3px 0;white-space:normal}
+  table.stack td::before{content:attr(data-l);display:block;font-size:.7rem;font-weight:700;color:var(--ink-3);letter-spacing:.04em;margin-top:8px}
+  table.stack td:first-child{font-size:1rem}
+}
+/* 체크리스트 */
+.open-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.open-list li{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem}
+.open-list li:last-child{border-bottom:1px solid var(--line)}
+.open-list .box{flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px}
+.open-list li.done .box{background:var(--line-strong);position:relative}
+.open-list li.done .box::after{content:"";position:absolute;left:3px;top:0;width:4px;height:8px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg)}
+.open-list b{color:var(--ink)}
+.open-list span{color:var(--ink-2)}
+.badge-conf{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.badge-conf.ok{background:var(--pill-bg);color:var(--pill-ink)}
+.badge-conf.check{background:var(--gold-bg);color:var(--gold-ink)}
+.badge-conf.unk{background:var(--wall-bg);color:var(--wall)}
+
+footer{padding:36px 0 70px}
+.src{font-size:.84rem;color:var(--ink-3);line-height:2}
+.src a{color:var(--ink-2)}
+
+/* 선택 줄(넣어도 되고 빼도 되는 개인 한마디) */
+.line.opt{background:var(--panel-3);box-shadow:inset 6px 0 0 var(--line-strong)}
+.line.opt .say::before{content:"✏️ 선택 · 사실인 것만";display:table;margin-bottom:8px;font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink)}
+.line.opt .say .fill{display:inline-block;border-bottom:2px dashed var(--headline);color:var(--headline);font-weight:700}
+.opt-tag{display:inline-block;font-size:.72rem;font-weight:700;line-height:1.4;padding:1px 9px;border-radius:99px;background:var(--pill-bg);color:var(--pill-ink);border:1px dashed var(--pill-ink);white-space:nowrap}
+/* 정할 것 카드 */
+.decide{margin:14px 0 0;display:flex;flex-direction:column;gap:12px}
+.decide .d{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:14px 16px}
+.decide .d h4{margin:0 0 6px;font-size:.98rem;color:var(--ink)}
+.decide .d h4 .no{font-family:var(--serif);font-style:italic;color:var(--num);font-weight:400;margin-right:6px}
+.decide .d p{margin:0 0 6px;font-size:.9rem;line-height:1.65}
+.decide .d .rec{color:var(--ink)}
+.decide .d .rec b{color:var(--headline)}
+.decide .d .alt{color:var(--ink-3);font-size:.84rem}
+.caption-box{margin:12px 0 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--line-strong);border-radius:10px;background:var(--panel-2);font-size:.96rem;line-height:1.7;color:var(--ink);white-space:pre-line}
+
+/* 하루 흐름 스토리보드 */
+.flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin:16px 0 0}
+.beat{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px 8px;text-align:center}
+.beat .ph{width:54px;height:96px;margin:0 auto 8px;border-radius:8px;overflow:hidden;border:1.5px solid var(--ink-3);display:flex;flex-direction:column}
+.beat .ph i{flex:1;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.62rem;font-weight:700;background:var(--pill-bg);color:var(--pill-ink)}
+.beat .ph i + i{border-top:2px solid var(--line-strong);background:var(--gold-bg);color:var(--gold-ink)}
+.beat .ph.one i{background:var(--line-strong);color:#1d2b00}
+.beat .t{display:block;font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.35}
+.beat .s{display:block;font-size:.72rem;color:var(--ink-3);line-height:1.4;margin-top:2px}
+.beat.turn{border-color:var(--headline);box-shadow:inset 0 0 0 1px var(--headline)}
+.legend{font-size:.84rem;color:var(--ink-3);margin:10px 0 0}
+.must{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--line-strong);color:#1d2b00;margin-right:5px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
+  <p class="eyebrow">Skin Lab Partners · 합격 통보</p>
+  <h1>합격 안내 메시지 — 화 10/6 개인 왓츠앱</h1>
+  <p class="sub">John 개인 왓츠앱으로 합격자 한 분 한 분에게 보내는 영어 메시지. 한국에서 직송할 <b>배송 주소</b>를 받고, <b>한국시간 수요일 밤 12시 = UAE 수 10/7 오후 7시</b>까지 안 보내면 합격이 취소된다는 점을 담았다. 합격 인원이 늘어나 숫자는 넣지 않았다.</p>
+  <div class="meta-row">
+    <span class="pill">John 개인 왓츠앱 · 1:1</span>
+    <span class="pill">영어 메시지</span>
+    <span class="pill date">초안 2026-10-05</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#deadline">마감 시각</a>
+  <a href="#msg">합격 안내</a>
+  <a href="#follow">리마인드·취소</a>
+  <a href="#reject">불합격 안내</a>
+  <a href="#record">주소 기록</a>
+</nav>
+
+<section id="deadline">
+  <p class="sec-label">Deadline</p>
+  <h2 class="sec-title">마감 시각 — UAE 시간으로 표기</h2>
+  <table>
+    <tr><th>기준</th><th>시각</th></tr>
+    <tr><td>한국 (John 지시)</td><td>수요일 밤 12시 = <b>목 10/8 00:00 KST</b></td></tr>
+    <tr><td>UAE (메시지 표기)</td><td><b>수 10/7 오후 7:00</b> (한국보다 5시간 늦다)</td></tr>
+  </table>
+  <p style="font-size:.86rem;color:var(--ink-3);margin:8px 0 0">"수요일 밤 12시"를 수요일이 끝나는 자정(목 00시)으로 읽었다. 화요일에서 수요일로 넘어가는 자정이라면 UAE 화 10/6 오후 7시로 바뀐다.</p>
+</section>
+
+<section id="msg">
+  <p class="sec-label">Message</p>
+  <h2 class="sec-title">합격 안내 (보낼 문장)</h2>
+  <p class="lead">{Name}만 바꿔서 그대로 보낸다. 주소 항목은 UAE 배송에 필요한 것만 — 랜드마크·지도 핀이 있으면 배송 실패가 크게 준다.</p>
+  <div class="caption-box">Hi {Name}, it's John from Lemonderma.
+
+Congratulations — you've been selected for Lemonderma Skin Lab Partners, Cohort 1. Marco and I read every application ourselves, and we're truly glad to have you with us.
+
+Your welcome gift, our serum and cream set ($72), will be shipped to you directly from Korea at no cost. To send it, please reply to this message with your delivery details in the UAE:
+
+1. Full name
+2. Mobile number (with country code)
+3. Emirate
+4. Area / community
+5. Street, and building or villa name and number
+6. Apartment / flat number
+7. Nearest landmark
+(Optional) Your Google Maps location pin
+
+Please send your details by Wednesday, 7 October, 7:00 PM (UAE time). If we don't receive them by then, we'll unfortunately have to cancel your place in Cohort 1.
+
+Once we have your address, I'll send you the invitation to our WhatsApp community. The program starts on Monday, 19 October.
+
+Welcome to Skin Lab Partners.
+John</div>
+  <h3>한국어 뜻 (확인용, 보내지 않음)</h3>
+  <div class="caption-box" style="color:var(--ink-2)">안녕하세요 {Name}님, 레몬더마의 존입니다.
+
+축하드립니다 — 레몬더마 스킨랩 파트너스 1기에 선정되셨습니다. 마르코와 제가 신청서를 직접 모두 읽었고, 함께하게 되어 정말 기쁩니다.
+
+웰컴 선물인 세럼·크림 세트($72)는 한국에서 무료로 직접 보내 드립니다. 보내 드릴 수 있도록 UAE 배송 정보를 이 메시지에 답장으로 보내 주세요:
+1. 이름(전체) 2. 휴대폰 번호(국가번호 포함) 3. 에미리트 4. 지역/커뮤니티 5. 거리, 건물 또는 빌라 이름·번호 6. 아파트 호수 7. 가까운 랜드마크 (선택) 구글 지도 위치 핀
+
+10월 7일 수요일 오후 7시(UAE 시간)까지 보내 주세요. 그때까지 받지 못하면 아쉽지만 1기 자리는 취소됩니다.
+
+주소를 받으면 왓츠앱 커뮤니티 초대 링크를 보내 드리겠습니다. 프로그램은 10월 19일 월요일에 시작합니다.
+
+스킨랩 파트너스에 오신 것을 환영합니다.
+존</div>
+  <ul class="rules">
+    <li>"$72 세트를 한국에서 무료로 보낸다"는 신청 페이지 약속 그대로다. 새 약속은 넣지 않았다.</li>
+    <li>왓츠앱 커뮤니티 초대는 <b>주소를 받은 뒤</b>로 묶었다 — 주소를 빨리 보낼 이유가 된다.</li>
+    <li>개인 맞춤 영상편지(10/17)는 깜짝으로 남겨 두려고 언급하지 않았다.</li>
+  </ul>
+</section>
+
+<section id="follow">
+  <p class="sec-label">Follow-up</p>
+  <h2 class="sec-title">리마인드·취소 (선택)</h2>
+  <h3>마감 당일 리마인드 — 수 10/7 오후 3시(UAE), 아직 안 보낸 분께만</h3>
+  <div class="caption-box">Hi {Name}, a gentle reminder from John at Lemonderma — we still need your delivery details to keep your place in Skin Lab Partners, Cohort 1. Please send them by today, 7:00 PM (UAE time). Thank you!</div>
+  <h3>마감 후 취소 안내 — 목 10/8, 끝내 안 보낸 분께</h3>
+  <div class="caption-box">Hi {Name}, it's John from Lemonderma. As we didn't receive your delivery details by the deadline, we've had to release your place in Cohort 1. Thank you so much for applying — we'll let you know when the next cohort opens.</div>
+</section>
+
+<section id="reject">
+  <p class="sec-label">Not selected</p>
+  <h2 class="sec-title">불합격 안내 (선택)</h2>
+  <p class="lead">신청 페이지에 "결과는 어느 쪽이든 알려 드린다(you'll hear from us either way)"고 적혀 있어서 함께 준비했다. 보낼지는 John이 정한다.</p>
+  <div class="caption-box">Hi {Name}, it's John from Lemonderma. Thank you so much for applying to Skin Lab Partners, Cohort 1 — Marco and I truly enjoyed reading your application. We received far more applications than we expected, so we couldn't include everyone this time. We'd love to let you know when the next cohort opens. Thank you again for your interest in Lemonderma.</div>
+</section>
+
+<section id="record">
+  <p class="sec-label">Record</p>
+  <h2 class="sec-title">받은 주소 기록 (제안)</h2>
+  <ul class="rules">
+    <li>신청자 탭("[UAE]Skin Lab Partners 1 접수자")에 <b>합격 여부 · 주소 받은 시각 · 배송 주소 · 배송 상태</b> 열을 추가해 한 줄에 모은다. 원하시면 Claude가 열을 만든다.</li>
+    <li>마감(UAE 수 10/7 19:00) 직후 주소가 없는 합격자 목록을 뽑아 John에게 드린다 → 취소 안내.</li>
+    <li>신청 페이지 약속대로 주소는 1기 배송에만 쓰고, 1기가 끝나면 지운다.</li>
+  </ul>
+</section>
+
+<footer>
+  <p class="src">상위 문서 — <a href="../">UAE 커뮤니티 1기 운영안</a> · 저장소 정본 <code>30_growth/marketing/uae/community/plan/acceptance/index.html</code></p>
+</footer>
+
+</div>
+</body>
+</html>
