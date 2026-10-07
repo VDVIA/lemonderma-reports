@@ -452,6 +452,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
 /* ══════════════════════════════════════════════════════════════
    접수 창구 = 신청 폼과 같은 Apps Script 웹앱(같은 URL). 코드·배포 절차: plan/apply/apps-script.gs
    개인 링크 ?c=<코드> → 호칭·신청서 이름·에미리트·제출 여부·마감 여부만 받아 온다. 주소·전화는 받지 않는다.
+   스크립트 조회는 ?k= ('c'는 Apps Script 예약 파라미터라 400 — 10/7 실측).
    ══════════════════════════════════════════════════════════════ */
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbyMVW3yJS0_8kASv4gwHAEVnevXdhoV5zxtloVUfxqr6z47Un3CqDRByAY29fZYgg0z/exec";
 
@@ -503,7 +504,7 @@ function renderClosed(){
 async function lookup(){
   if (!CODE) { showHandle(); return; }
   try {
-    const r = await fetch(ENDPOINT + '?c=' + encodeURIComponent(CODE), { method: 'GET' });
+    const r = await fetch(ENDPOINT + '?k=' + encodeURIComponent(CODE), { method: 'GET' });
     const j = await r.json();
     if (typeof j.closed === 'boolean' && isNaN(T_OVERRIDE)) closed = j.closed;
     if (j.result !== 'ok') { showHandle(); renderClosed(); return; }
@@ -616,7 +617,7 @@ function showFail(msg){
 async function savedAnyway(){
   if (!CODE) return false;
   try {
-    const r = await fetch(ENDPOINT + '?c=' + encodeURIComponent(CODE) + '&_=' + Date.now());
+    const r = await fetch(ENDPOINT + '?k=' + encodeURIComponent(CODE) + '&_=' + Date.now());
     const j = await r.json();
     return j.result === 'ok' && !!j.submitted && !who.submitted;
   } catch (e) { return false; }

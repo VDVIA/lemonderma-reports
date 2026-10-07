@@ -326,7 +326,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       <li>Your routine with Lemonderma</li>
     </ol>
     <p class="prize"><span aria-hidden="true">🏆</span> The most active partner with the best Reel receives a <b>Lemonderma set worth $500</b>.</p>
-    <span class="small">Please also send John the original file. We may share it with credit, and we will tell you before any ad use.</span>
+    <span class="small">Please also send us the original file. We may share it with credit, and we will tell you before any ad use.</span>
   </div>
 </section>
 
@@ -440,7 +440,7 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
   <div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.6 9.2 18 20 6.6"/></svg></div>
   <h2 id="done-h" tabindex="-1">Thank you.</h2>
   <p>Your address has been received.</p>
-  <p>Before we begin, John will send you a personal invitation to our Skin Lab WhatsApp group.</p>
+  <p>Before we begin, we will send you a personal invitation to our Skin Lab WhatsApp group.</p>
   <!-- 신청 페이지 제출 완료 화면과 같은 사진(통일감, John 10/7). lazy 금지 — 제출 직후 바로 보여야 한다. 원본 비율 그대로(자르지 않음) -->
   <div class="photo"><img src="assets/unboxing.jpg" alt="Lemonderma serum and cream with fresh lemons" width="733" height="1100"></div>
   <footer><p>Lemonderma · VDVIA Co., Ltd.</p></footer>
@@ -496,7 +496,7 @@ function renderClosed(){
   $('intro').hidden = closed;
   $('dl').hidden = closed;
   if (closed && who.submitted) {
-    $('closed-p').textContent = 'We have your address, so you do not need to do anything. John will message you on WhatsApp.';
+    $('closed-p').textContent = 'We have your address, so you do not need to do anything. We will message you on WhatsApp.';
   }
 }
 
@@ -646,10 +646,10 @@ form.addEventListener('submit', async ev => {
     if (j.result === 'ok' && j.saved === true) { finish(); return; }
     const why = { missing: 'Please fill in every field marked with *.', consent: 'Please tick the box above.',
                   who: 'Please enter your Instagram handle.', emirate: 'Please choose your emirate.' }[j.reason];
-    showFail(why || 'Something went wrong on our side, and your address did not reach us. Please try again in a minute, or send it to John on WhatsApp.');
+    showFail(why || 'Something went wrong on our side, and your address did not reach us. Please try again in a minute, or send it to us on WhatsApp.');
   } catch (e) {
     if (await savedAnyway()) { finish(); return; }
-    showFail('We could not confirm that your address reached us. Please check your connection and try again, or send it to John on WhatsApp.');
+    showFail('We could not confirm that your address reached us. Please check your connection and try again, or send it to us on WhatsApp.');
   } finally {
     busy(false);
   }
