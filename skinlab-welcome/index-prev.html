@@ -400,6 +400,19 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       <p class="err" id="emirate-e">Please choose your emirate.</p>
     </div>
 
+    <div class="f">
+      <label class="lb" for="pin">Location pin<span class="opt-t">(optional)</span>
+        <span class="hint" id="pin-h">A Google Maps link helps the courier find you.</span></label>
+      <input type="url" id="pin" name="pin" inputmode="url" enterkeyhint="next" maxlength="500" autocapitalize="none" spellcheck="false"
+             placeholder="https://maps.app.goo.gl/…" aria-describedby="pin-h">
+    </div>
+
+    <div class="f">
+      <label class="lb" for="preferred">What should we call you?<span class="opt-t">(optional)</span>
+        <span class="hint" id="preferred-h">If it is different from your full name.</span></label>
+      <input type="text" id="preferred" name="preferred" autocomplete="nickname" autocapitalize="words" enterkeyhint="next" maxlength="80" aria-describedby="preferred-h">
+    </div>
+
     <div class="consent">
       <label for="consent">
         <input type="checkbox" id="consent" name="consent" aria-required="true" data-err="consent-e">
@@ -566,7 +579,7 @@ function check(){
 });
 
 /* 휴대폰 키보드의 '다음/이동' 키: 첫 칸에서 바로 제출되지 않고 다음 칸으로 */
-const ORDER = ['handle','recipient','phone','addr1','addr2','emirate','consent'];
+const ORDER = ['handle','recipient','phone','addr1','addr2','emirate','pin','preferred','consent'];
 ORDER.forEach(id => {
   const el = $(id);
   if (!el || el.tagName === 'SELECT' || el.type === 'checkbox') return;
@@ -586,12 +599,13 @@ function payload(){
     recipient: $('recipient').value.trim(),
     phone: local ? '+971' + local : $('phone').value.trim(),
     addr1: $('addr1').value.trim(), addr2: $('addr2').value.trim(), emirate: $('emirate').value,
+    pin: $('pin').value.trim(), preferred: $('preferred').value.trim(),
     consent: $('consent').checked ? 'Y' : 'N', website: $('hp_x7').value
   };
 }
 
 function finish(){
-  const nm = who.callName;
+  const nm = $('preferred').value.trim() || who.callName;
   $('done-h').textContent = nm ? 'Thank you, ' + nm + '.' : 'Thank you.';
   $('page').hidden = true;
   $('done').classList.add('on');
