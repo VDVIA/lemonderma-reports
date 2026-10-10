@@ -142,7 +142,7 @@ body.prompter .line{grid-template-columns:44px 52px 1fr}
 body.prompter .line .shot{display:none}
 body.prompter .line .say{font-size:1.35rem;line-height:1.5}
 body.prompter .line .say .note{display:none}
-body.prompter .shotlist,body.prompter #editplan,body.prompter #mock,body.prompter #ask,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
+body.prompter .shotlist,body.prompter #editplan,body.prompter #mock,body.prompter #ask,body.prompter #gen,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
 
 @media (max-width:640px){#body h2.sec-title{padding-right:112px}}
 /* 촬영 리스트 표 */
@@ -224,7 +224,7 @@ footer{padding:36px 0 70px}
   <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
   <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
   <h1>콘텐츠2 — Meet Lemonderma: 좋은 성분을 피부 깊숙이 전달하는 법</h1>
-  <p class="sub">목 10/22, 프로그램 4일째에 올리는 영상. 두 사람 인사 뒤 <b>"어떻게 하면 자연의 좋은 성분을 피부에 안전하게 깊은 곳까지 전달할 수 있을까"라는 질문에서 시작된 브랜드</b>로 열고, <b>이름 = 비건(순함) + 더마(효과)를 합친 비건더마</b>, <b>각질층 장벽 때문에 바른 만큼 흡수되지 않는다는 과학적 근거</b>를 깔고, 그 답이자 차별점인 <b>3단계 딜리버리 시스템 — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜</b>(John), 마지막에 <b>누구를 위해 · 무엇이 좋은지 · 클리닉 엑소좀 시술 효과를 집에서</b>(Marco), 성의 있는 마무리 한마디 뒤 함께 "감사합니다". 흡수·딜리버리 구간은 피부 단면 그래픽이 화면을 채운다. <b>대본 10/8 John 개정</b>(2-1은 10/10 삭제) — 약 3분 15초. <b>촬영 10/8 완료</b>, 편집 설계·시안·결정 필요 항목은 아래 §편집 설계.</p>
+  <p class="sub">목 10/22, 프로그램 4일째에 올리는 영상. 두 사람 인사 뒤 <b>"어떻게 하면 자연의 좋은 성분을 피부에 안전하게 깊은 곳까지 전달할 수 있을까"라는 질문에서 시작된 브랜드</b>로 열고, <b>이름 = 비건(순함) + 더마(효과)를 합친 비건더마</b>, <b>각질층 장벽 때문에 바른 만큼 흡수되지 않는다는 과학적 근거</b>를 깔고, 그 답이자 차별점인 <b>3단계 딜리버리 시스템 — 레몬 엑소좀 → 비건 마이크로크리스탈 → 비타민 리포솜</b>(John), 마지막에 <b>누구를 위해 · 무엇이 좋은지 · 클리닉 엑소좀 시술 효과를 집에서</b>(Marco), 성의 있는 마무리 한마디 뒤 함께 "감사합니다". 흡수·딜리버리 구간은 피부 단면 그래픽이 화면을 채운다. <b>대본 10/8 John 개정</b>(2-1은 10/10 삭제) — 약 3분 15초. <b>촬영 10/8 완료</b>, 편집 설계·시안은 §편집 설계, <b>10/10 John 결정 = 포토리얼 3D</b>(§결정 반영).</p>
   <div class="meta-row">
     <span class="pill">Marco · John 함께</span>
     <span class="pill">9:16 · 왓츠앱 그룹 게시</span>
@@ -235,7 +235,9 @@ footer{padding:36px 0 70px}
     <span class="done">대본·형식 확정 9/30</span>
     <span class="done">대본 개정 10/8 (John)</span>
     <span class="done">촬영 10/8 (사무실)</span>
-    <span class="now">편집 설계·시안 10/10 → John 확인</span>
+    <span class="done">편집 설계·시안 10/10</span>
+    <span class="done">John 결정 10/10 (포토리얼 3D)</span>
+    <span class="now">편집 중 — 매그니픽 계정 재연결 대기</span>
     <span>편집·그래픽 John+Claude ~10/20</span>
     <span>게시 목 10/22 UAE 오전 8시 + 후속 질문</span>
   </div>
@@ -248,7 +250,8 @@ footer{padding:36px 0 70px}
   <a href="#cards">그래픽</a>
   <a href="#editplan">편집 설계</a>
   <a href="#mock">시안</a>
-  <a href="#ask">결정 필요</a>
+  <a href="#ask">결정 반영</a>
+  <a href="#gen">포토리얼 제작</a>
   <a href="#order">촬영·자산</a>
   <a href="#caption">왓츠앱 게시</a>
   <a href="#schedule">일정</a>
@@ -377,9 +380,9 @@ footer{padding:36px 0 70px}
 <section id="editplan">
   <p class="sec-label">Edit plan</p>
   <h2 class="sec-title">편집 설계 — 보고 읽기 18줄에 무엇이 보이나 (10/10, John 확인 전)</h2>
-  <p class="lead"><b style="color:var(--ink)">틀은 영상편지 편집본을 그대로 잇는다</b>(John 10/8~10/10 결정 11건 승계): 1080×1920 캔버스 · 위 띠 브랜드 · 촬영본 3:4(1080×1440) 그대로 · 아래 띠 영어 자막(실제 말한 문장 기준으로 다시 옮김) · 카메라 구간은 확대 없이 투샷 · 전환은 문장 경계에만 · 음성 −16 LUFS. <b style="color:var(--ink)">그래픽은 전부 코드로 그려 한 장씩 렌더</b>(영상편지의 3D 정보상자와 같은 방식, 크레딧 0) — 글자·색·타이밍을 대사에 정확히 맞출 수 있어 설명 영상엔 이쪽이 더 또렷하다. 포토리얼이 필요한 자리는 §결정 필요에서 따로 묻는다.</p>
+  <p class="lead"><span class="tag new">10/10 John 결정 반영</span> 그래픽은 <b style="color:var(--ink)">포토리얼 3D(매그니픽)</b>로 바뀌었다 — 줄별 표의 ③④ 소스가 "코드 렌더"에서 "매그니픽 G1~G8"로 갱신됨, 장면 명세는 §포토리얼 제작. <b style="color:var(--ink)">틀은 영상편지 편집본을 그대로 잇는다</b>(John 10/8~10/10 결정 11건 승계): 1080×1920 캔버스 · 위 띠 브랜드 · 촬영본 3:4(1080×1440) 그대로 · 아래 띠 영어 자막(실제 말한 문장 기준으로 다시 옮김) · 카메라 구간은 확대 없이 투샷 · 전환은 문장 경계에만 · 음성 −16 LUFS. 글자·숫자·라벨·칩·카드는 코드로 렌더(영상편지 정보상자 방식)해 포토리얼 영상 위에 얹는다.</p>
 
-  <h3>소스 현황 (10/10 확인)</h3>
+  <h3>소스 현황 (10/10 확인 · 저녁 John 공유분 추가)</h3>
   <table class="stack sb">
     <tr><th>소스</th><th>내용</th><th>메모</th></tr>
     <tr><td>촬영본 8개 <span class="tag have">기존</span></td><td data-l="내용">Drive 폴더 "콘텐츠2" — 1-1~1-3 · 2-2~2-5 · 3-1~3-4 · 4-1 · 4-2~4-8 · 5-1 · 5-2~5-4 · 6-1,6-2 (합 3분 0초)</td><td data-l="메모">1206×1608(3:4) HEVC, 초당 25~30장(클립마다 다름 → 30으로 통일, 25장짜리는 보간), 음성 모노 −25~−28 LUFS. 화면 왼쪽 검은 수트 = John, 오른쪽 흰 셔츠 = Marco(영상편지와 같은 자리)</td></tr>
@@ -388,7 +391,8 @@ footer{padding:36px 0 70px}
     <tr><td>질감 릴스 원본 <span class="tag have">기존</span></td><td data-l="내용">0236 보틀 타고 흐르는 세럼 · 0239 손끝 세럼 · 0241 피부에 눌러 바르기 · 0243 손등 세럼 · 0255 크림 스패출러 + 미확인 11개(1080×1920 120fps)</td><td data-l="메모">3-4(바르기)·4-5(세럼 병)·4-6(따끔함)·5-2(크림 질감). 두 병이 같이 보이는 컷이 있는지 미확인 11개를 먼저 본다</td></tr>
     <tr><td>PONY 리뷰 <span class="tag have">기존</span></td><td data-l="내용">402×720, 29초</td><td data-l="메모">해상도가 낮아 콘텐츠2엔 안 쓴다(영상편지 전용)</td></tr>
     <tr><td>제주 레몬 스톡 4종 <span class="tag have">기존</span></td><td data-l="내용">Artlist 4K/HD</td><td data-l="메모">이번 대본엔 제주·레몬 대사가 없어 안 쓴다</td></tr>
-    <tr><td>없는 것 <span class="tag unk">없음</span></td><td data-l="내용">세럼·크림 두 병 패키지샷 · 지쉘바이오 엑소좀 시설 촬영본 · 고가 화장품 듬뿍 바르는 손 컷</td><td data-l="메모">§결정 필요 2</td></tr>
+    <tr><td>지쉘 3D 렌더·브랜드 에셋 <span class="tag have">기존</span></td><td data-l="내용">원리 설명 GIF 5개(serum_01~03·cream_1·2, 700×466) · 렌더 PNG 26장(세포막·세럼 보틀·크림 잼·레몬 스플래시·모델) · 브랜드 필름 "Nature 💛 science"(58초) · 레몬 클립 2개</td><td data-l="메모">John 10/10 공유. GIF·PNG는 매그니픽 스타일·참조 이미지로, 세포막 렌더는 카드 배경으로. 브랜드 필름은 글자가 박힌 구간이 있어 쓰지 않음</td></tr>
+    <tr><td>제품 플랫레이·사진 <span class="tag have">기존</span></td><td data-l="내용">0266R(9초, 두 제품 + 레몬) · DSC01569/1581/1590/1602(크림 든 손 · 세럼 · 두 제품 플랫레이)</td><td data-l="메모">두 병 컷·5-4 카드·엔드카드. 추가 촬영 없음(John 10/10)</td></tr>
   </table>
 
   <h3>줄별 화면 — 카메라 7줄은 투샷, 보고 읽기 18줄은 아래</h3>
@@ -399,26 +403,26 @@ footer{padding:36px 0 70px}
     <tr><td class="ln">2-1</td><td data-l="화면"><b>어두운 투샷 위 카드</b>(시안 4): "Our name holds the answer · LEMON + DERMA" 제목만 먼저, 아래 두 칸 VEGAN | DERMA 빈 채로 등장</td><td data-l="소스">카드 시퀀스(코드 렌더, 30fps)</td></tr>
     <tr><td class="ln">2-2</td><td data-l="화면">왼쪽 VEGAN 칸에 "Gentle ✓" → "Results?"가 차례로</td><td data-l="소스">같은 카드 시퀀스</td></tr>
     <tr><td class="ln">2-3</td><td data-l="화면">오른쪽 DERMA 칸에 "Results ✓" → "Irritation?"</td><td data-l="소스">같은 카드 시퀀스</td></tr>
-    <tr><td class="ln">2-4</td><td data-l="화면">두 칸이 가운데로 합쳐지며 "Vegan Derma"(형광펜) → 카드가 걷히고 <b>실험실 컷(10~14초) → 세럼·크림 두 병 컷</b>으로 문장 끝까지</td><td data-l="소스">카드 시퀀스 → Lab_hero → 두 병 컷(§결정 필요 2)</td></tr>
-    <tr><td class="ln">3-1</td><td data-l="화면"><b>전면 그래픽</b>(시안 1 계열): 피부 단면이 아래층부터 차례로 그려지고 맨 위 각질층이 벽돌 무늬로 강조, 라벨 "Stratum corneum · 10–20 µm", 제목 "Thinner than paper, yet the strongest barrier"</td><td data-l="소스">단면 SVG 애니메이션(코드 렌더)</td></tr>
-    <tr><td class="ln">3-2</td><td data-l="화면">위에서 점 100개가 내려와 각질층 위에 쌓이고 1개만 통과 → 큰 글씨 "&lt; 1%" (시안 1)</td><td data-l="소스">같은 단면 시퀀스</td></tr>
-    <tr><td class="ln">3-3</td><td data-l="화면">큰 구는 벽에 막히고 작은 구만 통과, 작은 라벨 "500 Dalton rule"</td><td data-l="소스">같은 단면 시퀀스</td></tr>
+    <tr><td class="ln">2-4</td><td data-l="화면">두 칸이 가운데로 합쳐지며 "Vegan Derma"(형광펜) → 카드가 걷히고 <b>두 병 플랫레이</b>(0266R: 세럼 병이 들어오고 크림 뚜껑이 열림)로 문장 끝까지</td><td data-l="소스">카드 시퀀스 → 릴스 원본 0266R</td></tr>
+    <tr><td class="ln">3-1</td><td data-l="화면"><b>전면 포토리얼</b> G1: 피부 단면 블록으로 천천히 밀어 들어감, 각질층 벽돌층 강조 + 코드 라벨 "Stratum corneum · 0.01 mm", 제목 "Thinner than paper, yet the strongest barrier"</td><td data-l="소스">매그니픽 G1 + 라벨 PNG</td></tr>
+    <tr><td class="ln">3-2</td><td data-l="화면">G2: 금빛 방울 수백 개가 표면에 고이고 하나만 스며듦 → 큰 글씨 "&lt; 1%"(코드)</td><td data-l="소스">매그니픽 G2 + 글자 PNG</td></tr>
+    <tr><td class="ln">3-3</td><td data-l="화면">G3: 큰 분자는 튕기고 작은 분자만 통과, 작은 라벨 "500 Dalton rule"(코드)</td><td data-l="소스">매그니픽 G3 + 라벨 PNG</td></tr>
     <tr><td class="ln">3-4</td><td data-l="화면">단면이 걷히고 <b>크림을 듬뿍 덜어 바르는 손 컷</b>(릴스 0255 스패출러 → 0241 눌러 바르기) 위에 큰 글씨 "Not how much you apply. How much gets in."</td><td data-l="소스">릴스 원본 + 글자 PNG</td></tr>
     <tr><td class="ln">4-1</td><td data-l="화면">투샷(카메라). 문장 끝에 단계 칩 3개 "1 CARRY · 2 OPEN · 3 DELIVER"가 아래쪽에 떠오르며 다음 장면으로</td><td data-l="소스">촬영본 + 칩 PNG</td></tr>
-    <tr><td class="ln">4-2</td><td data-l="화면"><b>전면 그래픽</b>(시안 2): 왼쪽에 머리카락 단면(큰 원), 오른쪽에 점 하나 "1/1000 of a hair" → 점이 커지며 작은 주머니(라임, 안에 비타민 C 점)로 보임</td><td data-l="소스">코드 렌더</td></tr>
-    <tr><td class="ln">4-3</td><td data-l="화면">같은 단면 위로 주머니 3개가 ③에서 막혔던 각질층을 지나 아래로 내려감, 단계 칩 1 CARRY 켜짐 (시안 2)</td><td data-l="소스">코드 렌더</td></tr>
-    <tr><td class="ln">4-4</td><td data-l="화면"><b>지쉘바이오 실험실 컷</b>(Lab_hero 14~19초) + 칩 "Zishel Bio · our own lab"</td><td data-l="소스">Lab_hero(시설 촬영본이 오면 교체, §결정 필요 2)</td></tr>
-    <tr><td class="ln">4-5</td><td data-l="화면">단면으로 복귀: 미세한 결정이 각질층에 작은 길을 여는 애니메이션, 칩 2 OPEN 켜짐 → 문장 끝에 <b>세럼 병 컷</b>(릴스 0236, 보틀 타고 흐르는 세럼)</td><td data-l="소스">코드 렌더 → 릴스 원본</td></tr>
+    <tr><td class="ln">4-2</td><td data-l="화면">G4: 머리카락 한 올 옆의 아주 작은 주머니로 밀어 들어가 안의 비타민 C 방울이 보임 + 라벨 "1/1000 of a hair"(코드)</td><td data-l="소스">매그니픽 G4 + 라벨 PNG</td></tr>
+    <tr><td class="ln">4-3</td><td data-l="화면">G5: 주머니들이 각질층을 지나 진피까지 내려감 + 단계 칩 "1 CARRY" 켜짐(코드)</td><td data-l="소스">매그니픽 G5 + 칩 PNG</td></tr>
+    <tr><td class="ln">4-4</td><td data-l="화면"><b>지쉘바이오 실험실 컷</b>(Lab_hero 10~19초: 배양기·바이오리액터) + 칩 "Zishel Bio · our own lab"</td><td data-l="소스">Lab_hero(영상편지와 안 겹치는 구간)</td></tr>
+    <tr><td class="ln">4-5</td><td data-l="화면">G6: 미세 결정이 표면에 내려앉아 머리카락보다 가는 길을 엶 + 칩 "2 OPEN"(코드) → 문장 끝에 <b>세럼 병 컷</b>(릴스 0236, 보틀 타고 흐르는 세럼)</td><td data-l="소스">매그니픽 G6 → 릴스 원본</td></tr>
     <tr><td class="ln">4-6</td><td data-l="화면"><b>피부에 눌러 바르는 컷</b>(릴스 0241) 위에 글자 "A light tingle = pathways opening · not a burn"</td><td data-l="소스">릴스 원본 + 글자 PNG</td></tr>
-    <tr><td class="ln">4-7</td><td data-l="화면">단면으로 복귀: 비타민을 감싼 구가 열린 길을 따라 진피까지 내려감, 칩 3 DELIVER 켜짐</td><td data-l="소스">코드 렌더</td></tr>
-    <tr><td class="ln">4-8</td><td data-l="화면">세 단계가 한 화면에 이어진 전체 그림에서 멈추고 큰 글씨 "Skin takes in what reaches it." (문장 뒤 1.5초 정지)</td><td data-l="소스">코드 렌더</td></tr>
+    <tr><td class="ln">4-7</td><td data-l="화면">G7: 이중막 구슬(리포솜)이 열린 길을 따라 진피까지 내려가 녹아듦 + 칩 "3 DELIVER"(코드)</td><td data-l="소스">매그니픽 G7 + 칩 PNG</td></tr>
+    <tr><td class="ln">4-8</td><td data-l="화면">G8: 세 작용이 한 단면에서 함께 도는 와이드 → 멈춤 + 큰 글씨 "Skin takes in what reaches it."(코드, 문장 뒤 1.5초 정지)</td><td data-l="소스">매그니픽 G8 + 글자 PNG</td></tr>
     <tr><td class="ln">5-1</td><td data-l="화면">투샷(카메라)</td><td data-l="소스">촬영본</td></tr>
-    <tr><td class="ln">5-2</td><td data-l="화면"><b>크림 질감 컷</b>(릴스 0255·0269 중 가볍게 펴 바르는 컷) → 실험실 컷(Marco가 보이는 컷이 있으면 그것) + 칩 "12 months"</td><td data-l="소스">릴스 원본 → Lab_hero + 칩 PNG</td></tr>
-    <tr><td class="ln">5-3</td><td data-l="화면"><b>어두운 투샷 위 카드</b>: "Anti-aging" → "Brightening + Wrinkle care · Dual-function certified (Korea)" → 카드가 걷히고 <b>약국 컷</b>(스케치 영상 다른 구간) + 칩 "Pharmacy only · Korea"</td><td data-l="소스">카드 시퀀스 → 약국 영상 + 칩</td></tr>
-    <tr><td class="ln">5-4</td><td data-l="화면"><b>어두운 투샷 위 카드</b>(시안 5): 왼쪽 "Clinic treatment · ~AED 1,000 / session" → 오른쪽 "At home · Lemonderma" (화살표)</td><td data-l="소스">카드 시퀀스</td></tr>
-    <tr><td class="ln">6-1 · 6-2</td><td data-l="화면">투샷(카메라) → "감사합니다" 뒤 엔드카드 2.5초 "Lemonderma / Skin Lab Partners · Cohort 1 / Week 1 · Meet Lemonderma"</td><td data-l="소스">촬영본 + 엔드카드 PNG</td></tr>
+    <tr><td class="ln">5-2</td><td data-l="화면"><b>크림 질감 컷</b>(릴스 0269 결 → 0276 손가락 위 크림) → 크림 든 손(DSC01569 사진, 천천히 밀기). "12개월"은 말하지 않아 칩 없음</td><td data-l="소스">릴스 원본 → 제품 사진</td></tr>
+    <tr><td class="ln">5-3</td><td data-l="화면"><b>어두운 투샷 위 카드</b>: "Anti-aging" → "Brightening + Wrinkle care · Dual-function certified (Korea)" → 카드가 걷히고 <b>약국 컷</b>(스케치 영상 8~16초: 진열장 → 고객이 제품 드는 장면) + 칩 "Pharmacy only · Korea"</td><td data-l="소스">카드 시퀀스 → 약국 영상 + 칩</td></tr>
+    <tr><td class="ln">5-4</td><td data-l="화면"><b>어두운 투샷 위 카드</b>(시안 5): 왼쪽 "Clinic treatment · ~AED 1,000 / session" → 오른쪽 "At home" 칸에 두 제품 사진(DSC01602)</td><td data-l="소스">카드 시퀀스 + 제품 사진</td></tr>
+    <tr><td class="ln">6-1 · 6-2</td><td data-l="화면">투샷(카메라, 실제 대사 "제품 사용해 보시고 솔직한 피드백 기다리겠습니다. 감사합니다") → 엔드카드 2.5초 "Lemonderma / Skin Lab Partners · Cohort 1 / Week 1 · Meet Lemonderma"</td><td data-l="소스">촬영본 + 엔드카드 PNG</td></tr>
   </table>
-  <div class="callout"><div class="ic">🎚️</div><p><b style="color:var(--ink)">만드는 순서:</b> ① 소스 정규화(30fps·1080×1440, 25장짜리 보간) → ② 실제 말한 문장으로 영어 자막 25장 타임코드(단어 단위) → ③ 그래픽 시퀀스 렌더(단면 ③④ · 카드 ②⑤ · 칩·글자·엔드카드) → ④ 조립(영상편지 `assemble.py` 틀 재사용) → ⑤ 음성 −16 LUFS → ⑥ 2초 간격 컨택트시트·길이·라우드니스 검사 → Drive 업로드(원본 + 왓츠앱용). 렌더·조립은 실행형 작업이라 <b style="color:var(--ink)">Sonnet 세션으로</b> 돌린다. 예상 길이 약 3분 15초 + 엔드카드.</p></div>
+  <div class="callout"><div class="ic">🎚️</div><p><b style="color:var(--ink)">만드는 순서:</b> ① 소스 정규화(30fps·1080×1440, 25장짜리 보간) → ② 실제 말한 문장으로 영어 자막 25장 타임코드(단어 단위) → ③ 그래픽 시퀀스 렌더(단면 ③④ · 카드 ②⑤ · 칩·글자·엔드카드) → ④ 조립(영상편지 `assemble.py` 틀 재사용) → ⑤ 음성 −16 LUFS → ⑥ 2초 간격 컨택트시트·길이·라우드니스 검사 → Drive 업로드(원본 + 왓츠앱용). 렌더·조립도 이 세션(Fable 5.1, John 10/10)에서. 예상 길이 약 3분 15초 + 엔드카드.</p></div>
 </section>
 
 <section id="mock">
@@ -435,26 +439,46 @@ footer{padding:36px 0 70px}
 </section>
 
 <section id="ask">
-  <p class="sec-label">Before editing</p>
-  <h2 class="sec-title">결정 필요 — 편집 시작 전 John 확인 (10/10)</h2>
+  <p class="sec-label">Decided</p>
+  <h2 class="sec-title">결정 반영 — John 10/10</h2>
   <div class="decide">
-    <div class="d"><h4><span class="no">1</span>그래픽 스타일 — 시안대로 '브랜드 일러스트(코드 렌더)'로 갈까요, 포토리얼 3D(매그니픽)로 갈까요?</h4>
-      <p class="rec">추천: <b>코드 렌더</b>. 글자·숫자·타이밍을 대사에 정확히 맞출 수 있고, 영상편지 정보상자와 한 몸처럼 보이며, 크레딧이 들지 않는다. 포토리얼은 각질층·엑소좀을 '진짜처럼' 보여 주는 대신 글자가 깨지고 대사와 타이밍을 맞추기 어렵다.</p>
-      <p class="alt">둘을 섞는 안: 단면은 코드 렌더로 두고, 4-2 "머리카락 천분의 1" 한 컷만 포토리얼 매크로(피부 표면 위 입자)로. 이때도 아래 3번이 필요.</p></div>
-    <div class="d"><h4><span class="no">2</span>긴 설명 구간(③·④ 약 1분 40초) — 전면 그래픽(시안 1·2)인가, 어두운 투샷 위 카드(시안 3)인가?</h4>
-      <p class="rec">추천: <b>③·④는 전면 그래픽, ②·⑤의 짧은 카드는 투샷 위 카드</b>. 단면도는 화면 전체가 있어야 층·입자가 읽히고, 1분 40초 동안 어두운 얼굴이 뒤에 비치면 집중이 흩어진다. 4-1·5-1에서 투샷으로 돌아오므로 두 사람이 사라진 느낌은 없다.</p></div>
-    <div class="d"><h4><span class="no">3</span>매그니픽 — 이 세션(MCP)엔 크레딧 12뿐이라 생성을 못 합니다(이미지 1장 100 · 5초 영상 3,950, 계정 무제한이 MCP엔 적용 안 됨).</h4>
-      <p class="rec">추천: <b>크레딧 0으로 코드 렌더만</b>으로 완성하고, 1번에서 포토리얼 컷을 원하시면 <b>매그니픽 앱에서 직접 생성</b>해 Drive에 올려 주시는 방식(프롬프트는 제가 드림). 영상편지 때와 같은 방식.</p>
-      <p class="alt">MCP에도 무제한을 적용할 수 있는 설정이 있으면 알려 주세요 — 그러면 제가 직접 돌립니다.</p></div>
-    <div class="d"><h4><span class="no">4</span>음악 — 영상편지는 "없이"였는데, 이번엔 그래픽만 나오는 구간이 길어 아주 작은 배경음(목소리 아래 −28 LUFS쯤)을 깔지 여부</h4>
-      <p class="rec">추천: <b>잔잔한 배경음 1곡</b>(피아노·앰비언트, 보컬 없음)을 ③·④ 그래픽 구간에만 작게. Artlist 구독이 있으니 재영님이 한 곡 골라 Drive에 올려 주시면 됩니다. 영상편지와 통일하려면 "없이"도 가능.</p></div>
+    <div class="d"><h4><span class="no">1</span>그래픽 스타일 = <b>포토리얼 3D</b></h4>
+      <p class="rec">단면·입자·주머니·길은 매그니픽(Seedance 2.5, 1080p·3:4)으로 생성한 실사풍 3D 영상 위에, 글자·숫자·라벨·단계 칩만 코드로 또렷하게 얹는다. 지쉘바이오가 만든 <b>원리 설명 3D 렌더</b>(serum_01~03·cream_1·2 GIF, 세포막·보틀·크림 렌더 PNG)를 스타일·참조 이미지로 넣어 브랜드 룩(크림·옐로·라임)을 통일한다. 지쉘 GIF 자체는 700×466이라 그대로는 못 쓰고 참조용. 세부 = §포토리얼 제작.</p></div>
+    <div class="d"><h4><span class="no">2</span>③·④는 전면 그래픽, ②·⑤는 어두운 투샷 위 카드 — 추천대로</h4></div>
+    <div class="d"><h4><span class="no">3</span>매그니픽 — <b>MCP 커넥터가 다른 계정에 묶여 있음</b></h4>
+      <p class="rec">MCP의 계정 조회 결과 = <b>tessliftofficial@gmail.com</b>(Business, 잔여 12). 재영님 크롬의 <b>lemonderma.official@gmail.com</b>(Advanced, 이용 가능 약 995K)과 다른 계정이라 "크레딧 넉넉"과 어긋났다. → claude.ai 커넥터 설정에서 Magnific을 lemonderma.official 계정으로 <b>재연결</b>해 주시면 제가 바로 생성한다(OAuth는 Claude가 못 함). 재연결 전까지는 생성 없이 나머지 전부(소스 정규화·자막·카드·조립 틀)를 먼저 만든다. 예상 소모: 장면 8개 × 변주 2 ≈ <b>10만 크레딧 안팎</b>(5초 1080p = 3,950) + 음악 후보 5곡 800.</p></div>
+    <div class="d"><h4><span class="no">4</span>음악 — 후보 5곡을 만들어 Drive에 올리고 재영님이 듣고 고름</h4>
+      <p class="rec">Lyria 3 Pro 60초(160크레딧/곡)로 아래 5곡 — 전부 보컬 없음, 목소리 아래 깔리는 용도. ① 펠트 피아노 + 따뜻한 패드, 72bpm, 차분한 신뢰감 ② 앰비언트 신스 패드 + 아주 약한 맥박, 90bpm, '과학·정밀' ③ 핑거피킹 어쿠스틱 기타 + 잔잔한 스트링, 84bpm, 친근함 ④ 미니멀 피아노 아르페지오 + 공기감 텍스처, 100bpm, 프리미엄 스킨케어 광고 ⑤ 부드러운 시네마틱 스트링 스웰 + 피아노, 76bpm, 브랜드 필름. 3번 재연결 뒤 생성 → Drive "콘텐츠2" 폴더 `music/` 에 1~5번으로.</p></div>
+    <div class="d"><h4><span class="no">5</span>제품 영상·이미지 = Drive 릴스 원본 + 지쉘 렌더로 충분, 추가 촬영 없음</h4>
+      <p class="rec">두 병 컷 = 릴스 원본 <b>0266R</b>(9초: 세럼 병이 들어오고 크림 뚜껑 열림, 레몬 플랫레이) · 제품 사진 DSC01569/1581/1590/1602(크림 든 손 · 세럼 플랫레이 · 두 제품 플랫레이) · 지쉘 렌더 PNG(세럼 보틀·크림 잼·레몬 스플래시·세포막). 사용 배정은 §편집 설계 표 갱신분.</p></div>
+    <div class="d"><h4><span class="no">6</span>모델 = Fable 5.1 유지(John) — 렌더·조립도 이 세션에서</h4></div>
   </div>
-  <h3>소스 요청 2가지 (있으면 더 좋아지는 것 — 없으면 대안으로 진행)</h3>
+  <h3>자막은 실제 말한 문장 기준 (10/10 추출)</h3>
   <ul class="rules">
-    <li><b>세럼·크림 두 병 패키지샷</b>(2-4 "비건더마 화장품입니다", 5-4 "At home"): 사무실 창가에서 두 병을 나란히 놓고 10초만 찍어 주시면 됩니다(세로, 천천히 밀어 들어가기). 대안 = 릴스 원본 중 병이 보이는 컷(미확인 11개를 먼저 봄) 또는 상세페이지 사진.</li>
-    <li><b>지쉘바이오 엑소좀 시설 촬영본</b>(4-4 "직접 만듭니다"): 콘텐츠7용으로 ~10/16 공유 예정인 원본을 지금 올려 주시면 4-4에 먼저 씁니다. 대안 = 실험실 히어로 영상의 다른 구간.</li>
+    <li>1-3 Marco: 대본과 다르게 즉흥 — "레몬더마는 어떻게 하면 효과적인 자연 원료가 효과적으로 피부에 전달될 수 있을지에 대한 고민에서 시작되었습니다" → 자막은 이 문장으로.</li>
+    <li>3-1 John: "0.01mm"만 말함(0.02 없음) → 자막·라벨 "0.01 mm".</li>
+    <li>4-3 John: "그냥 바르면 각질층에 머물렀을 성분을" 그대로. 4-5 "피부에 아주 작은 길을 내어주는데요" — 자막 "It opens tiny pathways in the skin."</li>
+    <li>5-2 Marco: "12개월 동안"을 말하지 않음 → "12 months" 칩 제거, 자막에서도 뺌.</li>
+    <li>6-1 John: 대본 대신 <b>"제품 사용해 보시고 솔직한 피드백 기다리겠습니다. 감사합니다."</b> → 자막 "Try the products, and we look forward to your honest feedback. Thank you." (둘이 함께 "감사합니다"는 같은 테이크 끝).</li>
   </ul>
-  <div class="callout"><div class="ic">🔎</div><p>이 밖의 세부(칩 문구·전환 길이·컷 구간·이름 자막 직함 "CEO / Marketing")는 영상편지 결정과 호칭 규칙대로 제가 정해 진행하고, 완성본에서 보시면 됩니다.</p></div>
+</section>
+
+<section id="gen">
+  <p class="sec-label">Photoreal</p>
+  <h2 class="sec-title">포토리얼 제작 — 매그니픽 장면 8개 (계정 재연결 뒤 생성)</h2>
+  <p class="lead">모델 <b style="color:var(--ink)">Seedance 2.5</b>(최고 품질·참조 이미지·카메라 지시 지원), 1080p, 비율 <b style="color:var(--ink)">3:4</b>(= 영상 영역 1080×1440 그대로, 자르지 않음), 소리 없음. 모든 장면에 같은 <b style="color:var(--ink)">스타일 참조</b>(지쉘 세포막 렌더 `1.png`·`2.png`)와 같은 색 지시(크림 화이트 → 옐로 그라디언트, 라임 입자, 살구빛 피부층)를 넣어 한 세트처럼 보이게 한다. 라벨·숫자·단계 칩은 생성 영상 위에 코드로 얹는다(글자는 생성에 맡기지 않음). 장면마다 변주 2개를 뽑아 고른다.</p>
+  <table class="stack sb">
+    <tr><th>장면</th><th>길이·줄</th><th>프롬프트 요지</th></tr>
+    <tr><td class="ln">G1 각질층 단면</td><td data-l="길이">10초 · 3-1</td><td data-l="프롬프트">Macro 3D medical render of a human skin cross-section block, cream-white studio background. The thin outermost stratum corneum is a tight brick-like layer of flattened cells on top; below it the softer apricot-pink epidermis, then the deeper dermis with fine collagen fibres. Camera: slow push-in, slight high angle. Soft warm light, premium skincare brand look, no text.</td></tr>
+    <tr><td class="ln">G2 바른 양의 1%</td><td data-l="길이">10초 · 3-2</td><td data-l="프롬프트">Same skin cross-section. From above, hundreds of tiny translucent golden droplets fall onto the surface and pool on the stratum corneum, unable to pass; only one single droplet slips between the cells and sinks into the deeper layer, glowing faintly lime-green. Camera static, then gentle tilt down following the single droplet. No text.</td></tr>
+    <tr><td class="ln">G3 큰 분자 vs 작은 분자</td><td data-l="길이">6초 · 3-3</td><td data-l="프롬프트">Same skin surface, extreme macro. A large bumpy golden molecule bounces off the brick-like cell layer and stays on top; a much smaller sphere passes between the cells and goes down. Soft depth of field, warm light, no text.</td></tr>
+    <tr><td class="ln">G4 머리카락 vs 엑소좀</td><td data-l="길이">8초 · 4-2</td><td data-l="프롬프트">Extreme macro on cream background: a single human hair strand lies across the frame like a thick rope; next to it a tiny glowing lime-yellow translucent vesicle (exosome) — about one-thousandth of the hair's width — drifts up and the camera pushes in until the vesicle fills the frame, revealing small amber vitamin C droplets held inside its membrane. No text.</td></tr>
+    <tr><td class="ln">G5 CARRY</td><td data-l="길이">10초 · 4-3</td><td data-l="프롬프트">Skin cross-section. Several lime-yellow translucent vesicles, each carrying amber droplets inside, land on the stratum corneum and slip between the cells, travelling smoothly down through the epidermis into the dermis, leaving a faint glowing trail. Camera follows them downward slowly. Style matched to the earlier scenes, no text.</td></tr>
+    <tr><td class="ln">G6 OPEN</td><td data-l="길이">8초 · 4-5</td><td data-l="프롬프트">Extreme macro of the skin surface from a low angle: countless microscopic transparent crystal needles gently settle onto the surface and open hair-thin micro channels between the brick-like cells; tiny light rays show the channels opening. Gentle, not aggressive, no redness. Warm cream-yellow palette, no text.</td></tr>
+    <tr><td class="ln">G7 DELIVER</td><td data-l="길이">8초 · 4-7</td><td data-l="프롬프트">Skin cross-section with the micro channels already open. Small pearly spheres (liposomes) with a thin double membrane, filled with golden vitamin droplets, glide down through the open channels all the way to the deep dermis and dissolve into a soft glow. Camera slow tilt down. Same style, no text.</td></tr>
+    <tr><td class="ln">G8 전체 그림</td><td data-l="길이">8초 · 4-8</td><td data-l="프롬프트">Wide hero shot of the full skin cross-section: vesicles carrying ingredients, crystal needles opening channels, and liposomes reaching the dermis all happening together in one calm loop; camera slowly pulls out and settles. Clean cream background, premium brand finish, no text.</td></tr>
+  </table>
+  <div class="callout"><div class="ic">🧪</div><p><b style="color:var(--ink)">생성 뒤 확인하는 것:</b> ① 글자·워터마크가 생기지 않았나 ② 피부가 붉거나 상처처럼 보이지 않나(7/28 의학적 과장 폐기와 같은 기준) ③ 8장면의 색·조명이 한 세트로 보이나 — 어긋나면 같은 시드·같은 참조로 재생성 ④ 3:4 1080×1440인지. 통과한 컷만 §편집 설계 표의 자리에 넣고, 라벨(Stratum corneum · 0.01 mm · &lt; 1% · CARRY/OPEN/DELIVER · Skin takes in what reaches it.)은 코드로 얹는다. 생성 전 매 장면 크레딧을 시뮬레이션하고, 10만을 넘기면 멈추고 보고한다.</p></div>
 </section>
 
 <section id="order">
