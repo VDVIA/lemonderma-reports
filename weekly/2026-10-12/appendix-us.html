@@ -1600,6 +1600,8 @@ body.view-john .dq-chip.john-only{display:inline-flex}
 }
 /* 시장 보드·전주 값은 폰에서도 표 유지(John 10/12: 옆으로 살짝 스크롤이 카드보다 낫다) — .no-card 로 카드화 제외 */
 @media(max-width:700px){.board-wrap::before{content:"옆으로 밀어 보세요 →";display:block;text-align:right;font-size:11px;font-weight:700;color:#8a836f;margin:-2px 2px 6px}}
+/* 세럼·크림 칸이 36px로 좁아 "▲63%"가 3줄로 꺾이던 것(John 10/12) — 증감·머리글은 한 줄 고정, 칸은 내용만큼 넓어진다(폰 스크롤 약 +30px) */
+.mkt-board .cw-d,.mkt-board thead th{white-space:nowrap}
 
 </style></head><body><header><div class="wrap appx-head"><span class="kicker">APPENDIX</span><h1>부록 — US 17주차 근거 전문</h1>
 <p class="sub">10/12호 (10/4~10/10) · 이면 추론 원장 · 발견 원장 · 기각된 발견 · 일별 여정 · <a href="./index.html?view=john">← 주간 보고서로</a></p></div></header>
