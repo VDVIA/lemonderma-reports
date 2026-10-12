@@ -1616,6 +1616,7 @@ body.view-john .dq-chip.john-only{display:inline-flex}
  table.mc td *{white-space:normal;overflow-wrap:break-word}
  table.mc td .cw-v{white-space:nowrap}
  .pill-board{font-size:12px}
+ .mbadge,.why-tag,.cre-cap,.jm-d,[style*="font-size:10.5px"]{font-size:11.5px!important}
 }
 
 </style>
@@ -2147,6 +2148,7 @@ IC당 비용은 매출 예측력이 약해(US 데이터 검증 결과) 소재 �
       try{ var u=new URL(location.href); u.searchParams.set('view',v); history.replaceState(null,'',u.toString()); }catch(_){ }
     }); });
   })();
+  /*@cards:start*/
   // 폰 최적화 ① 표 카드화 준비: 머리글 글자를 각 칸 data-label 로 복사 → CSS(≤640px)가 카드로 바꾼다. 머리글 없는 표·2열 이하·전용 카드 표(정할 것·주문 목록)는 그대로.
   (function(){
     document.querySelectorAll('table').forEach(function(t){
@@ -2170,6 +2172,7 @@ IC당 비용은 매출 예측력이 약해(US 데이터 검증 결과) 소재 �
       var w=t.closest('.tbl-scroll'); if(w) w.classList.add('mc-wrap');
     });
   })();
+  /*@cards:end*/
   // 폰 최적화 ② 순위 그래프: 챕터 안 원본 그래프도 가로 스크롤 상자로 감싸고, 모든 순위 그래프를 '이번 주'가 보이는 오른쪽 끝에서 시작
   (function(){
     document.querySelectorAll('.trendwrap svg').forEach(function(sv){
