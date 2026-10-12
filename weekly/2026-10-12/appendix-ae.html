@@ -1579,17 +1579,6 @@ body.view-john .dq-chip.john-only{display:inline-flex}
  table.mc td[data-long],table.mc td[data-full]{grid-column:1/-1}
  table.mc tr.total,table.mc tr.cw-all{background:var(--cream)}
  table.mc td .cw-v{white-space:nowrap}
- /* 시장 보드: 카드 안은 3열 고정(매출·광고비·MER / 개수·세럼·크림) */
- .board-wrap{padding:10px 12px 8px}
- .mkt-board tbody tr{grid-template-columns:repeat(3,minmax(0,1fr));padding:14px 8px;border-radius:10px}
- .mkt-board td[data-first]{display:flex;align-items:center;font-size:16px}
- .mkt-board td[data-first] a.rowlink{display:inline-flex;align-items:center}
- .mkt-board .cw-v{font-size:19px}
- .mkt-board tr.total .cw-v{font-size:21px}
- .mkt-board .cw-v.na{font-size:14px}
- .mkt-board .cw-s,.mkt-board .cw-d,.mkt-board .cw-line .cw-s{font-size:11.5px;white-space:normal}
- .mkt-board td[data-label]::before{font-size:11px}
- .prev-tbl tbody tr{grid-template-columns:repeat(3,minmax(0,1fr))}
  /* 터치 44px */
  .viewsw{display:flex;width:100%;gap:8px;margin-top:4px}
  .viewsw button{flex:1;min-height:46px;font-size:15px;padding:12px 10px}
@@ -1601,10 +1590,6 @@ body.view-john .dq-chip.john-only{display:inline-flex}
  .chap-head h2{font-size:23px}
  .a-verdict{font-size:17px}
 }
-@media(max-width:360px){
- .mkt-board tbody tr{grid-template-columns:repeat(2,minmax(0,1fr))}
- .mkt-board .cw-v{font-size:18px}
-}
 @media(max-width:640px){
  /* 줄바꿈이 막혀 가로로 넘치던 칸(숫자 열·판정 뱃지)을 풀어 준다 */
  table.mini td.num{white-space:normal}
@@ -1613,6 +1598,8 @@ body.view-john .dq-chip.john-only{display:inline-flex}
  .pill-board{font-size:12px}
  .mbadge,.why-tag,.cre-cap,.jm-d,[style*="font-size:10.5px"]{font-size:11.5px!important}
 }
+/* 시장 보드·전주 값은 폰에서도 표 유지(John 10/12: 옆으로 살짝 스크롤이 카드보다 낫다) — .no-card 로 카드화 제외 */
+@media(max-width:700px){.board-wrap::before{content:"옆으로 밀어 보세요 →";display:block;text-align:right;font-size:11px;font-weight:700;color:#8a836f;margin:-2px 2px 6px}}
 
 </style></head><body><header><div class="wrap appx-head"><span class="kicker">APPENDIX</span><h1>부록 — UAE 11주차 근거 전문</h1>
 <p class="sub">10/12호 (10/4~10/10) · 이면 추론 원장 · 발견 원장 · 기각된 발견 · 일별 여정 · <a href="./index.html?view=john">← 주간 보고서로</a></p></div></header>
