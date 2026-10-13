@@ -142,7 +142,7 @@ body.prompter .line{grid-template-columns:44px 52px 1fr}
 body.prompter .line .shot{display:none}
 body.prompter .line .say{font-size:1.35rem;line-height:1.5}
 body.prompter .line .say .note{display:none}
-body.prompter .shotlist,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
+body.prompter .shotlist,body.prompter #editplan,body.prompter #mock,body.prompter #ask,body.prompter #gen,body.prompter #v1,body.prompter #v2,body.prompter #schedule,body.prompter #guard,body.prompter #open,body.prompter #order,body.prompter #principles,body.prompter #series,body.prompter #after,body.prompter #caption,body.prompter #flow,body.prompter #edit,body.prompter #cards{display:none}
 
 @media (max-width:640px){#body h2.sec-title{padding-right:112px}}
 /* 촬영 리스트 표 */
@@ -194,6 +194,13 @@ footer{padding:36px 0 70px}
 .decide .d .rec{color:var(--ink)}
 .decide .d .rec b{color:var(--headline)}
 .decide .d .alt{color:var(--ink-3);font-size:.84rem}
+.sb td.ln{white-space:nowrap;font-weight:700;color:var(--ink)}
+.sb td .how{display:block;font-size:.78rem;color:var(--ink-3);margin-top:4px}
+.mocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:16px 0 0}
+.mocks figure{margin:0}
+.mocks img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.mocks figcaption{font-size:.8rem;color:var(--ink-2);line-height:1.5;margin-top:6px}
+.mocks figcaption b{color:var(--ink)}
 .caption-box{margin:12px 0 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--line-strong);border-radius:10px;background:var(--panel-2);font-size:.96rem;line-height:1.7;color:var(--ink);white-space:pre-line}
 
 /* 하루 흐름 스토리보드 */
@@ -218,18 +225,18 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
   <a class="back" href="../">← 운영안(전체 타임라인)으로</a>
   <p class="eyebrow">Skin Lab Partners · 콘텐츠 기획안</p>
   <h1>콘텐츠4 — The pharmacy in Seoul: 명동에서 약국까지</h1>
-  <p class="sub">2주차 목요일 영상입니다. 영상편지에서 처음 약속한 "레몬더마가 입점한 약국 소개"를 지킵니다. 마르코와 존이 명동 메인 거리에서 출발해 올리브영 앞을 지나 약국 안 레몬더마 매대까지 걸어가며, "약국에 있다는 게 왜 의미 있는지"를 출처 있는 사실로 짧게 설명합니다. 촬영은 카메라맨이 처음부터 끝까지 맡고, 패키징 줌인 장면만 따로 찍습니다. <b>화면·자막·메시지 어디에도 약국 이름과 위치는 나오지 않습니다.</b> 예상 길이 <b>약 1분 50초</b>(한국어 음절 수 추정 + 말 없는 장면 11초).</p>
+  <p class="sub">2주차 목요일 영상입니다. 영상편지에서 처음 약속한 "레몬더마가 입점한 약국 소개"를 지킵니다. 마르코와 존이 명동 메인 거리에서 출발해 올리브영 앞을 지나 약국 안 레몬더마 매대까지 걸어가며, "약국에 있다는 게 왜 의미 있는지"를 출처 있는 사실로 짧게 설명합니다. 촬영은 카메라맨이 처음부터 끝까지 맡고, 패키징 줌인 장면만 따로 찍습니다. <b>화면·자막·메시지 어디에도 약국 이름과 위치는 나오지 않습니다.</b> 예상 길이 <b>약 1분 53초</b>(한국어 음절 수 추정 + 말 없는 장면 11초).</p>
   <div class="meta-row">
     <span class="pill">Marco · John + 카메라맨</span>
     <span class="pill">9:16 · 왓츠앱 대화방</span>
     <span class="pill">Week 2 · 목 10/29</span>
     <span class="pill">한국어 대사 · 영어 자막</span>
     <span class="pill">핀마이크 2개</span>
-    <span class="pill date">개정 2026-10-13 (대사 검토 피드백 반영)</span>
+    <span class="pill date">확정 2026-10-13 (대사·마무리)</span>
   </div>
   <div class="stepper">
-    <span class="done">기획 10/12~13 · 대사 검토 피드백 7건 반영</span>
-    <span class="now">John 확인 — 마무리 안 + 최종 대사</span>
+    <span class="done">기획 10/12~13 · 대사·마무리 확정</span>
+    <span class="now">촬영 준비 — 카메라맨에게 촬영 칸 공유</span>
     <span>촬영 10/14(수) 오후 · 패키징 줌인 별도</span>
     <span>편집 ~10/27</span>
     <span>게시 목 10/29 UAE 08:00</span>
@@ -249,7 +256,7 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
 <section id="open">
   <p class="sec-label">Why this episode</p>
   <h2 class="sec-title">이 회차가 하는 일</h2>
-  <div class="callout"><div class="ic">🎯</div><p>이 커뮤니티 멤버는 브랜드 말을 그대로 믿기보다 직접 확인하고 싶어 하는 30~50대 UAE 여성입니다. UAE는 위조 화장품이 실제로 압류되는 시장이기도 합니다. 그래서 이 회차는 "정품입니다"라고 말하지 않습니다. 대신 서울의 진짜 약국, 가장 잘 보이는 자리에 레몬더마가 놓여 있는 장면을 보여 줍니다. 한국에서 약국에 있다는 것이 왜 의미 있는지도 출처 있는 사실 몇 개로 설명합니다. 노리는 감정은 두 가지입니다. 하나는 <b>"두 사람과 같이 명동을 걷는다"</b>입니다. 시선 카운터와 호떡 한 입이 가벼운 웃음을 줍니다. 다른 하나는 <b>"진짜 한국 약국에 진짜로 있다"</b>입니다. 끝은 올리브영 예고를 다시 불러오는 한 마디와 감사 인사로 닫고, 다음 주 월요일 질문 받기 예고는 메시지 ①에 둡니다. 멤버가 할 일은 메시지 ②에 한 줄을 남기는 것 하나입니다.</p></div>
+  <div class="callout"><div class="ic">🎯</div><p>이 커뮤니티 멤버는 브랜드 말을 그대로 믿기보다 직접 확인하고 싶어 하는 30~50대 UAE 여성입니다. UAE는 위조 화장품이 실제로 압류되는 시장이기도 합니다. 그래서 이 회차는 "정품입니다"라고 말하지 않습니다. 대신 서울의 진짜 약국, 가장 잘 보이는 자리에 레몬더마가 놓여 있는 장면을 보여 줍니다. 한국에서 약국에 있다는 것이 왜 의미 있는지도 출처 있는 사실 몇 개로 설명합니다. 노리는 감정은 두 가지입니다. 하나는 <b>"두 사람과 같이 명동을 걷는다"</b>입니다. 시선 카운터와 호떡 한 입이 가벼운 웃음을 줍니다. 다른 하나는 <b>"진짜 한국 약국에 진짜로 있다"</b>입니다. 끝은 올리브영 예고를 다시 불러오는 한 마디와 "약국에 오셔서 레몬더마도 만나 보세요", 감사 인사로 닫고, 다음 주 월요일 질문 받기 예고는 메시지 ①에 둡니다. 멤버가 할 일은 메시지 ②에 한 줄을 남기는 것 하나입니다.</p></div>
   <h3 style="margin-top:24px">정한 것</h3>
   <ul class="open-list">
     <li class="done"><span class="box"></span><span><b>촬영지</b>는 명동의 레몬더마 입점 약국입니다. 촬영 허가는 받았고 <b>약사는 출연하지 않습니다</b>. 화면에 약사의 얼굴, 목소리, 이름표가 나오지 않습니다(John 10/12).</span></li>
@@ -258,7 +265,7 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <li class="done"><span class="box"></span><span><b>흐름</b>(John 10/12): 명동 메인 거리 오프닝 → 약국까지 걷기(지나가는 사람들이 두 사람을 쳐다보는 유머) → 올리브영 앞, 들어가지 않음 → 약국 앞 "요즘 한국 뷰티 히든 핫플레이스" → 입장 → 한국 약국 스킨케어 선반 → 레몬더마 메인 매대.</span></li>
     <li class="done"><span class="box"></span><span><b>매대에서는 대사로만</b> "오프라인은 오직 약국에서만" → "품절됐다가 최근 재입고"를 말합니다. 품절·재입고 그래픽은 쓰지 않습니다(John 10/12 2차).</span></li>
     <li class="done"><span class="box"></span><span><b>패키징 줌인 장면은 따로 찍습니다</b>(John 10/12 2차). 두 분이 직접 상자부터 제품까지 들고 보여 주고, 마지막에 뒷면의 미백·주름 개선 2중 기능성 표시까지 갑니다. 멤버에게 "상자를 뒤집어 보세요"라고 하는 줄은 넣지 않습니다.</span></li>
-    <li class="done"><span class="box"></span><span><b>두 분의 반응 장면은 넣지 않습니다</b>(John 10/12). 마무리는 "지금 없어서 조금 어색해"(John 10/13)라서 ⑥에 다시 제안했습니다. 약국 이름·위치가 나오는 끝 카드와 "들러 보세요"는 넣지 않습니다. 다음 주 월요일 예고는 메시지 ①에 있습니다.</span></li>
+    <li class="done"><span class="box"></span><span><b>두 분의 반응 장면은 넣지 않습니다</b>(John 10/12). <b>마무리</b>(John 10/13 확정): "다음에 서울에 오시면, 올리브영 다음 코스는 이제 아시겠죠? 바로 약국입니다. 약국에 오셔서 레몬더마도 만나 보세요. 오늘도 함께해 주셔서 감사합니다." 약국 이름·위치가 나오는 끝 카드와 "이 약국에 들러 보세요"는 넣지 않습니다. 다음 주 월요일 예고는 메시지 ①에 있습니다.</span></li>
     <li class="done"><span class="box"></span><span><b>올리브영 멘트</b>(John 10/13): "서울에 외국인 친구가 놀러 오면, 저는 먼저 여기 올리브영에서 트렌드 구경을 시켜 주지만 진짜 히든 플레이스는 따로 있습니다. 바로 약국입니다." 올리브영은 깎지 않고 약국을 올립니다. 끝 문장 "바로 약국입니다"는 약국 앞에 도착하는 순간(4-1)에 말합니다.</span></li>
     <li class="done"><span class="box"></span><span><b>약국 입점이 왜 의미 있는지</b>(John 10/13): "요즘 한국에서 뷰티에 진심인 사람들은 약국으로 갑니다. 그만큼 약국에는 약사들이 인정하고 추천하는, 인증된 기능성 스킨케어 제품들이 있습니다."(4-2) + 약국 안 "요즘 한국 약국에는 K-뷰티 매대가 따로 있을 정도로, 인기가 많고 유행입니다."(5-1) + 추가 후보 1번 "브랜드보다 어떤 성분이 왜 들어갔는지를 묻는 분들이 늘고 있다"(5-3). 명동 약국 46→70곳은 K-뷰티 약국 유행과 바로 이어지는 숫자가 아니라서 뺐습니다(John 10/13).</span></li>
     <li class="done"><span class="box"></span><span><b>넣는 장면</b>(John 10/12):<br>① 걷다가 길거리 간식 한 입, 3초. 돼지고기와 술이 들어간 것은 쓰지 않습니다.<br>② 시선 카운터 자막 "Looked at us: 1… 2…". 실제로 쳐다본 사람만 셉니다.<br><b>타이틀 카드·위치 카드·지도 경로는 쓰지 않습니다</b>(John 10/13 "오버스펙, 오히려 인위적"). 영상은 명동 거리 투샷으로 바로 시작합니다.</span></li>
@@ -268,15 +275,6 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <li class="done"><span class="box"></span><span><b>화자 배정</b>(John 10/13): 한 문장씩 기계적으로 번갈아 말하지 않습니다. 장소 소개(1-2)와 이유 설명(4-2)·매대 설명(5-5·5-6)은 한 사람이 이어서 말하고, 존이 꺼낸 예고(3-1)는 존이 직접 풉니다(4-1). 주고받는 건 걷다가 나누는 농담(2-2·2-3)과 마무리(6-1·6-2)뿐입니다.</span></li>
     <li class="done"><span class="box"></span><span><b>"영상편지에서 약속드린 약국" 회상 줄은 넣지 않습니다.</b> 대신 "오늘은 저희와 함께 명동을 걸어 보시죠"로 간접 체험의 기대감을 줍니다(John 10/13, 1-3).</span></li>
   </ul>
-  <h3 style="margin-top:28px">정할 것 — 추천을 먼저 적었다</h3>
-  <p class="lead">전부 추천대로면 <b style="color:var(--ink)">그렇게 가자</b> 한 마디면 된다. 다르게 갈 번호만 알려 주세요.</p>
-  <div class="decide">
-    <div class="d">
-      <h4><span class="no">1</span>1. 마무리 — "지금 없어서 조금 어색해"</h4>
-      <p class="rec"><b>추천:</b> <b>올리브영 다음 코스 콜백(⑥, 대본에 넣음)</b>. 존 "다음에 서울에 오시면, 올리브영 다음 코스는 이제 아시겠죠?" → 마르코 "바로 약국입니다." → 함께 "오늘 함께해 주셔서 감사합니다."<br>이 안을 추천하는 이유는 세 가지입니다.<br>① 3-1의 예고와 4-1의 답을 한 번 더 불러와서, 영상의 시작과 끝이 맞물려 닫힙니다.<br>② 멤버가 다음 서울 여행에서 기억할 한 마디가 남습니다.<br>③ 약국 이름 없이도 성립하고, 다음 주 월요일 예고는 이미 메시지 ①에 있어 겹치지 않습니다.<br>늘어나는 시간은 약 7초입니다.</p>
-      <p class="alt">대안 A(다음 주로 잇기): 마르코 "오늘 보시면서 궁금해진 것이 있으셨다면, 다음 주 월요일에 무엇이든 물어봐 주세요." → 함께 "감사합니다." 콘텐츠5(Ask us anything)로 바로 이어지지만, 메시지 ① 마지막 줄과 겹칩니다.<br>대안 B(가장 짧게): 매대 앞 투샷에서 함께 "감사합니다"와 손 인사만(약 2초).</p>
-    </div>
-  </div>
   <h3 style="margin-top:28px">John 확인 필요 — 사실이라 제가 정할 수 없는 것</h3>
   <ul class="rules">
     <li><b>패키징 줌인 별도 촬영 날짜</b>: 편집 1차(~10/23) 전에만 Drive에 올려 주시면 됩니다. 찍는 법은 아래 촬영 칸 S11에 있습니다.</li>
@@ -293,14 +291,14 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <tr><td>③ 올리브영 앞 — 들어가지 않는다</td><td>올리브영을 칭찬하고 지나갑니다. 서울에 온 외국인 친구에게 먼저 올리브영에서 트렌드 구경을 시켜 주지만, 진짜 히든 플레이스는 따로 있다고 말하고 그대로 걸어 나갑니다(John 10/13 문장). 답은 약국 앞에서 밝힙니다.</td><td>~10초</td></tr>
     <tr><td>④ 약국 앞 — "바로 약국입니다", 그리고 그 이유</td><td>3-1에서 존이 예고한 "진짜 히든 플레이스"를 존이 직접 "바로 약국입니다"로 밝힙니다. 이어서 마르코가 보이스로 이유를 말합니다. 요즘 한국에서 뷰티에 진심인 사람들은 약국으로 가고, 그만큼 약국에는 약사들이 인정하고 추천하는 인증된 기능성 스킨케어 제품들이 있다는 것입니다(John 10/13).</td><td>~13초</td></tr>
     <tr><td>⑤ 약국 안 — 선반에서 레몬더마 매대, 그리고 패키징</td><td>존이 약국 안 K-뷰티 매대를 소개하고, 선반을 천천히 보여 주며 마르코가 "성분과 이유를 묻는 분들이 늘고 있다"를 보이스로 얹습니다. 레몬더마 메인 매대에서는 마르코가 "오프라인은 약국에서만", "품절 후 최근 재입고"를 이어서 말합니다. 존이 상자를 집어 들고 패키징 줌인(별도 촬영, 상자 → 제품 → 뒷면 기능성 표시)으로 넘어갑니다.</td><td>~38초</td></tr>
-    <tr><td>⑥ 마무리 — 올리브영 다음 코스(제안)</td><td>줌인에서 매대 앞 투샷으로 돌아옵니다. 3-1 "진짜 히든 플레이스는 따로 있습니다"와 4-1 "바로 약국입니다"를 한 번 더 불러와 닫고, 함께 감사 인사를 합니다. 약국 이름 없이도 성립합니다. 아래 "정할 것"의 추천안입니다.</td><td>~9초</td></tr>
+    <tr><td>⑥ 마무리 — 올리브영 다음 코스</td><td>줌인에서 매대 앞 투샷으로 돌아옵니다. 3-1 "진짜 히든 플레이스는 따로 있습니다"를 다시 불러와 "바로 약국입니다"로 닫고, 약국에서 레몬더마를 만나 보라고 권한 뒤 함께 인사합니다(John 10/13 확정 멘트).</td><td>~13초</td></tr>
   </table>
 </section>
 
 <section id="body">
   <p class="sec-label">Script</p>
   <div class="toggle"><button type="button" id="promptBtn">대사만 보기</button></div>
-  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">마르코·존 + 카메라맨 · 대사 19줄 · 524음절 · 약 1분 50초</span></h2>
+  <h2 class="sec-title">대본 <span class="len" style="font-family:var(--serif);font-style:italic;font-weight:400;color:var(--num);font-size:.95rem">마르코·존 + 카메라맨 · 대사 19줄 · 541음절 · 약 1분 53초</span></h2>
   <p class="lead">카메라 보고 말하는 줄 16개, 화면이 다른 장면으로 덮이는 <span class="vo-tag">노란 칸 · 📄 보고 읽기</span> 3개. 대사 아래 기울임 줄이 영어 자막이다. "—" 줄은 대사 없는 장면(자막 카드·그래픽만). 오른쪽 위 "대사만 보기"가 프롬프터(한국어만). 표기 — <b style="color:var(--ink)">M</b> Marco · <b style="color:var(--ink)">J</b> John · <span class="tag new">신규</span>10/14 카메라맨 촬영 · <span class="tag have">별도 촬영</span>패키징 줌인(John).</p>
 
   <h3>① 명동 도착 — 오늘은 같이 걸어요 <span class="len">~24초</span></h3>
@@ -343,11 +341,11 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <div class="line vo"><div class="n">5-9</div><div class="who"><i>J</i></div><div class="say">뒷면에는 식약처에 등록된 미백·주름 개선 2중 기능성 표시가 있습니다.<span class="en">On the back, it carries Korea's registered dual-function mark: brightening and wrinkle care.</span><span class="note">촬영한 실제 라벨 문구에 맞춰 대사와 자막을 맞춥니다.</span></div><div class="shot"><span class="tag have">별도 촬영</span> 같은 줌인의 끝 — 뒷면 기능성 표시 줄에 초점, 화면 아래 영어 번역 자막</div></div>
   </div>
 
-  <h3>⑥ 마무리 — 올리브영 다음 코스(제안) <span class="len">~9초</span></h3>
+  <h3>⑥ 마무리 — 올리브영 다음 코스 <span class="len">~13초</span></h3>
   <div class="script">
     <div class="line"><div class="n">6-1</div><div class="who"><i>J</i></div><div class="say">다음에 서울에 오시면, 올리브영 다음 코스는 이제 아시겠죠?<span class="en">Next time you visit Seoul, you know where to go after Olive Young, right?</span></div><div class="shot"><span class="tag new">신규</span> 매대 앞 투샷 — 두 사람이 제품을 든 채로 카메라를 보며(S12)</div></div>
-    <div class="line"><div class="n">6-2</div><div class="who"><i>M</i></div><div class="say">바로 약국입니다.<span class="en">The pharmacy.</span></div><div class="shot"><span class="tag new">신규</span> 같은 투샷, 마르코가 웃으며</div></div>
-    <div class="line"><div class="n">6-3</div><div class="who"><i>J·M</i></div><div class="say">오늘 함께해 주셔서 감사합니다.<span class="en">Thank you for walking with us today.</span></div><div class="shot"><span class="tag new">신규</span> 같은 투샷, 둘이 함께 가볍게 인사 → 1초 뒤 컷</div></div>
+    <div class="line"><div class="n">6-2</div><div class="who"><i>M</i></div><div class="say">바로 약국입니다. 약국에 오셔서 레몬더마도 만나 보세요.<span class="en">The pharmacy. Come by, and say hello to Lemonderma there, too.</span></div><div class="shot"><span class="tag new">신규</span> 같은 투샷, 마르코가 웃으며 들고 있던 제품을 살짝 들어 보인다</div></div>
+    <div class="line"><div class="n">6-3</div><div class="who"><i>J·M</i></div><div class="say">오늘도 함께해 주셔서 감사합니다.<span class="en">Thank you for joining us again today.</span></div><div class="shot"><span class="tag new">신규</span> 같은 투샷, 둘이 함께 가볍게 인사 → 1초 뒤 컷</div></div>
   </div>
   <div class="callout"><div class="ic">✂️</div><p>"—" 줄은 대사 없는 장면입니다. <span class="vo-tag">노란 칸 · 📄 보고 읽기</span>은 화면이 B롤이나 줌인으로 덮이는 줄입니다. 현장에서 한 번씩 읽어 두고, 소음이 크면 10/15에 사무실에서 같은 핀마이크로 다시 녹음해 덮습니다. 패키징 줌인(5-8·5-9) 뒤에 마무리(⑥)가 이어집니다. 반응 장면은 넣지 않습니다(John 10/12).</p></div>
   <div class="gfx">
@@ -410,7 +408,7 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <tr><td>S9</td><td data-l="컷">선반 팬(5-1~5-3) — 스킨케어 선반 따라 천천히 수평 팬 3~5초 × 2번, 구경하는 두 사람 뒷모습</td><td data-l="메모"><b>약사 출연 불가</b> — 조제실과 계산대는 프레임 밖에 둡니다. 다른 손님 얼굴도 나오지 않게 합니다.</td></tr>
     <tr><td>S10</td><td data-l="컷">레몬더마 메인 매대(5-4~5-7) — 어깨 너머 → 매대 푸시인, 매대 옆 투샷, 존이 상자를 집어 드는 컷</td><td data-l="메모">매대 와이드 · 미디엄 · 제품 클로즈업 세 크기를 모두 찍습니다. 집어 든 제품은 제자리에 둡니다. 매대 주변 가격표나 약국 이름이 든 안내물은 프레임 밖에 둡니다.</td></tr>
     <tr><td>S11</td><td data-l="컷"><b>패키징 줌인 — 별도 촬영</b>(5-8~5-9). 두 분 손으로 상자 앞면 → 상자를 열고 → 세럼·크림을 꺼내 → 제품을 돌려 뒷면 기능성 표시까지 한 흐름</td><td data-l="메모">John이 따로 찍습니다. 밝고 깨끗한 배경(흰 테이블 등), 반사 없는 조명, 세로 9:16. 동작은 천천히, 컷마다 3초 이상 멈춥니다. 뒷면 기능성 표시 줄은 화면 가운데에 3초 이상 또렷하게 나와야 합니다. 세럼과 크림 각각 한 번씩.</td></tr>
-    <tr><td>S12</td><td data-l="컷">마무리(6-1~6-3) — 매대 앞 투샷, 두 사람이 제품을 든 채로</td><td data-l="메모">"감사합니다" 뒤 2초 더 찍고 끊습니다. 마무리 안이 바뀌어도(대안 A·B) 같은 자리에서 찍으면 되니, 세 가지를 모두 한 번씩 찍어 두면 편집에서 고를 수 있습니다.</td></tr>
+    <tr><td>S12</td><td data-l="컷">마무리(6-1~6-3) — 매대 앞 투샷, 두 사람이 제품을 든 채로</td><td data-l="메모">"감사합니다" 뒤 2초 더 찍고 끊습니다. 6-1에서 6-3까지 한 테이크로 이어서 찍습니다(3테이크).</td></tr>
   </table>
   <h3 style="margin-top:22px">챙길 것</h3>
   <ul class="rules">
