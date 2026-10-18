@@ -229,13 +229,15 @@ footer{padding:36px 0 70px}
     <span class="done">편집 v2 10/16</span>
     <span class="done">편집 v3 10/18</span>
     <span class="done">편집 v4 10/18</span>
-    <span class="now">편집 v5 최종후보 10/18 — John 검수</span>
+    <span class="done">편집 v5 10/18</span>
+    <span class="now">편집 v6 최종후보 10/18 — John 검수</span>
     <span>게시 월 10/19 UAE 오전 8시 + 후속 질문</span>
   </div>
 </header>
 
 <nav class="toc">
-  <a href="#v5">편집 v5 최종후보</a>
+  <a href="#v6">편집 v6 최종후보</a>
+  <a href="#v5">편집 v5</a>
   <a href="#v4">편집 v4</a>
   <a href="#v3">편집 v3</a>
   <a href="#v2">편집 v2</a>
@@ -256,9 +258,21 @@ footer{padding:36px 0 70px}
   <a href="#schedule">일정</a>
 </nav>
 
+<section id="v6">
+  <p class="sec-label">Edit v6 · 10/18 · 최종 후보</p>
+  <h2 class="sec-title">편집 v6(최종 후보) — 마르코 밤 루틴: HDR→SDR 변환으로 뿌연 것 해결, 머리까지 보이게 (65.5초)</h2>
+  <p class="lead"><b style="color:var(--ink)">65.5초</b>(끝 카드 포함) · 1080×1920 30fps · 영어만 · 음악 인디팝 120BPM · 색 보정 없음. <a href="https://drive.google.com/drive/folders/1NTKuYDU_2qtivpxiz_wUVjk0K4f_hLpm" target="_blank" rel="noopener">Drive 콘텐츠 1/preview</a>의 <b>v6</b> 파일(왓츠앱판 포함). 수정이 없으면 이 파일이 월 10/19 UAE 08:00 게시본입니다.</p>
+  <table class="stack">
+    <tr><th>John 피드백 (10/18)</th><th>원인 · 반영</th></tr>
+    <tr><td data-l="피드백">씬 15 위 칸(Marco)이 뿌옇고 색감이 이상하다, 화질도 떨어진 것 같다</td><td data-l="반영"><b>원인은 파일 형식이었습니다.</b> 이 파일만 아이폰 기본 설정인 <b>HDR(HLG · 10비트 · Dolby Vision)</b>로 찍혔고, 다른 25개는 전부 SDR이에요. HDR 영상을 변환 없이 SDR 영상에 섞으면 그 칸만 색이 바래고 뿌옇게 보입니다(v3~v5가 그 상태였고, v3의 색 필터는 이걸 손으로 덮으려다 누렇게 만든 것). <b>v6은 macOS 변환기(avconvert, 애플 톤매핑)로 SDR로 바꾼 파일을 씁니다</b> — 원본의 색·대비가 그대로 나오고, 자르기 외에 아무 필터도 없습니다. 변환본은 Drive 콘텐츠 1 폴더에 "씬 15M SDR" 이름으로 올려 두었어요.</td></tr>
+    <tr><td data-l="피드백">좀 더 위를 찍어 머리까지 잘 보이게</td><td data-l="반영">당겨 잡기(1.2배)를 빼고 <b>세로 전체(1080px)를 9:8 띠로</b> 씁니다 — 머리 위 여유까지 다 들어오고, 확대가 없어 더 선명합니다. 가로 중심만 구간마다 Marco가 선 자리에 맞췄습니다(세럼 병 3.0초 · 세럼 11.0 · 크림 통 45.0 · 크림 53.0 · 마무리 88.6).</td></tr>
+  </table>
+  <div class="callout safety"><div class="ic">📱</div><p><b>다음 촬영부터:</b> 아이폰 카메라 설정 → 비디오 녹화 → <b>HDR 비디오 끄기</b>(또는 포맷 "호환성 높음")로 두면 변환 없이 바로 쓸 수 있습니다. 켜져 있어도 이제 변환 절차가 있어 문제는 없지만, 끄는 쪽이 색이 더 예측 가능해요.</p></div>
+</section>
+
 <section id="v5">
   <p class="sec-label">Edit v5 · 10/18 · 최종 후보</p>
-  <h2 class="sec-title">편집 v5(최종 후보) — 저녁은 곰탕 컷 하나만 (65.5초)</h2>
+  <h2 class="sec-title">편집 v5 — 저녁은 곰탕 컷 하나만 (65.5초) → <a href="#v6">v6</a>에서 Marco 밤 루틴 HDR 변환</h2>
   <p class="lead"><b style="color:var(--ink)">65.5초</b>(끝 카드 포함) · 1080×1920 30fps · 영어만 · 음악 인디팝 120BPM · 색 보정 없음. <a href="https://drive.google.com/drive/folders/1NTKuYDU_2qtivpxiz_wUVjk0K4f_hLpm" target="_blank" rel="noopener">Drive 콘텐츠 1/preview</a>의 <b>v5</b> 파일(왓츠앱판 포함). 수정이 없으면 이 파일이 월 10/19 UAE 08:00 게시본입니다.</p>
   <table class="stack">
     <tr><th>John 피드백 (10/18)</th><th>반영</th></tr>
