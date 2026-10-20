@@ -232,7 +232,7 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <span class="pill">Week 2 · 목 10/29</span>
     <span class="pill">한국어 대사 · 영어 자막</span>
     <span class="pill">핀마이크 2개</span>
-    <span class="pill date">편집 v3 2026-10-20 (통으로·씬 순서대로 · John 확인 대기)</span>
+    <span class="pill date">편집 v4 2026-10-20 (팬 이어붙임·오프닝엔딩 통일 · John 확인 대기)</span>
   </div>
   <div class="stepper">
     <span class="done">기획 10/12~13 · 화자·인사·대사 확정</span>
@@ -240,12 +240,14 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
     <span class="done">편집 계획 10/19 · John 확정 4건</span>
     <span class="done">편집 v1 10/20 · 음악 1번 확정</span>
     <span class="done">편집 v2 10/20 · 손하트 엔딩</span>
-    <span class="now">편집 v3 10/20 — 통으로·씬 순서대로 · John 확인 ~10/27</span>
+    <span class="done">편집 v3 10/20 · 통으로·씬 순서</span>
+    <span class="now">편집 v4 10/20 — 팬 이어붙임·오프닝엔딩 통일 · John 확인 ~10/27</span>
     <span>게시 목 10/29 UAE 08:00</span>
   </div>
 </header>
 
 <nav class="toc">
+  <a href="#v4">편집 v4 10/20</a>
   <a href="#v3">편집 v3 10/20</a>
   <a href="#v2">편집 v2 10/20</a>
   <a href="#v1">편집 v1 10/20</a>
@@ -263,6 +265,33 @@ body.prompter #evidence,body.prompter .gfx,body.prompter #body .callout{display:
   <a href="#schedule">일정</a>
   <a href="#changes">바뀐 점</a>
 </nav>
+
+<section id="v4">
+  <p class="sec-label">Edit v4 · 10/20</p>
+  <h2 class="sec-title">편집 v4 — 2:20 · 약국 안 팬 이어 붙이기 + 오프닝·엔딩 콘텐츠1과 통일</h2>
+  <p class="lead"><b>John 10/20</b>: ① 씬 10·11·12가 다 한쪽 방향으로 앵글이 이동하니, 이동 속도가 비슷한 부분을 잘라 세 영상이 자연스럽게 이어지게 ② 오프닝·엔딩은 모든 콘텐츠가 같은 규칙으로 — 콘텐츠1과 통일.</p>
+  <h3 style="margin:18px 0 6px">약국 안 팬 — 속도가 같은 곳에서 이었습니다</h3>
+  <p class="lead" style="margin-top:0">프레임마다 화면이 몇 픽셀 움직였는지 재서(위상 상관, 최종 화면 기준) 앞 컷 끝 속도와 다음 컷 시작 속도가 같은 지점에서 끊었습니다. 씬 9 선반 장면 끝도 같은 방향으로 출발하는 순간에서 끊어, 9 → 10 → 11 → 12가 한 번의 움직임처럼 점점 빨라지다 존 앞에서 멈춥니다. 완성본 실측: 10→11 이음새 12 ↔ 12, 11→12 이음새 16 ↔ 16(px/프레임).</p>
+  <table class="stack">
+    <tr><th>컷</th><th>쓴 구간</th><th>이동 속도(px/프레임)</th></tr>
+    <tr><td><b>씬 9 끝</b></td><td data-l="구간">대사 뒤 선반 장면 ~15.65초</td><td data-l="속도">3</td></tr>
+    <tr><td><b>씬 10</b></td><td data-l="구간">0.40~1.45초 (가속)</td><td data-l="속도">3 → 13.5</td></tr>
+    <tr><td><b>씬 11</b></td><td data-l="구간">1.15~2.20초 (일정)</td><td data-l="속도">13 → 14.5</td></tr>
+    <tr><td><b>씬 12</b></td><td data-l="구간">0.05초~ (가속 → 존 앞에서 멈춤)</td><td data-l="속도">15.6 → 31 → 0</td></tr>
+  </table>
+  <h3 style="margin:22px 0 6px">오프닝·엔딩 — 콘텐츠1 게시본과 같은 규칙</h3>
+  <p class="lead" style="margin-top:0">v3까지는 제목 글꼴 크기·판·페이드와 끝 카드 글꼴이 콘텐츠1과 달랐습니다. 이제 콘텐츠1 그래픽 코드를 그대로 불러 같은 블록·같은 시간·같은 페이드로 만듭니다.</p>
+  <table class="stack">
+    <tr><th>항목</th><th>콘텐츠1(10/19 게시본)</th><th>콘텐츠4 v4</th></tr>
+    <tr><td>제목</td><td data-l="콘텐츠1">Libre Caslon 76px · 반투명 검정 둥근 판</td><td data-l="콘텐츠4">같음(콘텐츠1 그래픽 코드 그대로 사용)</td></tr>
+    <tr><td>제목 높이</td><td data-l="콘텐츠1">분할 화면 경계선 위(화면 가운데)</td><td data-l="콘텐츠4">440px 위 — 꽉 찬 투샷이라 가운데 두면 두 사람 얼굴을 가려서 하늘·건물 앞으로</td></tr>
+    <tr><td>제목 시간</td><td data-l="콘텐츠1">0~3.0초 · 0.2초 페이드인 · 0.3초 페이드아웃</td><td data-l="콘텐츠4">같음</td></tr>
+    <tr><td>마지막 장면</td><td data-l="콘텐츠1">끝 0.6초 검정으로 페이드</td><td data-l="콘텐츠4">같음(손하트 정지 1.2초 중 끝 0.6초)</td></tr>
+    <tr><td>끝 카드</td><td data-l="콘텐츠1">검정 바탕 "Thank you" Pretendard 굵게 64px · 2.5초</td><td data-l="콘텐츠4">같음</td></tr>
+  </table>
+  <p style="font-size:.86rem;color:var(--ink-3);margin:8px 0 0">콘텐츠2(v7)는 끝 카드는 같고, 첫 카드는 흰 띠 화면에 맞춘 흰 카드 스타일이라 콘텐츠1과 다릅니다.</p>
+  <p style="font-size:.86rem;color:var(--ink-3);margin:8px 0 0">파일 = <a href="https://drive.google.com/drive/folders/1RMYMsKBxecwgtMm_MG80D5wKonWykxbe">Drive 콘텐츠 4</a> › preview › "콘텐츠4 v4 (팬 이어붙임·오프닝엔딩 통일, 음악1)" 원본 화질 · 왓츠앱판. 그 밖(통으로·씬 순서·이름 처리·음악 1번·손하트)은 v3 그대로.</p>
+</section>
 
 <section id="v3">
   <p class="sec-label">Edit v3 · 10/20</p>
@@ -656,6 +685,7 @@ What was the first Korean skincare product you chose for yourself, and why did y
     <tr><td>10/20(화)</td><td>편집 v1 완성(2분 8초) + 음악 후보 5곡 영상 → Drive preview. <b>John이 한 곡 고르기</b></td><td>Claude · John</td></tr>
     <tr><td>10/20(화)</td><td>음악 1번 확정 + 손하트 엔딩 → 편집 v2(원본 화질 + 왓츠앱판) Drive preview</td><td>John · Claude</td></tr>
     <tr><td>10/20(화)</td><td>말하는 장면 통으로 · 씬 번호 순서 → 편집 v3 Drive preview</td><td>John · Claude</td></tr>
+    <tr><td>10/20(화)</td><td>약국 안 팬 속도 맞춰 이어 붙이기 · 오프닝·엔딩 콘텐츠1과 통일 → 편집 v4 Drive preview</td><td>John · Claude</td></tr>
     <tr><td>~10/27(화)</td><td>John 확인 → 수정 반영 → 완성본 Drive</td><td>John · Claude</td></tr>
     <tr><td><b>목 10/29 UAE 08:00</b></td><td>대화방 게시: ① 영상 + 설명 → 1~2분 안에 ② 후속 질문</td><td>John</td></tr>
   </table>
@@ -665,6 +695,7 @@ What was the first Korean skincare product you chose for yourself, and why did y
   <p class="sec-label">What changed</p>
   <h2 class="sec-title">바뀐 점</h2>
   <ul class="rules">
+    <li><b>10/20 편집 v4</b> — 약국 안 씬 9 끝·10·11·12를 화면 이동 속도가 같은 지점에서 이어 한 번의 팬처럼, 오프닝 제목·마지막 페이드·끝 카드를 콘텐츠1과 같은 그래픽·시간으로.</li>
     <li><b>10/20 편집 v3</b> — 인사·명동 소개·올리브영 앞·K-뷰티 매대를 통으로, 화면은 씬 번호 순서대로(제목 티저·컷어웨이 없앰). 통으로 쓰며 드러난 약국 이름 3곳 처리.</li>
     <li><b>10/20 편집 v2</b> — 음악 1번(어쿠스틱) 확정, 마지막 마르코 손하트가 다 보인 뒤 "Thank you"(마지막 0.48초 0.5배 슬로 + 0.8초 정지).</li>
     <li><b>10/20 편집 v1</b> — 맨 위 §편집 v1: 2분 8초 첫 편집본 + 음악 후보 5곡(들어보고 한 곡 고르기). 간판은 10/19 결정대로 유지, 약국 안 걸이 간판 이름만 지움.</li>
