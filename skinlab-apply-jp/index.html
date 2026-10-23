@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Skin Lab Partners — レモンダーマ 日本1期</title>
+<meta name="description" content="日本在住の女性20名。レモンダーマと過ごす4週間。応募は11月9日まで。">
+<meta name="theme-color" content="#fefcd0">
+
+<!-- 브랜드 정본 서체 (Adobe Fonts). 발행 도메인이 Typekit 킷에 등록돼 있지 않으면
+     아래 Google Fonts 대체본(Libre Caslon Text)으로 조용히 떨어진다. -->
+<link rel="stylesheet" href="https://use.typekit.net/ycy6gis.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Lemonderma — Skin Lab Partners 신청 폼
+   팔레트·서체는 00_compass/identity/brand.md SSOT (2026-07-29 Sol 확정)
+   배경 #fefcd0→#ffffff · 테두리 #ddea65 · 제목 #4b612d · 수치 #025200
+   본문은 순블랙, 눌러야 할 텍스트만 블랙 투명도로 처리(회색 색상값 금지)
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#fefcd0; --paper-2:#ffffff;
+  --ink:#000000; --ink-soft:rgba(0,0,0,.62); --ink-mute:rgba(0,0,0,.42);
+  --line:rgba(0,0,0,.11); --edge:#ddea65; --edge-soft:rgba(221,234,101,.42);
+  --headline:#4b612d; --deep:#025200; --marker:rgba(221,247,70,.55);
+  --alert:#e23b3b;
+  --serif:"adobe-caslon-pro","Libre Caslon Text","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  --sans:"neue-haas-grotesk-text","Helvetica Neue","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --shadow-s:0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(75,97,45,.055);
+  --shadow-m:0 2px 6px rgba(0,0,0,.05), 0 18px 46px rgba(75,97,45,.10);
+  --shadow-l:0 4px 12px rgba(0,0,0,.06), 0 34px 80px rgba(75,97,45,.14);
+  --ease:cubic-bezier(.16,.84,.28,1);
+  --gut:18px;
+  /* PC에서도 모바일과 같은 한 칼럼으로 본다 — 실제 열람은 대부분 휴대폰 */
+  --col:420px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper-2);
+  font-size:16px;line-height:1.6;letter-spacing:-.004em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+/* ── 앰비언트 배경: 시트러스 톤 오브가 아주 느리게 흐른다 ───────── */
+.amb{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+     linear-gradient(180deg,var(--paper) 0,#fffef0 380px,var(--paper-2) 820px)}
+.amb i{position:absolute;display:block;border-radius:50%;filter:blur(70px);opacity:.5}
+.amb i:nth-child(1){width:640px;height:640px;top:-220px;left:-180px;
+  background:radial-gradient(circle,rgba(230,238,122,.62),transparent 68%);animation:drift1 34s var(--ease) infinite alternate}
+.amb i:nth-child(2){width:520px;height:520px;top:34vh;right:-200px;
+  background:radial-gradient(circle,rgba(221,247,70,.40),transparent 70%);animation:drift2 42s var(--ease) infinite alternate}
+.amb i:nth-child(3){width:700px;height:700px;bottom:-320px;left:26vw;
+  background:radial-gradient(circle,rgba(75,97,45,.14),transparent 70%);animation:drift3 50s var(--ease) infinite alternate}
+@keyframes drift1{to{transform:translate3d(120px,90px,0) scale(1.14)}}
+@keyframes drift2{to{transform:translate3d(-130px,-70px,0) scale(1.1)}}
+@keyframes drift3{to{transform:translate3d(90px,-110px,0) scale(1.08)}}
+
+/* ── 상단 진행 바 ───────────────────────────────────────────── */
+.rail{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:transparent}
+.rail b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--edge),var(--headline));
+        transition:width .7s var(--ease)}
+
+.wrap{max-width:var(--col);margin:0 auto;padding:0 var(--gut) 90px}
+
+/* ── 스크롤 등장 ─────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ═══ 히어로 ═══════════════════════════════════════════════════ */
+header{padding:34px 0 0;text-align:center}
+.mark{height:26px;width:auto;opacity:.92;margin-bottom:30px}
+.eyebrow{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--headline);
+         letter-spacing:.03em;margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,11.5vw,2.7rem);
+   line-height:1.02;letter-spacing:-.022em;margin-bottom:18px}
+.sub{font-size:1.06rem;line-height:1.62;max-width:29em;margin:0 auto}
+.sub em{font-style:normal;background:linear-gradient(transparent 71%,var(--marker) 71%);padding-bottom:1px}
+
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.pill{font-size:.83rem;font-weight:500;color:var(--headline);background:var(--edge-soft);
+      padding:7px 15px;border-radius:99px;letter-spacing:.005em}
+
+/* ── 히어로: 9:16 릴스 2개 나란히, 무음 자동재생 ───────────────── */
+.stage{margin:34px 0 0}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.reel{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-m);
+  background:#f4f3d2;aspect-ratio:9/16}
+.reel video{display:block;width:100%;height:100%;object-fit:cover;background:#f4f3d2}
+.reel .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 10px 9px;
+  font-size:.74rem;font-weight:500;color:#fff;letter-spacing:.01em;
+  background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
+.reel .snd{position:absolute;top:8px;right:8px;width:30px;height:30px;padding:0;
+  border-radius:50%;background:rgba(0,0,0,.42);color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.reel .snd svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.reel .snd:hover{background:rgba(0,0,0,.6)}
+.slot.tall{aspect-ratio:9/16}
+
+/* ═══ 섹션 공통 ════════════════════════════════════════════════ */
+section{margin-top:52px}
+.kicker{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--deep);
+        margin-bottom:16px;letter-spacing:.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,6vw,1.6rem);
+   line-height:1.14;letter-spacing:-.016em;margin-bottom:16px}
+
+/* ── 브랜드 소개 5줄 ─────────────────────────────────────────── */
+.facts{list-style:none;counter-reset:fx;border-top:1px solid var(--line)}
+.facts li{counter-increment:fx;position:relative;padding:17px 2px 17px 36px;
+          border-bottom:1px solid var(--line);font-size:1rem;line-height:1.55}
+.facts li::before{content:counter(fx,decimal-leading-zero);position:absolute;left:2px;top:19px;
+  font-family:var(--serif);font-size:.82rem;color:var(--headline);letter-spacing:.06em;opacity:.8}
+.facts b{font-weight:700}
+.facts .hl{background:linear-gradient(transparent 71%,var(--marker) 71%)}
+
+/* ── 제품 번들 1장 ───────────────────────────────────────────── */
+.bundle{margin-top:26px}
+.bundle .slot,.bundle img{border-radius:18px;box-shadow:var(--shadow-s);
+  display:block;width:100%;height:auto}
+
+/* ── What you get / What we ask 박스 ─────────────────────────── */
+.box{margin-top:22px;background:#fbfbee;border:1.5px solid var(--edge);border-radius:18px;
+     padding:24px 24px 22px}
+.box-label{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--deep);margin-bottom:14px}
+.box ul{list-style:none}
+.box li{display:flex;gap:11px;font-size:.98rem;line-height:1.5;margin-bottom:11px}
+.box li:last-child{margin-bottom:0}
+.box li .d{color:var(--edge);flex:0 0 auto;font-weight:700}
+.box .amount{color:var(--deep);font-weight:700}
+.box p{font-size:1rem;line-height:1.5}
+.box .free{display:block;margin-top:8px;font-size:.9rem;color:var(--ink-soft)}
+
+/* ── 일정: 세로 타임라인 ─────────────────────────────────────── */
+.timeline{margin-top:28px;padding:22px 20px;border:1px solid var(--line);border-radius:18px;
+          background:rgba(255,255,255,.55)}
+.tl-item{display:flex;gap:16px;position:relative;padding-bottom:24px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::after{content:"";position:absolute;left:10px;top:24px;bottom:2px;width:1.5px;
+                 background:var(--line)}
+.tl-item:last-child::after{display:none}
+.tl-node{flex:0 0 auto;width:21px;height:21px;border-radius:50%;margin-top:1px;
+         border:1.5px solid var(--edge);background:var(--paper-2);position:relative;z-index:1;
+         display:flex;align-items:center;justify-content:center}
+.tl-node::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--edge)}
+.tl-item.urgent .tl-node{border-color:var(--headline);background:var(--headline)}
+.tl-item.urgent .tl-node::before{background:#fff}
+.tl-body{padding-top:1px}
+.tl-tag{display:inline-block;margin-bottom:6px;font-size:.7rem;font-weight:600;color:#fff;
+        background:var(--headline);padding:3px 10px;border-radius:99px;letter-spacing:.03em;
+        text-transform:uppercase}
+.tl-date{font-family:var(--serif);font-size:1.28rem;font-weight:600;letter-spacing:-.012em;
+         color:var(--ink);line-height:1.2}
+.tl-item.urgent .tl-date{color:var(--headline)}
+.tl-label{font-size:.9rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+
+/* ── 운영자 서명 ─────────────────────────────────────────────── */
+.signed{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
+        margin-top:26px;padding:20px;
+        border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.7)}
+.signed p{font-size:.95rem;line-height:1.55}
+.signed .nm{font-family:var(--serif);font-size:1.05rem;color:var(--headline);margin-top:7px}
+
+/* ═══ 에셋 슬롯 ════════════════════════════════════════════════
+   아직 실물이 없는 자리. 비어 있어도 "디자인된 패널"로 보이게 만들어서
+   신청자에게 깨진 화면이 보이지 않는다.
+   ?slots=1 을 URL 뒤에 붙이면 각 자리에 필요한 소재 규격이 표시된다.
+   ══════════════════════════════════════════════════════════════ */
+.slot{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 28% 18%, rgba(255,255,255,.95), transparent 60%),
+    linear-gradient(150deg,#f4f3d2 0%,#fbfbee 46%,#eef0cf 100%);
+  border:1px solid var(--edge);display:flex;align-items:center;justify-content:center}
+.slot::before{content:"";position:absolute;width:44%;height:44%;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, rgba(255,255,255,.9), rgba(221,234,101,.55) 58%, rgba(75,97,45,.14));
+  box-shadow:0 10px 28px rgba(75,97,45,.16);animation:bob 7s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px) scale(1.03)}}
+.slot span{position:relative;font-family:var(--serif);font-style:italic;font-size:.82rem;
+  color:var(--headline);opacity:.92;text-align:center;padding:0 10px;line-height:1.35}
+.slot.wide{aspect-ratio:16/9}
+
+/* ?slots=1 일 때만 보이는 규격 라벨 */
+body.slots .slot{outline:2px dashed var(--headline);outline-offset:-6px}
+body.slots .slot span{display:none}
+body.slots .slot::after{content:attr(data-spec);position:absolute;inset:8px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--sans);font-size:.72rem;font-weight:500;line-height:1.42;color:var(--ink);
+  background:rgba(255,255,255,.9);border-radius:9px;padding:10px;white-space:pre-line}
+
+/* ═══ 폼 ═══════════════════════════════════════════════════════ */
+#apply{margin-top:72px;scroll-margin-top:26px}
+
+.card{position:relative;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:20px;box-shadow:var(--shadow-m);padding:24px 18px 24px;
+  transform-style:preserve-3d}
+.card-stage{perspective:1500px}
+
+.steps{display:flex;gap:6px;margin-bottom:22px}
+.steps i{flex:1;height:3px;border-radius:99px;background:rgba(0,0,0,.09);overflow:hidden;position:relative}
+.steps i::after{content:"";position:absolute;inset:0;width:0;border-radius:99px;
+  background:linear-gradient(90deg,var(--edge),var(--headline));transition:width .6s var(--ease)}
+.steps i.on::after{width:100%}
+.stepmeta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.stepmeta .of{font-size:.74rem;color:var(--ink-mute);letter-spacing:.09em;text-transform:uppercase}
+.stepmeta .nm{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--deep)}
+
+.step{display:none}
+.step.on{display:block;animation:stepIn .58s var(--ease) both}
+@keyframes stepIn{from{opacity:0;transform:translateY(16px) rotateX(5deg) scale(.988)}
+                  to{opacity:1;transform:none}}
+.step h3{font-family:var(--serif);font-weight:600;font-size:1.62rem;line-height:1.16;
+         letter-spacing:-.015em;margin-bottom:6px}
+.step .lead{font-size:.93rem;color:var(--ink-soft);line-height:1.55;margin-bottom:24px}
+
+.f{margin-bottom:22px}
+.f:last-of-type{margin-bottom:0}
+label.lb{display:block;font-size:.95rem;font-weight:500;margin-bottom:9px;line-height:1.45}
+.req{color:var(--deep);margin-left:3px}
+.hint{display:block;font-weight:400;font-size:.83rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
+  background:#fdfdf6;border:1px solid rgba(0,0,0,.16);border-radius:12px;
+  padding:14px 15px;line-height:1.4;transition:border-color .25s,box-shadow .25s,background .25s;
+  -webkit-appearance:none;appearance:none}
+textarea{min-height:104px;resize:vertical;line-height:1.55}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%234b612d' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--headline);
+  background:var(--paper-2);box-shadow:0 0 0 4px rgba(221,234,101,.4)}
+input.bad,select.bad,textarea.bad{border-color:var(--alert);background:rgba(226,59,59,.035)}
+::placeholder{color:rgba(0,0,0,.3)}
+
+/* ── 선택지 카드 (라디오·체크박스) ───────────────────────────── */
+.opts{display:grid;gap:9px}
+.opts.two{grid-template-columns:1fr}
+.opt{position:relative;display:flex;align-items:center;gap:11px;cursor:pointer;
+  border:1px solid rgba(0,0,0,.14);border-radius:12px;padding:13px 14px;background:#fdfdf6;
+  font-size:.95rem;line-height:1.35;
+  transition:border-color .22s,background .22s,transform .3s var(--ease),box-shadow .3s var(--ease)}
+.opt:hover{border-color:var(--edge);transform:translateY(-1px);box-shadow:var(--shadow-s)}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt .tick{flex:0 0 19px;height:19px;border-radius:50%;border:1.5px solid rgba(0,0,0,.26);
+  position:relative;transition:border-color .22s,background .22s}
+.opt.cb .tick{border-radius:6px}
+.opt .tick::after{content:"";position:absolute;inset:0;margin:auto;width:9px;height:9px;
+  border-radius:50%;background:var(--headline);transform:scale(0);transition:transform .28s var(--ease)}
+.opt.cb .tick::after{width:10px;height:6px;border-radius:0;background:none;
+  border-left:2px solid var(--headline);border-bottom:2px solid var(--headline);
+  transform:rotate(-45deg) scale(0);margin-top:-2px}
+.opt input:checked ~ .tick{border-color:var(--headline);background:rgba(221,247,70,.4)}
+.opt input:checked ~ .tick::after{transform:scale(1)}
+.opt.cb input:checked ~ .tick::after{transform:rotate(-45deg) scale(1)}
+.opt.sel{border-color:var(--headline);background:rgba(221,247,70,.17)}
+.opt input:focus-visible ~ .tick{box-shadow:0 0 0 4px rgba(221,234,101,.5)}
+.opts.bad .opt{border-color:rgba(226,59,59,.5)}
+
+.counter{font-size:.8rem;color:var(--ink-soft);margin-top:9px}
+.counter b{color:var(--deep);font-weight:700}
+.opt.off{opacity:.42;pointer-events:none}
+
+.err{display:none;font-size:.84rem;color:var(--alert);margin-top:8px;line-height:1.45}
+.err.on{display:block;animation:nudge .32s var(--ease)}
+@keyframes nudge{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* ── 거주 확인 안내 ─────────────────────────────────────────── */
+.gate{display:none;margin-top:12px;padding:15px 16px;border-radius:12px;
+      background:#fbfbee;border:1px solid var(--edge);font-size:.9rem;line-height:1.55}
+.gate.on{display:block;animation:stepIn .4s var(--ease) both}
+
+/* ── 동의 ───────────────────────────────────────────────────── */
+.consent{border:1.5px solid var(--edge);border-radius:16px;background:#fbfbee;padding:20px 20px 18px}
+.consent .head{display:flex;align-items:center;gap:12px;cursor:pointer;position:relative}
+.consent .head .tick{flex:0 0 22px;height:22px;border-radius:7px;border:1.5px solid rgba(0,0,0,.3);
+  position:relative;background:var(--paper-2);transition:border-color .22s,background .22s}
+.consent .head .tick::after{content:"";position:absolute;inset:0;margin:auto;width:11px;height:6px;
+  border-left:2.2px solid var(--headline);border-bottom:2.2px solid var(--headline);
+  transform:rotate(-45deg) scale(0);margin-top:-3px;transition:transform .3s var(--ease)}
+.consent input{position:absolute;opacity:0;width:0;height:0}
+.consent input:checked ~ .tick{border-color:var(--headline);background:rgba(221,247,70,.45)}
+.consent input:checked ~ .tick::after{transform:rotate(-45deg) scale(1)}
+.consent .head b{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--headline)}
+.consent ul{list-style:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.consent li{display:flex;gap:10px;font-size:.86rem;line-height:1.55;color:var(--ink-soft);margin-bottom:9px}
+.consent li:last-child{margin-bottom:0}
+.consent li .d{color:var(--edge);flex:0 0 auto;font-weight:700}
+
+/* ── 버튼 ───────────────────────────────────────────────────── */
+.nav{display:flex;gap:10px;align-items:center;margin-top:28px}
+button{font-family:var(--sans);font-size:1rem;font-weight:500;cursor:pointer;border:none;
+  border-radius:12px;transition:transform .22s var(--ease),box-shadow .22s var(--ease),
+  background .22s,opacity .22s}
+.btn{flex:1;background:var(--headline);color:#fff;padding:16px 20px;letter-spacing:.005em;
+     box-shadow:0 2px 10px rgba(75,97,45,.26);position:relative;overflow:hidden;min-height:54px}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 22px rgba(75,97,45,.3)}
+.btn:active:not(:disabled){transform:translateY(0)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn .lbl{display:inline-flex;align-items:center;gap:9px;transition:opacity .25s,transform .25s}
+.btn.busy .lbl{opacity:0;transform:translateY(-6px)}
+.btn .spin{position:absolute;inset:0;margin:auto;width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;opacity:0;animation:sp .8s linear infinite}
+.btn.busy .spin{opacity:1}
+@keyframes sp{to{transform:rotate(360deg)}}
+.back{flex:0 0 auto;background:transparent;color:var(--ink-soft);padding:16px 6px;font-size:.92rem}
+.back:hover{color:var(--ink)}
+.back[hidden]{display:none}
+
+.formnote{font-size:.83rem;color:var(--ink-soft);line-height:1.5;margin-top:14px;text-align:center}
+.failnote{display:none;margin-top:14px;padding:14px 15px;border-radius:12px;font-size:.88rem;
+  line-height:1.55;background:rgba(226,59,59,.06);border:1px solid rgba(226,59,59,.3)}
+.failnote.on{display:block}
+
+/* 봇 함정 */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ═══ 완료 화면 ════════════════════════════════════════════════ */
+#done{display:none;text-align:center;padding:40px 0 0}
+#done.on{display:block;animation:stepIn .7s var(--ease) both}
+.seal{width:70px;height:70px;margin:0 auto 24px;border-radius:50%;
+  background:rgba(221,247,70,.35);border:1.5px solid var(--edge);
+  display:flex;align-items:center;justify-content:center}
+.seal svg{width:32px;height:32px}
+.seal path{stroke:var(--headline);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:36;stroke-dashoffset:36;animation:draw .7s .25s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#done h2{margin-bottom:14px}
+#done p{font-size:1rem;line-height:1.66;max-width:30em;margin:0 auto}
+#done .after{margin-top:30px}
+#done .after img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow-s)}
+
+footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+       text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.6}
+
+/* 아주 좁은 기기에서만 좌우 여백을 더 줄인다 */
+@media (max-width:360px){ :root{--gut:15px} }
+
+/* ── 일본어판 조판 보정 ─────────────────────────────────────── */
+html[lang=ja] body{line-height:1.8;line-break:strict;overflow-wrap:anywhere;word-break:auto-phrase}
+html[lang=ja] h2,html[lang=ja] .step h3,html[lang=ja] .tl-date{letter-spacing:.01em;line-height:1.35}
+html[lang=ja] h1{letter-spacing:-.012em}
+html[lang=ja] .eyebrow,html[lang=ja] .kicker,html[lang=ja] .box-label,html[lang=ja] .stepmeta .nm,
+html[lang=ja] .slot span,html[lang=ja] .consent .head b{font-style:normal;letter-spacing:.05em}
+html[lang=ja] .tl-tag{text-transform:none;letter-spacing:.06em}
+html[lang=ja] .stepmeta .of{text-transform:none;letter-spacing:.05em}
+html[lang=ja] .facts li{line-height:1.75}
+html[lang=ja] label.lb,html[lang=ja] .hint,html[lang=ja] .lead,html[lang=ja] .consent li{line-height:1.75}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<div class="amb" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="rail" aria-hidden="true"><b id="rail"></b></div>
+
+<div class="wrap">
+
+<div id="form-view">
+
+<header>
+  <img class="mark" src="assets/lemonderma-logo.png" alt="Lemonderma">
+  <p class="eyebrow rv">Cohort 1 · Japan</p>
+  <h1 class="rv">Skin Lab Partners</h1>
+  <p class="sub rv">日本在住の女性20名。製品をつくる私たち本人と過ごす4週間。<em>しかも、どこよりも先に製品を試せます。</em></p>
+  <div class="pills rv">
+    <span class="pill">20名</span>
+    <span class="pill">4週間</span>
+    <span class="pill">11/16 – 12/14</span>
+  </div>
+</header>
+
+<div class="stage rv">
+  <div class="reels" id="reels"><!-- 아래 REELS 설정대로 채워진다 --></div>
+</div>
+
+<section class="rv">
+  <p class="kicker">私たちについて</p>
+  <h2>応募の前に知っていただきたい<br>5つのこと</h2>
+  <ol class="facts">
+    <li>韓国の<b>薬局スキンケア</b>です。本国の薬局では完売したラインです。</li>
+    <li><b class="hl">100%ヴィーガン</b>。ほかのスキンケアでは揺らぎやすい肌のために設計しました。</li>
+    <li>世界<b>50か国以上</b>の皮膚科クリニックに供給する研究所<b>Zishel Bio</b>由来の、レモン由来エクソソームを配合。</li>
+    <li>米国での発売から1か月以内に、2製品とも<b>Amazon's Choice</b>に選ばれました。</li>
+    <li>フォロワー2,700万人の<b>PONY</b>がレビューしています。</li>
+  </ol>
+
+</section>
+
+<section class="rv">
+  <p class="kicker">お手元に届くもの</p>
+  <h2>まず、セットから</h2>
+
+  <div class="bundle">
+    <img src="assets/bundle.jpg" alt="レモンダーマのセラムとクリーム" loading="lazy">
+  </div>
+
+  <div class="box">
+    <p class="box-label">いただけるもの</p>
+    <ul>
+      <li><span class="d">·</span><span>セラム＋クリームのセット<b class="amount">（約1万円相当）</b>を、韓国から無料でお送りします</span></li>
+      <li><span class="d">·</span><span>新製品を、発売前に無料でお試しいただけます</span></li>
+      <li><span class="d">·</span><span>CEOへのダイレクトな窓口</span></li>
+      <li><span class="d">·</span><span>もっとも活躍したパートナーには、<b class="amount">約7.5万円相当</b>のフルセットを</span></li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <p class="box-label">お願いしたいこと</p>
+    <p>4週間の最後に、率直な感想を<b>リール1本</b>で。
+      <span class="free">形式は自由です。大切なのは、正直であることだけです。</span>
+    </p>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item urgent">
+      <div class="tl-node"></div>
+      <div class="tl-body">
+        <span class="tl-tag">応募締切</span>
+        <p class="tl-date">11月9日（月）</p>
+        <p class="tl-label">応募は、この日で締め切ります。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-node"></div>
+      <div class="tl-body">
+        <p class="tl-date">11月10日（火）</p>
+        <p class="tl-label">最終メンバーを発表します。合否にかかわらず、ご連絡します。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-node"></div>
+      <div class="tl-body">
+        <p class="tl-date">11月16日（月）</p>
+        <p class="tl-label">4週間のスタート。セットはそれまでにお手元に届きます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rv">
+  <p class="kicker">誰が読むのか</p>
+  <h2>創業者へ、まっすぐに</h2>
+  <div class="bundle">
+    <img src="assets/founder.jpg" alt="レモンダーマのマルコとジョン" loading="lazy">
+  </div>
+  <div class="signed">
+    <p>すべての応募を、私たち自身が読みます。選ばれた方には、LINEグループへのご招待を私たちからお送りします。4週間、あなたと私たちは同じグループにいます。</p>
+    <p class="nm">Marco · CEO / John · Head of Marketing</p>
+  </div>
+</section>
+
+<!-- ═══════════ 신청 폼 ═══════════ -->
+<section id="apply" class="rv">
+  <p class="kicker">応募フォーム</p>
+  <h2>所要時間は約3分です</h2>
+
+  <div class="card-stage">
+  <form id="f" class="card" novalidate>
+
+    <div class="steps" aria-hidden="true">
+      <i class="on"></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="stepmeta">
+      <span class="of">STEP <b id="n-now">1</b> / 5</span>
+      <span class="nm" id="n-name">ご本人について</span>
+    </div>
+
+    <!-- ── 1 ─────────────────────────────────────────────── -->
+    <div class="step on" data-step="1" data-name="ご本人について">
+      <h3>まず、お住まいについて</h3>
+      <p class="lead">1期は日本国内のみにお届けします。ここが最初の確認です。</p>
+
+      <div class="f">
+        <label class="lb" for="prefecture">お住まいの都道府県<span class="req">*</span></label>
+        <select id="prefecture" name="prefecture">
+          <option value="">選んでください</option>
+          <option>北海道</option>
+          <option>青森県</option>
+          <option>岩手県</option>
+          <option>宮城県</option>
+          <option>秋田県</option>
+          <option>山形県</option>
+          <option>福島県</option>
+          <option>茨城県</option>
+          <option>栃木県</option>
+          <option>群馬県</option>
+          <option>埼玉県</option>
+          <option>千葉県</option>
+          <option>東京都</option>
+          <option>神奈川県</option>
+          <option>新潟県</option>
+          <option>富山県</option>
+          <option>石川県</option>
+          <option>福井県</option>
+          <option>山梨県</option>
+          <option>長野県</option>
+          <option>岐阜県</option>
+          <option>静岡県</option>
+          <option>愛知県</option>
+          <option>三重県</option>
+          <option>滋賀県</option>
+          <option>京都府</option>
+          <option>大阪府</option>
+          <option>兵庫県</option>
+          <option>奈良県</option>
+          <option>和歌山県</option>
+          <option>鳥取県</option>
+          <option>島根県</option>
+          <option>岡山県</option>
+          <option>広島県</option>
+          <option>山口県</option>
+          <option>徳島県</option>
+          <option>香川県</option>
+          <option>愛媛県</option>
+          <option>高知県</option>
+          <option>福岡県</option>
+          <option>佐賀県</option>
+          <option>長崎県</option>
+          <option>熊本県</option>
+          <option>大分県</option>
+          <option>宮崎県</option>
+          <option>鹿児島県</option>
+          <option>沖縄県</option>
+          <option value="__out">日本国外に住んでいます</option>
+        </select>
+        <p class="err" id="e-prefecture">お住まいを選んでください。</p>
+        <div class="gate" id="gate">
+          <b>1期は日本国内限定です。</b>今回は、途中で何も失われないよう、韓国から1か国だけに絞ってお送りしています。いただいたDMにご返信いただければ、お住まいの国での募集を始めたとき、真っ先にご連絡します。
+        </div>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="name">お名前<span class="req">*</span>
+          <span class="hint">荷物に記載するお名前（本名）です。</span>
+        </label>
+        <input type="text" id="name" name="name" autocomplete="name">
+        <p class="err" id="e-name">お名前を入力してください。</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="instagram">Instagramのアカウント名<span class="req">*</span></label>
+        <input type="text" id="instagram" name="instagram" placeholder="@アカウント名" autocapitalize="none" autocorrect="off" spellcheck="false">
+        <p class="err" id="e-instagram">Instagramのアカウント名を入力してください。</p>
+      </div>
+
+      <div class="f">
+        <label class="lb">年代<span class="req">*</span></label>
+        <div class="opts two" data-group="ageBand">
+          <label class="opt"><input type="radio" name="ageBand" value="20代以下"><span class="tick"></span>20代以下</label>
+          <label class="opt"><input type="radio" name="ageBand" value="30代"><span class="tick"></span>30代</label>
+          <label class="opt"><input type="radio" name="ageBand" value="40代"><span class="tick"></span>40代</label>
+          <label class="opt"><input type="radio" name="ageBand" value="50代以上"><span class="tick"></span>50代以上</label>
+        </div>
+        <p class="err" id="e-ageBand">ひとつ選んでください。</p>
+      </div>
+    </div>
+
+    <!-- ── 2 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="2" data-name="お肌について">
+      <h3>あなたのお肌</h3>
+      <p class="lead">ここが、選考で実際に見る部分です。お届けする内容を考えるうえでも使います。</p>
+
+      <div class="f">
+        <label class="lb">ご自身のお肌は、どんなタイプですか？<span class="req">*</span>
+          <span class="hint">当てはまるものをすべて選んでください。</span>
+        </label>
+        <div class="opts two" data-group="skinType">
+          <label class="opt cb"><input type="checkbox" name="skinType" value="乾燥肌"><span class="tick"></span>乾燥肌</label>
+          <label class="opt cb"><input type="checkbox" name="skinType" value="普通肌"><span class="tick"></span>普通肌</label>
+          <label class="opt cb"><input type="checkbox" name="skinType" value="混合肌"><span class="tick"></span>混合肌</label>
+          <label class="opt cb"><input type="checkbox" name="skinType" value="脂性肌"><span class="tick"></span>脂性肌</label>
+          <label class="opt cb"><input type="checkbox" name="skinType" value="敏感肌"><span class="tick"></span>敏感肌</label>
+        </div>
+        <p class="err" id="e-skinType">ひとつ以上選んでください。</p>
+      </div>
+
+      <div class="f">
+        <label class="lb">いちばん気になっていることは何ですか？<span class="req">*</span>
+          <span class="hint">最大3つまで選べます。</span>
+        </label>
+        <div class="opts" data-group="concerns" data-max="3">
+          <label class="opt cb"><input type="checkbox" name="concerns" value="シミ・色ムラ"><span class="tick"></span>シミ・色ムラ</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="くすみ・ツヤ不足"><span class="tick"></span>くすみ・ツヤ不足</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="小じわ・ハリ不足"><span class="tick"></span>小じわ・ハリ不足</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="乾燥・つっぱり"><span class="tick"></span>乾燥・つっぱり</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="キメ・毛穴"><span class="tick"></span>キメ・毛穴</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="赤み・ゆらぎ"><span class="tick"></span>赤み・ゆらぎ</label>
+          <label class="opt cb"><input type="checkbox" name="concerns" value="ニキビ・吹き出物"><span class="tick"></span>ニキビ・吹き出物</label>
+        </div>
+        <p class="counter"><b id="cn">0</b> / 3 選択中</p>
+        <p class="err" id="e-concerns">ひとつ以上選んでください。</p>
+      </div>
+    </div>
+
+    <!-- ── 3 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="3" data-name="使っているもの">
+      <h3>いま使っているスキンケア</h3>
+      <p class="lead">正解はありません。私たちが、何と比べられることになるのかを知りたいだけです。</p>
+
+      <div class="f">
+        <label class="lb">韓国のスキンケアを使ったことはありますか？<span class="req">*</span></label>
+        <div class="opts" data-group="kbeauty">
+          <label class="opt"><input type="radio" name="kbeauty" value="日常的に使っている"><span class="tick"></span>はい、日常的に使っています</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="いくつか試した"><span class="tick"></span>いくつか試したことがあります</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="聞いたことはあるが未経験"><span class="tick"></span>聞いたことはありますが、使ったことはありません</label>
+          <label class="opt"><input type="radio" name="kbeauty" value="未経験"><span class="tick"></span>いいえ、今回が初めてになります</label>
+        </div>
+        <p class="err" id="e-kbeauty">ひとつ選んでください。</p>
+      </div>
+
+      <div class="f">
+        <label class="lb" for="lastProduct">最近買ったスキンケア商品
+          <span class="hint">任意です。ブランド名と商品名を、覚えている範囲で。</span>
+        </label>
+        <input type="text" id="lastProduct" name="lastProduct" placeholder="例：ラ ロッシュ ポゼ メラB3 セラム">
+      </div>
+
+      <div class="f">
+        <label class="lb" for="lastReason">それを買った理由は？
+          <span class="hint">任意です。一言で十分です。広告、友人、口コミ、成分など。</span>
+        </label>
+        <input type="text" id="lastReason" name="lastReason">
+      </div>
+    </div>
+
+    <!-- ── 4 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="4" data-name="あなたを選ぶ理由">
+      <h3>なぜ、あなたなのか</h3>
+      <p class="lead">いちばん丁寧に読む回答です。話し言葉のままで書いてください。</p>
+
+      <div class="f">
+        <label class="lb" for="why">20名のうちの1人になりたい理由は？<span class="req">*</span>
+          <span class="hint">2〜3文で。正解はありません。うまくいかないときに、ちゃんと伝えてくれる方を探しています。</span>
+        </label>
+        <textarea id="why" name="why"></textarea>
+        <p class="err" id="e-why">ご自身の言葉で教えてください。</p>
+      </div>
+    </div>
+
+    <!-- ── 5 ─────────────────────────────────────────────── -->
+    <div class="step" data-step="5" data-name="ご連絡先">
+      <h3>ご連絡の方法</h3>
+      <p class="lead">ご住所は、まだお伺いしません。選ばれた場合にのみお伺いします。</p>
+
+      <div class="f">
+        <label class="lb" for="lineId">LINE ID
+          <span class="hint">任意です。お持ちの場合のみで構いません。選ばれた方へのご案内は、InstagramのDMまたはLINEでお送りします。ID検索をオフにしている場合は、空欄で構いません。</span>
+        </label>
+        <input type="text" id="lineId" name="lineId" placeholder="例：lemonderma" autocapitalize="none" autocorrect="off" spellcheck="false">
+      </div>
+
+      <div class="f">
+        <label class="lb" for="email">メールアドレス<span class="req">*</span>
+          <span class="hint">予備の連絡先です。DMやLINEで連絡がつかないときに使います。</span>
+        </label>
+        <input type="email" id="email" name="email" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="email">
+        <p class="err" id="e-email">メールアドレスを正しく入力してください。</p>
+      </div>
+
+      <div class="f">
+        <div class="consent">
+          <label class="head" for="consent">
+            <input type="checkbox" id="consent" name="consent"><span class="tick"></span>
+            <b>参加します。</b>
+          </label>
+          <ul>
+            <li><span class="d">·</span><span>4週間の最後に、リールを1本投稿し、元のファイルをお送りします。レモンダーマは、クレジット付きで自社のチャンネル・ウェブサイト・広告に掲載する場合があります。広告に使う場合は、事前にご連絡します。</span></li>
+            <li><span class="d">·</span><span>いただいた情報は、メンバーの選考とご連絡のためだけに使い、ほかの誰にも渡しません。1期の終了後に削除します。ご住所は、選ばれた場合にのみお伺いします。</span></li>
+            <li><span class="d">·</span><span>次の募集が始まったときは、お知らせを受け取ります。</span></li>
+          </ul>
+        </div>
+        <p class="err" id="e-consent">先に進むには、チェックを入れてください。</p>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="website">ここは空欄のままにしてください</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="nav">
+      <button type="button" class="back" id="back" hidden>← 戻る</button>
+      <button type="submit" class="btn" id="go">
+        <span class="lbl" id="go-lbl">次へ</span>
+        <span class="spin" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <p class="formnote">応募は<b>11月9日</b>まで。最終メンバーは<b>11月10日</b>に発表します。</p>
+    <div class="failnote" id="fail"></div>
+
+  </form>
+  </div>
+</section>
+
+<footer>
+  <p>Lemonderma · VDVIA Co., Ltd.<br>1期は2026年11月16日〜12月14日です。</p>
+</footer>
+
+</div><!-- /form-view -->
+
+<!-- ═══════════ 완료 ═══════════ -->
+<div id="done">
+  <div class="seal">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.6 9.2 18 20 6.6"/></svg>
+  </div>
+  <h2>たしかに受け取りました。</h2>
+  <p>すべての応募を、私たち自身が読みます。応募は<b>11月9日</b>まで、最終メンバーは<b>11月10日</b>に発表します。合否にかかわらず、ご連絡します。選ばれた場合は、InstagramのDMまたはLINEでご案内します。</p>
+  <div class="after">
+    <!-- lazy 금지: 제출 직후 뜨는 화면이라 그 순간 이미 로드돼 있어야 한다 -->
+    <img src="assets/unboxing.jpg" alt="レモンダーマのセラムとクリーム、フレッシュなレモン">
+  </div>
+  <footer>
+    <p>Lemonderma · VDVIA Co., Ltd.<br>ご不明な点は、DMへの返信でお気軽にどうぞ。</p>
+  </footer>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   접수 창구 — Google Apps Script 웹앱 URL
+   배포 후 아래 한 줄만 교체하면 폼이 살아난다.
+   코드·배포 절차: 같은 폴더의 apps-script.gs
+   ══════════════════════════════════════════════════════════════ */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyMVW3yJS0_8kASv4gwHAEVnevXdhoV5zxtloVUfxqr6z47Un3CqDRByAY29fZYgg0z/exec";
+
+/* ══════════════════════════════════════════════════════════════
+   첫 화면 릴스 2개 (9:16 세로, 무음 자동재생)
+   파일을 apply/assets/ 에 넣고 아래 src 한 줄만 채우면 영상이 뜬다.
+   비워 두면 규격이 표시되는 빈 슬롯으로 보인다 — 화면이 깨지지 않는다.
+   poster 는 선택(첫 프레임 캡처). 넣으면 로딩 중에도 그림이 보인다.
+   ══════════════════════════════════════════════════════════════ */
+const REELS = [
+  { src: "assets/reel1.mp4", poster: "assets/reel1-poster.jpg", label: "PONYのレビュー",
+    spec: "①\n9:16 세로 영상\n1080×1920\n무음 자동재생 · 2MB 이하" },
+  { src: "assets/reel2.mp4", poster: "assets/reel2-poster.jpg", label: "韓国の薬局で販売",
+    spec: "②\n9:16 세로 영상\n1080×1920\n무음 자동재생 · 2MB 이하" }
+];
+
+const ICON_MUTE = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>';
+const ICON_LOUD = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M16 8.5a5 5 0 0 1 0 7"/><path d="M19 6a9 9 0 0 1 0 12"/></svg>';
+
+(function renderReels(){
+  const box = document.getElementById('reels');
+  if (!box) return;
+  box.innerHTML = REELS.map((r, i) => {
+    if (!r.src){
+      return '<figure class="reel slot tall" data-spec="' + r.spec.replace(/\n/g,'&#10;') + '"></figure>';
+    }
+    return '<figure class="reel">'
+      + '<video id="rv' + i + '" src="' + r.src + '"'
+      + (r.poster ? ' poster="' + r.poster + '"' : '')
+      + ' autoplay muted loop playsinline preload="metadata"></video>'
+      + '<button type="button" class="snd" data-for="rv' + i + '" aria-label="音を出す">' + ICON_MUTE + '</button>'
+      + (r.label ? '<figcaption class="cap">' + r.label + '</figcaption>' : '')
+      + '</figure>';
+  }).join('');
+
+  /* 소리 켜기 — 자동재생은 무음이어야만 허용되므로 켜는 건 탭으로 */
+  box.addEventListener('click', (e) => {
+    const btn = e.target.closest('.snd');
+    if (!btn) return;
+    const me = document.getElementById(btn.dataset.for);
+    const turningOn = me.muted;
+    box.querySelectorAll('video').forEach(v => {   /* 한 번에 하나만 소리가 난다 */
+      v.muted = true;
+      const b = box.querySelector('.snd[data-for="' + v.id + '"]');
+      if (b){ b.innerHTML = ICON_MUTE; b.setAttribute('aria-label','音を出す'); }
+    });
+    if (turningOn){
+      me.muted = false;
+      me.play().catch(() => {});
+      btn.innerHTML = ICON_LOUD;
+      btn.setAttribute('aria-label','音を消す');
+    }
+  });
+
+  /* 화면 밖으로 나가면 멈추고, 안으로 들어오면 다시 튼다.
+     ⚠️ 관찰자 콜백만 믿으면 안 된다 — 뷰포트가 바뀌는 순간 브라우저가 영상을
+     멈춰버리는 경우가 있고(실측), 그러면 첫 화면 증거 영상이 정지한 채로 남는다.
+     그래서 "틀어야 하는 상태"를 따로 기억해 두고 pause 가 나면 되돌린다. */
+  const wants = new WeakMap();      // 이 영상이 지금 재생 중이어야 하는가
+  const tries = new WeakMap();      // 되살리기 시도 횟수(무한 반복 방지)
+
+  function resume(v){
+    if (!wants.get(v) || document.hidden) return;
+    const n = (tries.get(v) || 0);
+    if (n > 5) return;
+    tries.set(v, n + 1);
+    v.play().catch(() => {});
+  }
+
+  box.querySelectorAll('video').forEach(v => {
+    wants.set(v, true);
+    v.addEventListener('pause', () => resume(v));
+    v.addEventListener('loadeddata', () => resume(v));
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) box.querySelectorAll('video').forEach(v => { tries.set(v, 0); resume(v); });
+  });
+
+  if ('IntersectionObserver' in window){
+    const vio = new IntersectionObserver(es => es.forEach(en => {
+      const v = en.target;
+      if (en.isIntersecting){ wants.set(v, true); tries.set(v, 0); resume(v); }
+      else { wants.set(v, false); v.pause(); v.muted = true; }
+    }), {threshold:0});          // 한 픽셀이라도 보이면 재생 — 판정을 예민하게 두지 않는다
+    box.querySelectorAll('video').forEach(v => vio.observe(v));
+  }
+})();
+
+const SAVE_KEY = 'sklab-jp-c1-draft';   /* UAE 페이지와 같은 도메인이라 키를 분리 */
+const TOTAL = 5;
+let step = 1;
+
+const form    = document.getElementById('f');
+const goBtn   = document.getElementById('go');
+const goLbl   = document.getElementById('go-lbl');
+const backBtn = document.getElementById('back');
+const fail    = document.getElementById('fail');
+const rail    = document.getElementById('rail');
+const bars    = document.querySelectorAll('.steps i');
+const stepEls = document.querySelectorAll('.step');
+
+/* ?slots=1 → 에셋 슬롯 규격 표시 (John 확인용, 신청자에게는 안 보임) */
+if (new URLSearchParams(location.search).has('slots')) document.body.classList.add('slots');
+
+/* ── 스크롤 등장 ─────────────────────────────────────────────── */
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el,i) => {
+  el.style.transitionDelay = Math.min(i,5) * 60 + 'ms';
+  io.observe(el);
+});
+
+/* ── 포인터 3D 틸트 (마우스가 있는 기기에서만) ───────────────── */
+const fine = matchMedia('(pointer:fine)').matches &&
+             !matchMedia('(prefers-reduced-motion:reduce)').matches;
+if (fine){
+  document.querySelectorAll('[data-tilt]').forEach(el => {
+    el.addEventListener('pointermove', (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5;
+      const y = (e.clientY - r.top) / r.height - .5;
+      el.style.transition = 'transform .12s linear';
+      el.style.transform = 'rotateY(' + (x*5) + 'deg) rotateX(' + (-y*5) + 'deg) translateZ(8px)';
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.transition = 'transform .6s cubic-bezier(.16,.84,.28,1)';
+      el.style.transform = '';
+    });
+  });
+}
+
+/* ── 값 읽기 ─────────────────────────────────────────────────── */
+const v   = id => (document.getElementById(id) ? document.getElementById(id).value : '').trim();
+const rad = n  => { const el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+const chk = n  => [].slice.call(form.querySelectorAll('input[name="' + n + '"]:checked')).map(i => i.value);
+
+function markField(id, bad){
+  const el = document.getElementById(id);      if (el)  el.classList.toggle('bad', bad);
+  const er = document.getElementById('e-'+id); if (er)  er.classList.toggle('on', bad);
+}
+function markGroup(name, bad){
+  const g  = form.querySelector('.opts[data-group="' + name + '"]');
+  if (g) g.classList.toggle('bad', bad);
+  const er = document.getElementById('e-'+name); if (er) er.classList.toggle('on', bad);
+}
+
+/* 선택된 카드에 배경을 입힌다 (:has 미지원 브라우저 대비) */
+function paintOpts(){
+  form.querySelectorAll('.opt').forEach(o => {
+    const i = o.querySelector('input');
+    o.classList.toggle('sel', !!(i && i.checked));
+  });
+}
+
+/* ── 거주 확인 게이트 ────────────────────────────────────────── */
+const emirate = document.getElementById('prefecture');
+const gate = document.getElementById('gate');
+emirate.addEventListener('change', () => {
+  const out = emirate.value === '__out';
+  gate.classList.toggle('on', out);
+  if (!out) markField('prefecture', false);
+  save();
+});
+
+/* ── 고민 최대 3개 ───────────────────────────────────────────── */
+const concernBox = form.querySelector('.opts[data-group="concerns"]');
+const cn = document.getElementById('cn');
+function syncConcerns(){
+  const picked = chk('concerns');
+  cn.textContent = picked.length;
+  concernBox.querySelectorAll('.opt').forEach(o => {
+    const input = o.querySelector('input');
+    o.classList.toggle('off', picked.length >= 3 && !input.checked);
+  });
+  if (picked.length) markGroup('concerns', false);
+}
+concernBox.addEventListener('change', (e) => {
+  /* pointer-events 만으로는 키보드(스페이스)로 4개째가 켜진다 — 여기서 실제로 막는다 */
+  if (e.target.checked && chk('concerns').length > 3) e.target.checked = false;
+  syncConcerns(); save();
+});
+
+/* ── 단계별 검증 ─────────────────────────────────────────────── */
+function validateStep(n){
+  let firstBad = null;
+  const flagF = id => { markField(id, true); firstBad = firstBad || document.getElementById(id); };
+  const flagG = nm => { markGroup(nm, true);
+    firstBad = firstBad || form.querySelector('.opts[data-group="' + nm + '"]'); };
+
+  if (n === 1){
+    if (!v('prefecture')) flagF('prefecture'); else markField('prefecture', false);
+    if (v('prefecture') === '__out'){ gate.classList.add('on'); firstBad = firstBad || gate; }
+    ['name','instagram'].forEach(id => v(id) ? markField(id,false) : flagF(id));
+    rad('ageBand') ? markGroup('ageBand',false) : flagG('ageBand');
+  }
+  if (n === 2){
+    chk('skinType').length ? markGroup('skinType',false) : flagG('skinType');
+    chk('concerns').length ? markGroup('concerns',false) : flagG('concerns');
+  }
+  if (n === 3){
+    rad('kbeauty') ? markGroup('kbeauty',false) : flagG('kbeauty');
+  }
+  if (n === 4){
+    v('why').length >= 2 ? markField('why',false) : flagF('why');
+  }
+  if (n === 5){
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email')) ? markField('email',false) : flagF('email');
+    const ok = document.getElementById('consent').checked;
+    document.getElementById('e-consent').classList.toggle('on', !ok);
+    if (!ok) firstBad = firstBad || document.getElementById('consent').closest('.consent');
+  }
+  return firstBad;
+}
+
+/* ── 단계 이동 ───────────────────────────────────────────────── */
+function show(n, noScroll){
+  step = n;
+  stepEls.forEach(el => el.classList.toggle('on', +el.dataset.step === n));
+  bars.forEach((b,i) => b.classList.toggle('on', i < n));
+  rail.style.width = (n / TOTAL * 100) + '%';
+  document.getElementById('n-now').textContent = n;
+  document.getElementById('n-name').textContent =
+    document.querySelector('.step[data-step="' + n + '"]').dataset.name;
+  backBtn.hidden = n === 1;
+  goLbl.textContent = n === TOTAL ? '応募を送信する' : '次へ';
+
+  if (noScroll) return;
+  const top = form.getBoundingClientRect().top;
+  if (top < 0 || top > innerHeight * .5){
+    document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
+backBtn.addEventListener('click', () => { if (step > 1) show(step - 1); });
+
+/* 텍스트 칸에서 Enter → 제출이 아니라 다음 단계 */
+form.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.tagName === 'INPUT'){ e.preventDefault(); goBtn.click(); }
+});
+
+/* 입력하는 순간 빨간 표시 해제 */
+form.addEventListener('input', e => {
+  if (e.target.id) markField(e.target.id, false);
+  save();
+});
+form.addEventListener('change', e => {
+  paintOpts();
+  const box = e.target.closest('.opts');
+  if (box && box.dataset.group) markGroup(box.dataset.group, false);
+  save();
+});
+
+/* ── 작성 중인 내용 임시 보관 (새로고침해도 안 날아간다) ───────── */
+function payload(){
+  return {
+    market: 'jp', prefecture: v('prefecture'), name: v('name'), instagram: v('instagram'),
+    ageBand: rad('ageBand'), skinType: chk('skinType').join(', '),
+    /* 민감성은 피부 타입 보기 중 하나 — 시트 민감성 열은 여기서 파생시킨다 */
+    sensitive: chk('skinType').indexOf('敏感肌') >= 0 ? 'Y' : 'N',
+    concerns: chk('concerns').join(', '),
+    kbeauty: rad('kbeauty'), lastProduct: v('lastProduct'), lastReason: v('lastReason'),
+    why: v('why'), lineId: v('lineId'), email: v('email'),
+    consent: document.getElementById('consent').checked ? 'Y' : 'N'
+  };
+}
+function save(){ try{ localStorage.setItem(SAVE_KEY, JSON.stringify(payload())); }catch(e){} }
+
+function pick(name, value){
+  const all = form.querySelectorAll('input[name="' + name + '"]');
+  for (let i = 0; i < all.length; i++){ if (all[i].value === value){ all[i].checked = true; return; } }
+}
+function restore(){
+  let d; try{ d = JSON.parse(localStorage.getItem(SAVE_KEY) || 'null'); }catch(e){ return; }
+  if (!d) return;
+  ['prefecture','name','instagram','lastProduct','lastReason','why','lineId','email']
+    .forEach(id => { if (d[id]) document.getElementById(id).value = d[id]; });
+  ['ageBand','kbeauty'].forEach(n => { if (d[n]) pick(n, d[n]); });
+  (d.skinType || '').split(', ').filter(Boolean).forEach(val => pick('skinType', val));
+  (d.concerns || '').split(', ').filter(Boolean).forEach(val => pick('concerns', val));
+  if (d.consent === 'Y') document.getElementById('consent').checked = true;
+  if (d.prefecture === '__out') gate.classList.add('on');
+}
+restore();
+syncConcerns();
+paintOpts();
+
+/* ── 제출 ────────────────────────────────────────────────────── */
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  fail.classList.remove('on');
+
+  const bad = validateStep(step);
+  if (bad){
+    bad.scrollIntoView({behavior:'smooth', block:'center'});
+    const focusable = bad.querySelector ? bad.querySelector('input,select,textarea') : null;
+    (focusable || bad).focus && (focusable || bad).focus({preventScroll:true});
+    return;
+  }
+
+  if (step < TOTAL){ show(step + 1); return; }
+
+  /* 봇 함정: 사람 눈에 안 보이는 칸이 채워져 있으면 조용히 성공 처리 */
+  if (v('website')){ finish(); return; }
+
+  goBtn.disabled = true;
+  goBtn.classList.add('busy');
+
+  try {
+    if (!ENDPOINT || ENDPOINT.indexOf('PASTE_') === 0) throw new Error('endpoint not configured');
+    /* text/plain 으로 보내면 프리플라이트(OPTIONS)가 안 생겨 Apps Script가 그대로 받는다 */
+    await fetch(ENDPOINT, {
+      method:'POST', mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload())
+    });
+    try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
+    finish();
+  } catch (err) {
+    goBtn.disabled = false;
+    goBtn.classList.remove('busy');
+    fail.textContent = "送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。それでもうまくいかない場合は、いただいたDMにご返信ください。DMで内容をお預かりします。";
+    fail.classList.add('on');
+  }
+});
+
+function finish(){
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('done').classList.add('on');
+  rail.style.width = '100%';
+  scrollTo({top:0, behavior:'smooth'});
+}
+
+show(1, true);   /* 첫 렌더에서는 스크롤하지 않는다 — 히어로부터 보여야 한다 */
+</script>
+
+<!--
+════════════════════════════════════════════════════════════════════
+ 소재 자리 — 5/5 전부 채움
+
+ · 주소 뒤에 ?slots=1 을 붙여 열면 빈 자리의 규격이 표시된다(지금은 빈 자리 없음).
+   예) …/skinlab-apply/?slots=1        (신청자에게는 안 보인다)
+
+   ①②  9:16 영상 — 채움 (assets/reel1.mp4, assets/reel2.mp4)
+   ③   1:1(가로형 그대로) 이미지 — 채움 (assets/bundle.jpg)
+   ④   1:1 이미지, 원본 그대로 전체폭 — 채움 (assets/founder.jpg)
+   ⑤   제출 완료 화면 — 채움 (assets/unboxing.jpg, 세로 733×1100)
+       원본이 세로 사진이라 16:9로 자르지 않고 원본 비율 그대로 전체폭으로 넣었다
+       (John 지시: 받은 이미지를 임의로 크롭하지 말 것).
+
+ ── 영상 교체·수정 시 참고 ──────────────────────────────────────
+   REELS 배열( <script> 상단)에서 src·poster·label 을 바꾼다.
+   현재 영상은 원본을 9:16으로 스케일 + 무음 + CRF27로 압축한 것
+   (reel1 700KB·8.2초 / reel2 1.0MB·7.5초) — 2MB 상한 안에 여유 있음.
+   화면 밖으로 나가면 멈추고, 돌아오면 다시 재생된다(뷰포트 전환 시
+   브라우저가 멈춰버리는 현상 실측 → 복구 로직 내장, apps-script.gs
+   근처가 아니라 이 파일의 renderReels() 안에 있음).
+
+ ── 기타 ────────────────────────────────────────────────────────
+ · assets/ 에 남은 원본 크기 파일은 없음(전부 웹용으로 압축·리사이즈).
+ · 레이아웃은 PC에서도 모바일과 같은 한 칼럼(--col: 420px).
+════════════════════════════════════════════════════════════════════
+-->
+
+</body>
+</html>
