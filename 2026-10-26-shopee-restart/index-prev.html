@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
-<title>Shopee 크로스보더 점검·판매전략 v3.1 — 2026-10-26 (John 피드백 반영 · 10/27 E01 실측 반영)</title>
+<title>Shopee 크로스보더 판매전략 — 현재판 (2026-10-27 갱신)</title>
 <style>
 :root{--bg-top:#fefcd0;--bg-bot:#fff;--yellow:#E6EE7A;--line:#ddea65;--line-soft:#ece5c5;--ink:#000;--ink-65:rgba(0,0,0,.65);--ink-45:rgba(0,0,0,.45);--head:#4b612d;--hl:rgba(221,247,70,.30);--red:#e23b3b;--card:#fff;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -31,610 +31,513 @@ a{color:var(--head)}
 @media (max-width:900px){.side{display:none}.main{padding:22px 16px 80px}h1{font-size:26px}table{display:block;overflow-x:auto}}
 </style></head>
 <body><div class="shell">
-<nav class="side"><div class="wm">LEMONDERMA</div><div class="kicker">30_growth · marketing · sea/shopee</div><a href="#0-한-줄-결론">0. 한 줄 결론</a>
-<a href="#1-John-피드백-4건--답">1. John 피드백 4건 → 답</a>
-<a href="#2-지금-상태--셀러센터-실측-2026-10-26-11001140--1540-추가">2. 지금 상태 — 셀러센터 실측 (2026-10-26 11:00~11:40 · 15:40 추가, 🟢)</a>
-<a href="#3-진단--왜-안-팔리나">3. 진단 — 왜 안 팔리나</a>
-<a href="#4-가격-체계-v3--표시가-3635--마지노선-2422--인상--30일--취소선">4. 가격 체계 v3 — 표시가 $36/$35 · 마지노선 $24/$22 · &quot;인상 → 30일 → 취소선&quot;</a>
-<a href="#5-1부--필수-세팅-돈마케팅-전-10271029">5. 1부 — 필수 세팅 (돈·마케팅 전, 10/27~10/29)</a>
-<a href="#6-2부--돈-쓰는-액션-비용값시작게이트">6. 2부 — 돈 쓰는 액션 (비용·값·시작·게이트)</a>
-<a href="#7-3부--돈-안-쓰는-액션-노출전환">7. 3부 — 돈 안 쓰는 액션 (노출·전환)</a>
-<a href="#8-US-자산--Shopee-이식-매핑">8. US 자산 → Shopee 이식 매핑</a>
-<a href="#9-국가-순서-v3--전-샵-재오픈--광고는-순차">9. 국가 순서 v3 — 전 샵 재오픈 + 광고는 순차</a>
-<a href="#10-광고-설계-v3-SG-일-20--90일">10. 광고 설계 v3 (SG 일 $20 → 90일)</a>
-<a href="#11-단위경제--SG-세럼-1개-v31-GST-가산-구조---배송-실비-S592--반영">11. 단위경제 — SG 세럼 1개 (v3.1: GST 가산 구조 🟢 · 배송 실비 S$5.92 🟢 반영)</a>
-<a href="#12-일정-10271214-속도-우선">12. 일정 (10/27~12/14, 속도 우선)</a>
-<a href="#13-성적표판정-2주마다">13. 성적표·판정 (2주마다)</a>
-<a href="#14-실행-목록-v3-값-포함--순서-고정--Claude-실행-돈비밀번호만-John">14. 실행 목록 v3 (값 포함 · 순서 고정 · Claude 실행, 돈·비밀번호만 John)</a>
-<a href="#15-실행-전-실측-항목-1027-승격-대상-굵게">15. 실행 전 실측 항목 (10/27 승격 대상 굵게)</a>
-<a href="#16-마케팅-게이트-6문-v3-자기평가">16. 마케팅 게이트 6문 (v3 자기평가)</a>
-<a href="#17-v2--v3-변경-내역-레드팀-06과의-관계">17. v2 → v3 변경 내역 (레드팀 06과의 관계)</a>
-<a href="#17-1-v3--v31-변경-1027-E01-실측-research00-11">17-1. v3 → v3.1 변경 (10/27 E01 실측, research/00 §11)</a>
+<nav class="side"><div class="wm">LEMONDERMA</div><div class="kicker">30_growth · marketing · sea/shopee</div><a href="#0-지금-상태-한눈에--102627-셀러센터-실측">0. 지금 상태 한눈에 (🟢 10/26~27 셀러센터 실측)</a>
+<a href="#1-순서--1부-세팅--3부-무료--2부-유료-매출은-바로">1. 순서 — 1부 세팅 → 3부 무료 → 2부 유료, 매출은 바로</a>
+<a href="#2-가격번들-체계">2. 가격·번들 체계</a>
+<a href="#3-1부--필수-세팅-1028-돈광고-전">3. 1부 — 필수 세팅 (10/28, 돈·광고 전)</a>
+<a href="#4-3부--돈-안-쓰는-액션-노출전환">4. 3부 — 돈 안 쓰는 액션 (노출·전환)</a>
+<a href="#5-2부--돈-쓰는-액션-가이드">5. 2부 — 돈 쓰는 액션 가이드</a>
+<a href="#6-국가별-활성화규제-절차-8샵-동시-활성-서류는-지금-착수">6. 국가별 활성화·규제 절차 (8샵 동시 활성, 서류는 지금 착수)</a>
+<a href="#7-US-자산--Shopee-이식">7. US 자산 → Shopee 이식</a>
+<a href="#8-단위경제--SG-세럼-1개-USD-S1--0782">8. 단위경제 — SG 세럼 1개 (USD, S$1 = $0.782)</a>
+<a href="#9-일정-10281214">9. 일정 (10/28~12/14)</a>
+<a href="#10-실행-목록-값-포함--Claude-실행--돈비밀번호만-John">10. 실행 목록 (값 포함 · Claude 실행 · 돈·비밀번호만 John)</a>
+<a href="#11-남은-실측질의-열려-있는-것만">11. 남은 실측·질의 (열려 있는 것만)</a>
+<a href="#12-마케팅-게이트-6문">12. 마케팅 게이트 6문</a>
 <a href="#출처">출처</a></nav>
 <main class="main">
 <div class="status">🟡 점검·재가동 설계 · 2026-10-26</div>
-<h1>Shopee 크로스보더 점검·판매전략 v3.1 — 2026-10-26 (John 피드백 반영 · 10/27 E01 실측 반영)</h1>
+<h1>Shopee 크로스보더 판매전략 — 현재판 (2026-10-27 갱신)</h1>
 <blockquote>
-<p><strong>배경:</strong> 2026-10-26 주간미팅 — "쇼피를 한번 점검하고, 큐텐·월마트에서 수입 파이프라인을 늘리는 것처럼 쇼피도 판매 전략을 세우고 광고를 태워보자"(John). 목적 = <strong>쇼피에서도 매출이 조금씩 일어나게 만들기.</strong> 노션 10/26 안건: John "동남아(Shopee) 리서치", Marco "Shopee 배송점검·알림". 녹음본은 회의록봇이 처리하지 못해(서버 재시작 반복, 전사 로그 없음) 안건·10/19 회의록·John 지시문을 맥락으로 쓴다.
-<strong>v3(10/26 오후):</strong> John 피드백 4건 반영 — ⓐ 표시가 세럼 $36·크림 $35 + 할인·쿠폰으로 전환, 마지노선 세럼 $24·크림 $22 ⓑ 광고 일 $20(근거 있으면 증액) ⓒ 8개 샵 전부 재오픈 ⓓ 실행 목록 재작성. 문서 구조도 John 요청대로 <strong>1부 필수 세팅(돈·마케팅 전) → 2부 돈 쓰는 액션 → 3부 돈 안 쓰는 액션</strong>으로 다시 짰다. v2(레드팀 20건 반영)에서 뒤집은 것은 §17에 적었다.
-<strong>배지:</strong> <span class="b g">🟢</span> 실측(셀러센터 화면·공식 문서) · <span class="b y">🟡</span> 추정 · <span class="b r">🔴</span> 가설. 1차 출처 = <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/00-%EC%85%80%EB%9F%AC%EC%84%BC%ED%84%B0-%EC%8B%A4%EC%B8%A1-2026-10-26.md">research/00</a>(셀러센터) · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/05-%EC%86%8C%EB%B9%84%EC%9E%90%EC%8B%9C%EC%A0%90-%EA%B2%80%EC%83%89-%EC%8B%A4%EC%B8%A1-2026-10-26.md">05</a>(소비자 검색) · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/01-%EA%B5%AD%EA%B0%80-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-2026-10-26.md">01</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/02-%EA%B4%91%EA%B3%A0-%EC%A0%84%ED%99%98%EB%A0%88%EB%B2%84-2026-10-26.md">02</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/03-%EA%B2%BD%EC%9F%81-%EB%B2%A4%EC%B9%98%EB%A7%88%ED%81%AC-2026-10-26.md">03</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/04-CB%EC%A0%9C%EB%8F%84-SIP-%EC%88%98%EC%88%98%EB%A3%8C-2026-10-26.md">04</a> · 레드팀 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/06-%EB%A0%88%EB%93%9C%ED%8C%80-%EA%B2%80%EC%A6%9D-2026-10-26.md">06</a> · 담당자 질의 초안 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/07-%EC%87%BC%ED%94%BC%EC%BD%94%EB%A6%AC%EC%95%84-%EB%8B%B4%EB%8B%B9%EC%9E%90-%EC%A7%88%EC%9D%98-%EC%B4%88%EC%95%88-2026-10-26.md">07</a> · <strong>가격 규칙 원문 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-%EA%B0%80%EA%B2%A9%EA%B7%9C%EC%B9%99-%ED%97%88%EC%9C%84%ED%95%A0%EC%9D%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EA%B8%B0%EC%A4%80-2026-10-26.md">08</a></strong> · <strong>Marco 결정 메모 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-Marco-%EA%B2%B0%EC%A0%95%EB%A9%94%EB%AA%A8-%EC%A0%95%EC%82%B0%C2%B7PIF%C2%B7%EC%B6%9C%EA%B3%A0-2026-10-26.md">08-Marco</a></strong>(다른 세션, 10/26 — 정산 Payoneer·TW PIF 없음·재고 불일치). 환율은 1 USD = S$1.279 · NT$32.60 · ₩1,324(10/26)로 통일.
-<strong>v3.1(10/27 E01 실측):</strong> §15 ①②④⑤⑥⑨⑯⑰⑲⑳㉑를 John 크롬에서 읽기 전용으로 확인(<a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/00-%EC%85%80%EB%9F%AC%EC%84%BC%ED%84%B0-%EC%8B%A4%EC%B8%A1-2026-10-26.md">research/00 §11</a>). 바뀐 값 7건 — ① SG Shop SKU 가격칸은 <strong>세전</strong>이라 <strong>입력가 = 표시가 ÷ 1.09</strong>(S$42.20 / S$41.10 입력 → 'After Tax' S$46.00 / S$44.80) ② GMV Max <strong>최소 일예산 S$12/상품</strong> → 세럼 S$15 · 크림 S$12(≈$21/일) ③ <strong>Shop+는 활성 상품 ≥4</strong> 뒤(세트 + 세럼 2개입) ④ 11.11 바우처 실제 세션 22%/cap S$5 · 16%/cap S$10, 마감 <strong>10/29 18:00 SG</strong> ⑤ 4월 주문 50건 = <strong>파인드리뷰 체험단</strong>($0.10 바우처 25+25) → 리뷰 50은 전환 근거에서 제외, 리뷰 재건 트랙 ON ⑥ 배송 실비 <strong>S$5.92/건</strong>(4월 주문) → 본전 ROAS 2.0 → <strong>2.6</strong> ⑦ Global SKU 저장은 Anvisa 공란으로 막혀 있음 → 재고 정정은 Shop SKU 단위. 변경표 §17-1.
-<strong>정본 지위:</strong> 이 폴더의 정본(v3.1). 갱신은 이 파일에, 허브 .html은 <code>build_hub.py</code>로 재생성, <strong>공개 허브 = https://vdvia.github.io/lemonderma-reports/2026-10-26-shopee-restart/</strong>(게시 <code>./publish.sh</code> — 발행 사본에서만 저장소 상대 링크를 GitHub 링크로 바꿈, 10/27 John "누구나 볼 수 있게"). 결정 기록: <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-10-26-shopee-%EC%9E%AC%EA%B0%80%EB%8F%99-%ED%91%9C%EC%8B%9C%EA%B0%8036-35-%EB%A7%88%EC%A7%80%EB%85%B8%EC%84%A024-22-%EA%B4%91%EA%B3%A0%EC%9D%BC20-%EC%A0%84%EC%83%B5%EC%9E%AC%EC%98%A4%ED%94%88.md">2026-10-26 Shopee 재가동 결정</a>.</p>
+<p><strong>목적:</strong> Shopee 8개 샵에서 매출이 바로 일어나게 만든다(10/26 주간미팅, John). 이 문서는 <strong>지금 상태 · 지금 할 일 · 지금 값</strong>만 담는다. 지난 버전·변경 이력은 git 기록과 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/06-%EB%A0%88%EB%93%9C%ED%8C%80-%EA%B2%80%EC%A6%9D-2026-10-26.md">research/06</a>에 있다.
+<strong>배지:</strong> <span class="b g">🟢</span> 셀러센터 실측·공식 원문 · <span class="b y">🟡</span> 추정 · <span class="b r">🔴</span> 미확인. 실측 원문 = <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/00-%EC%85%80%EB%9F%AC%EC%84%BC%ED%84%B0-%EC%8B%A4%EC%B8%A1-2026-10-26.md">research/00</a>(§11 = 10/27 실측) · 가격 규정 원문 = <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-%EA%B0%80%EA%B2%A9%EA%B7%9C%EC%B9%99-%ED%97%88%EC%9C%84%ED%95%A0%EC%9D%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EA%B8%B0%EC%A4%80-2026-10-26.md">research/08</a> · 국가별 규제 절차 = <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/09-%EA%B5%AD%EA%B0%80%EB%B3%84-%EA%B7%9C%EC%A0%9C%EC%84%9C%EB%A5%98-%EC%A0%88%EC%B0%A8-2026-10-27.md">research/09</a> · 결정 기록 = <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-10-26-shopee-%EC%9E%AC%EA%B0%80%EB%8F%99-%ED%91%9C%EC%8B%9C%EA%B0%8036-35-%EB%A7%88%EC%A7%80%EB%85%B8%EC%84%A024-22-%EA%B4%91%EA%B3%A0%EC%9D%BC20-%EC%A0%84%EC%83%B5%EC%9E%AC%EC%98%A4%ED%94%88.md">2026-10-26 재가동 결정</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-10-27-shopee-%EB%A6%AC%EB%B7%B0%EB%B3%B4%EC%83%81%EC%83%81%ED%95%9C-%EB%B2%88%EB%93%A4%EC%82%AC%EB%8B%A4%EB%A6%AC-%EC%A0%84%EA%B5%AD%EA%B0%80%EB%8F%99%EC%8B%9C%ED%99%9C%EC%84%B1-%EC%8B%A4%ED%96%89%EC%88%9C%EC%84%9C.md">2026-10-27 운영 결정</a>.
+<strong>공개 허브:</strong> https://vdvia.github.io/lemonderma-reports/2026-10-26-shopee-restart/ — 이 md를 고치고 <code>./publish.sh</code>(빌드 → 게시 → 라이브 확인).</p>
 </blockquote>
-<h2 id="0-한-줄-결론">0. 한 줄 결론</h2>
-<p><strong>쇼피는 "리뷰가 없어서"가 아니라 "아무도 안 봐서" 안 팔린다(<span class="b g">🟢</span> SG 최근 30일 노출 26건·판매 0, 6개 샵 90일 미활동 비활성).</strong> v3의 답은 ① <strong>10/27~29 세팅 3일</strong>(정산 수단·8샵 재활성·표시가 $36/$35·US 리스팅 이식·바우처·번들·세트 리스팅·CS·출고) → ② <strong>10/30 광고 ON, SG 일 S$27≈$21</strong>(세럼 S$15·크림 S$12 — 최소 일예산 S$12/상품, 11.11 스파이크엔 Surge ON) → ③ <strong>11/16·11/30·12/14 2주마다 성적표로 확대·유지·중단</strong>, 11/18부터 2번째 국가 광고 $10 → ④ <strong>11/28 첫 취소선 할인 −25%</strong>(인상 30일 뒤 — 허위 할인 규정 회피), 12.12 Price Teaser 진입. 재영님 결정 4건(가격·광고비·전 샵 재오픈·실행 목록 재작성)은 전부 반영했고, <strong>가격 인상이 어려운 이유는 소비자 인식이 아니라 Shopee의 가격 로그 규정 하나</strong>뿐이라 "인상 → 30일 → 취소선 할인" 순서로 풀었다(§4). 돈은 11월 광고 약 $975+GST, 90일 상한 $3,000+GST(월 1회 재검토).</p>
-<h2 id="1-John-피드백-4건--답">1. John 피드백 4건 → 답</h2>
-<table>
-<thead>
-<tr>
-<th>피드백</th>
-<th>답</th>
-<th>근거</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>a. 표시가 $36/$35 + 할인·쿠폰. 정가 $28/$26 인식 때문에 어렵다면 말해줘</strong></td>
-<td><strong>가능.</strong> 소비자 쪽엔 "정가 인식"이 없다 — 6개월간 노출 26건·판매 0이라 기억할 사람이 없다. 걸림돌은 <strong>Shopee 허위 할인(Misleading Discount) 규정</strong>: "프로모션 직전 원가를 올려 할인폭 과장" = 리스팅 삭제 + 패널티(최대 2점/7일). 판정 자료는 <strong>가격 변경 로그 vs 프로모션가</strong>. 그래서 ① 10/28 인상 → ② 30일간 취소선 할인 금지(바우처·번들·Free Gift만) → ③ 11/28부터 Discount Promotion. 11.11 Price Teaser 세션은 불참(인상 2주 뒤 할인가 노미네이션 = 교과서 위반 패턴). 우리는 브랜드 본사라 "brand principal authorized price re-adjustment" 증빙(08-27 결정·MSRP $42·Amazon $36.58)으로 소명 가능 — 증빙 폴더를 먼저 만든다. 마지노선 $24/$22는 <strong>모든 중첩 뒤 구매자 실지불</strong>로 정의(세럼 S$30.70·크림 S$28.14).</td>
-<td><a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-%EA%B0%80%EA%B2%A9%EA%B7%9C%EC%B9%99-%ED%97%88%EC%9C%84%ED%95%A0%EC%9D%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EA%B8%B0%EC%A4%80-2026-10-26.md">08 §1·§2·§5</a> <span class="b g">🟢</span> 원문 · §4</td>
-</tr>
-<tr>
-<td><strong>b. 광고 일 $20, 근거 있으면 더</strong></td>
-<td>SG <strong>세럼 GMV Max S$15 + 크림 S$12 ≈ $21/일</strong>(최소 일예산 S$12/상품 <span class="b g">🟢</span> 10/27, 상품 1개 = 캠페인 1개 원칙), 10/30 시작·학습 7일. 미리 승인받는 증액 4종(§10-2): 세트 신규상품 광고 +$4(11/4~) · Shop+ +$5(자격 시 11/10~, SB 대체재) · 2번째 국가 +$10(11/18~) · 스파이크 Surge(+20% 자동). 11월 합계 ≈ <strong>$975+GST 9%</strong>. 크레딧 S$27은 1일분 → <strong>10/29 John 카드 충전 S$500 프리셋(≈$391)+GST</strong>, 잔액 S$60 경보.</td>
-<td>02 §1 <span class="b g">🟢</span> · §10</td>
-</tr>
-<tr>
-<td><strong>c. 전 샵 다 오픈. 정책이 바뀌었나?</strong></td>
-<td><strong>비활성 6샵은 재오픈한다(Reactivate 10/28).</strong> TW(이미 활성)만 예외 후보: Marco 메모 — PIF 보유 없음 확정 + <strong>대만 식약서 2025-10-29 공문으로 식물 유래 "엑소좀" 표기 불가(현 TW 제품명 <code>Exo:Booster</code> 위반 소지)</strong> + 대만 약국 총판 리드(10/23) → <strong>TW 리스팅 비공개·총판 경로 권장(판매 0이라 잃는 것 없음)</strong>. 재영님이 "그래도 TW 유지"면 제품명에서 Exo를 빼고 유지. 비활성은 정책이 아니라 <strong>우리가 90일 안 들어가서</strong>다(버튼 하나, 비용 0, 즉시). 5월 오픈 뒤 바뀐 정책은 <strong>3건</strong>: ① TW 화장품 PIF 의무(2026-07-01, 미보유 리스팅 삭제·샵 동결) ② BR 뷰티 Anvisa 번호 필수(2026-09-23, 임의 번호 = 삭제·패널티) ③ 전 마켓 수수료 인상(2~7월)·VN 주문 자동 분할(10/15). MY·TH·VN·PH·MX 요건은 5월과 같다. 받는 리스크: TW·BR·MX 리스팅은 Shopee가 숨기거나 지울 수 있고 패널티는 <strong>샵 단위</strong>(<span class="b y">🟡</span> — 머천트 전파 여부는 질의 ⑫). 임의 번호 입력은 안 한다. 재활성 뒤 <strong>7일 무활동이면 다시 검색 제외</strong>라 주 2회 활동 루틴이 재오픈의 절반이다. COD는 VN·PH만 OFF 요청(거절 ≈15%, 국제 반송 종료).</td>
-<td>00 §1 · 04 §4·§7 · edu/27980·28410 <span class="b g">🟢</span></td>
-</tr>
-<tr>
-<td><strong>d. 실행 목록 재작성</strong></td>
-<td>§14 <strong>실행 목록 v3 32건</strong>(값·ID·담당·날짜). 재영님 몫은 돈(충전)·비밀번호 화면·Marco 몫(정산·출고·PIF)뿐이고 나머지는 Claude가 순서대로 실행·건별 보고.</td>
-<td>§14</td>
-</tr>
-<tr>
-<td><strong>SB 같은 광고는?</strong></td>
-<td>영상형 브랜드 광고는 없다(Brand·Live Ads는 초청·몰 전용). <strong>가장 가까운 것 = Shop+ 광고</strong>: 검색 상단 Shop Card + Item Slot, 키워드 수동 입찰(eCPC)·SOV 지표 — 아마존 SB의 "검색 상단 브랜드 구좌 + 키워드 통제"와 같은 역할. 영상 노출은 GMV Max 지면(비디오·게임·코인 포함)과 <strong>Shopee Video(무료, PC 일괄 업로드)</strong>로.</td>
-<td><a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-%EA%B0%80%EA%B2%A9%EA%B7%9C%EC%B9%99-%ED%97%88%EC%9C%84%ED%95%A0%EC%9D%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EA%B8%B0%EC%A4%80-2026-10-26.md">08 §4</a> <span class="b g">🟢</span></td>
-</tr>
-<tr>
-<td><strong>US 자산 그대로 가져오기</strong></td>
-<td>§8 매핑표 — 리스팅 v3.1(제목·불릿·설명·백엔드)·갤러리/A+ 기획·SB 영상·메타 승자 소재·리뷰 인용·프로모션 메커닉·브랜드 스토어·CS 문구를 Shopee 필드별로 대응. SG는 영어·고소득·카드 결제 시장이라 US 문구가 거의 그대로 간다(현지화는 용량 표기 ml·"Korean pharmacy" 유지·GST 포함가).</td>
-<td>§8</td>
-</tr>
-<tr>
-<td><strong>단위경제 좋다</strong></td>
-<td>유지 + 표시가 $36 · 실효 $30 · 마지노선 $24 세 줄로 확장(§11). 본전 ROAS <strong>2.0 · 2.2 · 2.5</strong>, 어필리에이트 중복 주문 ≈3.2.</td>
-<td>§11</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-지금-상태--셀러센터-실측-2026-10-26-11001140--1540-추가">2. 지금 상태 — 셀러센터 실측 (2026-10-26 11:00~11:40 · 15:40 추가, <span class="b g">🟢</span>)</h2>
-<h3>2-1. 샵 8개</h3>
-<table>
-<thead>
-<tr>
-<th>마켓</th>
-<th>상태</th>
-<th>상품</th>
-<th>표시가(≈USD)</th>
-<th>누적판매</th>
-<th>L30D 판매 / 노출</th>
-<th>리뷰</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🇸🇬 SG</td>
-<td><strong>활성</strong> · Account Health Excellent · 패널티 0</td>
-<td>Live 2</td>
-<td>S$35.94(≈$28.1) · S$33.66(≈$26.3)</td>
-<td>25 · 25</td>
-<td><strong>0 / 26 · 0 / 28</strong></td>
-<td><strong>50건 5.0</strong>, 전부 답변</td>
-</tr>
-<tr>
-<td>🇹🇼 TW</td>
-<td><strong>활성</strong></td>
-<td>Live 2(중문)</td>
-<td>NT$1,318(≈$40.4) · NT$1,225(≈$37.6)</td>
-<td>0</td>
-<td>0 / 0 · 0 / 1</td>
-<td>0</td>
-</tr>
-<tr>
-<td>🇹🇭 TH · 🇲🇾 MY · 🇻🇳 VN · 🇵🇭 PH · 🇧🇷 BR · 🇲🇽 MX</td>
-<td><strong>비활성</strong> — "not active for more than 90 days. [Reactivate Now]"</td>
-<td>열람 불가</td>
-<td>—</td>
-<td>0</td>
-<td>—</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>구조 <span class="b g">🟢</span>: <strong>KRCB(Korea Seller Center) 글로벌 SKU 구조</strong> — Global SKU 2개(세럼 ₩39,000·크림 ₩36,000, 재고 각 275, 2026-03-04 생성)를 8샵에 발행. 가격·리스팅·프로모션·광고·어필리에이트를 <strong>마켓별로 우리가 직접 통제</strong>(SIP 가설 기각, 04 §2). <strong>Global SKU 편집은 동기화 설정에 따라 8샵 가격·DTS를 덮어쓸 수 있다</strong>(04 §3) → 가격·제목은 Shop SKU 단위로, Price/DTS sync는 OFF.</li>
-<li>트래픽 <span class="b g">🟢</span>: Business Insights 8샵 매출 ₩0, SG 상품 클릭 4(우리 점검 세션이 섞였을 수 있음 <span class="b r">🔴</span>). L30D 노출 26~28건.</li>
-<li>누적 판매 25+25 = 리뷰 50 → <span class="b y">🟡</span> 리뷰는 "작업" 구매로 보이며 유기 판매는 지금까지 사실상 0(§15 ① 주문 원장 대조가 첫 작업).</li>
-<li>15:40 추가 <span class="b g">🟢</span>: SG Marketing Centre 도구 = Shopee Ads · External Traffic Ads · Discount · My Shop's Flash Deals · Vouchers · Campaign · Affiliate Marketing · Live &amp; Video · Chat Broadcast · Chat AI Assistant · Review Management · Shop Decoration · Seller Programmes(+View More Tools 6). 신청 가능 캠페인: Nov Campaign Pacing(2일 21시간 남음) · 11.11 Big Sale 바우처(2일 21시간) · ShopeeVIP Day Friday(3일 4시간) · New User Free Gift Nov(자격 없음) · 20 Nov BTO · 21~23 Nov Super Tech Show · Shopee Prizes Vouchers Dec.</li>
-</ul>
-<h3>2-2. 레버별 상태</h3>
-<table>
-<thead>
-<tr>
-<th>레버</th>
-<th>상태(<span class="b g">🟢</span>)</th>
-<th>함의</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Shopee Ads(SG)</td>
-<td>사용 가능. <strong>Ads Credit $27 방치</strong>, 지출 0. 유형 = Product Ads(GMV Max)·Shop+·Live</td>
-<td>켜기만 하면 됨. 일 $20이면 $27은 1.3일분 → 10/29 충전</td>
-</tr>
-<tr>
-<td>어필리에이트(SG)</td>
-<td>Open Campaign 세럼·크림 <strong>Ongoing 18%</strong>(2026-06-11~, 진행 중엔 율 인하 불가). Free/Refundable Sample·Affiliate Ads(New). 지표 0</td>
-<td>5~6월 초청 4,000명+에도 매출 0 → 커미션이 아니라 '팔리는 상품' 신호가 없었음</td>
-</tr>
-<tr>
-<td>캠페인(SG)</td>
-<td>7건 신청 가능(위) · New User Free Gift는 <strong>상품당 판매 ≥50 필요, 우리 25</strong> → 불가</td>
-<td>노미네이션은 Shopee 선정형 — 선정 기대 말고 자격 있는 세션만</td>
-</tr>
-<tr>
-<td>할인·바우처(SG)</td>
-<td>셀러 생성 활성 0. Shopee가 넣은 <strong>"CB Non Performing Shop Voucher"</strong>(10%·30매·사용 0)</td>
-<td>플랫폼이 비성과 CB 샵으로 분류</td>
-</tr>
-<tr>
-<td>정산</td>
-<td><strong>Seller Wallet(KRCB) 미등록</strong>(1년 약정) / <strong>Payoneer USD 계정은 이미 보유</strong>(Amazon US·UAE·Walmart 정산 중, Marco 메모 <span class="b g">🟢</span>) — Shopee 연결만 미결</td>
-<td>팔려도 못 뺀다 → <strong>기존 Payoneer 연결 11/1까지(Marco·John 비번 블록)</strong>, Wallet은 12/14 뒤</td>
-</tr>
-<tr>
-<td>수수료(04)</td>
-<td>2026 인상: SG 판매수수료 15.35% · TGF 2% · Spike Day 1% · hidden S$1.52(140g). TH 21.77%·VN 17%</td>
-<td>§11</td>
-</tr>
-<tr>
-<td>Preferred Seller</td>
-<td>"2개 기준 더 충족 필요"(내용 미확인 <span class="b r">🔴</span>)</td>
-<td>§15 ④</td>
-</tr>
-<tr>
-<td>못 본 화면</td>
-<td>My Income·Shop Information·(가능성) Price formula — <strong>Login Password 재입력</strong></td>
-<td>John 30분 블록(10/27)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-진단--왜-안-팔리나">3. 진단 — 왜 안 팔리나</h2>
-<p><strong>병목 = 노출.</strong> L30D 노출 26~28건, 7월 이후 캠페인 0(월간 자동신청이 로그인 만료로 8·9·10월 0건), 광고 0, 활성 할인 0, 샵 6개 비활성(<span class="b g">🟢</span>). 5~6월엔 바우처 노미네이션 23건·Regular Discount·Open 18%·어필리에이트 초청 4,000명+이 있었고 결과는 0 — 그것들은 "노출이 생긴 뒤 전환을 돕는 장치"였고 선정·반응이 없었다. 이번에 새로 넣는 노출 장치 = <strong>광고(돈)·활동 루틴·검색어가 든 제목·Shopee Video·8샵 재활성</strong>.</p>
-<p><strong>무활동 자체가 노출을 지웠을 수 있다(<span class="b r">🔴</span>).</strong> 샵은 <strong>무활동 4일 경고 → 7일 검색 제외·장바구니 불가</strong>(04 §7). 월간 루틴이 3개월 연속 실패했으니 SG도 반복적으로 검색에서 빠졌을 가능성 → 활동 루틴을 10/27부터 켜고 광고 전 기준선을 남긴다.</p>
-<p><strong>가격은 "밴드 상단, 할인 표기 없음".</strong> 소비자 실측(<span class="b g">🟢</span> 05): SG <code>exosome serum</code> 주력 = 메디큐브 계열 S$18~28(할인 50~80% 표기·현지 재고 공식샵), 프리미엄 꼬리 S$40~67. <code>korean serum</code> 판매량순 = S$9~25, 전 상품에 Flash Sale·Free Gift·번들·"-45~73%" 태그. 우리 S$35.94는 <strong>배지 없이</strong> 중간에 서 있다. v3의 답: <strong>표시가를 $36(S$46)로 올려 프리미엄 꼬리 하단에 두고, 바우처·번들·(11/28부터) −25% 취소선으로 "배지 있는 리스팅"을 만든다.</strong> 쇼피 UI는 할인율 배지가 사실상 표준이라 정가 S$35.94에 배지 없는 지금이 가장 불리한 조합이다.</p>
-<p><strong>리스팅 제목에 검색어가 없다(<span class="b y">🟡</span>).</strong> "Lemonshot 150 Exo:Booster serum" — exosome·vegan·brightening·용량이 없음. TH는 30자 미달·브랜드 미설정 이력. → US v3.1 이식(§8).</p>
-<p><strong>리뷰 "작업"은 정책 위반 선 위에 있다(<span class="b g">🟢</span> 원문).</strong> 브러싱 방지 정책(<a href="https://shopee.kr/edu/article/13646">edu/13646</a>): 무료·무료급 바우처 구매 = 브러싱 → 판매수 제외·리뷰 미반영·적발 시 계정 동결. 99% 바우처 리뷰 작업은 <strong>쓰지 않는다</strong>. 합법 경로 = Giveaway 화이트리스트(매니저 승인)·Review Prize(코인)·AMS 샘플·정상 할인 비밀 바우처 + 리뷰 요청.</p>
-<p><strong>반증 3관점</strong>
-| 반론 | 우리 답 | 남는 불확실성 |
-|---|---|---|
-| "SG는 리뷰·Open 18%·노미네이션·어필리에이트를 다 넣고도 0 — 이미 끝난 시험" | 그때 없었던 것이 광고·활동 루틴·검색어 제목·배지·영상이다. 노출 26건이면 전환 장치는 시험된 적이 없다 | 노출을 만들어도 전환 0이면 가격·리스팅·배송 중 무엇인지 분리(§13) |
-| "가격이 문제 — 메디큐브 S$23 옆에서 S$46" | 노출 0에선 판정 불가. 11월(표시가+바우처)·12월(−25% 취소선)이 두 가격점을 준다. SG는 카드 결제·고소득 시장 | $36 앵커가 CVR을 죽이면 11/28 할인을 당기는 게 아니라 12/14에 표시가 자체를 재검토 |
-| "CB 직배송 9~25일이 구조적 열세" | SG 상위 노출에 'Korea' 태그 상품 다수(05) → 노출 장벽은 아님 | 승자 마켓은 FBS 검토(12/14) |</p>
-<h2 id="4-가격-체계-v3--표시가-3635--마지노선-2422--인상--30일--취소선">4. 가격 체계 v3 — 표시가 $36/$35 · 마지노선 $24/$22 · "인상 → 30일 → 취소선"</h2>
-<h3>4-1. 결정과 대체 관계</h3>
+<h2 id="0-지금-상태-한눈에--102627-셀러센터-실측">0. 지금 상태 한눈에 (<span class="b g">🟢</span> 10/26~27 셀러센터 실측)</h2>
 <table>
 <thead>
 <tr>
 <th>항목</th>
-<th>v3</th>
-<th>대체·근거</th>
+<th>지금</th>
+<th>그래서</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>표시가(8샵 공통, 구매자 노출가·GST 포함 기준)</td>
-<td><strong>세럼 $36 · 크림 $35</strong> → SG <strong>S$46.00 / S$44.80</strong>, TW <strong>NT$1,174 / NT$1,141</strong>(인하), 나머지 6샵은 재활성 당일 환율로 환산 입력 · <strong>SG 입력가는 S$42.20 / S$41.10</strong>(가격칸은 세전, 화면 'After Tax' = ×1.09가 구매자 노출가 <span class="b g">🟢</span> 10/27)</td>
-<td>John 10/26. 08-27 글로벌 표준(상시 $36)의 Shopee 적용 = 이 결정. TW·비활성 6샵은 조정율 150%라 현재 ≈$40대 → 인하 방향(<span class="b y">🟡</span>, 재활성 후 확인)</td>
+<td>샵</td>
+<td><strong>SG·TW 활성</strong>, TH·MY·VN·PH·BR·MX 비활성(90일 미활동)</td>
+<td>10/28 <strong>8샵 전부 활성</strong>(TW 포함)</td>
 </tr>
 <tr>
-<td>마지노선(모든 중첩 뒤 구매자 실지불)</td>
-<td><strong>세럼 $24 · 크림 $22</strong> → SG S$30.70 / S$28.14</td>
-<td>John 10/26("아마존보다 흑자 ROAS가 낮을 테니"). 05-05 Shopee 마지노선($28/$26)·07-27 공통($26/$24)을 Shopee에서 대체</td>
+<td>판매</td>
+<td>유기 판매 <strong>0</strong>. 리뷰 50(5.0)은 2026-04-06 파인드리뷰 체험단 구매(바우처 $0.10 × 25+25)</td>
+<td>리뷰는 보이지만 전환 근거는 아니다 → 리뷰 재건</td>
 </tr>
 <tr>
-<td>05-05 폐기 "영구 할인"</td>
-<td><strong>유지, 범위 축소</strong> — 금지는 "실효가가 마지노선 아래로 가는 상시 할인"에 한정. 마지노선 위 상시 할인(예: −25% 취소선)은 허용</td>
-<td>폐기 원문의 이유가 "마지노선 아래"였음</td>
+<td>노출</td>
+<td>SG 최근 30일 노출 세럼 38 · 크림 40, 클릭 4</td>
+<td><strong>병목 = 노출</strong></td>
 </tr>
 <tr>
-<td>가격 변경 방법</td>
-<td><strong>Shop SKU 직접 입력</strong>(Price sync OFF 확인 뒤). Global SKU는 건드리지 않음(8샵 전파·BR Anvisa 필수란)</td>
-<td>04 §3 <span class="b g">🟢</span></td>
+<td>가격</td>
+<td>SG 입력 S$35.94 / 33.66 → <strong>구매자 노출 S$39.17 / 36.69</strong>(GST 9% 가산, 가격칸 아래 'After Tax')</td>
+<td>목표 노출 S$46.00 / 44.80 = <strong>입력 S$42.20 / 41.10</strong></td>
 </tr>
 <tr>
-<td>증빙 폴더</td>
-<td><code>sea/shopee/price-evidence/</code> — 08-27 결정문·MSRP $42/상시 $36 가격표·Amazon.com 표시가 캡처·본 결정 기록·가격 변경 로그 시트</td>
-<td>08 §1 "brand principal authorized price re-adjustment" 소명용</td>
+<td>광고</td>
+<td>미집행 · 크레딧 S$27 · GMV Max <strong>최소 S$12/상품/일</strong> · Shop+ <strong>불가</strong>("활성 상품 4개 이상 필요", 현재 2)</td>
+<td>10/29 충전 → 10/30 ON · 상품 4개 뒤 Shop+</td>
+</tr>
+<tr>
+<td>리뷰 보상 도구</td>
+<td>Review Prize = <strong>고품질 리뷰(50자+사진+영상) 1건당 최대 150코인(S$1.50)</strong>, 상품별 목표 수 설정, 셀러 코인 선충전(잔액 0)</td>
+<td>$10/리뷰는 도구 상한 밖 → §5-2 P7·P8</td>
+</tr>
+<tr>
+<td>번들·배송 도구</td>
+<td>Discount 탭 <strong>Bundle Deal · Add-on Deal(Gift with Min. Spend)</strong> · <strong>Shipping Fee Promotion</strong>(최소 구매 3단, 보조/무료배송) · Wholesale 가격 티어</td>
+<td>객단가 사다리 §2-3</td>
+</tr>
+<tr>
+<td>정산</td>
+<td>Payoneer 연결 <strong>미결</strong>(11/1 Marco) · 4월 매출은 당시 계좌로 수취 완료</td>
+<td>광고 전 연결</td>
+</tr>
+<tr>
+<td>재고</td>
+<td>샵 275 ≠ 실물(Marco 확인값 대기) · <strong>Global SKU 저장 불가</strong>(Anvisa 공란)</td>
+<td>Shop SKU 재고칸으로 정정</td>
+</tr>
+<tr>
+<td>동기화</td>
+<td>8샵 전부 "Synchronise all information"(가격·DTS 포함) · Global DTS 4 · SG Shop SKU Pre-order 아님(2영업일)</td>
+<td>10/28 가격·DTS 동기화 OFF</td>
+</tr>
+<tr>
+<td>캠페인</td>
+<td>11.11 바우처 세션 2개 eligible — <strong>22% Off·cap S$5·min S$11</strong> / <strong>16% Off·cap S$10·min S$29</strong>(셀러 부담), <strong>마감 10/29 18:00 SG</strong></td>
+<td>둘 다 노미네이션</td>
+</tr>
+<tr>
+<td>Account Health</td>
+<td>Excellent · 패널티 0 · 리스팅 한도 100 · 브랜드 <strong>NoBrand</strong> · Preferred Seller 미달 2기준(주 구매자 ≥10·주 주문 ≥30)</td>
+<td>브랜드 등록 · Preferred는 목표 밖</td>
+</tr>
+<tr>
+<td>규제</td>
+<td><strong>TH 바늘결정 금지(5/22 시행) — 세럼 Microcrystal 해당 소지 <span class="b y">🟡</span></strong> · <strong>TW 엑소좀 표기 불가 공문 <span class="b g">🟢</span></strong> · SG HSA·MY NPRA 번호 없음 · 완제품 GMP·INCI 증빙 미확보 · Global SKU <code>FDA No.</code> 2개는 태국 번호 형식이나 명의 <span class="b r">🔴</span></td>
+<td>TH 세럼 비공개 · TW Exo 삭제 · 서류 키트 착수(§6)</td>
+</tr>
+<tr>
+<td>미확인</td>
+<td>Promo Xtra 가입 · 소비자 화면 노출가 직접 확인(로그인 벽) · 크레딧 만료 · 수수료 분해(My Income)</td>
+<td>§11</td>
 </tr>
 </tbody>
 </table>
-<h3>4-2. 순서 (허위 할인 규정 회피가 곧 일정)</h3>
+<h2 id="1-순서--1부-세팅--3부-무료--2부-유료-매출은-바로">1. 순서 — 1부 세팅 → 3부 무료 → 2부 유료, 매출은 바로</h2>
 <table>
 <thead>
 <tr>
 <th>날</th>
-<th>할 것</th>
-<th>안 할 것</th>
+<th>부</th>
+<th>하는 일</th>
+<th>왜 이 순서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>10/28(화)</strong></td>
+<td><strong>1부 세팅</strong></td>
+<td>동기화 OFF → 재고 정정 → 8샵 활성 → 가격 입력 → SG 리스팅 이식 → 세트·2개입 등록 → CS·출고 → 광고 지갑 준비</td>
+<td>돈이 들어가기 전에 "팔려도 사고 안 나는 상태"를 만든다</td>
+</tr>
+<tr>
+<td><strong>10/28~29</strong></td>
+<td><strong>3부 무료</strong></td>
+<td>활동 루틴·Bump·검색어 제목·Shopee Video·<strong>11.11 바우처 노미네이션(10/29 18:00 SG 마감)</strong>·AMS 초청 50명·샵 데코·Chat 설정</td>
+<td>비용 0인데 노출·전환에 바로 작동 — 광고와 같은 날 켠다</td>
+</tr>
+<tr>
+<td><strong>10/29~30</strong></td>
+<td><strong>2부 유료</strong></td>
+<td>10/29 John 충전(광고 S$500 + 코인 S$450) → Review Prize·번들·배송비·바우처 ON → <strong>10/30 GMV Max ON</strong>(세럼 S$15·크림 S$12) → 이후 §5-3 순서</td>
+<td>광고는 "노출을 사는" 유일한 레버라 세팅 끝난 다음 날 바로</td>
+</tr>
+<tr>
+<td>11/16 · 11/30 · 12/14</td>
+<td>결정점</td>
+<td>2주 성적표 → 확대·유지·중단(§5-5)</td>
+<td>속도 우선, 레버는 주 1개만 바꿈</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-가격번들-체계">2. 가격·번들 체계</h2>
+<h3>2-1. 가격표 (구매자 노출가 = 입력가 × 1.09, SG)</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>세럼</th>
+<th>크림</th>
+<th>세트(세럼+크림)</th>
+<th>세럼 2개입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>노출가(USD 환산 S$1.279)</td>
+<td><strong>S$46.00</strong> ($36.0)</td>
+<td><strong>S$44.80</strong> ($35.0)</td>
+<td><strong>S$77.20</strong> ($60.4, −15%)</td>
+<td><strong>S$78.20</strong> ($61.1, −15%)</td>
+</tr>
+<tr>
+<td>Shop SKU 입력가(세전)</td>
+<td><strong>42.20</strong></td>
+<td><strong>41.10</strong></td>
+<td><strong>70.83</strong></td>
+<td><strong>71.74</strong></td>
+</tr>
+<tr>
+<td>TW 노출가</td>
+<td>NT$1,174</td>
+<td>NT$1,141</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TH·MY·VN·PH·BR·MX</td>
+<td>$36 / $35 × 당일 환율 — 가격칸에 세후 표시가 뜨면 표시가 기준으로 역산</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>마지노선(모든 중첩 뒤 실지불)</strong></td>
+<td><strong>S$30.70</strong>($24)</td>
+<td><strong>S$28.14</strong>($22)</td>
+<td>개당 기준 동일</td>
+<td>개당 기준 동일</td>
+</tr>
+</tbody>
+</table>
+<h3>2-2. 할인 규칙 — 허위 할인 규정 회피가 곧 일정 (<span class="b g">🟢</span> research/08)</h3>
+<p>"프로모션 직전 원가 인상"은 리스팅 삭제 + 패널티(최대 2점/7일, 3점부터 캠페인 금지). 판정 자료는 가격 변경 로그 vs 프로모션가.</p>
+<table>
+<thead>
+<tr>
+<th>기간</th>
+<th>한다</th>
+<th>안 한다</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>10/28</td>
-<td>8샵 표시가 입력 · Follow Prize S$3 · New Buyer S$5(min S$40) · 번들딜 세트 −15%(S$77.20) · 가격 로그 시작</td>
-<td>Discount Promotion(취소선)</td>
+<td>8샵 가격 입력 · 가격 로그 시트 · 증빙 폴더(08-27 글로벌 가격표준·MSRP $42·Amazon $36.58)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10/28~11/27</td>
+<td>바우처 · 번들딜 · 애드온 · 배송비 무료 · Free Gift · 광고</td>
+<td><strong>Discount Promotion(취소선) · 세션 할인가 노미네이션</strong></td>
 </tr>
 <tr>
 <td>10/29</td>
-<td>11.11 <strong>바우처 캠페인</strong> 노미네이션 — 실제 세션 2개(<span class="b g">🟢</span> 10/27): <strong>22% Off · cap S$5 · min spend S$11</strong> + <strong>16% Off · cap S$10 · min spend S$29</strong>(셀러 부담 Shop Voucher, 승인 뒤 철회 = 3개월 캠페인 금지) · 마감 <strong>10/29 18:00 SG</strong></td>
-<td>11.11 <strong>Price Teaser(상품 세션)</strong> 불참 — "인상 2주 뒤 할인가" 패턴</td>
+<td>11.11 바우처 세션 2개 노미네이션(22%/cap S$5 · 16%/cap S$10)</td>
+<td>Price Teaser(상품 세션)</td>
 </tr>
 <tr>
-<td>10/28~11/27 (30일)</td>
-<td>바우처·번들·Free Gift·광고·Shopee Video로 전환</td>
-<td>취소선 할인·세션 할인가</td>
+<td><strong>11/28~</strong></td>
+<td><strong>Discount Promotion −25%</strong>(노출 S$34.50 / 33.60) 상시 · 바우처 cap ≤ S$3.5</td>
+<td>마지노선 아래 중첩</td>
 </tr>
 <tr>
-<td><strong>11/28</strong></td>
-<td><strong>Discount Promotion −25%</strong>(S$34.50 / S$33.60, ≈$27.0 / $26.3) 시작 — 이후 상시</td>
-<td>바우처 cap은 S$3.5 이하(중첩 하한)</td>
-</tr>
-<tr>
-<td>~11/26(마감 확인)</td>
-<td><strong>12.12 Price Teaser 노미네이션</strong>: 기준 = 11월 최저가(11/28 할인가 S$34.50)×0.96 = <strong>≤S$33.12(≈$25.9)</strong> / 크림 ≤S$32.26</td>
-<td>마지노선 아래 노미네이션</td>
-</tr>
-<tr>
-<td>대안(A-2)</td>
-<td>11.11 Price Teaser에 현행가 기준 S$34.50로 참여하고 인상은 11/18, 취소선은 12/18부터</td>
-<td>11.11 선정 가능성(0판매 샵)이 낮고 12.12 앵커 표기를 잃어 <strong>v3는 위 순서(A-1)를 택함</strong></td>
+<td>~11/26</td>
+<td>12.12 Price Teaser 노미네이션: 11월 최저가 × 0.96 = 세럼 ≤ <strong>S$33.12</strong> · 크림 ≤ S$32.26</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
-<h3>4-3. 실효가 계산기 (SG, 세럼 / 크림, USD = SGD ÷ 1.279) — 하한 S$30.70 / S$28.14</h3>
+<h3>2-3. 객단가 사다리 — 할인은 묶음으로만 (John 10/27)</h3>
+<p>주문 1건마다 <strong>배송 S$5.92 + 집하·포장 ₩3,500</strong>이 고정으로 나간다. 같은 할인율이면 단품을 깎는 것보다 <strong>2개를 묶는 쪽이 개당 공헌이 더 높다</strong>(§8-2). 그래서 전환을 사는 할인은 아래 사다리로만 한다.</p>
+<table>
+<thead>
+<tr>
+<th>제안(구매자가 보는 것)</th>
+<th>노출가</th>
+<th>개당</th>
+<th>도구 · 설정값</th>
+<th>하한 대조</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단품</td>
+<td>세럼 46.00 · 크림 44.80</td>
+<td>46.0 / 44.8</td>
+<td>Shop SKU 입력 42.20 / 41.10</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><strong>세트 리스팅</strong>(세럼+크림, 제목·이미지 별도)</td>
+<td><strong>77.20</strong></td>
+<td>38.60</td>
+<td>Global SKU 신규(E12), 입력 70.83 — 신규상품 광고 자격</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><strong>Bundle Deal "아무 2개 −15%"</strong></td>
+<td>2개 77.20~78.20</td>
+<td>38.6~39.1</td>
+<td>Discount &gt; Bundle Deal(E13) — 단품 2개 담아도 적용</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Bundle Deal 2단 "3개 −20%"</td>
+<td>3개 ≈ 109</td>
+<td>36.8 / 35.8</td>
+<td>같은 번들딜 2단</td>
+<td>✓(≥30.70 / 28.14)</td>
+</tr>
+<tr>
+<td><strong>Add-on Deal</strong> "세럼 사면 크림 −20%"</td>
+<td>46.00 + 35.84 = 81.84</td>
+<td>40.9</td>
+<td>Discount &gt; Add-on Deal(E13)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><strong>배송비 무료</strong> 장바구니 ≥ S$70</td>
+<td>Doorstep 배송비 S$1.99 → 0</td>
+<td>—</td>
+<td>Shipping Fee Promotion 1단(E13b), 비용 S$1.99/건</td>
+<td>2개 담게 하는 가장 싼 넛지</td>
+</tr>
+<tr>
+<td>자체 Shop Voucher <strong>S$8 off · min S$75</strong></td>
+<td>세트 69.20</td>
+<td>34.6</td>
+<td>Vouchers(E13c) — 세트 가격 바로 위에 min spend</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><strong>세럼 2개입 리스팅</strong></td>
+<td>78.20</td>
+<td>39.10</td>
+<td>Global SKU 신규(E12b) → 활성 상품 4개 = Shop+ 자격</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>11.11 세션 바우처(16%·cap S$10) + 세트</td>
+<td>67.20</td>
+<td>33.6</td>
+<td>11/18까지</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>11/28~ 취소선 −25% + 세트</td>
+<td>세트 57.90</td>
+<td>28.95</td>
+<td>바우처 cap S$3.5 → 27.2</td>
+<td><strong>✗ 크림 하한 28.14 아래</strong> → 취소선 기간엔 세트 번들 −10%로 낮춤</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Wholesale 가격 티어도 같은 일을 하지만 번들딜과 겹치면 숨겨진다 → <strong>번들딜만</strong> 쓴다.</li>
+<li>쇼피 주문 1건엔 샵 바우처 1장만 붙는다 → 11.11 기간엔 세션 바우처가 자체 바우처를 대신한다(자체 S$8 바우처는 11/19부터).</li>
+</ul>
+<h3>2-4. 실효가 계산기 (SG, 하한 세럼 S$30.70 · 크림 S$28.14)</h3>
 <table>
 <thead>
 <tr>
 <th>장치</th>
 <th>세럼 실지불</th>
 <th>크림 실지불</th>
-<th>하한 대조</th>
+<th>판정</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>표시가</td>
-<td>S$46.00 = $36.0</td>
-<td>S$44.80 = $35.0</td>
+<td>노출가</td>
+<td>46.00 = $36.0</td>
+<td>44.80 = $35.0</td>
 <td>✓</td>
 </tr>
 <tr>
 <td>+ Follow Prize S$3</td>
-<td>43.00 = $33.6</td>
-<td>41.80 = $32.7</td>
+<td>43.00</td>
+<td>41.80</td>
 <td>✓</td>
 </tr>
 <tr>
 <td>+ New Buyer S$5(min S$40)</td>
-<td>41.00 = $32.1</td>
-<td>39.80 = $31.1</td>
+<td>41.00</td>
+<td>39.80</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>+ 11.11 바우처 22%(cap S$5) / 16%(cap S$10 → 실할인 S$7.36 / S$7.17)</td>
-<td>41.00 = $32.1 / 38.64 = $30.2</td>
-<td>39.80 = $31.1 / 37.63 = $29.4</td>
-<td>✓ (둘 다 하한 위)</td>
+<td>+ 11.11 22%(cap S$5) / 16%(cap S$10 → 실할인 7.36 / 7.17)</td>
+<td>41.00 / 38.64</td>
+<td>39.80 / 37.63</td>
+<td>✓</td>
 </tr>
 <tr>
-<td>번들딜 세트 −15% (개당)</td>
-<td>38.60 = $30.2</td>
-<td>38.08 = $29.8</td>
+<td>세트·번들 −15%(개당)</td>
+<td>38.60</td>
+<td>38.08</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>세트 + 11.11 16%(cap S$10)(개당)</td>
+<td>33.60</td>
+<td>33.60</td>
 <td>✓</td>
 </tr>
 <tr>
 <td>11/28~ 취소선 −25%</td>
-<td>34.50 = $27.0</td>
-<td>33.60 = $26.3</td>
+<td>34.50</td>
+<td>33.60</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>취소선 −25% + Follow Prize S$3</td>
-<td>31.50 = $24.6</td>
-<td>30.60 = $23.9</td>
+<td>취소선 + Follow Prize S$3</td>
+<td>31.50</td>
+<td>30.60</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>취소선 −25% + 바우처 cap S$6</td>
-<td>28.50 = $22.3</td>
-<td>27.60 = $21.6</td>
+<td>취소선 + 바우처 cap S$6</td>
+<td>28.50</td>
+<td>27.60</td>
 <td><strong>✗</strong> → 취소선 기간 바우처 cap ≤ S$3.5</td>
-</tr>
-<tr>
-<td>12.12 Price Teaser(≤11월 최저×0.96)</td>
-<td>≤33.12 = $25.9</td>
-<td>≤32.26 = $25.2</td>
-<td>✓(바우처 중첩 시 cap ≤ S$2.4)</td>
-</tr>
-<tr>
-<td>최대 중첩 하한</td>
-<td><strong>30.70 = $24</strong></td>
-<td><strong>28.14 = $22</strong></td>
-<td>규칙: 할인 뒤 가격 − 바우처 ≥ 하한</td>
 </tr>
 </tbody>
 </table>
-<p><strong>취소선 상한 −25%:</strong> <a href="https://github.com/VDVIA/vdvia/blob/main/00_compass/decisions/2026-06-23-%ED%8F%90%EA%B8%B0-%EC%95%84%EB%A7%88%EC%A1%B4-%ED%95%A0%EC%9D%B8%EC%9C%A8-33%25.md">2026-06-23 폐기 — 아마존 할인율 33% 이상</a>(정가 대비 33% 쿠폰에서 SB 소재 연속 거절, 안전선 20~25%)은 아마존 알고리즘 근거라 Shopee에 자동 적용되진 않지만 같은 성격의 규정(허위 할인)이 있다 → <strong>Discount Promotion은 −25%까지만</strong>, 마지노선(−33%/−37%)까지의 나머지는 바우처·번들로만 채운다.</p>
-<p><strong>중첩 규칙:</strong> 중첩은 허용하되 <strong>실효가 ≥ 하한</strong>을 계산기로 매번 대조. 캠페인 세션 참여 중엔 세션가 + 바우처 합을 본다. 11.11 바우처 캠페인은 허위 할인 범주 밖으로 판단(상품 가격 로그를 건드리지 않음)하되 <span class="b y">🟡</span> — 플래그 시 증빙 폴더로 즉시 소명.</p>
-<h2 id="5-1부--필수-세팅-돈마케팅-전-10271029">5. 1부 — 필수 세팅 (돈·마케팅 전, 10/27~10/29)</h2>
-<blockquote>
-<p>순서가 안전장치다: 정산 → 동기화 OFF → 재활성 → 가격 → 리스팅 → 전환 장치 → CS·출고 → 광고 지갑. 각 항목의 값·ID는 §14 실행 목록에 있다.</p>
-</blockquote>
+<h2 id="3-1부--필수-세팅-1028-돈광고-전">3. 1부 — 필수 세팅 (10/28, 돈·광고 전)</h2>
 <table>
 <thead>
 <tr>
 <th>#</th>
 <th>세팅</th>
-<th>왜 돈 쓰기 전인가</th>
-<th>값·상태</th>
+<th>값·상태(<span class="b g">🟢</span> 실측)</th>
 <th>담당·날짜</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>S1</td>
-<td><strong>정산 수단 = 기존 Payoneer USD 계정 연결</strong>(Marco 메모 권장: 12/14 철수 가능성 있는 시험에 Wallet 1년 약정은 비대칭, 비용 차 $2~7) + My Income 4월 정산 상태. 연결 화면이 "Wallet 등록 후 출금계좌로 Payoneer"만 허용하면 질의 5-1(중도 해지) 답 뒤 결정</td>
-<td>팔려도 돈을 못 받는 상태로 광고 금지</td>
-<td>Payoneer 보유 <span class="b g">🟢</span> · Shopee 연결 미결 → 11/1</td>
-<td>Marco(Payoneer 로그인) · John(Finance 화면 비번) 10/27~11/1</td>
+<td><strong>정산 = 기존 Payoneer USD 계정 연결</strong>(Wallet 1년 약정은 12/14 뒤)</td>
+<td>Payoneer 보유 · Shopee 연결 미결</td>
+<td>Marco(Payoneer) · John(Finance 비번) ~11/1</td>
 </tr>
 <tr>
 <td>S2</td>
-<td><strong>비밀번호 화면 블록 30분</strong> — My Income(4월 정산·수수료 분해) · Shop Information(샵 이름 → <code>LEMONDERMA Korea</code>, 프로필·로고) · Payoneer 연결 화면 비번 — Price formula는 비번 없이 열려 Claude가 확인(<span class="b g">🟢</span> ②)</td>
-<td>Claude가 못 여는 화면 3개가 세팅 임계경로</td>
-<td><span class="b y">🟡</span> 3개 남음</td>
-<td><strong>John 10/27</strong></td>
+<td><strong>비밀번호 화면 블록 30분</strong> — My Income(수수료 분해) · Shop Information(샵 이름 <code>LEMONDERMA Korea</code>·로고) · Payoneer 연결 화면</td>
+<td>Claude가 못 여는 화면 3개</td>
+<td><strong>John 10/27~28</strong></td>
 </tr>
 <tr>
 <td>S3</td>
-<td><strong>Merchant Setting</strong> — 8샵 동기화 템플릿을 "Synchronise all information" → 가격·DTS 제외로 변경(Edit) · 환율을 시장환율로 갱신(신규 세트 리스팅부터 적용) · Global SKU는 DTS 4 그대로 두고 <strong>저장하지 않음</strong>(Anvisa 공란으로 저장 자체가 막힘)</td>
-<td>ON이면 Global 편집 때 8샵 가격·DTS가 덮인다 — Global DTS 4 vs SG 2영업일 → Pre-order 복귀 경로 <span class="b g">🟢</span> 확인. SG Pre-order 재발 = 노미네이션 상품 삭제+패널티</td>
-<td><span class="b g">🟢</span> 8샵 전부 ON · 환율 7~10% 저평가</td>
-<td>Claude 10/28(E07)</td>
+<td><strong>Merchant Setting</strong> — 8샵 동기화 템플릿 Edit → 가격·DTS 제외 · 환율 시장값(1 KRW = 0.000966 SGD 등) · Global SKU는 저장하지 않음(Anvisa 공란)</td>
+<td>8샵 전부 ON · 환율 7~10% 저평가</td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
 <td>S4</td>
-<td><strong>6샵 Reactivate</strong>(TH·MY·VN·PH·BR·MX) → 재활성 직후 각 샵 Violation 탭·Pre-order 비율·DTS·COD·바우처 자격 확인 → 활동 기록</td>
-<td>노출 복구(무료)·SG 리뷰 10건 글로벌 공유 노출. 7일 무활동 재제외 방지 루틴과 세트</td>
-<td>비활성 <span class="b g">🟢</span></td>
+<td><strong>8샵 활성</strong> — TH·MY·VN·PH·BR·MX Reactivate + TW 유지 → 샵별 Violation·COD·Pre-order·바우처 자격 확인 → <strong>TH 세럼 비공개 · TW Exo 삭제</strong>(§6-1) → 활동 기록</td>
+<td>비활성 6 · TW 활성</td>
 <td>Claude 10/28</td>
 </tr>
 <tr>
 <td>S5</td>
-<td><strong>표시가 8샵</strong> — Shop SKU 직접 입력(§4-1 값; <strong>SG는 입력가 S$42.20 / S$41.10 → 'After Tax' S$46.00 / S$44.80 대조</strong>, 다른 샵도 세후 표시가 뜨면 역산) + 가격 로그 시트 + 증빙 폴더</td>
-<td>인상은 할인·캠페인·광고 전에 끝나야 30일 시계가 돈다</td>
-<td>입력 S$35.94→42.20 · 33.66→41.10(노출 39.17→46.00 · 36.69→44.80)</td>
-<td>Claude 10/28(입력 후 재조회 보고)</td>
+<td><strong>가격 입력</strong> — SG 42.20 / 41.10(노출 46.00 / 44.80 확인) · TW NT$1,174 / 1,141 · 6샵 당일 환율 · 가격 로그 · 증빙 폴더</td>
+<td>입력 35.94 / 33.66</td>
+<td>Claude 10/28(재조회 보고)</td>
 </tr>
 <tr>
 <td>S6</td>
-<td><strong>리스팅 이식(SG 먼저 → 7샵 Shop SKU)</strong> — 제목(US v3.1 → Shopee형, SG 한도 255자·Global 180자 <span class="b g">🟢</span>) · 설명(불릿 5 + MFDS·3주 결과·비건 마이크로크리스탈·사용법·GMP) · 이미지 9장(1:1, 메인 순백 + 카드 7 + 리뷰 인용 1) · 영상 1(≤60초) · 속성(<strong>브랜드 현재 'NoBrand' → LEMONDERMA 등록 신청</strong>·성분·피부타입·용량·유통기한) · 설명 SG 한도 3,000자(현재 2,636) · Content Diagnosis 통과(TH 30자·브랜드)</td>
-<td>광고 클릭이 떨어지는 곳. 지금 제목엔 검색어가 없고 이미지는 미확인</td>
-<td><span class="b y">🟡</span></td>
-<td>Claude 초안 10/27 → 반영 10/28(SG)·10/30(7샵)</td>
+<td><strong>리스팅 이식(SG → 7샵)</strong> — 제목(SG 255자·검색어 앞쪽) · 설명(SG 3,000자) · 이미지 9 · 영상 1(≤30MB·10~60초) · 속성 · <strong>브랜드 NoBrand → LEMONDERMA 등록 신청</strong> · Content Diagnosis 통과</td>
+<td>제목 31자, 검색어 없음</td>
+<td>Claude 10/28(SG)·10/30(7샵)</td>
 </tr>
 <tr>
 <td>S7</td>
-<td><strong>세트 리스팅 신설</strong>(세럼+크림, 제목·이미지·설명 모두 다르게 — 중복 리스팅 금지)</td>
-<td>신규상품 광고(30일) 자격 · 번들 가격 표기 · 상품 수 3 → <strong>Shop+는 활성 상품 ≥4 필수(<span class="b g">🟢</span> 10/27 모달 문구)</strong> → 세트 라이브 뒤 <strong>세럼 2개입 리스팅 추가(E12b)</strong>로 4개</td>
-<td>Global SKU 신규(BR Anvisa 필수란 뜨면 BR 미발행)</td>
+<td><strong>세트 리스팅 + 세럼 2개입 리스팅 신설</strong>(제목·이미지·설명 단품과 다르게)</td>
+<td>상품 2 → 4(Shop+ 자격·신규상품 광고)</td>
 <td>Claude 10/28 등록 → 11/4 라이브</td>
 </tr>
 <tr>
 <td>S8</td>
-<td><strong>전환 장치 1차</strong> — Follow Prize S$3 · New Buyer S$5(min S$40, 100매) · 번들딜 세트 −15% · Free Sample 10개(SG 뷰티 창작자만) · Review Prize ON · Smart Voucher ON</td>
-<td>광고 클릭이 왔을 때 받을 그릇. 취소선은 11/28</td>
-<td>§4-3</td>
-<td>Claude 10/28</td>
+<td><strong>재고 정정</strong> — Shop SKU 재고칸 275 → Marco 배정값(제안 40·40), SG 먼저 · 재활성 샵은 활성 뒤</td>
+<td>샵 275 ≠ 실물</td>
+<td>Marco 배정 · Claude 10/28</td>
 </tr>
 <tr>
 <td>S9</td>
-<td><strong>Shop Decoration·프로필</strong> — 배너·컬렉션·소개문(US 브랜드 스토어 톤) + 11.11 Seller Kit 배너</td>
-<td>샵 방문 → 신뢰. 캠페인 참여 표시</td>
-<td><span class="b g">🟢</span> 메뉴 있음</td>
-<td>Claude 10/28~29</td>
+<td><strong>출고 체계</strong> — Marco 정·John 부 · 2영업일 · 집하지 김포 아라육로 220 · 포장재·송장·Pick Up 리허설 · 주문 알림 앱</td>
+<td>미리허설</td>
+<td>Marco 10/31</td>
 </tr>
 <tr>
 <td>S10</td>
-<td><strong>CS</strong> — Chat AI Assistant FAQ(배송일·관세·성분·사용법·반품) · 자동응답 · 응답 12시간 규칙 · 앱 알림</td>
-<td>응답률·시간이 Account Health → 노출. 주문 1건 늦으면 비율이 튄다</td>
-<td><span class="b g">🟢</span> 메뉴 있음</td>
-<td>John 알림 · Claude 문안 10/29</td>
+<td><strong>CS</strong> — Chat AI Assistant FAQ 10문(배송 9~25일·관세·GST·성분·사용법·반품·정품·세트) · 자동응답 · 운영시간 · 알림</td>
+<td>메뉴 있음</td>
+<td>Claude 10/29 · John 알림</td>
 </tr>
 <tr>
 <td>S11</td>
-<td><strong>출고 체계 + 재고 정정 🚨</strong> — Marco 정·John 부 · DTS 2영업일 · 집하지 김포 아라육로 220 · 포장재·송장·Pick Up 리허설 · <strong>Shopee 재고 275 ≠ 실물(7/9 세럼 120·크림 200, 이후 더 줄었을 수 있음 <span class="b r">🔴</span>) → Shopee 전용 배정분 세럼 40·크림 40(일 $20 광고 기준 2~3주분, Marco 확인값)으로 재고 정정 — Global SKU 저장은 Anvisa 공란으로 막혀 있어(<span class="b g">🟢</span> 10/27) Shop SKU 재고칸(SG → 재활성 샵 순)으로 입력</strong> · 주문 알림 Marco·John 앱</td>
-<td>없는 재고를 팔면 품절 취소 = 패널티. LSR ≥5% = 패널티</td>
-<td><span class="b y">🟡</span></td>
-<td><strong>Marco 배정 10/28 · Claude 정정 10/28(E07b) · 리허설 10/31</strong></td>
+<td><strong>Shop Decoration</strong> — 배너·컬렉션(세럼·크림·세트)·소개문(brand.md 톤, "Korean pharmacy skincare") + 11.11 Seller Kit</td>
+<td>메뉴 있음</td>
+<td>Claude 10/29</td>
 </tr>
 <tr>
 <td>S12</td>
-<td><strong>광고 지갑</strong> — 충전 프리셋 S$5~1,000(<span class="b g">🟢</span> 24시간 내 적립·환불 불가·통화 SGD) → <strong>카드 충전 S$500(≈$391, 18.5일분)+GST</strong> → GMV Max 2캠페인 생성(<strong>최소 일예산 S$12/상품</strong> → 세럼 S$15·크림 S$12, 시작 10/30 예약)</td>
-<td>자동충전 미지원 → 잔액 0 = 광고 정지·학습 리셋</td>
-<td><span class="b g">🟢</span> 크레딧 S$27(만료 표시 없음 <span class="b y">🟡</span>)</td>
-<td><strong>John 충전 10/29</strong> · Claude 생성 10/29</td>
+<td><strong>광고·코인 지갑</strong> — Ads Top Up S$500(≈$391, 18.5일분) + Seller Coins S$450(45,000코인)</td>
+<td>크레딧 S$27 · 코인 0</td>
+<td><strong>John 10/29(카드)</strong></td>
 </tr>
 <tr>
 <td>S13</td>
-<td><strong>브러싱 점검 → 확정</strong> — 4월 주문 50건 = 파인드리뷰 체험단 비공개 바우처($0.10, 25+25 전량 사용, 2026-04-06 하루 집중)</td>
-<td>리뷰 50(5.0)은 전환 근거에서 제외(결정 기록 가지 1 약화) → §13 리뷰 재건 트랙 ON: Review Prize · Free Sample · Giveaway 화이트리스트 질의</td>
-<td><span class="b g">🟢</span> 확정</td>
-<td>Claude 10/27 완료</td>
+<td><strong>기준선</strong> — Business Insights 8샵 L7D/L30D 노출·클릭 + 일일 로그 템플릿</td>
+<td>—</td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
 <td>S14</td>
-<td><strong>기준선</strong> — Business Insights 8샵 노출·클릭 7일 스냅샷 + 일일 로그 템플릿(광고비·노출·클릭·확정 주문·확정 매출·취소·중복 주문·잔액)</td>
-<td>광고 효과와 재활성·루틴 효과 분리</td>
-<td>—</td>
-<td>Claude 10/27</td>
+<td><strong>국가별 서류 트랙 착수</strong>(§6) — 공통 키트(CFS·GMP·INCI·LOA·라벨) + MY NPRA → SG HSA → TH 번호 명의·바늘결정 질의 → TW PIF(총판) · PH·VN·BR·MX는 보류 권고</td>
+<td>모두 현지 파트너 명의 필요 · GMP 증빙 미확보가 병목</td>
+<td>Marco·John 10/28 착수</td>
 </tr>
 <tr>
 <td>S15</td>
-<td><strong>규제 병행 트랙(막지 않음)</strong> — SG HSA 통지 여부 · MY NPRA(CNH 견적) · TH FDA 커버 · TW PIF는 <strong>만들지 않음(Marco 메모 — 총판이 수입자로 PIF 보유하는 경로)</strong> · BR Anvisa·MX CFS는 보유 없음 → Shopee 조치 수용</td>
-<td>재오픈과 병행. TW는 비공개 권장(§9)</td>
-<td><span class="b r">🔴</span></td>
-<td>Marco(NPRA·총판) · 질의 07</td>
+<td><strong>담당자 질의 발송</strong>(research/07 + Shop+·Promo Xtra·패널티 샵 단위·Giveaway·가격 증빙 사전 등록)</td>
+<td>초안 완료</td>
+<td>John/Marco 10/28</td>
 </tr>
 <tr>
 <td>S16</td>
-<td><strong>담당자 질의 발송</strong>(07 초안 + Shop+ 자격·Promo Xtra 상태·패널티 샵 단위 여부·Giveaway 화이트리스트·가격 재조정 증빙 사전 등록)</td>
-<td>선정형·화이트리스트형 레버는 매니저가 열쇠</td>
-<td>초안 완료</td>
-<td><strong>John/Marco 10/27</strong></td>
+<td><strong>11.11 노미네이션</strong> — 바우처 세션 2개 · Price Teaser 불참 · VIP Friday 보류</td>
+<td>마감 10/29 18:00 SG</td>
+<td>Claude 10/29</td>
 </tr>
 <tr>
 <td>S17</td>
-<td><strong>11.11 노미네이션</strong> — 바우처 세션 2개(22%/cap S$5/min S$11 · 16%/cap S$10/min S$29) 참여 · Price Teaser 불참 · VIP Friday 보류(12월부터 — 매주 금 $50·$10 Deals-CB 세션은 "평소보다 좋은 가격" 요구)</td>
-<td>마감 <strong>10/29 18:00(SG)</strong> · 승인 뒤 철회 = 3개월 금지</td>
-<td>§4-2 <span class="b g">🟢</span></td>
+<td><strong>어필리에이트</strong> — Open 18% 유지 · Targeted SG KOC 50명 수동 초청 · Free Sample 10개 승인 기준</td>
+<td>가동 중</td>
 <td>Claude 10/29</td>
 </tr>
 <tr>
 <td>S18</td>
-<td><strong>어필리에이트</strong> — Open 18% 유지 · Free Sample 10 · Targeted Campaign SG KOC 50명 수동 선별 초청("Select top N" 금지) · Affiliate Ads 보류</td>
-<td>성과보수형이라 비용은 판매 시만</td>
-<td><span class="b g">🟢</span> 가동 중</td>
-<td>Claude 10/29</td>
+<td><strong>활동 루틴 ON</strong> — 화·금 8샵 전환 + Shop SKU 터치 + Bump(12시·21시 SGT)</td>
+<td>7일 무활동 = 검색 제외</td>
+<td>Claude 10/28</td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-2부--돈-쓰는-액션-비용값시작게이트">6. 2부 — 돈 쓰는 액션 (비용·값·시작·게이트)</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>액션</th>
-<th>비용</th>
-<th>값</th>
-<th>시작</th>
-<th>게이트·근거</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>P1</td>
-<td><strong>GMV Max 상품 광고(SG)</strong> 세럼·크림</td>
-<td><strong>S$27/일 ≈ $21</strong>(+GST 9%)</td>
-<td>Custom ROAS 권장 최저 단계 · <strong>세럼 S$15 · 크림 S$12</strong>(최소 S$12/상품 <span class="b g">🟢</span>) · ROAS Protection ON · 학습 7일 변경 금지 → ±20% · 과금은 노출 기반(업그레이드 공지)</td>
-<td><strong>10/30</strong>(늦어도 11/2)</td>
-<td>10/27 실측 <span class="b g">🟢</span> · §10</td>
-</tr>
-<tr>
-<td>P2</td>
-<td><strong>Campaign Surge</strong>(스파이크 자동 +20%·ROAS 목표 −30%)</td>
-<td>예산 +20% 자동</td>
-<td>11/10~13 · 12/10~13 ON</td>
-<td>11/10</td>
-<td>쇼피: 스파이크 전 2주 램프업 권고 <span class="b g">🟢</span></td>
-</tr>
-<tr>
-<td>P3</td>
-<td><strong>세트 신규상품 광고</strong>(등록 30일 이내 전용, 뷰티 3주문 → 2단계)</td>
-<td>+$4/일</td>
-<td>자동입찰 고정</td>
-<td>11/4(세트 라이브 뒤)</td>
-<td>02 §1 <span class="b g">🟢</span></td>
-</tr>
-<tr>
-<td>P4</td>
-<td><strong>Shop+ 광고</strong>(검색 상단 Shop Card+Item Slot, 키워드 수동 eCPC) — <strong>SB 대체재</strong></td>
-<td>+$5/일</td>
-<td>키워드 8개: exosome serum · korean serum · lemonderma · vegan serum · dark spot serum · niacinamide serum · korean moisturizer · barrier cream</td>
-<td>11/10 이후, <strong>활성 상품 4개 뒤</strong>(세트 + 세럼 2개입 E12b)</td>
-<td>08 §4 <span class="b g">🟢</span> 절차 · 자격 <span class="b g">🟢</span> "≥4 eligible active products"</td>
-</tr>
-<tr>
-<td>P5</td>
-<td><strong>2번째 국가 광고</strong> — MY 우선(재활성·리스팅·COD 설정 끝), TW는 PIF 경로 확정 뒤</td>
-<td>+$10/일</td>
-<td>GMV Max 세럼 1개</td>
-<td>11/18</td>
-<td>§9</td>
-</tr>
-<tr>
-<td>P6</td>
-<td><strong>바우처·번들·할인(마진 비용)</strong></td>
-<td>할인분</td>
-<td>Follow Prize S$3 · New Buyer S$5 · 11.11 22%(cap S$5)·16%(cap S$10) · 번들 −15% · <strong>11/28 취소선 −25%</strong> · 12.12 Price Teaser ≤S$33.12</td>
-<td>10/28~</td>
-<td>§4-3 계산기</td>
-</tr>
-<tr>
-<td>P7</td>
-<td><strong>AMS 커미션 18%</strong>(판매 시만) + <strong>Free Sample 10개</strong>(제품+배송 ≈$8/개 <span class="b y">🟡</span>) + Refundable Sample(선정 시)</td>
-<td>판매분 18% · 샘플 ≈$80</td>
-<td>승인 기준: SG 거주·뷰티 콘텐츠 이력</td>
-<td>10/29</td>
-<td>02 §4 · 무차별 시딩 금지</td>
-</tr>
-<tr>
-<td>P8</td>
-<td><strong>Review Prize 코인</strong></td>
-<td>리뷰당 ≤150코인(≈S$1.5), 월 상한 S$50</td>
-<td>기본값</td>
-<td>10/28</td>
-<td>02 §7 <span class="b g">🟢</span></td>
-</tr>
-<tr>
-<td>P9</td>
-<td><strong>CPAS(Meta 협력광고)</strong> — 쇼피 카탈로그 연동·리타게팅, US 승자 소재 재활용</td>
-<td>$10/일(12월)</td>
-<td>마켓별 전용 광고계정 신청(KRSC 가이드)</td>
-<td>12/1 신청 → 12/8</td>
-<td>08 §4 <span class="b g">🟢</span> 절차 <span class="b y">🟡</span> 효과</td>
-</tr>
-<tr>
-<td>P10</td>
-<td>Affiliate Ads(어필 콘텐츠 Meta 부스트)</td>
-<td>크레딧</td>
-<td>어필 콘텐츠 생기면</td>
-<td>12월</td>
-<td>02</td>
-</tr>
-<tr>
-<td>P11</td>
-<td>Shopee Live 파트너(GIMmedia $25/h+커미션, 월 $1,000+) · MY LiveXtra 3%</td>
-<td>고정비</td>
-<td><strong>보류</strong> — 1인 운영·현지어</td>
-<td>—</td>
-<td>02 §5</td>
-</tr>
-<tr>
-<td>P12</td>
-<td>FBS(현지 풀필먼트)</td>
-<td>입고 물류</td>
-<td>승자 마켓 1곳</td>
-<td>12/14 판정 뒤</td>
-<td>3단계</td>
-</tr>
-</tbody>
-</table>
-<p><strong>예산:</strong> 11월 광고 ≈ P1 $630(S$27×30) + P3 $108 + P4 $105 + P5 $130 ≈ <strong>$975 + GST 9%</strong>(≈$1,060). 90일 상한 <strong>$3,000+GST</strong>(John "돈보다 시간" — 월 1회 성적표에서 재검토). 바우처·할인·샘플·코인은 상한 밖(판매 비례).</p>
-<h2 id="7-3부--돈-안-쓰는-액션-노출전환">7. 3부 — 돈 안 쓰는 액션 (노출·전환)</h2>
+<h2 id="4-3부--돈-안-쓰는-액션-노출전환">4. 3부 — 돈 안 쓰는 액션 (노출·전환)</h2>
 <table>
 <thead>
 <tr>
@@ -649,91 +552,91 @@ a{color:var(--head)}
 <tr>
 <td>F1</td>
 <td><strong>활동 루틴 8샵</strong>(샵 전환 + Shop SKU 터치 — 홈 접속만은 불인정)</td>
-<td>7일 무활동 검색 제외 방지 = 재오픈 유지</td>
-<td>주 2회 화·금</td>
+<td>7일 무활동 검색 제외 방지</td>
+<td>화·금</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F2</td>
 <td><strong>Bump</strong>(상품 5개 4시간 상위 노출)</td>
-<td>약함(유료 광고가 위)이나 0원</td>
-<td>SG 현지 피크 2회/일(12시·21시 SGT)</td>
-<td>Claude(루틴화)</td>
+<td>약하지만 0원</td>
+<td>12시·21시 SGT</td>
+<td>Claude</td>
 </tr>
 <tr>
 <td>F3</td>
-<td><strong>Shopee Video 업로드</strong> — 보유 영상 세로 컷(≤1분, 상품 태그)</td>
-<td>영상 발견 지면 노출 · 어필리에이트 공동부담 +5% 대상</td>
+<td><strong>Shopee Video</strong> — 보유 영상 세로 컷(≤1분, 상품 태그)</td>
+<td>영상 발견 지면 · 어필 공동부담 +5% 대상</td>
 <td>주 3편 × 활성 샵</td>
-<td>Claude(컷) · John(승인)</td>
+<td>Claude 컷 · John 승인</td>
 </tr>
 <tr>
 <td>F4</td>
-<td><strong>리스팅 SEO</strong> — 제목 키워드(05 실측: exosome serum·korean serum·vegan serum·dark spot)·속성 전부·설명 키워드 줄</td>
+<td><strong>리스팅 SEO</strong> — 제목 앞쪽 키워드(exosome serum · korean serum · vegan serum · dark spot) · 속성 전부 · 설명 키워드 줄</td>
 <td>검색 노출의 무료 핵심</td>
-<td>10/28 반영 → 2주마다 검색어 대조</td>
+<td>10/28 → 2주마다 대조</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F5</td>
-<td><strong>Shop Decoration·Top Picks(상품 ≥4 <span class="b y">🟡</span>)·캠페인 Seller Kit</strong></td>
+<td><strong>Shop Decoration · 캠페인 Seller Kit · Top Picks(상품 4개 뒤)</strong></td>
 <td>샵 체류·세트 전환</td>
 <td>10/29 · 캠페인마다</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F6</td>
-<td><strong>캠페인 노미네이션(신청 무료)</strong> — 바우처 캠페인 11.11 · 12.12 Price Teaser(11/28 뒤) · VIP Friday(12월) · Shopee Prizes Dec</td>
+<td><strong>캠페인 노미네이션(신청 무료)</strong> — 11.11 바우처 · 20 Nov BTO · Super Tech · 12.12 Price Teaser(11/28 뒤) · VIP Friday(12월) · Shopee Prizes Dec</td>
 <td>홈·카테고리·오버레이 배지</td>
-<td>마감표 §12</td>
+<td>마감표 §9</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F7</td>
-<td><strong>Smart Voucher(Shopee 부담)·ROAS Protection</strong> ON</td>
-<td>전환 보조·광고비 환급</td>
+<td><strong>Smart Voucher(Shopee 부담) · ROAS Protection</strong> ON</td>
+<td>전환 보조 · 광고비 환급</td>
 <td>10/29</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F8</td>
-<td><strong>AMS Targeted Campaign</strong> SG KOC 50명 수동 초청 + Open 18%</td>
-<td>콘텐츠·유입(판매 시만 비용)</td>
+<td><strong>AMS Targeted</strong> SG KOC 50명 수동 초청 + Open 18%</td>
+<td>콘텐츠·유입(비용은 판매 시만)</td>
 <td>10/29 · 2주마다 50명</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F9</td>
-<td><strong>리뷰 요청</strong> — 주문 고객 채팅 리뷰 요청(정상 할인 비밀 바우처 허용)</td>
+<td><strong>배송 완료 +3일 채팅</strong> — 감사 + 사용법 + 리뷰 요청(보상 조건 없이)</td>
 <td>리뷰 순증</td>
-<td>배송 완료 +3일</td>
+<td>건별</td>
 <td>Claude 문안·발송</td>
 </tr>
 <tr>
 <td>F10</td>
-<td><strong>Preferred Seller 요건 추적</strong></td>
-<td>배지 = CTR·전환</td>
+<td><strong>Preferred Seller 요건 추적</strong>(주 구매자 10·주문 30)</td>
+<td>배지</td>
 <td>월 1회</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F11</td>
-<td><strong>외부 무료 트래픽</strong> — @lemonderma_official 인스타·틱톡 SG·MY 타깃 게시물에 Shopee 링크(AMS 링크로 추적)</td>
+<td><strong>외부 무료 트래픽</strong> — 인스타·틱톡 SG·MY 타깃 게시물에 AMS 링크</td>
 <td>외부 유입·검색 신호</td>
 <td>주 1회</td>
 <td>SNS 트랙</td>
 </tr>
 <tr>
 <td>F12</td>
-<td><strong>Chat Broadcast</strong>(팔로워·구매자 대상)</td>
+<td><strong>Chat Broadcast</strong>(팔로워·구매자)</td>
 <td>재구매·캠페인 알림</td>
 <td>팔로워 50명 넘으면</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>F13</td>
-<td><strong>Shopee Standard Product 매칭</strong>(메뉴 <span class="b g">🟢</span>, 효과 <span class="b r">🔴</span>)</td>
-<td>표준 카탈로그 노출 가능성</td>
+<td><strong>Shopee Standard Product 매칭</strong></td>
+<td>표준 카탈로그 노출(효과 <span class="b r">🔴</span>)</td>
 <td>실측 뒤</td>
 <td>Claude</td>
 </tr>
@@ -742,188 +645,276 @@ a{color:var(--head)}
 <td><strong>주간 성적표</strong>(Business Insights + 광고 + 주문, 읽기 전용) → 2주 결정점</td>
 <td>판단 재료</td>
 <td>매주 월 09:00</td>
-<td>Claude → John 판단</td>
+<td>Claude → John</td>
 </tr>
 <tr>
 <td>F15</td>
-<td>TW 直播免費曝光·10X CCB 등 TW 무료 캠페인</td>
+<td>TW 무료 캠페인(直播免費曝光 등)</td>
 <td>노출</td>
-<td><strong>보류</strong>(진행자·PIF)</td>
+<td>PIF 뒤</td>
 <td>—</td>
 </tr>
 </tbody>
 </table>
-<h2 id="8-US-자산--Shopee-이식-매핑">8. US 자산 → Shopee 이식 매핑</h2>
+<h2 id="5-2부--돈-쓰는-액션-가이드">5. 2부 — 돈 쓰는 액션 가이드</h2>
+<h3>5-1. 돈이 나가는 지갑 4개</h3>
 <table>
 <thead>
 <tr>
-<th>US 자산</th>
-<th>Shopee 적용</th>
-<th>파일·위치</th>
-<th>주의</th>
+<th>지갑</th>
+<th>무엇</th>
+<th>통화·과금</th>
+<th>충전</th>
+<th>우리 상태</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>리스팅 v3.1 제목·불릿 5·설명·백엔드(K-Pharmacy 축)</td>
-<td>SG 제목(≤255자(SG 실측), 영문 50%↑): <code>LEMONDERMA Lemonshot Exosome Dark Spot Serum 50ml – Lemon Exosome, 2% Niacinamide, Vegan Microcrystal, MFDS Brightening + Anti-Wrinkle, Korean Pharmacy Skincare</code> / 크림 동형 · 설명 = 불릿 5 → Highlights + What it does/Who/How to use/Size · 백엔드 단어 → 설명 하단 키워드 줄</td>
-<td><code>us/amazon-detail-page-renewal/listing-v3_1-2026-10-23/listing_v3_1.json</code></td>
-<td>용량은 ml 우선, "1.69 fl oz"는 괄호. 3주 결과 수치는 "in-house study" 문구 유지</td>
+<td><strong>Shopee Ads 크레딧</strong></td>
+<td>GMV Max·신규상품 광고·Shop+·Surge</td>
+<td>SGD, 광고 송출마다 차감, <strong>+GST 9%</strong>, 환불 불가, 24시간 내 적립</td>
+<td>카드(프리셋 S$5~1,000)</td>
+<td>S$27</td>
 </tr>
 <tr>
-<td>수요어·SQP·키워드 리서치</td>
-<td>제목 앞쪽 키워드 2개(exosome serum·korean serum)·속성·Shop+ 키워드 8개</td>
-<td><code>us/amazon-detail-page-renewal/keyword-research-2026-10-16/</code> · <code>us/performance/amazon-ads-api/sqp-price-2026-10-18/</code></td>
-<td>shopee.sg 자동완성으로 재검증(05)</td>
+<td><strong>Seller Coins</strong></td>
+<td>Review Prize·Live 보상</td>
+<td>S$1 = 100코인, 구매자에게 코인 지급 시 차감</td>
+<td>카드</td>
+<td>0</td>
 </tr>
 <tr>
-<td>갤러리 7장 + A+ 모듈 기획(순백 메인·훅·신뢰 배지·성분·사용법)</td>
-<td>이미지 9장(1:1): 1 메인 순백 · 2 훅 · 3 MFDS·비건·GMP 배지 · 4 성분 · 5 사용법 · 6 B&amp;A(사전 등록된 것만) · 7 세트 · 8 리뷰 인용 · 9 배송·정품 안내</td>
-<td><code>serum-pdp.json</code>·<code>cream-pdp.json</code>(gallery·aplus 기획) · 실물 이미지는 Drive 아마존 폴더</td>
-<td>쇼피는 라이프스타일·텍스트 허용 → A+ 카드가 그대로 간다</td>
-</tr>
-<tr>
-<td>SB 흑자 영상 11개(UAE)·US SB 가격대 영상</td>
-<td>리스팅 영상 1개(≤60초·≤30MB) + Shopee Video 세로 컷</td>
-<td><code>uae/performance/amazon/sb-profit-creatives-2026-10-14/</code> · <code>us/performance/amazon-ads-api/sb-priceband-2026-10-20/</code></td>
-<td>AED·$ 가격 자막 제거 컷만</td>
-</tr>
-<tr>
-<td>메타 승자 영상·문구(US·UAE)</td>
-<td>Shopee Video · Chat Broadcast · CPAS 소재</td>
-<td><code>us/performance/meta/creatives/</code> · <code>uae/performance/meta/</code></td>
-<td>숫자 없는 상시 문구 원칙 그대로</td>
-</tr>
-<tr>
-<td>리뷰 콘텐츠(Judge.me·아마존 리뷰)</td>
-<td>이미지 카드 "What customers say"(출처·날짜 표기)</td>
-<td><code>kr/reviews/data/judgeme_reviews_*</code>·<code>amazon_page_reviews_*</code></td>
-<td>쇼피 리뷰로 올리는 게 아니라 인용 — 브러싱과 무관</td>
-</tr>
-<tr>
-<td>프로모션 메커닉</td>
-<td>아마존 쿠폰 → Shop Voucher · 가상 번들 27% → Bundle Deal −15% · 라이트닝 딜 → Flash Deal(Shopee 추천형) · 프라임 할인 → Price Teaser 세션 · S&amp;S → 없음</td>
-<td><code>us/performance/2026-10-20-us-price-stepdown-plan/</code> · changelog</td>
-<td>쇼피는 중첩이 기본 → §4-3 계산기</td>
-</tr>
-<tr>
-<td>브랜드 스토어</td>
-<td>Shop Decoration 배너·컬렉션·소개문</td>
-<td><code>us/amazon-brand-store/</code></td>
-<td>11.11 Seller Kit와 조합</td>
-</tr>
-<tr>
-<td>아마존 Q&amp;A·CS 답변</td>
-<td>Chat AI Assistant FAQ·자동응답</td>
-<td>brand.md·products.md</td>
-<td>배송 9~25일·관세 안내 추가</td>
-</tr>
-<tr>
-<td>Amazon Attribution</td>
-<td>없음 — AMS 링크 전환·CPAS 전환 데이터로 대체</td>
+<td><strong>마진(가격)</strong></td>
+<td>바우처·번들·애드온·배송비 무료·캠페인 세션 할인</td>
+<td>팔릴 때만 할인분만큼</td>
 <td>—</td>
-<td>외부 유입은 Business Insights '외부' 트래픽만</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>판매 비례·실물</strong></td>
+<td>어필리에이트 커미션 18% · Free Sample(제품+배송 ≈ $8/개) · CPAS(Meta 광고계정)</td>
+<td>판매 시 / 샘플 발송 시 / Meta 결제</td>
+<td>—</td>
+<td>Open 18% 가동</td>
 </tr>
 </tbody>
 </table>
-<h2 id="9-국가-순서-v3--전-샵-재오픈--광고는-순차">9. 국가 순서 v3 — 전 샵 재오픈 + 광고는 순차</h2>
+<h3>5-2. 레버별 설명 (뭔가 → 과금·최소 → 지금 → 기대 → 시작·중단)</h3>
 <table>
 <thead>
 <tr>
-<th>단계</th>
-<th>샵</th>
-<th>할 것</th>
-<th>조건·리스크</th>
+<th>#</th>
+<th>레버</th>
+<th>무엇인가</th>
+<th>과금·최소값</th>
+<th>지금</th>
+<th>기대 효과</th>
+<th>시작 → 중단 기준</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>10/28 재오픈</td>
-<td>TH·MY·VN·PH·BR·MX Reactivate(SG 활성 유지) · <strong>TW는 리스팅 비공개 권장</strong>(Marco 메모: PIF 없음 + 대만 "엑소좀" 표기 불가 공문 2025-10-29 + 약국 총판 리드 → B2B 경로, 3단계에서 재검토) — John 확인</td>
-<td><strong>재고 정정(E07b) → Reactivate</strong> 순서(BR 게시 상태면 Global 편집에 Anvisa 필수란) → Violation·COD·Pre-order 확인 → 가격 → 리스팅 이식(10/30) → 활동 루틴</td>
-<td>재오픈 = 무료 노출 복구 + SG 리뷰 공유. <strong>COD: VN·PH OFF 요청(헬프센터), MY·TH ON 2주 관찰</strong></td>
+<td>P1</td>
+<td><strong>GMV Max 상품 광고</strong></td>
+<td>상품 하나를 검색·추천·비디오·게임 지면에 자동 노출. 입찰 자동, 우리는 <strong>목표 ROAS</strong>(Custom ROAS)만 정함. 7일 학습 뒤 목표의 80~120%로 맞춤. ROAS Protection: 목표의 80% 못 미치면 부족분을 크레딧으로 환급</td>
+<td>노출 기반 과금(귀속 7일 클릭·1일 뷰) · <strong>최소 일 S$12/상품</strong></td>
+<td>미집행</td>
+<td><strong>노출 0 → 하루 1,000</strong>이 1차 목표. 세럼 S$15 · 크림 S$12 = 일 S$27(≈$21)</td>
+<td><strong>10/30</strong> ON · 학습 7일간 변경 금지 → 클릭 300에 주문 0이면 −20%·ROAS 목표 상향 → 7일 더 → 그래도 0이면 중단·리스팅 수정</td>
 </tr>
 <tr>
-<td>1 광고(10/30~)</td>
-<td><strong>SG</strong></td>
-<td>§10 설계</td>
-<td>리뷰·Account Health·카드 결제 시장</td>
+<td>P2</td>
+<td>Shop GMV Max</td>
+<td>샵 전체를 자동 상품 선택으로 광고</td>
+<td>예산·목표만</td>
+<td>가능</td>
+<td>상품 2~4개라 P1보다 통제가 떨어짐</td>
+<td><strong>보류</strong></td>
 </tr>
 <tr>
-<td>2 광고(11/18~)</td>
-<td><strong>MY</strong>(기본) / TH(FDA 커버 확인 시)</td>
-<td>세럼 $10/일</td>
-<td>MY: NPRA CNH 견적 병행(막지 않음) · TW는 총판 경로로 빠짐(PIF 안 만듦)</td>
+<td>P3</td>
+<td><strong>신규상품 광고</strong>(Promote My New Products)</td>
+<td>등록 30일 이내 리스팅에 전용 트래픽 부스트</td>
+<td>자동 입찰 · +S$5/일</td>
+<td>세트·2개입 등록 뒤 자격</td>
+<td>새 리스팅 첫 판매(리뷰 0 극복)</td>
+<td><strong>11/4</strong>(세트 라이브) → 30일 만료</td>
 </tr>
 <tr>
-<td>3(12/14 판정 뒤)</td>
-<td>TH(FDA 커버 확인) → PH·VN</td>
-<td>승자 복제 · FBS</td>
-<td>TH FDA×플랫폼 합동 단속 이력(2025-05)</td>
+<td>P4</td>
+<td><strong>Shop+ 광고</strong>(SB 대체재)</td>
+<td>검색 결과 <strong>상단 샵 카드 + 아이템 슬롯</strong>, 키워드 수동 입찰(eCPC), 점유율(SOV) 지표</td>
+<td>클릭·조회 기반 · +S$6.5/일</td>
+<td><strong>불가 — 활성 상품 ≥4 필요</strong>(현 2)</td>
+<td>브랜드·핵심 키워드(exosome serum 등 8개) 상단 점유</td>
+<td>상품 4개 뒤 <strong>11/10~</strong> → eCPC &gt; S$0.65 &amp; CVR &lt; 2% 2주면 −20%</td>
 </tr>
 <tr>
-<td>규제 트랙(병행)</td>
-<td>SG HSA <span class="b r">🔴</span> · MY NPRA · TH FDA · TW PIF · BR Anvisa · MX CFS</td>
-<td>질의 07 + Marco</td>
-<td>보유 없는 BR·MX는 Shopee가 리스팅을 숨기면 그대로 둠(임의 번호 입력 금지)</td>
+<td>P5</td>
+<td><strong>Campaign Surge</strong></td>
+<td>캠페인 데이에 예산 +20%·ROAS 목표 −30% 자동</td>
+<td>예산 +20%</td>
+<td>메뉴 있음</td>
+<td>스파이크 날 노출 확보</td>
+<td>11/10~13 · 12/10~13만 ON</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>Auto Budget Increase</td>
+<td>성과 좋은 광고 예산 자동 인상</td>
+<td>자동</td>
+<td>메뉴 있음</td>
+<td>예산 소진 방지</td>
+<td><strong>OFF</strong>(증액은 §5-5 규칙으로 사람이)</td>
+</tr>
+<tr>
+<td>P7</td>
+<td><strong>Review Prize</strong></td>
+<td>고품질 리뷰(50자+사진+영상) 남긴 구매자에게 <strong>셀러 코인</strong> 지급. 상품별 목표 리뷰 수 설정, 도달하면 자동 종료</td>
+<td><strong>1건 최대 150코인(S$1.50)</strong> · 코인 선충전</td>
+<td>코인 0 · 세럼·크림 고품질 리뷰 15개씩</td>
+<td>광고가 데려온 첫 구매자가 리뷰를 남기게 함</td>
+<td><strong>10/29</strong> 150코인 × 100건 × 3상품 = 45,000코인(S$450) → 상품당 20건 넘으면 재검토</td>
+</tr>
+<tr>
+<td>P8</td>
+<td><strong>구매 감사 바우처 S$12.80(≈$10)</strong></td>
+<td>구매자 전원에게 다음 구매용 바우처(Repeat Buyer Voucher) + 배송 완료 채팅에 리뷰 요청. <strong>리뷰를 조건으로 걸지 않는다</strong>(쇼피는 바우처 코드 노출·유인 리뷰를 숨기고, 플랫폼 밖 보상은 브러싱 판정)</td>
+<td>재구매 시 할인분만큼 · <strong>월 상한 $1,000(≈78장)</strong></td>
+<td>도구 있음(Vouchers &gt; Repeat Buyer)</td>
+<td>재구매·객단가 + 리뷰 순증(간접)</td>
+<td><strong>10/29</strong> ON · 월 상한 도달 시 다음 달</td>
+</tr>
+<tr>
+<td>P9</td>
+<td><strong>바우처·번들·배송비</strong>(마진)</td>
+<td>§2-3 사다리 전부</td>
+<td>팔릴 때 할인분</td>
+<td>도구 전부 있음</td>
+<td>전환 + 객단가</td>
+<td>10/28~ · 하한 계산기 매번</td>
+</tr>
+<tr>
+<td>P10</td>
+<td><strong>어필리에이트</strong></td>
+<td>Open 18%(판매 시만) + Targeted 50명 + Free Sample 10개</td>
+<td>커미션 18% · 샘플 ≈ $80</td>
+<td>가동(매출 0)</td>
+<td>콘텐츠·외부 유입</td>
+<td>10/29 · 샘플은 SG 거주·뷰티 콘텐츠만</td>
+</tr>
+<tr>
+<td>P11</td>
+<td><strong>2번째 국가 광고</strong></td>
+<td>MY GMV Max 세럼 1개</td>
+<td>+S$13/일</td>
+<td>—</td>
+<td>병렬 국가 테스트</td>
+<td><strong>11/18</strong>(SG 2주 성적표 뒤)</td>
+</tr>
+<tr>
+<td>P12</td>
+<td><strong>CPAS(Meta 협력광고)</strong></td>
+<td>Meta에서 쇼피 카탈로그 상품 광고·리타게팅, US 승자 소재 재활용</td>
+<td>Meta 광고비 $10/일</td>
+<td>신청 필요(마켓별 광고계정)</td>
+<td>외부 트래픽</td>
+<td>12/1 신청 → 12/8</td>
+</tr>
+<tr>
+<td>P13</td>
+<td>Live 파트너 · FBS · Affiliate Ads</td>
+<td>라이브 대행(월 $1,000+) · 현지 풀필먼트 · 어필 콘텐츠 부스트</td>
+<td>고정비</td>
+<td>—</td>
+<td>—</td>
+<td><strong>보류</strong>(12/14 판정 뒤)</td>
 </tr>
 </tbody>
 </table>
-<p><strong>정책이 바뀐 것 3건(5월 오픈 이후, <span class="b g">🟢</span>):</strong> TW PIF 의무(2026-07-01) · BR 뷰티 Anvisa 필수(2026-09-23) · 수수료 인상(SG 2/1·6/1, TGF 3/17, SLS 7/1 등)+VN 주문 자동 분할(10/15). 나머지 요건은 5월과 같다.</p>
-<h2 id="10-광고-설계-v3-SG-일-20--90일">10. 광고 설계 v3 (SG 일 $20 → 90일)</h2>
-<h3>10-1. 구성</h3>
-<table>
-<thead>
-<tr>
-<th>캠페인</th>
-<th>일예산</th>
-<th>설정</th>
-<th>시작</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SG 세럼 GMV Max</td>
-<td><strong>S$15(≈$11.7)</strong></td>
-<td>Custom ROAS 권장 최저 · ROAS Protection ON · Surge ON(스파이크만)</td>
-<td>10/30</td>
-</tr>
-<tr>
-<td>SG 크림 GMV Max</td>
-<td><strong>S$12(≈$9.4, 최소)</strong></td>
-<td>동일</td>
-<td>10/30</td>
-</tr>
-<tr>
-<td>SG 세트 신규상품 광고</td>
-<td>+$4</td>
-<td>자동입찰 고정(1단계)</td>
-<td>11/4</td>
-</tr>
-<tr>
-<td>SG Shop+</td>
-<td>+$5</td>
-<td>수동 eCPC 키워드 8개</td>
-<td>활성 상품 4개 뒤(11/10~)</td>
-</tr>
-<tr>
-<td>MY/TW 세럼 GMV Max</td>
-<td>+$10</td>
-<td>Custom ROAS</td>
-<td>11/18</td>
-</tr>
-</tbody>
-</table>
-<p>최소 일예산 <strong>S$12/상품</strong>(생성 화면 검증 문구 <span class="b g">🟢</span> 10/27) · 예산 통화 SGD · GMV Max 업그레이드 = 노출 기반 송출·과금, 귀속 7일 클릭 또는 1일 뷰.</p>
-<h3>10-2. 미리 승인받는 증액 규칙 (John "근거 있으면 더")</h3>
+<h3>5-3. 돈 태우는 순서 (추천)</h3>
 <ol>
-<li>학습 7일 뒤 <strong>확정 ROAS ≥ 2.6</strong>(표시가 본전 — 배송 실비 반영, §11) → 해당 캠페인 +20%/3일(±20% 룰 안).</li>
-<li><strong>예산 소진율 100% 3일 연속 &amp; CVR ≥ 2%</strong> → +20%.</li>
-<li>스파이크(11/10~13·12/10~13) <strong>Surge ON</strong> = 자동 +20%.</li>
-<li>2번째 국가 광고 $10 = 병렬 국가 테스트(속도) — 조건: 재활성·리스팅 이식·COD 설정·(TW는 PIF) 완료.
-→ 어느 경우든 <strong>월 1회 성적표에서 90일 상한($3,000+GST) 재검토</strong>. 반대로 <strong>클릭 ≥300에 확정 주문 0</strong>이면 −20%·ROAS 목표 상향 → 7일 더 → 그래도 0이면 그 캠페인 중단·리스팅 수정(가역 수단 먼저).</li>
+<li><strong>10/29 충전</strong> — 광고 S$500 + 코인 S$450(John 카드). 코인은 리뷰가 쌓일 때만 소모되니 선충전 손실이 없다.</li>
+<li><strong>10/29 Review Prize ON(P7)</strong> — 광고보다 먼저 켠다. 광고가 데려온 첫 구매자가 코인 보상을 보고 리뷰를 남겨야 다음 구매자가 산다.</li>
+<li><strong>10/29 마진 레버(P8·P9)</strong> — 감사 바우처·번들딜·애드온·배송비 무료·Follow Prize·New Buyer. 팔릴 때만 비용이 나가니 먼저 깔아둔다.</li>
+<li><strong>10/30 GMV Max(P1)</strong> — 노출을 사는 유일한 레버. 세럼 S$15 · 크림 S$12, 7일 학습.</li>
+<li><strong>11/4 신규상품 광고(P3)</strong> — 세트·2개입 라이브 뒤 +S$5/일(30일 한정 자격이라 놓치면 끝).</li>
+<li><strong>11/10 Surge(P5) + Shop+(P4)</strong> — 11.11 스파이크 때 예산 자동 +20%, 상품 4개가 되면 검색 상단 샵 카드.</li>
+<li><strong>11/18 2번째 국가(P11)</strong> — SG 1차 결정점(11/16) 뒤 MY 세럼 S$13/일.</li>
+<li><strong>12/1 CPAS(P12)</strong> — 리뷰 ≥10·전환 데이터가 생긴 뒤 외부 트래픽.
+- 보류: Shop GMV Max(P2) · Auto Budget Increase(P6) · Live·FBS·Affiliate Ads(P13).</li>
 </ol>
-<h3>10-3. 판정표 (유일한 게이트 — §13도 여기를 가리킨다)</h3>
+<h3>5-4. 주별 돈 흐름 (SGD, 광고는 +GST 9%)</h3>
+<table>
+<thead>
+<tr>
+<th>주</th>
+<th>광고</th>
+<th>코인·샘플</th>
+<th>마진성(판매 비례)</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10/28~11/3</td>
+<td>GMV Max 10/30~ ≈ 135</td>
+<td>코인 충전 450(선충전) · 샘플 ≈ 100</td>
+<td>번들·바우처·배송비</td>
+<td>충전 광고 500</td>
+</tr>
+<tr>
+<td>11/4~11/10</td>
+<td>GMV Max + 신규상품 ≈ 225</td>
+<td>—</td>
+<td>세트 번들</td>
+<td></td>
+</tr>
+<tr>
+<td>11/11~11/17</td>
+<td>+ Shop+ + Surge ≈ 300</td>
+<td>—</td>
+<td>11.11 세션 바우처(16% cap 10 / 22% cap 5)</td>
+<td>11/16 결정점</td>
+</tr>
+<tr>
+<td>11/18~11/24</td>
+<td>+ MY ≈ 360</td>
+<td>—</td>
+<td>20 Nov BTO 바우처</td>
+<td></td>
+</tr>
+<tr>
+<td>11/25~12/1</td>
+<td>≈ 360</td>
+<td>—</td>
+<td>11/28 취소선 −25% 시작</td>
+<td>11/30 결정점</td>
+</tr>
+<tr>
+<td>12/2~12/8</td>
+<td>+ CPAS(≈S$90) ≈ 450</td>
+<td>—</td>
+<td>12.12 Price Teaser</td>
+<td></td>
+</tr>
+<tr>
+<td>12/9~12/14</td>
+<td>≈ 430</td>
+<td>—</td>
+<td>Surge 12/10~13</td>
+<td>12/14 판정</td>
+</tr>
+<tr>
+<td><strong>합계(~12/14)</strong></td>
+<td><strong>≈ S$2,250 ≈ $1,760 + GST</strong></td>
+<td>코인 450 · 샘플 100</td>
+<td>할인분 = 매출 비례</td>
+<td>90일 광고 상한 <strong>$3,000+GST</strong> 안</td>
+</tr>
+</tbody>
+</table>
+<h3>5-5. 판정표·증액 규칙 (유일한 게이트)</h3>
 <table>
 <thead>
 <tr>
@@ -947,16 +938,16 @@ a{color:var(--head)}
 <td>&lt;1%(노출 ≥5,000) → 썸네일·제목 교체 후 14일</td>
 </tr>
 <tr>
-<td>eCPC(광고비÷클릭)</td>
-<td>≤$0.30</td>
-<td>$0.30~0.50</td>
-<td>&gt;$0.50 &amp; CVR &lt;2% → −20%·ROAS 목표 상향</td>
+<td>eCPC</td>
+<td>≤S$0.40</td>
+<td>0.40~0.65</td>
+<td>&gt;0.65 &amp; CVR &lt;2% → −20%·ROAS 목표 상향</td>
 </tr>
 <tr>
-<td>클릭→확정 주문 CVR(7일 귀속)</td>
+<td>클릭→확정 주문 CVR(7일)</td>
 <td>≥3%</td>
 <td>1~3%</td>
-<td>클릭 ≥300·주문 0 → §10-2 중단 절차</td>
+<td>클릭 ≥300·주문 0 → P1 중단 절차</td>
 </tr>
 <tr>
 <td>취소+반품</td>
@@ -965,14 +956,14 @@ a{color:var(--head)}
 <td>&gt;20%</td>
 </tr>
 <tr>
-<td><strong>확정 ROAS</strong>(확정 Direct 매출 ÷ 광고비, 광고 GST 포함)</td>
-<td>≥<strong>2.6</strong></td>
+<td><strong>확정 ROAS</strong>(확정 매출 ÷ 광고비, GST 포함)</td>
+<td>≥<strong>2.6</strong>(본전)</td>
 <td>1.6~2.6</td>
 <td>&lt;1.6(클릭 ≥300·14일↑)</td>
 </tr>
 <tr>
 <td>광고∩어필리에이트 중복 주문</td>
-<td>따로 집계, 본전 <strong>4.5</strong></td>
+<td>따로 집계, 본전 4.5</td>
 <td></td>
 <td>성적표 열</td>
 </tr>
@@ -980,86 +971,366 @@ a{color:var(--head)}
 <td>리뷰 순증</td>
 <td>≥3/2주</td>
 <td>1~2</td>
-<td>광고 주문 있는데 0 → Review Prize·리뷰 요청 점검</td>
+<td>광고 주문 있는데 0 → Review Prize·요청 문안 점검</td>
 </tr>
 </tbody>
 </table>
+<p><strong>미리 승인된 증액 4종:</strong> ① 학습 7일 뒤 확정 ROAS ≥2.6 → 그 캠페인 +20%/3일 ② 예산 소진 100% 3일 연속 &amp; CVR ≥2% → +20% ③ 스파이크(11/10~13 · 12/10~13) Surge = 자동 +20% ④ 2번째 국가 S$13/일(재활성·리스팅·COD 완료 조건). 어느 경우든 월 1회 90일 상한($3,000+GST) 재검토. <strong>2주 결정점 판정:</strong> 클릭 ≥600·CVR ≥2%·확정 주문 ≥8·ROAS ≥2.1·취소 ≤15% → 확대 / 클릭 ≥600인데 주문 1~7 또는 ROAS &lt;2.1 → 전환 문제(레버 1개 분리) / CTR &lt;1% 또는 노출 7일 &lt;300 → 노출 문제(ROAS 목표·이미지·제목) / 클릭 &lt;600 → 계속.</p>
+<h2 id="6-국가별-활성화규제-절차-8샵-동시-활성-서류는-지금-착수">6. 국가별 활성화·규제 절차 (8샵 동시 활성, 서류는 지금 착수)</h2>
+<blockquote>
+<p>John 10/27: "서류 심사 리드타임이 있으니 전 국가 활성화를 동시에 진행한다." 샵 활성(10/28)은 버튼 하나·비용 0이고, 서류는 나라별로 주체·기간·비용이 다르다. 상세·출처 = <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/09-%EA%B5%AD%EA%B0%80%EB%B3%84-%EA%B7%9C%EC%A0%9C%EC%84%9C%EB%A5%98-%EC%A0%88%EC%B0%A8-2026-10-27.md">research/09</a>.</p>
+</blockquote>
+<h3>6-1. 10/28에 할 것</h3>
 <ul>
-<li>일 S$27(≈$21) → eCPC $0.30 기준 <strong>클릭 약 70/일 → 300클릭에 4.3일, 2주 ≈ 980클릭</strong> → CVR 2%면 주문 20건. <strong>11/16 1차 판정이 가능한 표본</strong>이다(v2의 $5/일은 4주 걸렸다).</li>
-<li><strong>변수 관리:</strong> v2의 '판정창 전면 동결' 대신 <strong>"주 1개 레버만 바꾸고 changelog에 기록"</strong>. 가격 인상(10/28)·취소선(11/28)은 날짜가 고정된 변경이라 성적표에 구간 태그.</li>
-<li>운영: 일 1회 로그(Claude 읽기 전용) → 월요일 성적표 → <strong>2주마다 결정점(11/16·11/30·12/14)</strong>: 확대(§10-2) · 유지(+14일, 레버 1개) · 중단(중단 조건 + 수정 후 재시험 실패).</li>
+<li><strong>8샵 활성은 전부</strong>(비용 0). 리스팅만 두 곳 예외 — <strong>TH 세럼 비공개</strong>(2026-05-22 시행 "바늘 모양 결정 함유 화장품 금지"에 세럼의 Vegan Microcrystal이 해당될 소지 <span class="b y">🟡</span> → 태국 FDA·대행 서면 확인 전까지, 크림은 공개) · <strong>TW 세럼·크림 제목·설명에서 <code>Exo:</code>·exosome 삭제</strong>(식약서 공문 FDA器字第1141600471號, 2025-10-29: 식물 유래 '엑소좀' 선전 불가 <span class="b g">🟢</span>).</li>
+<li><strong>공통 서류 키트 착수</strong>(한 번 만들어 8개국에 씀): CFS 영문(대한화장품협회 ₩20,000~40,000/건, 전자 발급, 공증 없이 아포스티유) · <strong>완제품 GMP/ISO 22716 증빙(미확보 — 제조사 요청, 가장 큰 병목)</strong> · 전성분표 INCI·%(<code>Fruit Juice Vesicles</code> 등재 확인 11/15) · 브랜드 위임장(LOA) 양식 · 현지어 보조 라벨 시안(태국어·중문·포르투갈어·스페인어·베트남어).</li>
+<li><strong>나라별 첫 행동(리드타임 짧은 순):</strong> MY(CNH 파트너·Softlanding 견적 → NPRA 통지, 11/18 광고 전 목표) → SG(현지 책임회사·HSA 대행 견적) → TH(글로벌 SKU에 든 번호 <code>10-2-6800046446</code>·<code>10-2-6800042257</code>의 실존·명의·LOA 확인 + 바늘결정 해당 여부 질의) → TW(총판의 PIF 경로·기간 확정) → PH·VN·BR·MX(키트만 준비, 현지 파트너 확보 뒤 — 각각 현지 법인 명의가 필요하고 비용·기간이 커서 <strong>보류 권고, 진행 여부는 John</strong>).</li>
 </ul>
-<h2 id="11-단위경제--SG-세럼-1개-v31-GST-가산-구조---배송-실비-S592--반영">11. 단위경제 — SG 세럼 1개 (v3.1: GST 가산 구조 <span class="b g">🟢</span> · 배송 실비 S$5.92 <span class="b g">🟢</span> 반영)</h2>
-<p>SG 변동비 ≈ 판매수수료 15.35% + 거래수수료 2~3% + TGF 2% + (Spike Day 1%) + 인출 0.9~1.2% ≈ <strong>21~22%</strong> + <strong>배송 실비 S$5.92/건(≈$4.63 — 4월 크림 1개 주문의 'Shipping Subtotal' <span class="b g">🟢</span>; 구매자가 Doorstep 배송비 S$1.99를 내면 ≈$3.1)</strong>. v3의 "고정 hidden S$1.52"는 가격에 섞이는 명목값(실측 S$1.36/1.76)이라 실비 항목에서 뺐다. 원가 세럼 ₩4,669(<span class="b g">🟢</span> products.md), 국내 집하·포장 ₩3,500 가정(<span class="b r">🔴</span> §15 ⑮). <strong>표시가 = 입력가 × 1.09</strong>(<span class="b g">🟢</span> 'After Tax') → 세전 = 표시가 ÷ 1.09.</p>
+<h3>6-2. 8개국 요약 (상세·출처 번호는 research/09)</h3>
 <table>
 <thead>
 <tr>
-<th>항목</th>
-<th>표시가 $36</th>
-<th>실효 $30(바우처·번들 뒤)</th>
-<th>마지노선 $24</th>
+<th>국가</th>
+<th>법규 의무 · 집행</th>
+<th>Shopee가 요구하는 것</th>
+<th>누가 할 수 있나</th>
+<th>리드타임 · 비용</th>
+<th>지금</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>세전가</td>
-<td>33.0</td>
-<td>27.5</td>
-<td>22.0</td>
+<td>SG</td>
+<td><span class="b g">🟢</span> HSA 사전 통지(품목·변형별, 1년). 직배송 B2C 예외 여부 <span class="b r">🔴</span>. 집행: 당국 적발 리스팅만 banned <span class="b y">🟡</span></td>
+<td><span class="b g">🟢</span> <code>HSA Notification No.</code> 속성(위반 시 banned → 번호 확인 뒤 재게시)</td>
+<td>ACRA 등록 현지 법인(Corppass) — 해외 직접 불가</td>
+<td>접수 즉시 발급 · S$13/품목·매년 · 병목 = 현지 법인·대행 <span class="b r">🔴</span></td>
+<td><span class="b y">🟡</span> 착수. <strong>10/30 광고는 번호 없이 시작 → 적발 시 리스팅 banned 리스크(John 판단)</strong></td>
 </tr>
 <tr>
-<td>쇼피 수수료·배송(21.6% + $4.63)</td>
-<td>−11.8</td>
-<td>−10.6</td>
-<td>−9.4</td>
+<td>MY</td>
+<td><span class="b g">🟢</span> NPRA 통지 필수(미통지 판매 위법, 벌금 RM25,000~100,000 <span class="b y">🟡</span>)</td>
+<td><span class="b g">🟢</span> 글로벌 SKU 속성 <code>MOH 인증=Yes</code>·<code>NPRA 번호</code></td>
+<td>SSM 등록 말레이시아 법인(CNH) — 대행 Softlanding</td>
+<td>1~2주 · RM50/품목(2년) · 대행비 <span class="b r">🔴</span></td>
+<td>✅ 1순위</td>
 </tr>
 <tr>
-<td>순수취</td>
-<td>21.2</td>
-<td>16.9</td>
-<td>12.6</td>
+<td>TH</td>
+<td><span class="b g">🟢</span> FDA 통지(태국 수입자 명의·LOA·3년). 집행 높음(FDA×쇼피 협약, 태국어 라벨 없는 상품 차단 지시) · <strong>바늘결정 금지 고시 2026-05-22</strong></td>
+<td><span class="b g">🟢</span> <code>FDA No.</code> 형식 검증</td>
+<td>태국 등록 수입자</td>
+<td>4~6주 · USD 135/SKU(대행)</td>
+<td>⚠ 번호 명의·LOA 확인 먼저 · <strong>세럼 비공개·광고 금지(판정 전)</strong></td>
 </tr>
 <tr>
-<td>원가 + 집하·포장</td>
-<td>−6.1</td>
-<td>−6.1</td>
-<td>−6.1</td>
+<td>PH</td>
+<td><span class="b g">🟢</span> FDA LTO 보유 시설이 CPN 신청 — 외국사 직접 불가</td>
+<td><span class="b g">🟢</span> Cosmetics = LTO <strong>and</strong> CPN</td>
+<td>필리핀 LTO 보유 수입·유통사</td>
+<td>LTO 20~40영업일 + CPN 17영업일 · ₱7,000/년 + ₱1,000/년</td>
+<td>⛔ 보류 권고(비용 대비) · 리스팅은 Shopee 조치 수용</td>
 </tr>
 <tr>
-<td><strong>공헌이익(광고·어필 전)</strong></td>
-<td><strong>15.1 (42% of 표시가)</strong></td>
-<td><strong>10.8 (36%)</strong></td>
-<td><strong>6.5 (27%)</strong></td>
+<td>VN</td>
+<td><span class="b g">🟢</span> DAV 공고번호 필수(현지 책임 조직 명의, 5년). 2027-01-01 신 시행령 전환 변수</td>
+<td><span class="b y">🟡</span> 전용 칸 못 찾음</td>
+<td>베트남 법인·파트너 + LOA·CFS(영사확인)</td>
+<td>1~3개월 · VND 500,000/제품 + 영사확인</td>
+<td>⛔ 보류 — 2027 제도 확정 뒤</td>
 </tr>
 <tr>
-<td>어필리에이트 귀속(−18%×표시가)</td>
-<td>8.6 (24%)</td>
-<td>5.4 (18%)</td>
-<td>2.2 (9%)</td>
+<td>TW</td>
+<td><span class="b g">🟢</span> 제품 등록 + PIF(2026-07-01 전면, 과태료 NT$1만~100만). 집행: 점검 시 삭제·샵 동결</td>
+<td><span class="b g">🟢</span> PIF 보유(제출 불필요, 미보유 시 사전 공지 없이 삭제·동결)</td>
+<td>대만 제조·수입 법인 — 총판 경로</td>
+<td><span class="b r">🔴</span> · 등록 NT$600/건(3년) + PIF 대행 <span class="b r">🔴</span></td>
+<td><span class="b y">🟡</span> 총판 PIF 경로 · <strong>광고 금지 · Exo 삭제</strong></td>
 </tr>
 <tr>
-<td><strong>본전 ROAS</strong>(1 ÷ 공헌이익률 × 1.09 광고 GST)</td>
-<td><strong>2.6</strong></td>
-<td><strong>3.0</strong></td>
-<td><strong>4.0</strong></td>
+<td>BR</td>
+<td><span class="b g">🟢</span> Anvisa 사전 통지(AFE 법인 명의, 10년). 집행↑(2026 마켓 압수)</td>
+<td><span class="b g">🟢</span> <code>Anvisa Registration ID</code> 필수란(면제 "00"·임의 숫자 = 삭제·패널티·동결)</td>
+<td>브라질 법인(AFE) — 해외 직접 계약 불가</td>
+<td><span class="b r">🔴</span>(제3자 6~12개월) · <span class="b r">🔴</span></td>
+<td>⛔ 보류 · 샵은 활성, 리스팅은 Shopee 조치 수용</td>
 </tr>
 <tr>
-<td>어필 중복 주문 본전</td>
-<td>4.5</td>
-<td>6.1</td>
-<td>12</td>
-</tr>
-<tr>
-<td>본전 CVR(eCPC $0.30×1.09 ÷ 공헌이익)</td>
-<td>2.2%</td>
-<td>3.0%</td>
-<td>5.0%</td>
+<td>MX</td>
+<td><span class="b y">🟡</span> 제품 등록 없음 · 법적 대리인이 사업장·광고 신고</td>
+<td><span class="b y">🟡</span> NOM-141 라벨 · 광고 신고 · CFS(아포스티유)</td>
+<td>멕시코 법적 대리인·수입자</td>
+<td><span class="b r">🔴</span> · CFS ₩20,000~40,000</td>
+<td>⛔ 보류 · CFS만 선제작</td>
 </tr>
 </tbody>
 </table>
-<p>읽는 법: ① 표시가 $36에서 광고 본전은 ROAS 2.6·CVR 2.2% — 리스팅 품질 중단(1.1~4.6%) 안이지만 v3(2.0·1.8%)보다 빡빡해졌다(배송 실비 S$5.92가 건당 $4.6를 먹는다). ② 마지노선 $24까지 내리면 본전 CVR 5.0%·ROAS 4.0 — "할인으로 전환을 산다"의 한계가 더 앞당겨졌다 → 취소선 −25%($27, 본전 ROAS ≈3.3) + 소액 바우처가 균형점이고, 마지노선 근처 할인은 <strong>세트·2개입처럼 건당 배송비를 나누는 묶음</strong>으로만. ④ 수수료 분해(커미션·거래수수료·GST)는 My Income에서 John(§15 ③) — 4월 1건 'Fees &amp; Charges' S$3.77 = 세후가의 14.4%. ③ 마켓별 순수취율($30 기준, 04): PH 82% · TW 81% · SG 75% · MY 73% · VN 70% · BR 70% · TH 68% · MX 65%. 크림은 원가 차이만 있어 같은 구조(<span class="b y">🟡</span>).</p>
-<p><strong>가격 공식(<span class="b g">🟢</span> 04 §3 · 10/27 원문 확인):</strong> Shop SKU 세전가 = [Global가 × 마켓환율 × 조정율 + hidden] ÷ (1 − 판매수수료 − 거래수수료 2% − 서비스수수료), SG는 구매자 화면에서 +GST 9%. 현재 입력값: SG 커미션 15.35%·조정율 100%, 타 7샵 조정율 150%(research/00 §11 ②). v3는 공식 대신 <strong>Shop SKU 직접 입력</strong>을 쓴다(공식은 신규 세트 리스팅 초기값에만 작용 → 환율 갱신 S3).</p>
-<h2 id="12-일정-10271214-속도-우선">12. 일정 (10/27~12/14, 속도 우선)</h2>
+<ul>
+<li>한 줄: <strong>한국 브랜드가 직접 통지·등록할 수 있는 나라는 없다</strong> — 8개국 모두 "현지 파트너 1곳"이 본질. 쇼피가 서류를 입력칸으로 강제하는 곳 = BR·TH·SG·MY·PH, 칸 없이 점검 시 삭제 = TW, 칸 못 찾음 = VN·MX.</li>
+<li>Global SKU 잠금(Anvisa 공란)은 BR 또는 TH Shop SKU를 delist+delete하면 풀린다(Shopee FAQ) — 우리는 Shop SKU 단위로 일하므로 지금은 안 쓴다.</li>
+<li>광고와의 관계: SG 광고(10/30)는 HSA 번호 없이 시작한다 → 적발되면 리스팅 banned·번호 확인 뒤 재게시가 규칙이라 <strong>광고비는 날리지 않지만 노출이 끊길 수 있다</strong>. MY 광고(11/18)는 NPRA 번호 뒤. TH·TW 광고는 번호·PIF 전 금지.</li>
+</ul>
+<p><strong>광고 순서는 서류와 분리:</strong> SG(10/30) → MY(11/18) → 서류가 풀리는 순서대로. TW·BR·MX 리스팅은 Shopee가 숨기거나 지우면 그대로 두고(임의 번호 입력 금지), 서류가 나오면 다시 올린다. COD는 VN·PH만 OFF 요청.</p>
+<h2 id="7-US-자산--Shopee-이식">7. US 자산 → Shopee 이식</h2>
+<table>
+<thead>
+<tr>
+<th>US 자산</th>
+<th>Shopee 적용</th>
+<th>파일·위치</th>
+<th>주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리스팅 v3.1 제목·불릿 5·설명·백엔드(K-Pharmacy 축)</td>
+<td>SG 제목(≤255자): <code>LEMONDERMA Lemonshot Exosome Dark Spot Serum 50ml – Lemon Exosome, 2% Niacinamide, Vegan Microcrystal, MFDS Brightening + Anti-Wrinkle, Korean Pharmacy Skincare</code> / 크림 동형 · 설명(≤3,000자) = 불릿 5 → Highlights + What it does / Who / How to use / Size · 백엔드 단어 → 설명 하단 키워드 줄</td>
+<td><code>us/amazon-detail-page-renewal/listing-v3_1-2026-10-23/listing_v3_1.json</code></td>
+<td>ml 우선, "1.69 fl oz" 괄호. 3주 결과 수치는 "in-house study"</td>
+</tr>
+<tr>
+<td>수요어·SQP·키워드 리서치</td>
+<td>제목 앞 키워드 2개 · 속성 · Shop+ 키워드 8개</td>
+<td><code>us/amazon-detail-page-renewal/keyword-research-2026-10-16/</code> · <code>us/performance/amazon-ads-api/sqp-price-2026-10-18/</code></td>
+<td>shopee.sg 자동완성으로 재검증</td>
+</tr>
+<tr>
+<td>갤러리 7장 + A+ 기획</td>
+<td>이미지 9장(1:1): 메인 순백 · 훅 · MFDS·비건·GMP 배지 · 성분 · 사용법 · B&amp;A(사전 등록된 것만) · 세트 · 리뷰 인용 · 배송·정품</td>
+<td><code>serum-pdp.json</code> · <code>cream-pdp.json</code> · Drive 아마존 폴더</td>
+<td>쇼피는 라이프스타일·텍스트 허용</td>
+</tr>
+<tr>
+<td>SB 흑자 영상 11개(UAE) · US SB 가격대 영상</td>
+<td>리스팅 영상 1개(≤60초·≤30MB) + Shopee Video 세로 컷</td>
+<td><code>uae/performance/amazon/sb-profit-creatives-2026-10-14/</code> · <code>us/performance/amazon-ads-api/sb-priceband-2026-10-20/</code></td>
+<td>가격 자막 제거 컷만</td>
+</tr>
+<tr>
+<td>메타 승자 영상·문구</td>
+<td>Shopee Video · Chat Broadcast · CPAS 소재</td>
+<td><code>us/performance/meta/creatives/</code> · <code>uae/performance/meta/</code></td>
+<td>숫자 없는 상시 문구</td>
+</tr>
+<tr>
+<td>리뷰 콘텐츠(Judge.me·아마존)</td>
+<td>이미지 카드 "What customers say"(출처·날짜)</td>
+<td><code>kr/reviews/data/judgeme_reviews_*</code> · <code>amazon_page_reviews_*</code></td>
+<td>인용이지 쇼피 리뷰 아님</td>
+</tr>
+<tr>
+<td>프로모션 메커닉</td>
+<td>쿠폰 → Shop Voucher · 가상 번들 → Bundle Deal · 라이트닝 딜 → Flash Deal(Shopee 추천형) · 프라임 할인 → Price Teaser 세션</td>
+<td><code>us/performance/2026-10-20-us-price-stepdown-plan/</code></td>
+<td>중첩 기본 → §2-4 계산기</td>
+</tr>
+<tr>
+<td>브랜드 스토어</td>
+<td>Shop Decoration 배너·컬렉션·소개문</td>
+<td><code>us/amazon-brand-store/</code></td>
+<td>11.11 Seller Kit와 조합</td>
+</tr>
+<tr>
+<td>Q&amp;A·CS 답변</td>
+<td>Chat AI Assistant FAQ·자동응답</td>
+<td>brand.md · products.md</td>
+<td>배송 9~25일·관세 안내 추가</td>
+</tr>
+<tr>
+<td>Amazon Attribution</td>
+<td>없음 — AMS 링크 전환·CPAS 전환으로 대체</td>
+<td>—</td>
+<td>외부 유입은 Business Insights '외부'</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-단위경제--SG-세럼-1개-USD-S1--0782">8. 단위경제 — SG 세럼 1개 (USD, S$1 = $0.782)</h2>
+<h3>8-1. 말 뜻</h3>
+<ul>
+<li><strong>노출가</strong>(=표시가): 구매자가 보는 값, GST 9% 포함. 세럼 S$46.00 = $36.0.</li>
+<li><strong>입력가</strong>: 셀러센터 가격칸(세전) = 노출가 ÷ 1.09.</li>
+<li><strong>실효가</strong>: 바우처·번들 뒤 구매자 실지불. <strong>마지노선</strong> = 실효가의 하한($24 / $22).</li>
+<li><strong>어필리에이트 귀속</strong>: 그 주문이 어필리에이트(크리에이터) 링크로 들어왔을 때 <strong>추가로 나가는 커미션 18%</strong>(노출가 기준 $6.5). 광고로 노출되고 어필 링크로 산 주문은 광고비와 커미션을 <strong>둘 다</strong> 내므로 그 주문만 따로 본전을 센다.</li>
+</ul>
+<h3>8-2. 비용 구조 (노출가 $36 기준)</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>금액</th>
+<th>노출가 대비</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>노출가</td>
+<td>36.0</td>
+<td>100%</td>
+<td>S$46.00</td>
+</tr>
+<tr>
+<td>GST 9%(가격 안에 포함, Shopee가 징수)</td>
+<td>−3.0</td>
+<td>8.3%</td>
+<td><span class="b g">🟢</span> 'After Tax' 구조</td>
+</tr>
+<tr>
+<td>수수료(커미션 15.35% + 거래 2~3% + TGF 2% + 인출 1%) ≈ 21.6% × 세전 33.0</td>
+<td>−7.1</td>
+<td>19.8%</td>
+<td><span class="b g">🟢</span> 공식 화면 · <span class="b y">🟡</span> TGF·인출</td>
+</tr>
+<tr>
+<td>국제 배송(SLS, 주문당) S$5.92</td>
+<td>−4.6</td>
+<td>12.9%</td>
+<td><span class="b g">🟢</span> 4월 주문 Shipping Subtotal</td>
+</tr>
+<tr>
+<td>원가 ₩4,669 + 국내 집하·포장 ₩3,500(<span class="b r">🔴</span> 가정)</td>
+<td>−6.1</td>
+<td>17.0%</td>
+<td>products.md · Marco 실측 전</td>
+</tr>
+<tr>
+<td><strong>공헌이익(광고·어필 전)</strong></td>
+<td><strong>15.1</strong></td>
+<td><strong>42%</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>본전 ROAS(= 1 ÷ 42% × 1.09 광고 GST)</td>
+<td><strong>2.6</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>본전 CVR(eCPC $0.30 × 1.09 ÷ 15.1)</td>
+<td><strong>2.2%</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>어필리에이트 귀속 뒤 공헌</td>
+<td>8.6(24%) → 중복 주문 본전 ROAS <strong>4.5</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>가격점</th>
+<th>노출가</th>
+<th>공헌</th>
+<th>공헌률</th>
+<th>본전 ROAS</th>
+<th>본전 CVR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단품 정가</td>
+<td>36.0</td>
+<td>15.1</td>
+<td>42%</td>
+<td><strong>2.6</strong></td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td>단품 실효 $30(바우처 뒤)</td>
+<td>30.0</td>
+<td>10.8</td>
+<td>36%</td>
+<td>3.0</td>
+<td>3.0%</td>
+</tr>
+<tr>
+<td>단품 마지노선</td>
+<td>24.0</td>
+<td>6.5</td>
+<td>27%</td>
+<td>4.0</td>
+<td>5.0%</td>
+</tr>
+<tr>
+<td><strong>세트 개당</strong>(S$38.60 = $30.2, 배송·집하 1/2)</td>
+<td>30.2</td>
+<td>13.4</td>
+<td><strong>44%</strong></td>
+<td><strong>2.5</strong></td>
+<td>2.4%</td>
+</tr>
+<tr>
+<td>취소선 −25% 단품(11/28~)</td>
+<td>27.0</td>
+<td>9.0</td>
+<td>33%</td>
+<td>3.3</td>
+<td>3.6%</td>
+</tr>
+</tbody>
+</table>
+<p>읽는 법: 같은 $30 실효가라도 <strong>단품 할인(본전 3.0)보다 세트(본전 2.5)가 낫다</strong> — 배송 S$5.92와 집하비가 2개에 나눠지기 때문. 그래서 §2-3 "할인은 묶음으로만". 마지노선 $24 단품은 본전 ROAS 4.0이라 광고로는 못 맞춘다 → 마지노선 근처 가격은 묶음·2개입에만 쓴다.</p>
+<h3>8-3. 왜 아마존보다 본전이 높은가 (US 세럼 $36.58 · metrics_config.json 2026-09-11 원장 실측 vs Shopee SG)</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Amazon US</th>
+<th>Shopee SG</th>
+<th>차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>판매수수료</td>
+<td>referral 16.5%</td>
+<td>커미션 15.35% + 거래 2~3% + TGF 2% + 인출 1% ≈ 21.6%</td>
+<td><strong>+5%p</strong></td>
+</tr>
+<tr>
+<td>배송·풀필먼트</td>
+<td>FBA $4.09(11.2%)</td>
+<td>SLS 국제배송 S$5.92 = $4.63(12.9%)</td>
+<td>+1.7%p — <strong>배송비 자체는 비슷하다</strong></td>
+</tr>
+<tr>
+<td>세금</td>
+<td>판매세는 구매자가 가격 밖에서 부담</td>
+<td><strong>GST 9%가 노출가 안에 포함</strong> → $3.0</td>
+<td><strong>+8.3%p — 가장 큰 차이</strong></td>
+</tr>
+<tr>
+<td>원가·물류</td>
+<td>₩4,500 + 입고 ₩1,160 ≈ $3.9(10.7%)</td>
+<td>₩4,669 + 집하·포장 ₩3,500(가정) ≈ $6.1(17.0%)</td>
+<td>+6.3%p — 집하비는 Marco 실측 전 가정</td>
+</tr>
+<tr>
+<td>환불·부대비용</td>
+<td>6.2% 실측</td>
+<td>0 가정(표본 없음)</td>
+<td>−6.2%p(쇼피가 유리하게 잡힘)</td>
+</tr>
+<tr>
+<td>공헌이익률</td>
+<td><strong>55.5%</strong></td>
+<td><strong>42%</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>본전 ROAS</td>
+<td><strong>1.8</strong>(크림 2.07)</td>
+<td><strong>2.6</strong></td>
+<td>광고에도 GST 9%가 붙어 ×1.09</td>
+</tr>
+</tbody>
+</table>
+<p>답: 배송비 때문만은 아니다. <strong>GST 9%가 가격 안에 있는 것(아마존은 세금이 가격 밖)</strong>이 제일 크고, 수수료가 5%p 높고, 집하·포장 가정이 아마존 입고비보다 비싸다. 줄일 수 있는 것 = 집하·포장 실비(Marco 10/31 실측), 묶음 판매(배송·집하 공유), 환율 환산(입력가에 당일 환율).</p>
+<h2 id="9-일정-10281214">9. 일정 (10/28~12/14)</h2>
 <table>
 <thead>
 <tr>
@@ -1070,138 +1341,284 @@ a{color:var(--head)}
 </thead>
 <tbody>
 <tr>
-<td><strong>10/27(월)</strong></td>
-<td>✅ 실측 §15 ①②④⑤⑥⑨⑯⑰⑲⑳㉑ 완료(research/00 §11) · <strong>John 30분 비번 블록</strong> · Marco 정산 수단 착수·TW PIF·출고 체계 · 질의 07 발송 · 리스팅 이식 초안(제목·설명·이미지 9장 플랜·영상 컷) · 기준선 스냅샷 · 가격 증빙 폴더</td>
-<td>Claude / John / Marco</td>
-</tr>
-<tr>
 <td><strong>10/28(화)</strong></td>
-<td>sync OFF → <strong>재고 정정(275 → 배정분 40·40, Marco 확인값)</strong> → <strong>6샵 Reactivate</strong> → Violation·COD·Pre-order 확인 → TW 비공개(John 확인 시) → <strong>7샵 표시가 입력(SG 입력가 S$42.20 / S$41.10)</strong> → SG 리스팅 이식 반영 → Follow Prize·New Buyer·번들딜·Free Sample·Review Prize·Smart Voucher → 세트 리스팅 등록 → 활동 루틴 ON</td>
-<td>Claude(건별 재조회 보고)</td>
+<td>동기화 OFF → 재고 정정 → <strong>8샵 활성</strong> → 가격 입력 → SG 리스팅 이식 → 세트·2개입 등록 → 번들딜·애드온·배송비 무료·Follow Prize·New Buyer → 활동 루틴 ON → 기준선 · <strong>John 비번 블록</strong> · Marco 배정 수량·서류 트랙 착수 · 질의 발송</td>
+<td>Claude · John · Marco</td>
 </tr>
 <tr>
 <td><strong>10/29(수)</strong></td>
-<td><strong>11.11 바우처 캠페인 노미네이션(18:00 SG 마감)</strong> · Shop Decoration·Seller Kit · CS FAQ·자동응답 · AMS Targeted 50명 · <strong>John 카드 충전 $400+GST</strong> → GMV Max 2캠페인 생성(10/30 시작)</td>
-<td>Claude · John</td>
+<td><strong>John 충전(광고 S$500 · 코인 S$450)</strong> → Review Prize ON · 감사 바우처 ON → <strong>11.11 바우처 노미네이션(18:00 SG 마감)</strong> → Shop Decoration · CS FAQ · AMS 초청 50명 → GMV Max 2캠페인 생성(10/30 시작 예약)</td>
+<td>John · Claude</td>
 </tr>
 <tr>
 <td><strong>10/30(목)</strong></td>
-<td><strong>광고 ON</strong>(학습 ~11/5) · 7샵 Shop SKU 리스팅 이식(현지어 자동번역 검수)</td>
+<td><strong>광고 ON</strong>(학습 ~11/5) · 7샵 리스팅 이식 · Shopee Video 3편</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>10/31~11/1</td>
-<td>Payoneer 연결 완료(<strong>11/1</strong>) · Marco 출고 리허설(포장·송장·Pick Up·실비 실측) · 주문 알림 앱 · 첫 Shopee Video 3편</td>
-<td>Marco · Claude</td>
+<td>Payoneer 연결(11/1) · 출고 리허설(집하 실비 실측)</td>
+<td>Marco</td>
 </tr>
 <tr>
 <td>11/2~11/8</td>
-<td>세트 라이브(11/4) → 신규상품 광고 $4 · 학습 종료 11/5 · 첫 조정(±20%) 11/6 · 성적표 11/9</td>
+<td>세트·2개입 라이브(11/4) → 신규상품 광고 · 첫 조정 11/6 · 성적표 11/9</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td>11/9~11/17</td>
-<td><strong>11.11</strong>: Surge ON 11/10~13 · Shop+ $5(자격 시) · 11.11 2차 바우처 세션(마감 11/10) · <strong>11/16 1차 결정점</strong></td>
+<td>Surge 11/10~13 · Shop+ · 11.11 2차 세션(11/10) · <strong>11/16 1차 결정점</strong></td>
 <td>Claude → John</td>
 </tr>
 <tr>
 <td>11/18~11/27</td>
-<td><strong>2번째 국가 광고 $10</strong>(MY/TW) · 12.12 노미네이션(마감 확인, ~11/26) · 20 Nov BTO(11/19)·Super Tech(11/20) 바우처</td>
+<td>MY 광고 S$13 · 12.12 노미네이션(~11/26) · BTO·Super Tech 바우처 · 자체 S$8 바우처</td>
 <td>Claude</td>
 </tr>
 <tr>
 <td><strong>11/28(금)</strong></td>
-<td><strong>취소선 −25% 시작</strong>(인상 31일 뒤) · 바우처 cap S$3.5로 조정 · <strong>11/30 2차 결정점</strong></td>
+<td><strong>취소선 −25% 시작</strong> · 바우처 cap S$3.5 · 세트 번들 −10% · <strong>11/30 2차 결정점</strong></td>
 <td>Claude → John</td>
 </tr>
 <tr>
 <td>12/1~12/14</td>
-<td>CPAS 신청(12/1) · 12.12 스파이크 Surge · <strong>12/14 3차 판정</strong>(90일 방향: 확대·유지·중단 · FBS · 3번째 국가 · 표시가 재검토)</td>
+<td>CPAS 신청 → 12/8 ON · 12.12 Surge · <strong>12/14 판정</strong>(확대·유지·중단 · FBS · 3번째 국가 · 표시가 재검토)</td>
 <td>Claude → John·Marco</td>
 </tr>
 </tbody>
 </table>
-<p><strong>시간 예산(<span class="b y">🟡</span>):</strong> John 주 2시간(성적표 판단·CS·충전), Marco 주 2시간(출고·정산·PIF), Claude 수집·루틴·실행. <strong>철수 조건:</strong> 12/14에 클릭 ≥1,500에도 확정 주문 &lt;10이고 수정 후 재시험(14일)도 같으면 광고 종료, 활동 루틴·Wallet 약정·무료 레버만 유지하고 재설계.</p>
-<h2 id="13-성적표판정-2주마다">13. 성적표·판정 (2주마다)</h2>
+<p>철수 조건: 12/14에 클릭 ≥1,500에도 확정 주문 &lt;10이고 수정 후 재시험(14일)도 같으면 광고 종료, 무료 레버·활동 루틴만 유지하고 재설계.</p>
+<h2 id="10-실행-목록-값-포함--Claude-실행--돈비밀번호만-John">10. 실행 목록 (값 포함 · Claude 실행 · 돈·비밀번호만 John)</h2>
 <table>
 <thead>
 <tr>
-<th>결과(2주 표본)</th>
-<th>판정</th>
-<th>다음</th>
+<th>#</th>
+<th>상태</th>
+<th>할 일 · 값</th>
+<th>담당·날짜</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>§10-3 정상 칸 충족(클릭 ≥600·CVR ≥2%·확정 주문 ≥8·ROAS ≥2.1(=0.8×2.6)·취소 ≤15%)</td>
-<td><strong>확대</strong></td>
-<td>§10-2 증액 + 2번째 국가</td>
+<td>E01</td>
+<td>✅</td>
+<td>실측 ①②④⑤⑥⑨⑯⑲⑳㉑ 완료(research/00 §11) · ⑰ Promo Xtra 질의로</td>
+<td>10/27</td>
 </tr>
 <tr>
-<td>클릭 ≥600, 주문 1~7 또는 ROAS &lt;2.1</td>
-<td><strong>전환 문제</strong></td>
-<td>레버 1개 분리(가격·이미지·배송 안내·리뷰) → 14일</td>
+<td>E02</td>
+<td>⏳</td>
+<td>기준선 스냅샷 Business Insights 8샵 → <code>data/baseline_2026-10-28.json</code></td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
-<td>CTR &lt;1% 또는 노출 7일 연속 &lt;300</td>
-<td><strong>노출 문제</strong></td>
-<td>ROAS 목표 하향·이미지·제목 교체 → 14일</td>
+<td>E03</td>
+<td>⏳</td>
+<td>가격 증빙 폴더 <code>price-evidence/</code> + 가격 로그 <code>price_log.csv</code></td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
-<td>클릭 &lt;600(데이터 부족)</td>
-<td><strong>계속</strong>(속도 우선)</td>
-<td>예산 유지·레버 1개 변경, 다음 결정점</td>
+<td>E04</td>
+<td>⏳</td>
+<td>리스팅 이식 초안 <code>listing/sg_serum.md</code> · <code>sg_cream.md</code> · <code>set.md</code> · <code>serum_2pack.md</code></td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
-<td>브러싱 확인 — <strong>10/27 확정</strong>(파인드리뷰 체험단 $0.10 바우처 25+25, research/00 §11 ①)</td>
-<td><strong>리뷰 재건 트랙 ON</strong></td>
-<td>Giveaway 화이트리스트(매니저)·Review Prize·샘플 → 정상 리뷰 ≥10</td>
+<td>E05</td>
+<td>⏳</td>
+<td><strong>John 비번 블록 30분</strong>(My Income 수수료 분해 · Shop Information <code>LEMONDERMA Korea</code> · Payoneer 연결 화면) · 질의 07 발송</td>
+<td>John 10/28</td>
+</tr>
+<tr>
+<td>E06</td>
+<td>⏳</td>
+<td><strong>Marco</strong>: Payoneer 연결 착수 · 실물 배정 수량 확정(제안 40·40) · 출고 정/부 · 포장재 · 서류 트랙(§6) 착수</td>
+<td>Marco 10/28</td>
+</tr>
+<tr>
+<td>E07</td>
+<td>⏳</td>
+<td>Merchant Setting: 8샵 동기화 템플릿 가격·DTS <strong>OFF</strong> · 환율 당일값 · Global SKU 저장 안 함</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E08</td>
+<td>⏳</td>
+<td><strong>8샵 활성</strong>: TH <code>1770636159</code> · MY <code>1770624635</code> · VN <code>1770624644</code> · PH <code>1770624640</code> · BR <code>1770624666</code> · MX <code>1770624683</code> Reactivate + TW 유지 → 샵별 Violation·Pre-order·DTS·COD·바우처 자격 캡처 · <strong>TH 세럼 Shop SKU 비공개(Delist)</strong></td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E09</td>
+<td>⏳</td>
+<td>COD: VN·PH OFF 요청 · MY·TH ON</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>⏳</td>
+<td>가격: SG 세럼 <code>41679132880</code> 입력 <strong>42.20</strong>(노출 46.00) · 크림 <code>49306964220</code> <strong>41.10</strong>(44.80) · TW <code>50107270168</code> NT$1,174 · <code>58157270228</code> NT$1,141 + <strong>TW 제목·설명에서 <code>Exo:</code>·exosome 삭제</strong> · 6샵 당일 환율 → 재조회 값 보고</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>⏳</td>
+<td>SG 리스팅 반영: 제목·설명·이미지 9·영상 1·속성 · <strong>브랜드 등록 신청(<code>/portal/brand/entry</code>)</strong> → Content Diagnosis 통과</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E12</td>
+<td>⏳</td>
+<td>세트 리스팅 Global 신규 "LEMONDERMA Lemonshot Exosome Serum + Cream Set 50ml×2" 입력 70.83(노출 77.20), SG 먼저 발행 · BR Anvisa 필수란 뜨면 BR 미발행</td>
+<td>Claude 10/28 → 11/4 라이브</td>
+</tr>
+<tr>
+<td>E12b</td>
+<td>⏳</td>
+<td><strong>세럼 2개입 리스팅</strong> Global 신규, 입력 71.74(노출 78.20) → 활성 상품 4개(Shop+ 자격)</td>
+<td>Claude 10/28 → 11/4</td>
+</tr>
+<tr>
+<td>E13</td>
+<td>⏳</td>
+<td>Discount 탭: <strong>Bundle Deal "2개 −15% · 3개 −20%"</strong>(10/28~11/27) · <strong>Add-on Deal "세럼 → 크림 −20%"</strong></td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E13b</td>
+<td>⏳</td>
+<td><strong>Shipping Fee Promotion</strong>: 장바구니 ≥ S$70 → Doorstep Delivery (Korea) 무료, 기간 무제한, 예산 한도 없음</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E13c</td>
+<td>⏳</td>
+<td>Vouchers: Follow Prize <strong>S$3</strong> · New Buyer <strong>S$5</strong>(min S$40·100매) · Repeat Buyer <strong>S$12.80</strong>(min S$40 · 월 78매 = $1,000 상한, 10/29~) · 자체 Shop Voucher S$8(min S$75)은 11/19~</td>
+<td>Claude 10/28~29</td>
+</tr>
+<tr>
+<td>E14</td>
+<td>⏳</td>
+<td>활동 루틴 ON(화·금 8샵 + Bump 12시·21시 SGT) · 재고 정정 Shop SKU 275 → 배정값</td>
+<td>Claude 10/28</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>⏳</td>
+<td><strong>11.11 바우처 노미네이션</strong>(캠페인 <code>2048118889</code>): (a) 22% Off·cap S$5·min S$11 (b) 16% Off·cap S$10·min S$29, 샵 전체 상품 · 마감 <strong>10/29 18:00 SG</strong> · 승인 뒤 철회 금지</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>⏳</td>
+<td>Shop Decoration 배너(11.11 Seller Kit)·컬렉션·소개문</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>⏳</td>
+<td>CS: Chat AI Assistant FAQ 10문 · 자동응답 · 운영시간 · John 앱 알림</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>⏳</td>
+<td>AMS Targeted SG KOC 50명 초청 · Open 18% 유지 · Free Sample 10</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>⏳</td>
+<td><strong>John 충전</strong>: Ads Top Up <strong>S$500</strong>(<code>/portal/marketing/pas/top-up</code>) + Seller Coins <strong>S$450</strong>(<code>/portal/marketing/coins</code>) → 잔액 캡처</td>
+<td><strong>John 10/29</strong></td>
+</tr>
+<tr>
+<td>E20</td>
+<td>⏳</td>
+<td>GMV Max 2캠페인: 세럼 <strong>S$15/일</strong> · 크림 <strong>S$12/일</strong> · Custom ROAS 권장 최저 · ROAS Protection ON · Surge OFF · 시작 10/30 00:00 SGT</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E21</td>
+<td>⏳</td>
+<td><strong>Review Prize ON</strong>: 세럼·크림(세트는 11/4 추가) · 150코인/리뷰 · 목표 100건/상품 · 코인 45,000</td>
+<td>Claude 10/29</td>
+</tr>
+<tr>
+<td>E22</td>
+<td>⏳</td>
+<td>광고 ON 확인 · 일일 로그 <code>data/ads_log.csv</code> · 7샵 Shop SKU 리스팅 이식(현지어 검수)</td>
+<td>Claude 10/30</td>
+</tr>
+<tr>
+<td>E23</td>
+<td>⏳</td>
+<td>Shopee Video 3편(SG) · 이후 주 3편</td>
+<td>Claude 10/30~</td>
+</tr>
+<tr>
+<td>E24</td>
+<td>⏳</td>
+<td><strong>Marco</strong>: Payoneer 연결 완료(11/1) · 출고 리허설(집하·포장 실비 실측 → §8 갱신)</td>
+<td>Marco 11/1</td>
+</tr>
+<tr>
+<td>E25</td>
+<td>⏳</td>
+<td>세트·2개입 라이브(11/4) → 신규상품 광고 S$5/일 · Review Prize에 세트 추가 · Top Picks</td>
+<td>Claude 11/4</td>
+</tr>
+<tr>
+<td>E26</td>
+<td>⏳</td>
+<td>11/6 첫 조정(±20%) · 11/9 성적표</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>E27</td>
+<td>⏳</td>
+<td>11/10~13 Surge ON · <strong>Shop+ S$6.5/일</strong>(키워드 8개 수동 eCPC) · 11.11 2차 세션(11/10)</td>
+<td>Claude 11/10</td>
+</tr>
+<tr>
+<td>E28</td>
+<td>⏳</td>
+<td><strong>11/16 1차 결정점</strong> 성적표 → John</td>
+<td>Claude → John</td>
+</tr>
+<tr>
+<td>E29</td>
+<td>⏳</td>
+<td>MY GMV Max S$13/일 · BTO(11/19)·Super Tech(11/20) 바우처 · 자체 S$8 바우처(11/19)</td>
+<td>Claude 11/18</td>
+</tr>
+<tr>
+<td>E30</td>
+<td>⏳</td>
+<td>12.12 Price Teaser 노미네이션(~11/26): 세럼 ≤S$33.12 · 크림 ≤S$32.26</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>E31</td>
+<td>⏳</td>
+<td><strong>11/28 Discount Promotion −25%</strong>(노출 34.50 / 33.60) · 바우처 cap S$3.5 · 세트 번들 −10% · 11/30 결정점</td>
+<td>Claude 11/28</td>
+</tr>
+<tr>
+<td>E32</td>
+<td>⏳</td>
+<td>12/1 CPAS 신청 → 12/8 $10/일 · 12/10~13 Surge · <strong>12/14 판정</strong></td>
+<td>Claude 12/1~14</td>
+</tr>
+<tr>
+<td>E33</td>
+<td>⏳</td>
+<td><strong>국가별 서류</strong>(§6): ① 공통 키트 — CFS 발급 신청(대한화장품협회) · 제조사에 완제품 GMP/ISO 22716 증빙 요청 · 전성분표 INCI·% · LOA 양식 ② MY CNH·Softlanding 견적 ③ SG 현지 책임회사·HSA 대행 견적 ④ TH 기존 번호 명의·LOA 확인 + 바늘결정 해당 여부 서면 질의 ⑤ TW 총판 PIF 경로·기간</td>
+<td>Marco·John 10/28 착수</td>
 </tr>
 </tbody>
 </table>
-<h2 id="14-실행-목록-v3-값-포함--순서-고정--Claude-실행-돈비밀번호만-John">14. 실행 목록 v3 (값 포함 · 순서 고정 · Claude 실행, 돈·비밀번호만 John)</h2>
-<p><strong>10/27(월)</strong>
-1. ✅ E01 실측 완료(10/27) — ①②④⑤⑥⑨⑯⑲⑳㉑ <span class="b g">🟢</span> · ⑰ <span class="b r">🔴</span>(Seller Programmes 빈 화면 → 질의) · 결과 <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/00-%EC%85%80%EB%9F%AC%EC%84%BC%ED%84%B0-%EC%8B%A4%EC%B8%A1-2026-10-26.md">research/00 §11</a> · 바뀐 값 §17-1
-2. E02 기준선 스냅샷: Business Insights 8샵 L7D/L30D 노출·클릭 → <code>data/baseline_2026-10-27.json</code>
-3. E03 가격 증빙 폴더 <code>price-evidence/</code>(08-27 결정·MSRP 표·Amazon $36.58 캡처·본 결정 기록) + 가격 로그 시트 <code>price_log.csv</code>
-4. E04 리스팅 이식 초안 <code>listing/sg_serum.md</code>·<code>sg_cream.md</code>·<code>set.md</code>(제목·설명·속성·이미지 9장 플랜·영상 컷 목록) — John 검토 없이 반영(US v3.1 승인본 기반), 반영 후 보고
-5. E05 John: 비번 블록 30분(My Income 4월 정산·수수료 분해 · Shop Information 이름 <code>LEMONDERMA Korea</code>·로고·소개 · Payoneer 연결 화면 — Price formula는 Claude 확인 완료) · 질의 07 발송
-6. E06 Marco: <strong>기존 Payoneer 연결 착수</strong>(Wallet 아님) · TW = PIF 안 만듦·비공개 확정 여부 · 출고 정(Marco)·부(John) · <strong>Shopee 전용 실물 배정 수량 확정(제안 세럼 40·크림 40)</strong> · 포장재</p>
-<p><strong>10/28(화)</strong>
-7. E07 Merchant Setting: 8샵 동기화 템플릿 Edit → 가격·DTS 동기화 <strong>OFF</strong>(현재 전부 "Synchronise all information" <span class="b g">🟢</span>) · 환율 → 시장환율(1 KRW = 0.000966 SGD 등 당일값) · Global SKU는 저장하지 않음(DTS 4 그대로 — Anvisa 공란으로 저장 불가)
-8. E07b <strong>Global SKU 재고 정정</strong>: 세럼 <code>46056744427</code>·크림 <code>57906731064</code> 275 → <strong>Marco 배정값(제안 40·40)</strong> — <strong>Global 편집은 이미 Anvisa 공란으로 막혀 있음(<span class="b g">🟢</span> 10/27) → Shop SKU 재고칸으로 입력(SG 10/28, 나머지는 재활성 뒤 샵별)</strong>. Shop SKU 재고가 Global에 묶여 수정 불가면 보고
-9. E08 Reactivate: TH <code>1770636159</code> · MY <code>1770624635</code> · VN <code>1770624644</code> · PH <code>1770624640</code> · BR <code>1770624666</code> · MX <code>1770624683</code> → 각 샵 Violation 탭·Pre-order·DTS·COD·바우처 자격 캡처
-9. E09 COD: VN·PH 샵 COD OFF 요청(헬프센터, 가능 시 설정) · MY·TH ON 유지
-10. E10 표시가(Shop SKU 직접): SG 세럼 <code>41679132880</code> 입력 <strong>S$42.20</strong>(After Tax <strong>S$46.00</strong>) · 크림 <code>49306964220</code> 입력 <strong>S$41.10</strong>(After Tax <strong>S$44.80</strong>) · TH·MY·VN·PH·BR·MX = $36/$35 × 당일 환율 — 가격칸에 세후 표시가 뜨면 표시가 기준으로 역산(입력값·세후값 둘 다 로그에) · TW는 비공개면 생략(유지 결정 시 <code>50107270168</code> <strong>NT$1,174</strong> · <code>58157270228</code> <strong>NT$1,141</strong> + 제품명에서 <code>Exo</code> 제거) → 입력 후 재조회 값 보고
-11. E11 SG 리스팅 반영: 제목(§8) · 설명 · 이미지 9 · 영상 1 · 속성·브랜드(현재 NoBrand → LEMONDERMA 등록 신청 <code>/portal/brand/entry</code>) → Content Diagnosis 통과 확인
-12. E12 세트 리스팅 등록(Global SKU 신규 "LEMONDERMA Lemonshot Exosome Serum + Cream Set 50ml×2" — 제목·이미지·설명 모두 단품과 다르게, SG 먼저 발행 · BR은 Anvisa 필수란 뜨면 미발행) → 라이브 목표 11/4
-12b. E12b <strong>4번째 리스팅 — 세럼 2개입</strong>(Global SKU 신규, 세트와 제목·이미지 구분, SG 먼저) → Shop+ 자격(활성 상품 ≥4 <span class="b g">🟢</span> 10/27) 확보, 세트와 함께 11/4 라이브
-13. E13 전환 장치: Follow Prize <strong>S$3</strong>(무제한) · New Buyer Voucher <strong>S$5</strong>(min S$40·100매·10/28~12/31) · Bundle Deal 세트 <strong>−15% = 표시 S$77.20</strong>(10/28~12/31; Marketing Centre 도구 목록에 Bundle Deal 미노출 <span class="b y">🟡</span> → Discount 메뉴 안에도 없으면 세트 리스팅 가격 입력 S$70.83 = 표시 S$77.20으로 대체) · Free Sample 세럼 5·크림 5(SG 거주·뷰티 콘텐츠만 승인) · Review Prize ON(코인 상한 월 S$50) · Smart Voucher ON
-14. E14 활동 루틴 ON: 화·금 8샵 전환 + Shop SKU 터치 + Bump 5개(12:00·21:00 SGT) — 루틴 스크립트 등록</p>
-<p><strong>10/29(수)</strong>
-15. E15 11.11 바우처 캠페인 노미네이션(캠페인 <code>2048118889</code>): 세션 (a) <strong>22% Off · cap S$5 · min spend S$11</strong> + 세션 (b) <strong>16% Off · cap S$10 · min spend S$29</strong>(샵 전체 상품) · Price Teaser 불참 · VIP Friday 보류 → 마감 <strong>10/29 18:00 SG</strong> 전 제출·캡처(승인 뒤 철회 = 3개월 금지)
-16. E16 Shop Decoration: 배너(11.11 Seller Kit) · 컬렉션(세럼·크림·세트) · 소개문(brand.md 톤, "Korean pharmacy skincare")
-17. E17 CS: Chat AI Assistant FAQ 10문(배송 9~25일·관세·GST·성분·사용법·반품·정품·세트) · 자동응답 · 운영시간 · John 앱 알림 ON
-18. E18 AMS: Targeted Campaign SG KOC 50명 수동 선별 초청(팔로워 3k~100k·뷰티·SG 거주) · Open 18% 유지 · Affiliate Ads 보류
-19. E19 <strong>John: 광고 카드 충전 S$500 프리셋(≈$391) + GST</strong>(<code>/portal/marketing/pas/top-up</code> → Check Out 다음 결제 화면) → 잔액 캡처
-20. E20 GMV Max 생성: 세럼 <strong>S$15/일</strong> · 크림 <strong>S$12/일</strong>(최소 S$12/상품) · Custom ROAS 권장 최저 · ROAS Protection ON · Surge OFF(스파이크에 ON) · 시작 <strong>10/30 00:00 SGT</strong></p>
-<p><strong>10/30(목)~11/1</strong>
-21. E21 광고 ON 확인(노출 시작) · 일일 로그 시작 <code>data/ads_log.csv</code>
-22. E22 7샵 Shop SKU 리스팅 이식(현지어 자동번역 검수, TH 30자·브랜드)
-23. E23 Shopee Video 3편 업로드(SG, 세로 ≤1분, 상품 태그) · 이후 주 3편
-24. E24 Marco: <strong>Payoneer 연결 완료(11/1)</strong> · 출고 리허설(포장·송장·Pick Up 신청·집하 실비 실측) · 주문 알림 Marco·John 앱</p>
-<p><strong>11/2~11/17</strong>
-25. E25 세트 라이브(11/4) → 신규상품 광고 <strong>$4/일</strong> · 세트 번들 가격 표기 확인
-26. E26 11/6 첫 조정(±20%, §10-2 규칙) · 11/9 성적표
-27. E27 11/10~13 <strong>Surge ON</strong> · Shop+ <strong>$5/일</strong>(활성 상품 4개 확보 뒤 — ⑯ <span class="b g">🟢</span> "≥4 eligible active products", 키워드 8개 수동 eCPC) · 11.11 2차 바우처 세션 노미네이션(마감 11/10)
-28. E28 <strong>11/16 1차 결정점</strong> 성적표 → John 확대·유지·중단</p>
-<p><strong>11/18~12/14</strong>
-29. E29 2번째 국가 GMV Max <strong>$10/일</strong>(MY 기본·TW는 PIF 뒤) · 20 Nov BTO·Super Tech 바우처 노미네이션(11/19·11/20)
-30. E30 12.12 Price Teaser 노미네이션(마감 ~11/26 확인): 세럼 <strong>≤S$33.12</strong> · 크림 <strong>≤S$32.26</strong> · 바우처 cap ≤S$2.4
-31. E31 <strong>11/28 Discount Promotion −25%</strong>(S$34.50 / S$33.60, 상시) · 바우처 cap → S$3.5 · 11/30 2차 결정점
-32. E32 12/1 CPAS 신청(마켓별 광고계정) → 12/8 $10/일 · 12/10~13 Surge ON · <strong>12/14 3차 판정</strong>(90일 방향·FBS·3번째 국가·표시가 재검토)</p>
-<p><strong>John 몫(승인 아님, 직접):</strong> E05 비번 블록(10/27, Finance 화면 포함) · E19 카드 충전(10/29) · 질의 발송 · TW 비공개 여부 확인 · 2주 결정점 판단. <strong>Marco 몫:</strong> E06·E24 Payoneer 연결·실물 배정·출고 리허설. <strong>12/14로 미룬 결정:</strong> 3번째 국가·FBS·표시가 $36 유지 여부·CPAS 확대.</p>
-<h2 id="15-실행-전-실측-항목-1027-승격-대상-굵게">15. 실행 전 실측 항목 (10/27 승격 대상 굵게)</h2>
+<p><strong>John 몫:</strong> E05 비번 블록 · E19 충전(광고 S$500 + 코인 S$450) · 질의 발송 · 2주 결정점 판단. <strong>Marco 몫:</strong> E06·E24·E33(정산·배정·출고·서류). 나머지는 Claude가 순서대로 실행하고 건별 재조회 값으로 보고한다.</p>
+<h2 id="11-남은-실측질의-열려-있는-것만">11. 남은 실측·질의 (열려 있는 것만)</h2>
 <table>
 <thead>
 <tr>
@@ -1213,134 +1630,104 @@ a{color:var(--head)}
 </thead>
 <tbody>
 <tr>
-<td>① ✅</td>
-<td><strong>브러싱 확정</strong> — 50건 전부 2026-04-06 · 구매자 32명(18명 쌍 구매) · 파인드리뷰 체험단 비공개 바우처 $0.10 × 25+25 전량 사용 → §13 리뷰 재건 트랙</td>
-<td>research/00 §11 ①</td>
-<td><span class="b g">🟢</span> 10/27</td>
-</tr>
-<tr>
-<td>② ✅</td>
-<td>공식 원문·입력값(SG 커미션 15.35%·환율 0.000866·조정율 100%·거래 2%, 타 샵 150%) · <strong>GST = 입력가 위 9% 가산('After Tax')</strong> → 입력 S$42.20 / 41.10</td>
-<td>research/00 §11 ② (비번 없음)</td>
-<td><span class="b g">🟢</span> 10/27 · 소비자 화면 직접 확인은 <span class="b y">🟡</span>(로그인 벽)</td>
-</tr>
-<tr>
 <td>③</td>
-<td>실제 부과 수수료 분해(4월 1건 'Fees &amp; Charges' S$3.77 = 세후가 14.4% — 커미션·GST 분해) · 4월 정산(주문 화면상 04-30 이체 완료 <span class="b g">🟢</span>)</td>
+<td>수수료 분해(4월 1건 'Fees &amp; Charges' S$3.77 = 세후가 14.4%의 커미션·GST 구성)</td>
 <td><code>Finance &gt; My Income</code></td>
 <td><strong>John</strong></td>
-</tr>
-<tr>
-<td>④ ✅</td>
-<td>미달 2기준 = <strong>주간 Unique Buyers ≥10 · Net Orders ≥30</strong>(현 0·0), 나머지 통과 → 90일 목표에서 제외</td>
-<td>research/00 §11 ④</td>
-<td><span class="b g">🟢</span> 10/27</td>
-</tr>
-<tr>
-<td>⑤ ✅</td>
-<td>충전 프리셋 S$5~1,000(24h 적립·환불 불가·SGD) · <strong>GMV Max 최소 일예산 S$12/상품</strong> · $27 만료 표시 없음(<span class="b y">🟡</span>) · 결제수단·GST는 결제 화면(John)</td>
-<td>research/00 §11 ⑤</td>
-<td><span class="b g">🟢</span> 10/27</td>
-</tr>
-<tr>
-<td>⑥ ✅</td>
-<td>11.11 바우처 세션 2개 eligible(22%/cap≥S$5/min≤S$11 · 16%/cap≥S$10/min≤S$29 · 마감 10/29 18:00 SG · 셀러 부담) · VIP Friday = 매주 금 $50·$10 Deals-CB(VIP팀 심사) · Nominated 1 = 5월 VIP 바우처 4건(세션 없음)</td>
-<td>research/00 §11 ⑥</td>
-<td><span class="b g">🟢</span> 10/27</td>
 </tr>
 <tr>
 <td>⑦</td>
 <td>SIP 아님 최종 확정</td>
 <td><code>Global Product Settings &gt; SIP Rate Setting</code></td>
-<td>Claude(<span class="b g">🟢</span> 사실상 확정)</td>
+<td>Claude(사실상 확정)</td>
 </tr>
 <tr>
 <td>⑧</td>
-<td>8샵 Violation 현황(재활성 직후)</td>
+<td>8샵 Violation 현황(활성 직후)</td>
 <td><code>Shop SKU &gt; Violation</code></td>
 <td>Claude 10/28</td>
 </tr>
 <tr>
-<td>⑨ ✅</td>
-<td>8샵 전부 "Synchronise all information"(가격·DTS ON) · Global DTS 4 · SG Shop SKU Pre-Order No(2영업일) · Global 저장은 Anvisa 공란으로 불가 · Listing Limit 100</td>
-<td>research/00 §11 ⑨</td>
-<td><span class="b g">🟢</span> 10/27</td>
-</tr>
-<tr>
 <td>⑩</td>
-<td>배송 채널·무게 140g/190g·Pick Up 주소·<strong>COD 토글(샵별)</strong></td>
-<td><code>Shipping Setting</code> · Global SKU</td>
+<td>배송 채널·무게·Pick Up 주소·COD 토글(샵별)</td>
+<td><code>Shipping Setting</code></td>
 <td>Claude·Marco</td>
 </tr>
 <tr>
 <td>⑪</td>
 <td>TW Open Campaign no_permission · MY 바우처 Not eligible 원인</td>
-<td>AMS 활성 조건</td>
-<td>Claude(10/28 재활성 뒤)</td>
+<td>AMS</td>
+<td>Claude 10/28</td>
 </tr>
 <tr>
 <td>⑫</td>
-<td>Shopee KR 담당자 서면(07 + 추가 5문: Shop+ 자격·Promo Xtra·패널티 샵 단위·Giveaway·가격 증빙 사전 등록)</td>
-<td>메일/매니저</td>
+<td>담당자 서면(Shop+ 자격·Promo Xtra·패널티 샵 단위·Giveaway 화이트리스트·가격 증빙 사전 등록)</td>
+<td>질의 07</td>
 <td><strong>Marco/John</strong></td>
 </tr>
 <tr>
 <td>⑬</td>
-<td>SLS 한국→SG 실제 배송일·구매자 화면 배송비·"Overseas" 표기</td>
-<td>shopee.sg 로그인</td>
-<td>Claude</td>
+<td>SLS 실제 배송일·구매자 배송비·"Overseas" 표기·<strong>소비자 화면 노출가(S$39.17 확인)</strong></td>
+<td>shopee.sg 앱 로그인</td>
+<td>John 1회</td>
 </tr>
 <tr>
 <td>⑭</td>
 <td>MY·TH·PH·VN 소비자 가격 밴드 15건씩</td>
 <td>로그인 크롬</td>
-<td>Claude(11월)</td>
+<td>Claude 11월</td>
 </tr>
 <tr>
 <td>⑮</td>
-<td>집하·포장 실비(§11 가정 ₩3,500) · <strong>실물 재고 현재값(7/9 세럼 120·크림 200 이후 변동) → Shopee 배정분 확정</strong></td>
+<td>집하·포장 실비 · 실물 재고 현재값 → 배정 확정</td>
 <td>물류 기록</td>
-<td><strong>Marco 10/28</strong></td>
-</tr>
-<tr>
-<td>⑯ ✅</td>
-<td><strong>불가</strong> — "To set up Shop+ Ads, you need at least 4 eligible active products"(현 2) → E12b 4번째 리스팅</td>
-<td>research/00 §11 ⑯</td>
-<td><span class="b g">🟢</span> 10/27</td>
+<td><strong>Marco 10/28~31</strong></td>
 </tr>
 <tr>
 <td>⑰</td>
-<td><strong>Promo Xtra(구 Coins Cashback) 가입 상태</strong> — Seller Programmes 포털 빈 화면(iframe, 2회)</td>
-<td>질의 07 6-2</td>
-<td><span class="b r">🔴</span> → Marco/John 질의</td>
+<td>Promo Xtra 가입 상태(포털 빈 화면)</td>
+<td>질의 07</td>
+<td>Marco/John</td>
 </tr>
 <tr>
 <td>⑱</td>
-<td>External Traffic Ads 메뉴 내용(Meta·Google 연동 여부)</td>
+<td>External Traffic Ads 메뉴 내용</td>
 <td><code>/portal/web-shopping-ads/</code></td>
 <td>Claude</td>
 </tr>
 <tr>
-<td>⑲ ✅</td>
-<td>신규 폼: 이미지 9·영상 ≤30MB 10~60s·제목 180·설명 5,000 · 필수 속성 Brand·FDA Reg No.·shelf life·Anvisa(카테고리+BR 발행 조합)</td>
-<td>research/00 §11 ⑲</td>
-<td><span class="b g">🟢</span> 10/27 · 세트 SG 단독 발행 시 Anvisa 공란 허용 여부 <span class="b y">🟡</span></td>
+<td>—</td>
+<td>크레딧 S$27 만료일 · Seller Coins 유효기간</td>
+<td>지갑 화면·질의</td>
+<td>Claude</td>
 </tr>
 <tr>
-<td>⑳ ✅</td>
-<td>7종: Affiliate Marketing Solution·Shipping Fee Promotion·Live Streaming·External Traffic Ads·Review Prize·Seller Coins·Live Streaming Promotion — <strong>Bundle Deal·Add-on·Top Picks·Shop Games 없음(<span class="b y">🟡</span> E13 대체안)</strong></td>
-<td>research/00 §11 ⑳</td>
-<td><span class="b g">🟢</span> 10/27</td>
+<td>⑲</td>
+<td>TH 바늘결정 금지 고시에 세럼 Vegan Microcrystal(Calcium Aluminum Borosilicate 75~150μm) 해당 여부</td>
+<td>태국 FDA·Softlanding 서면</td>
+<td><strong>Marco</strong></td>
 </tr>
 <tr>
-<td>㉑ ✅</td>
-<td>SG 제목 <strong>255자</strong> · 1:1 이미지 <strong>9</strong> · 영상 ≤30MB·10~60s·MP4 · 설명 <strong>3,000자</strong>(Global 5,000, 현재 2,636)</td>
-<td>research/00 §11 ㉑</td>
-<td><span class="b g">🟢</span> 10/27</td>
+<td>⑳</td>
+<td>Global SKU <code>FDA No.</code> 2개의 실존·명의·품목 일치(태국 FDA 검색 사이트 접속 불가)</td>
+<td>Mor Prom 앱 · LINE @FDAThai · 대행 조회</td>
+<td><strong>Marco</strong></td>
+</tr>
+<tr>
+<td>㉑</td>
+<td>SG 직배송 B2C·개인수입에 HSA 통지 예외가 있는지</td>
+<td>HSA_Cosmetics_Control@hsa.gov.sg 질의</td>
+<td>John/Marco</td>
+</tr>
+<tr>
+<td>㉒</td>
+<td>MY NPRA 공개 데이터셋에서 우리 제품·보유자 검색(CSV 다운로드)</td>
+<td>data.gov.my</td>
+<td>Claude(다운로드 승인 뒤)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="16-마케팅-게이트-6문-v3-자기평가">16. 마케팅 게이트 6문 (v3 자기평가)</h2>
+<h2 id="12-마케팅-게이트-6문">12. 마케팅 게이트 6문</h2>
 <table>
 <thead>
 <tr>
@@ -1353,167 +1740,39 @@ a{color:var(--head)}
 <tr>
 <td>1 측정 타당도</td>
 <td><span class="b y">🟡</span></td>
-<td>일 $20 → 2주 930클릭 표본, 2주 결정점. 가격 인상·취소선·스파이크는 날짜 고정 태그. 동시 변경은 여전히 많다(의도된 속도 우선)</td>
+<td>일 S$27 → 2주 ≈ 980클릭, 2주 결정점. 가격·취소선·스파이크는 날짜 고정 태그. 동시 변경은 많다(속도 우선)</td>
 </tr>
 <tr>
 <td>2 정의 실측</td>
 <td><span class="b g">🟢</span></td>
-<td>허위 할인·패널티·캠페인 기준 원문 <span class="b g">🟢</span> · GST 구조·Shop+ 자격·가격 공식·동기화 10/27 실측 <span class="b g">🟢</span> · Promo Xtra만 질의</td>
+<td>허위 할인·패널티·캠페인 기준 원문 · GST 구조·Shop+ 자격·가격 공식·동기화·Review Prize 상한·번들 도구 실측 · Promo Xtra만 질의</td>
 </tr>
 <tr>
 <td>3 재고 실측</td>
 <td><span class="b g">🟢</span></td>
-<td>decisions 05-05(3건)·07-27·08-27·09-01 대조, 대체 관계 명시, 5~6월 이력 반영</td>
+<td>decisions 05-05(3건)·07-27·08-27·09-01·10-26 대조</td>
 </tr>
 <tr>
 <td>4 교차 일관성</td>
 <td><span class="b g">🟢</span></td>
-<td>환율 1종·게이트 §10-3 단일·실효가 계산기 1개·실행 목록이 §5~§7과 1:1</td>
+<td>환율 1종 · 게이트 §5-5 단일 · 실효가 계산기 1개 · 실행 목록이 §3~§5와 1:1</td>
 </tr>
 <tr>
 <td>5 비가역 등급</td>
 <td><span class="b y">🟡</span></td>
-<td>되돌리기 어려운 것 = 가격 인상 뒤 30일 내 취소선(리스팅 삭제) · Wallet 1년 약정 · 충전 환불 불가 · TW·BR·MX 리스팅 노출(Shopee 조치) → 전부 명시·John 결정</td>
+<td>되돌리기 어려운 것 = 인상 뒤 30일 내 취소선(리스팅 삭제) · 충전 환불 불가 · 캠페인 승인 뒤 철회(3개월 금지) · TW·BR·MX 리스팅 노출(Shopee 조치) → 전부 명시</td>
 </tr>
 <tr>
 <td>6 상대 메커니즘</td>
 <td><span class="b g">🟢</span></td>
-<td>선정형 캠페인·가격 로그 규정·무활동 검색 제외·소예산 저집행·COD 거절 반영</td>
-</tr>
-</tbody>
-</table>
-<h2 id="17-v2--v3-변경-내역-레드팀-06과의-관계">17. v2 → v3 변경 내역 (레드팀 06과의 관계)</h2>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>v2(레드팀 반영)</th>
-<th>v3(John 결정)</th>
-<th>받는 리스크·대응</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>가격</td>
-<td>현행가 유지, 인상은 12/16 뒤 Marco(<span class="b r">🔴</span>5)</td>
-<td><strong>표시가 $36/$35 즉시(10/28)</strong>, 마지노선 $24/$22</td>
-<td>허위 할인 → "30일 뒤 취소선" + 증빙 폴더 + 11.11 Price Teaser 불참</td>
-</tr>
-<tr>
-<td>광고</td>
-<td>일 $5, 상한 $1,480</td>
-<td><strong>일 $20 + 증액 규칙 4종</strong>, 90일 $3,000+GST</td>
-<td>소진 속도 → 10/29 충전·잔액 경보</td>
-</tr>
-<tr>
-<td>국가</td>
-<td>BR·MX delist, TW 비공개, MY 서류 뒤 12월 재활성(<span class="b r">🔴</span>4·🟠10)</td>
-<td><strong>6샵 전부 재활성 · TW는 비공개 권장 유지</strong>(Marco 메모: PIF 없음·엑소좀 표기 불가 공문·총판 리드)</td>
-<td>규제 리스팅 노출 → 임의 번호 금지·Shopee 조치 수용·패널티 샵 단위(<span class="b y">🟡</span>)·COD VN·PH OFF</td>
-</tr>
-<tr>
-<td>측정</td>
-<td>판정창 11/18~12/15 전면 동결, 12/16 1회 판정(<span class="b r">🔴</span>3)</td>
-<td><strong>2주 결정점 3회</strong>, 주 1레버 변경 규칙</td>
-<td>교락 ↑ → 구간 태그·성적표 열</td>
-</tr>
-<tr>
-<td>할인</td>
-<td>중첩 금지(<span class="b r">🔴</span>2)</td>
-<td><strong>중첩 허용 + 실효가 계산기 하한</strong></td>
-<td>계산 누락 → 계산기 표 필수</td>
-</tr>
-<tr>
-<td>캠페인</td>
-<td>자격 세션만(<span class="b r">🔴</span>1)</td>
-<td>동일 + <strong>Price Teaser는 11/28 이후부터</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>세트 리스팅</td>
-<td>2단계로 미룸(리뷰 0 리스팅 광고)</td>
-<td><strong>10/28 등록 → 신규상품 광고</strong></td>
-<td>리뷰 0 → 소액 $4·3주문 게이트</td>
-</tr>
-<tr>
-<td>실행 승인</td>
-<td>카드 D 10건</td>
-<td><strong>E01~E32 값 포함, John 몫은 돈·비번만</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>유지한 것</td>
-<td>SIP 기각·Shop SKU 단위 편집·sync OFF 선행·브러싱 금지·확정 Direct 판정·New User Free Gift 제외·샘플 상한·출고 Marco/CS John·정산 11/1</td>
-<td>그대로</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h2 id="17-1-v3--v31-변경-1027-E01-실측-research00-11">17-1. v3 → v3.1 변경 (10/27 E01 실측, research/00 §11)</h2>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>v3(10/26)</th>
-<th>v3.1(10/27 실측)</th>
-<th>영향</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SG 가격 입력</td>
-<td>Shop SKU에 S$46.00 / S$44.80 입력</td>
-<td><strong>입력가 S$42.20 / S$41.10</strong> — 가격칸은 세전, 'After Tax'(×1.09)가 구매자 노출가 <span class="b g">🟢</span></td>
-<td>E10 값 교체. 그대로 입력했으면 S$50.14 / S$48.83으로 9% 비싸게 노출</td>
-</tr>
-<tr>
-<td>광고 일예산</td>
-<td>세럼 $12 · 크림 $8(USD)</td>
-<td><strong>세럼 S$15 · 크림 S$12 = S$27/일(≈$21)</strong> — 최소 S$12/상품 <span class="b g">🟢</span>, 통화 SGD</td>
-<td>P1·§10·E20 교체. 11월 ≈ $975+GST</td>
-</tr>
-<tr>
-<td>Shop+ 광고</td>
-<td>11/10 자격 확인 뒤</td>
-<td><strong>활성 상품 ≥4 필수</strong> <span class="b g">🟢</span> → 세트 + 세럼 2개입(E12b) 뒤</td>
-<td>P4·E27 조건 변경</td>
-</tr>
-<tr>
-<td>11.11 바우처</td>
-<td>15% Co-fund(min S$40·cap S$6) <span class="b y">🟡</span></td>
-<td><strong>22%/cap S$5/min S$11 · 16%/cap S$10/min S$29</strong>(셀러 부담), 마감 <strong>18:00 SG</strong> <span class="b g">🟢</span></td>
-<td>§4-2·§4-3·E15·S17 교체</td>
-</tr>
-<tr>
-<td>리뷰 50</td>
-<td>작업 구매 추정 <span class="b y">🟡</span></td>
-<td><strong>파인드리뷰 체험단 확정</strong>($0.10 비공개 바우처 25+25, 하루 50건) <span class="b g">🟢</span></td>
-<td>결정 기록 가지 1 근거 약화 · §13 리뷰 재건 트랙 ON</td>
-</tr>
-<tr>
-<td>배송 실비</td>
-<td>hidden S$1.52 가정</td>
-<td><strong>S$5.92/건</strong>(4월 주문 Shipping Subtotal) <span class="b g">🟢</span></td>
-<td>§11 본전 ROAS 2.0 → <strong>2.6</strong>, §10-3·§13 임계값 상향</td>
-</tr>
-<tr>
-<td>재고 정정 경로</td>
-<td>Global SKU 편집</td>
-<td><strong>Global 저장 불가(Anvisa 공란)</strong> → Shop SKU 재고칸 <span class="b g">🟢</span></td>
-<td>E07b 교체 · E07은 Merchant Setting만</td>
-</tr>
-<tr>
-<td>기타</td>
-<td>—</td>
-<td>Preferred Seller = 주 10명·30주문(제외) · Listing Limit 100 · 브랜드 NoBrand → 등록 · SG 제목 255자·설명 3,000자 · Bundle Deal 도구 미노출 <span class="b y">🟡</span> · Promo Xtra <span class="b r">🔴</span> 질의</td>
-<td>S6·E11·E13</td>
+<td>선정형 캠페인 · 가격 로그 규정 · 무활동 검색 제외 · 소예산 저집행 · COD 거절 · 리뷰 보상 상한 반영</td>
 </tr>
 </tbody>
 </table>
 <h2 id="출처">출처</h2>
 <ul>
-<li>내부: research/00~08(+08-Marco 결정 메모) · <code>_archive/shopee-operator/{README,state,notes}.md</code> · decisions 2026-05-02·05-05(3건)·05-20(2건)·06-12·06-15·07-27·07-28·08-27·09-01·09-25·04-29 · US 리스팅 v3.1(<code>us/amazon-detail-page-renewal/listing-v3_1-2026-10-23/</code>) · 노션 "2026.10.26 / 10.19 Weekly Meeting" · <code>40_sales/05-b2b-sales/knowledge/landscape/{TH,MY,PH,VN}.md</code></li>
-<li>외부(10/26 원문 확인): 쇼피 MY 「Misleading Discount Guidelines」 PDF · 쇼피 SG 「Seller Penalty Points system」 PDF · SG 허브 <a href="https://seller.shopee.sg/edu/article/27323">27323 11.11 Campaign To Do</a> · <a href="https://seller.shopee.sg/edu/article/18734">18734 Flash Deals</a> · KRSC 허브 <a href="https://shopee.kr/edu/article/27978">27978 Shop+</a> · <a href="https://shopee.kr/edu/article/24888">24888 Shopee Video</a> · <a href="https://shopee.kr/edu/article/20826">20826 CPAS</a> · <a href="https://shopee.kr/edu/article/11512">11512 Bump</a> · <a href="https://shopee.kr/edu/article/27980">27980 TW PIF</a> · <a href="https://shopee.kr/edu/article/13646">13646 브러싱</a> · research/01~04 출처표</li>
+<li>내부: <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/00-%EC%85%80%EB%9F%AC%EC%84%BC%ED%84%B0-%EC%8B%A4%EC%B8%A1-2026-10-26.md">research/00</a> §11(10/27 실측) · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-%EA%B0%80%EA%B2%A9%EA%B7%9C%EC%B9%99-%ED%97%88%EC%9C%84%ED%95%A0%EC%9D%B8-%EC%BA%A0%ED%8E%98%EC%9D%B8%EA%B8%B0%EC%A4%80-2026-10-26.md">research/08</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/09-%EA%B5%AD%EA%B0%80%EB%B3%84-%EA%B7%9C%EC%A0%9C%EC%84%9C%EB%A5%98-%EC%A0%88%EC%B0%A8-2026-10-27.md">research/09</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/01-%EA%B5%AD%EA%B0%80-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-2026-10-26.md">research/01</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/02-%EA%B4%91%EA%B3%A0-%EC%A0%84%ED%99%98%EB%A0%88%EB%B2%84-2026-10-26.md">02</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/03-%EA%B2%BD%EC%9F%81-%EB%B2%A4%EC%B9%98%EB%A7%88%ED%81%AC-2026-10-26.md">03</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/04-CB%EC%A0%9C%EB%8F%84-SIP-%EC%88%98%EC%88%98%EB%A3%8C-2026-10-26.md">04</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/05-%EC%86%8C%EB%B9%84%EC%9E%90%EC%8B%9C%EC%A0%90-%EA%B2%80%EC%83%89-%EC%8B%A4%EC%B8%A1-2026-10-26.md">05</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/07-%EC%87%BC%ED%94%BC%EC%BD%94%EB%A6%AC%EC%95%84-%EB%8B%B4%EB%8B%B9%EC%9E%90-%EC%A7%88%EC%9D%98-%EC%B4%88%EC%95%88-2026-10-26.md">07</a> · <a href="https://github.com/VDVIA/vdvia/blob/main/30_growth/marketing/sea/shopee/research/08-Marco-%EA%B2%B0%EC%A0%95%EB%A9%94%EB%AA%A8-%EC%A0%95%EC%82%B0%C2%B7PIF%C2%B7%EC%B6%9C%EA%B3%A0-2026-10-26.md">08-Marco</a> · <code>30_growth/marketing/metrics_config.json</code>(US 단위경제) · US 리스팅 v3.1</li>
+<li>외부: 쇼피 MY 「Misleading Discount Guidelines」 PDF · 쇼피 SG 「Seller Penalty Points system」 PDF · <a href="https://seller.shopee.sg/edu/article/27323">SG 11.11 Campaign To Do</a> · <a href="https://seller.shopee.sg/edu/article/18734">SG Flash Deals</a> · <a href="https://shopee.kr/edu/article/27978">KRSC Shop+</a> · <a href="https://shopee.kr/edu/article/24888">Shopee Video</a> · <a href="https://shopee.kr/edu/article/20826">CPAS</a> · <a href="https://shopee.kr/edu/article/11512">Bump</a> · <a href="https://shopee.kr/edu/article/27980">TW PIF</a> · <a href="https://shopee.kr/edu/article/13646">브러싱</a> · <a href="https://help.shopee.sg/portal/4/article/76608">Shopee SG GST 안내</a> · <a href="https://help.shopee.sg/portal/4/article/76831">SG 리뷰 삭제 기준</a> · <a href="https://help.shopee.sg/4/article/76654">Add-on Deal</a></li>
 </ul>
-<div class="foot">정본: 30_growth/marketing/sea/shopee/점검-액션전략-2026-10-26.md · 빌더 build_hub.py · 생성 2026-10-27 09:52</div>
+<div class="foot">정본: 30_growth/marketing/sea/shopee/점검-액션전략-2026-10-26.md · 빌더 build_hub.py · 생성 2026-10-27 11:32</div>
 </main></div></body></html>
