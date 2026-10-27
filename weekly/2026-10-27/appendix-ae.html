@@ -1180,6 +1180,7 @@ table.whytbl .wt-sub{font-size:11px;color:var(--muted);font-weight:400}
 .ia-sol-h{font-size:14px;font-weight:800;margin-bottom:6px;color:#2f5233}
 .ia-sol p{margin:7px 0;font-size:13.5px;line-height:1.75;color:#3b3a35}
 .ia-st{display:inline-block;font-size:11px;font-weight:700;background:#e6ece4;color:#3f6146;border-radius:999px;padding:2px 9px;margin-left:4px;white-space:nowrap}
+  @media(max-width:720px){.ia-st{white-space:normal;border-radius:12px}}  /* 2026-10-27: 긴 배지(US '왜' 4번 "…측정 과제 1건")가 320px에서 370px로 넘쳐 렌더 QA FAIL — 폰에서는 줄바꿈 허용 */
 .ia-card>.acc{border-radius:0;border-left:0;border-right:0;border-bottom:0;margin:0}
 .why-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:12px 0}
 .why-col{border:2px solid var(--ink);border-radius:16px;background:var(--card);box-shadow:var(--shadow);padding:16px 18px;min-width:0}
@@ -1246,6 +1247,24 @@ table.whytbl .wt-sub{font-size:11px;color:var(--muted);font-weight:400}
 .df-step.good{background:#f2f8ec;border-color:#cfe3bb}
 .df-step span{color:var(--muted);font-size:11.5px}
 @media(max-width:700px){.hk-row{flex-direction:column;gap:4px}.hk-t{flex:none}}.cw-tbl .cw-v{white-space:nowrap}.cw-tbl{min-width:560px}
+
+/* 2026-10-27 액션 지도 — 세 줄 요약 '왜'(한 일 → 기대한 것 → 실제)·'그래서'(이번 주 하는 것 → 기대 효과) 행. 폰(≤700px)은 칸을 세로로 쌓고 data-l 라벨을 붙인다 */
+.hk-map{margin:6px 0 2px;border:1px solid rgba(255,255,255,.18);border-radius:12px;overflow:hidden;font-size:13.5px;line-height:1.6}
+.hk-map .hm-head,.hk-map .hm-row{display:grid;gap:0 14px;padding:9px 12px;align-items:start}
+.hk-map.m3 .hm-head,.hk-map.m3 .hm-row{grid-template-columns:1.1fr 1fr 1.15fr}
+.hk-map.m2 .hm-head,.hk-map.m2 .hm-row{grid-template-columns:1.2fr 1fr}
+.hk-map .hm-head{background:rgba(255,255,255,.08);font-size:11.5px;font-weight:800;color:#c9e265;letter-spacing:.02em;padding:7px 12px}
+.hk-map .hm-row{border-top:1px solid rgba(255,255,255,.12)}
+.hk-map .hm-c{min-width:0;word-break:keep-all;overflow-wrap:anywhere;color:#f0ede3}
+.hk-map .hm-a{font-weight:700;color:#fff}
+.hk-map .hm-e{color:#d9d4c3}
+.hk-map .hm-m{display:inline-block;font-size:11px;font-weight:800;padding:1px 6px;border-radius:6px;margin-right:6px;vertical-align:1px;background:rgba(255,255,255,.16);color:#fff}
+.hk-map .hm-m.us{background:#2a78d6}.hk-map .hm-m.ae{background:#b85c86}.hk-map .hm-m.kr{background:#4a3aa7}
+.hk-lead-s{margin:0 0 6px}
+.hk-tail{margin:8px 0 0;color:#c9e265;font-weight:700}
+@media(max-width:700px){.hk-map .hm-head{display:none}.hk-map.m3 .hm-row,.hk-map.m2 .hm-row{grid-template-columns:1fr;gap:6px 0;padding:10px 12px}
+.hk-map .hm-c::before{content:attr(data-l);display:block;font-size:11px;font-weight:800;color:#c9e265;margin-bottom:1px}}
+
 
 .ib-tbl{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;table-layout:fixed;min-width:640px}
 .ib-tbl th,.ib-tbl td{border-bottom:1px solid #e6e1d3;padding:7px 8px;vertical-align:top;text-align:left}
@@ -1601,6 +1620,28 @@ body.view-john .dq-chip.john-only{display:inline-flex}
 @media(max-width:700px){.board-wrap::before{content:"옆으로 밀어 보세요 →";display:block;text-align:right;font-size:11px;font-weight:700;color:#8a836f;margin:-2px 2px 6px}}
 /* 세럼·크림 칸이 36px로 좁아 "▲63%"가 3줄로 꺾이던 것(John 10/12) — 증감·머리글은 한 줄 고정, 칸은 내용만큼 넓어진다(폰 스크롤 약 +30px) */
 .mkt-board .cw-d,.mkt-board thead th{white-space:nowrap}
+
+/* 2026-10-27 A4 히어로 안 액션 지도(세 줄 요약 '왜'·'그래서') + 특집 블록(.special, 이번 호만) */
+.hero .hk-map{font-size:14px;margin-top:8px;line-height:1.65}
+.hero .hk-map .hm-m.us{background:var(--c-us)}.hero .hk-map .hm-m.ae{background:var(--c-ae)}.hero .hk-map .hm-m.kr{background:var(--c-kr)}
+.hero .hk-lead-s{font-size:16px;line-height:1.7;color:#f4f1e6;margin:0 0 8px}
+.hero .hk-tail{font-size:15.5px;line-height:1.7}
+.hero .hk-map .n{white-space:normal}
+.special{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;margin-top:6px}
+.special .sp-lead{font-size:15px;line-height:1.7;margin:0 0 10px}
+.special .sp-expect{background:#f6f8e6;border-left:4px solid var(--lime);padding:10px 14px;border-radius:8px;font-size:14.5px;line-height:1.65;margin:0 0 14px}
+.special .sp-expect b:first-child{color:var(--lime-deep);margin-right:6px}
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sp-card{min-width:0}
+.special h4{font-size:14px;margin:4px 0 8px;line-height:1.5}
+.special table.mini{font-size:12.5px;table-layout:auto;min-width:0}
+.special table.mini th{white-space:nowrap}
+.special table.mini td{word-break:keep-all;overflow-wrap:anywhere}
+.special .sp-note{font-size:12.5px;color:var(--muted);margin:8px 0 0;line-height:1.6}
+.special .sp-foot{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+.special .n{font-weight:800}
+@media(max-width:900px){.sp-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.special{padding:14px 14px}}
 
 </style></head><body><header><div class="wrap appx-head"><span class="kicker">APPENDIX</span><h1>부록 — UAE 13주차 근거 전문</h1>
 <p class="sub">10/27호 (10/18~10/24) · 이면 추론 원장 · 발견 원장 · 기각된 발견 · 일별 여정 · <a href="./index.html?view=john">← 주간 보고서로</a></p></div></header>
