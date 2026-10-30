@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
+<title>쇼피 재가동 작업 정리 — 1·2·3부 (10/26~10/30)</title>
+<style>
+:root{--bg-top:#fefcd0;--bg-bot:#fff;--yellow:#E6EE7A;--line:#ddea65;--line-soft:#ece5c5;--ink:#000;--ink-65:rgba(0,0,0,.65);--ink-45:rgba(0,0,0,.45);--head:#4b612d;--hl:rgba(221,247,70,.30);--red:#e23b3b;--card:#fff;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Pretendard','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.02em;color:var(--ink);line-height:1.72;font-size:15px;background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bot) 780px) no-repeat,var(--bg-bot);min-height:100vh}
+.shell{display:flex;align-items:flex-start;max-width:1500px;margin:0 auto}
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;width:260px;flex:none;padding:26px 14px 40px 22px}
+.side .wm{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:22px;margin-bottom:2px}
+.side .kicker{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);margin-bottom:18px}
+.side a{display:block;text-decoration:none;color:var(--ink-65);font-size:12.6px;font-weight:600;padding:5px 10px;border-radius:8px;margin-bottom:1px;line-height:1.4}
+.side a:hover{background:var(--hl);color:var(--ink)}
+.main{flex:1;min-width:0;padding:34px 40px 120px;max-width:1180px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:34px;line-height:1.25;margin-bottom:12px}
+.status{display:inline-block;background:var(--yellow);border:1.5px solid var(--line);border-radius:999px;padding:3px 13px;font-size:12px;font-weight:800;margin-bottom:14px}
+blockquote{font-size:13px;color:var(--ink-65);line-height:1.85;margin:0 0 26px;padding:10px 14px;border-left:3px solid var(--line);background:rgba(255,255,255,.55);border-radius:0 8px 8px 0}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:600;color:var(--head);padding-bottom:8px;margin:46px 0 12px;border-bottom:2px solid var(--line)}
+h3{font-size:16.5px;font-weight:800;margin:26px 0 10px;letter-spacing:-.03em}
+h3::before{content:'';display:inline-block;width:7px;height:7px;background:var(--line);border-radius:2px;margin-right:9px;vertical-align:3px}
+p{margin:0 0 12px} ul,ol{margin:0 0 14px 22px} li{margin-bottom:4px}
+table{border-collapse:collapse;width:100%;margin:10px 0 20px;font-size:13.2px;background:var(--card);border:1px solid var(--line-soft);border-radius:10px;overflow:hidden}
+th{background:#f7f6e4;text-align:left;padding:9px 10px;font-weight:800;border-bottom:1.5px solid var(--line);vertical-align:bottom}
+td{padding:8px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.done td{background:#eef8e4} tr.part td{background:#fbf7dc} tr.todo td:first-child{font-weight:800} tr.hold td{color:var(--ink-45)}
+code{font-family:var(--mono);font-size:12.2px;background:#f3f3ea;padding:1px 5px;border-radius:4px}
+strong{font-weight:800}
+.b{font-size:12px} .chk{display:inline-block;min-width:22px;text-align:center;font-size:16px;color:var(--ink-45)}
+a{color:var(--head)}
+.foot{margin-top:50px;font-size:12px;color:var(--ink-45);border-top:1px solid var(--line-soft);padding-top:12px}
+@media (max-width:900px){.side{display:none}.main{padding:22px 16px 80px}h1{font-size:26px}table{display:block;overflow-x:auto}}
+</style></head>
+<body><div class="shell">
+<nav class="side"><div class="wm">LEMONDERMA</div><div class="kicker">30_growth · marketing · sea/shopee</div><a href="#한눈에">한눈에</a>
+<a href="#1부--필수-세팅-팔려도-사고가-안-나게">1부 — 필수 세팅: 팔려도 사고가 안 나게</a>
+<a href="#3부--무료-장치-광고비-0원으로-노출과-전환부터">3부 — 무료 장치: 광고비 0원으로 노출과 전환부터</a>
+<a href="#2부--유료-노출을-사는-유일한-레버">2부 — 유료: 노출을 사는 유일한 레버</a>
+<a href="#해보고-바뀐-것-실측">해보고 바뀐 것 (실측)</a>
+<a href="#SEO--해야-할-것-재영님-질문-답">SEO — 해야 할 것 (재영님 질문 답)</a>
+<a href="#다음-일정">다음 일정</a></nav>
+<main class="main">
+<div class="status">🟢 1부·3부 실행 완료(10/27) · 11월 세럼 집중 · GMV Max 세럼 10/29 시작(생성 완료) · 취소선 $29/$28 5샵 시작 · SG 11/4 · Shop+ 답 대기</div>
+<h1>쇼피 재가동 작업 정리 — 1·2·3부 (10/26~10/30)</h1>
+<h2 id="한눈에">한눈에</h2>
+<ul>
+<li><strong>목표:</strong> 쇼피에서 매출이 조금씩이라도 일어나게 만든다. 시작점은 <strong>유기 판매 0, SG 최근 30일 노출 세럼 38·크림 40, 클릭 4</strong> — 병목은 노출이었다.</li>
+<li><strong>순서:</strong> ① <strong>1부</strong> 팔려도 사고가 안 나는 상태 만들기 → ② <strong>3부</strong> 돈 안 드는 노출·전환 장치 전부 켜기 → ③ <strong>2부</strong> 노출을 사는 광고. 돈이 나가기 전에 새는 곳부터 막았다.</li>
+<li><strong>지금(10/30 오전):</strong> 8개 샵 전부 판매 중 · 위반 0 · SG 판매 상품 4개(세럼·크림·세트·2개입) · 광고 2개 가동(GMV Max 세럼 하루 S$12 · Shop+ 하루 S$10) · 리뷰 보상(Review Prize) 가동 · 할인가 표시(취소선) 5개 샵 가동, SG는 11/4부터 · 11.11 캠페인 10건 신청.</li>
+<li><strong>판단 시점:</strong> 11/4 첫 성적표 → 11/6 계속·조정 판정 → 11/16 1차 결정점(확대·유지·중단).</li>
+<li><strong>재영님 결정으로 바뀐 것:</strong> 크로스보더 계정은 현지 등록 없이 판매(서류 트랙 중단) · 취소선 $29/$28 바로 허용(캠페인 딜은 $26/$24까지) · 베트남은 할인 안 함(Marco 요청) · 11월은 세럼 하나에 광고 집중 · Shop+ 원형 칸은 샵 로고.</li>
+</ul>
+<h2 id="1부--필수-세팅-팔려도-사고가-안-나게">1부 — 필수 세팅: 팔려도 사고가 안 나게</h2>
+<table>
+<thead>
+<tr>
+<th>한 일</th>
+<th>왜</th>
+<th>기대효과</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8개 샵 활성화</strong> — 꺼져 있던 6개 샵 다시 켬 · 대만 크림 '과장 광고' 차단 당일 해제 · 태국 세럼 다시 공개 · 브라질 상품 삭제</td>
+<td>꺼진 샵·차단 상품은 검색에 안 나온다</td>
+<td>8개국 직배송 판매 가능, 위반 0 유지</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>동기화 끄기</strong>(가격·상품명·설명·이미지)</td>
+<td>글로벌 상품을 고치면 나라별 가격과 이미지를 덮어쓴다(대만은 금지 이미지가 되살아날 수 있음)</td>
+<td>나라별 가격·금지 이미지를 따로 관리</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>가격 입력</strong> — SG 노출가 S$46.00(세럼)·S$44.80(크림), 7개 샵 $36·$35 · 실지불 마지노선 $24·$22</td>
+<td>아마존과 같은 글로벌 가격 기준을 세워야 할인과 '허위 할인' 소명이 가능</td>
+<td>할인 여력 확보(취소선·캠페인 딜)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>SG 상품 페이지 새로 만들기</strong> — 미국 아마존 리스팅(v3.1)을 옮긴 제목·설명 · 상세 이미지 11장 · <strong>10/30 표지를 상세 첫 이미지(히어로)로 교체</strong></td>
+<td>옛 페이지는 정보가 적고 검색어가 약했다. 경쟁사 상품 카드도 문구가 박힌 디자인 이미지</td>
+<td>검색 노출·클릭률·전환율 개선</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>세트·2개입 신규 등록</strong>(SG)</td>
+<td>객단가를 올리고, 신규 상품 90일 트래픽 부스트를 받고, Shop+ 광고 자격(판매 상품 4개)을 채운다</td>
+<td>묶음 매출 · Shop+ 집행 가능</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>재고 입력</strong> — 세럼 1,340 · 크림 1,210 · 세트 1,210</td>
+<td>재고가 바닥나면 검색에서 빠진다</td>
+<td>품절로 인한 노출 손실 0</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>속성 정정</strong> — 성분(AHA·비타민C 삭제, 나이아신아마이드 추가)·효능·무게</td>
+<td>필터 검색에 엉뚱하게 걸리거나 안 걸리고, 상세 이미지의 'NO AHA'와 모순</td>
+<td>필터 검색 노출 · 신뢰</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>샵 이름·로고·소개</strong> — 7개 샵 'LEMONDERMA Korea' · 노란 워드마크 로고 · 현지어 소개(대만·태국은 엑소좀·% 수치 없이)</td>
+<td>'vdviainternational'로는 브랜드가 안 보인다</td>
+<td>브랜드 인지 · 샵 방문 신뢰</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>브랜드 등록</strong> — 10/27 신청은 <strong>태국만 승인</strong> → 10/30 서명 위임장을 붙여 나머지 7개 시장 재신청</td>
+<td>승인 전엔 상품에 'No Brand'로 뜬다</td>
+<td>브랜드 표기·브랜드 필터 노출</td>
+<td>🟨 결과 11/6경. 상표가 한·미·태국만 있어 반려 가능</td>
+</tr>
+<tr>
+<td><strong>고객 응대</strong> — 24시간 AI 채팅 응답 · 자주 묻는 질문 5개(배송·패치·조회·문의·할인)</td>
+<td>응답률은 검색 순위와 우수 판매자(Preferred) 요건에 들어간다</td>
+<td>응답률 유지 · 문의 이탈 감소</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>활동 루틴 자동화</strong> — 8시간마다 8개 샵 활동 기록 · 상단 올리기(Bump) 자동</td>
+<td>활동이 4일 없으면 구매자에게 경고, 7일이면 검색 제외</td>
+<td>검색 제외 사고 방지 · 무료 상단 노출</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>정산 확인</strong> — Payoneer 연결 'Active'(재영님 확인)</td>
+<td>연결이 안 돼 있으면 팔려도 돈이 안 들어온다</td>
+<td>판매 대금 수령</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>위임장 서명</strong>(브랜드 소유 확인서)</td>
+<td>브랜드 등록 증빙 · 쇼피가 정품·가격을 물을 때 소명</td>
+<td>심사·소명 대비</td>
+<td>✅ (회사 도장 칸은 요구 시)</td>
+</tr>
+<tr>
+<td>출고 리허설(집하·포장·송장)</td>
+<td>첫 주문 2영업일 안 발송</td>
+<td>지연 패널티 방지</td>
+<td>⏳ Marco</td>
+</tr>
+<tr>
+<td>7개 샵 현지어 상품 페이지</td>
+<td>영어 그대로면 현지 검색에 약하다</td>
+<td>나라별 검색 노출</td>
+<td>⏳ (아래 SEO 계획)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3부--무료-장치-광고비-0원으로-노출과-전환부터">3부 — 무료 장치: 광고비 0원으로 노출과 전환부터</h2>
+<table>
+<thead>
+<tr>
+<th>한 일</th>
+<th>왜</th>
+<th>기대효과</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>할인가 표시(취소선) $29·$28</strong> — 말레이시아·대만·태국·필리핀·멕시코 10/28부터 · SG 11/4부터(예약 작업) · 세트·2개입 낱개 2개보다 −10% · 베트남 제외</td>
+<td>쇼피는 할인가가 보여야 클릭한다. SG는 '7일 안에 정가를 올린 상품 할인 = 허위 할인 경고' 규칙 때문에 11/4 시작</td>
+<td>클릭률·전환율 상승</td>
+<td>✅ (12/24에 기간 연장)</td>
+</tr>
+<tr>
+<td><strong>11.11 캠페인 신청 10건</strong> — SG 바우처 2개 <strong>승인</strong>(22%·16%) · SG 상품 세션 세트·2개입 · SG 바우처 캠페인 3개(11/20 BTO·Super Tech·12월 Prizes) · 말레이시아·필리핀 상품 세션 · 태국·대만 바우처</td>
+<td>캠페인 기간에 쇼피가 홈·카테고리·배지로 노출을 몰아준다</td>
+<td>11.11 트래픽 확보</td>
+<td>🟨 승인 2 · 나머지 쇼피 심사 중</td>
+</tr>
+<tr>
+<td><strong>묶음 할인</strong> — 2개 −15% · 3개 −20%(11/4부터 −10%·−12%로 교체) · 장바구니 S$70 이상 무료배송</td>
+<td>한 번에 2개 사게 만든다</td>
+<td>객단가 상승</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>바우처</strong> — 첫 구매(New Buyer) S$5 · 팔로우 S$3 · 단품 할인 S$4.60(SG, ~11/6) · 재구매 감사(11/4부터 S$5)</td>
+<td>첫 구매 망설임을 줄이고 재구매를 부른다</td>
+<td>전환율·재구매</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>상품 제목 검색어 정리(SG)</strong> — 앞쪽에 'LEMONDERMA Lemon Exosome Serum' + korean dark spot serum·niacinamide·vegan</td>
+<td>쇼피 검색은 제목 단어가 가장 큰 무료 노출 요인</td>
+<td>검색 노출</td>
+<td>✅ (보강은 아래 SEO)</td>
+</tr>
+<tr>
+<td><strong>상품 영상</strong> — 포니 리뷰 영상(29초)을 SG 세트·2개입에 등록</td>
+<td>영상 있는 상품이 더 오래 본다</td>
+<td>체류·전환</td>
+<td>✅ · 쇼피 비디오 피드는 쇼피 서버 결함으로 업로드 불가(쇼피코리아 수정 대기)</td>
+</tr>
+<tr>
+<td><strong>제휴 마케팅(AMS)</strong> — 공개 커미션 18% · 뷰티 크리에이터 50명 개별 초대</td>
+<td>크리에이터가 링크를 걸면 팔릴 때만 비용</td>
+<td>외부 유입</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>샵 꾸미기</strong> — 대표 상품 템플릿 게시</td>
+<td>샵에 들어온 사람이 세트로 넘어가게</td>
+<td>샵 체류·세트 전환</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>리뷰 요청 채팅(배송 +3일) · 우수 판매자 요건 추적 · 팔로워 공지</td>
+<td>주문·팔로워가 생겨야 시작</td>
+<td>리뷰·재구매</td>
+<td>🗓 첫 주문 뒤</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2부--유료-노출을-사는-유일한-레버">2부 — 유료: 노출을 사는 유일한 레버</h2>
+<table>
+<thead>
+<tr>
+<th>한 일</th>
+<th>왜</th>
+<th>기대효과</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>광고 크레딧 S$500 충전</strong>(재영님)</td>
+<td>광고비 지갑</td>
+<td>—</td>
+<td>✅ 잔액 S$526.52(10/30 오전)</td>
+</tr>
+<tr>
+<td><strong>GMV Max 세럼</strong> — 하루 S$12 · 목표 ROAS 3.9 · 10/29~11/30 · 손실 보호(ROAS Protection) 켬</td>
+<td>쇼피가 알아서 상품 광고를 돌리는 방식(아마존 자동 광고와 같음). 11월은 세럼 하나에 집중</td>
+<td>세럼 노출·판매 데이터 확보</td>
+<td>✅ 가동 · 학습 기간 11/4까지 설정 안 바꿈</td>
+</tr>
+<tr>
+<td><strong>Shop+ 1개</strong> — 샵 로고+샵 이름 · 하루 S$10 · 10/29~11/1 · 키워드 9개(dark spot serum·niacinamide serum 등)</td>
+<td>검색 결과 맨 위 샵 카드와 상품 카드에 노출. 경쟁사도 원형 칸은 전부 로고</td>
+<td>핵심 키워드 상단 노출 · 샵 방문</td>
+<td>✅ 가동 · 노출 138·클릭 0(초반). 입찰가 4개 인상은 화면 저장 오류로 보류</td>
+</tr>
+<tr>
+<td><strong>리뷰 보상(Review Prize)</strong> — 고품질 리뷰 1건당 15코인 · 상품당 20건 · SG 4개 상품 · 750코인($7.50)</td>
+<td>리뷰가 적으면 광고로 들어온 사람도 안 산다</td>
+<td>리뷰 순증 → 전환율</td>
+<td>✅ 10/30 10:16 시작</td>
+</tr>
+<tr>
+<td><strong>셀러 코인 충전</strong> $11(1,100코인)</td>
+<td>Review Prize 재원</td>
+<td>—</td>
+<td>✅ 남은 코인 350(750은 리뷰 보상에 묶임)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>본전 기준:</strong> 취소선가 $29 기준 세럼 ROAS 2.9 · 크림 3.0, 캠페인가 $26/$24 기준 3.3/3.7(아마존 1.8보다 높은 이유: 쇼피 수수료 약 22% · 주문당 국제 배송).</li>
+<li><strong>중단 규칙:</strong> Shop+ 키워드는 클릭 50회에 클릭률 1% 미만이거나 클릭당 S$0.65 초과면 그 키워드만 끈다. 11/6 판정에서 주문당 광고비가 본전 밖이면 감액·중단.</li>
+</ul>
+<h2 id="해보고-바뀐-것-실측">해보고 바뀐 것 (실측)</h2>
+<ul>
+<li><strong>크로스보더 계정은 현지 등록 없이 판다</strong> — 나라별 서류 트랙은 중단, 쇼피가 요구할 때만 낸다.</li>
+<li><strong>Shop+ 이미지 칸은 작은 원형</strong> — 경쟁사도 전부 로고. 소재가 일하는 자리는 <strong>상품 대표 이미지</strong> → 표지를 히어로 이미지로 교체.</li>
+<li><strong>리뷰 보상은 리뷰당 5~15코인 수준</strong> — '리뷰당 150코인'은 상한일 뿐이었다. 코인 $10이면 충분.</li>
+<li><strong>브랜드는 상표가 있는 나라만 승인되는 구조로 보인다</strong> — 상표가 한·미·태국뿐이라 태국만 승인.</li>
+<li><strong>쇼피 비디오는 쇼피 쪽 결함</strong> — 한국 셀러센터 영상 화면이 존재하지 않는 서버 주소(live.shopee.kr)를 부른다.</li>
+</ul>
+<h2 id="SEO--해야-할-것-재영님-질문-답">SEO — 해야 할 것 (재영님 질문 답)</h2>
+<p><strong>있다.</strong> 아마존처럼 쇼피도 검색 순위는 ① 제목·설명·속성이 검색어와 맞는지 ② 판매·리뷰·클릭 같은 반응 ③ 샵 운영 지표(응답률·발송)로 정해진다. ②③은 광고·리뷰 보상·자동화로 돌리고 있고, ①에서 남은 일은 아래다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>지금</th>
+<th>할 일</th>
+<th>기대효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제목</td>
+<td>'Korean Dark Spot Serum · 2% Niacinamide · Brightening · Anti-Aging · Korean Pharmacy Skincare' 들어감</td>
+<td>광고 키워드 중 빠진 단어 보강 — 'Whitening'(쇼피 키워드 도구 SG 검색량 285) · 'Korean Serum' · 'Niacinamide Serum' 순서</td>
+<td>키워드 일치 노출</td>
+</tr>
+<tr>
+<td>설명 해시태그</td>
+<td>0개</td>
+<td>설명 끝에 해시태그 추가(쇼피 안내 기준 최대 18개, 적용 전 화면에서 한도 확인) — #niacinamideserum #darkspotserum #koreanskincare #koreanserum 등</td>
+<td>해시태그 검색 노출</td>
+</tr>
+<tr class="done">
+<td>속성</td>
+<td>✅ 10/28 정정(성분·효능·무게)</td>
+<td>—</td>
+<td>필터 검색</td>
+</tr>
+<tr>
+<td>이미지 품질</td>
+<td>세럼에 쇼피 진단 '이미지 흐림' 경고 1건</td>
+<td>해당 이미지 찾아 고해상도로 교체</td>
+<td>상품 품질 점수</td>
+</tr>
+<tr>
+<td>브랜드</td>
+<td>SG는 No Brand(심사 중)</td>
+<td>11/6 결과 확인</td>
+<td>브랜드 검색·필터</td>
+</tr>
+<tr>
+<td>7개 샵 현지어 페이지</td>
+<td>영어 그대로</td>
+<td>말레이시아·필리핀(영어) 먼저 정리 → 대만(번체)·태국·베트남·멕시코(스페인어) 현지어. 대만·태국은 금지 표현 빼고</td>
+<td>나라별 검색 노출</td>
+</tr>
+<tr>
+<td>쇼피 표준 상품 매칭</td>
+<td>미착수</td>
+<td>표준 카탈로그에 연결 가능한지 확인</td>
+<td>카탈로그 노출</td>
+</tr>
+</tbody>
+</table>
+<h2 id="다음-일정">다음 일정</h2>
+<table>
+<thead>
+<tr>
+<th>날</th>
+<th>할 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11/1</td>
+<td>Shop+ 종료일 → 노출·클릭 보고 연장 여부 판단</td>
+</tr>
+<tr>
+<td>11/3 20:00</td>
+<td>예약 작업: SG 세럼·크림 취소선 + 새 묶음 할인(11/4 시작)</td>
+</tr>
+<tr>
+<td>11/4</td>
+<td>예약 작업: SG 재구매 감사 바우처 S$5 · <strong>첫 광고 성적표</strong> · SG 세럼·크림을 11.11 상품 세션(10 Nov)에 신청(마감 11/10 18:00)</td>
+</tr>
+<tr>
+<td>11/6</td>
+<td>광고 계속·조정 판정 · 브랜드 재신청 결과</td>
+</tr>
+<tr>
+<td>11/16</td>
+<td>1차 결정점(확대·유지·중단)</td>
+</tr>
+<tr>
+<td>12/24</td>
+<td>취소선 기간 연장(12/31 종료 전)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>남은 사람 몫:</strong> Marco — 첫 주문 출고 리허설 · 쇼피코리아에 비디오 서버 결함 문의 / 재영님 — 아래 SEO 1차 진행 여부.</p>
+<div class="foot">정본: 30_growth/marketing/sea/shopee/점검-액션전략-2026-10-26.md · 빌더 build_hub.py · 생성 2026-10-30 10:22</div>
+</main></div></body></html>
