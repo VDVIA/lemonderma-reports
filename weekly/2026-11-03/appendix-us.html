@@ -1,0 +1,1541 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>부록 — US 20주차 근거 전문 · 11/3호</title>
+<link rel="stylesheet" href="https://use.typekit.net/ycy6gis.css"><style>
+
+:root{
+  --ink:#1b1a17; --muted:#6b675e; --line:#e7e3d8; --bg:#faf9f4; --card:#fff;
+  --lime:#b4c400; --lime-deep:#7e8c00;
+  --amz:#FF9900; --amz-bg:#fff6e8;
+  --good:#1a8f3c; --good-bg:#e8f6ec; --warn:#c98300; --warn-bg:#fdf3e0; --bad:#d23b2e; --bad-bg:#fbeceb;
+  --g-dark:#1a8f3c; --g-serum:#4f6fc4; --g-cream:#b45f06; --g-na:#d8d2c4;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-anchor:none;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+a{color:var(--lime-deep)}
+header{background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;padding:40px 0 34px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#0e0d0b;background:var(--lime);padding:5px 11px;border-radius:999px}
+h1{font-size:30px;line-height:1.2;margin:16px 0 6px;font-weight:800;letter-spacing:-.01em}
+.sub{color:#cfcabb;font-size:15px;margin:0}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13.5px;color:#e7e3d8}
+.meta-row b{color:#fff}
+
+/* ── 서장: 훅 + 북극성 ── */
+.hook{margin-top:34px;background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:18px;padding:26px 28px;box-shadow:var(--shadow)}
+.hook .hq{font-size:20px;font-weight:800;line-height:1.5;letter-spacing:-.01em}
+.hook .hq em{font-style:normal;color:var(--lime)}
+.hook .ha{margin-top:14px;padding-top:14px;border-top:1px solid #4a463c;font-size:15.5px;line-height:1.7;color:#e8e4d8}
+.hook .ha b{color:#fff}
+.ns-row{display:flex;flex-wrap:wrap;gap:10px 34px;align-items:baseline;margin-top:18px}
+.ns-item .nl{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.ns-item .nv{font-size:36px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.ns-item .nv small{font-size:15px;font-weight:700;color:#cfcabb}
+.ns-note{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.6}
+.ns-note b{color:var(--ink)}
+/* 본전 게이지 */
+.gauge{position:relative;height:16px;background:#4a463c;border-radius:8px;margin:14px 0 6px;max-width:520px}
+.gauge .gf{position:absolute;left:0;top:0;bottom:0;width:72.5%;background:#f5b942;border-radius:8px 0 0 8px}
+.gauge .gm{position:absolute;top:-5px;bottom:-5px;width:3px;background:#fff;border-radius:2px}
+.gauge .gm.alt{background:transparent;border-left:3px dashed #7fb069}
+.gauge-lbl{display:flex;justify-content:space-between;max-width:520px;font-size:11px;color:#cfcabb}
+.badge-legend{margin:10px 0 0;font-size:12px;color:var(--muted);background:#f4f2e9;border:1px solid var(--line);border-radius:9px;padding:8px 12px;display:inline-block}
+.badge-legend b{color:var(--ink)}
+
+/* ── 스토리 스파인 차트 ── */
+.spine-card{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px 14px;box-shadow:var(--shadow)}
+.sp-h{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin-bottom:2px}
+.sp-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.spine{display:flex;gap:3px;align-items:flex-end;height:210px;border-bottom:2px solid var(--ink);padding:0 2px}
+.sp-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative;min-width:0}
+.sp-bars{display:flex;gap:2px;align-items:flex-end;width:100%;height:100%;justify-content:center}
+.sp-spend{width:40%;max-width:16px;background:#d8d2c4;border-radius:4px 4px 0 0}
+.sp-rev{width:40%;max-width:16px;background:var(--g-dark);border-radius:4px 4px 0 0}
+.sp-day.susp{background-image:repeating-linear-gradient(45deg,#e6e2d6,#e6e2d6 4px,#f4f1e8 4px,#f4f1e8 8px);background-size:100% 15%;background-repeat:no-repeat;background-position:bottom}
+.sp-tag{position:absolute;left:50%;transform:translateX(-50%);font-size:10.5px;font-weight:800;color:#0c441d;background:#fff;border:1px solid #bfe6c9;border-radius:999px;padding:1px 6px;white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.sp-dates{display:flex;gap:3px;padding:5px 2px 0}
+.sp-dates span{flex:1;text-align:center;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:0}
+.sp-events{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.sp-ev{font-size:11.5px;font-weight:700;background:#f4f3ec;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:#46433c}
+.sp-ev.k{background:var(--bad-bg);border-color:#f0c7c2;color:#8f261c}
+.sp-legend{display:flex;gap:14px;margin-top:10px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.sp-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+
+/* ── 5분 요약 ── */
+.tldr{margin-top:18px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.tldr .t-h{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:10px}
+.tldr .t-row{display:flex;gap:11px;align-items:flex-start;padding:8px 0;font-size:14.5px;border-top:1px dashed var(--line);line-height:1.7}
+.tldr .t-row:first-of-type{border-top:none}
+.tldr .t-row .ic{flex:none;font-size:17px;line-height:1.5}
+.tldr .t-row b{font-weight:800}
+.tldr .nextq{color:var(--muted);font-size:13px}
+
+/* (용어 사전 섹션은 2026-08-11 John 피드백으로 폐지 — 새 개념은 첫 등장 문장에서 한 줄 풀이) */
+
+/* ── 탭 ── */
+.navhint{font-size:13px;color:#5c5a52;background:#f4f3ec;border-left:3px solid var(--lime);border-radius:0 10px 10px 0;padding:11px 14px;margin-top:22px}
+.navhint b{color:var(--ink)}
+.tabnav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  background:rgba(250,249,244,.93);backdrop-filter:saturate(150%) blur(10px);-webkit-backdrop-filter:saturate(150%) blur(10px);
+  padding:12px 2px;margin:10px 0 4px;border-bottom:1px solid var(--line)}
+.tabnav::-webkit-scrollbar{height:0}
+.tab{flex:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:inherit;
+  font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;
+  transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .15s cubic-bezier(.34,1.56,.64,1)}
+.tab:hover{border-color:var(--lime);color:var(--ink);transform:translateY(-1px) scale(1.05);box-shadow:0 4px 14px rgba(126,140,0,.22)}
+.tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow)}
+.tabpanel{display:none}
+.tabpanel.active{display:block;animation:fadeUp .4s cubic-bezier(.22,.61,.36,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tabpanel > section:first-of-type{margin-top:26px}
+.tabfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:38px;padding-top:18px;border-top:2px solid var(--ink)}
+.tabfoot .step{font-size:12.5px;color:var(--muted);font-weight:800}
+.tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;border:none;
+  transition:transform .16s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .2s,color .2s}
+.tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:0 3px 10px rgba(126,140,0,.30);margin-left:auto}
+.tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff;transform:translateY(-2px) scale(1.04)}
+.tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line)}
+@media(max-width:720px){.tab{font-size:12.5px;padding:8px 13px}.tabfoot button{font-size:13px;padding:10px 13px}.tabfoot .step{display:none}}
+
+section{margin-top:40px;scroll-margin-top:84px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;border-bottom:2px solid var(--ink);padding-bottom:10px;flex-wrap:wrap}
+.sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--ink);min-width:26px;height:26px;border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center}
+.sec-head h2{font-size:21px;margin:0;font-weight:800;letter-spacing:-.01em}
+.sec-head .note{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.lead{font-size:15px;color:#46433c;margin:0 0 16px;line-height:1.7}
+.actlead{font-size:14px;color:#5c5a52;background:#f4f3ec;border-radius:12px;padding:12px 16px;margin:0 0 20px;line-height:1.65}
+.actlead b{color:var(--ink)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+/* 돈 블록 */
+.money{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
+@media(max-width:720px){.money{grid-template-columns:1fr}}
+.money .m{padding:20px 22px;text-align:center}
+.money .m.spent{background:#fbeceb}
+.money .m.made{background:#e8f6ec}
+.money .m .lbl{font-size:12.5px;font-weight:700;color:var(--muted)}
+.money .m .big{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px}
+.money .m .sm{font-size:12px;color:var(--muted)}
+.money .eq{display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--muted);padding:0 6px;background:#faf9f4}
+
+/* 그룹 소개 카드 */
+.groups{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+@media(max-width:820px){.groups{grid-template-columns:1fr 1fr}}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-top:4px solid var(--line)}
+.gcard.win{border-top-color:var(--g-dark);background:#fbfdf8}
+.gcard.cream{border-top-color:var(--g-cream)}
+.gcard.serum{border-top-color:var(--g-serum)}
+.gcard .gn{font-size:14.5px;font-weight:800}
+.gcard .gc{font-size:11px;color:var(--muted);font-weight:700}
+.gcard .gv{font-size:22px;font-weight:800;margin-top:5px}
+.gcard .gd{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.5}
+.gcard .tagline{display:inline-block;font-size:10.5px;font-weight:800;border-radius:999px;padding:2px 8px;margin-top:7px}
+.gcard.win .tagline{background:var(--good-bg);color:var(--good)}
+.gcard.cream .tagline{background:var(--warn-bg);color:var(--warn)}
+.gcard.serum .tagline{background:var(--bad-bg);color:var(--bad)}
+
+.b{display:inline-block;font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:999px;vertical-align:middle}
+.b-good{background:var(--good-bg);color:var(--good)}
+.b-warn{background:var(--warn-bg);color:var(--warn)}
+.b-bad{background:var(--bad-bg);color:var(--bad)}
+.b-amz{background:var(--amz-bg);color:#a35c00}
+
+/* 표 */
+.tbl-scroll{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:
+  linear-gradient(to right,var(--card) 92%,rgba(0,0,0,.045))}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+.tbl-scroll table{min-width:540px}
+th,td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);word-break:keep-all;overflow-wrap:anywhere}
+td.num,th.num,td.nowrap,th.nowrap{white-space:nowrap}
+@media(max-width:900px){th,td{padding:8px 9px;font-size:12.5px}table{font-size:12.5px}.tbl-scroll table{min-width:0}td.tw,th.tw{min-width:0}}
+th{background:#f4f3ec;font-weight:800;font-size:12px;color:#4a473f}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.tw,th.tw{white-space:normal;min-width:190px;vertical-align:top;padding:10px 13px}
+tr.hi td{background:#fffdf2}
+tr.bad td{background:#fdf6f5}
+td.num{position:relative}
+td.num .cell-bar{position:absolute;right:2px;top:3px;bottom:3px;z-index:0;border-radius:4px;opacity:.16}
+td.num span.cv{position:relative;z-index:1}
+
+.flag{margin-top:14px;background:var(--bad-bg);border:1px solid #f3c9c4;border-radius:12px;padding:12px 14px;font-size:13px;color:#8f261c}
+.flag b{color:#6e1c14}
+.flag.lime-flag{background:#f7f9e6;border-color:#dde39a;color:#5c6300}.flag.lime-flag b{color:#444a00}
+.flag.good-flag{background:var(--good-bg);border-color:#bfe6c9;color:#13602a}.flag.good-flag b{color:#0c441d}
+
+/* 도넛 + 통계 */
+.statline{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);margin:14px 0;flex-wrap:wrap}
+.donut{width:58px;height:58px;border-radius:50%;flex:none;position:relative}
+.donut::after{content:'';position:absolute;inset:14px;background:var(--card);border-radius:50%}
+.statline .st{font-size:14px;line-height:1.6;flex:1;min-width:220px}
+.statline .st b{font-size:17px}
+
+/* ── ②탭: 장(챕터) 서사 ── */
+.chapter{margin:22px 0 10px;display:flex;align-items:center;gap:10px}
+.chapter .cn{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.chapter h3{margin:0;font-size:17px;font-weight:800}
+.chapter .cd{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* 배분 차트 */
+.alloc-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px 14px;box-shadow:var(--shadow);margin:14px 0}
+.alloc{display:flex;gap:6px;align-items:flex-end;height:190px;border-bottom:2px solid var(--ink);padding:26px 2px 0;position:relative}
+.al-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;position:relative;min-width:0}
+.al-day.wide{flex:1.6}
+.al-col{display:flex;flex-direction:column-reverse;width:70%;max-width:44px;margin:0 auto}
+.al-seg{border-radius:3px;margin-top:2px;min-height:2px}
+.al-seg.dk{background:var(--g-dark)} .al-seg.sr{background:var(--g-serum)} .al-seg.cr{background:var(--g-cream)} .al-seg.na{background:var(--g-na)}
+.al-dt{text-align:center;font-size:10.5px;color:var(--muted);padding-top:5px;white-space:nowrap}
+.al-ev{position:absolute;top:2px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:800;color:#8f261c;white-space:nowrap}
+.al-ev.g{color:var(--good)}
+.al-brace{position:absolute;top:-2px;font-size:11px;font-weight:800;color:var(--bad);text-align:center;border-top:2px solid var(--bad);padding-top:3px}
+.al-legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:#46433c;flex-wrap:wrap}
+.al-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* 반전 히어로 */
+.roas-flip{display:flex;align-items:center;justify-content:center;gap:26px;background:linear-gradient(135deg,#1b1a17,#322f27);border-radius:16px;padding:24px 20px;color:#fff;margin:18px 0;flex-wrap:wrap;box-shadow:var(--shadow)}
+.rf-cell{text-align:center}
+.rf-lbl{font-size:12px;font-weight:700;color:#cfcabb;margin-bottom:4px}
+.rf-num{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.rf-num.up{color:#7fb069} .rf-num.dn{color:#ff7a6e}
+.rf-sub{font-size:12px;color:#cfcabb;margin-top:5px}
+.rf-arrow{font-size:34px;color:#8a836f;font-weight:800}
+.rf-donuts{display:flex;gap:22px;align-items:center}
+.rf-d{text-align:center}
+.rf-d .donut{margin:0 auto 5px}
+.rf-d .donut::after{background:#242219}
+.rf-d span{font-size:11.5px;color:#cfcabb}
+
+/* ── ③탭: 자물쇠·사슬·채팅 ── */
+.locks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+@media(max-width:900px){.locks{grid-template-columns:minmax(0,1fr)}}
+.lock{border:2px solid var(--ink);border-radius:16px;padding:18px 20px;background:var(--card);box-shadow:var(--shadow);min-width:0;overflow-wrap:anywhere}
+.lock code{white-space:normal;overflow-wrap:anywhere}
+.lock .lh{font-size:16px;font-weight:800;margin-bottom:6px}
+.lock p{margin:6px 0;font-size:13.5px;line-height:1.65;color:#3b3a35}
+
+.chain{display:flex;flex-direction:column;align-items:center;max-width:660px;margin:16px auto}
+.chain-step{width:100%;border:2px solid var(--line);border-radius:14px;padding:13px 18px;background:var(--card)}
+.chain-step.root{border-color:var(--bad);border-width:3px;background:var(--bad-bg)}
+.chain-step .cs-t{font-size:14.5px;font-weight:800}
+.chain-step .cs-d{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.55}
+.chain-arrow{width:2px;height:22px;background:var(--ink);position:relative}
+.chain-arrow::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink)}
+.chain-side{width:92%;border:2px dashed var(--line);border-radius:12px;padding:11px 16px;background:#faf9f4;margin-top:14px;font-size:12.5px;color:#46433c}
+.chain-side b{color:var(--ink)}
+
+.convo{display:flex;flex-direction:column;gap:12px;max-width:680px;margin:16px auto}
+.bub{border-radius:14px;padding:11px 15px;max-width:82%;font-size:13.5px;line-height:1.6;position:relative}
+.bub .who{font-size:10.5px;font-weight:800;letter-spacing:.05em;color:var(--muted);display:block;margin-bottom:3px}
+.bub.us{align-self:flex-start;background:#eceadf;border-radius:14px 14px 14px 4px}
+.bub.amz{align-self:flex-end;background:var(--amz-bg);border-radius:14px 14px 4px 14px}
+.bub.amz.rej{border:1.5px solid #e5b8b2}
+.bub.amz.brk{border:2px solid var(--good);background:var(--good-bg)}
+.bub .rtag{position:absolute;top:-9px;right:10px;font-size:10px;font-weight:800;background:var(--bad-bg);color:var(--bad);border-radius:999px;padding:1px 8px}
+.bub .rtag.ok{background:var(--good-bg);color:var(--good)}
+.convo-note{font-size:12px;color:var(--muted);max-width:680px;margin:4px auto 0;text-align:center}
+
+/* 단계 스테퍼 */
+.stepper{display:flex;justify-content:space-between;position:relative;margin:26px 4px 6px}
+.stepper::before{content:'';position:absolute;top:19px;left:6%;right:6%;height:2px;background:var(--line)}
+.stp{position:relative;z-index:1;text-align:center;flex:1}
+.stp .nd{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:var(--card);border:2px solid var(--line);margin:0 auto}
+.stp.now .nd{border-color:var(--bad);box-shadow:0 0 0 4px var(--bad-bg)}
+.stp .nm{font-size:12px;font-weight:800;margin-top:6px}
+.stp .tg{font-size:10.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.mini-progress{max-width:180px;height:8px;background:#eceadf;border-radius:4px;margin:8px auto 2px;overflow:hidden}
+.mini-progress .fill{height:100%;width:63%;background:var(--warn);border-radius:4px}
+@media(max-width:720px){.stepper{flex-direction:column;gap:14px;align-items:flex-start}.stepper::before{display:none}.stp{display:flex;gap:12px;text-align:left;align-items:center}.stp .nd{margin:0}.mini-progress{margin:6px 0 0}}
+
+/* ── ④탭 ── */
+.herostrip{margin-top:14px}
+.hs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:820px){.hs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hs-grid{grid-template-columns:1fr}}
+.herocard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.herocard img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--line)}
+.herocard .hc-body{padding:13px 16px 15px}
+.herocard .hc-plat{display:inline-flex;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:7px}
+.herocard .hc-plat.dk{background:var(--good-bg);color:#0c441d}
+.herocard .hc-plat.cr{background:var(--warn-bg);color:#7a5800}
+.herocard .hc-name{font-size:14px;font-weight:800;margin-bottom:3px}
+.herocard .hc-roas{font-size:19px;font-weight:800;color:var(--good)}
+.herocard .hc-metric{font-size:12.5px;color:#3b3a35;line-height:1.55;margin-top:4px}
+
+.conc-bar{display:flex;height:40px;border-radius:10px;overflow:hidden;margin:12px 0 6px;border:1px solid var(--line)}
+.conc-bar .cw{background:var(--good);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800;white-space:nowrap;padding:0 6px}
+.conc-bar .cl{background:var(--bad-bg);color:var(--bad);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800}
+.conc-cap{font-size:12.5px;color:var(--muted)}
+
+.rejbars{margin:14px 0}
+.rej-row{display:flex;align-items:center;gap:10px;margin:9px 0}
+.rej-row .rl{flex:none;width:130px;font-size:12.5px;font-weight:700;text-align:right;color:#46433c}
+.rej-row .rt{flex:1;background:#f4f3ec;border-radius:6px;height:24px;position:relative;overflow:hidden}
+.rej-row .rf{height:100%;border-radius:6px}
+.rej-row .rv{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:11.5px;font-weight:800;color:var(--ink);white-space:nowrap;text-shadow:0 0 4px rgba(255,255,255,.9)}
+
+.confess{display:grid;grid-template-columns:1fr;gap:10px;margin:14px 0}
+.cf{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:13px 17px}
+.cf .was{font-size:13.5px;font-weight:800;color:var(--muted);text-decoration:line-through}
+.cf .now2{font-size:13.5px;margin-top:4px;line-height:1.6}
+.cf .now2 b{color:var(--ink)}
+
+/* ── ⑤탭 ── */
+.decq{margin-top:6px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.decq .dq-h{font-size:14px;font-weight:800;margin-bottom:4px}
+.decq .dq-sub{font-size:12px;color:var(--lime-deep);font-weight:700;margin-bottom:12px}
+.decq .dq-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px dashed var(--line)}
+.decq .dq-row:first-of-type{border-top:none}
+.decq .dq-dl{flex:none;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap;min-width:54px;text-align:center}
+.decq .dq-dl.urgent{background:var(--bad-bg);color:var(--bad)}
+.decq .dq-dl.wait{background:#eceadf;color:#46433c}
+.decq .dq-body{font-size:13px;color:#3b3a35;line-height:1.6}
+.decq .dq-body b{color:var(--ink)}
+
+/* 아코디언(부록) */
+.acc{margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.acc summary{cursor:pointer;padding:13px 16px;font-size:14px;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'▾ 펼치기';margin-left:auto;font-size:11px;font-weight:700;color:var(--muted)}
+.acc[open] summary::after{content:'▴ 접기'}
+.acc summary:hover{background:#faf9f4}
+.acc .bd{margin:0;padding:2px 16px 16px;font-size:13.5px;color:#3b3a35;line-height:1.65}
+.acc-group{margin:22px 0 2px;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep)}
+.pill-board{display:inline-block;font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:#eef3dd;color:#4a6b1d;vertical-align:2px;margin-right:6px}
+.sowhat{margin-top:12px;background:#f3f7e6;border-left:4px solid var(--lime-deep);border-radius:0 10px 10px 0;padding:11px 15px;font-size:13.5px;color:#2f2e29;line-height:1.65}
+.sowhat b{color:#4a6b1d}
+.jump{cursor:pointer;color:var(--lime-deep);font-weight:700;text-decoration:underline dotted}
+.actlog{width:100%;border-collapse:collapse;font-size:13px}
+.actlog th,.actlog td{padding:10px 12px;vertical-align:top;white-space:normal}
+.actlog .when{white-space:nowrap;font-size:11.5px;color:var(--muted)}
+.v-pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap}
+.v-pill.win{background:var(--good-bg);color:var(--good)}
+.v-pill.lose{background:var(--bad-bg);color:var(--bad)}
+.v-pill.pend{background:var(--warn-bg);color:var(--warn)}
+.v-pill.infra{background:#eceef5;color:#3a4a73}
+code{background:#f1f0e8;padding:1px 5px;border-radius:5px;font-size:12.5px}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--muted)}
+
+/* ── 2026-08-11 신설 (John 피드백 반영: 플로우·타임라인·퍼널·마스터-디테일·액션 위계) ── */
+
+/* ① 핵심 요약 박스 플로우 */
+.flow4{display:flex;align-items:stretch;gap:8px;margin-top:6px}
+.fbox{flex:1 1 0;min-width:0;background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:13px 15px}
+.fbox .fb-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.fbox .fb-n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center}
+.fbox .fb-t{font-size:13.5px;font-weight:800;line-height:1.35}
+.fbox p{margin:0;font-size:12.5px;line-height:1.65;color:#46433c}
+.fb-arr{flex:none;align-self:center;font-size:20px;font-weight:800;color:var(--lime-deep)}
+@media(max-width:900px){
+  .flow4{flex-direction:column;gap:6px}
+  .fb-arr{align-self:flex-start;margin-left:24px;transform:rotate(90deg)}
+}
+
+/* ② 무슨 일이 있었나 — 하루 카드 (구 .chapter 원형 배지 오용 수리) */
+.jday{margin:20px 0;padding:2px 0 2px 16px;border-left:3px solid var(--line)}
+.jday.epi{border-left-color:var(--warn)}
+.jday .jhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.jday .jdate{flex:none;font-size:11.5px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:2px 10px;font-variant-numeric:tabular-nums}
+.jday.epi .jdate{background:var(--warn)}
+.jday h3{margin:0;font-size:16px;font-weight:800}
+.jday p{margin:7px 0 0;font-size:13.5px;line-height:1.75;color:#3b3a35}
+
+/* ③탭 병목 도식 공통 */
+.lock.wide{margin:14px 0}
+.bnk-h{margin:20px 0 10px;font-size:13px;font-weight:800;letter-spacing:.05em;color:var(--lime-deep)}
+.bnk-steps{max-width:720px}
+.bnk-steps .cs-t .bs-d{display:inline-block;margin-right:8px;font-size:11px;font-weight:800;color:#fff;background:var(--ink);border-radius:999px;padding:1px 9px;vertical-align:1px;font-variant-numeric:tabular-nums}
+.bnk-steps .chain-step.root .cs-t .bs-d{background:var(--bad)}
+.bnk-why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.bnk-why.three{grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.bnk-why,.bnk-why.three{grid-template-columns:1fr}}
+.bw-card{border:1px solid var(--line);border-radius:12px;background:#faf9f4;padding:13px 15px}
+.bw-card .bw-t{font-size:13.5px;font-weight:800;margin-bottom:5px;line-height:1.45}
+.bw-card p{margin:0;font-size:12.5px;line-height:1.65;color:#3b3a35}
+.bw-tag{display:inline-block;font-size:10.5px;font-weight:800;background:#eceadf;color:#46433c;border-radius:999px;padding:1px 8px;vertical-align:1px;margin-left:4px;white-space:nowrap}
+.bw-tag.hot{background:var(--bad-bg);color:var(--bad)}
+.bnk-gate{border:1px dashed var(--line);border-radius:12px;padding:12px 16px;margin:8px 0 12px;background:#fffdf2}
+.bnk-gate .bg-lbl{font-size:13px;margin-bottom:8px}
+.bnk-gate .gauge{background:#eceadf}
+.bnk-gate .gauge .gm{background:var(--ink)}
+
+/* ③탭 메타 퍼널 */
+.funnel{display:flex;align-items:stretch;gap:6px;margin:10px 0;flex-wrap:nowrap}
+.fn-stage{flex:1 1 0;min-width:0;border:1.5px solid var(--line);border-radius:11px;padding:10px 10px;background:var(--card);text-align:center}
+.fn-stage .fs-l{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.02em}
+.fn-stage .fs-v{font-size:16px;font-weight:800;letter-spacing:-.01em;margin-top:2px;line-height:1.3}
+.fn-stage .fs-r{font-size:11px;font-weight:700;color:var(--muted);margin-top:3px;line-height:1.4}
+.fn-stage.ok{border-color:#bfe6c9;background:#fbfdf8}
+.fn-stage.ok .fs-r{color:var(--good)}
+.fn-stage.bad{border-color:var(--bad);border-width:2.5px;background:var(--bad-bg)}
+.fn-stage.bad .fs-r{color:var(--bad)}
+.fn-stage.bad .fs-l::after{content:' · 병목';color:var(--bad)}
+.fn-stage.est{border-style:dashed;background:#fdf9ef}
+.fn-stage.est .fs-r{color:var(--warn)}
+.fn-arr{flex:none;align-self:center;font-size:16px;font-weight:800;color:#8a836f}
+@media(max-width:900px){
+  .funnel{flex-direction:column;gap:5px}
+  .fn-arr{align-self:center;transform:rotate(90deg)}
+  .fn-stage{padding:9px 12px}
+}
+.fn-note{font-size:13px;line-height:1.7;color:#3b3a35;margin:8px 0 0}
+.fn-foot{margin-top:14px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--muted);line-height:1.6}
+
+/* ④탭 마스터-디테일 */
+.md-wrap{display:grid;grid-template-columns:minmax(230px,320px) 1fr;gap:12px;margin-top:8px}
+.md-r{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.md-r:checked+.md-item{border-color:var(--ink);background:#fffdf2;color:var(--ink)}
+.md-r:checked+.md-item .md-n{background:var(--ink);color:#fff}
+.md-r:checked+.md-item+.md-panel{display:block}
+.md-item{display:flex;gap:9px;align-items:flex-start;text-align:left;width:100%;cursor:pointer;font-family:inherit;
+  background:var(--card);border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font-size:13px;font-weight:700;
+  line-height:1.5;color:#3b3a35;transition:border-color .15s,background .15s}
+.md-item:hover{border-color:var(--lime)}
+.md-item.on{border-color:var(--ink);background:#fffdf2;color:var(--ink)}
+.md-item .md-n{flex:none;width:20px;height:20px;border-radius:50%;background:#eceadf;color:#46433c;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.md-item.on .md-n{background:var(--ink);color:#fff}
+.md-panel{display:none;border:1.5px solid var(--ink);border-radius:14px;background:var(--card);padding:16px 20px;box-shadow:var(--shadow)}
+.md-panel.on{display:block}
+.md-panel h3{margin:0 0 8px;font-size:16.5px;font-weight:800;line-height:1.5}
+.md-panel p{margin:0;font-size:13.5px;line-height:1.8;color:#2f2e29}
+.md-hint{font-size:11.5px;color:var(--muted);margin:8px 0 0}
+@media(max-width:760px){
+  .md-wrap{display:block}
+  .md-item{margin-top:8px}
+  .md-panel.on{margin-top:6px;border-radius:11px}
+}
+
+/* ⑤탭 핵심 액션 위계 */
+.hero-act{background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+.hero-act .ha-k{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.hero-act .ha-t{font-size:21px;font-weight:800;line-height:1.4;margin-top:8px;letter-spacing:-.01em}
+.hero-act .ha-why{margin-top:10px;font-size:13.5px;line-height:1.7;color:#e8e4d8}
+.hero-act .ha-why b{color:#fff}
+.hero-act .ha-sub{margin-top:10px;padding-top:10px;border-top:1px solid #4a463c;font-size:12px;color:#cfcabb}
+.act-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+@media(max-width:860px){.act-grid{grid-template-columns:1fr}}
+.act-grid .decq{margin-top:0}
+.dq-cnt{font-size:11px;font-weight:800;color:var(--lime-deep);background:#f0f3da;border-radius:999px;padding:1px 8px;vertical-align:2px;margin-left:4px}
+.fbox .fb-t,.bw-card .bw-t,.md-item,.hero-act .ha-t,.fn-stage .fs-l{word-break:keep-all}
+
+/* ── 히어로 '돈의 방향' 배분 바 + 승인 대기 블록 (2026-08-11 규칙 8 — 2주차 2차 피드백) ── */
+.mdir{margin-top:22px;max-width:660px}
+.mdir-k{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.mdir-line{margin:10px 0 7px;font-size:13.5px;line-height:1.55;color:#e8e4d8;word-break:keep-all}
+.mdir-line b{color:#fff;font-size:15.5px}
+.mdir-line.meta{margin:7px 0 0;text-align:right}
+.mdir-line .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px}
+.mdir-line .dot.amz{background:#7fb069}
+.mdir-line .dot.meta{background:#c0463a}
+.mdir-bar{display:flex;height:36px;border-radius:10px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.mdir-bar .seg{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;min-width:0}
+.mdir-bar .seg.amz{background:#7fb069;color:#14200e}
+.mdir-bar .seg.meta{background:#c0463a;color:#fff}
+.mdir-sub{margin-top:12px;font-size:13px;color:#cfcabb;line-height:1.6}
+.mdir-sub b{color:#f5b942}
+.blockers{margin-top:12px;border:1px solid rgba(245,185,66,.5);background:rgba(245,185,66,.09);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.75;color:#e8e4d8}
+.blockers .bk-k{font-weight:800;color:#f5b942;font-size:12px;letter-spacing:.05em;margin-bottom:2px}
+
+
+/* ── 2026-08-11 John 4차 피드백: ⑤탭 '이번 주 할 일' 체크리스트 + 토글 ── */
+.hook-cta{margin-top:14px;font-size:12.5px;color:#cfcabb}
+.hook-cta b{color:var(--lime)}
+.wk-do{background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+.wk-do .wk-k{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:12px}
+.wk-item{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px dashed var(--line)}
+.wk-item:first-of-type{border-top:none}
+.wk-st{flex:none;font-size:10.5px;font-weight:800;padding:4px 9px;border-radius:7px;white-space:nowrap;min-width:52px;text-align:center}
+.wk-st.done{background:var(--good-bg);color:var(--good)}
+.wk-st.wait{background:var(--warn-bg);color:var(--warn)}
+.wk-st.go{background:#e8eefb;color:#2f56b5}
+.wk-tx{flex:1;min-width:0;font-size:14px;line-height:1.55;word-break:keep-all}
+.wk-tx b{font-weight:800}
+.wk-meta{display:block;margin-top:3px;font-size:11.5px;color:var(--muted)}
+details.fold{margin-top:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+details.fold>summary{cursor:pointer;padding:12px 16px;font-size:14px;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::before{content:"▸";color:var(--lime-deep);font-weight:800}
+details.fold[open]>summary::before{content:"▾"}
+details.fold>summary .fc{font-size:11.5px;font-weight:700;color:var(--muted)}
+details.fold>.fold-in{padding:2px 16px 16px}
+
+/* ── US 원장 양식 이식 (2026-08-24 John 지시 — 상세 원장을 US식으로) ── */
+.bd-src{font-size:11.5px;color:var(--muted);background:#f4f2e9;border-radius:8px;padding:6px 10px;margin:2px 0 10px}
+.dnote{font-size:12.5px;color:#6b675e;background:#f4f3ec;border-left:4px solid var(--line);border-radius:8px;padding:9px 12px;margin:10px 0;line-height:1.65}
+.dstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:12px 0}
+.dstat .ds{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.dstat .ds-v{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.dstat .ds-l{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:3px;line-height:1.4}
+.dstat .ds.g .ds-v{color:var(--good)} .dstat .ds.b .ds-v{color:var(--bad)} .dstat .ds.w .ds-v{color:var(--warn)}
+.dflow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:12px 0}
+.dflow .df{flex:1;min-width:112px;background:#faf9f4;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.dflow .df-t{font-size:11px;font-weight:800;color:var(--lime-deep);letter-spacing:.03em}
+.dflow .df-v{font-size:15px;font-weight:800;margin:2px 0 1px}
+.dflow .df-d{font-size:11.5px;color:var(--muted);line-height:1.5}
+.tbl-scroll{overflow-x:auto;margin:8px 0}
+table.mini{width:100%;border-collapse:collapse;font-size:12.8px;line-height:1.55}
+table.mini th{background:#f4f2e9;text-align:left;font-size:11.5px;letter-spacing:.02em;color:#6b675e;padding:7px 9px;border-bottom:2px solid var(--line);white-space:nowrap}
+/* 2026-09-01 표 데스크톱 오른쪽 공백/모바일 잘림 수정(John 지적) — table-layout:auto가 데스크톱에선 폭을 안 늘리고 모바일에선 안 줄여 화면 밖으로 밀려남.
+   149행 근처 min-width:0 리셋이 159행 td.tw,th.tw{min-width:190px}에 순서상 덮여 무효화되던 버그도 여기서 후순위로 다시 정정 */
+table,table.mini{table-layout:fixed}
+@media(max-width:900px){
+  td.tw,th.tw{min-width:0}
+  .tbl-scroll table{min-width:0}
+  table.mini th{white-space:normal}
+  /* 열 5개 이상 표는 100% 압축 시 열이 짓눌려 못 읽게 되므로 자연 폭+가로 스크롤로 전환(:has 미지원 브라우저는 압축 폴백) */
+  .tbl-scroll table:has(th:nth-child(5)){table-layout:auto;width:auto;min-width:560px}
+}
+table.mini td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+table.mini td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.v-pill{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.v-pill.win{background:var(--good-bg);color:var(--good)} .v-pill.lose{background:var(--bad-bg);color:var(--bad)}
+.v-pill.pend{background:var(--warn-bg);color:var(--warn)} .v-pill.infra{background:#eceae1;color:#6b675e}
+/* 2026-09-02 — PONY 실행 표(4열)는 모바일에서 열이 40px까지 눌려 가로 스크롤로 전환 */
+@media(max-width:900px){.tbl-scroll table.pony-tbl{table-layout:auto;width:auto;min-width:620px}.tbl-scroll table.pony-tbl th,.tbl-scroll table.pony-tbl td{white-space:normal}}
+
+  :root{
+    --ink:#1b1a17; --muted:#6b675e; --line:#e7e3d8; --bg:#faf9f4; --card:#ffffff;
+    --lime:#b4c400; --lime-deep:#7e8c00;
+    --amz:#FF9900; --amz-bg:#fff6e8;
+    --meta:#1877F2; --meta-bg:#eef4ff;
+    --good:#1a8f3c; --good-bg:#e8f6ec; --warn:#c98300; --warn-bg:#fdf3e0; --bad:#d23b2e; --bad-bg:#fbeceb;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;overflow-anchor:none;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+  a{color:var(--lime-deep)}
+
+  header{background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;padding:40px 0 34px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:#0e0d0b;background:var(--lime);padding:5px 11px;border-radius:999px}
+  h1{font-size:30px;line-height:1.2;margin:16px 0 6px;font-weight:800;letter-spacing:-.01em}
+  .sub{color:#cfcabb;font-size:15px;margin:0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:13.5px;color:#e7e3d8}
+  .meta-row b{color:#fff}
+
+  /* TL;DR */
+  .tldr{margin-top:34px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+  .tldr .t-h{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:10px}
+  .tldr .t-row{display:flex;gap:11px;align-items:flex-start;padding:7px 0;font-size:15px;border-top:1px dashed var(--line)}
+  .tldr .t-row:first-of-type{border-top:none}
+  .tldr .t-row .ic{flex:none;font-size:17px;line-height:1.4}
+  .tldr .t-row b{font-weight:800}
+
+  .glossary{margin-top:18px;background:#f4f6ec;border:1px solid #dde39a;border-radius:14px;padding:16px 20px}
+  .glossary .g-h{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--lime-deep);margin-bottom:12px}
+  .g-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 26px}
+  @media(max-width:720px){.g-grid{grid-template-columns:1fr}}
+  .g-grid div{font-size:13px;color:#46433c;line-height:1.5}
+  .g-grid b{color:var(--ink);font-weight:800}
+  details.glossary > summary{list-style:none;cursor:pointer}
+  details.glossary > summary::-webkit-details-marker{display:none}
+  details.glossary > summary::after{content:'  ▾';color:var(--lime-deep);font-weight:800}
+  details.glossary[open] > summary::after{content:'  ▴'}
+
+  /* 흐름 탭 네비 */
+  .navhint{font-size:13px;color:#5c5a52;background:#f4f3ec;border-left:3px solid var(--lime);border-radius:0 10px 10px 0;padding:11px 14px;margin-top:24px}
+  .navhint b{color:var(--ink)}
+  .tabnav{position:sticky;top:0;z-index:50;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    background:rgba(250,249,244,.93);backdrop-filter:saturate(150%) blur(10px);-webkit-backdrop-filter:saturate(150%) blur(10px);
+    padding:12px 2px;margin:10px 0 4px;border-bottom:1px solid var(--line)}
+  .tabnav::-webkit-scrollbar{height:0}
+  .tab{flex:none;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:inherit;
+    font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:999px;white-space:nowrap;
+    transition:background .2s,color .2s,border-color .2s,box-shadow .2s,transform .15s cubic-bezier(.34,1.56,.64,1)}
+  .tab:hover{border-color:var(--lime);color:var(--ink);transform:translateY(-1px) scale(1.05);box-shadow:0 4px 14px rgba(126,140,0,.22)}
+  .tab:active{transform:scale(.97)}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:var(--shadow)}
+  .tab.active:hover{transform:translateY(-1px) scale(1.05);box-shadow:0 6px 18px rgba(0,0,0,.24)}
+  .tabpanel{display:none}
+  .tabpanel.active{display:block;animation:fadeUp .4s cubic-bezier(.22,.61,.36,1)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .tabpanel > section:first-of-type{margin-top:30px}
+  .tabfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:42px;padding-top:18px;border-top:2px solid var(--ink)}
+  .tabfoot .step{font-size:12.5px;color:var(--muted);font-weight:800;letter-spacing:.03em}
+  .tabfoot button{cursor:pointer;font-family:inherit;font-weight:800;font-size:14px;border-radius:12px;padding:12px 20px;border:none;
+    transition:transform .16s cubic-bezier(.34,1.56,.64,1),box-shadow .2s,background .2s,color .2s,filter .2s}
+  .tabfoot button:active{transform:translateY(1px) scale(.97);box-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .tabfoot .nextbtn{background:var(--lime);color:#0e0d0b;box-shadow:0 3px 10px rgba(126,140,0,.30);margin-left:auto}
+  .tabfoot .nextbtn:hover{background:var(--lime-deep);color:#fff;transform:translateY(-2px) scale(1.04);box-shadow:0 10px 24px rgba(126,140,0,.48)}
+  .tabfoot .prevbtn{background:var(--card);color:var(--muted);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+  .tabfoot .prevbtn:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px);box-shadow:0 7px 18px rgba(0,0,0,.14)}
+  @media(max-width:720px){.tab{font-size:12.5px;padding:8px 13px}.tabfoot button{font-size:13px;padding:10px 13px}.tabfoot .step{display:none}}
+
+  section{margin-top:46px;scroll-margin-top:84px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  .sec-num{font-size:13px;font-weight:800;color:#fff;background:var(--ink);min-width:26px;height:26px;border-radius:7px;
+    display:inline-flex;align-items:center;justify-content:center}
+  .sec-head h2{font-size:22px;margin:0;font-weight:800;letter-spacing:-.01em}
+  .sec-head .note{margin-left:auto;font-size:13px;color:var(--muted)}
+
+  .lead{font-size:16px;color:#46433c;margin:0 0 18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .chan{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:5px 12px;border-radius:999px;margin-bottom:6px}
+  .chan.amz{background:var(--amz-bg);color:#9a5b00}
+  .chan.meta{background:var(--meta-bg);color:#0f5bd0}
+  .assume{font-size:13px;color:var(--muted);margin:4px 0 16px}
+  .assume b{color:#46433c}
+
+  .be-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+  .be-row:first-of-type{border-top:none}
+  .be-label{font-size:14px;color:#46433c}
+  .be-label .tiny{display:block;font-size:12px;color:var(--muted);font-weight:400}
+  .be-val{font-weight:800;font-size:17px;white-space:nowrap}
+  .pill{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;margin-left:6px;vertical-align:1px}
+  .pill.line{background:#eceadf;color:#6b675e}
+  .oneline{margin-top:14px;font-size:14px;background:#f4f3ec;border-left:3px solid var(--lime);padding:10px 13px;border-radius:0 8px 8px 0}
+  .oneline b{color:var(--lime-deep)}
+  .callout{margin-top:16px;background:var(--warn-bg);border:1px solid #f0dcb0;border-radius:12px;padding:13px 15px;font-size:13.5px;color:#7a5800}
+  .callout b{color:#5e4400}
+
+  .money{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:14px}
+  @media(max-width:720px){.money{grid-template-columns:1fr}}
+  .money .m{padding:22px 24px;text-align:center}
+  .money .m.spent{background:#fbeceb}
+  .money .m.made{background:#e8f6ec}
+  .money .m .lbl{font-size:13px;font-weight:700;color:var(--muted)}
+  .money .m .big{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px}
+  .money .m .sm{font-size:12.5px;color:var(--muted)}
+  .money .eq{display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--muted);padding:0 6px;background:#faf9f4}
+  @media(max-width:720px){.money .eq{padding:8px}}
+  .clarify{font-size:13px;color:var(--muted);background:#f4f3ec;border-radius:10px;padding:10px 13px;margin-bottom:16px}
+  .clarify b{color:#46433c}
+
+  .merband{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#1b1a17;color:#fff;border-radius:16px;padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow)}
+  .merband .mer-big{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .merband .mer-big.bad{color:#ff7a6e}
+  .merband .mer-meta{font-size:13.5px;color:#cfcabb}
+  .merband .mer-meta b{color:#fff}
+  .merband .arrow{font-size:15px;color:var(--lime);font-weight:700}
+
+  /* ① 북극성 — 주간 유료 순매출 (맨 위 단일 숫자) */
+  .northstar{margin-top:34px;background:linear-gradient(135deg,#1b1a17,#322f27);color:#fff;border-radius:18px;padding:24px 28px;box-shadow:var(--shadow);display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  .northstar .ns-left{flex:1;min-width:240px}
+  .northstar .ns-kicker{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+  .northstar .ns-num{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:4px 0 2px}
+  .northstar .ns-num small{font-size:20px;font-weight:700;color:#cfcabb}
+  .northstar .ns-sub{font-size:13px;color:#cfcabb;line-height:1.5}
+  .northstar .ns-sub b{color:#fff}
+  .northstar .ns-side{font-size:13px;color:#cfcabb;border-left:1px solid #4a463c;padding-left:24px;min-width:170px}
+  @media(max-width:720px){.northstar{gap:14px}.northstar .ns-side{border-left:none;border-top:1px solid #4a463c;padding-left:0;padding-top:14px}.northstar .ns-num{font-size:42px}}
+
+  /* ⑤ 측정 배지 — 🟢측정 / 🟡추정 / 🔴깜깜 */
+  .mbadge{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;vertical-align:1px}
+  .mbadge.meas{background:var(--good-bg);color:var(--good)}
+  .mbadge.est{background:var(--warn-bg);color:var(--warn)}
+  .mbadge.dark{background:var(--bad-bg);color:var(--bad)}
+  .kpi .k-top .mbadge{margin-left:auto}
+
+  /* ④ 블로커 → CEO 결정큐 */
+  .decq{margin-top:6px;background:#fffdf2;border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+  .decq .dq-h{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .decq .dq-sub{font-size:12.5px;color:var(--lime-deep);font-weight:700;margin-bottom:14px;line-height:1.5}
+  .decq .dq-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px dashed var(--line)}
+  .decq .dq-row:first-of-type{border-top:none}
+  .decq .dq-dl{flex:none;font-size:11px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap;min-width:54px;text-align:center}
+  .decq .dq-dl.urgent{background:var(--bad-bg);color:var(--bad)}
+  .decq .dq-dl.soon{background:var(--warn-bg);color:var(--warn)}
+  .decq .dq-dl.wait{background:#eceadf;color:#46433c}
+  .decq .dq-body{font-size:13.5px;color:#3b3a35;line-height:1.6}
+  .decq .dq-body b{color:var(--ink);font-weight:800}
+  .decq .dq-body .need{font-size:12px;color:var(--lime-deep);font-weight:700}
+  .decq .dq-note{margin-top:12px;font-size:12px;color:var(--muted)}
+
+  .intent{margin-top:18px;background:linear-gradient(135deg,#fffdf2,#f7f9e6);border:2px solid var(--lime);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+  .intent .in-h{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .intent .in-sub{font-size:12.5px;color:var(--lime-deep);font-weight:700;margin-bottom:12px;line-height:1.5}
+  .intent ol{margin:0;padding-left:20px}
+  .intent li{font-size:13.5px;color:#3b3a35;margin:8px 0;line-height:1.65}
+  .intent li b{color:var(--ink);font-weight:800}
+  .intent .in-note{margin-top:12px;font-size:12.5px;color:#7a5800;background:var(--warn-bg);border:1px solid #f0dcb0;border-radius:10px;padding:10px 13px;line-height:1.55}
+  .intent .in-note b{color:#5e4400}
+
+  .mrange{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 14px;box-shadow:var(--shadow);margin-top:14px}
+  .mrange .mr-h{font-size:14px;font-weight:800;margin-bottom:3px}
+  .mrange .mr-sub{font-size:12.5px;color:var(--muted);margin-bottom:26px;line-height:1.5}
+  .mrange .mr-track{position:relative;height:30px;background:#eef0f6;border-radius:8px}
+  .mrange .mr-band{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,#fbd5d0,#f4aba1);border:1px solid #e89a91;border-radius:6px}
+  .mrange .mr-band b{position:absolute;top:-20px;font-size:11px;font-weight:800;color:var(--bad);white-space:nowrap}
+  .mrange .mr-band b.lo{left:0}.mrange .mr-band b.hi{right:0}
+  .mrange .mr-bep{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--good)}
+  .mrange .mr-bep b{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;color:var(--good);white-space:nowrap}
+  .mrange .mr-axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:7px}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:720px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);position:relative}
+  .kpi .k-top{display:flex;align-items:center;justify-content:space-between;gap:6px}
+  .kpi .k-label{font-size:12.5px;color:var(--muted);font-weight:600}
+  .kpi .k-val{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+  .kpi .k-judge{font-size:12.5px;font-weight:700}
+  .kpi .k-trend{font-size:11px;color:var(--muted);margin-top:4px}
+  .kpi.dot-g{border-top:3px solid var(--good)} .kpi.dot-w{border-top:3px solid var(--warn)} .kpi.dot-b{border-top:3px solid var(--bad)}
+  .led{width:11px;height:11px;border-radius:50%;flex:none}
+  .led.g{background:var(--good)} .led.w{background:var(--warn)} .led.b{background:var(--bad)}
+  .chan-band{font-weight:800;font-size:14px;margin:22px 0 12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .chan-band .tag{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .chan-band .tag.amz{background:var(--amz-bg);color:#9a5b00}.chan-band .tag.meta{background:var(--meta-bg);color:#0f5bd0}
+
+  .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px;box-shadow:var(--shadow)}
+  .tbl-scroll{overflow-x:auto}
+  .tbl th,.tbl td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  .tbl th{background:#f4f3ec;font-size:12.5px;color:#46433c;font-weight:700}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .tbl th.num{text-align:right}
+  /* 중앙정렬+세로 구분선 표(2026-08-04 John) — 숫자·텍스트 정렬이 좌우로 갈려 읽기 힘든 표에 사용 */
+  .tbl.ctr th,.tbl.ctr td,.tbl.ctr td.num,.tbl.ctr th.num{text-align:center}
+  .tbl.ctr th:not(:last-child),.tbl.ctr td:not(:last-child){border-right:1px solid var(--line)}
+  .row-win{background:#fcfdf2}
+  .row-bad{background:#fdf6f5}
+  .verdict{font-weight:800;font-size:13px}
+  .v-g{color:var(--good)}.v-w{color:var(--warn)}.v-b{color:var(--bad)}.v-n{color:var(--muted)}
+
+  .flag{margin-top:16px;background:var(--bad-bg);border:1px solid #f3c9c4;border-radius:12px;padding:13px 15px;font-size:13.5px;color:#8f261c}
+  .flag b{color:#6e1c14}
+  .flag.meta-flag{background:var(--meta-bg);border-color:#cfe0fb;color:#0f4ea8}.flag.meta-flag b{color:#0a3d86}
+  .flag.lime-flag{background:#f7f9e6;border-color:#dde39a;color:#5c6300}.flag.lime-flag b{color:#444a00}
+  .flag.good-flag{background:var(--good-bg);border-color:#bfe6c9;color:#13602a}.flag.good-flag b{color:#0c441d}
+
+  .creatives{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:4px}
+  @media(max-width:720px){.creatives{grid-template-columns:1fr}}
+  .cr{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .cr.full{grid-column:1/-1}
+  .cr-media{background:#111}
+  .cr-media img{width:100%;display:block;max-height:440px;object-fit:cover;background:#000}
+  .cr-media.duo{display:flex;gap:2px}
+  .cr-media.duo img{width:50%;display:block;object-fit:cover}
+  .cr-media.trio{display:flex;gap:2px}
+  .cr-media.trio img{width:33.333%;display:block;object-fit:cover}
+  .cr-body{padding:16px 18px}
+  .cr-tag{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+  .cr-tag.win{background:var(--good-bg);color:var(--good)}
+  .cr-tag.bad{background:var(--bad-bg);color:var(--bad)}
+  .cr-tag.mid{background:#f0eee6;color:#6b675e}
+  .cr-body h3{margin:2px 0 8px;font-size:17px;font-weight:800}
+  .cr-body p{margin:0;font-size:14px;color:#46433c}
+  .cr-why{margin-top:12px;font-size:13.5px;background:#f6f5ee;border-radius:10px;padding:11px 13px}
+  .cr-why b{color:var(--ink)}
+  .reject-cap{font-size:12px;color:var(--bad);font-weight:700;text-align:center;padding:8px 6px 0;background:#fff}
+  .proof{margin:18px 0;background:#1b1a17;color:#fff;border-radius:14px;padding:16px 18px;font-size:14px}
+  .proof b{color:var(--lime)}
+
+  .ins{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.ins{grid-template-columns:1fr}}
+  .ins-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:13px}
+  .ins-item .n{flex:none;width:30px;height:30px;border-radius:9px;background:var(--lime);color:#0e0d0b;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .ins-item p{margin:0;font-size:14px}.ins-item b{font-weight:800}
+
+  /* Action log */
+  .actcat{margin-top:24px}
+  .actcat-h{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:800;margin:0 0 10px}
+  .actcat-h .badge{font-size:11px;font-weight:800;color:#fff;background:#46433c;padding:3px 9px;border-radius:999px}
+  .actlog{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13.5px;box-shadow:var(--shadow)}
+  .actlog th,.actlog td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  .actlog th{background:#f4f3ec;font-size:12px;color:#46433c;font-weight:700;white-space:nowrap}
+  .actlog tr:last-child td{border-bottom:none}
+  .actlog .when{white-space:nowrap;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .actlog .what{font-weight:700;min-width:200px}
+  .actlog .why,.actlog .result{color:#46433c;min-width:220px}
+  .actlog .v{white-space:nowrap;font-weight:800;font-size:12.5px;text-align:center}
+  .v-pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:800}
+  .v-pill.win{background:var(--good-bg);color:var(--good)}
+  .v-pill.lose{background:var(--bad-bg);color:var(--bad)}
+  .v-pill.pend{background:var(--warn-bg);color:var(--warn)}
+  .v-pill.infra{background:#eceef5;color:#3a4a73}
+  .scorecard{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:6px 0 26px}
+  @media(max-width:720px){.scorecard{grid-template-columns:1fr}}
+  .score{border-radius:16px;padding:18px 20px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .score.win{background:var(--good-bg);border-color:#bfe6c9}
+  .score.lose{background:var(--bad-bg);border-color:#f3c9c4}
+  .score h3{margin:0 0 10px;font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+  .score.win h3{color:#0c441d}.score.lose h3{color:#6e1c14}
+  .score ul{margin:0;padding-left:18px;font-size:13.5px;color:#3b3a35}
+  .score li{margin:6px 0}
+  .score li b{font-weight:800}
+
+  .act td .p{font-weight:800;font-size:12px;padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .p-top{background:#1b1a17;color:#fff}.p-hi{background:var(--lime);color:#0e0d0b}.p-mid{background:#eceadf;color:#46433c}
+  .act td .exp{color:var(--muted);font-size:13px;white-space:normal}
+  .act td.first{font-weight:700;white-space:normal;min-width:210px}
+  .act td.exp{white-space:normal;color:#46433c;font-size:13.5px;min-width:300px}
+  .act td:first-child{white-space:normal;vertical-align:top}
+  .act td{vertical-align:top}
+  .act td.catcell{text-align:center;vertical-align:middle;font-weight:800;font-size:12.5px;line-height:1.55;word-break:keep-all;min-width:72px;color:var(--ink);background:#faf9f4}
+  .act td.catcell .ci{display:block;font-size:17px;margin-bottom:3px;line-height:1}
+  .act tr.new td.first .nb{font-size:10px;font-weight:800;color:#fff;background:var(--meta);padding:1px 6px;border-radius:5px;margin-left:7px;vertical-align:2px}
+
+  footer{margin-top:54px;border-top:1px solid var(--line);padding-top:18px;font-size:12.5px;color:var(--muted)}
+  .fx{font-size:12px;color:var(--muted)}
+
+/* 상단 3블록 — 추이·한눈에·히어로 (4주차 양식 이식) */
+.trendwrap{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px 14px;box-shadow:var(--shadow)}
+.trendwrap .tw-h{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin-bottom:6px}
+.tw-sub{font-size:12.5px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.glance{margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;box-shadow:var(--shadow)}
+.glance-h{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin-bottom:14px}
+.glance-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.glance-cell{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.glance-cell .gc-tag{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.glance-cell p{margin:0;font-size:14px;color:#3b3a35;line-height:1.6}
+.glance-cell b{font-weight:800;color:var(--ink)}
+.herostrip{margin-top:16px}
+.herostrip .hs-h{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin-bottom:12px}
+.hs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.herocard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.herocard img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:center;border-bottom:1px solid var(--line)}
+.herocard .hc-body{padding:13px 16px 15px}
+.herocard .hc-plat{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:7px}
+.herocard .hc-plat.amz{background:#fff0dd;color:#9a5b00}
+.herocard .hc-plat.meta{background:#e3edff;color:#0f5bd0}
+.herocard .hc-name{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.herocard .hc-roas{font-size:20px;font-weight:800;color:var(--good);letter-spacing:-.01em}
+.herocard .hc-metric{font-size:13px;color:#3b3a35;line-height:1.55}
+.herocard .hc-metric b{font-weight:800}
+@media(max-width:940px){.hs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.hs-grid{grid-template-columns:1fr}.glance-grid{grid-template-columns:1fr}}
+.trendwrap { margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 22px 14px; box-shadow: var(--shadow); }
+.trendwrap .tw-h { font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: var(--lime-deep); margin-bottom: 6px; }
+.tw-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+.herostrip { margin-top: 16px; }
+.herostrip .hs-h { font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: var(--lime-deep); margin-bottom: 12px; }
+.hs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.herocard { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.herocard img { width: 100%; display: block; aspect-ratio: 16 / 10; object-fit: cover; object-position: center center; border-bottom: 1px solid var(--line); }
+.herocard .hc-body { padding: 13px 16px 15px; }
+.herocard .hc-plat { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 999px; margin-bottom: 7px; }
+.herocard .hc-plat.amz { background: rgb(255, 240, 221); color: rgb(154, 91, 0); }
+.herocard .hc-plat.meta { background: rgb(227, 237, 255); color: rgb(15, 91, 208); }
+.herocard .hc-name { font-size: 14.5px; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+.herocard .hc-roas { font-size: 20px; font-weight: 800; color: var(--good); letter-spacing: -0.01em; }
+.herocard .hc-metric { font-size: 13px; color: rgb(59, 58, 53); line-height: 1.55; }
+.herocard .hc-metric b { font-weight: 800; }
+@media (max-width: 940px){.hs-grid { grid-template-columns: 1fr 1fr; }}
+@media (max-width: 720px){.hs-grid { grid-template-columns: 1fr; }}
+.sowhat { margin-top: 14px; background: rgb(243, 247, 230); border-left: 4px solid var(--lime-deep); border-radius: 0px 10px 10px 0px; padding: 11px 15px; font-size: 13.5px; color: rgb(47, 46, 41); line-height: 1.65; }
+.sowhat b { color: rgb(74, 107, 29); }
+.gameboard { background: linear-gradient(135deg, rgb(27, 26, 23), rgb(50, 47, 39)); color: rgb(255, 255, 255); border-radius: 16px; padding: 20px 24px; margin-bottom: 18px; box-shadow: var(--shadow); }
+.gb-h { font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
+.gb-sub { font-size: 13px; color: rgb(207, 202, 187); margin-bottom: 14px; line-height: 1.6; }
+.gb-funnel { display: flex; flex-direction: column; gap: 5px; }
+.gb-row { display: flex; align-items: center; gap: 12px; font-size: 13.5px; }
+.gb-bar { height: 22px; background: rgb(127, 176, 105); border-radius: 4px; min-width: 3px; flex: 0 0 auto; }
+.gb-bar.dim { background: rgb(90, 86, 72); }
+.gb-num { font-weight: 800; white-space: nowrap; min-width: 150px; }
+.gb-lbl { color: rgb(207, 202, 187); }
+.gb-kpi { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgb(74, 70, 60); font-size: 15px; }
+.gb-kpi b { color: var(--lime); font-size: 19px; }
+.boards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+.board { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; box-shadow: var(--shadow); }
+.board .b-tag { display: inline-block; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: rgb(238, 243, 221); color: rgb(74, 107, 29); margin-bottom: 8px; }
+.board .b-q { font-size: 14.5px; font-weight: 800; color: var(--ink); margin-bottom: 7px; }
+.board p { margin: 0px 0px 6px; font-size: 13.5px; color: rgb(59, 58, 53); line-height: 1.6; }
+.board .b-ref { font-size: 12px; color: var(--muted); }
+.pill-board { display: inline-block; font-size: 10.5px; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: rgb(238, 243, 221); color: rgb(74, 107, 29); vertical-align: 2px; margin-right: 6px; }
+@media (max-width: 760px){.boards { grid-template-columns: 1fr; }}
+.gamerule { margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--lime-deep); border-radius: 14px; padding: 16px 20px 14px; box-shadow: var(--shadow); }
+.gr-h { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: var(--lime-deep); margin-bottom: 12px; }
+.gr-flow { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
+.gr-step { flex: 1 1 0%; min-width: 180px; background: rgb(250, 249, 244); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+.gr-step.win { background: rgb(238, 243, 221); border-color: var(--lime-deep); }
+.gr-n { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: rgb(255, 255, 255); font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+.gr-step.win .gr-n { background: var(--lime-deep); }
+.gr-t { font-size: 13px; line-height: 1.5; color: rgb(59, 58, 53); }
+.gr-t b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
+.gr-arrow { align-self: center; font-size: 20px; font-weight: 800; color: var(--lime-deep); }
+.gr-kpi { margin-top: 12px; padding-top: 11px; border-top: 1px dashed var(--line); font-size: 14.5px; color: var(--ink); }
+.gr-kpi b { font-size: 17px; color: var(--lime-deep); }
+@media (max-width: 760px){.gr-flow { flex-direction: column; }.gr-arrow { transform: rotate(90deg); align-self: center; }}
+.acc { margin-top: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); overflow: hidden; }
+.acc summary { cursor: pointer; padding: 13px 16px; font-size: 14.5px; font-weight: 800; color: var(--ink); list-style: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: "▾ 펼치기"; margin-left: auto; font-size: 11.5px; font-weight: 700; color: var(--muted); }
+.acc[open] summary::after { content: "▴ 접기"; }
+.acc summary:hover { background: rgb(250, 249, 244); }
+.acc .bd-sub { margin: 0px; padding: 2px 16px 16px; border: 0px; box-shadow: none; background: transparent; }
+.acc-group { margin: 20px 0px 2px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: var(--lime-deep); }
+
+/* 6주차 신설 — 모바일 게임보드 깔때기 라벨 겹침 방지 (2026-07-27) */
+@media(max-width:600px){.gb-row{flex-wrap:wrap;row-gap:2px}.gb-bar{display:none}.gb-num{min-width:0}.gb-lbl{flex-basis:100%}}
+
+/* 6주차 신설 — ★블록 표(.mini) 열 균등 wrap, 겹침 방지 (2026-07-27) */
+/* 2026-09-01 수정 — 760px 고정폭이라 넓은 화면에서 표 오른쪽에 빈 공백이 생기고, 좁은 화면(모바일)에서는 화면 밖으로 밀려나 일부 열이 안 보이던 문제(John 지적). 100%로 바꿔 컨테이너 폭에 맞춰 늘고(데스크톱) 줄어들게(모바일) 함 */
+table.mini{table-layout:fixed;width:100%;border-collapse:collapse;font-size:12.5px}
+/* 2026-09-01 모바일 보완 — 열 5개 이상 표는 100% 압축 시 열이 38~60px로 짓눌려 못 읽게 되므로, 자연 폭+가로 스크롤(.tbl-scroll)로 전환. :has 미지원 구형 브라우저는 압축 폴백 */
+@media(max-width:720px){
+  table.mini:has(th:nth-child(5)){table-layout:auto;width:auto;min-width:640px}
+}
+table.mini th{background:#f4f3ec;font-weight:700;padding:8px 9px;text-align:left;font-size:11.5px;border-bottom:1px solid var(--line)}
+table.mini td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top;word-break:break-word;line-height:1.55}
+
+/* 6주차 신설 — 비교표 방향(▲/▼) 화살표 색상 (2026-07-27) */
+.arrow-up{color:var(--good);font-weight:800}
+.arrow-down{color:var(--bad);font-weight:800}
+
+/* 6주차 신설 — 🔍 왜 올랐나 원인분해 블록 (2026-07-27 John 요청) */
+.whywrap{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;box-shadow:var(--shadow)}
+.why-h{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.why-h2{font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--lime-deep);margin:20px 0 10px}
+.why-sub{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.55}
+.why-eq{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+.why-eq-cell{text-align:center;min-width:100px}
+.why-eq-cell.hi{background:#eef3dd;border-radius:10px;padding:6px 10px}
+.why-eq-num{font-size:22px;font-weight:800;color:var(--ink)}
+.why-eq-cell.hi .why-eq-num{color:var(--lime-deep)}
+.why-eq-lbl{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.4}
+.why-eq-lbl span{font-size:11px;color:#8a836f}
+.why-eq-op{font-size:20px;font-weight:800;color:var(--muted)}
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.why-card{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.why-tag{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;background:#eef3dd;color:#4a6b1d;margin-bottom:8px}
+.why-card p{font-size:13.5px;color:#3b3a35;line-height:1.6;margin:0 0 8px}
+.why-src{font-size:11.5px;color:var(--muted)}
+.why-proof{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:14px}
+.why-proof p{font-size:13.5px;color:#3b3a35;line-height:1.6;margin:0 0 8px}
+table.whytbl{width:100%;border-collapse:collapse;font-size:13px}
+table.whytbl th{background:#f4f3ec;font-weight:700;padding:9px 11px;text-align:left;font-size:11.5px;border-bottom:1px solid var(--line)}
+table.whytbl td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55}
+table.whytbl .wt-num{white-space:nowrap;font-weight:800;text-align:center}
+table.whytbl .wt-sub{font-size:11px;color:var(--muted);font-weight:400}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr}.why-eq{gap:8px}.why-eq-cell{min-width:80px}.why-eq-num{font-size:18px}}
+
+/* ★섹션 가독성 컴포넌트 (2026-08-04 John 지시 — 문단 벽 → 도식·카드·표) */
+.dstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin:12px 0}
+.dstat .ds{background:#faf9f4;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.dstat .ds-v{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.dstat .ds-l{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:3px;line-height:1.4}
+.dstat .ds.g .ds-v{color:#1a8f3c} .dstat .ds.b .ds-v{color:#d23b2e} .dstat .ds.w .ds-v{color:#c98300}
+.dflow{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin:12px 0}
+.dflow .df{flex:1;min-width:112px;background:#faf9f4;border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+.dflow .df-t{font-size:11px;font-weight:800;color:var(--lime-deep);letter-spacing:.03em}
+.dflow .df-v{font-size:15px;font-weight:800;margin:2px 0 1px}
+.dflow .df-s{font-size:11px;color:var(--muted);line-height:1.45}
+.dflow .df.bad{background:#fdf1ef;border-color:#f0c9c2}
+.dflow .df.good{background:#f2f8ec;border-color:#cfe3bb}
+.dflow .dfa{align-self:center;color:#b9b3a3;font-weight:800;font-size:13px}
+.dnote{font-size:12.5px;color:var(--muted);line-height:1.6;margin:8px 0 0;padding-left:11px;border-left:2px solid var(--line)}
+@media(max-width:720px){.dflow{flex-direction:column}.dflow .dfa{display:none}}
+/* 2026-09-02 — PONY 실행 표(4열)는 모바일에서 열이 눌려 가로 스크롤로 전환 */
+@media(max-width:720px){table.mini.pony-tbl{table-layout:auto;width:auto;min-width:620px}table.mini.pony-tbl th,table.mini.pony-tbl td{white-space:normal}}
+
+/* ── v3 구조 (2026-08-17) ── */
+.l1sec{margin-top:40px}
+.l1-head{display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:14px}
+.l1-head h2{font-size:20px;font-weight:800;margin:0;letter-spacing:-.01em}
+.l1-n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.l1-lead{font-size:14px;line-height:1.7;color:#3b3a35;margin:0 0 14px}
+.goalbar{background:#fffdf2;border:2px solid var(--lime);border-radius:14px;padding:16px 20px}
+.goalbar .gb-k{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--lime-deep)}
+.goalbar .gb-goal{font-size:21px;font-weight:800;margin-top:6px;letter-spacing:-.01em}
+.goalbar .gb-sub2{font-size:12.5px;color:var(--muted);margin-top:6px}
+.v22{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.v22-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 19px;box-shadow:var(--shadow)}
+.v22-card.ok{border-top:4px solid #7fb069}
+.v22-card.bad{border-top:4px solid #c95d4a}
+.v22-h{font-size:13.5px;font-weight:800}
+.v22-badge{font-size:11.5px;font-weight:800;border-radius:999px;padding:2px 9px;margin-left:6px}
+.v22-badge.ok{background:#e8f6ec;color:#1a8f3c}
+.v22-badge.bad{background:#fbeceb;color:#d23b2e}
+.v22-num{font-size:38px;font-weight:800;letter-spacing:-.02em;margin:6px 0 4px}
+.v22-num small{font-size:16px;font-weight:700;color:var(--muted)}
+.v22-d{font-size:13px;line-height:1.65;color:#3b3a35}
+.v22-sum{margin-top:12px;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--lime);border-radius:12px;padding:13px 17px;font-size:14px;line-height:1.7}
+.lever{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:12px;box-shadow:var(--shadow)}
+.lv-h{font-size:14px;font-weight:800;margin-bottom:8px}
+.lv-h.vol{color:#2c5f8a}.lv-h.mer{color:#1a8f3c}.lv-h.infra{color:#8a836f}
+.lv-list{margin:0;padding-left:4px;list-style:none}
+.lv-list li{font-size:13.5px;line-height:1.65;padding:5px 0;border-top:1px dashed var(--line)}
+.lv-list li:first-child{border-top:none}
+.ins-tier{font-size:13px;font-weight:800;margin:16px 0 8px;color:var(--ink)}
+.tier-tag{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:2px 10px;margin-right:6px}
+.tier-tag.s{background:#e9edda;color:#5a6b1f}
+.tier-tag.d{background:#1b1a17;color:#c9e265}
+.ins-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.ins-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 17px;box-shadow:var(--shadow)}
+.ins-card.deep{border-left:5px solid #1b1a17}
+.ins-card .ic-h{font-size:14px;font-weight:800;margin-bottom:5px}
+.ins-card p{font-size:13.5px;line-height:1.7;margin:0;color:#3b3a35}
+.ic-src{font-size:11.5px;color:var(--muted)}
+.ic-conf{margin-top:7px!important;font-size:12.5px!important;color:#6b675e!important;background:#f4f3ec;border-radius:8px;padding:6px 10px}
+.statmap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.sm-col{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow)}
+.sm-col.ok{border-top:4px solid #7fb069}
+.sm-col.wait{border-top:4px solid #c98300}
+.sm-col.closed{border-top:4px solid #8a836f}
+.sm-h{font-size:13.5px;font-weight:800;margin-bottom:8px}
+.sm-col ul{margin:0;padding-left:16px}
+.sm-col li{font-size:12.8px;line-height:1.6;margin-bottom:6px}
+.dq-card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:14px;padding:15px 19px;margin-top:12px;box-shadow:var(--shadow)}
+.dqc-h{font-size:15px;font-weight:800}
+.dqc-due{font-size:11.5px;font-weight:800;background:#fdf3e0;color:#c98300;border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:2px}
+.dqc-data{font-size:13.5px;line-height:1.7;margin:8px 0;color:#3b3a35}
+.dqc-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dqc-opt{background:#faf9f4;border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:12.8px;line-height:1.6}
+.dqc-opt b{display:block;margin-bottom:4px}
+.dqc-opt span{color:#6b675e}
+.dqc-lean{margin:9px 0 0;font-size:13px;line-height:1.65;color:#3b3a35;background:#f4f6ec;border-radius:8px;padding:8px 12px}
+.dq-strat{margin-top:16px;background:linear-gradient(135deg,#1b1a17,#322f27);color:#e8e4d8;border-radius:14px;padding:16px 20px}
+.dq-strat .dqs-h{font-size:13px;font-weight:800;color:#c9e265;margin-bottom:7px}
+.dq-strat p{font-size:13.5px;line-height:1.75;margin:0}
+.dq-strat b{color:#fff}
+.l2-divider{margin:44px 0 10px;display:flex;align-items:center;gap:12px}
+.l2-divider .l2-line{flex:1;height:2px;background:var(--line)}
+.l2-divider .l2-t{font-size:14px;font-weight:800;color:var(--muted);letter-spacing:.04em}
+.easy{background:#eef4fb;border-left:4px solid #4a7ab5;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.75;margin:10px 0;color:#243a52}
+.ezbar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:8px 0 4px;border:1px solid var(--line)}
+.ezb.a{background:#7fb069}
+.ezb.b{background:#e8e4d8}
+.ezbar-l{font-size:12px;color:var(--muted);margin-bottom:6px}
+.ezbar-multi{margin:8px 0 4px;display:flex;flex-direction:column;gap:6px}
+.ezm-row{display:flex;align-items:center;gap:8px}
+.ezm-l{flex:none;width:120px;font-size:12px;color:var(--muted);text-align:right}
+.ezm-track{flex:1;background:#f1eee6;border-radius:6px;height:20px}
+.ezm-fill{height:100%;background:#7fb069;border-radius:6px;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;min-width:44px}
+.ezm-fill.warn{background:#c95d4a}
+.plat-panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 19px;margin-top:14px;box-shadow:var(--shadow)}
+.pp-head{margin-bottom:10px}
+.pp-name{font-size:16px;font-weight:800}
+.pp-verdict{font-size:13px;line-height:1.65;margin-top:6px;border-radius:10px;padding:9px 13px}
+.pp-verdict.keep{background:#e8f6ec;color:#14532d}
+.pp-verdict.wait{background:#fdf3e0;color:#7a5200}
+.pp-chan{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.pc-item{font-size:12.5px;font-weight:700;border-radius:999px;padding:5px 12px;border:1px solid var(--line)}
+.pc-item.ok{background:#e8f6ec;color:#1a8f3c}
+.pc-item.bad{background:#fbeceb;color:#b0402e}
+@media(max-width:860px){.v22{grid-template-columns:1fr}.statmap{grid-template-columns:1fr}.dqc-opts{grid-template-columns:1fr}}
+
+.chk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.chk-list li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.chk-due{font-size:11px;font-weight:800;background:#fdf3e0;color:#c98300;border-radius:999px;padding:2px 9px}.chk-who{font-size:11.5px;color:var(--muted);margin-left:auto}
+.dsub{display:block;font-size:11.5px;color:#6b675e;font-weight:400;margin-top:3px;line-height:1.5}.cre{width:100%;max-width:150px;border-radius:8px;border:1px solid var(--line);display:block;margin:0 auto}.cre-ph{font-size:11.5px;color:#8a836f;background:#f4f3ec;border-radius:8px;padding:14px 8px;line-height:1.5}.cre-cap{font-size:10.5px;color:#8a836f;margin-top:4px;line-height:1.4}
+.locks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}
+@media(max-width:900px){.locks{grid-template-columns:minmax(0,1fr)}}
+.lock{border:2px solid var(--ink);border-radius:16px;padding:18px 20px;background:var(--card);box-shadow:var(--shadow);min-width:0;overflow-wrap:anywhere}
+.lock code{white-space:normal;overflow-wrap:anywhere}
+.lock .lh{font-size:16px;font-weight:800;margin-bottom:6px}
+.lock p{margin:6px 0;font-size:13.5px;line-height:1.65;color:#3b3a35}
+.acc .bd{margin:0;padding:2px 16px 16px;font-size:13.5px;color:#3b3a35;line-height:1.65}
+.bd-src{font-size:11.5px;color:var(--muted);background:#f4f2e9;border-radius:8px;padding:6px 10px;margin:2px 0 10px}
+.dec-wrap{display:flex;flex-direction:column;gap:7px;margin:12px 0}
+.acc.dec>summary{display:flex;gap:10px;align-items:baseline;padding:11px 14px;font-size:13.5px;font-weight:700;line-height:1.5}
+.acc.dec .dec-ic{font-size:16px;flex:0 0 auto}.acc.dec .dec-t{flex:1 1 auto;min-width:0}
+.acc.dec .dec-v{flex:0 0 auto;font-size:11px;font-weight:800;background:#f0eee4;color:#5a5648;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.acc.corr>summary{display:flex;gap:9px;align-items:baseline;padding:10px 14px;font-size:13.5px;font-weight:700;line-height:1.5}
+.acc.corr .corr-n{flex:0 0 auto;font-size:15px}.acc.corr .corr-t{flex:1 1 auto;min-width:0}
+.corr-lead{font-size:12.5px;color:var(--muted);margin:2px 0 8px}
+.ia-card{border:2px solid var(--ink);border-radius:16px;background:var(--card);box-shadow:var(--shadow);padding:0;margin:14px 0;overflow:hidden}
+.ia-top{display:flex;gap:11px;align-items:baseline;padding:16px 20px 10px}
+.ia-n{flex:0 0 auto;font-size:20px;font-weight:800;line-height:1}
+.ia-h{flex:1 1 auto;font-size:16px;font-weight:800;line-height:1.5}
+.ia-b{padding:0 20px 4px}.ia-b p{margin:8px 0;font-size:13.5px;line-height:1.75;color:#3b3a35}
+.ia-note{background:#f7f5ec;border-left:4px solid #c9a227;border-radius:0 10px 10px 0;padding:13px 16px;margin:12px 0;font-size:13.5px;line-height:1.8;color:#3b3a35}
+.ia-sol{background:#f3f6f2;border-top:2px solid var(--line);padding:14px 20px}
+.ia-sol-h{font-size:14px;font-weight:800;margin-bottom:6px;color:#2f5233}
+.ia-sol p{margin:7px 0;font-size:13.5px;line-height:1.75;color:#3b3a35}
+.ia-st{display:inline-block;font-size:11px;font-weight:700;background:#e6ece4;color:#3f6146;border-radius:999px;padding:2px 9px;margin-left:4px;white-space:nowrap}
+  @media(max-width:720px){.ia-st{white-space:normal;border-radius:12px}}  /* 2026-10-27: 긴 배지(US '왜' 4번 "…측정 과제 1건")가 320px에서 370px로 넘쳐 렌더 QA FAIL — 폰에서는 줄바꿈 허용 */
+.ia-card>.acc{border-radius:0;border-left:0;border-right:0;border-bottom:0;margin:0}
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:12px 0}
+.why-col{border:2px solid var(--ink);border-radius:16px;background:var(--card);box-shadow:var(--shadow);padding:16px 18px;min-width:0}
+.why-col.bad{border-left:6px solid #b5534a}.why-col.good{border-left:6px solid #3f6146}
+.why-h{font-size:15.5px;font-weight:800;margin-bottom:10px}
+.why-item{position:relative;padding-left:30px;margin:12px 0}
+.why-item>b{font-size:14px;line-height:1.55;display:block;margin-bottom:3px}
+.why-item p{margin:5px 0;font-size:13px;line-height:1.7;color:#3b3a35}
+.why-n{position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.why-col.good .why-n{background:#3f6146}.why-item.caution .why-n{background:#8a836f}
+.why-caveat{font-size:12px!important;color:#6b675e!important;background:#f4f3ec;border-radius:8px;padding:8px 11px;line-height:1.65!important}
+.why-sum{border:2px solid var(--ink);border-radius:14px;background:#faf8f0;padding:14px 18px;font-size:14px;line-height:1.8;margin-top:12px}
+.why-tag{display:inline-block;font-size:10.5px;font-weight:800;background:#efe7d4;color:#8a6d1f;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.gb-sub{font-size:12px;color:#6b675e;margin-top:5px;line-height:1.6}
+.cw-tbl{min-width:620px}
+.cw-tbl td,.cw-tbl th{vertical-align:top;padding:11px 12px}
+.cw-tbl tbody tr+tr{border-top:1px solid #ece8dd}
+.cw-all td{background:#fbfaf6}
+.cw-v{font-size:19px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
+.cw-d{display:inline-block;font-size:11.5px;font-weight:700;color:#8a836f;margin-top:3px}
+.cw-s{font-size:11px;color:#9a9483;margin-top:4px;font-weight:400;line-height:1.45}
+.cw-v.v-good{color:var(--good,#1e8e5a)}
+.cw-v.v-warn{color:var(--warn,#c77800)}
+.cw-v.v-mid{color:#6b675e}
+@media(max-width:560px){.cw-v{font-size:17px}}
+.hookblock .cw-wrap{color:#1b1a17}
+.hookblock .cw-wrap .lh{color:#1b1a17}
+.hookblock .cw-wrap th{color:#6b675e}
+.hookblock .cw-wrap td{color:#3b3a35}
+.hookblock .cw-wrap .cw-v{color:#1b1a17}
+.hookblock .cw-wrap .cw-v.v-good{color:#1e8e5a}
+.hookblock .cw-wrap .cw-v.v-warn{color:#c77800}
+.hookblock .cw-wrap .cw-v.v-mid{color:#6b675e}
+.gv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:6px 0 4px}
+.gvcard{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.gv-v{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#1b1a17}
+.gv-b{padding:11px 12px 12px;display:flex;flex-direction:column;gap:5px}
+.gv-h{font-size:13.5px;font-weight:800;line-height:1.45;color:var(--ink)}
+.gv-st{display:block;font-size:11px;font-weight:700;margin-top:4px}
+.gv-st.on{color:#3f6146}.gv-st.off{color:#b0402e}
+.gv-m{font-size:11.5px;color:#6b675e;line-height:1.6}
+.gv-w{font-size:11.5px;color:#8a836f;line-height:1.6}
+.gv-l{font-size:11.5px;font-weight:700;color:#3b3a35;text-decoration:underline;margin-top:auto;padding-top:4px}
+.rj-note{margin:12px 0 4px;padding:12px 14px;border-radius:10px;background:#faf3e0;border-left:4px solid #c98300;font-size:12.5px;line-height:1.7;color:#3b3a35}
+.rj-note ul{margin:7px 0;padding-left:18px}
+.rj-note li{margin:3px 0}
+.gvcard.is-hero{border:2px solid #c9a227;box-shadow:0 2px 10px rgba(201,162,39,.16)}
+.hero-badge{background:#c9a227;color:#fff;font-size:11px;font-weight:800;padding:6px 10px;line-height:1.45}
+.sph-row td{vertical-align:top}
+.dqc-result{margin-top:10px;padding:12px 14px;border-radius:10px;background:#eef5ec;border-left:4px solid #3f6146;font-size:13.5px;line-height:1.75}
+.dqc-result.pending{background:#faf3e0;border-left-color:#c98300}
+.ia-fn{font-size:11.5px;color:#6b675e;margin:8px 0 0;line-height:1.6}
+.hookblock{background:linear-gradient(135deg,#1b1a17,#322f27);color:#f0ede3;border-radius:18px;padding:22px 26px;margin-top:14px;font-size:14.5px;line-height:1.8}
+.hk-label{font-size:13px;color:#b8b09a;font-weight:700;letter-spacing:.02em}
+.hk-lead{font-size:18px;font-weight:800;color:#c9e265;margin:3px 0 15px;line-height:1.6}
+.hk-row{display:flex;gap:14px;align-items:flex-start;border-top:1px solid rgba(255,255,255,.16);padding:12px 0}
+.hk-t{flex:0 0 80px;font-weight:800;color:#fff;font-size:14px;padding-top:1px}
+.hk-b{flex:1 1 auto;min-width:0}
+.hk-b p{margin:0}
+.hk-note{display:inline-block;margin-top:4px;font-size:12.5px;color:#b8b09a}
+.hk-next{margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.16);font-size:14.5px}
+.hk-next b:first-child{color:#c9e265}.hk-em{color:#c9e265;font-weight:700}
+.df-step{flex:1;min-width:130px;background:#faf9f4;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:12.5px;line-height:1.5}
+.df-step.good{background:#f2f8ec;border-color:#cfe3bb}
+.df-step span{color:var(--muted);font-size:11.5px}
+@media(max-width:700px){.hk-row{flex-direction:column;gap:4px}.hk-t{flex:none}}.cw-tbl .cw-v{white-space:nowrap}.cw-tbl{min-width:560px}
+
+/* 2026-10-27 액션 지도 — 세 줄 요약 '왜'(한 일 → 기대한 것 → 실제)·'그래서'(이번 주 하는 것 → 기대 효과) 행. 폰(≤700px)은 칸을 세로로 쌓고 data-l 라벨을 붙인다 */
+.hk-map{margin:6px 0 2px;border:1px solid rgba(255,255,255,.18);border-radius:12px;overflow:hidden;font-size:13.5px;line-height:1.6}
+.hk-map .hm-head,.hk-map .hm-row{display:grid;gap:0 14px;padding:9px 12px;align-items:start}
+.hk-map.m3 .hm-head,.hk-map.m3 .hm-row{grid-template-columns:1.1fr 1fr 1.15fr}
+.hk-map.m2 .hm-head,.hk-map.m2 .hm-row{grid-template-columns:1.2fr 1fr}
+.hk-map .hm-head{background:rgba(255,255,255,.08);font-size:11.5px;font-weight:800;color:#c9e265;letter-spacing:.02em;padding:7px 12px}
+.hk-map .hm-row{border-top:1px solid rgba(255,255,255,.12)}
+.hk-map .hm-c{min-width:0;word-break:keep-all;overflow-wrap:anywhere;color:#f0ede3}
+.hk-map .hm-a{font-weight:700;color:#fff}
+.hk-map .hm-e{color:#d9d4c3}
+.hk-map .hm-m{display:inline-block;font-size:11px;font-weight:800;padding:1px 6px;border-radius:6px;margin-right:6px;vertical-align:1px;background:rgba(255,255,255,.16);color:#fff}
+.hk-map .hm-m.us{background:#2a78d6}.hk-map .hm-m.ae{background:#b85c86}.hk-map .hm-m.kr{background:#4a3aa7}
+.hk-lead-s{margin:0 0 6px}
+.hk-tail{margin:8px 0 0;color:#c9e265;font-weight:700}
+@media(max-width:700px){.hk-map .hm-head{display:none}.hk-map.m3 .hm-row,.hk-map.m2 .hm-row{grid-template-columns:1fr;gap:6px 0;padding:10px 12px}
+.hk-map .hm-c::before{content:attr(data-l);display:block;font-size:11px;font-weight:800;color:#c9e265;margin-bottom:1px}}
+
+
+:root{--c-us:#2a78d6;--c-ae:#e87ba4;--c-kr:#4a3aa7;--c-kr-2:#b3aae3;--hl:rgba(221,247,70,.30);--num-green:#025200;--cream:#fefcd0;--box:#ddea65;--num:"adobe-caslon-pro",Georgia,"Times New Roman",serif}
+html{scroll-behavior:smooth}
+.wrap [id],.wrap section{scroll-margin-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.wrap{word-break:keep-all;overflow-wrap:break-word;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+header .wrap{padding-bottom:0}
+header h1 .nb{white-space:nowrap}
+@media(max-width:600px){header h1{font-size:25px}}
+header h1{font-family:"adobe-caslon-pro","Apple SD Gothic Neo","Pretendard",Georgia,serif;font-weight:600;letter-spacing:-.02em}
+header .sub{margin-top:2px}
+.dq-chip{display:inline-flex;align-items:center;gap:6px;background:var(--lime);color:#0e0d0b;font-weight:800;font-size:13px;padding:5px 13px;border-radius:999px;text-decoration:none}
+.dq-chip:hover{background:#c9e265}
+nav.tabnav a.tab{display:inline-flex;align-items:center;text-decoration:none}
+nav.tabnav{margin-left:-2px;margin-right:-2px;scrollbar-width:none}
+.chap{margin-top:56px}
+.chap:first-of-type{margin-top:30px}
+.chap-head{display:flex;align-items:center;flex-wrap:wrap;gap:10px 12px;border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+.chap-n{flex:none;width:36px;height:36px;border-radius:10px;background:var(--lime);color:#0e0d0b;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center}
+.chap-head h2{font-size:25px;font-weight:800;margin:0;letter-spacing:-.01em;line-height:1.2}
+.stage-chip{font-size:11.5px;font-weight:800;border-radius:999px;padding:4px 11px;background:var(--ink);color:#fff}
+.stage-chip.soft{background:#eceadf;color:#46433c}
+.chap-meta{font-size:13px;color:var(--muted)}
+.orig{margin-left:auto;font-size:13px;font-weight:700;color:var(--lime-deep)}
+.chap-concl{font-size:16px;font-weight:700;margin:0 0 6px;line-height:1.55}
+.proto-note{font-size:12px;color:var(--muted);margin:0 0 4px}
+.a-h{font-size:15px;font-weight:800;margin:34px 0 10px;padding-left:10px;border-left:4px solid var(--lime);line-height:1.3}
+
+/* A4 히어로 — 말이 먼저 */
+.hookblock.hero{padding:26px 28px 22px;margin-top:6px}
+.hero .hk-label{font-size:12.5px;letter-spacing:.06em}
+.hero .hk-lead{font-size:22px;line-height:1.45;margin:4px 0 18px}
+.hero .hk-t{flex:0 0 132px;font-size:14.5px;color:#d9d4c3;padding-top:4px}
+.hero .hk-b p{font-size:17px;line-height:1.85;color:#f4f1e6}
+.hero .n{color:#c9e265;font-weight:800;white-space:nowrap}
+.hero .hk-next{font-size:13px;margin-top:6px;padding-top:12px}
+.gl-link{color:#c9e265;font-weight:700;cursor:pointer}
+@media(max-width:700px){.hookblock.hero{padding:20px 18px 16px}.hero .hk-lead{font-size:19px}.hero .hk-b p{font-size:16px;line-height:1.8}.hero .hk-t{flex:none;font-size:13.5px;padding-top:0}}
+
+/* A5 시장별 한 줄 */
+.mklist{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.mkrow{display:grid;grid-template-columns:86px 1fr auto;gap:6px 14px;align-items:center;padding:14px 18px;border-top:1px solid var(--line);color:inherit;text-decoration:none}
+.mkrow:first-child{border-top:none}
+.mkrow:hover{background:#fbfaf3}
+.mk-s{font-size:15px;line-height:1.55}
+.mk-go{font-size:12.5px;font-weight:800;color:var(--lime-deep);white-space:nowrap}
+.mk-go::after{content:" →"}
+.mtag{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:13.5px;white-space:nowrap}
+.mdot{display:inline-block;width:10px;height:10px;border-radius:3px;flex:none}
+.mdot.us{background:var(--c-us)}.mdot.ae{background:var(--c-ae)}.mdot.kr{background:var(--c-kr)}
+@media(max-width:600px){.mkrow{grid-template-columns:1fr auto;padding:13px 15px}.mkrow .mtag{grid-column:1/-1}.mk-s{font-size:14.5px}}
+
+/* A2 보드 */
+.board-wrap{margin:0;border-left:5px solid var(--ink)}
+.mkt-board{min-width:620px}
+.mkt-board th,.mkt-board td{padding:11px 11px}
+.mkt-board td.rowh,.mkt-board th:first-child{position:sticky;left:0;z-index:2;background:#fff;white-space:nowrap}
+.mkt-board tr.total td{background:#f6f5e8}
+.mkt-board tr.total td.rowh{background:#f6f5e8;box-shadow:inset 4px 0 0 var(--lime)}
+.mkt-board td.rowh{display:table-cell}
+.mkt-board td.rowh .mdot{margin-right:7px;vertical-align:1px}
+.mkt-board .cw-v{white-space:nowrap}
+.mkt-board tr.total .cw-v{font-size:20px}
+.mkt-board .cw-v.na{font-size:13.5px;font-weight:700;color:#8a836f}
+.cw-d.up{color:#1a8f3c}.cw-d.dn{color:#d23b2e}.cw-d.neu{color:#8a836f}.cw-d.first{color:#46433c;font-weight:800}
+.cw-usd{font-size:12px;font-weight:700;color:#8a836f;margin-left:5px}
+.mkt-board .cw-d,.mkt-board .cw-s{display:block}
+.mkt-board .cw-s{font-size:11.5px}
+.mkt-board .cw-line .cw-d,.mkt-board .cw-line .cw-s{display:inline}
+.mkt-board .cw-line .cw-s{margin-left:4px;color:#8a836f}
+.board-wrap{position:relative}
+@media(max-width:700px){.board-wrap{padding:14px 12px}.mkt-board{min-width:520px}.mkt-board th,.mkt-board td{padding:9px 7px}.mkt-board .cw-v{font-size:16px}.mkt-board tr.total .cw-v{font-size:17px}.mkt-board .cw-line .cw-s{display:block;margin-left:0}.mkt-board td.rowh{padding-left:8px}}
+.tbl-scroll.shadowed{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  background:linear-gradient(to right,#fff 30%,rgba(255,255,255,0)),linear-gradient(to right,rgba(255,255,255,0),#fff 70%) 100% 0,
+  radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.18),rgba(0,0,0,0)),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.18),rgba(0,0,0,0)) 100% 0;
+  background-repeat:no-repeat;background-color:#fff;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+.board-wrap .fn-note{margin:8px 2px 0;font-size:12px;color:var(--muted);line-height:1.6}
+.fn-note{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* A3 흐름 */
+.chartbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 12px;box-shadow:var(--shadow)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;font-weight:700;color:#46433c;margin-bottom:6px}
+.legend .k{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend .k.us{background:var(--c-us)}.legend .k.ae{background:var(--c-ae)}.legend .k.kr{background:var(--c-kr)}
+.legend .k.cafe{background:var(--c-kr)}.legend .k.smart{background:var(--c-kr-2)}
+.legend .k.line{height:2px;width:18px;background:var(--ink);border-radius:2px;vertical-align:3px}
+.legend .k.dash{height:0;width:18px;border-top:2px dashed #1a8f3c;border-radius:0;background:none;vertical-align:3px}
+.svgwrap{position:relative}
+.flow-svg{width:100%;height:auto;display:block;overflow:visible}
+.flow-svg .slot{outline:none;cursor:pointer}
+.flow-svg .slot .seg{transition:opacity .12s}
+.flow-svg .slot:hover .seg,.flow-svg .slot:focus .seg,.flow-svg .slot.on .seg{opacity:.82}
+.flow-svg .slot:focus .hit,.flow-svg .slot:hover .hit,.flow-svg .slot.on .hit{fill:rgba(180,196,0,.10)}
+.tip{position:absolute;z-index:5;background:#1b1a17;color:#f4f1e6;border-radius:10px;padding:9px 12px;font-size:12px;line-height:1.55;pointer-events:none;min-width:150px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.tip b{color:#fff;display:block;margin-bottom:3px}
+.tip .tr{display:flex;justify-content:space-between;gap:14px}
+.tip .tr i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
+.tip .tr i.l{height:2px;width:12px;vertical-align:3px}
+.tip .tr strong{color:#fff}
+.tbl-twin{margin-top:8px}
+.tbl-twin .bd{padding-top:6px}
+
+/* A6 정할 것 표 */
+.dqtbl-wrap{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+table.mini.dqtbl{table-layout:auto;width:100%}
+.dqtbl th{background:#f4f3ec}
+.dqtbl td{font-size:13.5px;vertical-align:top;padding:11px 12px}
+.dqtbl td a{font-weight:700;color:var(--ink);text-underline-offset:3px}
+.dqtbl tr.none td{color:#6b675e;background:#fbfaf6}
+.st{display:inline-block;font-size:11.5px;font-weight:800;border-radius:999px;padding:3px 10px;background:#eceadf;color:#46433c;white-space:nowrap}
+.st.late{background:var(--bad-bg);color:var(--bad)}
+@media(max-width:640px){
+ .dqtbl thead{display:none}
+ table.mini.dqtbl{min-width:0!important;width:100%!important}
+ table.mini.dqtbl td{border-bottom:none}
+ .dqtbl,.dqtbl tbody{display:block;width:100%}
+ .dqtbl tr{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"mk due st" "q q q" "rec rec rec";gap:4px 10px;align-items:center;padding:13px 15px;border-top:1px solid var(--line)}
+ .dqtbl tbody tr:first-child{border-top:none}
+ .dqtbl td{display:block;border:none;padding:0}
+ .dqtbl td[data-label="시장"]{grid-area:mk}
+ .dqtbl td[data-label="기한"]{grid-area:due;font-size:13px}
+ .dqtbl td[data-label="기한"]::before{content:"기한 ";font-size:11px;font-weight:800;color:#8a836f}
+ .dqtbl td[data-label="상태"]{grid-area:st;justify-self:end}
+ .dqtbl td[data-label="질문"]{grid-area:q;font-size:14.5px;margin-top:4px}
+ .dqtbl td[data-label="추천"]{grid-area:rec;font-size:13px;color:#46433c}
+ .dqtbl td[data-label="추천"]::before{content:"추천 ";font-size:11px;font-weight:800;color:#8a836f}
+ .dqtbl tr.none{grid-template-areas:"mk q q"}
+ .dqtbl tr.none td[colspan]{grid-area:q;font-size:13px}
+}
+
+/* 챕터 공통 */
+.ph-tag{display:block;width:max-content;max-width:100%;font-size:11px;font-weight:700;color:#8a836f;background:#f4f3ec;border-radius:999px;padding:2px 9px;margin-top:5px;white-space:normal}
+tr.cw-row.ph td{background:#fbfaf6}
+td.ph-c{text-align:center;color:#8a836f;font-size:12.5px;border-left:1px dashed var(--line)}
+.ph-box{border:1.5px dashed #cfcabb;border-radius:12px;padding:16px;background:#faf9f4;color:#8a836f;font-size:13px;text-align:center;margin:12px 0}
+.pill-board{display:inline-block;margin-right:6px}
+.cw-all td{background:#fbfaf6}
+.fn-note{margin:8px 0 0}
+.xp-btn{margin-left:auto;font:inherit;font-size:12px;font-weight:800;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.xp-btn:hover{color:var(--ink);border-color:var(--ink)}
+
+/* D KR */
+.kr-store{min-width:0}
+table.mini.kr-store{min-width:0;table-layout:auto;width:100%;max-width:760px}
+.kr-store td,.kr-store th{white-space:normal}
+.kr-store td:first-child{white-space:nowrap}
+.kr-store .sub{display:block}
+.kr-store td.num,.kr-store th.num{white-space:normal}
+.kr-store .sub,.mini .sub{font-size:12px;color:#8a836f;font-weight:600}
+.kr-store tr.total td{background:#f6f5e8}
+.kr-days-wrap{margin-top:14px}
+.kr-days{display:flex;align-items:flex-end;gap:6px;height:182px;padding-top:6px;max-width:640px}
+.kd{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.kd-v{font-size:11px;font-weight:800;color:#1b1a17;margin-bottom:4px;white-space:nowrap}
+.kd-bar{width:100%;max-width:24px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-height:2px}
+.kd-bar .s{display:block;width:100%}
+.kd-bar .s.cafe{background:var(--c-kr)}
+.kd-bar .s.smart{background:var(--c-kr-2);border-radius:4px 4px 0 0}
+.kd-bar .s.cafe:first-child{border-radius:4px 4px 0 0}
+.kd-bar .s.base{height:2px;background:#cfcabb}
+.kd-x{font-size:11.5px;color:#46433c;margin-top:6px;text-align:center;line-height:1.3}
+.kd-x small{display:block;font-size:10px;color:#8a836f;font-weight:600}
+.kd.zero .kd-v{color:#b9b3a3}
+.kd-v .s{display:none}
+@media(max-width:480px){.kd-v .f{display:none}.kd-v .s{display:inline}.kd-v{font-size:11px;letter-spacing:-.03em}.kd-x small{font-size:11px}.kr-days{gap:3px}}
+
+
+@media(max-width:640px){
+ table.mini.ordtbl{min-width:0!important;width:100%!important}
+ .ordtbl thead{display:none}
+ .ordtbl,.ordtbl tbody{display:block;width:100%}
+ .ordtbl tr{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"item item amt" "store date st";gap:4px 10px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
+ .ordtbl tbody tr:first-child{border-top:none}
+ table.mini.ordtbl td{display:block;border:none;padding:0;white-space:normal}
+ .ordtbl td[data-c="item"]{grid-area:item;font-weight:700;font-size:14.5px}
+ .ordtbl td[data-c="amt"]{grid-area:amt;text-align:right;font-weight:800}
+ .ordtbl td[data-c="store"]{grid-area:store;font-size:12.5px;color:#46433c}
+ .ordtbl td[data-c="date"]{grid-area:date;font-size:12.5px;color:#6b675e}
+ .ordtbl td[data-c="st"]{grid-area:st;justify-self:end}
+}
+
+
+
+
+/* ===== 합성본 추가분 (A·C 이식 + 채점 blocking 해소) ===== */
+.wrap section{scroll-margin-top:76px}
+@media(min-width:701px){.hookblock .hk-row .hk-t{flex:0 0 136px}}
+mark.hl{background:linear-gradient(transparent 52%,var(--hl) 52%);color:inherit;padding:0 2px}
+.a-verdict{font-size:19px;margin:14px 0 2px;line-height:1.5}
+.glossary#a1{margin-top:4px}
+.gl-ref{font-size:12.5px;color:var(--muted);margin:0 0 6px}
+.gl-ref a{font-weight:700}
+.mkt-board .cw-v{font-family:var(--num);font-weight:600;font-size:21px;letter-spacing:-.01em}
+.mkt-board tr.total .cw-v{font-size:24px}
+.mkt-board .cw-v.na{font-family:inherit}
+.mkt-board tr.total td{background:var(--cream)}
+.mkt-board tr.total td.rowh{background:var(--cream);box-shadow:inset 4px 0 0 var(--box)}
+.mkt-board a.rowlink{color:inherit;text-decoration:none;display:inline-flex;align-items:center}
+.mkt-board a.rowlink:hover b{text-decoration:underline;text-underline-offset:3px}
+.cw-d.first{display:block;white-space:nowrap}
+.board-wrap details.prevb{margin-top:10px;box-shadow:none}
+.prev-tbl td,.prev-tbl th{padding:7px 9px;font-size:13px}
+.prev-tbl tr.total td{background:var(--cream);font-weight:700}
+.legend .k.band{background:rgba(42,120,214,.22);border:1px dashed #2a78d6;height:10px}
+.back-top{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:800;color:var(--lime-deep);text-decoration:none}
+.back-top:hover{text-decoration:underline}
+.dqtbl td[data-label="돈"]{white-space:nowrap;font-weight:700;color:var(--num-green)}
+.dq-card{scroll-margin-top:76px}
+.kr-check{margin-top:12px}
+.kr-check .back-top{margin:0 0 0 6px}
+.hero .hk-label{color:#c9e265}
+@media(max-width:700px){
+ .board-wrap{padding:12px 8px 10px}
+ table.mini.cw-tbl.mkt-board{min-width:0;width:auto}
+ .mkt-board th,.mkt-board td{padding:8px 6px}
+ .mkt-board td.rowh,.mkt-board th:first-child{padding-left:4px;padding-right:4px}
+ .mkt-board td.rowh b{font-size:13px}
+ .mkt-board td.rowh .mdot{margin-right:4px}
+ .mkt-board .cw-v{font-size:17px}
+ .mkt-board tr.total .cw-v{font-size:18px}
+ .mkt-board .cw-s{font-size:10.5px;white-space:nowrap}
+ .mkt-board .cw-d{font-size:11px}
+ .a-verdict{font-size:17px}
+}
+@media(max-width:640px){
+ .dqtbl tr{grid-template-areas:"mk due st" "q q q" "rec rec rec" "money money money"}
+ .dqtbl td[data-label="돈"]{grid-area:money;font-size:12.5px}
+ .dqtbl td[data-label="돈"]::before{content:"걸린 돈 ";font-size:11px;font-weight:800;color:#8a836f}
+}
+
+
+/* 첫 화면 압축 — 1280×800에서 결론 한 줄 + 보드 4행이 한 화면에 */
+body > header{padding:26px 0 22px}
+.chap:first-of-type{margin-top:18px}
+.chap-head{margin-bottom:12px}
+details.glossary#a1{padding:0}
+details.glossary#a1 > summary{padding:11px 16px}
+.a-h{margin:24px 0 9px}
+.a-verdict{margin:12px 0 0}
+.mkt-board thead th{background:#f4f3ec}
+.mkt-board thead th:first-child{background:#f4f3ec}
+@media(min-width:701px){
+ .mkt-board th,.mkt-board td{padding:9px 11px}
+ .mkt-board .cw-v{display:inline-block}
+ .mkt-board td > .cw-d{display:inline-block;margin-left:7px;vertical-align:2px}
+ .mkt-board td > .cw-d.first{display:block;margin-left:0}
+}
+
+/* 푸터 · 인쇄 */
+footer p{margin:4px 0}
+@media print{
+ nav.tabnav,.xp-btn,.dq-chip{display:none!important}
+ body{background:#fff}
+ body > header{padding:18px 0}
+ .chap{break-before:page}
+ .chap:first-of-type{break-before:auto}
+ details.acc > *{display:block}
+}
+
+/* ===== 통합본 v1: 보기 모드(구성원/재영님) · 챕터 L2 · 부록 · 카테고리 순위 ===== */
+.john-only{display:none}
+body.view-john .john-only{display:block}
+body.view-john section.l1sec.john-only{display:block}
+.viewsw{display:inline-flex;gap:8px}
+.viewsw button{font:inherit;font-size:14px;font-weight:800;line-height:1;padding:10px 18px;border:2px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer;box-shadow:0 2px 0 rgba(27,26,23,.18);transition:transform .08s,box-shadow .08s}
+.viewsw button:hover{transform:translateY(-1px);box-shadow:0 3px 0 rgba(27,26,23,.22)}
+.viewsw button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:0 3px 0 var(--lime)}
+.viewsw button[aria-pressed="true"]::before{content:"✓ "}
+.viewsw button:focus-visible{outline:3px solid var(--lime);outline-offset:-3px}
+.dq-chip.john-only{display:none}
+body.view-john .dq-chip.john-only{display:inline-flex}
+.l2-unified{margin-top:26px}
+.l2-unified > details.acc{margin-top:10px}
+.l2-unified details.acc details.acc{margin-top:8px}
+.l2-n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:7px;background:var(--lime);color:#0e0d0b;font-weight:800;font-size:12px;margin-right:8px}
+.appx-link{display:inline-block;margin:12px 0 0;font-size:13.5px;font-weight:800;color:var(--lime-deep)}
+.rk-wrap{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.rk{min-width:0}
+.rk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
+.rk-t{font-size:15px;font-weight:800;display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.rk-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-top:10px}
+.rk-scroll svg{width:100%;height:auto;display:block;overflow:visible}
+.rk-scroll svg text{font-size:13px}
+.rk-now{font-size:13.5px;font-weight:700;margin:0 0 2px;color:#46433c}
+.rk-now b{margin-right:4px}
+.rk-sub{font-size:12.5px;font-weight:600;color:#6b675e;margin:-3px 0 6px;line-height:1.45}
+.rk-leg{font-size:12.5px;font-weight:700;color:#46433c;margin:2px 0 6px}
+.rk details.prevb{margin-top:6px}
+.appx-head h1{font-size:24px}
+@media print{.viewsw{display:none!important}}
+
+/* ===== 폰 최적화 (2026-10-12 John: 모바일에서 볼 사람도 있다) ===================================
+   원칙: ① 폰에서 가로로 밀어야 하는 것을 없앤다 — 표는 카드형, 8주 그래프는 폰 전용 그림 ② 글자 11px 이상·터치 44px 이상
+   ③ 가로로 밀어야 하는 것(순위 17주 선)은 '이번 주'가 보이는 오른쪽 끝에서 시작 + 이번 주 값은 그림 위 한 줄로.
+   표 카드화는 weekly_unified.js 가 머리글 글자를 각 칸 data-label 로 복사해야 켜진다(JS 없으면 예전처럼 가로 스크롤). */
+.flow-svg.m,.flow-hint{display:none}
+@media(max-width:820px){
+ #flowchart.chartbox{padding-left:8px;padding-right:8px}
+ .flow-svg.d{display:none}
+ .flow-svg.m{display:block;max-width:560px;margin:0 auto}
+ .flow-hint{display:block;text-align:center;margin:2px 0 0}
+}
+@media(max-width:899px){
+ .rk-scroll svg{min-width:800px}
+ .rk-scroll svg text{font-size:15px}
+ .rk-scroll::before{content:"← 왼쪽으로 밀면 이전 주 (오른쪽 끝 = 이번 주)";display:block;font-size:11.5px;font-weight:700;color:#8a836f;margin:0 2px 4px}
+}
+.mc-wrap{background:none!important}
+@media(max-width:640px){
+ /* 표 → 카드: 행 하나 = 카드 하나, 첫 칸 = 카드 제목, 나머지 = 라벨 달린 칸 */
+ table.mc{display:block;min-width:0!important;width:100%!important;max-width:none!important;table-layout:auto;border:0}
+ table.mc thead{display:none}
+ table.mc tbody{display:block;width:100%}
+ table.mc tbody tr{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px 12px;align-items:start;padding:13px 12px;border-top:1px solid var(--line)}
+ table.mc tbody tr:first-child{border-top:none}
+ table.mc td,table.mc th{display:block;min-width:0;border:none!important;padding:0!important;text-align:left!important;white-space:normal!important;font-size:13.5px;position:static!important;background:none!important;box-shadow:none!important}
+ table.mc td[data-label]::before{content:attr(data-label);display:block;font-size:11px;font-weight:800;color:#8a836f;margin-bottom:2px;line-height:1.3;white-space:normal}
+ table.mc td[data-first]{grid-column:1/-1;font-size:14.5px;font-weight:800;line-height:1.45}
+ table.mc td[data-long],table.mc td[data-full]{grid-column:1/-1}
+ table.mc tr.total,table.mc tr.cw-all{background:var(--cream)}
+ table.mc td .cw-v{white-space:nowrap}
+ /* 터치 44px */
+ .viewsw{display:flex;width:100%;gap:8px;margin-top:4px}
+ .viewsw button{flex:1;min-height:46px;font-size:15px;padding:12px 10px}
+ nav.tabnav a.tab{min-height:44px;padding-left:16px;padding-right:16px}
+ details.acc>summary,details.glossary>summary{min-height:44px;display:flex;align-items:center}
+ .dq-chip{min-height:40px;padding:8px 14px;font-size:13.5px}
+ .xp-btn{min-height:40px;padding:8px 14px}
+ .mk-go{padding:6px 0}
+ .chap-head h2{font-size:23px}
+ .a-verdict{font-size:17px}
+}
+@media(max-width:640px){
+ /* 줄바꿈이 막혀 가로로 넘치던 칸(숫자 열·판정 뱃지)을 풀어 준다 */
+ table.mini td.num{white-space:normal}
+ table.mc td *{white-space:normal;overflow-wrap:break-word}
+ table.mc td .cw-v{white-space:nowrap}
+ .pill-board{font-size:12px}
+ .mbadge,.why-tag,.cre-cap,.jm-d,[style*="font-size:10.5px"]{font-size:11.5px!important}
+}
+/* 시장 보드·전주 값은 폰에서도 표 유지(John 10/12: 옆으로 살짝 스크롤이 카드보다 낫다) — .no-card 로 카드화 제외 */
+@media(max-width:700px){.board-wrap::before{content:"옆으로 밀어 보세요 →";display:block;text-align:right;font-size:11px;font-weight:700;color:#8a836f;margin:-2px 2px 6px}}
+/* 세럼·크림 칸이 36px로 좁아 "▲63%"가 3줄로 꺾이던 것(John 10/12) — 증감·머리글은 한 줄 고정, 칸은 내용만큼 넓어진다(폰 스크롤 약 +30px) */
+.mkt-board .cw-d,.mkt-board thead th{white-space:nowrap}
+
+/* 2026-10-27 A4 히어로 안 액션 지도(세 줄 요약 '왜'·'그래서') + 특집 블록(.special, 이번 호만) */
+.hero .hk-map{font-size:14px;margin-top:8px;line-height:1.65}
+.hero .hk-map .hm-m.us{background:var(--c-us)}.hero .hk-map .hm-m.ae{background:var(--c-ae)}.hero .hk-map .hm-m.kr{background:var(--c-kr)}
+.hero .hk-lead-s{font-size:16px;line-height:1.7;color:#f4f1e6;margin:0 0 8px}
+.hero .hk-tail{font-size:15.5px;line-height:1.7}
+.hero .hk-map .n{white-space:normal}
+.special{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;margin-top:6px}
+.special .sp-lead{font-size:15px;line-height:1.7;margin:0 0 10px}
+.special .sp-expect{background:#f6f8e6;border-left:4px solid var(--lime);padding:10px 14px;border-radius:8px;font-size:14.5px;line-height:1.65;margin:0 0 14px}
+.special .sp-expect b:first-child{color:var(--lime-deep);margin-right:6px}
+.sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sp-card{min-width:0}
+.special h4{font-size:14px;margin:4px 0 8px;line-height:1.5}
+.special table.mini{font-size:12.5px;table-layout:auto;min-width:0}
+.special table.mini th{white-space:nowrap}
+.special table.mini td{word-break:keep-all;overflow-wrap:anywhere}
+.special .sp-note{font-size:12.5px;color:var(--muted);margin:8px 0 0;line-height:1.6}
+.special .sp-foot{font-size:12.5px;color:var(--muted);margin:12px 0 0;line-height:1.6;border-top:1px solid var(--line);padding-top:10px}
+.special .n{font-weight:800}
+/* 특집 가격 타임라인 그림(2026-10-27) — 폰은 가로 스크롤, 글자 크기 유지 */
+.sp-chart{margin:4px 0 12px}.sp-lane{margin-top:10px}.sp-lane-h{font-size:13.5px;font-weight:800;margin:0 0 2px;line-height:1.5}
+.sp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.sp-scroll svg{min-width:760px;width:100%;height:auto;display:block;color:var(--ink,#1c1b16)}
+.sp-legend{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.6}
+@media(max-width:900px){.sp-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.special{padding:14px 14px}}
+
+</style></head><body><header><div class="wrap appx-head"><span class="kicker">APPENDIX</span><h1>부록 — US 20주차 근거 전문</h1>
+<p class="sub">11/3호 (10/25~10/31) · 이면 추론 원장 · 발견 원장 · 기각된 발견 · 일별 여정 · <a href="./index.html?view=john">← 주간 보고서로</a></p></div></header>
+<div class="wrap"><section class="l1sec"><details class="acc" id="l2-us-ledger_l2"><summary><span class="pill-board">🧭</span>이면 추론 원장 — 경쟁 가설 전수 · 근거 · 적대 검증 결과</summary><div class="bd-sub"><style>
+.ib-tbl{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0;table-layout:fixed;min-width:640px}
+.ib-tbl th,.ib-tbl td{border-bottom:1px solid #e6e1d3;padding:7px 8px;vertical-align:top;text-align:left}
+.ib-tbl th{background:#f6f3ea;font-weight:700;white-space:nowrap}
+.ib-v{display:inline-block;padding:2px 7px;border-radius:9px;font-size:11.5px;font-weight:700;line-height:1.35}
+.ib-more{color:#8a836f;font-size:11.5px}
+.v-yes{background:#e3f1e5;color:#1f6b33}.v-part{background:#fdf1d8;color:#8a5a00}.v-na{background:#eceae4;color:#5d584c}.v-no{background:#f6e1df;color:#9b2c22}
+.ib-imp{background:#fbf8ef;border-left:4px solid #b9a25a;padding:9px 12px;margin:8px 0 14px;font-size:13.5px}
+.ib-ph{font-weight:700;margin:14px 0 4px;font-size:14px}
+.ib-scroll{overflow-x:auto}
+</style><details class="acc"><summary><span class="pill-board">🧭</span>이면 추론 원장 — 경쟁 가설 전수 · 근거 · 적대 검증 결과</summary><div class="bd"><p class='ib-imp'><b>적대 검증</b> — 관점 통계, 메커니즘, 대안설명 · 기각 7건 · 배지 하향 7건 · Optapex 전환이 MER 붕괴 원인이라는 가설은 3관점 모두 기각(전환 전후 효율이 거의 동일) / 아마존 ROAS 미달의 측정결손·탐색비용 가설은 판정불가로 유지(표본 부족) / 메타 IC당 ₩599.5 턱걸이 통과는 노이즈 가설이 가장 강건(지지)</p><p class='ib-ph'>블렌디드 MER 1.57→0.95 붕괴 — 총 광고비 +73.7%($1,088.18→$1,890.09)인데 순매출은 +5.6%($1,703.33→$1,798.82), 주문 +13%(54→61건)에 그침 (dashboard_data.json daily 10/18~10/31 합산)</p><ul><li><b>H1 구조 전환 과도기 비용 — 10/28 Optapex SP 위임 전환·10/29 SB 철수가 주 중간에 겹치며 학습 리셋·탐색 지출이 효율을 눌렀습니다</b> — <span class="ib-v v-no">기각</span> <small>①우리 변경(구조)</small><br>· 🟢실측 전환 후 4일(10/28~31) 아마존 지출 일평균 $96.99로 전환 전 3일($50.19) 대비 +93.3%, mop_ 위임캠 5개 지출 $299.12·ROAS 0.35 <small>(1단 우리 데이터 · dashboard_data.json daily amz_spend · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv)</small><br>· 🟢실측 그러나 전환 '전' 3일 MER 0.970 vs 전환 '후' 4일 MER 0.936으로 거의 동일 — 전환만으로 주간 붕괴를 설명 못 함 <small>(1단 우리 데이터 · dashboard_data.json daily (10/25~27 매출 $836.70÷지출 $862.19, 10/28~31 $962.12÷$1,027.90))</small><br><small>틀렸다면: 다음 주(위임 풀가동 첫 완전 주) MER이 0.95 수준에 머물면 '과도기' 성격 기각 — 구조 자체 문제로 재분류 · 다시 볼 때: 2026-11-10 주간보고(1차) · 2026-11-27 Optapex 정식 판정</small></li><li><b>H2 전환 '이전'의 공격적 테스트 확대가 지출을 선행 증가시켰습니다 — 10/26~27 입찰 +20%·22개 ×1.1 재정렬·Auto 예산 ×1.5·Broad-Discovery 신설이 10/27 지출 점프($83.62, 전주 화요일 $21.58의 3.9배)의 직접 원인</b> — <span class="ib-v v-no">기각</span> <small>①우리 변경(입찰·예산)</small><br>· 🟢실측 10/27(화) amz_spend $83.62로 전일($33.37) 대비 2.5배 — Optapex 전환일(10/28) 하루 전에 이미 급증 <small>(1단 우리 데이터 · dashboard_data.json daily amz_spend · changelog.md 2026-10-27 11:17~11:22(22개 입찰 조정))</small><br>· 🟢실측 해당 조정 대상 키워드의 노출은 계획대로 증가(dark spot serum impr 1,699→5,152, korean cream 9→41)했으나 전환은 전부 0 — 지출만 늘고 매출 미동반 <small>(1단 우리 데이터 · ads-api-sp-targeting-2026-10-25-2026-10-31.csv (액션감사 id3·id5))</small><br>· 🟢실측 10/19·10/27 신설 테스트 캠페인 10개 합계 지출 $67.41·매출 $0·구매 0건 <small>(1단 우리 데이터 · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv (발견 id12))</small><br><small>틀렸다면: 10/25~27 귀속 매출 $0이 다음 주 소급 집계로 유의미하게 채워지면(어트리뷰션 지연) '지출만 늘고 매출 0' 판정 완화 · 다시 볼 때: 2026-11-10 주간보고에서 10/25~27 amz_sales 재집계 대조</small></li><li><b>H3 시장 수요·경쟁 악화(외부 요인) — 카테고리 트래픽 감소나 경쟁사 가격 공세로 같은 지출에 전환이 줄었습니다</b> — <span class="ib-v v-na">판정 불가</span> <small>③시장·경쟁</small><br>· 🔴결측 SQP·BSR·SERP·경쟁 가격 스냅샷 전부 미수집 — 이 가설을 지지도 기각도 할 시장 신호가 없음 <small>(2단 시장 신호 · _collection-log.md(🔴 미수집 4종) · _context.json competition_pricing)</small><br>· 🟢실측 오가닉 쪽 간접 신호는 오히려 반대 방향 — 구독 매출 +72%(6건), 전체 주문 +13%로 수요 자체가 꺾인 흔적은 없음 <small>(1단 우리 데이터 · dashboard_data.json daily sub_sales·orders (발견 id6))</small><br><small>틀렸다면: BA·BSR 보강 시 카테고리 검색량·BSR이 전주 수준 유지로 확인되면 기각 — 이 가설은 BA 데이터가 있었으면 이번 호에서 바로 판정 가능했을 것(결측 캐비앗) · 다시 볼 때: 다음 브라우저 연결 세션에서 BA 소급 보강 시</small></li><li><b>H4 측정 결손 — 10/25~27 아마존 귀속 매출 $0 구간이 분모(매출)를 과소계상해 MER 붕괴 폭을 과장했을 가능성</b> — <span class="ib-v v-no">기각</span> <small>⑤측정 결손</small><br>· 🟡추정 10/25~27 지출 $150.57에 amz_sales $0 — 보고일(11/3) 기준 7~9일 경과로 리포트 성숙 시점인데도 0이라 단순 지연으로 설명하기 애매, 원인 미확정 <small>(1단 우리 데이터 · dashboard_data.json daily amz_spend/amz_sales (발견 id4))</small><br>· 🟢실측 단 MER 분자는 total_sales(순매출 전체)라 광고 귀속 공백과 무관 — 귀속 공백이 MER 자체를 왜곡하진 않고, '아마존 광고 ROAS 0.43' 해석에만 영향 <small>(1단 우리 데이터 · metrics_config.json(MER 정의) · dashboard_data.json)</small><br><small>틀렸다면: 다음 주 재집계에서 10/25~27 amz_sales가 여전히 $0이면 '집계 공백' 기각 → 실제 무전환 확정 · 다시 볼 때: 2026-11-10 주간보고 raw 재수집 시</small></li><li><b>H5 우연·노이즈 — 주문 7~13건/일 표본에서 매출 쪽 등락이 우연히 낮게 나온 주</b> — <span class="ib-v v-part">부분 지지 — 매출 측만) — 지출 측은 기각</span> <small>⑥우연</small><br>· 🟢실측 지출 증가(+73.7%)는 입찰·예산·신설이라는 결정론적 조치의 결과라 우연이 아님 — 우연 가설은 '매출이 안 따라온 것'에만 적용 가능 <small>(1단 우리 데이터 · changelog.md 10/26~27 조치 전수 · _actions-inventory.json)</small><br>· 🟡추정 주문 54→61건 차이는 소표본이라 주간 매출 ±수백 달러는 노이즈 범위일 수 있음(_context.json statistical_noise 원칙) <small>(1단 우리 데이터 · dashboard_data.json daily orders · _context.json)</small><br><small>틀렸다면: 2주 연속 MER&lt;1.0이면 우연 기각(지속 패턴 확정) · 다시 볼 때: 2026-11-10 주간보고</small></li></ul><p><b>무게</b> — H2(전환 전 테스트 확대) 지지가 가장 강하고 H1(과도기)은 부분 — 전/후 MER이 0.970 vs 0.936으로 거의 같다는 분해가 결정적. '10/28 전환 때문에 무너졌다'는 단선 서사는 실측과 안 맞음. H3는 결측으로 판정 자체가 불가.</p><p><b>전망</b> — 다음 주는 Optapex 풀가동 첫 완전 주 — 전환 전 캠페인이 전부 PAUSED라 H2 요인은 소멸, 남는 숫자가 곧 위임 구조의 민낯. MER 1.0 회복 여부가 1차 분기점.</p><p class='ib-ph'>아마존 광고 ROAS 0.43($538.51 지출·$233.95 귀속) — BEP 1.91~2.04(metrics_config.json)의 21~23% 수준, 귀속 매출 전액이 10/28 이후 4일에 집중되고 전환 전 3일은 $150.57 지출에 귀속 $0</p><ul><li><b>H1 전환 전 직접 SP 캠페인이 실제로 '죽어' 있었습니다 — 늦게 전환한 게 아니라 전환 전 캠페인 자체가 무전환 상태였습니다</b> — <span class="ib-v v-no">기각</span> <small>①우리 변경(캠페인 구조)</small><br>· 🟢실측 10/19·10/27 신설 직접 SP 10캠 전수 매출 $0·구매 0건(지출 $67.41) — 이번 주 전환 7건 전부 Auto-All-SKU 또는 mop_exploration에서만 발생 <small>(1단 우리 데이터 · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv · ads-api-sp-search-term-2026-10-25-2026-10-31.csv (발견 id12·id19·id23))</small><br>· 🟢실측 SB 기여 $51.60(크림 훅 2건)도 10/28 이후 집계분에 포함 — '위임캠+Auto가 전부'가 아니라 SB가 귀속 매출의 22% 차지 <small>(1단 우리 데이터 · ads-api-sb-search-term-2026-10-25-2026-10-31.csv (발견 id23 CORRECTED))</small><br><small>틀렸다면: 10/25~27 sales14d 소급 반영으로 매출이 채워지면 '죽어 있었다' 해석 철회 · 다시 볼 때: 2026-11-10 재집계</small></li><li><b>H2 어트리뷰션 집계 공백(측정 결손) — 10/25~27 $0은 실제 무전환이 아니라 캐시·리포트 경계 문제</b> — <span class="ib-v v-na">판정 불가</span> <small>⑤측정 결손</small><br>· 🟡추정 10/25~27은 보고일 기준 7~9일 경과로 14일 귀속 윈도상 성숙 중이긴 하나 완결 전 — sales14d가 소급 증가할 수 있음 <small>(1단 우리 데이터 · dashboard_data.json daily amz_sales (발견 id4·id14))</small><br>· 🟡추정 경계가 Optapex 전환일(10/28)과 정확히 일치하는 점은 캐시 빌드 로직 쪽 원인 가능성도 시사 — 원인 미확정으로만 기록 <small>(1단 우리 데이터 · dashboard_data.json 10-27=83.62/0.0 → 10-28=126.10/100.95 (발견 id4))</small><br><small>틀렸다면: 다음 주 raw에서 10/25~27 amz_sales가 그대로 $0이면 기각(실무전환 확정), 채워지면 지지 · 다시 볼 때: 2026-11-10 주간보고 raw 대조</small></li><li><b>H3 Optapex 위임 초기 탐색 비용 — ROAS 0.35(mop_ 5캠)는 1개월 트라이얼 극초반(3~4일)의 탐색 단계 특성</b> — <span class="ib-v v-na">판정 불가 — 학습 비용 전제 유지, 억지 판정 금지</span> <small>②학습기·시간</small><br>· 🟢실측 mop_ 위임캠 5개 지출 $299.12·매출 $105.20·ROAS 0.35, 세럼 exploration(0.50)이 크림(0.27)보다 나음 — 관찰일수 3~4일뿐 <small>(1단 우리 데이터 · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv (발견 id10))</small><br>· 🟡추정 10/30 Smart Bid Guard Max $2.00 설정 후에도 주간 평균 CPC $3.13~3.48로 캡 초과 — 캡 미적용 또는 적용 전 고가 클릭 혼입(추정, 일별 분리 불가) <small>(1단 우리 데이터 · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv (액션감사 id17))</small><br>· 🔴결측 위임 운영사 트라이얼의 탐색→수렴 통상 주기를 대조할 외부 자료는 이번 호 미확보 <small>(3단 외부 자료 · 자료 없음)</small><br><small>틀렸다면: 11/27 정식 판정 전이라도 2주 연속 위임 ROAS&lt;0.5면 중간 경고 플래그 · 다시 볼 때: 2026-11-27 Optapex 1개월 판정 · 중간점검 2026-11-10</small></li><li><b>H4 우연·소표본 — 주간 구매 7건(SP)+2건(SB)으로 ROAS 자체가 ±1건에 크게 흔들리는 노이즈 구간</b> — <span class="ib-v v-part">부분 지지 — ROAS 절대값은 노이즈 포함, BEP 대비 1/5 수준의 격차는 우연 기각</span> <small>⑥우연</small><br>· 🟢실측 SP 전환 7건·전환 검색어 7개 — 구매 1건(약 $26)의 유무가 ROAS를 0.05 이상 움직이는 표본 크기 <small>(1단 우리 데이터 · ads-api-sp-search-term-2026-10-25-2026-10-31.csv (발견 id15))</small><br>· 🟢실측 다만 비용의 92.8%($456.68)가 전환 0 클릭에 소진된 구조는 표본 노이즈로 설명 안 됨 — 방향성 자체는 우연 아님 <small>(1단 우리 데이터 · ads-api-sp-search-term-2026-10-25-2026-10-31.csv (발견 id15·id16))</small><br><small>틀렸다면: 다음 주 전환 표본 20건 이상에서 ROAS 1.0+ 회복 시 이번 주를 노이즈 저점으로 재해석 · 다시 볼 때: 2026-11-10</small></li><li><b>H5 검색어 믹스 문제 — 비용 87%가 ROAS 0.30짜리 일반어에 쏠리고, BEP를 넘는 경쟁브랜드어(ROAS 2.16)는 5%뿐인 배분 구조</b> — <span class="ib-v v-no">기각</span> <small>④타겟팅 구조</small><br>· 🟢실측 일반어 cost $429.60·ROAS 0.30 vs 경쟁브랜드어 cost $24.76·ROAS 2.16(블렌디드 BEP 1.91~2.04 유일 통과) vs ASIN 매칭 0.64 <small>(1단 우리 데이터 · ads-api-sp/sb-search-term-2026-10-25-2026-10-31.csv 분류 집계 (발견 id18))</small><br>· 🔴결측 이 믹스가 카테고리 평균 대비 비정상인지 대조할 SQP(검색어 퍼널) 데이터는 이번 호 결측 — BA가 있었으면 일반어 전환율이 '우리만' 낮은지 시장 공통인지 판정 가능했을 것 <small>(2단 시장 신호 · _collection-log.md(SQP 🔴))</small><br><small>틀렸다면: 경쟁브랜드어 확대 시 ROAS 2.16이 표본 증가(현재 클릭 13)와 함께 1.0 밑으로 회귀하면 '소표본 착시'로 기각 · 다시 볼 때: 11/27 Optapex 판정 시 검색어 믹스 재집계</small></li></ul><p><b>무게</b> — H1+H5가 실측 기반으로 가장 무겁습니다 — '전환 전 캠페인 무전환 + 일반어 편중'이 ROAS 0.43의 주 구성. H2(집계 공백)·H3(위임 탐색)는 판정불가로 열어두되, H2는 다음 주 기계적으로 닫힙니다. 캠페인 단위 판정은 하지 않음(그룹 단위 서술만).</p><p><b>전망</b> — 위임 구조의 첫 완전 주(11/1~7) ROAS가 0.35에서 얼마나 회복하는지가 핵심 — BEP 1.91 도달이 아니라 '수렴 기울기'를 봅니다. Smart Bid Guard 효과(verify_due 11/6)도 같이 닫힘.</p><p class='ib-ph'>메타 IC당 비용 ₩599.5($1,351.58÷3,269IC)로 켜둠 유지선(v3, ₩600) 0.5원 차 통과 — 귀속 ROAS 추정 0.72로 메타 BEP 1.60~1.68엔 미달, 지출은 WoW +45.3%인데 attr_purch는 32→33건 정체</p><ul><li><b>H1 증액이 한계 효율을 희석 — 월급날 +30% 증액(10/30 발효)과 신규 3세트(+₩30,000/일, 10/28)가 검증 안 된 지출을 늘려 IC당 비용·전환율을 동시 압박</b> — <span class="ib-v v-no">기각</span> <small>①우리 변경(예산)</small><br>· 🟢실측 10/30 $169.50(+25.2%)·10/31 $173.55(+28.2%)로 증액 집행 확인 — 그러나 전환율은 전주 1.03%→당주 0.86%(attr_ct 3,100→3,821·attr_purch 32→33) <small>(1단 우리 데이터 · dashboard_data.json daily meta_spend·attr_ct·attr_purch (액션감사 id1·id15))</small><br>· 🟢실측 신규 리타게팅 세트(US-RT_reader-noclick)는 IC당 ₩1,916~2,375로 '콜드보다 20%+ 저렴' 가설과 정반대 — 전체 IC당 평균을 끌어올리는 쪽으로 기여 <small>(1단 우리 데이터 · status_live/meta.json (액션감사 id14))</small><br><small>틀렸다면: verify_due 11/2 재확인에서 증액분 세트의 IC당이 기존 세트 수준으로 수렴하면 희석 가설 완화 · 다시 볼 때: 2026-11-04(신규 3세트 재확인 예정일) · 매일 IC당 추이 모니터링(발견 id1 action)</small></li><li><b>H2 소재 판정 지연 — 기준 미달 세트 7개(LFS크림연령v2·세럼다리기미v1·5세트 일괄)를 10/27~28에야 정지해 주 전반부 낭비 지출이 주간 IC당을 ₩600선까지 밀어올림</b> — <span class="ib-v v-part">부분 지지</span> <small>①우리 변경(소재 운영)</small><br>· 🟢실측 정지된 7세트 전부 14일 창(10/20~11/2)에도 구매 0 확인 — 정지 판단 자체는 옳았고, 주 전반부(10/25~27)에 이들이 켜져 있던 기간의 지출이 주간 집계에 포함됨 <small>(1단 우리 데이터 · status_live/meta.json 14d 집계 (액션감사 id6·id12·id13))</small><br>· 🟡추정 세트별 일별 지출 raw가 이번 호에 없어 '전반부 낭비분'의 정확한 금액 분리는 불가 — 방향만 확인 <small>(1단 우리 데이터 · _collection-log.md(메타 세트 일별 결측))</small><br><small>틀렸다면: 세트별 일별 분해 확보 시 정지 세트들의 10/25~27 지출 합이 주간 메타 지출의 10% 미만이면 기여 미미로 기각 · 다시 볼 때: 다음 브라우저 세션에서 메타 세트 일별 보강 시</small></li><li><b>H3 측정 결손 — 귀속 매출이 attr_purch×평균 객단가 '추정치'이고, LP 경유 지연 전환·메타 세트별 raw 부재로 ROAS 0.72 자체의 신뢰구간이 넓습니다</b> — <span class="ib-v v-part">부분 지지 — 방향은 미달로 수렴하나 절대값 불확실</span> <small>⑤측정 결손</small><br>· 🟡추정 메타 귀속 매출 $973.13은 33건×주간 평균 객단가 $29.49 추정 — 번들($49.35) 구매가 섞이면 실제값이 상향될 수 있음(주문-상품 믹스 데이터 이번 호 결손) <small>(1단 우리 데이터 · dashboard_data.json(attr_purch) · _collection-log.md(SP-API 주문-상품 결손) (발견 id1))</small><br>· 🔴결측 브릿지 LP 전용 세션·CVR 로그 부재로 LP 타이머 변경(10/25)의 단독 효과도 분리 불가 <small>(1단 우리 데이터 · 액션감사 id1)</small><br><small>틀렸다면: 주문-상품 믹스 보강 후 메타 귀속 실매출이 $1,100+(BEP 하단 1.60×지출의 50%+)로 재계산되면 '미달' 폭 재평가 · 다시 볼 때: 다음 정상 세션 SP-API 주문-상품 보강 시</small></li><li><b>H4 우연·소표본 — attr_purch 33건에서 전환율 1.03%→0.86% 하락은 통계적으로 무의미, ₩599.5 vs ₩600도 사실상 동전 던지기 경계</b> — <span class="ib-v v-yes">지지 — 경계값 판정의 취약성 자체가 이번 주 핵심 리스크</span> <small>⑥우연</small><br>· 🟢실측 표본 30건대에서 전환율 0.17%p 차이는 검정력 미달 — 액션감사도 타이머 효과를 같은 이유로 판정불가 처리 <small>(1단 우리 데이터 · dashboard_data.json attr_ct/attr_purch · 액션감사 id1)</small><br>· 🟢실측 IC당 ₩599.5는 임계선과 0.5원 차 — 환율·집계 반올림만으로도 판정이 뒤집히는 구간이라 '통과'에 실질 의미를 부여하면 안 됨 <small>(1단 우리 데이터 · 발견 id1)</small><br><small>틀렸다면: 다음 주 IC당이 ₩550 이하 또는 ₩650 이상으로 임계선에서 명확히 벗어나면 경계 리스크 해소 · 다시 볼 때: 매일(발견 id1 action) · 2026-11-10 주간 재판정</small></li></ul><p><b>무게</b> — 이 현상은 '위반'이 아니라 '경계'다 — v3 OR 규칙상 유지 판정은 유효하나, H4(0.5원 차)가 보여주듯 판정의 강건성이 없습니다. H1·H2가 실측으로 부분 지지돼 '증액+판정 지연의 합산 압박' 서사가 가장 그럴듯하지만 세트 일별 결측(H3)으로 금액 분리는 불가.</p><p><b>전망</b> — 증액 체제(일 $170대)가 유지되면 IC 수가 늘어 IC당은 오히려 안정될 수 있으나, BEP(1.60~1.68) 대비 ROAS 0.72 갭은 전환율 개선 없이는 안 닫힙니다 — 다음 주는 ROAS 축으로 판정 이동 권장.</p><p class='ib-ph'>요일 효율 쏠림 — MER 1.0 이상은 화(1.37)·수(1.08)·금(1.12) 3일뿐, 토요일(10/31) 0.62 최저인데 이날 할인 차감(promo_discount $33.54)은 주중 최대·매출($153.06)은 주 최소</p><ul><li><b>H1 주말 수요 패턴 — 이 카테고리 구매가 평일(화~금)에 쏠리는 구조적 요일 효과</b> — <span class="ib-v v-na">판정 불가 — 1주 표본 + 시장 신호 부재</span> <small>③시장·수요</small><br>· 🟢실측 일별 MER 10/25(일)0.97·10/26(월)0.57·10/27(화)1.37·10/28(수)1.08·10/29(목)0.90·10/30(금)1.12·10/31(토)0.62 — 단 월요일(0.57)도 최저권이라 '주말' 단일 패턴과 불일치 <small>(1단 우리 데이터 · dashboard_data.json daily mer (발견 id5))</small><br>· 🔴결측 요일별 카테고리 트래픽을 대조할 BA(고객여정·최상위검색어) 결측 — 이 가설은 BA가 있으면 요일별 검색량 대조로 명확히 판정 가능했을 것 <small>(2단 시장 신호 · _collection-log.md(BA 🔴))</small><br><small>틀렸다면: 4주 누적에서 요일별 MER 순위가 매주 뒤섞이면 기각 · 다시 볼 때: 2026-11-10부터 요일별 4주 누적 추적</small></li><li><b>H2 10/31 특이일 — 핼러윈 + BOGO(9/1~10/31) 종료 마지막 날 + 월급날 증액 2일차가 겹친 복합 이벤트일이라 토요일 일반화 불가</b> — <span class="ib-v v-no">기각</span> <small>②달력·이벤트</small><br>· 🟡추정 BOGO 2+1이 10/31 23:59 PDT 종료 예정이었고 연장/종료 결정 기록이 changelog에 없음 — 종료 직전일의 수요 행태(선구매 소진 후 공백)일 가능성은 추정 <small>(1단 우리 데이터 · _context.json market_calendar(BOGO 종료 예정·확인 결측))</small><br>· 🟢실측 10/31 meta_spend $173.55(주 최대, 증액 발효 2일차)에 매출 $153.06(주 최소) — 증액과 특이일이 같은 날 겹쳐 분리 불가 <small>(1단 우리 데이터 · dashboard_data.json daily (액션감사 id15))</small><br>· 🔴결측 핼러윈 당일 뷰티 이커머스 전환 하락 여부를 대조할 외부 벤치마크 미확보 <small>(3단 외부 자료 · 자료 없음)</small><br><small>틀렸다면: 다음 주 토요일(11/7, 이벤트 없음) MER이 정상권이면 '특이일' 지지·'요일 효과' 기각 쪽으로 이동 · 다시 볼 때: 2026-11-10 주간보고에서 11/7 실측 대조</small></li><li><b>H3 측정 결손 — 주 마지막 날일수록 14일 귀속 윈도 미성숙으로 매출이 과소계상돼 '토요일 최저'가 집계 아티팩트일 가능성</b> — <span class="ib-v v-part">부분 지지</span> <small>⑤측정 결손</small><br>· 🟡추정 10/31은 캐시 빌드(11/3 00:40 KST) 기준 경과 2~3일로 귀속 성숙도가 주중 가장 낮음 — 아마존 귀속·메타 지연 전환이 소급 반영되면 10/31 MER이 상향될 수 있음 <small>(1단 우리 데이터 · _collection-log.md(캐시 빌드 시각) · dashboard_data.json)</small><br>· 🟢실측 단 MER 분자는 주문 기반 순매출이라 광고 귀속 지연보다는 영향이 작음 — 주문 확정 지연분만 해당 <small>(1단 우리 데이터 · metrics_config.json 매출 정의)</small><br><small>틀렸다면: 다음 주 재집계에서 10/31 total_sales가 $153.06에서 유의미하게 상향되지 않으면 기각 · 다시 볼 때: 2026-11-10 재집계 대조</small></li><li><b>H4 우연·소표본 — 일 주문 7~13건 수준에서 일별 MER 0.6~1.4 등락은 포아송 노이즈 범위</b> — <span class="ib-v v-yes">지지 — 현 시점 기본 가설) — 1주 표본으로 요일 패턴을 주장할 근거 없음</span> <small>⑥우연</small><br>· 🟢실측 _context.json 명시 원칙: '일별 등락을 포아송·이항 검정 없이 서술하지 않는다' — 일 매출 $150~350 밴드에서 주문 2~3건 차이가 MER 0.3~0.4를 움직임 <small>(1단 우리 데이터 · _context.json statistical_noise · dashboard_data.json daily orders)</small><br><small>틀렸다면: 4주 누적에서 주말(토·일) MER이 평일 대비 일관되게 20%+ 낮으면 노이즈 기각·패턴 인정 · 다시 볼 때: 4주 누적(2026-11-24경) 재판정</small></li></ul><p><b>무게</b> — H4(노이즈)가 현 시점 기본 가설 — 발견 id5의 '주말 예산 축소 검토'는 '다음 주도 반복되면'이라는 조건부 플래그로만 유지하고 이번 호에서 액션으로 격상하지 않는다. H2(BOGO 종료 특이일)는 BOGO 실제 종료 여부 확인(결측)과 묶여 있습니다.</p><p><b>전망</b> — BOGO가 실제 종료됐다면 11월 첫 주는 '행사 공백 + 세럼 $25.90 1단계(가격 측정 모드 11/3~18)' 조합의 새 국면 — 요일 패턴보다 가격 단계 전환 효과가 다음 주 일별 등락의 지배 변수가 될 가능성이 높습니다.</p></div></details></div></details><details class="acc" id="l2-us-insight_cards"><summary><span class="pill-board">💡</span>인사이트 카드 전문 — 근거와 '틀렸다면' 조건</summary><div class="bd-sub"><p><b>Optapex 위임 첫 3~4일 성적은 본전에 크게 못 미치지만, 효율 악화는 전환 전부터 진행 중이었어 전환 탓으로 단정할 수 없습니다. 다음 주가 위임 구조만 남은 첫 완전한 한 주라, 거기서 나오는 숫자가 곧 이 구조의 민낯입니다.</b></p><p>- 다음 주 광고비 대비 매출이 1.0선을 회복하는지 확인</p><p>- 11/6 클릭 단가 상한 작동 여부 확인</p><p>- 11/10 중간 점검, 11/27 정식 판정까지 주 단위 회복 속도 기록</p><p>- 자동 캠페인 안에서 '번들만 유지' 결정과 달리 계속 과금 중인 세럼·크림 광고($46.61 지출·매출 0) 처리 확인</p><p><b>메타는 켜둠 유지 기준을 0.5원 차이로 턱걸이 통과했습니다 — 반올림 수준의 차이라 사실상 경계선이고, 지출을 늘렸는데 구매는 제자리였습니다.</b></p><p>- 결제 시작 1건당 비용을 매일 추적 (아침 브리핑 고정 항목)</p><p>- 11/4 신규 광고 3개 재확인을 기한대로 닫기</p><p>- 다음 주부터 매출 기준인 ROAS(광고비 1달러가 만든 귀속 매출 배수) 중심으로 판정 축 이동 검토</p><p><b>이번 호는 자동 복구 세션(브라우저 연결 없음)으로 작성돼 브랜드 분석·판매 순위·검색 지면 자료가 수집되지 않았습니다. '시장 쪽 원인인가'를 판정하지 못한 직접적 이유가 이 결손입니다.</b></p><p>- 다음 브라우저 연결 세션에서 결손 자료 소급 보강</p><p>- '3개 사면 1개 무료' 행사의 실제 종료 여부 확인</p><p>- 보강 후 시장 원인 가설을 재판정하고 이번 호 결론 업데이트</p></div></details><details class="acc" id="l2-us-funnel"><summary><span class="pill-board">🔎</span>아마존 영상 광고 소재 전수 · 생존 깔때기 — 이번 호 해당 자료 없음</summary><div class="bd-sub"><p class="fn-note">아마존 영상 광고(SB) 소재 생존 깔때기는 10/29 SB 전면 철수로 이번 호부터 해당 없음.</p></div></details><details class="acc" id="l2-us-find_money"><summary><span class="pill-board">📂</span>발견 원장 · 돈의 흐름·가격</summary><div class="bd-sub"><details class="acc"><summary>메타 채널이 아마존 광고보다 지출 2.5배 크고, 둘 다 본전 미달이나 메타는 v3 규칙상 근소하게 '유지' 판정 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>20주차 아마존 광고 지출 $538.51에 귀속 매출(amz_sales) $233.95 → ROAS 0.43배로 블렌디드 BEP(1.91~2.04배)에 크게 미달. 메타는 지출 $1,351.58에 attr_purch(아마존 귀속 구매) 33건 × 주간 평균 객단가 $29.49로 추정한 귀속 매출 $973.13 → ROAS 추정 0.72배로 메타→아마존 귀속 BEP(1.60~1.68배)에도 미달(추정치). 다만 메타 켜둠 판정 기준(v3, feedback_meta_keep_rule_v3)은 'IC당 ≤₩600 OR 어트리뷰션 ROAS≥1.0'의 OR 조건이고, IC당 비용 = $1,351.58÷3,269IC = $0.4135 = ₩599.5로 ₩600 임계선을 간발(0.5원)로 통과해 전체는 '유지' 판정이 유효. ROAS 단독 기준으로는 미달이지만 OR 규칙 전체로는 통과.</p><p class="fn-note">근거: dashboard_data.json daily 2026-10-25~10-31: amz_spend합 538.51·amz_sales합 233.95·meta_spend합 1351.58·meta_ic합 3269·attr_purch합 33·orders합 61·total_sales합 1798.82 / metrics_config.json computed.blended.bep_roas_amazon(1.91~2.04)·bep_roas_meta_to_amazon(1.60~1.68)<br>권장: IC당 비용이 임계선(₩600)에 바로 붙어 있어 다음 주 소폭 상승 시 즉시 '정지' 판정으로 넘어갈 수 있음 — 매일 IC당 비용 추이 모니터링.</p></div></details><details class="acc"><summary>아마존 광고비 WoW +240% 급증, 메타 +45%, 총매출은 +5.6%에 그쳐 블렌디드 MER 1.57→0.95로 붕괴 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>20주차(10/25~31) 대비 19주차(10/18~24) 비교: 아마존 광고비 $538.51 vs $158.26(+240.3%), 메타 광고비 $1,351.58 vs $929.92(+45.3%), 총 지출 $1,890.09 vs $1,088.18(+73.7%). 반면 총 순매출은 $1,798.82 vs $1,703.33(+5.6%)에 불과해 블렌디드 MER(총지출 기준)이 1.57배→0.95배로 급락. 주문 수는 61건 vs 54건(+13.0%)만 늘어 지출 증가분이 매출로 전환되지 못함.</p><p class="fn-note">근거: dashboard_data.json daily 2026-10-18~10-24(19주차) vs 2026-10-25~10-31(20주차) 합계: amz_spend 158.26→538.51·meta_spend 929.92→1351.58·total_sales 1703.33→1798.82·orders 54→61<br>권장: 지출 급증분이 매출 전환으로 이어지지 않는 원인(아마존 입찰 상향 추정) 재확인 필요 — 증액 효과 미확인 상태에서 추가 증액 보류.</p></div></details><details class="acc"><summary>아마존 광고비 급등 시점이 Optapex 전환일(10/28, 수)이 아니라 전날인 10/27(화)부터 이미 시작됨 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>일별 amz_spend: 10/25(일) $33.58 → 10/26(월) $33.37 → 10/27(화) $83.62(전일 대비 2.5배 점프) → 10/28(수, 전환일) $126.10 → 10/29(목) $99.41 → 10/30(금) $88.37 → 10/31(토) $74.06. 전주 동일 요일(10/20 화 $21.58, 10/19 월 $18.75) 대비 10/27은 이미 3.9배 수준. 10/28 이전 3일 평균 $50.19/일 vs 이후 4일 평균 $96.99/일(+93.3%). 공식 전환일 이전부터 지출 패턴이 바뀌고 있었다는 뜻이나, 이번 주 안의 변화라 성숙 전 데이터이며 원인(선행 입찰 조정 여부)은 미확정.</p><p class="fn-note">근거: dashboard_data.json daily amz_spend: 10-25=33.58, 10-26=33.37, 10-27=83.62, 10-28=126.10, 10-29=99.41, 10-30=88.37, 10-31=74.06 / 19주차 동일요일 10-19=18.75, 10-20=21.58<br>권장: 10/27 지출 급등 원인을 Optapex/직접 세팅 변경 로그에서 확인 — 전환 전 선행 조정이었는지, 다른 캠페인 변경이었는지 특정.</p></div></details><details class="acc"><summary>아마존 광고 귀속 매출(amz_sales)이 10/25~27 사흘 연속 $0 — 지출은 있었는데 귀속 매출만 공백 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>10/25 지출 $33.58/귀속매출 $0, 10/26 지출 $33.37/귀속매출 $0, 10/27 지출 $83.62/귀속매출 $0 (3일 지출 합 $150.57, 귀속매출 합 $0). 10/28부터 귀속매출이 발생: $100.95·$25.80·$79.40·$27.80 (4일 합 $233.95). 이 경계가 정확히 Optapex 전환일(10/28)과 일치하는데, 보고일(11/3) 기준 10/25~27은 이미 7~9일 지나 귀속 리포트가 성숙했을 시점이라 '단순 지연'으로만 설명하기엔 애매함 — 원인 미확정, 추정으로만 기록.</p><p class="fn-note">근거: dashboard_data.json daily amz_spend/amz_sales: 10-25=33.58/0.0, 10-26=33.37/0.0, 10-27=83.62/0.0, 10-28=126.10/100.95, 10-29=99.41/25.80, 10-30=88.37/79.40, 10-31=74.06/27.80<br>권장: 10/25~27 '아마존 광고 ROAS=0'을 집행 실패로 단정하지 말 것 — 리포트 집계 공백 가능성을 먼저 배제한 뒤 판정. 원인 불명이면 다음 호에 재확인.</p></div></details><details class="acc"><summary>요일별 MER은 화·수·금 3일만 1.0 이상, 나머지 4일(일·월·목·토)은 1.0 미달 — 효율이 특정 요일에 쏠림 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>일별 MER: 10/25(일) 0.97, 10/26(월) 0.57, 10/27(화) 1.37, 10/28(수) 1.08, 10/29(목) 0.90, 10/30(금) 1.12, 10/31(토) 0.62. 토요일(10/31)이 최저(0.62)인데 이날 할인(promo_discount $33.54)이 주중 최대였음에도 매출($153.06)이 주 최소 수준 — 할인이 매출 방어로 이어지지 못함.</p><p class="fn-note">근거: dashboard_data.json daily mer/all_mer: 10-25=0.97, 10-26=0.57, 10-27=1.37, 10-28=1.08, 10-29=0.90, 10-30=1.12, 10-31=0.62 / promo_discount 10-31=33.54(주중 최대)<br>권장: 주말(일·토) 효율 저하 패턴이 다음 주도 반복되면 주말 메타 예산 축소·평일 집중 배분을 검토 대상으로 플래그.</p></div></details><details class="acc"><summary>구독(sub_sales) 매출·건수 WoW +72%, 건수 +50% 증가 — 10/27 이후에만 발생 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>20주차 sub_sales 합계 $161.55(6건) vs 19주차(10/18~24) $93.90(4건) → 매출 +72.1%, 건수 +50.0%. 20주차 안에서도 10/25·26(일·월)은 구독 매출 $0이고 10/27(화)부터 $44.07(2건)·$25.02(1건)·$23.58(1건)·$25.02(1건)·$43.86(1건)로 연속 발생. 구독 매출은 전체 순매출($1,798.82)의 8.98%.</p><p class="fn-note">근거: dashboard_data.json daily sub_sales: 20주차 합 161.55(6건), 19주차(10-18~10-24) 합 93.90(4건) / 20주차 일별 10-25=0, 10-26=0, 10-27=44.07, 10-28=25.02, 10-29=23.58, 10-30=25.02, 10-31=43.86<br>권장: 구독 성장 긍정 신호 — 다음 주도 10/27 이후 패턴(연속 발생)이 유지되는지 확인, 표본(6건)이 작아 과잉해석 주의.</p></div></details><details class="acc"><summary>주문당 획득 지출이 $20.15 → $30.99로 +53.8% 악화 — 주문 증가(+13%)보다 지출 증가(+73.7%)가 훨씬 큼 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>20주차 총 지출(아마존+메타) $1,890.09 ÷ 주문 61건 = 주문당 $30.99. 19주차 총 지출 $1,088.18 ÷ 주문 54건 = 주문당 $20.15. 주문당 획득비용이 +53.8% 상승 — Optapex 전환 초기 비용 확대가 주문 전환으로 아직 이어지지 않은 것으로 추정.</p><p class="fn-note">근거: dashboard_data.json daily 합계: 20주차 (amz_spend 538.51+meta_spend 1351.58)=1890.09÷orders 61=30.99 / 19주차 (158.26+929.92)=1088.18÷orders 54=20.15<br>권장: 다음 주 주문당 획득비용이 재하락하는지 추적 — 지속되면 Optapex 위임 범위·입찰 재검토 필요.</p></div></details></div></details><details class="acc" id="l2-us-find_search"><summary><span class="pill-board">📂</span>발견 원장 · 검색어·입찰</summary><div class="bd-sub"><details class="acc"><summary>SP 전환 검색어는 7건뿐 — 비용의 93%($456.68/$492.08)는 전환 0 <span class="ia-st">CORRECTED</span></summary><div class="bd"><p>ads-api-sp-search-term-2026-10-25-2026-10-31.csv의 데이터 행 수는 133행이입니다(134행은 헤더까지 포함한 파일 줄 수). 나머지 수치(purchases7d>0 SP 5행+SB 2행=총 7건, 전환 cost $35.40·클릭19·sales $182.35, 미전환 cost $456.68·클릭170, 비전환 비중 92.8%)는 모두 정확.</p><p class="fn-note">근거: ads-api-sp-search-term-2026-10-25-2026-10-31.csv, ads-api-sb-search-term-2026-10-25-2026-10-31.csv, ads-api-sp-advertised-product-2026-10-25-2026-10-31.csv(총cost 492.08·sales7d 182.35 일치 확인)<br>권장: 전환 0·클릭 ≥3인 Exact 캠페인 검색어(아래 낭비 목록) 11/2 수확 라운드에서 네거티브 전환 검토. 전환 검색어 5건은 정확 일치 승격 후보로 유지.</p></div></details><details class="acc"><summary>클릭 많고 매출 0인 상위 10개 — korean lemon face serum·dr melaxin·korean face cream(SB) 순 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>클릭 기준 상위 10: ①korean lemon face serum 10클릭 $15.31(Auto-All-SKU close-match) ②dr melaxin 9클릭 $16.06(Auto-All-SKU loose-match, 경쟁 브랜드어) ③korean face cream(SB) 9클릭 $15.69 ④korean face creams(SB) 6클릭 $9.48 ⑤dark spot serum 4클릭 $13.25(SP-Exact-Demand-Serum) ⑥korean anti aging moisturizer 4클릭 $17.87(exploration-cream) ⑦korean face cream(SP) 4클릭 $12.00(SP-Exact-Demand-Cream) ⑧lemon face cream 4클릭 $7.21(Auto-All-SKU) ⑨korean face creams 6클릭은 위④와 중복 집계 제외, 대체로 anti aging face cream 3클릭 $8.55(SP-Exact-Demand-Cream) ⑩korean skin care 3클릭 $15.53(exploration-serum). 모두 검색어 단위 — ASIN 타겟이 아닌 일반 검색어/자동 타겟이라 자사·번들 ASIN 네거티브 금지 규칙과 무관.</p><p class="fn-note">근거: ads-api-sp-search-term-2026-10-25-2026-10-31.csv, ads-api-sb-search-term-2026-10-25-2026-10-31.csv (purchases7d/purchases=0, clicks>0 필터 후 clicks 내림차순)<br>권장: dr melaxin은 이미 CompBrand·validation 캠페인엔 등록된 경쟁 브랜드지만 Auto-All-SKU(close/loose-match)엔 네거티브가 없음 — 11/2 수확 라운드에서 Auto 캠페인에 네거티브 추가 검토.</p></div></details><details class="acc"><summary>10/27 입찰조정(22개, ×1.1) 효과는 10/28 Optapex 전환과 교란돼 분리 불가 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>10/27 상향 대상 캠페인(SP-Exact-Demand-Serum·SP-Exact-CompBrand-Serum/Cream)의 daily 클릭·노출을 10/25~26(전) vs 10/27~31(후)로 비교: Demand-Serum 일평균 클릭 1.5→0.2·노출 2256→180, CompBrand-Serum 0.5→0.0·234→12, CompBrand-Cream 0.0→0.0·37.5→5.4 — 셋 다 후반부에 오히려 감소. 그런데 이 세 캠페인은 현재(11/3 조회 시점) 모두 campaignStatus=PAUSED — 10/28 Optapex 위임 전환(id11, '직접 SP 9캠 PAUSED')에 포함된 것으로 보여, 노출·클릭 감소가 입찰 조정 효과인지 10/28 캠페인 정지 효과인지 이 데이터로는 구분할 수 없음.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/changelog.md 2026-10-27 11:17~11:22 항목(22개 목록) · dashboard/cache/dashboard_data.json timeseries.amazon_campaigns(일별 cl/im) · ads-api-sp-campaigns-2026-10-25-2026-10-31.csv(campaignStatus=PAUSED 확인) · _actions-inventory.json id5·id11<br>권장: 입찰 조정 단독 효과 판정은 보류(자료 없음으로 명시). 캠페인이 재가동되면(Optapex 1개월 종료 후) 그때 전후 비교 재시도.</p></div></details><details class="acc"><summary>검색어 카테고리별: 일반어가 비용 87%·ROAS 0.30으로 BEP(1.91~2.04) 크게 미달, 경쟁브랜드어는 ROAS 2.16으로 BEP 통과 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SP+SB 검색어 전체를 자사브랜드/경쟁브랜드/ASIN/일반어로 분류해 합산: 일반어 클릭160·cost $429.60·sales $126.75·ROAS 0.30(BEP 1.91~2.04 대비 심각한 미달) / 경쟁브랜드어(dr melaxin 등) 클릭13·cost $24.76·sales $53.60·ROAS 2.16(블렌디드 BEP 통과) / ASIN 검색어(auto 타겟이 매칭한 상품코드) 클릭42·cost $84.15·sales $53.60·ROAS 0.64. 자사 브랜드어(lemonderma·lemon derma·lemonshot 등) 검색어는 이번 주 0건 — 'lemon face cream' 같은 성분어는 자사 브랜드명이 아니라 일반어로 분류.</p><p class="fn-note">근거: ads-api-sp-search-term-2026-10-25-2026-10-31.csv + ads-api-sb-search-term-2026-10-25-2026-10-31.csv 분류 집계(브랜드어 매칭: lemonderma/lemon derma/lemonshot/lemon shot/lemoderma) · BEP 기준 /Users/john/Desktop/vdvia/30_growth/marketing/metrics_config.json computed.blended(bep_roas_amazon 1.91~2.04)<br>권장: 경쟁브랜드어 소액 확대(현재 cost 비중 5%뿐) 검토, 일반어는 전환 안 나는 Exact 캠페인(Demand-Serum/Cream) 위주로 11/2 네거티브 후보 압축.</p></div></details><details class="acc"><summary>전환은 전부 Auto/Exploration 캠페인에서만 발생 — Exact 수요어 캠페인(Demand-Serum/Cream)은 전환 0 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>전환 7건 모두 Auto-All-SKU 또는 mop_..._exploration 캠페인에서 나왔고, 10/19 신설 Exact-Demand-Serum·Exact-Demand-Cream(수요어 전용, 10/27 '수요어 유지' 결정 대상)은 이번 주 클릭 다수(dark spot serum 4·korean face cream 4·anti aging face cream 3·korean skin care 2 등)에도 전환 0건. changelog 10/27 11:17 기록상 '수요어 SP 2캠 1차 판정 — 예산 유지, John 전제: 학습 비용 포함 기간(~11/3)'과 일치.</p><p class="fn-note">근거: ads-api-sp-search-term-2026-10-25-2026-10-31.csv(campaignName별 purchases7d 집계) · /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/changelog.md 2026-10-27 11:17~11:22 '결정: US-1025-9 1차 판정'<br>권장: 11/3 판정일(premises_us.json us_learning_cost_phase 종료 시점) 도달 시 Demand-Serum/Cream 전환 여부로 재판정 — 이번 주만으론 '학습 비용 기간' 전제에 부합.</p></div></details><details class="acc"><summary>ASIN 타겟은 전부 경쟁 ASIN — 자사·번들 ASIN 네거티브 위반 없음(규칙 준수 확인) <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>sp-targeting의 ASIN형 타겟(SP-PT-Comp-Serum/Cream, validation 캠페인) 전부 B0DFY92NDB·B0FS7QVSVC·B0FKGJYFC8·B09YDCCJBJ·B0GQTSGWSG·B09VCQV22M·B0FTQLDQ8L·B0CM4B43DZ·B0CX5B5VTX·B0FPBJ87S6·B0G575FLP3·B0FK82TX5C·B0H1NYRWXP로, 자사 ASIN(B0FV7XWDYF·B0FV3QXSBF)·번들(B0H3H18F96)과 전부 불일치 — 경쟁 ASIN만 타겟팅 중. 이번 주 클릭 발생은 B0GQTSGWSG 1건(cost $1.43, sales 0)뿐, 나머지는 클릭 0이라 낭비 상위 10위에는 못 들어감.</p><p class="fn-note">근거: ads-api-sp-targeting-2026-10-25-2026-10-31.csv(targeting 필드 asin="..." 행 전수) — 자사/번들 ASIN 목록과 대조<br>권장: 조치 불필요 — 현재 ASIN 타겟팅 설계는 규칙(자사·번들 ASIN 네거티브 금지, 경쟁 ASIN은 허용)에 부합. 관찰만 지속.</p></div></details><details class="acc"><summary>SB 전환 2건은 모두 10/27 SB 철수 직전 데이터 — SB 전환율 근거와 일치 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SB 검색어 12행 중 전환 2건(fave cream anti aging $3.01→$25.80, korean anti-aging cream $1.46→$25.80)은 US_SB_cream_hooks 캠페인에서 발생. 이 캠페인은 10/27·10/29 PAUSED(US SB 전면 철수, id10·id16). SB 검색어 12행 전체 cost 합 $45.93·sales 합 $51.60(ROAS 1.12, BEP 1.91~2.04 미달)로, 10/29 철수 결정문의 'SB 전환율 2.9%·주문당 $33 vs SP 전환율 7.6%·주문당 $26.8' 비교와 방향이 일치.</p><p class="fn-note">근거: ads-api-sb-search-term-2026-10-25-2026-10-31.csv(전체 12행 합산) · _actions-inventory.json id10·id16 · 00_compass/decisions/2026-10-29-US-SB-철수.md(참조)<br>권장: 추가 조치 없음 — 이미 집행된 SB 철수 결정의 사후 근거로 확인됨. 보고서에 '결정 재확인' 각주로만 반영.</p></div></details></div></details><details class="acc" id="l2-us-find_campaign"><summary><span class="pill-board">📂</span>발견 원장 · 캠페인·소재 판정</summary><div class="bd-sub"><details class="acc"><summary>SP 전체 ROAS 0.37 — BEP 1.91~2.04 대비 약 1/5 수준 (지출 $492.08 · 매출 $182.35) <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SP 캠페인 16개 합계: 지출 $492.08, sales14d $182.35, 클릭 189, 노출 82,480, 구매 7건. ROAS = 182.35/492.08 = 0.37. 블렌디드 BEP(아마존) 1.91~2.04와 비교하면 손익분기의 18~19%에 불과 — 이번 주 SP는 전체적으로 심각한 적자 구간이었습니다. SB(아래 참고)까지 합친 아마존 광고 전체는 지출 $538.51 · 매출 $233.95 · ROAS 0.43으로 역시 BEP의 21~23% 수준.</p><p class="fn-note">근거: ads-api-sp-campaigns-2026-10-25-2026-10-31.csv 16행 전수 합계(spend·sales14d 컬럼) / metrics_config.json computed.blended.bep_roas_amazon(1.91~2.04)<br>권장: SP 전체를 '학습기'로 볼지 '중단'할지 John 판단 필요 — 단, 10/28 Optapex 전환으로 주 중간에 구조가 바뀌어 이 주 숫자만으로 신규 구조를 평가하긴 이릅니다(아래 항목 참고).</p></div></details><details class="acc"><summary>SB는 사실상 캠페인 1개만 지출($46.43) — ROAS 1.11로 BEP 미달, 현재 전부 PAUSED <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SB CSV 1,986행 중 1,985행은 지출 $0(과거 생성된 테스트 캠페인 적재분, 날짜 필터링 없이 전량 나열됨). 이번 주 실제 지출이 있던 캠페인은 '20261019 US_SB_cream_hooks' 단 1개뿐 — 지출 $46.43, 매출(sales) $51.60, 클릭 26, 구매 2건, ROAS 1.11. 크림 BEP(아마존) 2.07 대비 절반 수준. 현재 campaignStatus는 1,986행 전부 PAUSED — 10/29 SB 전면 철수 결정이 스냅샷에 반영된 것으로 보입니다. 날짜 컬럼이 없어 주 내 정확한 지출 중단 시점(화/수 vs 금)은 이 파일만으로는 특정 불가.</p><p class="fn-note">근거: ads-api-sb-campaigns-2026-10-25-2026-10-31.csv — cost>0인 행 1개뿐(46.43), campaignStatus 전수 PAUSED(Counter 1986)<br>권장: SB 재가동 관련 제안·실험은 project_us_sb_withdrawn_2026_10_29 메모대로 보류. 추가 확인 불필요.</p></div></details><details class="acc"><summary>Optapex 위임(mop_) 5캠 ROAS 0.35 vs 직접운영 10캠 ROAS 0(매출 전무) — 둘 다 BEP 미달, 기간 짧아 단정 보류 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>mop_ 접두 캠페인 5개(세럼·크림 각 exploration/validation/exploitation): 지출 $299.12, 매출 $105.20, 클릭 92, 구매 4건, ROAS 0.35. 직접 운영 SP 캠페인 10개(10/19·10/27 신설, 현재 전부 PAUSED): 지출 $67.41, 매출 $0, 구매 0건 — ROAS 0. ASIN별로는 세럼 exploration(지출 $107.9·매출 $53.6·ROAS 0.50)이 크림 exploration(지출 $191.22·매출 $51.6·ROAS 0.27)보다 나음. 단, Optapex 전환은 10/28 발생 — 이 주 데이터는 위임 구조가 실제로 돌아간 기간이 3~4일뿐이라 '위임이 낫다'는 결론은 아직 근거 부족.</p><p class="fn-note">근거: ads-api-sp-campaigns-2026-10-25-2026-10-31.csv — campaignName startswith('mop_') 5행 vs 그 외 non-auto 10행 합계<br>권장: 다음 주(10/28 전체 주) 데이터 확보 후 재비교. 지금은 추가 판단 보류.</p></div></details><details class="acc"><summary>SP-Auto-All-SKU가 SP 중 ROAS 최고(0.61)지만, 전환은 번들 ASIN에만 집중 — 세럼·크림 광고그룹은 $46.61 써서 매출 0 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SP-Auto-All-SKU 캠페인 전체: 지출 $125.55, 매출 $77.15, 구매 3건, ROAS 0.61 — SP 16캠 중 가장 높지만 여전히 BEP(1.91~2.04) 대비 1/3 수준. advertised-product 레벨로 쪼개보면 이 캠페인 안에 세럼(B0FV7XWDYF, 지출 $20.72·매출 $0)·크림(B0FV3QXSBF, 지출 $25.89·매출 $0)·번들(B0H3H18F96, 지출 $78.94·매출 $77.15·구매 3건) 3개 광고그룹이 모두 살아있습니다. 즉 '번들 광고만 유지'라는 전제와 달리 세럼·크림 광고그룹도 이 주엔 여전히 과금되고 있었고, 실제 전환은 번들에만 100% 집중됐습니다.</p><p class="fn-note">근거: ads-api-sp-advertised-product-2026-10-25-2026-10-31.csv — campaignName='20260702 SP-Auto-All-SKU' 3행(advertisedAsin별)<br>권장: SP-Auto-All-SKU 안의 세럼·크림 광고그룹을 실제로 꺼야 하는지(의도와 실집행 불일치) 확인 필요.</p></div></details><details class="acc"><summary>네이밍 패턴별 승자/패자: 10/19·10/27 신설 테스트 캠페인 10개 전부 매출 0 — '패자' 그룹, 승자라 할 캠페인 없음 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>'20261019 SP-Exact-PriceBand-Cream/Serum', 'SP-Exact-CompBrand-Serum/Cream', 'SP-Exact-Demand-Serum/Cream', 'SP-PT-Comp-Serum/Cream', '20261027 SP-Broad-Discovery', '20260928 SP-Manual-Exact-CompBrand' — 총 10개, 합계 지출 $67.41, 매출 $0, 구매 0건. 전부 10/28 Optapex 전환 시 PAUSED됨. 이번 주 SP 전체에서 '승자'라 부를 만한 패턴은 없고, SP-Auto-All-SKU(ROAS 0.61)가 상대적으로 가장 덜 나쁜 수준.</p><p class="fn-note">근거: ads-api-sp-campaigns-2026-10-25-2026-10-31.csv — campaignStatus=PAUSED이고 mop_/Auto-All-SKU가 아닌 10행 전수(sales14d 전부 '0')<br>권장: 이 10개는 이미 PAUSED 상태이므로 추가 조치 불필요. 재가동 시 동일 패턴 반복 전 CPC·전환 데이터 재검토 필요.</p></div></details><details class="acc"><summary>Placement 레벨: 'Other on-Amazon'에 $72.88 소진하고 매출 0 — 세 플레이스먼트 모두 BEP 미달이나 Other가 가장 심각 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>SP 전체를 플레이스먼트별로 합산: Detail Page on-Amazon 지출 $242.08·매출 $102.95(ROAS 0.43), Top of Search on-Amazon 지출 $177.12·매출 $79.40(ROAS 0.45), Other on-Amazon 지출 $72.88·매출 $0(ROAS 0.00, 구매 0건). Off Amazon은 지출 $0(노출만 217). 세 유효 플레이스먼트 모두 BEP(1.91~2.04) 대비 크게 미달이지만, 'Other on-Amazon'은 전환이 전혀 없는 순수 낭비 구간.</p><p class="fn-note">근거: ads-api-sp-placement-2026-10-25-2026-10-31.csv — placementClassification별 50행 합계<br>권장: Other on-Amazon 플레이스먼트 조정(bid modifier 축소) 검토 — 단, 캠페인 단위 배팅은 서브에이전트 금지 규칙(feedback_amazon_bulk_bid_execution)상 John 직접 집행.</p></div></details><details class="acc"><summary>일별 캐시 대조: 10/25~10/27(전환 전) 3일은 지출 $150.57에 광고귀속매출 $0 — 전환 후(10/28~10/31)에야 매출 $233.95 전액 발생 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>dashboard_data.json 일별 캐시: 10/25 지출 $33.58·amz_sales $0 / 10/26 $33.37·$0 / 10/27 $83.62·$0 / 10/28 $126.10·$100.95 / 10/29 $99.41·$25.80 / 10/30 $88.37·$79.40 / 10/31 $74.06·$27.80. 즉 Optapex 전환 전 3일(지출 $150.57 합계)은 광고귀속매출이 0으로 기록돼 있고, 전환 이후 4일에 전체 매출 $233.95가 몰려 있습니다. 주간 합계만 보면 이 전/후 격차가 가려집니다 — 문제 소재가 명시에서 지적한 바와 일치하는 실측.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/reports/dashboard/cache/dashboard_data.json — 'daily' 리스트 2026-10-25~10-31 7개 행(amz_spend·amz_sales)<br>권장: 10/25~27 매출 0 구간이 어트리뷰션 지연(14일 윈도) 때문인지, 실제 무전환인지 다음 주 재집계 시 재확인(sales14d가 소급 반영될 수 있음).</p></div></details></div></details><details class="acc" id="l2-us-find_meta"><summary><span class="pill-board">📂</span>발견 원장 · 메타 — 이번 호 해당 자료 없음</summary><div class="bd-sub"><p class="fn-note">메타 전용 발견 분석 각도를 이번 호에서 따로 두지 않음 — 메타 수치는 채널 스코어보드(find_money)·이면 추론 원장에 통합.</p></div></details><details class="acc" id="l2-us-find_prior"><summary><span class="pill-board">📂</span>발견 원장 · 전 호 채점·시장·기록</summary><div class="bd-sub"><details class="acc"><summary>MER이 1.565→0.952(-39%)로 붕괴했는데, Optapex/SB 전환 전(일~화)부터 이미 무너져 있었습니다 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>19주차(10/18~24) MER 1.565, 총 광고비 $1,088.18, 매출 $1,703.33, 주문 54건 → 20주차(10/25~31) MER 0.952, 총 광고비 $1,890.09(+73.6%), 매출 $1,798.82(+5.6%), 주문 61건. 매출은 소폭 늘었는데 광고비가 거의 두 배로 늘어 효율이 급락했습니다. Optapex 전환·SB 철수는 10/28(수)·10/29(목)에 일어났는데, 전환 '전' 사흘(10/25 일~10/27 화)만 떼어도 MER 0.970(매출 $836.70÷광고비 $862.19), 전환 '후' 나흘(10/28~31)도 MER 0.936(매출 $962.12÷광고비 $1,027.90)으로 거의 동일합니다. 즉 Optapex·SB 전환이 이번 주 MER 붕괴의 전부가 아니라, 전환 이전부터 효율이 무너지고 있었다는 뜻 — 19주차가 '학습 비용 전제'로 가려 넘겼던 비효율이 이번 주에도 계속됐습니다.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/reports/dashboard/cache/dashboard_data.json 'daily' 2026-10-18~10-31 합산 (직접 재계산)<br>권장: 20주차 보고서 본문에 '전환이 원인의 전부는 아니다'를 명시하고, 전환 전 사흘 효율 악화의 별도 원인(가격·수요어·메타 소재 판정 지연 등)을 검토할 것.</p></div></details><details class="acc"><summary>이번 주 아마존 광고 귀속 매출은 전부 Optapex 전환(10/28) 이후에만 발생 — 전환 전 사흘은 지출 $150.57에 귀속 매출 $0 <span class="ia-st">CORRECTED</span></summary><div class="bd"><p>직접 SP 9캠 구성은 SP-Exact-PriceBand-Cream/Serum(2개, 'x4' 아님)·SP-PT-Comp-Cream/Serum(2개)·SP-Exact-CompBrand-Cream/Serum(2개)·SP-Exact-Demand-Cream/Serum(2개)=8개 + 10/27 신설 SP-Broad-Discovery 1개 = 총 9개. 또한 이번 주 아마존 광고 귀속 매출 $233.95(=amz_spend $538.51 대비 ROAS 0.434)는 mop_exploration 세럼($53.60)·크림($51.60)·SP-Auto-All-SKU($77.15)=SP 합 $182.35 '외에', SB 20261019 US_SB_cream_hooks 캠페인의 전환 2건 $51.60도 포함됩니다 — '전부 Optapex 위임 2개+Auto-All-SKU에서 나왔다'는 서술은 SB 기여($51.60, 전체의 22%)를 빠뜨렸습니다.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/.../raw/ads-api-sp-campaigns-2026-10-25-2026-10-31.csv (purchases14d 열) + dashboard_data.json 일별 amz_sales/amz_spend<br>권장: 직접 SP 9캠의 '9캠 전부 0구매' 결과를 Optapex 전환 근거(환불+팁 흡수 목표)와 별개로 명시 — 전환이 늦었던 게 아니라 전환 전 캠페인 자체가 이미 죽어 있었다는 해석도 가능.</p></div></details><details class="acc"><summary>19주차가 예고한 '11/2 신설 캠페인 몰아 판정' 전제가 무너짐 — 플래그십 캠페인이 하루 만에 PAUSED <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>19주차 결론은 '그래서 11/2에 신설 10개 캠페인을 하루에 몰아 판정(클릭 30+·구매 0이면 입찰 −20%)'이었습니다. 그러나 10/27 신설된 SP-Broad-Discovery(actions-inventory #9)는 바로 다음날 10/28 Optapex 전환으로 PAUSED됐고(actions-inventory #11 '직접 SP 9캠 PAUSED'), ads-api-sp-campaigns.csv상 spend $18.12·clicks 11·purchases14d 0 — 클릭 30+ 판정 문턱에 도달하지 못한 채 캠페인 자체가 죽었습니다. _week-context.md의 '11/2 예약 us-judgment-1102'는 'SB 항목 삭제 반영'만 언급하고 이 디스커버리 캠페인의 운명은 적혀 있지 않습니다.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/.../raw/ads-api-sp-campaigns-2026-10-25-2026-10-31.csv ('20261027 SP-Broad-Discovery' 행) + /Users/john/Desktop/vdvia/.../raw/_actions-inventory.json #9·#11 + /Users/john/Desktop/vdvia/.../raw/_week-context.md ③<br>권장: 11/2 판정 라운드 설계를 'SB 항목 삭제'뿐 아니라 'SP-Broad-Discovery·직접 SP 9캠 판정 불가(구조 변경으로 표본 소실)' 확정으로 명시해 다음 세션이 같은 캠페인을 다시 판정 시도하지 않게 할 것.</p></div></details><details class="acc"><summary>SB 철수가 선언 즉시 전체 반영은 아니었습니다 — 크림 훅 캠페인만 $46.43 추가 지출 후 '최종 PAUSED' <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>actions-inventory에 'US SB 가격대 훅 2캠(세럼·크림) PAUSED'가 10/27(#10)과 10/29(#16, 'John 최종 PAUSED — US ENABLED SB 0') 두 번 기록돼 있습니다. 실데이터(ads-api-sb-campaigns.csv)를 보면 세럼 훅(20261019 US_SB_serum_hooks)은 지출 $0으로 깨끗이 꺼졌지만, 크림 훅(20261019 US_SB_cream_hooks)은 spend $46.43이 남아 있습니다 — 10/27 1차 조치 후에도 완전히 꺼지지 않고 10/29 '최종 PAUSED'까지 이틀 정도 돈이 더 나갔을 가능성(추정, 일별 분해 불가).</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/.../raw/ads-api-sb-campaigns-2026-10-25-2026-10-31.csv ('US_SB_cream_hooks' spend 46.43 vs 'US_SB_serum_hooks' spend 0) + /Users/john/Desktop/vdvia/.../raw/_actions-inventory.json #10·#16<br>권장: SB 철수 완료 시점을 '10/27 결정 → 10/29 전체 반영'으로 정확히 서술하고, 그 사이 새어나간 $46.43을 전환 지연 비용으로 명시.</p></div></details><details class="acc"><summary>'학습 비용 전제(~11/3)'를 그대로 재인용하면 이번 주 전환 비용이 '테스트 비용'으로 가려짐 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>19주차는 이 전제를 '공격적 키워드·소재 테스트의 증분 CPA 초과를 바로 실패로 읽지 않는다'는 목적으로 만들었습니다. 그런데 그 전제가 가리던 대상(직접 SP 9캠, SP-Broad-Discovery, SB 광고)이 이번 주에 전부 중단·대행 위임으로 바뀌었습니다(_week-context.md ②). 날짜 기준(~11/3)은 아직 끝나지 않았지만, 그 밑에서 발생한 비용의 성격은 'A/B 테스트 학습비'에서 'Optapex 전환 과도기 비용'으로 실질적으로 바뀌었습니다. _week-context.md 자체도 '침묵 회귀 없이 명시해야 한다'고 요구사항을 적어뒀습니다 — 이번 호가 같은 문구를 그대로 재사용하면 위 ①·② 수치(MER 붕괴, 아마존 귀속 0)가 '예정된 학습비'처럼 읽혀 독자가 전환 리스크를 과소평가할 수 있습니다.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/reports/2026-10-27-weekly/index.html ('학습 비용 전제' 문단) + /Users/john/Desktop/vdvia/.../raw/_week-context.md 직전호 정합 메모<br>권장: 본문에서 '학습 비용 전제'를 그대로 쓰지 말고 '전환 과도기 비용'으로 별도 명명해 테스트 비용과 구분할 것.</p></div></details><details class="acc"><summary>19주차가 예고한 메타 판정 캘린더 4건 중 3건의 흔적이 이번 주 수집 자료에 없음 <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>19주차 '그래서' 섹션은 10/27 폴 세일 종료, 10/29 크림 다리 v2 재확인, 10/30 레몬 실험실(UGCLab2) 7일 판정, 10/31 히어로 26세트 '결제 시작 50건' 판정 4건을 예고했습니다. 이번 주 _actions-inventory.json·_week-context.md에는 10/28 '메타 기준 미달 5세트 PAUSED'(#13) 하나만 확인되고, UGCLab2/레몬 실험실은 전혀 언급이 없습니다. 또한 크림 다리 v2는 10/29가 아니라 10/26에 이미 '보류'로 처리된 것으로 보여(#4) 예고된 판정일과 실제 조치일이 어긋납니다. 브랜드분석·메타 세트 단위 데이터는 이번 호에 미수집(_collection-log.md)이라 이 3건의 실제 판정 결과를 이번 raw로는 확인할 수 없습니다.</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/30_growth/marketing/us/performance/reports/2026-10-27-weekly/index.html ('그래서 무엇을 하나' 메타 판정일 목록) vs /Users/john/Desktop/vdvia/.../raw/_actions-inventory.json(#4, #13) + /Users/john/Desktop/vdvia/.../raw/_collection-log.md<br>권장: 보고서에 '레몬 실험실(UGCLab2) 10/30 판정, 히어로 26세트 10/31 판정 결과 확인 불가(자료 없음)'로 결손을 명시하고 다음 주 추적 항목에 등록.</p></div></details><details class="acc"><summary>'Optapex 위임 캠 8개 재가동' 서술과 실측 캠페인 5개 간 숫자 불일치(추정) <span class="ia-st">CONFIRMED</span></summary><div class="bd"><p>actions-inventory #11은 '위임 캠 8개 재가동'이라 적지만, ads-api-sp-campaigns-2026-10-25-2026-10-31.csv에서 'mop_' 접두사(Optapex 위임) 캠페인은 세럼 3개(exploration·validation·exploitation_manual_keyword)·크림 2개(exploration·validation) = 총 5개만 확인됩니다. 크림 쪽 exploitation_manual_keyword 등 나머지 3개가 이번 주 API 수집 과정에서 지출·클릭 0이라 걸러졌는지, 아니면 실제로 8개가 아니라 5개만 재가동됐는지는 이번 자료로 판단 불가(추정).</p><p class="fn-note">근거: /Users/john/Desktop/vdvia/.../raw/_actions-inventory.json #11('8개 재가동') vs /Users/john/Desktop/vdvia/.../raw/ads-api-sp-campaigns-2026-10-25-2026-10-31.csv ('mop_' 캠페인 5개만 존재)<br>권장: Optapex 콘솔에서 실제 위임 캠페인 개수(8개 vs 5개)를 직접 대조해 숫자를 확정할 것 — 보고서에 '8개'로 쓰기 전에 검증 필요.</p></div></details></div></details><details class="acc" id="l2-us-find_refuted"><summary><span class="pill-board">🗑</span>기각된 발견 — 이번 호 해당 자료 없음</summary><div class="bd-sub"><p class="fn-note">검증에서 기각(REFUTED)된 발견 0건 — 28건 전부 CONFIRMED 또는 CORRECTED로 통과.</p></div></details><details class="acc" id="l2-us-journey"><summary><span class="pill-board">📅</span>일별 여정 — 이번 호 해당 자료 없음</summary><div class="bd-sub"><p class="fn-note">일별 여정 서사는 이번 호(워치독 복구)에서 생성하지 않았습니다 — 일별 숫자는 ★1 돈의 흐름 표에 있습니다.</p></div></details></section></div><script>
+  // 폰 최적화 ① 표 카드화 준비: 머리글 글자를 각 칸 data-label 로 복사 → CSS(≤640px)가 카드로 바꾼다. 머리글 없는 표·2열 이하·전용 카드 표(정할 것·주문 목록)는 그대로.
+  (function(){
+    document.querySelectorAll('table').forEach(function(t){
+      if(t.matches('.dqtbl,.ordtbl,.no-card')) return;
+      var rows=[].slice.call(t.querySelectorAll('tr'));
+      var hr=t.querySelector('thead tr:last-child');
+      if(!hr){ var f=rows[0]; if(f && f.children.length && [].every.call(f.children,function(c){return c.tagName==='TH';})) hr=f; }
+      if(!hr) return;
+      var labels=[].map.call(hr.children,function(h){return h.textContent.replace(/\s+/g,' ').trim();});
+      if(labels.length<3) return;
+      rows.forEach(function(r){
+        if(r===hr || r.closest('thead')) return;
+        var cells=[].slice.call(r.children);
+        if(cells.length!==labels.length){ cells.forEach(function(c){c.setAttribute('data-full','1');}); return; }
+        cells.forEach(function(c,i){
+          if(i===0){ c.setAttribute('data-first','1'); }
+          else{ if(labels[i]) c.setAttribute('data-label',labels[i]); var tx=c.textContent.trim(); if(tx.length>26 || (tx.match(/[가-힣]/g)||[]).length>=7) c.setAttribute('data-long','1'); }
+        });
+      });
+      t.classList.add('mc');
+      var w=t.closest('.tbl-scroll'); if(w) w.classList.add('mc-wrap');
+    });
+  })();
+  </script></body></html>
