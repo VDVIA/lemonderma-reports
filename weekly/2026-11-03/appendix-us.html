@@ -1489,6 +1489,8 @@ body.view-john .dq-chip.john-only{display:inline-flex}
 .special .sp-expect b:first-child{color:var(--lime-deep);margin-right:6px}
 .sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .sp-card{min-width:0}
+.sp-card:only-child{grid-column:1/-1}   /* 표가 하나면 칸 전체 폭 — 2026-11-04 John "오른쪽 여백이 한참 남는다" */
+.sp-card:only-child .sp-tbl{width:100%}
 .special h4{font-size:14px;margin:4px 0 8px;line-height:1.5}
 .special table.mini{font-size:12.5px;table-layout:auto;min-width:0}
 .special table.mini th{white-space:nowrap}
