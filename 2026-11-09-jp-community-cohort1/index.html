@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>일본 커뮤니티 1기 운영안</title>
+<meta name="description" content="레몬더마 Skin Lab Partners Japan 1기 — 지금 상황, 목적, 타겟, LINE 운영구조, 타임라인, 콘텐츠 기획안, 보상, 모집, 실행 체크리스트, LINE 운영 가이드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground-top:#fefcd0; --ground:#ffffff;
+  --ink:#000000; --ink-2:rgba(0,0,0,.66); --ink-3:rgba(0,0,0,.46);
+  --line:rgba(0,0,0,.12); --line-strong:#ddea65;
+  --mark:rgba(221,247,70,.32);
+  --num:#025200; --headline:#4b612d;
+  --panel:#ffffff; --panel-2:#fbfbee; --panel-3:#f5f6e4;
+  --pill-bg:#eef0dc; --pill-ink:#4b612d;
+  --wall:#e23b3b; --wall-bg:#fde3df;
+  --gold-bg:#faefc0; --gold-ink:#6a5000;
+  --shadow:0 1px 0 rgba(0,0,0,.05);
+  --serif:"Libre Caslon Text", Georgia, "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", "Pretendard", -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground-top:#1b200f; --ground:#100f0a;
+    --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+    --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+    --mark:rgba(221,247,70,.20);
+    --num:#c9e46c; --headline:#bdd382;
+    --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+    --pill-bg:#242812; --pill-ink:#c9e46c;
+    --wall:#ff7a6b; --wall-bg:#2c1512;
+    --gold-bg:#2b2410; --gold-ink:#e3c775;
+    --shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground-top:#1b200f; --ground:#100f0a;
+  --ink:#f4f3e9; --ink-2:rgba(244,243,233,.72); --ink-3:rgba(244,243,233,.5);
+  --line:rgba(244,243,233,.16); --line-strong:#6d7c2c;
+  --mark:rgba(221,247,70,.20);
+  --num:#c9e46c; --headline:#bdd382;
+  --panel:#171a10; --panel-2:#1c2013; --panel-3:#212512;
+  --pill-bg:#242812; --pill-ink:#c9e46c;
+  --wall:#ff7a6b; --wall-bg:#2c1512;
+  --gold-bg:#2b2410; --gold-ink:#e3c775;
+  --shadow:0 1px 0 rgba(0,0,0,.4);
+}
+
+*{box-sizing:border-box}
+body{
+  background:linear-gradient(180deg,var(--ground-top) 0,var(--ground) 460px);
+  color:var(--ink); font-family:var(--sans);
+  padding:0 20px; padding-block:0;
+}
+.wrap{max-width:760px;margin:0 auto}
+::selection{background:var(--mark)}
+h1,h2,h3{text-wrap:balance;font-weight:900;letter-spacing:-.01em}
+p{line-height:1.72;color:var(--ink-2)}
+a{color:var(--headline)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+.scroll{overflow-x:auto}
+
+/* header */
+header{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--headline);
+  letter-spacing:.02em;margin:0 0 14px;
+}
+h1{font-size:clamp(1.9rem,5.6vw,2.7rem);margin:0 0 12px;line-height:1.16}
+.sub{font-size:1.05rem;color:var(--ink-2);margin:0 0 20px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-ink);
+  font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:99px;
+}
+.pill.date{background:transparent;color:var(--ink-3);font-weight:400}
+.pill.date::before{content:"·";margin-right:6px;color:var(--ink-3)}
+
+/* toc */
+nav.toc{
+  display:flex;flex-wrap:wrap;gap:6px 0;padding:22px 0 8px;margin-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+nav.toc a{
+  font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:5px 12px 5px 0;
+  white-space:nowrap;
+}
+nav.toc a:not(:last-child)::after{content:"/";margin-left:12px;color:var(--line-strong)}
+nav.toc a:hover{color:var(--headline)}
+
+/* sections */
+section{padding:46px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-label{
+  font-family:var(--serif);font-style:italic;color:var(--num);font-size:.9rem;margin:0 0 6px;
+}
+h2.sec-title{font-size:1.55rem;margin:0 0 18px}
+h3{font-size:1.06rem;margin:26px 0 10px;color:var(--ink)}
+.lead{font-size:1.05rem;line-height:1.75}
+
+.quote{
+  font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.6;color:var(--ink);
+  border-left:3px solid var(--line-strong);padding-left:20px;margin:22px 0;max-width:58ch;
+}
+
+/* concept two-col */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.why-grid.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:680px){.why-grid{grid-template-columns:1fr}}
+.name-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+@media (max-width:620px){.name-cards{grid-template-columns:1fr}}
+.name-card{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel)}
+.name-card h5{margin:0 0 4px;font-size:1.05rem;font-family:var(--serif);font-style:italic;color:var(--ink)}
+.name-card .sells{margin:0 0 8px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--headline)}
+.name-card p:last-child{margin:0;font-size:.86rem;color:var(--ink-2);line-height:1.6}
+.why-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.why-card .k{font-weight:700;font-size:.92rem;margin-bottom:6px;color:var(--ink)}
+.why-card p{font-size:.88rem;margin:0}
+
+/* callout */
+.callout{
+  display:flex;gap:14px;background:var(--panel-3);border-radius:12px;padding:18px 20px;margin:18px 0;
+}
+.callout .ic{font-size:1.3rem;line-height:1}
+.callout p{margin:0;font-size:.9rem}
+.callout.safety{background:var(--gold-bg)}
+.callout.safety p{color:var(--gold-ink)}
+.callout.wall{background:var(--wall-bg)}
+.callout.wall p{color:var(--wall)}
+.callout.wall b{color:var(--wall)}
+
+/* structure diagram */
+.rooms{display:flex;gap:14px;margin:22px 0;flex-wrap:wrap}
+.room{
+  flex:1 1 220px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--panel);
+}
+.room h4{margin:0 0 8px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.room .tag{font-size:.68rem;font-weight:700;background:var(--pill-bg);color:var(--pill-ink);padding:2px 8px;border-radius:99px}
+.room ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--ink-2);line-height:1.7}
+.room .arrow{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:var(--ink-3);font-size:1.3rem}
+@media (max-width:620px){.rooms{flex-direction:column}.room .arrow{transform:rotate(90deg);padding:2px 0}}
+
+/* recruiting waterfall */
+.chan{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column}
+.chan li{
+  display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;
+  padding:13px 4px;border-top:1px solid var(--line);
+}
+.chan li:last-child{border-bottom:1px solid var(--line)}
+.chan .rank{font-family:var(--serif);font-style:italic;color:var(--num);font-size:1.1rem}
+.chan .name{font-weight:700;font-size:.92rem}
+.chan .how{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+.chan .reach{font-size:.84rem;color:var(--ink-2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.chan li.excluded{opacity:.55}
+.chan li.excluded .name::after{content:" — 제외";color:var(--wall);font-weight:400;font-size:.8rem}
+.chan .name a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.chan .name a:hover{color:var(--headline)}
+.chan .desc{color:var(--ink-2);font-size:.85rem;margin-top:3px;line-height:1.55;max-width:56ch}
+.badge-conf{display:inline-block;font-size:.66rem;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.badge-conf.ok{background:var(--pill-bg);color:var(--pill-ink)}
+.badge-conf.check{background:var(--gold-bg);color:var(--gold-ink)}
+.badge-conf.unk{background:var(--wall-bg);color:var(--wall)}
+
+/* benefits table */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media (max-width:620px){.benefit-grid{grid-template-columns:1fr}}
+.benefit-card{border-radius:14px;padding:24px}
+.benefit-card.entry{background:var(--panel-3);border:1px solid var(--line)}
+.benefit-card.all{background:var(--panel-2);border:1px solid var(--line)}
+.benefit-card.top{background:var(--gold-bg)}
+.benefit-card .tag{font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3)}
+.benefit-card.top .tag{color:var(--gold-ink)}
+.benefit-card .who{font-weight:900;font-size:1.05rem;margin:6px 0 14px}
+.benefit-card.top .who{color:var(--gold-ink)}
+.benefit-card ul{margin:0;padding-left:18px;font-size:.9rem;line-height:1.8;color:var(--ink-2)}
+.benefit-card.top ul{color:var(--gold-ink)}
+.benefit-card .amount{font-family:var(--serif);font-size:2.1rem;color:var(--gold-ink);margin:0 0 4px}
+
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+@media (max-width:680px){.cal{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.cal{grid-template-columns:1fr}}
+.wk{border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;background:var(--panel)}
+.wk .wn{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.85rem}
+.wk h5{margin:4px 0 10px;font-size:.94rem}
+.wk p{margin:0;font-size:.82rem;color:var(--ink-2);line-height:1.6}
+.wk ul{margin:8px 0 0;padding-left:16px;font-size:.82rem;color:var(--ink-2);line-height:1.65}
+
+/* steps */
+ol.steps{margin:18px 0 0;padding:0;list-style:none;counter-reset:s}
+ol.steps li{
+  counter-increment:s;position:relative;padding:0 0 18px 40px;font-size:.92rem;color:var(--ink-2);
+  border-left:1px solid var(--line);margin-left:14px;
+}
+ol.steps li:last-child{border-color:transparent;padding-bottom:0}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:-14px;top:-2px;width:28px;height:28px;border-radius:50%;
+  background:var(--panel-2);border:1px solid var(--line-strong);color:var(--num);font-weight:700;
+  font-size:.82rem;display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+}
+ol.steps b{color:var(--ink)}
+
+/* checklist */
+.open-list{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.open-list li{
+  display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem;
+}
+.open-list li:last-child{border-bottom:1px solid var(--line)}
+.open-list .box{
+  flex:0 0 auto;width:16px;height:16px;border:1.5px solid var(--line-strong);border-radius:4px;margin-top:2px;
+}
+.open-list li.done .box{
+  background:var(--line-strong);position:relative;
+}
+.open-list li.done .box::after{
+  content:"";position:absolute;left:3px;top:0px;width:4px;height:8px;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg);
+}
+.open-list li.done b{text-decoration:line-through;text-decoration-color:var(--line-strong);
+  text-decoration-thickness:1.5px}
+.open-list b{color:var(--ink)}
+.open-list span{color:var(--ink-2)}
+
+/* 콘텐츠 기획안 카드 */
+.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+@media (max-width:620px){.plan-grid{grid-template-columns:1fr}}
+.plan-card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel);display:flex;flex-direction:column;gap:8px}
+.plan-card.ready{border-color:var(--line-strong);background:var(--panel-2)}
+.plan-card .when{font-family:var(--serif);font-style:italic;color:var(--num);font-size:.82rem}
+.plan-card h5{margin:0;font-size:.98rem;color:var(--ink)}
+.plan-card p{margin:0;font-size:.84rem;color:var(--ink-2);line-height:1.6;flex:1}
+.plan-card .stage{display:flex;flex-wrap:wrap;gap:4px}
+.plan-card .stage span{font-size:.66rem;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3)}
+.plan-card .stage span.done{background:var(--line-strong);border-color:var(--line-strong);color:#1d2b00;font-weight:700}
+.plan-card .stage span.now{border-color:var(--headline);color:var(--headline);font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin-top:4px;font-size:.82rem;font-weight:700;
+  color:#1d2b00;background:var(--line-strong);border:1px solid var(--line-strong);border-radius:99px;padding:8px 14px;text-decoration:none}
+.btn:hover{filter:brightness(.96)}
+.btn.off{background:transparent;color:var(--ink-3);border-color:var(--line);pointer-events:none}
+.mini-link{font-size:.8rem;font-weight:700;color:var(--headline);text-decoration:none;white-space:nowrap}
+.mini-link:hover{text-decoration:underline}
+
+/* footer / sources */
+footer{padding:40px 0 70px}
+.src{font-size:.84rem;color:var(--ink-3);line-height:2}
+.src a{color:var(--ink-2)}
+
+/* 일본판 추가: 지금 상황 표 */
+table.status th{text-align:left;vertical-align:top;white-space:nowrap;padding:12px 16px 12px 0;font-size:.86rem;color:var(--ink);border-top:1px solid var(--line);width:1%}
+table.status td{padding:12px 0;font-size:.9rem;line-height:1.65;color:var(--ink-2);border-top:1px solid var(--line)}
+table.status tr:last-child th,table.status tr:last-child td{border-bottom:1px solid var(--line)}
+table.status b{color:var(--ink)}
+code{font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Lemonderma · Japan LINE Community</p>
+  <h1>일본 커뮤니티 1기 운영안</h1>
+  <p class="sub">Skin Lab Partners Japan 1기 — UAE 1기와 같은 프로그램을 일본에서, 플랫폼만 LINE으로. 이 페이지가 정본이고 진행하면서 계속 고칩니다.</p>
+  <div class="meta-row">
+    <span class="pill">최종 합격 54명</span>
+    <span class="pill">4주 · 11/16(월) – 12/14(월)</span>
+    <span class="pill">LINE 그룹</span>
+    <span class="pill date">업데이트 2026-11-09</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#now">지금 상황</a>
+  <a href="#purpose">목적</a>
+  <a href="#persona">타겟 페르소나</a>
+  <a href="#structure">커뮤니티·운영구조</a>
+  <a href="#calendar">전체 타임라인</a>
+  <a href="#plans">콘텐츠 기획안</a>
+  <a href="#reward">보상</a>
+  <a href="#recruit">모집</a>
+  <a href="#todo">실행 체크리스트</a>
+  <a href="#line">LINE 운영 가이드</a>
+  <a href="messages/">운영표·문구 전문 →</a>
+</nav>
+
+<!-- ═══════════ 지금 상황 ═══════════ -->
+<section id="now">
+  <p class="sec-label">Status</p>
+  <h2 class="sec-title">지금 상황</h2>
+  <div class="scroll">
+  <table class="status">
+    <tbody>
+      <tr><th>합격 안내</th><td><b>54 / 54명 도착 확인</b> — 11/9 13:10~14:06, 말풍선 3개(축하 · 11/10 23:59까지 주소·LINE ID · 개인 링크). 공식계정 30 · 존 계정 24, 사람마다 대화방을 다시 읽어 3개 모두 확인.</td></tr>
+      <tr><th>불합격 안내</th><td><b>83명 발송</b>(진행 기록은 아래 체크리스트) — 탈락 63행 + 빈칸 26행(같은 핸들 합침, 보류 2명 제외) = 고유 87명 중 프로필이 없어졌거나 핸들을 알 수 없는 4명 제외. Qoo10 링크 포함.</td></tr>
+      <tr><th>주소·LINE ID 제출</th><td>집계 중 — 합격 페이지 <a href="https://vdvia.github.io/lemonderma-reports/skinlab-welcome-jp/" target="_blank" rel="noopener">skinlab-welcome-jp</a>, 시트 '[JP]시즌 1 Skin Lab 합격자' 탭. 표기 마감 11/10(화) 23:59, 제출칸은 닫지 않음.</td></tr>
+      <tr><th>LINE</th><td>그룹 개설 전 · 친구추가 0 / 54 — 존이 직접(11/11~).</td></tr>
+      <tr><th>다음 할 일</th><td>11/10 00:00 답장 봇 마감 모드 · 11/10 18:00 미제출자 리마인드(J3) · 11/11 09:00 접수 점검 → 존 확인·쉽터 공유 · <b>11/11 10:00 마지막 마감 안내(J5)</b> · 영상편지·콘텐츠7 촬영 시간(마르코와 협의 중)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ═══════════ 목적 ═══════════ -->
+<section id="purpose">
+  <p class="sec-label">Why This Exists</p>
+  <h2 class="sec-title">목적</h2>
+  <p class="lead">CEO Marco와 마케터 John이 직접 나서서, 레몬더마에 애정을 갖는 팬을 한 사람 한 사람 만드는 것 — UAE 1기와 같은 목적을 일본에서.</p>
+  <p>제품·가격·프로모션은 다른 브랜드도 따라할 수 있다. 창업자가 직접 소통하는 관계는 복제가 안 된다. 일본은 K뷰티가 이미 많이 들어와 있는 시장이라, "누가 만들었는지 안다"는 감각이 다른 K뷰티와 구별되는 지점이 된다. UAE 1기(10/19~11/16)에서 실제로 한 순서·문구·영상을 그대로 쓰고, 바뀌는 것은 <b>언어(일본어)·플랫폼(LINE)·날짜·통화·구매처(Qoo10)</b>뿐이다.</p>
+  <h3>기대되는 효과</h3>
+  <div class="why-grid two">
+    <div class="why-card"><div class="k">진짜 팬 자산</div><p>4주 뒤에도 그룹에서 먼저 말을 거는 사람이 누군지가 신호다. 그 사람들의 공통점이 2기 일본 타겟을 정교화한다.</p></div>
+    <div class="why-card"><div class="k">일본어 진짜 콘텐츠</div><p>완주자가 남기는 릴스(형식 자유·진심 중심)가 일본 광고·SNS에 쓸 수 있는 실제 소재가 된다. 광고에 쓸 땐 반드시 사전 연락·개별 협의(10/28 John).</p></div>
+    <div class="why-card"><div class="k">Qoo10으로 이어지는 길</div><p>합격자는 써 본 사람으로, 불합격자·늦게 온 문의자는 Qoo10 링크로 — 신청한 모두가 구매처를 알게 된다.</p></div>
+    <div class="why-card"><div class="k">다음 기수로 이어지는 구조</div><p>완주자가 2기에 친구를 데려오는 방식으로 풀이 자연히 넓어진다. 불합격자 전원에게 "2기 열면 가장 먼저 알림"을 약속했다.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════ 타겟 ═══════════ -->
+<section id="persona">
+  <p class="sec-label">Targeting</p>
+  <h2 class="sec-title">타겟 페르소나</h2>
+  <p class="lead">UAE와 같은 니즈 기준, 거주국만 일본(10/21 John).</p>
+  <p>성분표를 읽고 "왜 이걸 넣었지"를 궁금해하는 여성. 화장품을 마케팅이 아니라 결정으로 사고, 브랜드가 하는 말을 곧이곧대로 믿기보다 직접 확인하고 싶어한다. 한국 화장품을 들어봤거나 써 본 적이 있다.</p>
+  <h3>후보를 찾은 방식 — 두 트랙</h3>
+  <div class="why-grid two">
+    <div class="why-card"><div class="k">생활형</div><p>일상을 올리는 일반인 계정. 사진 판정 v2(재영님 검수 47명으로 맞춤): 얼굴이 나온 칸 3개 이상 · 표지 글자 카드 3칸 이하 · 20대 후반~40대 · 업으로 하는 계정 제외.</p></div>
+    <div class="why-card"><div class="k">뷰티 인플루언서</div><p>마이크로~중간급, 메가 제외. 같은 스킨랩 제안을 보냈다(10/22 John: 생활형 200 + 인플루언서 200 목표).</p></div>
+  </div>
+  <p>팬 가능성(지금 쓰는 제품·지출, 피부 고민, 지인 추천 경험, LINE 참여)은 피드 숫자로는 판단이 안 돼서 신청서와 DM 대화로 가렸다(10/22).</p>
+</section>
+
+<!-- ═══════════ 운영 구조 ═══════════ -->
+<section id="structure">
+  <p class="sec-label">Community &amp; Operating Model</p>
+  <h2 class="sec-title">Lemonderma Skin Lab Partners Japan</h2>
+  <p>그룹 1개에서 모든 소통을 한다(UAE 10/12 결정과 같음). 1:1은 LINE, 모집·합격·불합격은 처음 대화한 인스타 DM.</p>
+  <div class="rooms">
+    <div class="room">
+      <h4>LINE 그룹 <span class="tag">합격자 전원</span></h4>
+      <ul>
+        <li>이름 「Lemonderma Skin Lab Partners Japan 1」</li>
+        <li>매주 월·목 <b>10:00</b> 영상 + 질문 하나(마르코·존)</li>
+        <li>멤버끼리는 LINE 표시 이름·프로필 사진만 보임(전화번호 안 보임)</li>
+        <li>관리자 = 존</li>
+      </ul>
+    </div>
+    <div class="room">
+      <h4>LINE 1:1 <span class="tag">존 휴대폰</span></h4>
+      <ul>
+        <li>영상편지·추적 링크·그룹 초대(11/13)</li>
+        <li>미입장 리마인드·최우수·완주 감사</li>
+        <li>합격 페이지에서 받은 LINE ID로 친구추가 후</li>
+        <li>Claude는 LINE에 접근하지 않음 — 문구·가이드만</li>
+      </ul>
+    </div>
+    <div class="room">
+      <h4>인스타 DM <span class="tag">공식·존 계정</span></h4>
+      <ul>
+        <li>모집 · 합격 · 불합격 · 마감 안내</li>
+        <li>질문 답장 24시간 안(Claude)</li>
+        <li>처음 대화한 계정의 방으로만</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout"><span class="ic">ℹ️</span><p><b>왜 오픈채팅이 아니라 LINE 그룹인가</b> — 오픈채팅은 약관에 광고 목적 이용 금지가 명시돼 있고 모니터링이 있어 4주 중간에 방이 지워지면 되돌릴 수 없다. LINE 그룹은 UAE 대화방과 같은 구조이고 전화번호가 안 보인다(10/20 조사, 10/21 존 실측 문제없음). 링크로 들어올 때 18세 이상 연령 확인이 필요해 막히는 사람은 존이 친구로서 직접 초대한다.</p></div>
+  <h3>CEO 등장 방식 · 누가 주인공인가</h3>
+  <p>매주 월·목 짧은 영상 하나를 그룹에 올리고 질문 하나로 끝낸다. 멤버는 보고 자유롭게 의견을 남기면 된다 — 매주 할 일은 그것뿐. 콘텐츠는 항상 "마르코·존이 먼저 자기 얘기를 짧게 + 여러분은요?"로 끝낸다. 주인공은 멤버이고 우리는 응원하는 쪽이다(UAE와 같음).</p>
+</section>
+
+<!-- ═══════════ 타임라인 ═══════════ -->
+<section id="calendar">
+  <p class="sec-label">Content</p>
+  <h2 class="sec-title">전체 타임라인</h2>
+  <p>일본과 한국은 시각이 같다. 시간별 상세와 나가는 문구는 <a href="messages/">운영표·문구 전문</a>.</p>
+  <h3>시작 전</h3>
+  <ul class="open-list">
+    <li class="done"><span class="box"></span><span><b>모집 · 10/24 → 11/9</b> — 1차 DM은 11/6까지, 신청 마감 11/9(신청 페이지는 지금도 열어 둠).</span></li>
+    <li class="done"><span class="box"></span><span><b>합격·불합격 안내 · 11/9</b> — 약속한 11/10보다 하루 앞당겨 발송.</span></li>
+    <li><span class="box"></span><span><b>주소·LINE ID · 11/10(화) 23:59 표기 마감</b> — 제출칸은 닫지 않음. 11/11 10:00 미제출자 마지막 안내.</span></li>
+    <li><span class="box"></span><span><b>출고 · 11/11(수) ~ 11/12(목)</b> — 존이 11/11 오전 시트 확인 → 쉽터 공유. 세트는 "다음 주 중 도착"으로 안내.</span></li>
+    <li><span class="box"></span><span><b>영상편지 · 추적 · 그룹 초대 · 11/13(금) 18:00</b> — LINE 1:1(존 휴대폰).</span></li>
+  </ul>
+  <h3>4주 프로그램 · 11/16 → 12/14 (월·목 10:00)</h3>
+  <div class="cal">
+    <div class="wk"><div class="wn">Week 1</div><h5>시작</h5><ul><li><b>월 11/16</b> — 콘텐츠1 데일리 Vlog + "당신의 스킨케어 순서는?"</li><li><b>목 11/19</b> — 콘텐츠2 Meet Lemonderma + "첫인상은?"</li></ul></div>
+    <div class="wk"><div class="wn">Week 2</div><h5>가까워지기</h5><ul><li><b>월 11/23(공휴일)</b> — 콘텐츠3 ひみつ: NG 모음 + 감사 추첨</li><li><b>목 11/26</b> — 콘텐츠4 서울의 약국</li></ul></div>
+    <div class="wk"><div class="wn">Week 3</div><h5>신뢰</h5><ul><li><b>월 11/30</b> — 콘텐츠5 무엇이든 물어보세요(질문 마감 12/1 22:00)</li><li><b>목 12/3</b> — 콘텐츠6 질문에 답합니다</li></ul></div>
+    <div class="wk"><div class="wn">Week 4</div><h5>마무리 준비</h5><ul><li><b>월 12/7</b> — 콘텐츠7 당신의 릴스(마감 12/13 23:59)</li><li><b>목 12/10</b> — 콘텐츠8 엑소좀이 만들어지는 곳</li></ul></div>
+  </div>
+  <h3>종료 후</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>12/13(일) 23:59 릴스 마감 · 12/14(월) 종료</b> — 최우수 1명 선정(마르코·존).</span></li>
+    <li><span class="box"></span><span><b>12/16(수) 10:00 콘텐츠9 피날레</b> — 최우수 발표 + 2기 우선 초대.</span></li>
+    <li><span class="box"></span><span><b>12/17(목)까지</b> — 완주자·미완주자 1:1 감사(LINE).</span></li>
+  </ul>
+</section>
+
+<!-- ═══════════ 콘텐츠 기획안 ═══════════ -->
+<section id="plans">
+  <p class="sec-label">Content Plans</p>
+  <h2 class="sec-title">콘텐츠 기획안</h2>
+  <p>원칙: UAE 영상을 그대로 쓰고 자막만 일본어로(10/20). 음성에 UAE 날짜·달러·왓츠앱·아랍어가 들어간 것만 새로 만든다(11/9 John D4). 카드의 버튼은 대사·화면이 있는 UAE 기획안으로 가고, 일본판 작업은 카드에 적는다. 일본판을 새로 만드는 콘텐츠는 기획이 나오면 일본 전용 페이지를 붙인다.</p>
+  <div class="plan-grid">
+    <div class="plan-card ready">
+      <div class="when">11/13 · 시작 3일 전 · LINE 1:1</div>
+      <h5>영상편지 — 합격자 전원 공통 영상(재촬영)</h5>
+      <p>UAE 2분 33초 영상의 구성 그대로, 왓츠앱·10/19·500달러가 나오는 줄은 마르코·존이 <b>재촬영</b>(John 11/9). 일본어 자막, 4주 표·보상 그래픽은 일본 날짜·엔화로. 유튜브 일부공개 링크로 보낸다.</p>
+      <div class="stage"><span class="done">구성(UAE)</span><span class="now">재촬영 · 시간 협의</span><span>자막·그래픽</span><span>완성 11/12</span><span>발송 11/13</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/video-letter/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 1 · 월 11/16</div>
+      <h5>콘텐츠1 — レモンダーマ デイリーVlog</h5>
+      <p>마르코·존의 하루(대사 없음, 65.5초) 그대로. 첫 카드·질문 카드만 일본어("あなたのスキンケアの手順と、その理由は？").</p>
+      <div class="stage"><span class="done">영상(UAE)</span><span>일본어 카드</span><span>완성 11/15</span><span>게시 11/16</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/morning-routine/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 1 · 목 11/19</div>
+      <h5>콘텐츠2 — Meet Lemonderma</h5>
+      <p>브랜드 시작·비건더마·3단계 딜리버리(2분 57초) 그대로, 일본어 자막과 질문 카드("レモンダーマの第一印象は？").</p>
+      <div class="stage"><span class="done">영상(UAE)</span><span>자막</span><span>완성 11/18</span><span>게시 11/19</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/meet-lemonderma/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 2 · 월 11/23(공휴일)</div>
+      <h5>콘텐츠3 — ひみつ: NG 모음 + 감사 추첨</h5>
+      <p>NG 33초는 자막만, 감사 추첨 영상은 일본 멤버 이름으로 새로 렌더(11/22 23:59까지 그룹에 한 번 이상 말한 사람 대상, 1명 세트). 당첨자는 LINE으로 존에게 연락.</p>
+      <div class="stage"><span class="done">NG(UAE)</span><span>자막</span><span>추첨 렌더 11/22 밤</span><span>게시 11/23</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/surprise-event/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 2 · 목 11/26</div>
+      <h5>콘텐츠4 — ソウルの薬局へ</h5>
+      <p>명동에서 약국까지 브이로그(약 2분 20초) 그대로, 일본어 자막·질문 카드.</p>
+      <div class="stage"><span class="done">영상(UAE)</span><span>자막</span><span>완성 11/25</span><span>게시 11/26</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/pharmacy/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 3 · 월 11/30</div>
+      <h5>콘텐츠5 — 何でも聞いてください</h5>
+      <p>질문 받기(52초) 그대로, 끝 카드의 마감만 일본 날짜로 다시 렌더(12/1 22:00). 질문마다 24시간 안 접수 답장.</p>
+      <div class="stage"><span class="done">영상(UAE)</span><span>자막·끝 카드</span><span>완성 11/29</span><span>게시 11/30</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/ask-us/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 3 · 목 12/3</div>
+      <h5>콘텐츠6 — みなさんの質問にお答えします(새로)</h5>
+      <p>UAE 질문 답이라 그대로 못 쓴다. 일본 멤버 질문 중 3~4개만 이름을 부르며 짧게 촬영(12/2), 나머지는 같은 날 그룹에 글로 하나씩.</p>
+      <div class="stage"><span class="done">틀(UAE)</span><span>질문 대기</span><span>촬영 12/2</span><span>게시 12/3</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/answers/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card ready">
+      <div class="when">Week 4 · 월 12/7</div>
+      <h5>콘텐츠7 — あなたのリール(재촬영)</h5>
+      <p>UAE 흐름 그대로, 아랍어 인사·11/15·500달러·왓츠앱이 음성에 있어 <b>재촬영</b> — 일본어 인사, 마감 12/13 23:59, 약 7.5만 엔, 링크는 LINE 그룹에. 영상편지와 같은 자리에서 촬영.</p>
+      <div class="stage"><span class="done">흐름(UAE)</span><span class="now">촬영 · 시간 협의</span><span>편집</span><span>완성 12/5</span><span>게시 12/7</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/reel-reminder/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">Week 4 · 목 12/10</div>
+      <h5>콘텐츠8 — エクソソームがつくられる場所</h5>
+      <p>연구실·엑소좀 시설(1분 21초) 그대로, 끝의 릴스 마감 줄만 12/13으로.</p>
+      <div class="stage"><span class="done">영상(UAE)</span><span>자막·마감 줄</span><span>완성 12/9</span><span>게시 12/10</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/exosome-facility/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+    <div class="plan-card">
+      <div class="when">12/16 · 종료 2일 뒤</div>
+      <h5>콘텐츠9 — フィナーレ(새로)</h5>
+      <p>멤버들의 4주 → 최우수 한 분(약 7.5만 엔 세트)을 이유와 함께 → 릴스 올린 전원 2기 친구 동반 초대. 12/14 목소리 녹음, 12/15 편집. 이름은 영상 안에서만.</p>
+      <div class="stage"><span class="done">틀(UAE)</span><span>녹음 12/14</span><span>편집 12/15</span><span>게시 12/16</span></div>
+      <a class="btn" href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/finale/" target="_blank" rel="noopener">UAE 기획안 →</a>
+    </div>
+  </div>
+  <div class="callout"><span class="ic">🎬</span><p><b>영상 공통 규칙(UAE에서 정한 것)</b> — 맨 앞 "안녕하세요 마르코입니다/존입니다", 색 보정 금지(뿌연 파일은 SDR 변환), 첫·끝 카드는 콘텐츠1 그래픽 그대로, 질문 카드는 로고 + 질문 한 문장(1080×1350). 자막 번역·그래픽·질문 카드는 Claude, 촬영·목소리는 마르코·존.</p></div>
+</section>
+
+<!-- ═══════════ 보상 ═══════════ -->
+<section id="reward">
+  <p class="sec-label">Incentive</p>
+  <h2 class="sec-title">보상 구조</h2>
+  <p>신청 페이지에서 약속한 그대로(UAE 금액을 150엔/$로 환산).</p>
+  <div class="benefit-grid">
+    <div class="benefit-card entry">
+      <div class="tag">합격하면 바로 (54명 전원)</div>
+      <div class="amount" style="color:var(--headline)">約1万円</div>
+      <div class="who">상당 세럼 + 크림 세트 무료</div>
+      <ul><li>한국에서 직송, 송료·관세 우리 부담</li><li>Qoo10 판매가 10,800엔 세트</li></ul>
+    </div>
+    <div class="benefit-card all">
+      <div class="tag">4주 완주 전원</div>
+      <div class="who">완주 기준: 릴스 1개</div>
+      <ul><li>형식 자유 — 진심이면 충분</li><li>본인 인스타에 올리고 링크는 그룹에(10/31 John)</li><li>2기 우선 초대(친구와 함께 가능)</li></ul>
+    </div>
+    <div class="benefit-card top">
+      <div class="tag">최우수 활동자 1명</div>
+      <div class="amount">約7.5万円</div>
+      <div class="who">상당 레몬더마 풀세트</div>
+      <ul><li>기준: LINE 그룹 참여 횟수 + 릴스의 진정성·퀄리티, 사내 심사(10/28 John)</li><li>12/16 피날레에서 발표</li></ul>
+    </div>
+  </div>
+  <p>2주차 "ひみつ"는 감사 추첨 — 그룹에 한 번 이상 말한 멤버 중 1명에게 세트(구매 조건 없음).</p>
+</section>
+
+<!-- ═══════════ 모집 ═══════════ -->
+<section id="recruit">
+  <p class="sec-label">Recruiting</p>
+  <h2 class="sec-title">멤버 모집 (끝남)</h2>
+  <p>모집 페이지 <a href="https://vdvia.github.io/lemonderma-reports/skinlab-apply-jp/" target="_blank" rel="noopener">skinlab-apply-jp</a> · 인스타 DM 두 계정(공식 @lemonderma_official + 존 @p___jyoung), 하루 90명씩. 1차 DM은 UAE 승인 문안의 일본어판(A안만, 11/2부터).</p>
+  <ul class="chan">
+    <li><span class="rank">1</span><div><div class="name">후보 DB</div><div class="desc">Apify로 해시태그·모집글 댓글 수집 → 사진 판정 v2·인플루언서 판정 → 시트 '[JP]시즌 1 Skin Lab 후보'(10/24 기준 1,087명). 1차 DM은 11/6에 끝냈고, 남은 행은 대부분 메시지 버튼이 없는 계정.</div></div><span class="reach">10/24 → 11/6</span></li>
+    <li><span class="rank">2</span><div><div class="name">답장 처리</div><div class="desc">공식계정은 15분마다 자동(답장 봇), 존 계정은 하루 여러 번 Claude가 직접. 유료·보수·투고 조건 질문은 시나리오 답장, 소속사·대행사 경유는 거절.</div></div><span class="reach">10/24 → 11/9</span></li>
+    <li><span class="rank">3</span><div><div class="name">선발</div><div class="desc">접수 145건(고유 143명) → Opus 채점 2회(12점 만점, UAE 기준 + 일본 보정) + 한국어 번역을 시트에 → 존이 직접 최종 54명.</div></div><span class="reach">11/8 → 11/9</span></li>
+  </ul>
+</section>
+
+<!-- ═══════════ 실행 체크리스트 ═══════════ -->
+<section id="todo">
+  <p class="sec-label">Execution</p>
+  <h2 class="sec-title">실행 체크리스트</h2>
+  <p>시간 흐름순. 담당: <span class="badge-conf ok">John</span> 사람이 직접 · <span class="badge-conf check">Claude</span> 위임 · <span class="badge-conf unk">미정</span> 아직 정하지 않은 것.</p>
+
+  <h3>선발·안내 · 11/9 (끝남)</h3>
+  <ul class="open-list">
+    <li class="done"><span class="box"></span><span><b>채점 + 한국어 번역</b><span class="badge-conf ok">완료 11/9</span> — 접수자 탭 Q~AD(그룹·점수·근거·피부 고민·DM 대화 한국어).</span></li>
+    <li class="done"><span class="box"></span><span><b>최종 합격 54명</b><span class="badge-conf ok">완료 11/9</span> — 존 직접 분류. 보류 2명은 결원 때 검토.</span></li>
+    <li class="done"><span class="box"></span><span><b>합격 페이지 + Apps Script</b><span class="badge-conf ok">완료 11/9</span> — UAE 주소 폼의 일본어판, LINE ID 필수, 마감 표기 11/10 23:59·제출칸 안 닫음, 버전 6 배포·실제 저장 시험 통과. 코드 <code>jp/community/plan/welcome/</code>.</span></li>
+    <li class="done"><span class="box"></span><span><b>합격 안내 54명</b><span class="badge-conf ok">완료 11/9 14:06</span> — 54/54 도착 확인.</span></li>
+    <li class="done"><span class="box"></span><span><b>불합격 안내</b><span class="badge-conf ok">완료 11/9</span> — 합격 안내 직후, Qoo10 링크 포함(John D3). 보내지 못한 4명: 프로필 없음 3(sakura_matcha_taty·__l99508__·atuhage8) · 핸들 불명 1(akiko).</span></li>
+    <li class="done"><span class="box"></span><span><b>마감 뒤 답장 봇 문구(J7)</b><span class="badge-conf ok">승인·반영 11/9</span> — 11/10 00:00부터 신청 안 한 답장자에게 마감 안내 + Qoo10.</span></li>
+  </ul>
+
+  <h3>주소·출고 · 11/10 → 11/12</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>11/10 18:00 미제출자 리마인드(J3)</b><span class="badge-conf check">Claude</span></span></li>
+    <li><span class="box"></span><span><b>11/11 09:00 접수 점검</b><span class="badge-conf check">Claude</span> — 제출·미제출 건수, 우편번호·전화 형식 오류만 보고(주소 값은 시트에서만).</span></li>
+    <li><span class="box"></span><span><b>11/11 오전 시트 확인 → 쉽터 공유·출고 요청</b><span class="badge-conf ok">John</span></span></li>
+    <li><span class="box"></span><span><b>11/11 10:00 마지막 마감 안내(J5) · 제출자 확인 안내(J4)</b><span class="badge-conf check">Claude</span> — 미제출자에겐 "오늘 23:59까지" + 개인 링크 다시(John 11/9 N1).</span></li>
+    <li><span class="box"></span><span><b>11/11 23:59까지 낸 사람 2차 출고</b><span class="badge-conf ok">John</span></span></li>
+    <li><span class="box"></span><span><b>그 뒤에도 못 낸 사람 처리(J5b 참가 마감)</b><span class="badge-conf unk">11/12 존 결정</span></span></li>
+    <li><span class="box"></span><span><b>송장번호·추적 링크 확인</b><span class="badge-conf ok">John</span><span class="badge-conf check">Claude</span></span></li>
+  </ul>
+
+  <h3>초대 · 11/10 → 11/15</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>영상편지 재촬영 + 콘텐츠7 촬영</b><span class="badge-conf unk">시간 협의 중</span> — 마르코·존, 같은 자리에서 약 30분.</span></li>
+    <li><span class="box"></span><span><b>영상편지 일본어판 편집 → 유튜브 일부공개</b><span class="badge-conf check">Claude</span> — 11/12 완성.</span></li>
+    <li><span class="box"></span><span><b>LINE 그룹 개설·환영글 고정(J9)</b><span class="badge-conf ok">John</span> — 11/11.</span></li>
+    <li><span class="box"></span><span><b>LINE 친구추가</b><span class="badge-conf ok">John</span> — 제출한 LINE ID로, 권장 하루 15명 이하.</span></li>
+    <li><span class="box"></span><span><b>추적 링크·영상편지·그룹 초대 LINE 1:1(J8)</b><span class="badge-conf ok">John</span> — 11/13 18:00, 문구는 Claude가 사람별로 준비.</span></li>
+    <li><span class="box"></span><span><b>미입장 리마인드(J10) · 초대 링크 재발급</b><span class="badge-conf ok">John</span> — 11/15.</span></li>
+  </ul>
+
+  <h3>프로그램 4주 · 11/16 → 12/14</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>월·목 10:00 게시</b><span class="badge-conf ok">John</span> — 인사 → 영상+캡션 → 질문 카드. 문구 J11~J22.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠 일본어판 준비</b><span class="badge-conf check">Claude</span> — 게시 전날까지(위 카드의 완성 날짜).</span></li>
+    <li><span class="box"></span><span><b>답글 24시간 안</b><span class="badge-conf ok">John</span> — 마르코·존이 이름 불러 직접. 피부 이상·건강 질문은 1:1.</span></li>
+    <li><span class="box"></span><span><b>감사 추첨 영상</b><span class="badge-conf check">Claude</span> — 11/22 밤, 대상 = 그룹에 한 번 이상 말한 사람.</span></li>
+    <li><span class="box"></span><span><b>참여 기록</b><span class="badge-conf unk">방식 제안</span> — 최우수 선정 근거. 존이 주 1회 LINE 대화 내보내기(トーク履歴を送信) 파일을 주면 Claude가 번역해 시트 'LINE 그룹 발언'·'참여도' 칸에 정리.</span></li>
+  </ul>
+
+  <h3>종료 후 · 12/14 →</h3>
+  <ul class="open-list">
+    <li><span class="box"></span><span><b>최우수 1명 선정</b><span class="badge-conf ok">John</span> — 12/14, 마르코와.</span></li>
+    <li><span class="box"></span><span><b>콘텐츠9 피날레</b><span class="badge-conf check">Claude</span> — 12/16 10:00.</span></li>
+    <li><span class="box"></span><span><b>최우수·완주자 1:1(J24)</b><span class="badge-conf ok">John</span> — LINE, 문구는 Claude 초안.</span></li>
+    <li><span class="box"></span><span><b>최우수 풀세트 발송 · 1기 종료 뒤 주소 등 개인정보 삭제</b><span class="badge-conf ok">John</span><span class="badge-conf check">Claude</span></span></li>
+  </ul>
+</section>
+
+<!-- ═══════════ LINE 가이드 ═══════════ -->
+<section id="line">
+  <p class="sec-label">LINE Playbook</p>
+  <h2 class="sec-title">LINE 운영 가이드 (재영님용)</h2>
+  <p>LINE은 재영님이 전부 직접 합니다(11/9). Claude는 LINE에 접근하지 않고, 아래 순서와 붙여넣을 문구만 준비합니다. 문구 전문은 <a href="messages/">운영표·문구</a>의 J번호.</p>
+  <ol class="steps">
+    <li><b>그룹 만들기 (11/11)</b> — 이름 「Lemonderma Skin Lab Partners Japan 1」, 아이콘은 워드마크. 첫 글로 환영글(J9)을 올리고 공지(アナウンス)로 고정. 초대 링크는 아직 아무에게도 보내지 않습니다.</li>
+    <li><b>친구추가 (11/11 → 11/14)</b> — 시트 합격자 탭 'LINE ID(제출)' 칸의 ID를 LINE 홈 → 友だち追加 → 検索 → ID로 찾아 추가. <b>하루 15명 이하</b>, 주소가 먼저 들어온 순서대로. 검색이 안 되는 사람(ID 검색 허용을 꺼 둔 경우)은 핸들만 알려 주시면 Claude가 인스타 DM으로 설정 방법을 안내합니다.</li>
+    <li><b>1:1 보내기 (11/13 18:00)</b> — 친구가 된 사람에게 J8 세 개(추적 링크 · 영상편지 · 그룹 초대 링크)를 순서대로. 이름·추적 링크가 들어간 사람별 문구는 Claude가 전날 준비합니다.</li>
+    <li><b>입장 확인 (11/13 → 11/15)</b> — 그룹 멤버 목록과 시트 이름을 맞춰 봅니다. 링크로 못 들어온다고 하면(연령 확인) 친구 상태라 그룹에 직접 초대할 수 있습니다.</li>
+    <li><b>미입장 리마인드 (11/15 12:00) · 링크 재발급 (11/15 밤)</b> — J10을 1:1로, 전원 입장 뒤 초대 링크를 새로 만들어 이전 링크를 무효화.</li>
+    <li><b>게시 (월·목 10:00)</b> — 인사 → 영상 + 캡션 → 질문 카드 이미지. 영상·카드·캡션은 Claude가 전날까지 Drive에 올려 둡니다.</li>
+    <li><b>답글</b> — 24시간 안, 이름을 불러서. 자동 답장·재촉은 하지 않습니다. 피부 이상·건강 질문은 1:1로.</li>
+  </ol>
+  <div class="callout safety"><span class="ic">⚠️</span><p><b>계정 보호</b> — UAE에서는 개인 왓츠앱으로 연락처 47명을 한 번에 추가하고 낯선 번호 대화를 여러 번 열었다가 새 대화 시작이 막혔습니다(10/15). LINE도 처음 보는 사람을 짧은 시간에 많이 추가하면 제한될 수 있으니 하루 15명 이하로 나누고, 같은 문구를 몇 분 간격으로 보내 주세요.</p></div>
+</section>
+
+<footer>
+  <p class="src">
+    운영표·문구 전문 — <a href="messages/">messages/</a> · UAE 1기 운영안 — <a href="https://vdvia.github.io/lemonderma-reports/2026-09-21-uae-community-cohort1/" target="_blank" rel="noopener">2026-09-21-uae-community-cohort1</a> · 저장소 <code>30_growth/marketing/jp/community/</code>(CLAUDE.md · plan/welcome/README.md · sourcing/README.md)
+  </p>
+</footer>
+
+</div>
+
+</body>
+</html>
