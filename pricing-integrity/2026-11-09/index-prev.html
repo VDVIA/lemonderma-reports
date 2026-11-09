@@ -1,8 +1,8 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>가격선 운영 방법론 — 경쟁사·아마존 규칙·우리 실측·적용안 (2026-11-09)</title>
+<title>가격선 운영 방법론 — 경쟁사·르피크·아마존 규칙·우리 실측·최종 의견 (2026-11-09 2판)</title>
 <meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="light only">
 <style>
-:root{--ink:#000;--ink2:rgba(0,0,0,.65);--cream:#fefcd0;--line:#ddea65;--line2:#eef1cf;--yellow:#E6EE7A;--olive:#59653c;--head:#4b612d;--red:#b42318;--hi:#f6ffcc}
+:root{--ink:#000;--ink2:rgba(0,0,0,.65);--cream:#fefcd0;--line:#ddea65;--line2:#eef1cf;--yellow:#E6EE7A;--olive:#59653c;--head:#4b612d;--red:#b42318;--hi:#f6ffcc;--blue:#eaf2ff}
 *{box-sizing:border-box}html{color-scheme:light only}body{margin:0;background:linear-gradient(180deg,#fefcd0 0,#fff 640px) fixed;color:var(--ink);font-family:Pretendard,-apple-system,"Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
 header{background:var(--yellow);padding:26px 0 22px;border-bottom:1px solid #d6e05a}.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
 .kicker{font-family:Georgia,serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase}h1{font-size:25px;line-height:1.35;margin:10px 0 6px}
@@ -11,41 +11,59 @@ nav.toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:
 section.ch{margin:38px 0}.chh{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:16px}.chn{font-size:13px;color:var(--head);font-weight:800;letter-spacing:.1em}
 h2{font-size:22px;margin:0;line-height:1.35}h3{font-size:17px;margin:26px 0 10px;padding-left:10px;border-left:4px solid var(--yellow)}h4{font-size:14.5px;margin:14px 0 6px;color:var(--head)}
 .tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13.5px;background:#fff}th,td{border-bottom:1px solid var(--line2);padding:6px 8px;text-align:left;vertical-align:top}th{font-size:12.5px;color:var(--head);background:var(--cream)}
-.b{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:1px 8px;white-space:nowrap}.g{background:#ddf746}.y{background:#fff1b8}.r{background:#f8d7d3}
+.b{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:1px 8px;white-space:nowrap}.g{background:#ddf746}.y{background:#fff1b8}.r{background:#f8d7d3}.k{background:#000;color:#fff}
 .mode{background:var(--cream);border:1px solid var(--line);border-left:5px solid #000;border-radius:10px;padding:10px 14px;margin:10px 0}
+.john{background:var(--blue);border:1px solid #c9dbff;border-left:5px solid #1d4ed8;border-radius:10px;padding:10px 14px;margin:10px 0}.john b{color:#1d4ed8}
 .conc{background:#000;color:#fff;border-radius:14px;padding:16px 20px;margin:18px 0;font-size:15.5px;line-height:1.7}.conc b{color:var(--yellow)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}figure img{width:100%;display:block}figcaption{font-size:12.5px;padding:8px 10px;line-height:1.5}figcaption b{display:block}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0}.card .q{font-size:17px;font-weight:800;margin:0 0 8px}
 .kv{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;font-size:14px}.kv dt{color:var(--head);font-weight:700}.kv dd{margin:0}
 .rec{background:var(--hi);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0}.rt{background:#fff5f3;border:1px solid #f0c2bb;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:13.5px}
-.n{font-size:12.5px;color:var(--ink2)}ul{padding-left:20px}li{margin:3px 0}
+.n{font-size:12.5px;color:var(--ink2)}ul{padding-left:20px}li{margin:3px 0}ol{padding-left:22px}
 .num{font-variant-numeric:tabular-nums}
+.v1{opacity:.92}
 @media(max-width:720px){.grid2{grid-template-columns:1fr}nav.toc ol{columns:1}}
 </style></head><body>
-<header><div class="wrap"><div class="kicker">LEMONDERMA · 제품성장팀 · 가격 리서치</div>
-<h1>가격선을 안 무너뜨리는 브랜드는 무엇을 하고 있나 — 경쟁사 1년 실측 · 아마존 규칙 · 우리 US/UAE 현상태 · 적용안</h1>
-<div class="meta">2026-11-09 · 요청 John("운영 잘하는 브랜드는 가격선을 안 무너뜨리고 세일 기간 기대감을 만든다 — 방법론 파악, 우리와 뭐가 다른지, 어떻게 적용할지. 정가가 뭐로 인식되는지 직접 실측") · 수집 Sonnet 2 · 검증 3관점 Sonnet 3 · 레드팀 Opus 1 · 판정·작성 Fable 5.1 · 실측은 셀러센트럴·amazon.com·amazon.ae·Keepa 직접 조회</div></div></header>
+<header><div class="wrap"><div class="kicker">LEMONDERMA · 제품성장팀 · 가격 리서치 · 2판</div>
+<h1>가격선을 안 무너뜨리는 브랜드는 무엇을 하고 있나 — 경쟁사·르피크 1년 실측 · 아마존 규칙 · 우리 US/UAE 현상태 · 최종 의견</h1>
+<div class="meta">2026-11-09 · <b>2판(밤, John 답 5건·방향 반영)</b> ← 1판(오후, 리서치·결정 카드) · 요청 John · 수집 Sonnet 2 · 검증 Sonnet 3 · 레드팀 Opus 1 · 판정·작성 Fable 5.1 · 실측 셀러센트럴·amazon.com·amazon.ae·Keepa·UAE 주문 캐시 직접 조회 · 2판 추가 실측 20:1x KST</div></div></header>
 <div class="wrap">
 
 <div class="conc">
-<b>한 줄 결론.</b> 경쟁사(메디큐브·아누아)는 <b>1년 내내 한 가격(기준선)</b>을 지키고, 3~4주에 한 번 <b>4~15일짜리 −15~30% 창</b>을 연 뒤 <b>같은 가격으로 정확히 복귀</b>합니다(할인일 18~25%). 아마존은 '정가'를 판매자가 적은 숫자가 아니라 <b>최근 90일 고객 결제가의 중앙값(Typical/Was Price)</b>으로 계산하므로, 이 운영은 기준가를 지켜 다음 행사의 할인 폭과 취소선을 살립니다.<br>
-우리는 <b>미국</b>에서 기준선 없이 19~110일 단위로 가격을 바꿔 왔고 최근 5개월은 복귀 없는 계단 하락 — 그 결과 세럼 정가 칸은 비어 있고 아마존이 <b>'Typical price $27.80'</b>을 기준가로 잡아 할인이 <b>−7%</b>로만 보입니다. <b>UAE</b>는 크림이 이미 같은 길을 갔고(기준가 99로 붕괴 → 쿠폰 거절), 세럼은 상시 쿠폰으로 그 길 위에 있습니다.<br>
-적용은 시장마다 다릅니다: <b>미국 기존 계정</b>은 12/31 소진 중이라 지금 바꿔서 얻는 기준가 이득이 계산상 0(레드팀 확인) — 정가 칸 복구 시험 1건과 <b>신규 계정 ASIN 승계 여부</b>만 챙기면 됩니다. <b>UAE 세럼</b>은 지금 전환율 수치로는 상시 쿠폰이 세션당 이익에서 앞서므로, 11/15~18·12/1~7 정가 구간 실측으로 <b>12/8에 전환 여부를 판정</b>하는 안을 권합니다. <b>신규 US 계정</b>은 처음부터 이 방법론으로 설계하되, 규칙보다 <b>기준선 '숫자'</b>가 진짜 결정입니다.
+<b>2판 결론 (John 방향 반영).</b> 방향은 <b>1순위 매출 볼륨 · 2순위 흑자 · 3순위 중장기 가격 정책(볼륨이 올라온 뒤)</b>, 참고 모델은 빅브랜드가 아니라 <b>르피크</b>. 르피크 미국 1년 가격을 직접 읽어 보니 르피크도 <b>'기준선 1개 + 아마존 행사 때 짧고 깊은 딜(−16~26%) + 같은 값 복귀'</b>를 합니다. 메디큐브와의 차이는 규율이 아니라 <b>기준선의 높이</b>(크림 $27·아이크림 $29, 정기배송 −10%)입니다. 즉 "빅브랜드 vs 신생"의 대립이 아니라 <b>"기준선을 어디에 둘 것인가"</b>의 문제이고, 볼륨 우선이란 기준선을 낮게 잡는다는 뜻이지 계단으로 내려간다는 뜻이 아닙니다.<br>
+그래서 지금 가져올 규율은 <b>돈이 들지 않는 두 가지뿐</b>입니다. ① 딜·행사가 끝나면 <b>같은 값으로 돌아온다</b>(Your Price 계단 금지) ② 할인은 Your Price가 아니라 <b>딜·쿠폰·묶음</b>으로. 할인일 비율·창 길이 같은 나머지는 3순위로 미룹니다.<br>
+시장별: <b>미국 기존 계정</b> 현행 유지(특수 상황) + 세럼 List Price $36.58 시험 승인(셀러센트럴 재로그인 뒤 집행) · <b>UAE 세럼</b> 현행 유지(12/8 판정) · <b>UAE 크림</b> — John이 올린 132는 르피크가 하는 '정가 터치'와 같은 동작이고, 제 1판 판단 "기준가 99"는 <b>쿠폰 엔진에만 맞는 말</b>이었습니다(딜 참고가·손님 화면은 132). 권장: <b>132를 유지하고 11/11~18을 '132 단품 측정 창'으로 쓴 뒤 WF 84.89로 −36% 대비를 만든다</b>. 조건: 쿠폰 광고 정지·소개 페이지 수정(11/10 밤까지), 11/13까지 하루 2.4개 미만이면 99 복귀(쿠폰은 자동 부활).
 </div>
 
 <nav class="toc"><b>차례</b><ol>
+<li><a href="#s0">John 답 5건·방향 — 결정 상태표 (2판)</a></li>
 <li><a href="#s1">경쟁사가 실제로 하는 것 (Keepa 1년)</a></li>
-<li><a href="#s2">그 운영을 가능하게 하는 아마존 규칙</a></li>
-<li><a href="#s3">우리 현상태 실측 — 정가가 뭐로 인식되나</a></li>
+<li><a href="#s1b">르피크는 어떻게 하나 (Keepa 1년, 2판)</a></li>
+<li><a href="#s2">아마존 규칙 — 기준가는 도구마다 다르다</a></li>
+<li><a href="#s3">우리 현상태 실측 (2판 갱신)</a></li>
 <li><a href="#s4">무엇이 다른가 (4가지)</a></li>
-<li><a href="#s5">왜 우하향이 굳는가 — 메커니즘과 숫자</a></li>
-<li><a href="#s6">결정 카드 5장</a></li>
-<li><a href="#s7">운영 규칙 초안 (가설)</a></li>
-<li><a href="#s8">검증 기록 · 한계 · 출처</a></li>
+<li><a href="#s5">왜 우하향이 굳는가 — 메커니즘</a></li>
+<li><a href="#s6">결정 카드 5장 — John 답 반영</a></li>
+<li><a href="#s7">지금 가져올 규율 / 나중으로 미룰 규칙</a></li>
+<li><a href="#s8">최종 의견 (2판)</a></li>
+<li><a href="#s9">검증 기록 · 한계 · 출처</a></li>
 </ol></nav>
 
-<section class="ch" id="s1"><div class="chh"><span class="chn">01</span><h2>경쟁사가 실제로 하는 것 — Keepa 1년 가격 히스토리(미국, Buy Box)</h2></div>
+<section class="ch" id="s0"><div class="chh"><span class="chn">00</span><h2>John 답 5건·방향 — 결정 상태표 (11/9 밤)</h2></div>
+<div class="john"><b>John 방향(원문 요지).</b> "지금 우리는 빅브랜드 전략보다 르피크같이 빠르게 크는 신생 브랜드 전략을 따라가야 한다 — 르피크 가격 전략을 참고. UAE는 가격 히스토리가 안 보이니 히스토리보다 <b>정가만 잘 무너지지 않게</b> 플레이하면 된다. 1순위 매출 볼륨 · 2순위 흑자 · 3순위 중장기 가격 정책(볼륨 올라온 뒤). 미국 아마존 매니저도 같은 말."</div>
+<div class="tw"><table>
+<tr><th>카드</th><th>John 답</th><th>상태</th><th>다음 행동 · 기한</th></tr>
+<tr><td>DC1 미국 12월 가격</td><td>"오케이. 미국은 특별한 상황이니 유지."</td><td><span class="b k">결정</span> 현행 계단 유지</td><td>12/13 Step5($19.99) 억제 여부 점검(Claude) · 1/1 복귀는 신규 계정 ASIN 결정에 종속</td></tr>
+<tr><td>DC1-b 세럼 List Price $36.58 시험</td><td>"시험해보자. 며칠 정도 세럼 판매가 부진한 건 감수. 지금이 블프 전에 테스트해볼 기회."</td><td><span class="b k">승인</span> 집행 대기</td><td><b>셀러센트럴 US 세션 만료 → John 재로그인 뒤 Claude가 입력</b>(List Price 칸만 36.58, 다른 칸 손대지 않음) · 11/11 09:00 자동 점검(예약됨) · 안 뜨면 2단계(11/11~14 가격할인 조기 종료 → 정가 판매 이력 → 11/15 재등록) 질문 카드</td></tr>
+<tr><td>DC2 UAE 세럼</td><td>"이건 그럼 현행 계획 유지겠네."</td><td><span class="b k">결정</span> 현행</td><td>11/15~18·12/1~7 정가 구간 전환율 실측 → 12/8 판정 · 11/12 센서(예약됨)</td></tr>
+<tr><td>DC3 UAE 크림</td><td>"25%로 표시된다는 건 기준가가 132라는 뜻. 판단이 잘못된 것 같다. 셀러센트럴에서 정가 132로 바꿨고 정상 적용."</td><td><span class="b y">John 수동 변경 반영 · 결정 대기</span></td><td>§6 DC3 — 권장 '132 유지 + 11/11~18 측정 창'. <b>11/10 22:00 KST까지</b> 결정 필요(11/11 04:00 KST 쿠폰 검증·05:00 쿠폰 광고 시작 전)</td></tr>
+<tr><td>DC4 신규 US 계정</td><td>"추후 고려. 신규 계정으로 넘어가면 US도 제대로 짜보자."</td><td><span class="b y">보류</span></td><td>매니저 ASIN 승계 질문은 Marco 11/9 미팅 목록에 이미 있음 · 설계는 르피크 모델(§8)</td></tr>
+<tr><td>DC5 공통 규칙</td><td>(방향으로 답) 볼륨 → 흑자 → 장기 가격</td><td><span class="b k">대체</span></td><td>§7 — 지금 2개만 채택, 나머지 3순위</td></tr>
+</table></div>
+</section>
+
+<section class="ch v1" id="s1"><div class="chh"><span class="chn">01</span><h2>경쟁사가 실제로 하는 것 — Keepa 1년 가격 히스토리(미국, Buy Box)</h2></div>
 <p>Keepa 공개 그래프(domain=com, 365일)를 눈금으로 읽은 값입니다(금액 ±$0.3, 날짜 ±3~5일). 쿠폰·프라임 전용가는 Buy Box 선에 안 보입니다.</p>
 <div class="tw"><table>
 <tr><th>브랜드·제품</th><th>평소 가격</th><th>1년 가격선</th><th>할인 창 수</th><th>깊이</th><th>길이</th><th>할인일 비율</th><th>복귀</th><th>상품 페이지 정가 표시(11/9)</th></tr>
@@ -58,173 +76,199 @@ figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;
 <tr><td>티르티르 밀크스킨 토너</td><td class="num">$25(정가)/실제 $20</td><td>고정</td><td>약 18</td><td>−20~30%</td><td>약 12일</td><td><b>50~60%</b></td><td>$25 복귀</td><td>상시 프로모션형</td></tr>
 </table></div>
 <div class="grid2" style="margin-top:12px">
-<figure><img src="assets/medicube_capsule_365.png" alt="메디큐브 캡슐크림 1년"><figcaption><b>메디큐브 캡슐크림 — 1년</b>$19.90 선이 1년 내내 같고, 창은 짧고 깊고 같은 값으로 돌아온다. 주황(아마존 직접판매) 구간에서도 3P가 더 싸게 유지.</figcaption></figure>
+<figure><img src="assets/medicube_capsule_365.png" alt="메디큐브 캡슐크림 1년"><figcaption><b>메디큐브 캡슐크림 — 1년</b>$19.90 선이 1년 내내 같고, 창은 짧고 깊고 같은 값으로 돌아온다.</figcaption></figure>
 <figure><img src="assets/anua_365.png" alt="아누아 세럼 1년"><figcaption><b>아누아 세럼 — 1년</b>$21.85 고정, 창 9개, 8/18 이후 83일째 창 없음(4분기 행사 전 기준가 보호로 읽힘).</figcaption></figure>
 <figure><img src="assets/medicube_serum_365.png" alt="메디큐브 세럼"><figcaption><b>메디큐브 PDRN 세럼</b>출시가 $21.8에서 4/12에 $17.90으로 한 번 내린 뒤 고정 — '내릴 땐 한 번에, 그 뒤는 창만'.</figcaption></figure>
-<figure><img src="assets/celimax_dual_365.png" alt="셀리맥스 듀얼크림"><figcaption><b>셀리맥스 듀얼크림</b>8~10월 두 달 사다리로 내렸다가 10/16 $30으로 정확 복귀 — 복귀가 가능하다는 증거. 이후 하루짜리 깜박임은 다수 셀러 Buy Box 교체.</figcaption></figure>
+<figure><img src="assets/celimax_dual_365.png" alt="셀리맥스 듀얼크림"><figcaption><b>셀리맥스 듀얼크림</b>8~10월 두 달 사다리로 내렸다가 10/16 $30으로 정확 복귀 — 복귀가 가능하다는 증거.</figcaption></figure>
 </div>
-<div class="mode"><b>공통 달력.</b> 거의 모든 경쟁사가 3/28 · 7/28 · 8/24 · 9/22 · <b>10/18~20에 들어가 11/3~5에 함께 복귀</b>했습니다(프라임 빅딜데이·11월 초 세일 + 자체 창). 아누아는 10월 창을 아예 안 열었고, 그 대신 창 사이 간격이 가장 깁니다. 즉 '예측 가능한 세일 달력'은 브랜드 개별이 아니라 <b>아마존 행사 달력 위에 자체 창 1~2개</b>를 얹은 모양입니다 — 르피크 원칙 3("자체 할인 행사를 월 1회 만든다")과 같은 구조.</div>
+<div class="mode"><b>공통 달력.</b> 거의 모든 경쟁사가 3/28 · 7/28 · 8/24 · 9/22 · <b>10/18~20에 들어가 11/3~5에 함께 복귀</b>했습니다. '예측 가능한 세일 달력'은 <b>아마존 행사 달력 위에 자체 창 1~2개</b>를 얹은 모양 — 르피크 원칙 3("자체 할인 행사를 월 1회")과 같은 구조.</div>
 </section>
 
-<section class="ch" id="s2"><div class="chh"><span class="chn">02</span><h2>그 운영을 가능하게 하는 아마존 규칙 — 검증된 것만</h2></div>
-<p>배지: <span class="b g">🟢 공식</span>(아마존 직원 공지·공식 블로그·고객 도움말) · <span class="b y">🟡 2차·추정</span> · <span class="b r">🔴 미확인</span>. 원문 대조(검증 V1)를 통과한 문구만 🟢.</p>
+<section class="ch" id="s1b"><div class="chh"><span class="chn">01-b</span><h2>르피크는 어떻게 하나 — Keepa 1년 (2판, John 지정 참고 모델)</h2></div>
+<p>John이 보낸 Keepa 화면 2장 + 같은 ASIN의 공개 그래프(365일)를 직접 받아 읽었습니다. 둘 다 3P 직영(Sold by Lepique Beauty), 정기배송(S&amp;S) 10% 할인이 붙어 있습니다.</p>
+<div class="grid2">
+<figure><img src="assets/lepique_B0F3HV1RXD_365.png" alt="르피크 레티놀 나이트크림 1년"><figcaption><b>르피크 레티놀 나이트크림 1.69oz — $27.00 (S&amp;S $24.30 · 평점 1,322개 · Amazon's Choice · 데이터 526일)</b>기준선 $26.90 → 4월부터 $27.00(+0.10 한 번). 창: 11월 말~12월 중순 $21.50(−20%, BFCM 약 2.5주) · 7/7~9 $22.80(−16%, 프라임데이 3일) · 8월 초 $22.80~24(1주) · 9/1~10 $22.80(−16%) · 9월 중순 $24 하루. 1/1·4/1·7월 중순에 <b>$29.80으로 1~7일 터치</b>한 뒤 $27로. 10~11월은 창 없음(BFCM 대기). 할인일 약 12%. 마지막 가격 변경 31일 전.</figcaption></figure>
+<figure><img src="assets/lepique_B0FRFM7GJD_365.png" alt="르피크 펩타이드 아이크림"><figcaption><b>르피크 펩타이드 매트릭스 아이크림 0.5oz — $29.00 (S&amp;S $26.10 · 데이터 301일, 1월 출시)</b>$35로 출시(1/20~3/27) → 3/28 <b>$29로 한 번에 인하 뒤 고정</b>. 창: 7/7~9 $21.50(−26%, 프라임데이) · 7/25~8/5 $24.20(−17%) · 11/1~6 $22.70(−22%). 그 사이 7/10~20(10일)·8/10·10/1~2에 <b>옛 정가 $35로 잠깐 올렸다 복귀</b>. 지금 $29.</figcaption></figure>
+</div>
+<h3>읽히는 규칙 — 르피크도 '기준선 + 짧고 깊은 창 + 같은 값 복귀'</h3>
+<div class="tw"><table>
+<tr><th>요소</th><th>르피크(미국 Buy Box)</th><th>메디큐브·아누아</th><th>우리(미국)</th></tr>
+<tr><td>기준선</td><td>1개 고정 ($27 / $29) — 내릴 땐 한 번에($35→$29)</td><td>1개 고정 ($19.90 / $21.85)</td><td>없음(9번 변경, 5개월 계단)</td></tr>
+<tr><td>창 깊이·길이</td><td>−16~26% · 3~10일 (BFCM만 2.5주)</td><td>−15~30% · 4~16일</td><td>−24~45% · 19~110일</td></tr>
+<tr><td>복귀</td><td>항상 같은 값</td><td>항상 같은 값</td><td>5개월째 복귀 없음</td></tr>
+<tr><td>달력</td><td>BFCM · 프라임데이 · 8~9월 자체 창 · 11월 초</td><td>행사 + 자체 1~2개</td><td>재고·현금 사정</td></tr>
+<tr><td>상시 할인 도구</td><td><b>정기배송 10%</b>(가격선 안 건드림)</td><td>List Price +10%(작은 취소선)</td><td>Buy 2 Save 20% · 구독 10%</td></tr>
+<tr><td>정가 터치</td><td><b>1~10일씩 옛 정가($29.80·$35)로 올렸다 복귀</b> — 목록가 검증 갱신으로 읽힘 🟡</td><td>—</td><td>John 11/9 UAE 크림 132 = 같은 동작</td></tr>
+</table></div>
+<div class="mode"><b>뜻.</b> 르피크가 자문 미팅에서 "빅딜 때 말도 안 되게 내린다"고 한 것은 아마존 미국 Buy Box 선에선 −16~26%로 보입니다(쿠폰·프라임 전용가·일본 Qoo10/라쿠텐은 Keepa에 안 보이므로 실제 체감은 더 깊을 수 있음 🟡). 중요한 건 깊이가 아니라 <b>돌아오는 자리가 항상 같다</b>는 것 — 할인이 "행사"로 느껴지는 조건입니다. 볼륨을 먼저 키우는 신생 브랜드도 이 규율은 지키고 있고, 다른 점은 <b>기준선을 볼륨이 나오는 높이에 둔 것</b>입니다.</div>
+</section>
+
+<section class="ch v1" id="s2"><div class="chh"><span class="chn">02</span><h2>그 운영을 가능하게 하는 아마존 규칙 — 기준가는 도구마다 다르다</h2></div>
+<p>배지: <span class="b g">🟢 공식</span>(아마존 직원 공지·공식 블로그·고객 도움말·우리 실측) · <span class="b y">🟡 2차·추정</span> · <span class="b r">🔴 미확인</span>.</p>
 <div class="tw"><table>
 <tr><th>#</th><th>규칙</th><th>뜻 (쉬운 말)</th><th>배지</th><th>출처</th></tr>
-<tr><td>A1</td><td><b>Typical Price = 최근 90일 고객 결제가의 비프로모션 중앙값</b>(한정 프로모션 결제가 제외), 판매자가 못 정함</td><td>아마존이 보는 '정가'는 내가 적은 숫자가 아니라 <b>손님이 실제 낸 돈의 중앙값</b>. 싸게 많이 팔수록 중앙값이 빨리 내려간다</td><td><span class="b g">🟢</span></td><td>sell.amazon.com 블로그 · 셀러포럼 공지(News_Amazon)</td></tr>
-<tr><td>A2</td><td><b>2026-05-18~</b>: 90일 가격 이력 중 <b>절반 넘는 날</b>이 비프로모션 중앙값 아래면, 프로모션 판매까지 포함해 Typical Price 계산</td><td>할인 날이 90일 중 45일을 넘으면 '할인가'가 곧 '정가'가 된다</td><td><span class="b g">🟢</span></td><td>셀러포럼 공지(효력 5/18) · ChannelX</td></tr>
-<tr><td>A3</td><td>프로모션으로 <b>표시되지 않은 가격 할인</b>(판매가 칸을 그냥 내린 것)은 비프로모션 판매로 취급</td><td>Your Price를 내리면 그 즉시 '정가 판매'로 집계된다 → 기준가 직격</td><td><span class="b g">🟢</span></td><td>같은 공지</td></tr>
-<tr><td>A4</td><td><b>2026-04-23~</b>: 판매자 List Price는 '다른 소매점에서 최근 그 가격에 제공' 또는 '아마존 Featured Offer로 그 가격에 구매' 중 하나로 <b>검증돼야 취소선 표시</b></td><td>아무 숫자나 정가 칸에 적어도 안 보인다. 실제로 그 가격에 판 이력이 있어야 한다('최근'의 일수는 공식 미정의, 2차는 90일)</td><td><span class="b g">🟢</span>(기간 🟡)</td><td>셀러포럼 공지 · ppc.land · globalselling 칼럼</td></tr>
-<tr><td>B1</td><td>(2026 BFCM, US) 딜·프라임 전용 할인 가격은 <b>직전 60일 최저가 이하</b> + <b>직전 30일 최저가 대비 5% 이상 낮게</b>. 30일 최저가에는 라이트닝·오늘의 딜·톱딜·<b>프라임 전용 할인·가격 할인·쿠폰</b>이 모두 포함</td><td>상시 할인·쿠폰을 깔아 두면 행사 때 그보다 더 내려야만 딜이 된다 → '사전 할인이 행사 천장'</td><td><span class="b g">🟢</span>(중국어 원문 번역)</td><td>globalselling.amazon.com 공지(2026-07)</td></tr>
-<tr><td>B2</td><td>쿠폰(US, 2024-03-12~): 5~50%, 쿠폰 적용가가 'was price' 또는 '최근 최저가'보다 낮아야 함</td><td>기준가가 내려오면 쿠폰이 '할인'으로 인정 안 돼 거절된다(크림 UAE에서 실제 발생)</td><td><span class="b g">🟢</span></td><td>셀러포럼 공지(priscilla_amazon)</td></tr>
-<tr><td>B3</td><td>라이트닝·베스트 딜은 검증된 참조가가 있어야 신청 가능(2024-01-31~)</td><td>기준가가 없으면 딜 자체가 막힌다</td><td><span class="b y">🟡</span></td><td>globalselling 칼럼</td></tr>
-<tr><td>C1</td><td>amazon.ae 'Was Price' = 90일 고객 결제가 중앙값, <b>한정 기간 딜 결제가는 제외</b></td><td>UAE도 같은 원리. 딜은 기준가를 안 건드리지만 판매가 칸 세일은 건드린다(크림 8/26~9/30 세일 36일 → Was 99 실증)</td><td><span class="b g">🟢</span>(미러 페이지)</td><td>amazon 고객 도움말 nodeId GQ6B6RH72AX8D2TD</td></tr>
-<tr><td>C2</td><td>UAE 쿠폰 규칙: 순가 ≤ Was×0.95 · 정가 ≤ Was×1.3 / 가격 할인은 셀러 평점 3.5 필요</td><td>우리 10/18 실측값. 공식 문서로는 미확인</td><td><span class="b y">🟡</span>(우리 실측)</td><td>uae/performance/notes.md · UAE 포럼</td></tr>
-<tr><td>D1</td><td>학술: 프로모션이 잦을수록 소비자가 가격·프로모션에 더 민감해지고(Mela·Gupta·Lehmann 1997), 장기적으로 가격 프로모션 증가는 일률적으로 비수익·브랜드 자산에 부정적(Jedidi·Mela·Gupta 1999)</td><td>'세일 때만 사는 손님'을 우리가 만든다. 마트 스캐너 데이터 기반이라 아마존 신생 브랜드에 그대로 옮기긴 어려움(레드팀)</td><td><span class="b y">🟡</span>(학술)</td><td>MSI · Duke</td></tr>
-<tr><td>E1</td><td>US 프로모션 수수료: 쿠폰 $5+매출 2.5%(2025-06~) · 라이트닝/베스트 딜 하루 $70+1% · BXGY 2027-01-15부터 $5+2%(상한 $2,000)</td><td>우리 속도(하루 14개×$20)면 딜 수수료가 매출의 약 25% → 창을 '딜'로 열면 적자. 신규 계정 창은 쿠폰·프라임 전용 할인 위주</td><td><span class="b y">🟡</span></td><td>Helium10 · ppc.land · 셀러센트럴 배너(11/9 실측)</td></tr>
+<tr><td>A0 <b>(2판)</b></td><td><b>'기준가'는 하나가 아니다.</b> ① 손님 화면 취소선 = 판매자 List Price vs Your Price(검증 통과 시) ② 딜 참고가 = 딜 화면이 할인율을 계산하는 값 ③ 쿠폰 엔진 기준가(Was) = 90일 결제가 중앙값. UAE 크림 실측: ① List 132 ② 딜 참고가 132(10/27 딜 89.10 = "132 대비 32%", 11/10 84.90 = 35.7%) ③ 쿠폰 기준가 99(10/18 억제 메시지 "필요 순가 94.05 = 99×0.95")</td><td>John의 "25% 표시 = 기준가 132"는 ①·②에서 맞다. 제 1판 "기준가 99"는 ③에만 맞다. 쿠폰만 죽어 있고 딜·표시는 살아 있다</td><td><span class="b g">🟢</span>(우리 실측)</td><td>uae/performance/notes.md 10/18 · 딜 화면 10/27·11/10 · 다른 세션 19:59 판독</td></tr>
+<tr><td>A1</td><td><b>Typical Price(US) = 최근 90일 고객 결제가의 비프로모션 중앙값</b>, 판매자가 못 정함</td><td>아마존이 보는 '정가'는 손님이 실제 낸 돈의 중앙값. 싸게 많이 팔수록 중앙값이 빨리 내려간다</td><td><span class="b g">🟢</span></td><td>sell.amazon.com 블로그 · 셀러포럼 공지</td></tr>
+<tr><td>A2</td><td><b>2026-05-18~</b>: 90일 중 절반 넘는 날이 비프로모션 중앙값 아래면 프로모션 판매까지 포함해 계산</td><td>할인 날이 90일 중 45일을 넘으면 '할인가'가 곧 '정가'</td><td><span class="b g">🟢</span></td><td>셀러포럼 공지 · ChannelX</td></tr>
+<tr><td>A3</td><td>프로모션으로 <b>표시되지 않은 가격 할인</b>(판매가 칸 인하)은 비프로모션 판매로 취급</td><td>Your Price를 내리면 즉시 '정가 판매'로 집계 → 기준가 직격(UAE 크림 Sale Price 36일 → 쿠폰 기준가 99)</td><td><span class="b g">🟢</span></td><td>같은 공지</td></tr>
+<tr><td>A4</td><td><b>2026-04-23~</b>: List Price는 '다른 소매점 최근 제공' 또는 'Featured Offer로 그 가격에 구매' 중 하나로 <b>검증돼야 취소선 표시</b></td><td>아무 숫자나 정가 칸에 적어도 안 보인다('최근' 일수는 미정의). 르피크의 '정가 터치'가 이 검증을 갱신하는 동작으로 읽힘 🟡</td><td><span class="b g">🟢</span>(기간 🟡)</td><td>셀러포럼 공지 · ppc.land · globalselling</td></tr>
+<tr><td>B1</td><td>(2026 BFCM, US) 딜·프라임 전용 할인 가격은 <b>직전 60일 최저 이하</b> + <b>직전 30일 최저 × 0.95 이하</b>. 30일 최저에 LD·DOTD·PED·가격 할인·쿠폰 포함</td><td>상시 할인을 깔면 행사 때 그보다 더 내려야 딜이 된다</td><td><span class="b g">🟢</span></td><td>globalselling 공지(2026-07)</td></tr>
+<tr><td>B2</td><td>쿠폰(US, 2024-03-12~): 5~50%, 쿠폰 적용가 &lt; was price 또는 최근 최저가</td><td>기준가가 내려오면 쿠폰이 거절된다</td><td><span class="b g">🟢</span></td><td>셀러포럼 공지</td></tr>
+<tr><td>C1</td><td>amazon.ae 'Was Price' = 90일 결제가 중앙값, 한정 기간 딜 결제가 제외</td><td>UAE도 같은 원리. 딜은 기준가를 안 건드리고 판매가 칸 세일은 건드린다</td><td><span class="b g">🟢</span>(미러)</td><td>고객 도움말 GQ6B6RH72AX8D2TD</td></tr>
+<tr><td>C2</td><td>UAE 쿠폰 2조건: 순가 ≤ Was×0.95 <b>그리고 Your Price ≤ Was×1.3</b> · 정가를 내리면 억제된 쿠폰이 <b>자동 부활</b>(10/18 실측) · 가격 할인 도구는 셀러 평점 3.5 벽</td><td>Was 99면 Your Price 128.70 초과 시 쿠폰 불가 → <b>132에서는 11/11 크림 쿠폰이 정지된다</b>. 99로 내리면 되살아난다</td><td><span class="b g">🟢</span>(실측)</td><td>notes.md 10/18</td></tr>
+<tr><td>D1</td><td>학술: 프로모션 빈도↑ → 가격 민감도↑(1997) · 장기 프로모션 증가는 비수익(1999)</td><td>마트 데이터라 아마존 신생 브랜드엔 외삽 주의</td><td><span class="b y">🟡</span></td><td>MSI · Duke</td></tr>
+<tr><td>E1</td><td>US 수수료: 쿠폰 $5+2.5% · LD/BD $70/일+1% · BXGY 2027-01-15부터 $5+2%</td><td>우리 속도면 딜 수수료 ≈ 매출 25% → 신규 계정 창은 쿠폰·PED 위주</td><td><span class="b y">🟡</span></td><td>Helium10 · ppc.land · 셀러센트럴 배너</td></tr>
 </table></div>
-<div class="mode"><b>확인 못 한 것(숨기지 않음).</b> List Price 검증 '최근'의 일수 · 쿠폰 결제가가 Typical(US)/Was(UAE)에 포함되는지(아마존 매니저 10/20 구두: "최근 쿠폰도 딜 가격에 영향") · UAE에 A2·A4 규칙이 적용되는지 · 딜 쿨다운 공식 수치 · 검색 카드 할인 배지 조건. 이 중 <b>'쿠폰이 UAE Was Price에 들어가는가'</b>가 UAE 세럼 결정의 핵심 미지수이며, 이미 예약된 11/12 센서(WF 세럼 Max·참고가)가 답을 줍니다.</div>
+<div class="mode"><b>확인 못 한 것.</b> List Price 검증 '최근'의 일수 · 쿠폰 결제가가 Typical(US)/Was(UAE)에 들어가는지(11/12 센서) · A2·A4의 UAE 적용 여부 · 딜 참고가(②)가 List Price를 그대로 쓰는지 아니면 별도 산식인지(UAE 크림에선 List와 같은 132였음) · 공식몰 가격이 검증 근거로 인정되는지.</div>
 </section>
 
-<section class="ch" id="s3"><div class="chh"><span class="chn">03</span><h2>우리 현상태 실측 — 정가가 뭐로 인식되고 있나 (11/9 직접 조회)</h2></div>
+<section class="ch" id="s3"><div class="chh"><span class="chn">03</span><h2>우리 현상태 실측 — 정가가 뭐로 인식되고 있나 (11/9 오후 + 20:1x 갱신)</h2></div>
 <div class="tw"><table>
-<tr><th></th><th>미국 세럼 B0FV7XWDYF</th><th>미국 크림 B0FV3QXSBF</th><th>UAE 세럼</th><th>UAE 크림</th></tr>
-<tr><td>셀러센트럴 판매가(Your Price)</td><td class="num">$36.58 (2026-01-25~)</td><td class="num">$36.00</td><td class="num">AED 134.34 (3/6~)</td><td class="num">AED 99.00 (10/18~)</td></tr>
+<tr><th></th><th>미국 세럼 B0FV7XWDYF</th><th>미국 크림 B0FV3QXSBF</th><th>UAE 세럼</th><th>UAE 크림 <span class="b y">2판 갱신</span></th></tr>
+<tr><td>셀러센트럴 판매가(Your Price)</td><td class="num">$36.58 (2026-01-25~)</td><td class="num">$36.00</td><td class="num">AED 134.34 (3/6~)</td><td class="num"><b>AED 132 (John 11/9 19:xx 수동, 99→132)</b></td></tr>
 <tr><td>셀러센트럴 List Price 칸</td><td><b>비어 있음</b></td><td class="num">$36.00</td><td class="num">AED 154.00</td><td class="num">AED 132.00</td></tr>
-<tr><td>지금 손님 화면</td><td class="num">$25.90, 취소선 <b>'Typical price $27.80'</b>, <b>−7%</b></td><td class="num">$23.90, 'List Price $36.00', −34%, 'Lowest price in 30 days'</td><td class="num">AED 134.34, 취소선 없음, 'Apply AED 35 coupon'</td><td class="num">AED 99, 'List Price AED 132', −25%</td></tr>
-<tr><td>아마존이 보는 기준가</td><td><b>$27.80</b> = 10/13~10/31 상시 할인가(아래 §5)</td><td>List $36(검증됨 — 8/27 전 판매). 결제가 중앙값은 그 아래</td><td>🟡 ≥ AED 104.6 (11/5 쿠폰 통과로 역산). 11/12 센서가 확인</td><td><b>99</b>(10/18 결정 기록·쿠폰 거절 실증). 132 취소선은 List 검증으로만 유지</td></tr>
-<tr><td>최근 30일</td><td class="num">164개 · 조회 8,493 · 전환 1.9% · BSR 78,422</td><td class="num">101개 · 조회 5,655 · 전환 1.8% · BSR 112,888</td><td colspan="2">UAE 전환율(SB 11/5 분석): 세럼 99.34일 때 3.08% vs 134.34일 때 1.36%</td></tr>
-<tr><td>FBA 재고</td><td class="num">408 (12/31 소진하려면 7.8개/일, 지금 5.5개/일)</td><td class="num">251 (4.8개/일 필요, 지금 3.4개/일)</td><td class="num">62 (입고 ~14일)</td><td class="num">335</td></tr>
-<tr><td>예정된 가격 흐름</td><td colspan="2">11/19~30 BFCM 공개 $20.90/19.90·프라임 $19.02/18.36 → 12/1~13 $23.90/22.50 → 12/14~31 $19.99/18.99 → 1/1 정가 복귀+잔여 반출(10/20 결정)</td><td>11/15~18 정가+묶음20% → WF 11/19~30 딜 89.90 → 12/1~7 정가+묶음15%·교차할인 → 12/8~20 딜 89.89 → 12/23~28 딜 89.88</td><td>11/10 라이트닝 84.90 → 쿠폰 89(11/11~18) → WF 84.89 → 12월 딜 84.88/84.87 + 묶음 5~10%</td></tr>
+<tr><td>지금 손님 화면</td><td class="num">$25.90, 취소선 <b>'Typical price $27.80'</b>, −7%</td><td class="num">$23.90, 'List Price $36.00', −34%</td><td class="num">AED 134.34, 취소선 없음, 'Apply AED 35 coupon'</td><td class="num"><b>AED 132.00, 취소선 없음, 쿠폰 없음</b>(20:1x 실측) · '3 for 2' 2+1은 11/9 23:59 GST 종료</td></tr>
+<tr><td>아마존이 보는 기준가</td><td><b>$27.80</b>(Typical)</td><td>List $36(검증됨)</td><td>🟡 ≥ AED 104.6(11/5 쿠폰 통과 역산)</td><td><b>딜 참고가 132 · 손님 취소선 List 132 · 쿠폰 엔진 99</b>(A0)</td></tr>
+<tr><td>최근 30일</td><td class="num">164개 · 조회 8,493 · 1.9% · BSR 78,422</td><td class="num">101개 · 조회 5,655 · 1.8% · BSR 112,888</td><td colspan="2">UAE 전환율(SB 11/5): 세럼 99.34일 때 3.08% vs 134.34일 때 1.36% · 크림 가격대별 판매량은 아래 표</td></tr>
+<tr><td>FBA 재고</td><td class="num">408 (12/31 소진 7.8개/일 필요, 지금 5.5)</td><td class="num">251 (4.8개/일 필요, 지금 3.4)</td><td class="num">62 (입고 ~14일)</td><td class="num">335</td></tr>
+<tr><td>예정 흐름</td><td colspan="2">11/19~30 BFCM 공개 $20.90/19.90·프라임 $19.02/18.36 → 12/1~13 $23.90/22.50 → 12/14~31 $19.99/18.99 → 1/1 정가 복귀</td><td>11/15~18 정가+묶음20% → WF 11/19~30 딜 89.90 → 12/1~7 정가+묶음 → 12/8~20 딜 89.89 → 12/23~28 89.88</td><td><b>11/10 06:55~18:55 KST 라이트닝 84.90</b>(132 대비 −36%, 메타 흡수 테스트 3세트 켜짐) → 11/11~18 쿠폰 AED 10(<b>132면 정지</b>) → WF 84.89 → 12월 84.88/84.87 + 묶음 5~10%</td></tr>
 </table></div>
+<h3>UAE 크림 — 가격대별 하루 판매량 (주문 캐시, 취소 제외, 2판)</h3>
+<div class="tw"><table>
+<tr><th>기간</th><th>단품가</th><th>일수</th><th>크림 개/일</th><th>평균 결제단가</th><th>개당 공헌이익(정본 산식)</th><th>하루 공헌이익</th></tr>
+<tr><td>9/1~9/25 (Sale Price 세일)</td><td class="num">99 + 2+1</td><td class="num">25</td><td class="num">1.00</td><td class="num">99.0</td><td class="num">49.8</td><td class="num">50</td></tr>
+<tr><td>10/1~10/17</td><td class="num"><b>132.21 + 2+1</b></td><td class="num">17</td><td class="num"><b>3.12</b></td><td class="num">100.3</td><td class="num">74.4 (단품 기준)</td><td class="num">≈230 (결제단가 기준 ≈170)</td></tr>
+<tr><td>10/18~11/8 비딜일</td><td class="num"><b>99 + 2+1</b></td><td class="num">12</td><td class="num"><b>3.58</b></td><td class="num">96.7</td><td class="num">49.8</td><td class="num">≈178</td></tr>
+<tr><td>딜 날(BD 10/20~25 · LD 10/27 · BD 11/2~4)</td><td class="num">89.1</td><td class="num">10</td><td class="num">5.70</td><td class="num">90.5</td><td class="num">42.4</td><td class="num">≈242</td></tr>
+<tr><td>11/5~11/8</td><td class="num">99 (2+1 끝물)</td><td class="num">4</td><td class="num">4.00</td><td class="num">92.8</td><td class="num">49.8</td><td class="num">≈199</td></tr>
+</table></div>
+<p class="n">읽는 법: 132.21 구간(3.1개/일)과 99 구간(3.6개/일)의 차이가 생각보다 작습니다 — 단, 두 구간 모두 2+1이 켜져 있어 3개 묶음 구매자는 어느 쪽이든 개당 88을 냈고(평균 결제단가 100.3이 그 증거), <b>2+1 없는 132 단품 전환율은 아직 측정값이 없습니다</b>. 광고비(SB 입찰)도 구간마다 달라 거칠게 봐야 합니다. 개당 공헌이익은 132가 99의 1.49배 → 판매량이 <b>33% 넘게 빠지지 않으면 132가 흑자에서 앞섭니다</b>(2순위). 손익분기 판매량 = 99일 때 3.6개/일 × 0.67 ≈ <b>2.4개/일</b>.</p>
 <div class="grid2" style="margin-top:12px">
-<figure><img src="assets/us_serum_365.png" alt="우리 세럼 1년"><figcaption><b>우리 미국 세럼 — 1년</b>$28 → 42 → 36.4 → 28 → 42 → 28 → 42 → 36.58(110일) → 27.80 → 25.90. 평소선이 없다. 5개월만 보면 복귀 없는 계단.</figcaption></figure>
-<figure><img src="assets/us_cream_365.png" alt="우리 크림 1년"><figcaption><b>우리 미국 크림 — 1년</b>$36 ↔ $26 왕복 4회 뒤 8/27부터 28 → 25.8 → 23.9. 3번째까지는 $36으로 돌아왔지만 마지막은 복귀 없음.</figcaption></figure>
+<figure><img src="assets/us_serum_365.png" alt="우리 세럼 1년"><figcaption><b>우리 미국 세럼 — 1년</b>$28 → 42 → 36.4 → 28 → 42 → 28 → 42 → 36.58(110일) → 27.80 → 25.90. 평소선이 없다.</figcaption></figure>
+<figure><img src="assets/us_cream_365.png" alt="우리 크림 1년"><figcaption><b>우리 미국 크림 — 1년</b>$36 ↔ $26 왕복 4회 뒤 8/27부터 28 → 25.8 → 23.9. 마지막은 복귀 없음.</figcaption></figure>
 </div>
-<div class="mode"><b>정가 칸 비어 있는 이유(추정 🟡).</b> products.md엔 'List $42'로 적혀 있지만 셀러센트럴 List Price 칸은 지금 비어 있습니다. $42는 1월·5월·6월에 며칠씩만 Featured Offer였고, 2026-04-23 검증 규칙 뒤 검증 실패로 지워졌거나 애초에 안 들어간 것으로 보입니다. 그래서 아마존은 List 대신 Typical Price를 보여 줍니다. UAE 세럼 List 154도 같은 이유로 안 보입니다(154에 판 적 없음). 크림 US List $36과 UAE List 132는 '그 가격에 판 이력'이 있어 아직 살아 있습니다.</div>
 </section>
 
-<section class="ch" id="s4"><div class="chh"><span class="chn">04</span><h2>무엇이 다른가 — 네 가지</h2></div>
+<section class="ch v1" id="s4"><div class="chh"><span class="chn">04</span><h2>무엇이 다른가 — 네 가지</h2></div>
 <div class="grid2">
-<div class="card"><p class="q">① 기준선이 없다</p>경쟁사는 1년 내내 한 가격(±0). 우리는 미국에서 가격 체제를 9번 바꿨고(19~110일 단위), UAE는 세럼 상시 쿠폰·크림 상시 99로 '평소가'가 곧 할인가입니다.</div>
-<div class="card"><p class="q">② 창이 짧지 않고 복귀하지 않는다</p>경쟁사 창은 4~16일 뒤 <b>같은 값</b>으로 돌아옵니다. 우리는 19~110일 단위로 머물고, 최근 5개월은 돌아오지 않았습니다. '세일 기간이 확실하다'는 기대는 <b>끝나는 날이 진짜 끝날 때</b>만 생깁니다.</div>
-<div class="card"><p class="q">③ 달력이 재고·현금 사정을 따른다</p>경쟁사는 아마존 행사 + 자체 창 1~2개로 날짜가 예측 가능합니다. 우리 날짜(10/13·11/1·12/14)는 소진 목표·입고 일정에서 나왔고 손님에겐 아무 신호가 아닙니다.</div>
-<div class="card"><p class="q">④ 참조가를 관리하지 않는다</p>메디큐브는 List Price를 판매가 +10%로 '검증 가능한 수준'에 둬서 평소에도 작은 취소선(−9%)을 보여 주고 창에선 큰 할인이 보이게 합니다. 우리는 List가 비었거나(US 세럼) 너무 높아 검증 실패(UAE 세럼 154)이거나, 기준가 붕괴를 겪은 뒤(UAE 크림)입니다.</div>
+<div class="card"><p class="q">① 기준선이 없다</p>경쟁사·르피크는 1년 내내 한 가격. 우리는 미국에서 가격 체제를 9번 바꿨고, UAE는 세럼 상시 쿠폰·크림 상시 99로 '평소가'가 곧 할인가였습니다.</div>
+<div class="card"><p class="q">② 창이 짧지 않고 복귀하지 않는다</p>경쟁사 창은 4~16일 뒤 <b>같은 값</b>으로 돌아옵니다. '세일 기간이 확실하다'는 기대는 <b>끝나는 날이 진짜 끝날 때</b>만 생깁니다.</div>
+<div class="card"><p class="q">③ 달력이 재고·현금 사정을 따른다</p>경쟁사는 아마존 행사 + 자체 창 1~2개. 우리 날짜(10/13·11/1·12/14)는 소진 목표·입고 일정에서 나왔고 손님에겐 신호가 아닙니다.</div>
+<div class="card"><p class="q">④ 참조가를 관리하지 않는다</p>메디큐브는 List Price를 판매가 +10%로, 르피크는 옛 정가를 잠깐씩 터치해 취소선을 살립니다. 우리는 List가 비었거나(US 세럼) 검증 실패(UAE 세럼 154)입니다. UAE 크림은 John 11/9 132 터치가 첫 관리 동작.</div>
 </div>
 </section>
 
-<section class="ch" id="s5"><div class="chh"><span class="chn">05</span><h2>왜 우하향이 굳는가 — 메커니즘과 우리 숫자</h2></div>
+<section class="ch v1" id="s5"><div class="chh"><span class="chn">05</span><h2>왜 우하향이 굳는가 — 메커니즘과 우리 숫자</h2></div>
 <h3>'Typical price $27.80'은 어떻게 나왔나</h3>
-<p>아마존 정의(A1)는 '고객이 지불한 가격의 중앙값'입니다. 날짜가 아니라 <b>구매 건</b> 기준이면, 싸게 팔아 판매 속도가 빨라질수록 할인가가 중앙값을 차지합니다. 우리 숫자가 정확히 그렇습니다.</p>
+<p>아마존 정의(A1)는 '고객이 지불한 가격의 중앙값'. 구매 건 기준이면 싸게 팔아 속도가 빨라질수록 할인가가 중앙값을 차지합니다.</p>
 <div class="tw"><table>
 <tr><th>구간(최근 90일 안)</th><th>가격</th><th>일수</th><th>하루 판매(세럼+크림)</th><th>세럼 메타 귀속 구매(부분 표본)</th></tr>
 <tr><td>8/10~10/12</td><td class="num">$36.58 / 36→28</td><td class="num">64</td><td class="num">5.0개/일 (324개)</td><td class="num">32건</td></tr>
 <tr><td>10/13~10/31</td><td class="num">$27.80 / 25.80</td><td class="num">19</td><td class="num">9.4개/일 (179개)</td><td class="num">58건</td></tr>
 <tr><td>11/1~11/8</td><td class="num">$25.90 / 23.90</td><td class="num">8</td><td class="num">14.1개/일 (113개)</td><td class="num">17건</td></tr>
 </table></div>
-<p class="n">세럼 메타 귀속 구매(부분 표본 107건)의 가격 중앙값 = <b>$27.80</b> — 아마존이 표시하는 Typical price와 일치합니다. 전체 주문 ASIN별 일별 데이터는 캐시에 없어 메타 귀속 표본으로 대조한 것이라 🟡. 날짜 가중으로 계산하면 중앙값은 아직 $36.58이어야 하므로, <b>구매 가중</b>이 맞다는 쪽으로 기울어집니다(검증 V1: 공식 문구는 "price paid by customers", 가중 방식은 명시 없음).</p>
-<h3>앞으로 90일을 계산하면</h3>
-<p>현행 계획을 날짜 기준으로 돌리면(A2 규칙): 11/30에 '기준선 아래 날'이 49일로 45일을 넘어 프로모션 판매가 중앙값 계산에 들어가고, 중앙값은 <b>12/13 $27.80 → 12/31 $25.90</b>이 되어 <b>2월까지 $25.90</b>에 머뭅니다. 1/1에 $36.58로 돌아가면 손님 화면엔 취소선 없이 <b>+41% 인상</b>으로만 보이고, 36.58이 다시 중앙값이 되려면 그 가격으로 46일 이상 팔아야 합니다(≈2/15). 12월 가격을 어떻게 바꿔도(레드팀이 '두 창' 안까지 계산) 이 결과는 같습니다 — 미국 기존 계정에서는 <b>이미 늦었고</b>, 그래서 결정의 무게는 '신규 계정이 같은 ASIN을 쓰느냐'로 옮겨 갑니다.</p>
-<h3>UAE 크림은 이미 겪었다</h3>
-<p>8/26~9/30 판매가 칸 세일(36일) → Was Price 99로 붕괴 → 10/13 등록한 쿠폰이 재검증에서 거절(순가 99.21 &gt; 94.05) → 10/18 '정가 자체를 99로' 결정. 지금 세럼은 10/16부터 거의 매일 쿠폰 99.34로 팔리고 있어, 쿠폰 결제가가 Was에 들어간다면 같은 일이 세럼에서 반복됩니다. <b>11/12 센서가 첫 경고선</b>입니다.</p>
-<h3>그래도 지금 수치로는 상시 쿠폰이 더 번다 (레드팀)</h3>
-<p>UAE 세럼 세션당 공헌이익(정본 산식): 99.34 × 3.08% → <b>AED 1.55</b>, 134.34 × 1.36% → <b>AED 1.04</b>. 할인일 25%로 섞으면 1.17 → 상시 쿠폰 대비 <b>−25%</b>. 즉 가격선 무결성은 <b>오늘 이익을 내주고 내일 기준가·딜 자격을 사는 거래</b>입니다. 전환율 표본이 작고(11/5 하루 분석) 두 가격이 다른 주에 측정돼 섞인 요인이 있어, 결정 전에 정가 구간 실측이 필요합니다(결정 카드 2).</p>
+<p class="n">세럼 메타 귀속 구매 표본(107건)의 가격 중앙값 = <b>$27.80</b> — 표시 Typical price와 일치(🟡 구매 가중 재현).</p>
+<h3>앞으로 90일</h3>
+<p>현행 계획: 11/30에 '기준선 아래 날' 49일 > 45 → 중앙값 <b>12/13 $27.80 → 12/31 $25.90</b>, 2월까지 $25.90. 1/1 $36.58 복귀는 취소선 없이 +41% 인상으로 보임. 12월 가격을 어떻게 바꿔도 같음(레드팀) → 미국 기존 계정은 이미 늦었고, 무게는 '신규 계정이 같은 ASIN을 쓰느냐'(DC4).</p>
+<h3>UAE — 히스토리는 손님에게 안 보인다, 그러나 도구는 본다 (2판)</h3>
+<p>John 말대로 amazon.ae는 Keepa가 없고 손님은 가격 이력을 못 봅니다. 그래서 <b>'표시되는 정가'(List 132·134.34)만 지키면 손님 심리 쪽은 문제가 없다</b>는 건 맞습니다. 다만 아마존 안의 도구 셋 중 하나(쿠폰 엔진)는 이력을 봅니다 — 크림 쿠폰이 99 기준가에 막힌 것이 그 예. 결론: <b>UAE 운영 원칙 = 표시 정가를 지키고, 상시 볼륨 레버는 쿠폰 대신 딜·묶음으로</b>. 쿠폰 엔진의 99는 10/18~11/9의 99 결제가 90일 창에서 빠지는 <b>1월 중순</b>부터 풀립니다(그동안 132 결제가 쌓이면 더 빨리).</p>
 </section>
 
-<section class="ch" id="s6"><div class="chh"><span class="chn">06</span><h2>결정 카드 5장 — 재영님이 정할 것</h2></div>
-<p class="n">형식: 질문 · 선택지 · 검증된 사실 · 추천과 이유 · 추천이 틀릴 조건 · 가장 싼 확인. 판정 숫자는 비워 두고 실측 뒤 채웁니다. 레드팀(Opus) 지적은 🔺로 표시.</p>
+<section class="ch" id="s6"><div class="chh"><span class="chn">06</span><h2>결정 카드 5장 — John 답 반영 (2판)</h2></div>
 
-<div class="card"><p class="q">DC1 · 미국 기존 계정 12월 가격 — 바꿀 것인가</p>
+<div class="card"><p class="q">DC1 · 미국 기존 계정 12월 가격 <span class="b k">결정: 현행 유지</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) 현행 계단 유지(23.90/22.50 → 19.99/18.99 → 1/1 정가) · (b) '두 창' 안(12/1~13을 25.90/23.90으로 복귀, 12/14 Holiday 창) · (c) 12/1~13도 BFCM 가격 유지(계단 가속)</dd>
-<dt>검증된 사실</dt><dd>🔺 (a)와 (b)의 Typical Price 궤적은 <b>같다</b>(12/13 $27.80 · 1/1 $25.90). 기준가 보호 효과 0. 소진 속도: 세럼 7.8개/일 필요(지금 5.5), 크림 4.8(지금 3.4) — BFCM 가속이면 궤도. 🔺 12/14 $19.99는 딜·쿠폰으로 못 만든다(30일 최저가에 BFCM 프라임 19.02가 들어가 딜가 ≤18.07 = 하한 아래) → 이미 등록된 'Step5 고정 가격 할인'이 12/14 시작 검증에서 억제될 수 있음.</dd>
-<dt>추천</dt><dd class="rec"><b>(a) 현행 유지.</b> 이 계정은 12/31 소진·1분기 신규 계정 전제라 지금 가격선을 지켜도 돌아오는 이득이 없습니다. 대신 ① 12/13에 Step5 억제 여부를 점검하고 억제되면 Your Price 변경으로 대체(소진 모드 예외로 기록) ② 1/1 복귀는 ASIN 승계 결정(DC4)에 종속.</dd>
-<dt>틀릴 조건</dt><dd>신규 계정이 <b>같은 ASIN</b>을 쓰기로 확정되면 틀립니다 — 그때는 12월 계단이 1분기 런칭 기준가(≈2/15까지 $25.90)를 오염시키므로 12/14 창을 접고 12/1~31을 25.90/23.90으로 묶는 쪽이 맞습니다.</dd>
-<dt>가장 싼 확인</dt><dd>매니저에게 한 줄: "신규 계정은 같은 ASIN 유지인가, 가격 이력·Typical Price가 리셋되나?" (DC4와 공유)</dd>
+<dt>John</dt><dd>"오케이. 미국은 특별한 상황이니 유지."</dd>
+<dt>근거(1판)</dt><dd>'두 창' 안도 Typical Price 궤적이 같아 보호 효과 0 · 소진 궤도(세럼 7.8개/일 필요 vs 5.5, 크림 4.8 vs 3.4)는 BFCM 가속으로 충족 예상 · 12/14 $19.99는 딜·쿠폰 불가(30일 최저 프라임 19.02) → Step5 억제 가능성.</dd>
+<dt>Claude 할 일</dt><dd>12/13 Step5 억제 여부 점검, 억제되면 Your Price 변경으로 대체(소진 모드 예외로 기록). 1/1 복귀는 DC4에 종속.</dd>
 </dl></div>
 
-<div class="card"><p class="q">DC1-b · 미국 세럼 List Price $36.58 입력 시험</p>
+<div class="card"><p class="q">DC1-b · 미국 세럼 List Price $36.58 시험 <span class="b k">승인 · 집행 대기(재로그인)</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) 입력(비용 0, 48시간 뒤 취소선 복원 여부 확인) · (b) 안 함</dd>
-<dt>검증된 사실</dt><dd>8/11~10/12 Featured Offer로 $36.58에 실제 판매 → A4 검증 조건 충족 가능(🟡 '최근' 일수 미정의, 90일이면 ~1/10까지). 성공 시 세럼 표시 할인이 −7% → <b>−29%</b>, BFCM 공개가 20.90은 −43%(셀러센트럴 배너: 40%+ 딜은 추가 노출). 🔺 실패도 기본 시나리오로 둘 것(UAE 세럼 154 실패 선례). 🔺 성공하면 전환이 올라 세럼이 더 빨리 빠진다 — 소진 목표엔 득, 12/31 전 품절 가능성은 재고 점검으로 관리.</dd>
-<dt>추천</dt><dd class="rec"><b>(a) 입력.</b> 되돌릴 수 있고(칸 비우기), 소진 모드의 목표(속도)와 방향이 같습니다. 크림은 이미 List $36이 살아 있어 대조군이 됩니다.</dd>
-<dt>틀릴 조건</dt><dd>검증이 '현재 90일 안 Featured Offer 이력'만 보는데 그 창이 이미 지났을 때(10/12 + 검증 기간). 그래도 피해는 '표시 안 됨'뿐.</dd>
-<dt>가장 싼 확인</dt><dd>입력 → 24·48시간 뒤 상품 페이지 'List Price' 문구 유무(5분).</dd>
+<dt>John</dt><dd>"시험해보자. 며칠 정도 세럼 판매가 부진한 건 감수할 수 있어. 지금이 그나마 블프 전에 테스트해볼 수 있는 기회다."</dd>
+<dt>집행 설계</dt><dd><b>1단계(비용 0):</b> 셀러센트럴 US 세럼(SKU BU-GUG9-BPSR) 오퍼 편집에서 <b>List Price 칸만 36.58</b> 입력(Your Price·시작일 손대지 않음) → 24·48시간 뒤 상품 페이지에 'List Price $36.58'(−29%)가 뜨는지 확인(11/11 09:00 자동 점검 예약됨). <b>2단계(John이 감수한 '며칠 부진'):</b> 1단계가 안 뜨면 Step1 가격할인($25.90, 11/1~18)을 11/11로 조기 종료해 11/11~14 정가 $36.58로 실제 Featured Offer 판매 이력을 만들고 11/15에 $25.90 가격할인을 다시 등록 → BFCM 11/19 공개가 $20.90이 <b>−43%</b>로 표시. 2단계는 가격할인 취소·재등록이 되돌리기 어려워 11/11 점검 결과와 함께 질문 카드로 다시 묻습니다.</dd>
+<dt>막힌 것</dt><dd>셀러센트럴 US·AE 세션이 둘 다 만료(재인증 화면). <b>John이 크롬에서 로그인만 해 주면 Claude가 입력</b>합니다. 비밀번호는 Claude가 다루지 않습니다.</dd>
+<dt>틀릴 조건</dt><dd>검증이 '최근 N일 Featured Offer 이력'만 보는데 N이 짧아 8/11~10/12 이력이 안 잡힐 때 → 2단계로 메움. 2단계에서도 안 뜨면 '다른 소매점 가격' 조건(공식몰 $36.58 표기)을 시도.</dd>
 </dl></div>
 
-<div class="card"><p class="q">DC2 · UAE 세럼 — 상시 쿠폰을 계속할 것인가, 창 운영으로 바꿀 것인가</p>
+<div class="card"><p class="q">DC2 · UAE 세럼 <span class="b k">결정: 현행 유지</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) 상시 쿠폰 유지(99.34, 기준가 붕괴 감수) · (b) 창 운영(평소 134.34, 월 1회 7~10일 창, 할인일 ≤30%) · (c) 기준선 재설정(상시 119, 창은 딜 89.9) · (d) <b>판정 유예: 12/8까지 정가 구간을 실측하고 정한다</b></dd>
-<dt>검증된 사실</dt><dd>세션당 이익은 오늘 수치로 (a)가 +49%(1.55 vs 1.04 AED), (b)는 −25%. 🔺 단 전환율 표본이 작다. 기준가 위험: 크림은 Was 99 붕괴 뒤 쿠폰 불가가 실제로 일어났고, 세럼 쿠폰 결제가가 Was에 들어가는지는 미확인 → 11/12 센서. 🔺 (c)의 함정: 119로 45일 넘게 팔면 Was가 119로 굳고, 창 89.9는 하한(95.49) 아래라 딜로만 가능, 119 전환율은 측정값 없음. 🔺 월 1회 창을 '딜'로 열면 30일 최저가 규칙 때문에 딜가가 매번 0.01씩 내려가는 래칫(이미 89.90→89.89→89.88)에 걸림 — UAE 쿠폰은 우리 실측상 '순가 ≤ Was×0.95'라 딜 뒤 쿠폰 99.34는 통과해 왔음(11/8 쿠폰이 11/7 라이트닝 뒤 정상).</dd>
-<dt>추천</dt><dd class="rec"><b>(d) 12/8 판정.</b> 이미 잡힌 일정이 공짜 실측 창을 줍니다 — 11/15~18(134.34 + 2개 20%) 4일, 12/1~7(134.34 + 묶음·교차할인) 7일. 두 창의 정가 전환율이 <b>2.0% 이상</b>이면 (b)로 전환(1월부터 창 달력), 1.4% 안팎이면 (a) 유지하되 Was 붕괴에 대비해 '쿠폰 → 딜·묶음' 도구 전환을 설계. 그 사이 11/12 센서 결과가 🔴(Was 하락 신호)면 판정일을 당깁니다.</dd>
-<dt>틀릴 조건</dt><dd>정가 구간 전환율이 재고 부족(62개·입고 지연)이나 메타 예산 변화에 오염될 때. 11/15~18은 세럼 재고가 빠듯해 '품절 직전'이 섞일 수 있음 → 판독 때 재고 상태를 함께 적는다.</dd>
-<dt>가장 싼 확인</dt><dd>11/12 센서(이미 예약) + 12/8 비즈니스 리포트 ASIN별 세션·전환율 두 창 비교(크롬 15분).</dd>
+<dt>John</dt><dd>"이건 그럼 현행 계획 유지겠네."</dd>
+<dt>내용</dt><dd>쿠폰 99.34(~11/14) → 11/15~18 정가 134.34 + 2개 20% → WF 89.90 → 12/1~7 정가 + 묶음 → 12/8 판정(정가 구간 전환율 ≥2.0%면 1월부터 창 운영, 1.4%대면 상시 쿠폰 유지 + 쿠폰 엔진 Was 붕괴 대비 도구 전환). 11/12 센서가 🔴면 당김. 표시 정가 134.34는 지켜지고 있고(Your Price), List 154는 검증 실패라 안 보임 — 1월 설계 때 List를 134.34 근처로 낮춰 취소선을 살리는 안 검토.</dd>
 </dl></div>
 
-<div class="card"><p class="q">DC3 · UAE 크림 — 99를 평소가로 인정할 것인가</p>
+<div class="card"><p class="q">DC3 · UAE 크림 — Your Price 132(John 11/9) 유지 여부 <span class="b y">John 결정 대기 · 기한 11/10 22:00 KST</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) 99 평소가 + 딜 84.9(현행) · (b) 12월 딜 일부 취소해 할인일 ≤30% 맞추기 · (c) 평소가를 110~120으로 올려 '창'이 성립하게 만들기</dd>
-<dt>검증된 사실</dt><dd>Was는 이미 99. List 132 취소선은 '132에 판 이력'(10/17 마지막)으로 버티는 중 — UAE에 A4 검증이 적용된다면 🟡 1월 중순 소멸 가능. 🔺 84.9/99 = −14%로 창 깊이가 경쟁사(15~30%)에 못 미치고, 하한 88.14 때문에 더 못 내림 → <b>크림은 기준선이 하한에 너무 가까워 하이로우 자체가 성립하지 않는다.</b> 🔺 이미 등록된 11~12월 일정만으로 90일 할인일이 30%를 넘음.</dd>
-<dt>추천</dt><dd class="rec"><b>(a) 현행 유지, 1월부터 재설계.</b> 등록된 딜 취소는 되돌릴 수 없고 WF·DSF 매출을 버리는 일입니다. 대신 1월 달력에서 '크림 창 = 묶음 할인(쿠폰·딜 아님) 중심'으로 바꾸고, (c)는 가격 인상 전환율 실측(7일 A/B) 없이는 하지 않습니다.</dd>
-<dt>틀릴 조건</dt><dd>List 132 취소선이 사라진 뒤 전환이 크게 빠지면(측정값 없음) (c)가 급해집니다 → 소실 전후 7일 전환율을 기록.</dd>
-<dt>가장 싼 확인</dt><dd>매일 딜 점검에 '크림 상품 페이지 List Price 표시 유무' 한 줄 추가(이미 돌고 있는 점검에 얹기).</dd>
+<dt>John</dt><dd>"크림이 아직 25%로 표시된다는 건 아마존이 보는 기준가가 99가 아니라 132라는 뜻이다. 너가 판단을 잘못한 것 같은데? 혹시 몰라서 지금 셀러센터에서 정가 132로 바꿔봤는데 정상 적용됐어."</dd>
+<dt>정정</dt><dd>맞습니다 — <b>딜 참고가와 손님 화면 기준으로는 132</b>입니다(10/27 딜 89.10이 "132 대비 32%"로 표시됐고, 11/10 84.90도 35.7%). 제 1판의 "Was 99 붕괴"는 <b>쿠폰 엔진에만</b> 해당하는 말이었습니다(10/18 쿠폰 억제 메시지 "필요 순가 94.05 = 99×0.95"가 근거). 세 기준가를 한 숫자처럼 쓴 것이 제 오류입니다(§2 A0).</dd>
+<dt>지금 상태</dt><dd>20:1x 실측: 상품 페이지 <b>AED 132.00, 취소선 없음</b>(List 132 = Your Price 132라 취소선이 사라짐), 쿠폰 없음, 2+1 '3 for 2'는 11/9 23:59 GST 종료. 내일 라이트닝 84.90은 <b>132 대비 −36%로 표시</b>(99일 때도 참고가 132라 같은 표시 — 딜 표시 이득은 없음, 다른 세션 19:59 판독과 일치). 메타 Price99 광고("Now AED 99")는 11/10 05:00까지 돌아 오늘 밤 몇 시간 표기 불일치.</dd>
+<dt>132를 유지하면</dt><dd>① 11/11 00:00 GST 쿠폰 AED 10 검증에서 <b>정지(SUPPRESSED)</b> 가능성 큼(Your Price 132 > 128.70 규칙, 10/18 선례) ② 11/11 05:00 KST 시작 예정 <b>쿠폰 메타 광고</b>("AED 89")와 <b>소개 페이지 쿠폰 창</b>(99→89)을 끄고 132 표기로 바꿔야 함(Claude 집행 가능, 11/10 밤) ③ 11/11~18 크림은 <b>132 단품, 2+1 없음</b> — 사상 첫 '132 단품 전환율' 측정 ④ WF 11/19~30 84.89가 <b>132 → 84.89(−36%)</b>로 보임(99+쿠폰 89 뒤에 오면 89 → 84.89로 −5%짜리 행사가 됨) ⑤ 132 결제가 쌓이면 List 검증 갱신 + 쿠폰 엔진 기준가 회복이 빨라짐.</dd>
+<dt>99로 되돌리면</dt><dd>취소선 'List 132 · −25%' 복귀, 11/11 쿠폰 89 정상(−33% 표시 + 쿠폰 배지), 광고·소개 페이지 원안 그대로. 11/11~18 볼륨은 더 나오겠지만 WF 대비가 약해지고, 쿠폰 엔진 99는 1월 중순까지 그대로.</dd>
+<dt>추천</dt><dd class="rec"><b>132 유지 + 11/11~18을 '132 단품 측정 창'으로 쓴다(르피크 방식: 기준선에서 행사로 떨어뜨린다).</b> 숫자 근거: 개당 공헌이익 132 = AED 74.4 vs 99 = 49.8(1.49배) → 하루 2.4개 이상 팔리면 흑자에서 132가 앞선다(99 구간 3.6개/일 대비 −33%까지 허용). 10/1~17에 132.21(+2+1)로 3.1개/일이 팔린 기록이 있어 2.4는 무리한 선이 아닙니다. 볼륨(1순위) 관점에서도 11월 전체로 보면 WF 12일의 대비 효과(딜 날 5.7개/일 vs 비딜 3.6)가 11/11~18 손실을 넘을 가능성이 큽니다. <b>정지 규칙:</b> 11/11~13 3일 평균이 <b>2.4개/일 미만</b>이면 11/14 Your Price 99 복귀 → 억제된 쿠폰이 자동 부활(10/18 실측) → 소개 페이지 쿠폰 창 재가동. 되돌리기 1분, 손실 최대 3일.</dd>
+<dt>Claude가 할 일(결정 즉시)</dt><dd>132 유지 시: 쿠폰 메타 광고 세트 정지(11/11 05:00 전) · 소개 페이지 크림 cp 창 제거 + 132 표기(Shopify CLI 배포) · 11/11 09:00 점검(예약됨)에 크림 상태 포함 · 11/14 판정 질문 카드. 99 복귀 시: 셀러센트럴 로그인 뒤 Your Price 99 저장 → 'List 132 · −25%' 복귀 확인 → 11/11 04:00 전 쿠폰 UPCOMING 확인.</dd>
+<dt>틀릴 조건</dt><dd>132 단품 전환율이 2+1 있던 10월과 달리 급락하면(하루 1개대) 흑자·볼륨 둘 다 지는 8일 → 정지 규칙이 3일에서 끊어 줍니다. 반대로 쿠폰 부활이 안 되면(규칙 변경) 11/14 쿠폰 재등록.</dd>
 </dl></div>
 
-<div class="card"><p class="q">DC4 · 신규 US 계정(2027 1분기) — 처음부터 이 방법론으로 설계</p>
+<div class="card"><p class="q">DC4 · 신규 US 계정 <span class="b y">보류(John) — 설계 메모만</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) 같은 ASIN 승계(리뷰 유지, 가격 이력도 승계) · (b) 새 ASIN(리뷰 0, 이력 리셋) — 매니저 확인 전엔 둘 다 열어 둠</dd>
-<dt>검증된 사실</dt><dd>🔺 공짜 선택지가 없음: (a)면 11~12월 소진 가격이 1분기 Typical(≈2/15까지 $25.90)을 묶고, (b)면 리뷰 42·35개를 잃음. 기준선 후보별 개당 이익(정본 산식, 세럼/크림): $29.90 → $15.13/14.98 · $27.80 → 13.51/13.36 · $25.90 → 12.04/11.90 · $23.90 → 10.49/10.37 · $21.90 → 8.94/8.83 · $19.99 → 7.47/7.36. 경쟁사 기준선 $17.9~30. 🔺 규칙보다 <b>기준선 숫자</b>가 진짜 결정 — 신생이 +70~80% 프리미엄 기준선을 1년 고정하면 창 없는 날 판매가 거의 0.</dd>
-<dt>추천</dt><dd class="rec">① 매니저에게 ASIN 승계·가격 이력 리셋 여부 서면 확인(지금) ② 기준선 후보 2~3개($23.90 / $25.90 / $27.80)를 <b>11/3~18 측정 모드 + 12/1~13 재측정</b> 결과로 고른다(이미 진행 중인 측정이 그대로 재료) ③ List Price = 기준선 +10~15%, 공식몰 가격을 같은 값으로 두어 검증 근거 확보(🟡 자사몰이 '다른 소매점'으로 인정되는지 미확인) ④ 창은 쿠폰·프라임 전용 할인 위주(딜 수수료 $70/일 회피), 월 1회, 4~10일, −15~25%, 같은 값 복귀 ⑤ 메타는 평시 최소 예산 유지 + 창에서 +30% 단계 증액(한 번에 ±30% 규칙과 정합).</dd>
-<dt>틀릴 조건</dt><dd>기준선에서 평시 판매가 0에 가까우면 창 사이에 BSR이 꺼져 창 효율도 떨어짐(생존 편향 — 경쟁사는 평시를 브랜드 검색이 받친다). 그 경우 기준선을 한 칸 낮추는 게 맞지, 창을 늘리는 게 아님.</dd>
-<dt>가장 싼 확인</dt><dd>매니저 질문 1줄 + 측정 모드 판독(11/12·11/20·12/16, 이미 일정에 있음).</dd>
+<dt>John</dt><dd>"이건 일단 추후 고려한다. 이 신규 계정으로 넘어가면 가격 계획을 US도 제대로 다른 빅브랜드 전략과 비슷하게 잘 짜보자." + 방향: 르피크 모델.</dd>
+<dt>메모</dt><dd>① ASIN 승계 여부는 Marco 11/9 매니저 미팅 확인 목록에 이미 있음(같은 ASIN = 가격 이력·리뷰 승계, 새 ASIN = 리셋). 신규 계정 vdviakorea는 세금 인터뷰 미제출로 오퍼 누락 상태(11/9). ② 르피크식 설계 초안: 기준선 1개를 <b>볼륨이 나오는 높이</b>에서 한 번에 정하고 1년 고정(후보 $23.90/25.90/27.80 — 지금 측정 모드 11/3~18·12/1~13 결과로 선택, 개당 공헌이익 세럼 10.49/12.04/13.51) · 정기배송 10% 상시 · 창은 아마존 행사 + 자체 1회/월, 4~10일, −15~25%, 쿠폰·PED 위주(딜 $70/일 회피) · List Price = 기준선 +10~15%를 런칭 첫 2~3주 기준선 판매로 검증 · 1~5일 '정가 터치'로 검증 유지. ③ 결정 시점: 세금 인터뷰·ASIN 답이 온 뒤, 12/16 측정 모드 판독과 함께.</dd>
 </dl></div>
 
-<div class="card"><p class="q">DC5 · 공통 운영 규칙을 '가설'로 채택할 것인가 (§7)</p>
+<div class="card"><p class="q">DC5 · 공통 규칙 <span class="b k">John 방향으로 대체</span></p>
 <dl class="kv">
-<dt>선택지</dt><dd>(a) §7 규칙을 가설로 채택하고 판정 지표를 붙인다 · (b) 시장별로만 결정(DC1~4)하고 공통 규칙은 두지 않는다</dd>
-<dt>검증된 사실</dt><dd>숫자(≤30%·4~16일·15~30%)는 경쟁사 3~4곳 관측 + A2 규칙(45일) 역산. 공식 권고 아님. 🔺 소진 모드·US 딜 수수료·메타 ±30% 규칙과 충돌하는 지점은 §7에 예외로 적음.</dd>
-<dt>추천</dt><dd class="rec"><b>(a)</b> — 단 '규칙'이 아니라 '가설 + 판정 지표(창 사이 평시 판매·BSR·기준가 유지)'로. 1월 신규 계정·UAE 달력에서 첫 판정.</dd>
-<dt>틀릴 조건</dt><dd>창 사이 평시 판매가 창 전 수준으로 안 돌아오면 규칙이 틀린 것 → 기준선 재설정으로 대응.</dd>
-<dt>가장 싼 확인</dt><dd>Keepa+BSR로 10/13·11/1 인하 전후 평시 판매 추이 대조(이미 가진 데이터).</dd>
+<dt>John</dt><dd>1순위 매출 볼륨 · 2순위 흑자 · 3순위 중장기 가격 정책(볼륨 뒤에 다시).</dd>
+<dt>적용</dt><dd>§7 — 지금은 비용 0인 규율 2개만, 나머지는 3순위 보관함.</dd>
 </dl></div>
 </section>
 
-<section class="ch" id="s7"><div class="chh"><span class="chn">07</span><h2>운영 규칙 초안 — 가설로 표기, 레드팀 수정 반영</h2></div>
+<section class="ch" id="s7"><div class="chh"><span class="chn">07</span><h2>지금 가져올 규율 2개 / 3순위로 미룰 규칙 (2판)</h2></div>
 <div class="tw"><table>
-<tr><th>규칙(가설)</th><th>근거</th><th>예외·주의(🔺 레드팀)</th></tr>
-<tr><td><b>기준선 1개를 정하고 1년 바꾸지 않는다.</b> 내릴 일이 생기면 한 번에 내리고 다시 고정(메디큐브 세럼 4/12 방식)</td><td>경쟁사 전원 · A1~A3</td><td>기준선은 하한보다 최소 −20% 창이 가능한 높이여야 함(UAE 크림 99/하한 88.14는 불가)</td></tr>
-<tr><td><b>할인일 ≤ 30% / 어떤 90일 창에서든.</b> 창 1회 4~16일, 깊이 15~30%, 끝나면 같은 값 복귀</td><td>A2(45일 임계) + 경쟁사 18~25%</td><td>소진 모드(US 기존 계정 ~12/31)는 예외로 명시</td></tr>
-<tr><td><b>Your Price(판매가 칸)로 할인하지 않는다.</b> 창은 쿠폰·프라임 전용 할인·딜·묶음으로만</td><td>A3 · 크림 UAE 실증</td><td>US 창은 쿠폰·PED 위주(딜 $70/일). 딜을 연속으로 쓰면 30일 최저가 래칫 → 딜 간격 ≥30일 또는 자체 행사는 묶음으로</td></tr>
-<tr><td><b>List Price = 기준선 +10~15%,</b> 실제로 그 가격에 판 이력 또는 공식몰 가격으로 검증 가능하게 유지</td><td>A4 · 메디큐브 $21.90/$19.90</td><td>🟡 공식몰이 '다른 소매점'으로 인정되는지 미확인 → 런칭 첫 2~3주 기준선 판매로 이력 확보가 확실</td></tr>
-<tr><td><b>창 날짜는 아마존 행사 + 자체 행사 1회/월,</b> 끝나는 날을 메타·SNS·소개 페이지에 미리 공표</td><td>경쟁사 공통 달력 · 르피크 원칙 3</td><td>상품 페이지 제목·불릿엔 기간 문구 금지(아마존 정책) → 공표는 외부 채널만</td></tr>
-<tr><td><b>메타는 평시 최소 예산 유지, 창에서만 +30% 단계 증액</b></td><td>르피크 원칙 3 + 메타 ±30% 규칙</td><td>켜고 끄기 반복은 학습 리셋·귀속 지연(14일)으로 창 전환율이 낮게 잡힘 → 끄지 말고 증감</td></tr>
-<tr><td><b>판정 지표:</b> 창 사이 평시 판매 복원율 · BSR 유지 · 기준가(Typical/Was) 불변 · 창 전환율/평시 전환율 비</td><td>—</td><td>월 1회 Keepa+비즈니스 리포트로 기록</td></tr>
+<tr><th>구분</th><th>규칙</th><th>왜 지금(또는 왜 나중)</th><th>적용 지점</th></tr>
+<tr><td><b>지금 ①</b></td><td><b>딜·행사가 끝나면 같은 값으로 돌아온다.</b> Your Price를 행사 뒤 더 낮은 곳에 두지 않는다</td><td>비용 0. 르피크·메디큐브·아누아 전원이 지키는 단 하나의 공통점. '세일 기대감'은 이것에서만 나온다</td><td>UAE 크림 132·세럼 134.34 유지 / US 기존 계정은 소진 모드 예외(12/31까지) / 신규 US 계정 1일차부터</td></tr>
+<tr><td><b>지금 ②</b></td><td><b>할인은 Your Price가 아니라 딜·쿠폰·묶음·정기배송으로.</b> 판매가 칸(Sale Price·가격할인 배지 없는 인하)은 쓰지 않는다</td><td>비용 0. 쿠폰 엔진 기준가를 지키는 유일한 방법(크림 99가 이 규칙 위반의 결과)</td><td>UAE 둘 다 · 신규 US</td></tr>
+<tr><td>3순위 보관</td><td>할인일 ≤ 30%/90일 · 창 4~16일 · 깊이 15~30%</td><td>볼륨이 올라온 뒤. 지금은 딜 날이 볼륨의 1.6배(5.7 vs 3.6)라 창을 줄일 이유가 없다</td><td>1월 UAE 달력 설계 때 재검토</td></tr>
+<tr><td>3순위 보관</td><td>List Price = 기준선 +10~15%, 공식몰 가격으로 검증</td><td>표시 효과는 있지만 볼륨 직결은 아님. 단 <b>DC1-b 시험(비용 0)</b>은 예외로 지금</td><td>신규 US 런칭</td></tr>
+<tr><td>3순위 보관</td><td>창 날짜를 메타·SNS·소개 페이지에 미리 공표</td><td>르피크 원칙 3과 같음. 지금은 행사(WF·BFCM·DSF) 공표만</td><td>1월~</td></tr>
+<tr><td>유지</td><td>메타는 평시 최소 예산 유지, 창에서 +30% 단계 증액(끄고 켜기 금지)</td><td>이미 운영 규칙</td><td>—</td></tr>
 </table></div>
 </section>
 
-<section class="ch" id="s8"><div class="chh"><span class="chn">08</span><h2>검증 기록 · 한계 · 출처</h2></div>
+<section class="ch" id="s8"><div class="chh"><span class="chn">08</span><h2>최종 의견 (2판) — 볼륨 → 흑자 → 장기 가격, 그 순서 안에서</h2></div>
+<ol>
+<li><b>우선순위에 동의합니다.</b> 리뷰 42·35개, 하루 10개 안팎의 단계에서 '할인일 25%' 같은 유지 규율을 먼저 지키면 창 사이 판매가 0에 가까워집니다(레드팀 생존 편향 지적). 경쟁사 패턴은 <b>브랜드 검색이 평시를 받쳐 주는 뒤</b>에 작동하는 유지 모드입니다.</li>
+<li><b>그러나 '볼륨 우선 = 계단 하락'은 아닙니다.</b> 르피크가 보여 주듯 볼륨을 키우는 신생 브랜드도 기준선을 정하고 거기서 행사로 떨어뜨렸다가 돌아옵니다. 우리가 미국에서 겪은 것(Typical price $27.80, −7% 표시)은 볼륨 전략의 결과가 아니라 <b>복귀 없는 Your Price 인하</b>의 결과입니다. 볼륨 전략이면 기준선을 $25.90에 두고 BFCM에 $19.99로 떨어뜨렸다가 $25.90으로 돌아오는 것이지, 36.58 → 27.80 → 25.90으로 머무는 것이 아닙니다. 이 구분이 이번 리서치의 핵심 교정입니다.</li>
+<li><b>그래서 지금 채택할 것은 §7의 두 규율뿐</b>이고, 둘 다 돈이 들지 않습니다. 나머지는 볼륨이 올라온 뒤 1월 달력·신규 계정 설계 때 다시 꺼냅니다.</li>
+<li><b>UAE는 John 원칙대로 '표시 정가'를 지키는 운영</b>으로 갑니다. 손님은 이력을 못 보니 134.34·132가 무너지지 않으면 심리 쪽은 안전합니다. 아마존 도구 중 쿠폰 엔진만 이력을 보므로, 상시 볼륨 레버는 쿠폰 대신 <b>딜·묶음</b>으로 두고 쿠폰은 1월 중순 기준가 회복 뒤 다시 씁니다(크림). 세럼 쿠폰(99.34)은 현행 유지 결정이므로 12/8 판정 때 같은 틀로 봅니다.</li>
+<li><b>크림 132는 유지하고 8일 측정을 권합니다</b>(DC3). 흑자 손익분기가 하루 2.4개로 낮고, WF를 '132에서 떨어지는 행사'로 만들 수 있으며, 3일 정지 규칙이 있어 잃어도 3일입니다. 11/10 밤까지 결정해 주시면 쿠폰 광고·소개 페이지를 제가 맞춥니다. 반대로 99 복귀를 택하셔도 WF·12월 딜 계획은 그대로 유효합니다.</li>
+<li><b>미국 기존 계정은 손대지 않고 List Price 시험만</b>(DC1-b) 합니다. 성공하면 BFCM 공개가가 −43%로 보이고, 실패해도 잃는 것이 없습니다. 2단계(정가 판매 며칠)는 John이 감수한다고 했지만 가격할인 취소·재등록이 걸리므로 11/11 점검 결과와 함께 한 번 더 묻겠습니다.</li>
+<li><b>신규 US 계정이 진짜 승부처</b>입니다. 기준선 숫자를 측정 모드(11/3~18·12/1~13)로 고르고, 런칭 첫날부터 §7의 두 규율 + 르피크식 행사 달력(프라임데이·BFCM·자체 월 1회)으로 설계합니다. 같은 ASIN이면 1~2월 Typical price가 $25.90에 묶여 있다는 점을 런칭 시점 결정에 넣어야 합니다.</li>
+</ol>
+</section>
+
+<section class="ch v1" id="s9"><div class="chh"><span class="chn">09</span><h2>검증 기록 · 한계 · 출처</h2></div>
 <h3>어떻게 검증했나</h3>
 <ul>
-<li><b>V1 출처 충실도(Sonnet):</b> 핵심 주장 8건을 원문 대조 → 🔴 0건. K5(BFCM 규칙)는 중국어 원문 번역이며 60일 규칙은 US·캐나다 한정, K7(UAE Was)은 amazon.ae 페이지가 503이라 같은 nodeId 미러로 확인, '최근'의 일수(K10)는 확인 불가.</li>
-<li><b>V2 최신성·적용성(Sonnet):</b> A2·A4가 UAE에도 적용되는지 근거 없음(🔴). 공식몰=다른 소매점은 2차 자료뿐(🟡). US BFCM 공식 기간 미발표(블프 11/27·사이버먼데이 11/30 날짜만 확정), UAE WF 기간 미발표.</li>
-<li><b>V3 반증 사냥(Sonnet):</b> 하이로우가 EDLP보다 낫다는 직접 데이터 없음(🟡), 메디큐브·아누아는 1P가 아닌 3P 직영(패턴이 브랜드 선택이라는 쪽 지지), 같은 ASIN 소진이면 기준가 오염이 3개월 간다는 논거 확인.</li>
-<li><b>레드팀(Opus):</b> '두 창' 안의 기준가 보호 효과 0(🔴) · UAE 세럼은 상시 쿠폰이 세션당 이익 +49%(🔴) · 12/14 $19.99는 딜·쿠폰 불가(🔴) · 크림은 하한 때문에 창 성립 불가(🔴) · US 딜 수수료 $70/일(🔴) · 메타 창 집중은 ±30% 규칙 충돌(🔴). 전부 §6·§7에 반영.</li>
+<li><b>V1 출처 충실도(Sonnet):</b> 핵심 주장 8건 원문 대조 → 🔴 0건. BFCM 60일 규칙은 US·캐나다 한정, UAE Was 도움말은 미러로 확인, '최근' 일수는 확인 불가.</li>
+<li><b>V2 최신성·적용성(Sonnet):</b> A2·A4의 UAE 적용 근거 없음(🔴). 공식몰=다른 소매점은 2차 자료뿐. BFCM·WF 공식 기간 미발표.</li>
+<li><b>V3 반증 사냥(Sonnet):</b> 하이로우 vs EDLP 직접 데이터 없음. 메디큐브·아누아는 3P 직영. 같은 ASIN 소진이면 기준가 오염 ~3개월.</li>
+<li><b>레드팀(Opus):</b> '두 창' 보호 효과 0 · UAE 세럼 상시 쿠폰 세션당 이익 +49% · 12/14 $19.99 딜·쿠폰 불가 · 크림 하한 때문에 창 성립 불가 · US 딜 수수료 · 메타 ±30% 충돌 — 전부 반영.</li>
+<li><b>2판 추가 검증(Fable):</b> amazon.ae 크림 페이지 20:1x 직접 읽음(AED 132.00·취소선 없음·쿠폰 없음) · UAE 주문 캐시(uae_orders_items.json, 취소 제외)로 가격대별 판매량 산출 · 정본 산식(compute_metrics + metrics_config_uae)으로 개당 공헌이익 · 르피크 Keepa 공개 그래프 2종 직접 수신 · 다른 세션(Opus, 19:59)의 크림 132 판독과 대조 — 딜 표시 이득 없음·쿠폰 정지 위험은 일치, 권고(99 복귀 vs 132 측정)는 우선순위 반영 뒤 달라짐.</li>
 </ul>
 <h3>한계</h3>
 <ul>
-<li>Keepa는 Buy Box 선만 보여 쿠폰·프라임가·장바구니 할인은 안 보입니다. 경쟁사 '할인일 비율'은 과소추정일 수 있습니다.</li>
-<li>Typical price 재현은 세럼 메타 귀속 표본(107건)으로 했습니다. 전체 주문 ASIN별 일별 데이터를 캐시에 추가하면 정확히 다시 계산할 수 있습니다.</li>
-<li>UAE 전환율(3.08% vs 1.36%)은 11/5 SB 분석의 작은 표본이며 두 가격이 다른 기간에 측정됐습니다. DC2는 이 숫자가 바뀌면 결론이 바뀝니다.</li>
-<li>UAE는 Keepa 미지원이라 우리 가격 이력은 저장소 기록으로 재구성했습니다.</li>
+<li>Keepa는 Buy Box/New 선만 — 쿠폰·프라임가·정기배송가는 안 보여 경쟁사·르피크 '할인일 비율'은 과소추정일 수 있습니다.</li>
+<li>크림 132.21 구간 판매량(3.1개/일)은 2+1이 켜진 상태의 값 — 2+1 없는 132 단품 전환율은 11/11~18이 첫 측정입니다. 광고비도 구간마다 달랐습니다.</li>
+<li>Typical price 재현은 세럼 메타 귀속 표본(107건) 기반(🟡). UAE 전환율(3.08% vs 1.36%)은 11/5 SB 작은 표본.</li>
+<li>셀러센트럴 US·AE가 재인증 상태라 11/9 밤 쿠폰·딜 콘솔은 직접 못 읽었습니다(상품 페이지·캐시로 대체).</li>
 </ul>
 <h3>출처(핵심)</h3>
 <ul class="n">
-<li>아마존 셀러포럼 공지(News_Amazon) — List Price 검증(4/23)·Typical Price(5/18): sellercentral.amazon.com/seller-forums/discussions/t/f48a1fe5-aa8e-4806-b687-2d9aeec5c351</li>
-<li>sell.amazon.com/blog/amazon-list-price · aboutamazon.com "how Amazon offers genuine deals" · 고객 도움말 nodeId GQ6B6RH72AX8D2TD</li>
-<li>globalselling.amazon.com/news/news-brand-260708 (2026 쇼핑 시즌 프로모션 요건) · globalselling 칼럼 lixiaoxing-second-evaluate-accuracy</li>
-<li>쿠폰 규칙 공지: sellercentral.amazon.com/seller-forums/discussions/t/5f9c0121-6253-4ed2-ae30-9cd6cd649f5e · 수수료: helium10.com/blog/amazon-increases-coupon-fees-2025, ppc.land</li>
-<li>Mela·Gupta·Lehmann 1997 (MSI) · Jedidi·Mela·Gupta 1999 (Marketing Science, Duke) · Kalyanaram & Little 1994 (JCR)</li>
-<li>Keepa 공개 그래프 graph.keepa.com/pricehistory.png (ASIN·domain=1·range=365) · 셀러센트럴 US/AE 리스팅 편집기·재고·프로모션 화면(11/9 직접 조회) · 내부: uae/performance/notes.md 쿠폰 가격 검증, 2026-10-13 사전·사후세일 조사(research.json), 10/20 매니저 답변</li>
+<li>아마존 셀러포럼 공지(News_Amazon) — List Price 검증(4/23)·Typical Price(5/18): sellercentral.amazon.com/seller-forums/discussions/t/f48a1fe5-aa8e-4806-b687-2d9aeec5c351 · sell.amazon.com/blog/amazon-list-price · 고객 도움말 nodeId GQ6B6RH72AX8D2TD · globalselling.amazon.com/news/news-brand-260708 · 쿠폰 공지 t/5f9c0121-6253-4ed2-ae30-9cd6cd649f5e · helium10 · ppc.land</li>
+<li>Mela·Gupta·Lehmann 1997 (MSI) · Jedidi·Mela·Gupta 1999 (Marketing Science) · Kalyanaram &amp; Little 1994 (JCR)</li>
+<li>Keepa 공개 그래프 graph.keepa.com/pricehistory.png (domain=1, range=365) — 경쟁사 7종 + 르피크 B0F3HV1RXD·B0FRFM7GJD · John 제공 Keepa 캡처 2장(11/9 20:03)</li>
+<li>내부: uae/performance/notes.md(쿠폰 2조건·부활 실측) · 2026-10-01 딜 달력 · changelog US·UAE 11/9 · 다른 세션 execution.json 19:59 항목 · UAE 대시보드 캐시 uae_orders_items.json · 30_growth/marketing/compute_metrics.py + metrics_config_uae.json · 10/20 매니저 답변 · Marco 11/9 매니저 미팅 기록</li>
 </ul>
-<p class="n">원자료: 같은 폴더 research/ (규칙 표·Keepa 표·실측값·검증 3건·레드팀 요약). 저장소 경로 30_growth/marketing/common/reports/2026-11-09-pricing-integrity/.</p>
+<p class="n">원자료: 같은 폴더 research/ (rules·keepa·measurements·verify·redteam + <b>v2-1109-evening.md</b>: John 답·르피크 판독·크림 판매량·CM·라이브 상태). 저장소 30_growth/marketing/common/reports/2026-11-09-pricing-integrity/.</p>
 </section>
 </div></body></html>
