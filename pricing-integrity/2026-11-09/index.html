@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>가격선 운영 방법론 — 경쟁사·르피크·아마존 규칙·우리 실측·최종 의견 (2026-11-09 3판)</title>
+<title>가격선 운영 방법론 — 경쟁사·르피크·아마존 규칙·우리 실측·최종 의견 (2026-11-09 3판·최종 상태)</title>
 <meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="light only">
 <style>
 :root{--ink:#000;--ink2:rgba(0,0,0,.65);--cream:#fefcd0;--line:#ddea65;--line2:#eef1cf;--yellow:#E6EE7A;--olive:#59653c;--head:#4b612d;--red:#b42318;--hi:#f6ffcc;--blue:#eaf2ff}
@@ -31,6 +31,7 @@ figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;
 <div class="wrap">
 
 <div class="conc">
+<b>최종 상태(22:0x).</b> US 세럼 List Price $36.58 <b>SP-API로 입력 완료</b>(판매가 무변경, 11/11 표시 점검) · UAE 크림 = John 구조 확정 · WF = <b>W1 확정</b> · UAE 세럼 = <b>B안 확정, 재고 충전 뒤</b>(그때까지 현행) · 아마존 프로모션·딜은 API가 없어 UAE 묶음·2+1 생성은 셀러센트럴 AE 로그인 뒤(WF 묶음 기한 11/18 18:00 KST).<br>
 <b>3판 결론 (11/9 밤, John 2차 답 반영).</b> John: <b>네 가지 문제(기준선 · 짧은 창과 같은 값 복귀 · 행사 달력 · 참조가)는 전부 개선 필수</b>, 1순위 볼륨·2순위 흑자와 함께 풀어야 한다. 그 기준으로 다시 정리했습니다.<br>
 <b>미국</b> — 세럼 List Price $36.58 입력은 승인됐지만 셀러센트럴이 <b>비밀번호 재입력</b>을 요구해 대기 중입니다. "블프 전까지 정가 판매" 질문엔 <b>List 먼저(비용 0) → 하루 안에 취소선이 안 뜰 때만 세럼을 3일 정가로</b>를 권합니다. 9일이면 세럼 약 45개·공헌이익 약 $300이 빠지고, 지금 할인(Step1)이 세럼·크림 한 묶음이라 세럼만 빼야 합니다. <b>새 사실</b>: 신규 계정이 같은 ASIN으로 리스팅됐고 매니저가 "가격 이력은 ASIN 단위로 이어진다"고 답한 상태 → 기존 계정 12월 소진가가 신규 계정 1분기 기준가를 만듭니다. DC1을 다시 봐야 합니다(기한 11/28).<br>
 <b>UAE 구조안</b> — 크림(평시 99 + 상시 2+1 + 행사 79~89 + 2개 이상 10%)은 네 가지를 다 지키고 숫자도 됩니다. 세럼(평시 134 + 상시 2+1)은 우리 데이터상 <b>평일 판매 약 −55%·하루 이익 약 −33%</b>라 1·2순위와 부딪힙니다(134.34+2+1 구간 하루 0.7개, 3개 주문은 2.5달 4건). 대안: <b>세럼도 크림과 같은 틀</b> — 판매가를 99에 한 번 고정 + List 134.34(실제로 판 값이라 검증 가능) → 상시 "−26%" 표시. 11/15~18 정가 측정을 보고 11/20에 정하는 것을 권합니다.<br>
@@ -58,10 +59,10 @@ figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;
 <tr><th>항목</th><th>John 답</th><th>상태</th><th>다음 · 기한</th></tr>
 <tr><td><b>네 가지 문제</b></td><td>"모두 개선 필수"</td><td><span class="b k">결정</span></td><td>§7 시장별 설계 · 마스터북 §Ⅺ에 원칙으로 등재</td></tr>
 <tr><td>DC1 미국 12월</td><td>"미국은 특별한 상황이니 유지"</td><td><span class="b y">재검토 필요</span></td><td>같은 ASIN 승계 확정(매니저 10/26·신규 계정 리스팅 11/9) — 2판 카드의 '틀릴 조건'이 실현 → §6 DC1. 매니저의 병행 판매 답과 함께 <b>11/28까지</b></td></tr>
-<tr><td>DC1-b 세럼 List $36.58</td><td>"시험해보자" · "블프 전까지 정가 유지? 아니면 3일"</td><td><span class="b k">승인</span> · 로그인 대기</td><td>셀러센트럴 비밀번호 재입력 뒤 Claude가 List만 입력 → 하루 뒤 표시 확인 → 안 뜨면 세럼만 3일 정가(§6)</td></tr>
-<tr><td>DC2 UAE 세럼</td><td>현행 유지 → 2차에 '평시 134 + 상시 2+1' 제안</td><td><span class="b y">구조 결정 대기</span></td><td>§6-b — 11/15~18 정가 측정 뒤 <b>11/20</b> A안(134) vs B안(99 고정 + List 134.34)</td></tr>
-<tr><td>DC3 UAE 크림</td><td>132 → 99 복귀(20:21) · 2차에 '평시 99 + 상시 2+1 + 행사 79~89'</td><td><span class="b k">99 확정</span> · 구조 승인 대기</td><td>§6-b — 2+1 상시 재개는 10/20 하한 절대선을 뒤집는 결정이라 한마디 필요</td></tr>
-<tr><td>WF 화이트프라이데이</td><td>"이때는 엄청 할인을 때려야" · "어떻게 신청해뒀더라?"</td><td><span class="b y">결정 대기</span></td><td>§6-b W1/W2 — W2는 시작 전에만 가능, <b>11/17까지</b></td></tr>
+<tr><td>DC1-b 세럼 List $36.58</td><td>"시험해보자" · "블프 전까지 정가 유지? 아니면 3일" · "api 있어서 그냥 접근되지 않아?"</td><td><span class="b k">집행 완료</span> 21:54 SP-API</td><td>List Price 칸만 $36.58(판매가 무변경, 재조회 확인) → 11/11 09:00 손님 화면 표시 점검 → 안 뜨면 세럼만 3일 정가(프로모션 화면 필요)</td></tr>
+<tr><td>DC2 UAE 세럼</td><td>"너의 추천 대안대로 가긴 할 건데, 재고가 충전되면 추천대로, 당분간은 지금 체제 유지"</td><td><span class="b k">B안 확정</span> · 재고 충전 뒤</td><td>그때까지 현행(쿠폰 → 11/15~18 정가+2개 20% → WF 89.90+W1). 11/20 점검 = 재고·B안 전환 준비</td></tr>
+<tr><td>DC3 UAE 크림</td><td>"오케이. 내 제안대로 가자."</td><td><span class="b k">John 구조 확정</span></td><td>평시 99 + 행사 아닌 날 2+1 + 행사 때 2개 이상 10%(10/20 하한 결정 2번은 크림에 한해 뒤집힘) · 12월 2+1 창·딜 창 10%는 11/30까지 생성(AE 로그인 필요)</td></tr>
+<tr><td>WF 화이트프라이데이</td><td>"W1으로 간다."</td><td><span class="b k">W1 확정</span> · AE 로그인 대기</td><td>딜가 그대로 + 11/19~30 '2개 이상 10%' 2건 — <b>11/18 18:00 KST 전 생성</b>(시작 = 제출 + 약 4시간)</td></tr>
 <tr><td>DC4 신규 US 계정</td><td>"추후 고려"</td><td><span class="b y">보류</span>(전제 확정)</td><td>같은 ASIN·가격 이력 승계 = 확정 사실. 기준선 숫자는 12/16 측정 판독과 함께</td></tr>
 <tr><td>마스터북</td><td>"조사한 거 아마존 마스터북에 업데이트"</td><td><span class="b k">완료</span></td><td>amazon-ads-experts/consensus-playbook.md §Ⅺ 신설</td></tr>
 </table></div>
