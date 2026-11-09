@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<!-- 외부 요청에 출처 도메인만 보낸다(개인 링크 코드 ?c= 는 안 나감) -->
+<meta name="referrer" content="strict-origin">
+<title>Skin Lab Partners 日本1期へようこそ — レモンダーマ</title>
+<meta name="description" content="レモンダーマ Skin Lab Partners 日本1期 — あなた専用のご案内ページです。">
+<meta name="theme-color" content="#fefcd0">
+<!-- 인스타 DM 링크 미리보기 카드(제목·사진) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lemonderma">
+<meta property="og:title" content="レモンダーマ Skin Lab Partners 日本1期へようこそ">
+<meta property="og:description" content="11月16日（月）– 12月14日（月）。4週間の流れと、セットのお届け先のご入力。">
+<meta property="og:image" content="https://vdvia.github.io/lemonderma-reports/skinlab-welcome-jp/assets/marco-john.jpg">
+
+<!-- 브랜드 정본 서체 (Adobe Fonts) + 일본어 대체(Noto). 신청 페이지 일본판과 같은 조합 -->
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="preconnect" href="https://p.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/ycy6gis.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Lemonderma — Skin Lab Partners 日本1期 합격 안내 + 주소·LINE ID 입력 (2026-11-09)
+   UAE 합격 페이지(uae/community/plan/welcome/)와 같은 디자인·구조. 문구는 일본어, 주소 칸은 일본 형식.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#fefcd0; --paper-2:#ffffff;
+  --ink:#000000; --ink-soft:rgba(0,0,0,.62); --ink-mute:rgba(0,0,0,.42);
+  --line:rgba(0,0,0,.11); --edge:#ddea65; --edge-soft:rgba(221,234,101,.42);
+  --headline:#4b612d; --deep:#025200; --marker:rgba(221,247,70,.55);
+  --alert:#c62828;
+  --serif:"adobe-caslon-pro","Libre Caslon Text","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  --sans:"neue-haas-grotesk-text","Helvetica Neue","Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  --shadow-s:0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(75,97,45,.055);
+  --shadow-m:0 2px 6px rgba(0,0,0,.05), 0 18px 46px rgba(75,97,45,.10);
+  --ease:cubic-bezier(.16,.84,.28,1);
+  --gut:18px;
+  --col:420px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper-2);
+  font-size:16px;line-height:1.8;letter-spacing:.005em;line-break:strict;overflow-wrap:anywhere;word-break:auto-phrase;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+
+.amb{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+     linear-gradient(180deg,var(--paper) 0,#fffef0 380px,var(--paper-2) 820px)}
+.amb i{position:absolute;display:block;border-radius:50%;filter:blur(70px);opacity:.5}
+.amb i:nth-child(1){width:640px;height:640px;top:-220px;left:-180px;
+  background:radial-gradient(circle,rgba(230,238,122,.62),transparent 68%);animation:drift1 34s var(--ease) infinite alternate}
+.amb i:nth-child(2){width:520px;height:520px;top:34vh;right:-200px;
+  background:radial-gradient(circle,rgba(221,247,70,.40),transparent 70%);animation:drift2 42s var(--ease) infinite alternate}
+@keyframes drift1{to{transform:translate3d(120px,90px,0) scale(1.14)}}
+@keyframes drift2{to{transform:translate3d(-130px,-70px,0) scale(1.1)}}
+
+.wrap{max-width:var(--col);margin:0 auto;padding:0 var(--gut) 90px}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ═══ 히어로 ═══ */
+header{padding:34px 0 0;text-align:center}
+.mark{height:26px;width:auto;opacity:.92;margin-bottom:30px}
+.eyebrow{font-family:var(--serif);font-size:1rem;color:var(--headline);letter-spacing:.05em;margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.85rem,8.6vw,2.2rem);
+   line-height:1.3;letter-spacing:.01em;margin-bottom:18px}
+.sub{font-size:1.04rem;line-height:1.75;max-width:29em;margin:0 auto}
+.sub em{font-style:normal;background:linear-gradient(transparent 71%,var(--marker) 71%);padding-bottom:1px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.pill{font-size:.83rem;font-weight:500;color:var(--headline);background:var(--edge-soft);
+      padding:7px 15px;border-radius:99px;letter-spacing:.02em}
+.jump{display:inline-block;margin-top:22px;font-size:.92rem;color:var(--headline);
+      text-decoration:underline;text-underline-offset:3px}
+
+/* ═══ 섹션 공통 ═══ */
+section{margin-top:52px}
+.kicker{font-family:var(--serif);font-size:1rem;color:var(--deep);margin-bottom:14px;letter-spacing:.05em}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.35rem,5.6vw,1.5rem);
+   line-height:1.4;letter-spacing:.01em;margin-bottom:16px}
+
+/* ── 마르코·존 사진 + 편지 ── */
+.photo img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow-s)}
+.letter{margin-top:22px;padding:24px 22px 22px;border:1px solid var(--line);border-radius:18px;
+        background:rgba(255,255,255,.75)}
+.letter p{font-size:1rem;line-height:1.85;margin-bottom:12px}
+.letter p:last-of-type{margin-bottom:0}
+.letter .sign{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+              font-family:var(--serif);font-size:1rem;color:var(--headline);line-height:1.6}
+
+/* ── 4주 일정 ── */
+.weeks{margin-top:6px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.6);overflow:hidden}
+.wk{padding:16px 18px;border-bottom:1px solid var(--line)}
+.wk:last-child{border-bottom:0}
+.wk-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.wk-n{font-family:var(--serif);font-weight:600;font-size:1.08rem;color:var(--headline);letter-spacing:.03em}
+.ep{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:6px 0;font-size:.95rem;line-height:1.55}
+.ep .day{color:var(--ink-soft);font-size:.86rem;padding-top:1px}
+.ep .t{font-weight:500}
+.wk.edge{background:#fbfbee;padding:13px 18px}
+.wk.edge p{font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+.wnote{font-size:.86rem;color:var(--ink-soft);line-height:1.7;margin-top:12px}
+.ep .secret{justify-self:start;font-weight:600;color:var(--headline);background:var(--edge-soft);
+  padding:2px 12px;border-radius:99px;letter-spacing:.04em}
+
+/* ── 할 일 ── */
+.task{margin-top:14px;background:#fbfbee;border:1.5px solid var(--edge);border-radius:18px;padding:22px 22px 20px}
+.task-label{font-family:var(--serif);font-size:.98rem;color:var(--deep);margin-bottom:8px;letter-spacing:.04em}
+.task h3{font-family:var(--serif);font-weight:600;font-size:1.12rem;line-height:1.55}
+.task > p:not(.task-label){margin-top:10px;font-size:.97rem;line-height:1.75}
+.ideas{list-style:none;counter-reset:id;margin-top:14px;border-top:1px solid var(--line)}
+.ideas li{counter-increment:id;position:relative;padding:12px 2px 12px 32px;border-bottom:1px solid var(--line);
+          font-size:.95rem;line-height:1.6}
+.ideas li:last-child{border-bottom:0}
+.ideas li::before{content:counter(id);position:absolute;left:4px;top:12px;font-family:var(--serif);
+                  font-size:.95rem;font-weight:600;color:var(--headline)}
+.prize{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--paper-2);border:1px solid var(--edge);
+  font-size:.94rem;line-height:1.7}
+.prize b{color:var(--deep)}
+.small{display:block;margin-top:12px;font-size:.84rem;color:var(--ink-soft);line-height:1.7}
+
+/* ── 주소 폼 ── */
+#address{margin-top:64px;scroll-margin-top:20px}
+.intro{font-size:1rem;line-height:1.75;margin-bottom:14px}
+.deadline{display:flex;gap:12px;align-items:flex-start;margin:4px 0 18px;padding:14px 16px;border-radius:14px;
+          background:var(--headline);color:#fff}
+.deadline .dl-k{font-size:.76rem;font-weight:600;letter-spacing:.08em;opacity:.85}
+.deadline .dl-v{font-family:var(--serif);font-size:1.12rem;font-weight:600;line-height:1.45;margin-top:2px}
+.safe{margin-bottom:18px;padding:15px 16px;border-radius:14px;background:#fbfbee;border:1px solid var(--edge);
+      font-size:.88rem;line-height:1.7}
+.safe p + p{margin-top:8px}
+.card{position:relative;background:var(--paper-2);border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow-m);padding:24px 18px}
+.again{display:none;margin-bottom:18px;padding:13px 15px;border-radius:12px;font-size:.9rem;line-height:1.65;
+       background:rgba(221,247,70,.17);border:1px solid var(--edge)}
+.again.on{display:block}
+.f{margin-bottom:20px}
+label.lb{display:block;font-size:.95rem;font-weight:500;margin-bottom:8px;line-height:1.6}
+.req{color:var(--deep);margin-left:3px}
+.hint{display:block;font-weight:400;font-size:.82rem;color:var(--ink-soft);margin-top:3px;line-height:1.65}
+input[type=text],input[type=tel],select{
+  width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
+  background:#fdfdf6;border:1px solid rgba(0,0,0,.45);border-radius:12px;
+  padding:14px 15px;line-height:1.4;transition:border-color .25s,box-shadow .25s,background .25s;
+  -webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%234b612d' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+input:focus,select:focus{outline:none;border-color:var(--headline);background:var(--paper-2);
+  box-shadow:0 0 0 4px rgba(221,234,101,.4)}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:var(--alert);background:rgba(198,40,40,.035)}
+::placeholder{color:rgba(0,0,0,.5)}
+.err{display:none;font-size:.85rem;color:var(--alert);margin-top:7px;line-height:1.6}
+.err.on{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row2 .f{min-width:0}
+
+.consent{border:1.5px solid var(--edge);border-radius:16px;background:#fbfbee;padding:18px 18px 16px;margin-top:6px}
+.consent label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;position:relative}
+.consent input{position:absolute;opacity:0;width:22px;height:22px;margin:0}
+.consent .tick{flex:0 0 22px;height:22px;border-radius:7px;border:1.5px solid rgba(0,0,0,.5);margin-top:3px;
+  position:relative;background:var(--paper-2);transition:border-color .22s,background .22s}
+.consent .tick::after{content:"";position:absolute;inset:0;margin:auto;width:11px;height:6px;
+  border-left:2.2px solid var(--headline);border-bottom:2.2px solid var(--headline);
+  transform:rotate(-45deg) scale(0);margin-top:5px;transition:transform .3s var(--ease)}
+.consent input:checked ~ .tick{border-color:var(--headline);background:rgba(221,247,70,.45)}
+.consent input:checked ~ .tick::after{transform:rotate(-45deg) scale(1)}
+.consent input:focus-visible ~ .tick{box-shadow:0 0 0 4px rgba(221,234,101,.6)}
+.consent input[aria-invalid=true] ~ .tick{border-color:var(--alert)}
+.consent .head{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--headline);line-height:1.6}
+
+button{font-family:var(--sans);font-size:1rem;font-weight:500;cursor:pointer;border:none;border-radius:12px}
+.btn{width:100%;margin-top:24px;background:var(--headline);color:#fff;padding:16px 20px;min-height:54px;
+     box-shadow:0 2px 10px rgba(75,97,45,.26);position:relative;overflow:hidden;letter-spacing:.04em;
+     transition:transform .22s var(--ease),box-shadow .22s var(--ease),opacity .22s}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 22px rgba(75,97,45,.3)}
+.btn:disabled{opacity:.6;cursor:default}
+.btn:focus-visible{outline:3px solid var(--edge);outline-offset:3px}
+.btn .lbl{transition:opacity .25s}
+.btn.busy .lbl{opacity:0}
+.btn .spin{position:absolute;inset:0;margin:auto;width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;opacity:0;animation:sp .8s linear infinite}
+.btn.busy .spin{opacity:1}
+@keyframes sp{to{transform:rotate(360deg)}}
+.failnote{display:none;margin-top:14px;padding:14px 15px;border-radius:12px;font-size:.9rem;
+  line-height:1.65;background:rgba(198,40,40,.06);border:1px solid rgba(198,40,40,.32)}
+.failnote.on{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ═══ 완료 화면 ═══ */
+#done{display:none;text-align:center;padding:40px 0 0}
+#done.on{display:block;animation:up .7s var(--ease) both}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.seal{width:70px;height:70px;margin:0 auto 24px;border-radius:50%;
+  background:rgba(221,247,70,.35);border:1.5px solid var(--edge);display:flex;align-items:center;justify-content:center}
+.seal svg{width:32px;height:32px}
+.seal path{stroke:var(--headline);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:36;stroke-dashoffset:36;animation:draw .7s .25s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+#done h2{margin-bottom:14px}
+#done p{font-size:1rem;line-height:1.8;max-width:30em;margin:0 auto 12px}
+#done .photo{margin-top:26px}
+
+footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+       text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.6}
+
+@media (max-width:360px){ :root{--gut:15px} .ep{grid-template-columns:80px 1fr} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+}
+@media print{ .rv{opacity:1;transform:none} .amb{display:none} }
+</style>
+<!-- 스크립트가 안 돌면 스크롤 등장 효과 때문에 본문이 안 보이는 일이 없게 -->
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+
+<body>
+<div class="amb" aria-hidden="true"><i></i><i></i></div>
+
+<main class="wrap">
+
+<div id="page">
+
+<header>
+  <img class="mark" src="assets/lemonderma-logo.png" alt="Lemonderma">
+  <p class="eyebrow">Skin Lab Partners · 日本1期</p>
+  <h1 id="hello">おめでとうございます。</h1>
+  <p class="sub"><em>レモンダーマ Skin Lab Partners</em>に選ばれました。</p>
+  <div class="pills">
+    <span class="pill">4週間</span>
+    <span class="pill">11/16（月）– 12/14（月）</span>
+  </div>
+  <a class="jump" href="#address">ご住所の入力へ進む</a>
+</header>
+
+<section class="rv" aria-labelledby="h-note">
+  <p class="kicker">私たち2人から</p>
+  <h2 id="h-note">マルコとジョンより</h2>
+  <div class="photo">
+    <img src="assets/marco-john.jpg" alt="レモンダーマのマルコとジョン" width="900" height="898">
+  </div>
+  <div class="letter">
+    <p>すべての応募に、私たち2人が自分で目を通し、あなたを選びました。</p>
+    <p>これから4週間、毎週2回、私たちからご連絡します。いちばん聞きたいのは、あなたの率直な声です。</p>
+    <p>一緒に過ごせることを、とても嬉しく思います。</p>
+    <p class="sign">マルコ（CEO）・ジョン（マーケティング責任者）</p>
+  </div>
+</section>
+
+<section class="rv" aria-labelledby="h-weeks">
+  <p class="kicker">4週間の流れ</p>
+  <h2 id="h-weeks">11/16（月）– 12/14（月）</h2>
+  <div class="weeks">
+    <div class="wk edge"><p><b>はじまる前に</b> · セットは来週中にお届けします。</p></div>
+    <div class="wk">
+      <div class="wk-h"><span class="wk-n">第1週</span></div>
+      <div class="ep"><span class="day">11/16（月）</span><span class="t">レモンダーマ デイリーVlog</span></div>
+      <div class="ep"><span class="day">11/19（木）</span><span class="t">Meet Lemonderma</span></div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="wk-n">第2週</span></div>
+      <div class="ep"><span class="day">11/23（月）</span><span class="secret"><span aria-hidden="true">🤫</span> ひみつ</span></div>
+      <div class="ep"><span class="day">11/26（木）</span><span class="t">ソウルの薬局へ</span></div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="wk-n">第3週</span></div>
+      <div class="ep"><span class="day">11/30（月）</span><span class="t">何でも聞いてください</span></div>
+      <div class="ep"><span class="day">12/3（木）</span><span class="t">みなさんの質問にお答えします</span></div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="wk-n">第4週</span></div>
+      <div class="ep"><span class="day">12/7（月）</span><span class="t">あなたのリール</span></div>
+      <div class="ep"><span class="day">12/10（木）</span><span class="t">エクソソームがつくられる場所</span></div>
+    </div>
+  </div>
+  <p class="wnote">どれも朝10時に、短い動画と質問をひとつ、LINEグループでお届けします。</p>
+</section>
+
+<section class="rv" aria-labelledby="h-ask">
+  <p class="kicker">お願いしたいこと</p>
+  <h2 id="h-ask">あなたにお願いしたいこと</h2>
+
+  <div class="task">
+    <p class="task-label">毎週月曜・木曜</p>
+    <h3>動画を見て、質問に積極的に答えてください。</h3>
+  </div>
+
+  <div class="task">
+    <p class="task-label">最終週 · 12/13（日）まで</p>
+    <h3>ご自身のInstagramにリールを1本投稿し、リンクをグループでシェアしてください。</h3>
+    <p>形式は自由です。大切なのは、正直であることだけです。たとえば：</p>
+    <ol class="ideas">
+      <li>4週間のビフォー・アフター</li>
+      <li>レモンダーマをおすすめする理由</li>
+      <li>レモンダーマを使ったルーティン</li>
+    </ol>
+    <p class="prize"><span aria-hidden="true">🏆</span> 4週間もっとも活躍し、いちばん良いリールを作ってくださった方に、<b>約7.5万円相当のレモンダーマ フルセット</b>をお贈りします。</p>
+    <span class="small">元の動画ファイルもお送りください。クレジットを付けてご紹介することがあります。広告に使う場合は、必ず事前にご連絡します。</span>
+  </div>
+</section>
+
+<!-- ═══════════ 주소 입력 ═══════════ -->
+<section id="address" class="rv" aria-labelledby="h-addr">
+  <p class="kicker">お届け先</p>
+  <h2 id="h-addr">セットのお届け先を教えてください。</h2>
+  <p class="intro">上の内容にご同意いただけたら、下にご入力ください。</p>
+
+  <div class="deadline" id="dl">
+    <div><p class="dl-k">入力の締切</p><p class="dl-v">11月10日（火）23:59</p></div>
+  </div>
+
+  <div class="safe">
+    <p>送料・関税を含め、すべて無料です。お支払いをお願いすることは一切ありません。</p>
+    <p>ご住所は配送会社にのみお渡しし、1期の終了後に削除します。</p>
+  </div>
+
+  <form id="f" class="card" novalidate>
+    <p class="again" id="again" role="status">ご住所はすでにお預かりしています。変更がある場合だけ、もう一度送信してください。</p>
+
+    <div class="f" id="f-handle" hidden>
+      <label class="lb" for="handle">Instagramのアカウント名<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="handle" name="handle" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="next"
+             maxlength="80" placeholder="@yourhandle" data-err="handle-e">
+      <p class="err" id="handle-e">Instagramのアカウント名をご入力ください。</p>
+    </div>
+
+    <div class="f">
+      <label class="lb" for="recipient">お名前（お荷物の宛名）<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="recipient" name="recipient" autocomplete="name" enterkeyhint="next" maxlength="120" required
+             placeholder="山田 花子" data-err="recipient-e">
+      <p class="err" id="recipient-e">お名前をご入力ください。</p>
+    </div>
+
+    <div class="row2">
+      <div class="f">
+        <label class="lb" for="postal">郵便番号<span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="postal" name="postal" autocomplete="postal-code" inputmode="numeric" enterkeyhint="next" maxlength="10" required
+               placeholder="123-4567" data-err="postal-e">
+        <p class="err" id="postal-e">7桁でご入力ください。</p>
+      </div>
+      <div class="f">
+        <label class="lb" for="pref">都道府県<span class="req" aria-hidden="true">*</span></label>
+        <select id="pref" name="pref" autocomplete="address-level1" required data-err="pref-e">
+          <option value="">選択</option>
+        </select>
+        <p class="err" id="pref-e">選んでください。</p>
+      </div>
+    </div>
+
+    <div class="f">
+      <label class="lb" for="addr1">市区町村・番地<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="addr1" name="addr1" autocomplete="address-line1" enterkeyhint="next" maxlength="300" required
+             placeholder="渋谷区神宮前1-2-3" data-err="addr1-e">
+      <p class="err" id="addr1-e">市区町村と番地をご入力ください。</p>
+    </div>
+
+    <div class="f">
+      <label class="lb" for="addr2">建物名・部屋番号<span class="req" aria-hidden="true">*</span>
+        <span class="hint" id="addr2-h">一戸建ての方は「なし」とご入力ください。</span></label>
+      <input type="text" id="addr2" name="addr2" autocomplete="address-line2" enterkeyhint="next" maxlength="300" required
+             placeholder="レモンマンション 101" aria-describedby="addr2-h" data-err="addr2-e">
+      <p class="err" id="addr2-e">建物名と部屋番号をご入力ください（一戸建ての方は「なし」）。</p>
+    </div>
+
+    <div class="f">
+      <label class="lb" for="phone">電話番号<span class="req" aria-hidden="true">*</span>
+        <span class="hint" id="phone-h">配送業者からの連絡用です。</span></label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" enterkeyhint="next" maxlength="24" required
+             placeholder="090-1234-5678" aria-describedby="phone-h" data-err="phone-e">
+      <p class="err" id="phone-e">電話番号をご入力ください（例：090-1234-5678）。</p>
+    </div>
+
+    <div class="f">
+      <label class="lb" for="lineId">LINE ID<span class="req" aria-hidden="true">*</span>
+        <span class="hint" id="line-h">ビデオレターとLINEグループへのご招待を、このIDにお送りします。IDはLINEの［設定］→［プロフィール］で確認できます。［設定］→［プライバシー管理］の「IDによる友だち追加を許可」をオンにしてください。</span></label>
+      <input type="text" id="lineId" name="lineId" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="40" required
+             aria-describedby="line-h" data-err="line-e">
+      <p class="err" id="line-e">LINE IDをご入力ください（半角英数字。表示名ではありません）。</p>
+    </div>
+
+    <div class="consent">
+      <label for="consent">
+        <input type="checkbox" id="consent" name="consent" aria-required="true" data-err="consent-e">
+        <span class="tick" aria-hidden="true"></span>
+        <span class="head">このページを読み、内容に同意します。</span>
+      </label>
+      <p class="err" id="consent-e">セットをお送りするため、チェックを入れてください。</p>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="hp_x7">Leave this empty</label>
+      <input type="text" id="hp_x7" name="hp_x7" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit" class="btn" id="go"><span class="lbl" id="go-l">送信する</span><span class="spin" aria-hidden="true"></span></button>
+    <p class="failnote" id="fail" role="alert" tabindex="-1"></p>
+  </form>
+</section>
+
+<footer>
+  <p>Lemonderma · VDVIA Co., Ltd.</p>
+</footer>
+
+</div><!-- /page -->
+
+<!-- ═══════════ 완료 ═══════════ -->
+<div id="done">
+  <div class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.6 9.2 18 20 6.6"/></svg></div>
+  <h2 id="done-h" tabindex="-1">ありがとうございます。</h2>
+  <p>ご住所とLINE IDを受け付けました。</p>
+  <p>はじまる前に、レモンダーマのジョンからLINEで、ビデオレターとSkin Lab Partnersのグループへのご招待をお送りします。</p>
+  <div class="photo"><img src="assets/unboxing.jpg" alt="レモンダーマのセラムとクリーム、そして新鮮なレモン" width="733" height="1100"></div>
+  <footer><p>Lemonderma · VDVIA Co., Ltd.</p></footer>
+</div>
+
+</main>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   접수 창구 = 신청 폼과 같은 Apps Script 웹앱(같은 URL). 코드: uae/community/plan/apply/apps-script.gs 의 JP 합격 블록
+   개인 링크 ?c=<코드> → 호칭·신청서 이름·도도부현·제출 여부만 받아 온다(주소·전화·LINE ID는 받지 않음).
+   스크립트 조회는 ?k=<코드>&mk=jp ('c'는 Apps Script 예약 파라미터라 400).
+   마감 표기 11/10(화) 23:59 — 접수는 닫지 않는다(John 11/9). 마감 뒤 제출은 시트 '마감 후'=Y.
+   ══════════════════════════════════════════════════════════════ */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbyMVW3yJS0_8kASv4gwHAEVnevXdhoV5zxtloVUfxqr6z47Un3CqDRByAY29fZYgg0z/exec";
+const PREFS = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県',
+  '新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県',
+  '奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県',
+  '熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+
+const qs = new URLSearchParams(location.search);
+const rawCode = (qs.get('c') || '').trim().toLowerCase();
+const CODE = /^[a-z0-9]{4,40}$/.test(rawCode) ? rawCode : '';
+const reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const $ = id => document.getElementById(id);
+const form = $('f'), go = $('go'), fail = $('fail');
+let who = { callName: '', submitted: false };
+
+/* 도도부현 목록 */
+(() => { const sel = $('pref'); PREFS.forEach(p => { const o = document.createElement('option'); o.textContent = p; sel.appendChild(o); }); })();
+
+/* 스크롤 등장 */
+(() => {
+  const els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }),
+                                      { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(e => io.observe(e));
+})();
+
+function greet(name){
+  $('hello').textContent = name ? name + 'さん、おめでとうございます。' : 'おめでとうございます。';
+}
+
+async function lookup(){
+  if (!CODE) { showHandle(); return; }
+  try {
+    const r = await fetch(ENDPOINT + '?k=' + encodeURIComponent(CODE) + '&mk=jp', { method: 'GET' });
+    const j = await r.json();
+    if (j.result !== 'ok') { showHandle(); return; }
+    who = { callName: String(j.callName || ''), submitted: !!j.submitted };
+    greet(who.callName);
+    if (!$('recipient').value && j.name) $('recipient').value = String(j.name).slice(0, 120);
+    if (!$('pref').value && PREFS.indexOf(j.pref) >= 0) $('pref').value = j.pref;
+    if (who.submitted) $('again').classList.add('on');
+  } catch (e) {
+    /* 조회가 안 되면(네트워크·서버) 코드만으로 못 맞출 수 있으니 핸들 칸을 연다 */
+    showHandle();
+  }
+}
+function showHandle(){
+  $('f-handle').hidden = false;
+  $('handle').required = true;
+  $('handle').setAttribute('aria-required', 'true');
+}
+lookup();
+
+/* ── 전각 숫자·기호 → 반각 (NFKC) ── */
+function half(s){ return String(s || '').normalize('NFKC'); }
+/* 전화: +81 / 0081 → 0, 숫자만. 일본 번호 0 + 9~10자리 */
+function jpPhone(s){
+  let d = half(s).replace(/[^\d+]/g, '');
+  if (d.startsWith('+81')) d = '0' + d.slice(3);
+  else if (d.startsWith('0081')) d = '0' + d.slice(4);
+  d = d.replace(/\D/g, '');
+  if (d.startsWith('00')) d = d.slice(1);
+  return /^0\d{9,10}$/.test(d) ? d : '';
+}
+function jpPostal(s){
+  const d = half(s).replace(/\D/g, '');
+  return /^\d{7}$/.test(d) ? d.slice(0, 3) + '-' + d.slice(3) : '';
+}
+function lineId(s){
+  return half(s).trim().replace(/\s+/g, '');
+}
+
+/* ── 검증: 오류 문구는 오류일 때만 aria-describedby에 붙인다 ── */
+function mark(id, bad){
+  const el = $(id), errId = el.dataset.err, er = errId ? $(errId) : null;
+  const hint = (el.getAttribute('aria-describedby') || '').split(' ').filter(x => x && x !== errId);
+  if (bad && errId) hint.push(errId);
+  if (hint.length) el.setAttribute('aria-describedby', hint.join(' ')); else el.removeAttribute('aria-describedby');
+  el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  if (er) er.classList.toggle('on', !!bad);
+  return bad;
+}
+function check(){
+  let first = null;
+  const flag = (id, bad) => { if (mark(id, bad) && !first) first = $(id); };
+  if (!$('f-handle').hidden) flag('handle', $('handle').value.trim().replace(/^@/, '').length < 2);
+  flag('recipient', $('recipient').value.trim().length < 2);
+  flag('postal', !jpPostal($('postal').value));
+  flag('pref', PREFS.indexOf($('pref').value) < 0);
+  flag('addr1', $('addr1').value.trim().length < 3);
+  flag('addr2', $('addr2').value.trim().length < 1);
+  flag('phone', !jpPhone($('phone').value));
+  flag('lineId', !/^@?[A-Za-z0-9._-]{3,30}$/.test(lineId($('lineId').value)));
+  flag('consent', !$('consent').checked);
+  return first;
+}
+const ORDER = ['handle','recipient','postal','pref','addr1','addr2','phone','lineId','consent'];
+ORDER.forEach(id => {
+  const el = $(id), re = () => { if (el.getAttribute('aria-invalid') === 'true') check(); };
+  el.addEventListener('input', re);
+  el.addEventListener('change', re);
+});
+/* 휴대폰 키보드의 '次へ' 키: 바로 제출되지 않고 다음 칸으로(일본어 변환 확정 Enter는 건드리지 않음) */
+ORDER.forEach(id => {
+  const el = $(id);
+  if (!el || el.tagName === 'SELECT' || el.type === 'checkbox') return;
+  el.addEventListener('keydown', ev => {
+    if (ev.key !== 'Enter' || ev.isComposing || ev.keyCode === 229) return;
+    ev.preventDefault();
+    const rest = ORDER.slice(ORDER.indexOf(id) + 1).map($).filter(x => x && !x.closest('[hidden]'));
+    if (rest[0]) rest[0].focus();
+  });
+});
+
+function payload(){
+  return {
+    market: 'jp', form: 'welcome', code: CODE,
+    handle: $('handle').value.trim(),
+    recipient: $('recipient').value.trim(),
+    postal: jpPostal($('postal').value) || $('postal').value.trim(),
+    pref: $('pref').value,
+    addr1: $('addr1').value.trim(), addr2: $('addr2').value.trim(),
+    phone: jpPhone($('phone').value) || $('phone').value.trim(),
+    lineId: lineId($('lineId').value),
+    consent: $('consent').checked ? 'Y' : 'N', website: $('hp_x7').value
+  };
+}
+
+function finish(){
+  const nm = who.callName;
+  $('done-h').textContent = nm ? nm + 'さん、ありがとうございます。' : 'ありがとうございます。';
+  $('page').hidden = true;
+  $('done').classList.add('on');
+  window.scrollTo(0, 0);
+  $('done-h').focus({ preventScroll: true });
+}
+
+function showFail(msg){
+  fail.textContent = msg;
+  fail.classList.add('on');
+  fail.focus({ preventScroll: true });
+}
+
+/* 응답을 못 읽었을 때(네트워크 끊김 등) 실제로 저장됐는지 코드로 다시 확인한다 */
+async function savedAnyway(){
+  if (!CODE) return false;
+  try {
+    const r = await fetch(ENDPOINT + '?k=' + encodeURIComponent(CODE) + '&mk=jp&_=' + Date.now());
+    const j = await r.json();
+    return j.result === 'ok' && !!j.submitted && !who.submitted;
+  } catch (e) { return false; }
+}
+
+function busy(on){
+  go.disabled = on;
+  go.classList.toggle('busy', on);
+  $('go-l').textContent = on ? '送信中…' : '送信する';
+  form.setAttribute('aria-busy', on ? 'true' : 'false');
+}
+
+form.addEventListener('submit', async ev => {
+  ev.preventDefault();
+  if (go.disabled) return;
+  fail.classList.remove('on');
+  const bad = check();
+  if (bad) { bad.focus(); bad.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' }); return; }
+  busy(true);
+  try {
+    /* text/plain → 프리플라이트 없이 Apps Script로 간다. 응답(JSON)을 읽어 저장 성공일 때만 완료 화면 */
+    const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                                      body: JSON.stringify(payload()) });
+    const j = await r.json();
+    /* saved:true = 새 스크립트가 시트에 실제로 썼다. 옛 배포는 result:'ok'만 주고 아무것도 안 쓰므로 성공으로 치지 않는다 */
+    if (j.result === 'ok' && j.saved === true) { finish(); return; }
+    const why = { missing: '*の項目をすべてご入力ください。', consent: '上のチェックを入れてください。',
+                  who: 'Instagramのアカウント名をご入力ください。', pref: '都道府県を選んでください。' }[j.reason];
+    showFail(why || '申し訳ありません。こちら側の不具合で、ご住所が届きませんでした。1分ほどしてからもう一度お試しいただくか、InstagramのDMでお知らせください。');
+  } catch (e) {
+    if (await savedAnyway()) { finish(); return; }
+    showFail('送信を確認できませんでした。通信環境をご確認のうえ、もう一度お試しいただくか、InstagramのDMでお知らせください。');
+  } finally {
+    busy(false);
+  }
+});
+</script>
+</body>
+</html>
