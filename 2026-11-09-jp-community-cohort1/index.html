@@ -301,7 +301,7 @@ code{font-size:.85em}
       <tr><th>답장 봇</th><td>발송 중 잠시 멈췄던 자동화 10개 15:09 복구. 결과 안내 뒤 신청자의 답장에는 자동 문구를 보내지 않도록 고침(인사·"입력했어요"는 기록만, 질문은 사람에게). 복구 직후 옛 코드가 합격자 1명(jesuis_makarun)에게 "신청 확인·11/10 발표" 문구를 보내 15:11 정정 메시지 발송.</td></tr>
       <tr><th>영상편지</th><td><b>일본판 완성 ✔ 11/9 17:27</b> — 추가 촬영 없이(John 11/9: "10월 19일 시작" 문장만 잘라내고 일정 상자만 교체). 3:4 1080×1440 · 2분 30초 · 일본어 자막 40장 · 콘텐츠7 틀. Drive <b>Skin Lab Partners/JP/콘텐츠 0. 영상편지</b>에 본편 76MB·<b>LINE판 37MB(1:1 첨부용)</b>. 콘텐츠7 재촬영도 필요 없음(인사말이 한국어, John 11/9).</td></tr>
       <tr><th>콘텐츠 일본판</th><td><b>11/9 밤 일괄 제작 ✔</b> — 재촬영 없이 UAE 영상에 일본어 자막·카드만. 틀은 영상편지와 같음(화면 전체·상단 로고·가슴 높이 자막·오프닝 제목·끝 카드). <b>원본이 9:16이면 9:16 · 3:4면 3:4</b>. Drive <b>JP/콘텐츠 N</b> 폴더에 본편 + LINE판: 1 Vlog(65초) · 2 소개(약 3분) · 3 NG(36초) · 4 약국(140초) · 5 Question(47초) · 7 Your Reel(51초). 자막은 번역 초안 — 일본어 원어민 검수 전. 제작 코드 <code>jp/community/plan/contents/README.md</code>.</td></tr>
-      <tr><th>다음 할 일</th><td>11/10 00:00 답장 봇 마감 모드 · <b>11/10 22:00 2차 리마인드(자동 — 공식계정 launchd · 존 계정 예약 작업)</b> · 11/11 09:00 접수 점검 · <b>11/11 10:00 접수 마감 → 10:01 '마감 후' 칸 자동 정리 → 존이 시트 확인·쉽터 공유</b>(마지막 안내 J5는 취소) · 일본어 자막 원어민 검수 · 남은 촬영은 콘텐츠6(12/2) 하나뿐(콘텐츠8은 UAE 신규 촬영 선행)</td></tr>
+      <tr><th>다음 할 일</th><td>11/10 00:00 답장 봇 마감 모드 · <b>11/10 22:00 2차 리마인드(공식계정 몫만 launchd 자동 — 존 계정 몫은 존이 시킬 때만)</b> · 11/11 09:00 접수 점검 · <b>11/11 10:00 접수 마감 → 10:01 '마감 후' 칸 자동 정리 → 존이 시트 확인·쉽터 공유</b>(마지막 안내 J5는 취소) · 일본어 자막 원어민 검수 · 남은 촬영은 콘텐츠6(12/2) 하나뿐(콘텐츠8은 UAE 신규 촬영 선행)</td></tr>
     </tbody>
   </table>
   </div>
@@ -540,7 +540,7 @@ code{font-size:.85em}
   <h3>주소·출고 · 11/10 → 11/12</h3>
   <ul class="open-list">
     <li class="done"><span class="box"></span><span><b>11/10 1차 리마인드(J3) — 미제출 17명</b><span class="badge-conf ok">발송·도착 확인 11/10 13:5x</span> — 공식계정 9 · 존 계정 8, 개인 링크 말풍선 포함, "오늘 23:59까지".</span></li>
-    <li><span class="box"></span><span><b>11/10 22:00 2차 리마인드(J3-2)</b><span class="badge-conf check">자동 예약</span> — 그 시각 미제출자만. 공식계정 = launchd com.lemonderma.jp-welcome-remind2, 존 계정 = 예약 작업 + 이 세션 크론(이중 발송은 대화방에서 걸러짐).</span></li>
+    <li><span class="box"></span><span><b>11/10 22:00 2차 리마인드(J3-2)</b><span class="badge-conf check">자동 예약</span> — 그 시각 미제출자만. 공식계정 = launchd com.lemonderma.jp-welcome-remind2. 존 계정 몫(8명)은 "존 계정은 시킬 때만"(John 11/10)이라 자동으로 보내지 않음 — 보낼지는 존 지시.</span></li>
     <li><span class="box"></span><span><b>11/11 09:00 접수 점검</b><span class="badge-conf check">Claude</span> — 제출·미제출 건수, 우편번호·전화 형식 오류만 보고(주소 값은 시트에서만).</span></li>
     <li><span class="box"></span><span><b>11/11 오전 시트 확인 → 쉽터 공유·출고 요청</b><span class="badge-conf ok">John</span></span></li>
     <li><span class="box"></span><span><b>11/11 10:00 접수 마감 — 마지막 마감 안내(J5)는 취소</b><span class="badge-conf ok">John 11/10</span> — 10:01 launchd com.lemonderma.jp-welcome-cut 가 시트 '마감 후'를 제출 시각 기준으로 다시 계산(Apps Script는 11/11 00:00부터 Y를 찍지만 10:00 전 제출은 유효). 제출자 확인 안내(J4)는 존 확인 뒤.</span></li>
