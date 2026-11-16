@@ -140,7 +140,15 @@ h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.45rem,6vw,1.6rem);
        background:rgba(221,247,70,.17);border:1px solid var(--edge)}
 .again.on{display:block}
 .f{margin-bottom:20px}
-label.lb{display:block;font-size:.95rem;font-weight:500;margin-bottom:8px;line-height:1.45}
+label.lb,p.lb{display:block;font-size:.95rem;font-weight:500;margin-bottom:8px;line-height:1.45}
+/* 궁금한 주제 — 여러 개 고르는 칩(11/16 John). 값은 짧은 이름으로 보낸다(저장 스크립트가 80자에서 자른다) */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:block;cursor:pointer}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:block;padding:10px 14px;border:1px solid rgba(0,0,0,.45);border-radius:999px;background:#fdfdf6;
+  font-size:.92rem;line-height:1.3;transition:border-color .22s,background .22s,color .22s}
+.chip input:checked + span{border-color:var(--headline);background:rgba(221,247,70,.45);color:var(--headline);font-weight:500}
+.chip input:focus-visible + span{box-shadow:0 0 0 4px rgba(221,234,101,.6)}
 .req{color:var(--deep);margin-left:3px}
 .opt-t{font-weight:400;color:var(--ink-soft);font-size:.86rem;margin-left:4px}
 .hint{display:block;font-weight:400;font-size:.83rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
@@ -318,17 +326,16 @@ footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
       <p class="err" id="email-e">Please enter a valid email address.</p>
     </div>
     <div class="f">
-      <label class="lb" for="topic">What would you most like to read about?<span class="opt-t">(optional)</span></label>
-      <select id="topic" name="topic">
-        <option value="">Select</option>
-        <option>UAE VIP promotions and coupons</option>
-        <option>New products and UAE events</option>
-        <option>Behind the scenes with Marco and John</option>
-        <option>Anti-aging tips from a Korean doctor</option>
-        <option>Skin Lab Partners Cohort 2</option>
-        <option>Skincare for UAE heat and air conditioning</option>
-        <option>Dark spots and uneven tone</option>
-      </select>
+      <p class="lb" id="topic-l">What would you like to read about?<span class="opt-t">(optional, choose as many as you like)</span></p>
+      <div class="chips" id="topics" role="group" aria-labelledby="topic-l">
+        <label class="chip"><input type="checkbox" name="topic" value="VIP"><span>UAE VIP promotions and coupons</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="New products"><span>New products and UAE events</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="Behind scenes"><span>Behind the scenes</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="Doctor tips"><span>Tips from a Korean doctor</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="Cohort 2"><span>Skin Lab Partners Cohort 2</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="Heat/AC"><span>Skincare for heat and air conditioning</span></label>
+        <label class="chip"><input type="checkbox" name="topic" value="Dark spots"><span>Dark spots and uneven tone</span></label>
+      </div>
     </div>
 
     <div class="consent">
@@ -426,7 +433,7 @@ function payload(){
     form: 'newsletter',
     name: $('name').value.trim(),
     email: $('email').value.trim().toLowerCase(),
-    topic: $('topic').value,
+    topic: Array.from(document.querySelectorAll('#topics input:checked')).map(el => el.value).join(', '),
     keep: $('keep').checked ? 'Y' : '',
     consent: $('consent').checked ? 'Y' : 'N',
     source: SOURCE,
