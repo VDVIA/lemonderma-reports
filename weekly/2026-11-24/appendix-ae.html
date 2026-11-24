@@ -1156,6 +1156,23 @@ table.whytbl .wt-sub{font-size:11px;color:var(--muted);font-weight:400}
 .vc-tbl .vc-dt{display:block;font-size:11px;font-weight:400;color:#8a836f}
 .vc-tbl tr.vc-cur td{background:#fefcd0}
 
+/* ── 카테고리 순위 그래프 새 모양(2026-11-24 John): 두 그래프 나란히 · 제품당 한 줄 · 배수 간격 축 ── */
+.rkc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:4px 28px}
+.vc-blk.rkc{margin-top:10px;min-width:0}
+.rkc-t{font-size:13px;font-weight:800;line-height:1.45;color:var(--ink)}
+.rkc-leg{font-weight:800;margin-left:10px;white-space:nowrap;letter-spacing:0}
+.rkc .vc-sum{margin:5px 0 2px;gap:2px}
+.vc-best{display:inline-block;background:#e6f3df;color:#2f6b22;font-weight:800;font-size:11.5px;border-radius:999px;padding:1px 8px}
+.vc-mut{color:#8a836f}
+.vc-chart.rkc-chart{container:rkc/inline-size}
+.vc-svg.rk-svg.d{display:block}.vc-svg.rk-svg.m{display:none}
+@container rkc (max-width:379px){.vc-svg.rk-svg.d{display:none}.vc-svg.rk-svg.m{display:block}}
+.rkc-foot{margin:8px 0 0}
+
+/* 결론 문단 나누기(2026-11-24 John): 첫 문단 = 그 주의 핵심 한 문장(굵게), 이어지는 문단은 근거 → 주 합계 → 채널 → 이번 주 */
+.hk-b p+p{margin-top:9px}
+.hk-b p.hk-key{font-weight:800;font-size:1.07em;line-height:1.6}
+
 /* ── 표 겹침 0 (2026-11-10 John "메타 소재별 표를 보면 글씨가 다 겹쳐서 깨져있어 … 완벽하게 해야지") ──────────────
    원칙: 어떤 칸의 글자도 칸 밖으로 나가 옆 칸과 겹치지 않는다.
    원인(11/3·11/10호): UAE 추가 CSS의 `table{table-layout:fixed}`가 모든 표를 고정 폭으로 만들고, 그 안의 한 줄 고정(nowrap) 칸
@@ -1639,6 +1656,19 @@ table.mini.rest-tbl td.num,table.mini.rest-tbl th.num{white-space:nowrap}
 a.dq-ref{font-weight:800;color:var(--lime-deep)}
 #kr-detail,#jp-detail{margin-top:12px}
 
+/* ── 2026-11-24 John 피드백: 새 판도 보기 둘(구성원 전용/John 전용) · 8주 흐름 = 전체 MER 한 표(흑자선 2.0) ── */
+.legend .k.dot{border-radius:50%;width:11px;height:11px}
+.legend .k.dot.win{background:#2e7d32}.legend .k.dot.lose{background:#c0392b}
+.mer-v{font-weight:800;white-space:nowrap}.mer-v.win{color:#2e7d32}.mer-v.lose{color:#c0392b}
+.flow-note{margin:8px 2px 0}
+body:not(.view-john) a.dq-ref{pointer-events:none;color:inherit;text-decoration:none;cursor:text}
+.john-only>.appx-link{margin-top:18px}
+
+.hero .hk-b p.hk-key{font-size:19px;line-height:1.6;color:#fff}
+@media(max-width:700px){.hero .hk-b p.hk-key{font-size:17.5px}}
+
+:root{--c-sea:#e8862a;--c-wm:#8a6d1d}.mdot.sea{background:var(--c-sea)}.mdot.wm{background:var(--c-wm)}.legend .k.sea{background:var(--c-sea)}.legend .k.wm{background:var(--c-wm)}.hero .hk-map .hm-m.sea{background:var(--c-sea)}.hero .hk-map .hm-m.wm{background:var(--c-wm)}.mkt-board td.rowh .rsub{display:block;font-size:11.5px;font-weight:400;color:#6b675e;margin:1px 0 0 17px}.board-note{margin:10px 2px 0;line-height:1.55}table.sea-tbl th,table.sea-tbl td{word-break:keep-all}
+.tl-ledger{margin-top:6px}.tl-plat{margin-top:22px}.tl-ph{font-size:16px;font-weight:800;margin:0 0 10px;padding-left:10px;border-left:4px solid var(--lime);line-height:1.3}.tl-ph .tl-pl{font-size:13px;font-weight:400;color:var(--muted);margin-left:8px}.tl-card{margin-top:12px}.tl-h{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}.tl-n{font-size:15.5px;font-weight:800}.tl-sub{font-size:12px;color:var(--muted)}.v-pill.hold{background:#eceadf;color:#46433c}.tl-vt{font-size:13px;font-weight:700;color:#3b3a35}.tl-nums{display:flex;flex-wrap:wrap;gap:6px 8px;margin:10px 0 2px}.tl-chip{display:inline-block;background:#f4f3ec;border-radius:8px;padding:5px 10px;font-size:13px;line-height:1.4}.tl-chip .tl-k{color:var(--muted)}.tl-chip .tl-v{font-weight:800}.tl-chip .tl-p{color:var(--muted);font-size:12px}.tl-card .tbl-scroll{margin-top:10px}.tl-card p{margin:8px 0 0}.tl-card p.tl-act{font-weight:600}.tl-when{color:#5b5a52;font-size:13px;font-weight:400}@media(min-width:641px){.tl-card .tbl-scroll table{width:auto;min-width:66%}}.tl-ask{display:inline-block;background:var(--warn-bg);color:var(--warn);font-weight:800;font-size:11.5px;border-radius:999px;padding:2px 8px;margin-right:4px}.tl-foot{margin-top:18px}.tl-foot .appx-link{margin:0 0 0 4px}
 /* ── 표 겹침 0 (2026-11-10 John "메타 소재별 표를 보면 글씨가 다 겹쳐서 깨져있어 … 완벽하게 해야지") ──────────────
    원칙: 어떤 칸의 글자도 칸 밖으로 나가 옆 칸과 겹치지 않는다.
    원인(11/3·11/10호): UAE 추가 CSS의 `table{table-layout:fixed}`가 모든 표를 고정 폭으로 만들고, 그 안의 한 줄 고정(nowrap) 칸
